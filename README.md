@@ -77,7 +77,7 @@ Registry source is never copied from an individual consuming application.
 `public/r`, then rebuilds the complete catalog so removed items cannot remain as
 stale public endpoints.
 
-The SNAPP theme installs IBM Plex Sans (400/700) and Judson (400/700)
+The SNAPP theme installs IBM Plex Sans (200/300/400/700) and Judson (400/700)
 automatically. Each face tries the SNAPP Front Door asset first, the matching
 Google Fonts WOFF2 asset second, and a bundled `@fontsource` WOFF2 file last.
 The bundled fallback keeps Dynamics, PCF, Power Pages, offline, and CSP-limited

@@ -13,6 +13,34 @@
 	font-family: "IBM Plex Sans";
 	font-style: normal;
 	font-display: swap;
+	font-weight: 200;
+	src:
+		url("https://experience.snappcabinets.com/snapp/assets/fonts/ibm-plex-sans-latin/ibm-plex-sans-latin-200-normal.woff2")
+			format("woff2"),
+		url("https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2")
+			format("woff2"),
+		url("../../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-200-normal.woff2")
+			format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 300;
+	src:
+		url("https://experience.snappcabinets.com/snapp/assets/fonts/ibm-plex-sans-latin/ibm-plex-sans-latin-300-normal.woff2")
+			format("woff2"),
+		url("https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDtFlDB6g4.woff2")
+			format("woff2"),
+		url("../../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-300-normal.woff2")
+			format("woff2");
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
+	font-display: swap;
 	font-weight: 400;
 	src:
 		url("https://experience.snappcabinets.com/snapp/assets/fonts/ibm-plex-sans-latin/ibm-plex-sans-latin-400-normal.woff2")

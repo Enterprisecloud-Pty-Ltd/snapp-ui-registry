@@ -240,11 +240,11 @@ try {
 		/\.(woff2?|ttf)$/i.test(fileName),
 	);
 	if (
-		bundledFontFiles.length !== 4 ||
+		bundledFontFiles.length !== 6 ||
 		bundledFontFiles.some((fileName) => !fileName.endsWith(".woff2"))
 	) {
 		throw new Error(
-			`Expected four bundled WOFF2 fallbacks, found: ${bundledFontFiles.join(", ")}`,
+			`Expected six bundled WOFF2 fallbacks, found: ${bundledFontFiles.join(", ")}`,
 		);
 	}
 
