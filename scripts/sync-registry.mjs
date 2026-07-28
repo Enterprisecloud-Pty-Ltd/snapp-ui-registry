@@ -192,16 +192,18 @@ const themeItem = {
 		"@fontsource/judson",
 	],
 	css: {
-		'@import "@fontsource/ibm-plex-sans/latin-400.css"': {},
-		'@import "@fontsource/ibm-plex-sans/latin-700.css"': {},
-		'@import "@fontsource/judson/latin-400.css"': {},
-		'@import "@fontsource/judson/latin-700.css"': {},
+		'@import "./styles/snapp-fonts.css"': {},
 	},
 	files: [
 		{
 			path: "registry/radix-nova/theme/snapp-theme.css",
 			type: "registry:file",
 			target: "src/styles/snapp-theme.css",
+		},
+		{
+			path: "registry/radix-nova/theme/snapp-fonts.css",
+			type: "registry:file",
+			target: "src/styles/snapp-fonts.css",
 		},
 		...figmaTokens.files,
 	],

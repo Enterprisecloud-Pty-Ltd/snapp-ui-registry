@@ -1,5 +1,12 @@
 import { execFile } from "node:child_process";
-import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import {
+	mkdtemp,
+	mkdir,
+	readFile,
+	readdir,
+	rm,
+	writeFile,
+} from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { promisify } from "node:util";
@@ -191,14 +198,22 @@ try {
 	}
 
 	const indexCss = await readFile(path.join(sourceRoot, "index.css"), "utf8");
-	for (const fontImport of [
-		"@fontsource/ibm-plex-sans/latin-400.css",
-		"@fontsource/ibm-plex-sans/latin-700.css",
-		"@fontsource/judson/latin-400.css",
-		"@fontsource/judson/latin-700.css",
+	const fontImport = '@import "./styles/snapp-fonts.css"';
+	if (!indexCss.includes(fontImport)) {
+		throw new Error(`Clean install did not add ${fontImport}`);
+	}
+
+	const fontCss = await readFile(
+		path.join(sourceRoot, "styles", "snapp-fonts.css"),
+		"utf8",
+	);
+	for (const requiredSource of [
+		"https://experience.snappcabinets.com/snapp/assets/fonts/",
+		"https://fonts.gstatic.com/",
+		"../../node_modules/@fontsource/",
 	]) {
-		if (!indexCss.includes(fontImport)) {
-			throw new Error(`Clean install did not add ${fontImport}`);
+		if (!fontCss.includes(requiredSource)) {
+			throw new Error(`Installed font CSS is missing ${requiredSource}`);
 		}
 	}
 
@@ -217,6 +232,21 @@ try {
 		[path.join(fixtureRoot, "node_modules", "vite", "bin", "vite.js"), "build"],
 		{ cwd: fixtureRoot, timeout: 120_000 },
 	);
+
+	const distFiles = await readdir(path.join(fixtureRoot, "dist"), {
+		recursive: true,
+	});
+	const bundledFontFiles = distFiles.filter((fileName) =>
+		/\.(woff2?|ttf)$/i.test(fileName),
+	);
+	if (
+		bundledFontFiles.length !== 4 ||
+		bundledFontFiles.some((fileName) => !fileName.endsWith(".woff2"))
+	) {
+		throw new Error(
+			`Expected four bundled WOFF2 fallbacks, found: ${bundledFontFiles.join(", ")}`,
+		);
+	}
 
 	console.log("Clean consumer install, type-check, and production build passed.");
 } finally {

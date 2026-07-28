@@ -97,14 +97,32 @@ for (const fontPackage of [
 		errors.push(`snapp-theme does not install ${fontPackage}`);
 	}
 }
-for (const fontImport of [
-	'@import "@fontsource/ibm-plex-sans/latin-400.css"',
-	'@import "@fontsource/ibm-plex-sans/latin-700.css"',
-	'@import "@fontsource/judson/latin-400.css"',
-	'@import "@fontsource/judson/latin-700.css"',
-]) {
-	if (!themeItem?.css?.[fontImport]) {
-		errors.push(`snapp-theme is missing ${fontImport}`);
+const fontImport = '@import "./styles/snapp-fonts.css"';
+if (!themeItem?.css?.[fontImport]) {
+	errors.push(`snapp-theme is missing ${fontImport}`);
+}
+
+const fontFile = themeItem?.files?.find(
+	(file) => file.target === "src/styles/snapp-fonts.css",
+);
+if (!fontFile) {
+	errors.push("snapp-theme is missing the ordered font source file");
+} else {
+	const fontSource = await readFile(
+		path.join(registryRoot, fontFile.path),
+		"utf8",
+	);
+	for (const requiredSource of [
+		"https://experience.snappcabinets.com/snapp/assets/fonts/",
+		"https://fonts.gstatic.com/",
+		"../../node_modules/@fontsource/",
+	]) {
+		if (!fontSource.includes(requiredSource)) {
+			errors.push(`snapp-fonts.css is missing ${requiredSource}`);
+		}
+	}
+	if (fontSource.includes(".woff)") || fontSource.includes(".ttf")) {
+		errors.push("snapp-fonts.css must only use WOFF2 font sources");
 	}
 }
 

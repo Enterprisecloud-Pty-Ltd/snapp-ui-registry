@@ -78,6 +78,9 @@ Registry source is never copied from an individual consuming application.
 stale public endpoints.
 
 The SNAPP theme installs IBM Plex Sans (400/700) and Judson (400/700)
-automatically. Shared primitives depend on `snapp-utils`, ensuring typography
-classes such as `text-snapp-xs` remain intact when combined with SNAPP text
-color classes.
+automatically. Each face tries the SNAPP Front Door asset first, the matching
+Google Fonts WOFF2 asset second, and a bundled `@fontsource` WOFF2 file last.
+The bundled fallback keeps Dynamics, PCF, Power Pages, offline, and CSP-limited
+consumers reliable while avoiding duplicate legacy WOFF output. Shared
+primitives depend on `snapp-utils`, ensuring typography classes such as
+`text-snapp-xs` remain intact when combined with SNAPP text color classes.
