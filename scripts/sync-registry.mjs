@@ -104,6 +104,7 @@ for (const [itemName, files] of [...groups.entries()].sort(([left], [right]) =>
 		files: files.map((fileName) => ({
 			path: `registry/radix-nova/ui/${fileName}`,
 			type: "registry:ui",
+			target: `@ui/${fileName}`,
 		})),
 	});
 }

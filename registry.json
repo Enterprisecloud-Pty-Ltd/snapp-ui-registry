@@ -365,7 +365,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/accordion.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
         }
       ]
     },
@@ -383,7 +384,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/alert.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
         }
       ]
     },
@@ -402,7 +404,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/alert-dialog.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
         }
       ]
     },
@@ -417,7 +420,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/aspect-ratio.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/aspect-ratio.tsx"
         }
       ]
     },
@@ -437,7 +441,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/attachment.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/attachment.tsx"
         }
       ]
     },
@@ -455,7 +460,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/avatar.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
         }
       ]
     },
@@ -474,7 +480,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/badge.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
         }
       ]
     },
@@ -493,7 +500,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/breadcrumb.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
         }
       ]
     },
@@ -512,7 +520,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/bubble.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/bubble.tsx"
         }
       ]
     },
@@ -531,7 +540,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/button.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
         }
       ]
     },
@@ -551,7 +561,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/button-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/button-group.tsx"
         }
       ]
     },
@@ -570,7 +581,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/calendar.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
         }
       ]
     },
@@ -585,7 +597,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/card.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
         }
       ]
     },
@@ -605,7 +618,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/carousel.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/carousel.tsx"
         }
       ]
     },
@@ -623,7 +637,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/chart.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/chart.tsx"
         }
       ]
     },
@@ -642,7 +657,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/checkbox.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
         }
       ]
     },
@@ -657,7 +673,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/collapsible.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
         }
       ]
     },
@@ -678,7 +695,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/combobox.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
         }
       ]
     },
@@ -699,7 +717,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/command.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
         }
       ]
     },
@@ -718,7 +737,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/context-menu.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/context-menu.tsx"
         }
       ]
     },
@@ -738,7 +758,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/dialog.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
         }
       ]
     },
@@ -753,7 +774,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/direction.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/direction.tsx"
         }
       ]
     },
@@ -771,7 +793,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/drawer.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/drawer.tsx"
         }
       ]
     },
@@ -790,7 +813,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/dropdown-menu.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
         }
       ]
     },
@@ -808,7 +832,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/empty.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/empty.tsx"
         }
       ]
     },
@@ -828,7 +853,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/field.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
         }
       ]
     },
@@ -846,7 +872,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/hover-card.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/hover-card.tsx"
         }
       ]
     },
@@ -861,7 +888,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/input.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
         }
       ]
     },
@@ -882,7 +910,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/input-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
         }
       ]
     },
@@ -901,7 +930,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/input-otp.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/input-otp.tsx"
         }
       ]
     },
@@ -921,7 +951,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/item.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/item.tsx"
         }
       ]
     },
@@ -936,7 +967,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/kbd.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
         }
       ]
     },
@@ -954,7 +986,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/label.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
         }
       ]
     },
@@ -973,7 +1006,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/marker.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/marker.tsx"
         }
       ]
     },
@@ -992,7 +1026,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/menubar.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/menubar.tsx"
         }
       ]
     },
@@ -1007,7 +1042,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/message.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/message.tsx"
         }
       ]
     },
@@ -1027,7 +1063,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/message-scroller.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/message-scroller.tsx"
         }
       ]
     },
@@ -1045,7 +1082,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/native-select.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/native-select.tsx"
         }
       ]
     },
@@ -1065,7 +1103,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/navigation-menu.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
         }
       ]
     },
@@ -1084,7 +1123,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/pagination.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
         }
       ]
     },
@@ -1102,7 +1142,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/popover.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
         }
       ]
     },
@@ -1120,7 +1161,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/progress.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
         }
       ]
     },
@@ -1138,7 +1180,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/radio-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
         }
       ]
     },
@@ -1153,7 +1196,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/resizable.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/resizable.tsx"
         }
       ]
     },
@@ -1171,7 +1215,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/scroll-area.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
         }
       ]
     },
@@ -1190,7 +1235,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/select.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
         }
       ]
     },
@@ -1208,7 +1254,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/separator.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
         }
       ]
     },
@@ -1228,7 +1275,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/sheet.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
         }
       ]
     },
@@ -1254,7 +1302,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/sidebar.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
         }
       ]
     },
@@ -1269,7 +1318,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/skeleton.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
         }
       ]
     },
@@ -1287,7 +1337,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/slider.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
         }
       ]
     },
@@ -1304,7 +1355,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/sonner.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/sonner.tsx"
         }
       ]
     },
@@ -1322,7 +1374,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/spinner.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
         }
       ]
     },
@@ -1340,7 +1393,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/switch.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
         }
       ]
     },
@@ -1355,7 +1409,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/table.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
         }
       ]
     },
@@ -1374,7 +1429,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/tabs.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
         }
       ]
     },
@@ -1389,7 +1445,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/textarea.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
         }
       ]
     },
@@ -1408,7 +1465,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/toggle.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
         }
       ]
     },
@@ -1428,7 +1486,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/toggle-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
         }
       ]
     },
@@ -1446,7 +1505,8 @@
       "files": [
         {
           "path": "registry/radix-nova/ui/tooltip.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
         }
       ]
     }
