@@ -7,9 +7,9 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "snapp-label",
-    "snapp-separator",
-    "utils"
+    "@snapp/snapp-label",
+    "@snapp/snapp-separator",
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-work-item-card",
+  "title": "Snapp Work Item Card",
+  "description": "Figma-aligned Work OS item card with fixed icon, duration, and capacity geometry.",
+  "registryDependencies": [
+    "@snapp/snapp-card",
+    "@snapp/snapp-progress-meter",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-time-badge",
+    "@snapp/snapp-utils",
+    "@snapp/snapp-work-item-core"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/work-os/work-item-card.tsx",
+      "content": "import { ProgressMeter } from \"@/components/snapp/work-os/progress-meter\"\nimport { TimeBadge } from \"@/components/snapp/work-os/time-badge\"\nimport {\n  WorkGripIcon,\n  WorkTypeIcon,\n} from \"@/components/snapp/work-os/work-item-icons\"\nimport type { WorkItem } from \"@/components/snapp/work-os/work-item.types\"\nimport { Card } from \"@/components/ui/card\"\nimport { cn } from \"@/lib/utils\"\n\ninterface WorkItemCardProps {\n  item: WorkItem\n  className?: string\n}\n\nfunction WorkItemCard({ item, className }: WorkItemCardProps) {\n  return (\n    <Card\n      className={cn(\n        \"h-20.5 gap-1 rounded-sm bg-snapp-surface-primary px-2 py-2 text-snapp-text-primary inset-ring-1 inset-ring-snapp-border-primary ring-0\",\n        className,\n      )}\n      data-slot=\"snapp-work-item-card\"\n    >\n      <div className=\"flex min-h-0 flex-1 items-center gap-2\">\n        <div className=\"flex h-full shrink-0 items-start\">\n          <div className=\"flex w-10 items-center justify-between\">\n            <WorkGripIcon className=\"h-1.25 w-3 text-snapp-icon-primary\" />\n            <WorkTypeIcon type={item.icon} />\n          </div>\n        </div>\n\n        <div className=\"flex min-w-0 flex-1 flex-col justify-center gap-0.5 font-snapp-body font-normal\">\n          <p className=\"truncate text-snapp-xs leading-snapp-xxs text-snapp-text-brand\">\n            {item.action}\n          </p>\n          <p className=\"truncate text-snapp-xxs leading-snapp-xxxs text-snapp-text-secondary\">\n            {item.id} <span>{item.name}</span>\n          </p>\n          <p className=\"truncate text-snapp-xxs leading-snapp-xxxs text-snapp-text-secondary\">\n            {item.assignment}\n          </p>\n        </div>\n\n        <div className=\"flex h-full w-21.5 shrink-0 flex-col items-end\">\n          <TimeBadge time={item.time} tone={item.tone} />\n        </div>\n      </div>\n\n      <ProgressMeter\n        className=\"pl-12\"\n        label={item.capacity}\n        tone={item.tone}\n        value={item.progress}\n      />\n    </Card>\n  )\n}\n\nexport { WorkItemCard }\nexport type { WorkItem, WorkItemIcon, WorkItemTone } from \"@/components/snapp/work-os/work-item.types\"\n",
+      "type": "registry:component",
+      "target": "@components/snapp/work-os/work-item-card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

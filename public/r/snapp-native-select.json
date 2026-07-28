@@ -7,7 +7,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "utils"
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

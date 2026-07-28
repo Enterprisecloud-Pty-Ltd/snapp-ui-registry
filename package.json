@@ -7,12 +7,22 @@
     "sync": "node scripts/sync-registry.mjs",
     "normalize": "node scripts/normalize-tailwind-sizes.mjs",
     "normalize:check": "node scripts/normalize-tailwind-sizes.mjs --check",
+    "registry:source:check": "node scripts/validate-registry-source.mjs",
+    "registry:canonical:check": "node scripts/check-tailwind-canonical.mjs",
     "registry:validate": "shadcn registry validate",
-    "registry:build": "shadcn build",
+    "registry:build": "node scripts/clean-generated.mjs && shadcn build",
+    "registry:integrity": "node scripts/verify-generated.mjs",
+    "registry:smoke": "node scripts/smoke-install.mjs",
+    "registry:verify": "npm run sync && npm run registry:validate && npm run registry:source:check && npm run registry:canonical:check && npm run registry:build && npm run registry:integrity && npm run registry:smoke",
     "registry:serve": "vite --host 127.0.0.1 --port 4173"
   },
   "devDependencies": {
+    "@tailwindcss/oxide": "^4.3.3",
+    "clsx": "^2.1.1",
     "shadcn": "4.12.0",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
     "vite": "8.1.0"
   }
 }

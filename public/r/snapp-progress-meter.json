@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-progress-meter",
+  "title": "Snapp Progress Meter",
+  "description": "Figma-aligned Work OS capacity progress meter.",
+  "registryDependencies": [
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils",
+    "@snapp/snapp-work-item-core"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/work-os/progress-meter.tsx",
+      "content": "import type { WorkItemTone } from \"@/components/snapp/work-os/work-item.types\"\nimport { cn } from \"@/lib/utils\"\n\nconst progressClasses: Record<WorkItemTone, string> = {\n  green: \"bg-snapp-surface-green\",\n  amber: \"bg-snapp-surface-amber\",\n  red: \"bg-snapp-surface-red\",\n}\n\ninterface ProgressMeterProps {\n  value: number\n  label: string\n  tone?: WorkItemTone\n  className?: string\n}\n\nfunction ProgressMeter({\n  value,\n  label,\n  tone = \"green\",\n  className,\n}: ProgressMeterProps) {\n  const percentage = Math.min(100, Math.max(0, value))\n\n  return (\n    <div\n      className={cn(\"flex h-4 items-center gap-2\", className)}\n      data-slot=\"snapp-progress-meter\"\n    >\n      <div\n        aria-label={`${label}: ${percentage}%`}\n        aria-valuemax={100}\n        aria-valuemin={0}\n        aria-valuenow={percentage}\n        className=\"h-2 min-w-0 flex-1 overflow-hidden rounded-full bg-snapp-surface-secondary\"\n        role=\"progressbar\"\n      >\n        <div\n          className={cn(\"h-full rounded-full\", progressClasses[tone])}\n          style={{ width: `${percentage}%` }}\n        />\n      </div>\n      <span className=\"w-10.5 shrink-0 text-snapp-xs leading-snapp-xxs text-snapp-text-secondary\">\n        {label}\n      </span>\n    </div>\n  )\n}\n\nexport { ProgressMeter }\n",
+      "type": "registry:component",
+      "target": "@components/snapp/work-os/progress-meter.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

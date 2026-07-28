@@ -9,7 +9,7 @@
     "radix-ui"
   ],
   "registryDependencies": [
-    "utils"
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

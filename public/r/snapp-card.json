@@ -4,7 +4,7 @@
   "title": "Snapp Card",
   "description": "The shared Snapp card UI primitive.",
   "registryDependencies": [
-    "utils"
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

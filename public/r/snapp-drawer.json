@@ -7,7 +7,7 @@
     "vaul"
   ],
   "registryDependencies": [
-    "utils"
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

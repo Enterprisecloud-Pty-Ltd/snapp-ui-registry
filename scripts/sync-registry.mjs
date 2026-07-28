@@ -1,18 +1,10 @@
-import { copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadFigmaTokens } from "./figma-tokens.mjs";
 
 const registryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const workspaceRoot = path.resolve(registryRoot, "..");
-const sourceDirectory = path.join(
-	workspaceRoot,
-	"blobstoragemanagersnapp",
-	"src",
-	"components",
-	"ui",
-);
-const targetDirectory = path.join(registryRoot, "registry", "radix-nova", "ui");
+const uiDirectory = path.join(registryRoot, "registry", "radix-nova", "ui");
 const themeCssPath = path.join(
 	registryRoot,
 	"registry",
@@ -46,28 +38,21 @@ const externalDependencies = (content) => {
 const registryDependencies = (content, ownName) => {
 	const dependencies = new Set();
 	if (content.includes("@/lib/utils")) {
-		dependencies.add("utils");
+		dependencies.add("@snapp/snapp-utils");
 	}
 	for (const match of content.matchAll(/@\/components\/ui\/([a-z0-9.-]+)/g)) {
 		const dependencyName = match[1].split(".")[0];
 		if (dependencyName !== ownName) {
-			dependencies.add(`snapp-${dependencyName}`);
+			dependencies.add(`@snapp/snapp-${dependencyName}`);
 		}
 	}
 	return [...dependencies].sort();
 };
 
-await mkdir(targetDirectory, { recursive: true });
-const sourceFiles = (await readdir(sourceDirectory))
+await mkdir(uiDirectory, { recursive: true });
+const sourceFiles = (await readdir(uiDirectory))
 	.filter((fileName) => /\.(ts|tsx)$/.test(fileName))
 	.sort();
-
-for (const fileName of sourceFiles) {
-	await copyFile(
-		path.join(sourceDirectory, fileName),
-		path.join(targetDirectory, fileName),
-	);
-}
 
 const groups = new Map();
 for (const fileName of sourceFiles) {
@@ -83,7 +68,7 @@ for (const [itemName, files] of [...groups.entries()].sort(([left], [right]) =>
 )) {
 	const contents = await Promise.all(
 		files.map((fileName) =>
-			readFile(path.join(targetDirectory, fileName), "utf8"),
+			readFile(path.join(uiDirectory, fileName), "utf8"),
 		),
 	);
 	const combinedContent = contents.join("\n");
@@ -202,6 +187,16 @@ const themeItem = {
 	title: "Snapp Theme",
 	description:
 		"Shared Snapp brand colors, typography, responsive breakpoints, and layout sizing tokens.",
+	dependencies: [
+		"@fontsource/ibm-plex-sans",
+		"@fontsource/judson",
+	],
+	css: {
+		'@import "@fontsource/ibm-plex-sans/latin-400.css"': {},
+		'@import "@fontsource/ibm-plex-sans/latin-700.css"': {},
+		'@import "@fontsource/judson/latin-400.css"': {},
+		'@import "@fontsource/judson/latin-700.css"': {},
+	},
 	files: [
 		{
 			path: "registry/radix-nova/theme/snapp-theme.css",
@@ -220,12 +215,117 @@ const themeItem = {
 	},
 };
 
+const utilityItem = {
+	name: "snapp-utils",
+	type: "registry:lib",
+	title: "Snapp Utilities",
+	description:
+		"Shared class-name utility with Tailwind merge support for Snapp typography tokens.",
+	dependencies: ["clsx", "tailwind-merge"],
+	files: [
+		{
+			path: "registry/radix-nova/lib/utils.ts",
+			type: "registry:lib",
+			target: "@lib/utils.ts",
+		},
+	],
+};
+
+const workItemCore = {
+	name: "snapp-work-item-core",
+	type: "registry:component",
+	title: "Snapp Work Item Core",
+	description: "Shared Work OS work-item types and exact vector icons.",
+	registryDependencies: ["@snapp/snapp-theme"],
+	files: [
+		{
+			path: "registry/radix-nova/components/work-os/work-item.types.ts",
+			type: "registry:component",
+			target: "@components/snapp/work-os/work-item.types.ts",
+		},
+		{
+			path: "registry/radix-nova/components/work-os/work-item-icons.tsx",
+			type: "registry:component",
+			target: "@components/snapp/work-os/work-item-icons.tsx",
+		},
+	],
+};
+
+const timeBadgeItem = {
+	name: "snapp-time-badge",
+	type: "registry:component",
+	title: "Snapp Time Badge",
+	description: "Figma-aligned Work OS duration badge with danger state.",
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+		"@snapp/snapp-work-item-core",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/work-os/time-badge.tsx",
+			type: "registry:component",
+			target: "@components/snapp/work-os/time-badge.tsx",
+		},
+	],
+};
+
+const progressMeterItem = {
+	name: "snapp-progress-meter",
+	type: "registry:component",
+	title: "Snapp Progress Meter",
+	description: "Figma-aligned Work OS capacity progress meter.",
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+		"@snapp/snapp-work-item-core",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/work-os/progress-meter.tsx",
+			type: "registry:component",
+			target: "@components/snapp/work-os/progress-meter.tsx",
+		},
+	],
+};
+
+const workItemCard = {
+	name: "snapp-work-item-card",
+	type: "registry:component",
+	title: "Snapp Work Item Card",
+	description:
+		"Figma-aligned Work OS item card with fixed icon, duration, and capacity geometry.",
+	registryDependencies: [
+		"@snapp/snapp-card",
+		"@snapp/snapp-progress-meter",
+		"@snapp/snapp-theme",
+		"@snapp/snapp-time-badge",
+		"@snapp/snapp-utils",
+		"@snapp/snapp-work-item-core",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/work-os/work-item-card.tsx",
+			type: "registry:component",
+			target: "@components/snapp/work-os/work-item-card.tsx",
+		},
+	],
+};
+
 const registry = {
 	$schema: "https://ui.shadcn.com/schema/registry.json",
 	name: "snapp",
 	homepage:
 		"https://github.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry",
-	items: [themeItem, ...componentItems],
+	items: [
+		themeItem,
+		utilityItem,
+		...componentItems,
+		workItemCore,
+		timeBadgeItem,
+		progressMeterItem,
+		workItemCard,
+	],
 };
 
 await writeFile(
@@ -234,5 +334,5 @@ await writeFile(
 );
 
 console.log(
-	`Synced ${sourceFiles.length} files into ${componentItems.length} component items.`,
+	`Generated ${componentItems.length} UI items from ${sourceFiles.length} canonical registry files.`,
 );

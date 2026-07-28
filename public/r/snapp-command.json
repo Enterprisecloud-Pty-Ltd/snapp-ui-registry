@@ -8,9 +8,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "snapp-dialog",
-    "snapp-input-group",
-    "utils"
+    "@snapp/snapp-dialog",
+    "@snapp/snapp-input-group",
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

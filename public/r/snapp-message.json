@@ -4,7 +4,7 @@
   "title": "Snapp Message",
   "description": "The shared Snapp message UI primitive.",
   "registryDependencies": [
-    "utils"
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

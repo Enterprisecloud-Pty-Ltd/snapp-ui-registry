@@ -8,8 +8,8 @@
     "radix-ui"
   ],
   "registryDependencies": [
-    "snapp-toggle",
-    "utils"
+    "@snapp/snapp-toggle",
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

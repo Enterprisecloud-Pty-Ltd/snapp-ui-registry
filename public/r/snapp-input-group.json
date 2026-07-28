@@ -7,10 +7,10 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "snapp-button",
-    "snapp-input",
-    "snapp-textarea",
-    "utils"
+    "@snapp/snapp-button",
+    "@snapp/snapp-input",
+    "@snapp/snapp-textarea",
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

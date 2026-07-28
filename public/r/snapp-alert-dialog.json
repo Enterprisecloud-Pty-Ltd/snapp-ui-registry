@@ -7,8 +7,8 @@
     "radix-ui"
   ],
   "registryDependencies": [
-    "snapp-button",
-    "utils"
+    "@snapp/snapp-button",
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

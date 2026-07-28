@@ -4,7 +4,7 @@
   "title": "Snapp Input",
   "description": "The shared Snapp input UI primitive.",
   "registryDependencies": [
-    "utils"
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

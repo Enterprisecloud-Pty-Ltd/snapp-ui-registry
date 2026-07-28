@@ -8,8 +8,8 @@
     "radix-ui"
   ],
   "registryDependencies": [
-    "snapp-separator",
-    "utils"
+    "@snapp/snapp-separator",
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

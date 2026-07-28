@@ -4,7 +4,7 @@
   "title": "Snapp Resizable",
   "description": "The shared Snapp resizable UI primitive.",
   "registryDependencies": [
-    "utils"
+    "@snapp/snapp-utils"
   ],
   "files": [
     {

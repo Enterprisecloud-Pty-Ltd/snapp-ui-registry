@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-time-badge",
+  "title": "Snapp Time Badge",
+  "description": "Figma-aligned Work OS duration badge with danger state.",
+  "registryDependencies": [
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils",
+    "@snapp/snapp-work-item-core"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/work-os/time-badge.tsx",
+      "content": "import { ClockWorkIcon } from \"@/components/snapp/work-os/work-item-icons\"\nimport type { WorkItemTone } from \"@/components/snapp/work-os/work-item.types\"\nimport { cn } from \"@/lib/utils\"\n\ninterface TimeBadgeProps {\n  time: string\n  tone?: WorkItemTone\n  className?: string\n}\n\nfunction TimeBadge({ time, tone = \"green\", className }: TimeBadgeProps) {\n  const isDanger = tone === \"red\"\n\n  return (\n    <div\n      className={cn(\n        \"flex h-6 w-21.5 items-center gap-1 rounded-sm border border-snapp-border-primary p-1 font-snapp-body font-normal leading-snapp-xxs text-snapp-text-secondary\",\n        isDanger && \"text-snapp-text-red\",\n        className,\n      )}\n      data-slot=\"snapp-time-badge\"\n    >\n      <span className=\"inline-flex size-4 shrink-0 items-center justify-center\">\n        <ClockWorkIcon className=\"size-3\" />\n      </span>\n      <span className=\"whitespace-nowrap text-snapp-xs\">{time}</span>\n    </div>\n  )\n}\n\nexport { TimeBadge }\n",
+      "type": "registry:component",
+      "target": "@components/snapp/work-os/time-badge.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
