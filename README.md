@@ -30,7 +30,7 @@ published registry URL in each `components.json` when the registry is hosted.
 `public/r`. Select **Shadcn/UI from custom registry** and enter:
 
 ```text
-https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/main/public/r/registry.json
+https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/refs/heads/main/public/r/registry.json
 ```
 
 The catalog and every generated item JSON file must be committed together.
