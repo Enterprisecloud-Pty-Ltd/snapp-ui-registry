@@ -105,6 +105,7 @@ const existingThemeVariables = {
 	"breakpoint-snapp-layout": "62.5rem",
 	"breakpoint-snapp-wide": "68.75rem",
 	"spacing-snapp-card": "7.5625rem",
+	"spacing-snapp-card-width": "15.9375rem",
 	"spacing-snapp-content": "68.25rem",
 	"spacing-snapp-article": "53.75rem",
 	"spacing-snapp-page": "min(68.25rem, calc(100% - 4rem))",
@@ -135,15 +136,25 @@ const existingThemeVariables = {
 	"radius-snapp-mark": "0.125rem 0.4375rem 0.125rem 0.4375rem",
 };
 const existingInlineThemeVariables = {
+	"color-snapp-border-card": "var(--snapp-border-card)",
+	"color-snapp-skeleton-icon": "var(--snapp-skeleton-icon)",
+	"color-snapp-skeleton-line": "var(--snapp-skeleton-line)",
+	"color-snapp-skeleton-soft": "var(--snapp-skeleton-soft)",
 	"color-snapp-brand": "var(--snapp-brand)",
 	"color-snapp-accent": "var(--snapp-accent)",
 	"color-snapp-ink": "var(--snapp-ink)",
 	"color-snapp-canvas": "var(--snapp-canvas)",
 	"color-snapp-surface": "var(--snapp-surface)",
 	"color-snapp-danger": "var(--snapp-danger)",
+	"shadow-snapp-card-hover": "var(--snapp-shadow-card-hover)",
 };
 const lightVariables = {
 	...figmaTokens.light,
+	"snapp-border-card": "rgb(42 44 46 / 15%)",
+	"snapp-skeleton-icon": "rgb(64 191 172 / 20%)",
+	"snapp-skeleton-line": "rgb(42 44 46 / 10%)",
+	"snapp-skeleton-soft": "rgb(42 44 46 / 5%)",
+	"snapp-shadow-card-hover": "0 0.25rem 0.46875rem rgb(0 0 0 / 10%)",
 	"snapp-brand": "var(--snapp-colour-brand-primary)",
 	"snapp-accent": "var(--snapp-colour-brand-accent)",
 	"snapp-ink": "var(--snapp-text-primary)",
@@ -229,6 +240,45 @@ const utilityItem = {
 			path: "registry/radix-nova/lib/utils.ts",
 			type: "registry:lib",
 			target: "@lib/utils.ts",
+		},
+	],
+};
+
+const landingCardItem = {
+	name: "snapp-landing-card",
+	type: "registry:component",
+	title: "Snapp Landing Card",
+	description:
+		"Figma-aligned landing card for catalogue and knowledge-base entry points.",
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/catalogue/landing-card.tsx",
+			type: "registry:component",
+			target: "@components/snapp/catalogue/landing-card.tsx",
+		},
+	],
+};
+
+const landingSkeletonItem = {
+	name: "snapp-landing-skeleton",
+	type: "registry:component",
+	title: "Snapp Landing Skeleton",
+	description:
+		"Accessible loading skeleton for the shared Snapp hero, search, and catalogue-card layout.",
+	registryDependencies: [
+		"@snapp/snapp-skeleton",
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/catalogue/landing-skeleton.tsx",
+			type: "registry:component",
+			target: "@components/snapp/catalogue/landing-skeleton.tsx",
 		},
 	],
 };
@@ -323,6 +373,8 @@ const registry = {
 		themeItem,
 		utilityItem,
 		...componentItems,
+		landingCardItem,
+		landingSkeletonItem,
 		workItemCore,
 		timeBadgeItem,
 		progressMeterItem,

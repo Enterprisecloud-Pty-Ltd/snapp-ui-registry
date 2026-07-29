@@ -76,7 +76,7 @@ try {
 			css: "src/index.css",
 			baseColor: "neutral",
 			cssVariables: true,
-			prefix: "",
+			prefix: "ec",
 		},
 		iconLibrary: "lucide",
 		rtl: false,
@@ -136,13 +136,15 @@ try {
 	);
 	await writeFile(
 		path.join(sourceRoot, "index.css"),
-		'@import "tailwindcss";\n@import "shadcn/tailwind.css";\n',
+		'@import "tailwindcss" prefix(ec);\n@import "shadcn/tailwind.css";\n',
 	);
 	await writeFile(
 		path.join(sourceRoot, "main.tsx"),
 		[
 			'import { StrictMode } from "react"',
 			'import { createRoot } from "react-dom/client"',
+			'import { LandingCard } from "@/components/snapp/catalogue/landing-card"',
+			'import { LandingSkeleton } from "@/components/snapp/catalogue/landing-skeleton"',
 			'import { WorkItemCard } from "@/components/snapp/work-os/work-item-card"',
 			'import "./index.css"',
 			"",
@@ -159,7 +161,11 @@ try {
 			"}",
 			"",
 			"createRoot(document.getElementById(\"root\")!).render(",
-			"  <StrictMode><WorkItemCard item={item} /></StrictMode>,",
+			"  <StrictMode>",
+			"    <LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard>",
+			'    <LandingSkeleton aria-label="Loading knowledge base" itemCount={2} />',
+			"    <WorkItemCard item={item} />",
+			"  </StrictMode>,",
 			")",
 			"",
 		].join("\n"),
@@ -167,7 +173,15 @@ try {
 
 	const install = await execFileAsync(
 		process.execPath,
-		[shadcnCli, "add", "@snapp/snapp-work-item-card", "-y", "-o"],
+		[
+			shadcnCli,
+			"add",
+			"@snapp/snapp-landing-card",
+			"@snapp/snapp-landing-skeleton",
+			"@snapp/snapp-work-item-card",
+			"-y",
+			"-o",
+		],
 		{
 			cwd: fixtureRoot,
 			env: {
@@ -220,6 +234,25 @@ try {
 	const utils = await readFile(path.join(sourceRoot, "lib", "utils.ts"), "utf8");
 	if (!utils.includes("extendTailwindMerge")) {
 		throw new Error("Clean install did not install the SNAPP-aware utils");
+	}
+
+	const landingCard = await readFile(
+		path.join(
+			sourceRoot,
+			"components",
+			"snapp",
+			"catalogue",
+			"landing-card.tsx",
+		),
+		"utf8",
+	);
+	if (
+		!landingCard.includes("ec:hover:bg-snapp-surface-primary") ||
+		landingCard.includes("hover:ec:")
+	) {
+		throw new Error(
+			"Clean prefixed install did not place the ec prefix before Tailwind variants",
+		);
 	}
 
 	await execFileAsync(

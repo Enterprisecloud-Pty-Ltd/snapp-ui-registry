@@ -73,6 +73,7 @@ const exactReplacements = new Map([
 	["w-[min(594px,100%)]", "w-snapp-hero-title"],
 	["w-[min(774px,90%)]", "w-snapp-hero-copy"],
 	["w-[calc((100%-24px)/2)]", "w-snapp-card-half"],
+	["w-[255px]", "w-snapp-card-width"],
 	["max-w-[1092px]", "max-w-snapp-content"],
 	["max-w-[860px]", "max-w-snapp-article"],
 	["px-[101px]", "px-snapp-hero-x"],
@@ -143,6 +144,18 @@ const normalizeClasses = (content) => {
 	);
 	return result;
 };
+
+const prefixedVariantPattern = (prefix) =>
+	new RegExp(
+		`(?<![\\w-])((?:(?:[\\w-]+(?:\\/[\\w-]+)?|\\[[^\\]\\s]+\\]):)+)${prefix}:`,
+		"g",
+	);
+
+const normalizePrefixedVariantOrder = (content, prefix) =>
+	content.replace(
+		prefixedVariantPattern(prefix),
+		(_match, variants) => `${prefix}:${variants}`,
+	);
 
 const sourceFiles = async (directory) => {
 	const files = [];
@@ -217,7 +230,10 @@ for (const projectName of projectNames) {
 
 	for (const filePath of await sourceFiles(path.join(projectRoot, "src"))) {
 		const content = await readFile(filePath, "utf8");
-		const normalized = normalizeClasses(content);
+		const sizeNormalized = normalizeClasses(content);
+		const normalized = scoped
+			? normalizePrefixedVariantOrder(sizeNormalized, "ec")
+			: sizeNormalized;
 		if (normalized !== content) {
 			changedFiles += 1;
 			if (!checkOnly) {
@@ -228,12 +244,14 @@ for (const projectName of projectNames) {
 }
 
 if (checkOnly && changedFiles > 0) {
-	console.error(`${changedFiles} files require Tailwind size normalization.`);
+	console.error(
+		`${changedFiles} files require Tailwind size or prefix-order normalization.`,
+	);
 	process.exitCode = 1;
 } else {
 	console.log(
 		checkOnly
-			? "All Snapp files use the shared Tailwind sizing conventions."
+			? "All Snapp files use the shared Tailwind sizing and prefix-order conventions."
 			: `${changedFiles} files updated.`,
 	);
 }
