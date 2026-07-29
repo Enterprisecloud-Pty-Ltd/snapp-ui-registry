@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-help-article-accordion",
+  "title": "Snapp Help Article Accordion",
+  "description": "Single-expand help-article accordion that loads fully collapsed unless a default article is explicitly provided.",
+  "registryDependencies": [
+    "@snapp/snapp-accordion",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/catalogue/help-article-accordion.tsx",
+      "content": "import type * as React from \"react\"\n\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\"\nimport { cn } from \"@/lib/utils\"\n\ninterface HelpArticle {\n  content: React.ReactNode\n  id: string\n  title: React.ReactNode\n}\n\ninterface HelpArticleAccordionProps\n  extends Omit<React.ComponentProps<\"section\">, \"children\"> {\n  articles: HelpArticle[]\n  defaultExpandedId?: string\n  heading: React.ReactNode\n}\n\nfunction HelpArticleAccordion({\n  articles,\n  className,\n  defaultExpandedId,\n  heading,\n  ...props\n}: HelpArticleAccordionProps) {\n  if (articles.length === 0) return null\n\n  return (\n    <section\n      className={cn(\"flex flex-col gap-4 pb-4\", className)}\n      data-slot=\"snapp-help-article-accordion\"\n      {...props}\n    >\n      <h2 className=\"m-0 text-lg font-normal leading-5 text-snapp-text-brand\">\n        {heading}\n      </h2>\n      <Accordion\n        className=\"border-b border-snapp-card-border\"\n        collapsible\n        defaultValue={defaultExpandedId}\n        type=\"single\"\n      >\n        {articles.map((article) => (\n          <AccordionItem\n            className=\"border-t border-snapp-card-border not-last:border-b-0\"\n            key={article.id}\n            value={article.id}\n          >\n            <AccordionTrigger className=\"rounded-none border-0 px-4 py-4 text-base font-normal leading-5 text-snapp-text-brand hover:no-underline\">\n              {article.title}\n            </AccordionTrigger>\n            <AccordionContent className=\"px-4 pb-4 text-sm font-normal leading-4 text-snapp-text-primary\">\n              {article.content}\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </section>\n  )\n}\n\nexport { HelpArticleAccordion }\nexport type { HelpArticle, HelpArticleAccordionProps }\n",
+      "type": "registry:component",
+      "target": "@components/snapp/catalogue/help-article-accordion.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

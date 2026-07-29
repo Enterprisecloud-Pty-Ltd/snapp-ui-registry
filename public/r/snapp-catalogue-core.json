@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-catalogue-core",
+  "title": "Snapp Catalogue Core",
+  "description": "Complete shared UI foundation for catalogue and knowledge-base Snapps.",
+  "registryDependencies": [
+    "@snapp/snapp-catalogue-hero",
+    "@snapp/snapp-catalogue-result-card",
+    "@snapp/snapp-feature-breadcrumb",
+    "@snapp/snapp-feature-layout",
+    "@snapp/snapp-feature-parameters",
+    "@snapp/snapp-help-article-accordion",
+    "@snapp/snapp-landing-card",
+    "@snapp/snapp-landing-skeleton",
+    "@snapp/snapp-search-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/catalogue/catalogue-core.ts",
+      "content": "export * from \"@/components/snapp/catalogue/catalogue-hero\"\nexport * from \"@/components/snapp/catalogue/catalogue-result-card\"\nexport * from \"@/components/snapp/catalogue/help-article-accordion\"\nexport * from \"@/components/snapp/catalogue/landing-card\"\nexport * from \"@/components/snapp/catalogue/landing-skeleton\"\nexport * from \"@/components/snapp/layout/feature-layout\"\nexport * from \"@/components/snapp/navigation/feature-breadcrumb\"\nexport * from \"@/lib/search\"\nexport * from \"@/lib/snapp-feature-parameters\"\n",
+      "type": "registry:component",
+      "target": "@components/snapp/catalogue/catalogue-core.ts"
+    }
+  ],
+  "type": "registry:component"
+}

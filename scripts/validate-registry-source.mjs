@@ -157,11 +157,32 @@ if (!fontFile) {
 }
 
 for (const requiredItem of [
+	"snapp-catalogue-core",
+	"snapp-catalogue-hero",
+	"snapp-catalogue-result-card",
+	"snapp-feature-breadcrumb",
 	"snapp-feature-parameters",
 	"snapp-feature-layout",
+	"snapp-help-article-accordion",
+	"snapp-search-utils",
 ]) {
 	if (!itemsByName.has(requiredItem)) {
 		errors.push(`Missing ${requiredItem} registry item`);
+	}
+}
+
+const helpArticleAccordionItem = itemsByName.get(
+	"snapp-help-article-accordion",
+);
+if (helpArticleAccordionItem) {
+	const helpArticleAccordionSource = await readFile(
+		path.join(registryRoot, helpArticleAccordionItem.files[0].path),
+		"utf8",
+	);
+	if (helpArticleAccordionSource.includes("articles[0]")) {
+		errors.push(
+			"snapp-help-article-accordion must not expand the first article by default",
+		);
 	}
 }
 

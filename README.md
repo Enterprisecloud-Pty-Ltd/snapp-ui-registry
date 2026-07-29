@@ -40,6 +40,18 @@ or invalid value defaults to showing it. `FeatureShell`, `PageBody`, and
 `SurfaceCard` provide the shared full-height layout, content sizing, border,
 radius, and padding behavior without coupling a Snapp to a specific host.
 
+Catalogue and knowledge-base Snapps can install the complete shared pattern:
+
+```powershell
+npx shadcn@latest add @snapp/snapp-catalogue-core
+```
+
+The bundle includes the landing hero and cards, loading skeleton, feature
+layout, pill breadcrumb, search result card, collapsed-by-default help-article
+accordion, feature-parameter parser, and search matching utilities. Feature
+code remains responsible for constructing breadcrumb paths and selecting the
+Dataverse fields and record types that are searchable or visible.
+
 The local endpoint is `http://127.0.0.1:4173/r/{name}.json`. Replace it with the
 published registry URL in each `components.json` when the registry is hosted.
 

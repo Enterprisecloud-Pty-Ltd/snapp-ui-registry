@@ -293,6 +293,21 @@ const featureParametersItem = {
 	],
 };
 
+const searchUtilitiesItem = {
+	name: "snapp-search-utils",
+	type: "registry:lib",
+	title: "Snapp Search Utilities",
+	description:
+		"Shared normalization and multi-word matching helpers for feature-owned search fields.",
+	files: [
+		{
+			path: "registry/radix-nova/lib/search.ts",
+			type: "registry:lib",
+			target: "@lib/search.ts",
+		},
+	],
+};
+
 const featureLayoutItem = {
 	name: "snapp-feature-layout",
 	type: "registry:component",
@@ -347,6 +362,114 @@ const landingSkeletonItem = {
 			path: "registry/radix-nova/components/catalogue/landing-skeleton.tsx",
 			type: "registry:component",
 			target: "@components/snapp/catalogue/landing-skeleton.tsx",
+		},
+	],
+};
+
+const featureBreadcrumbItem = {
+	name: "snapp-feature-breadcrumb",
+	type: "registry:component",
+	title: "Snapp Feature Breadcrumb",
+	description:
+		"Figma-aligned pill breadcrumb with clickable ancestors and an accessible current-page state.",
+	dependencies: ["lucide-react"],
+	registryDependencies: [
+		"@snapp/snapp-breadcrumb",
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/navigation/feature-breadcrumb.tsx",
+			type: "registry:component",
+			target: "@components/snapp/navigation/feature-breadcrumb.tsx",
+		},
+	],
+};
+
+const catalogueHeroItem = {
+	name: "snapp-catalogue-hero",
+	type: "registry:component",
+	title: "Snapp Catalogue Hero",
+	description:
+		"Shared responsive catalogue hero with title, supporting copy, search form, and entry-card region.",
+	dependencies: ["lucide-react"],
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/catalogue/catalogue-hero.tsx",
+			type: "registry:component",
+			target: "@components/snapp/catalogue/catalogue-hero.tsx",
+		},
+	],
+};
+
+const catalogueResultCardItem = {
+	name: "snapp-catalogue-result-card",
+	type: "registry:component",
+	title: "Snapp Catalogue Result Card",
+	description:
+		"Shared bordered result card for knowledge articles and Service Catalogue Items.",
+	dependencies: ["lucide-react"],
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/catalogue/catalogue-result-card.tsx",
+			type: "registry:component",
+			target: "@components/snapp/catalogue/catalogue-result-card.tsx",
+		},
+	],
+};
+
+const helpArticleAccordionItem = {
+	name: "snapp-help-article-accordion",
+	type: "registry:component",
+	title: "Snapp Help Article Accordion",
+	description:
+		"Single-expand help-article accordion that loads fully collapsed unless a default article is explicitly provided.",
+	registryDependencies: [
+		"@snapp/snapp-accordion",
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path:
+				"registry/radix-nova/components/catalogue/help-article-accordion.tsx",
+			type: "registry:component",
+			target: "@components/snapp/catalogue/help-article-accordion.tsx",
+		},
+	],
+};
+
+const catalogueCoreItem = {
+	name: "snapp-catalogue-core",
+	type: "registry:component",
+	title: "Snapp Catalogue Core",
+	description:
+		"Complete shared UI foundation for catalogue and knowledge-base Snapps.",
+	registryDependencies: [
+		"@snapp/snapp-catalogue-hero",
+		"@snapp/snapp-catalogue-result-card",
+		"@snapp/snapp-feature-breadcrumb",
+		"@snapp/snapp-feature-layout",
+		"@snapp/snapp-feature-parameters",
+		"@snapp/snapp-help-article-accordion",
+		"@snapp/snapp-landing-card",
+		"@snapp/snapp-landing-skeleton",
+		"@snapp/snapp-search-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/catalogue/catalogue-core.ts",
+			type: "registry:component",
+			target: "@components/snapp/catalogue/catalogue-core.ts",
 		},
 	],
 };
@@ -441,10 +564,16 @@ const registry = {
 		themeItem,
 		utilityItem,
 		featureParametersItem,
+		searchUtilitiesItem,
 		...componentItems,
 		featureLayoutItem,
 		landingCardItem,
 		landingSkeletonItem,
+		featureBreadcrumbItem,
+		catalogueHeroItem,
+		catalogueResultCardItem,
+		helpArticleAccordionItem,
+		catalogueCoreItem,
 		workItemCore,
 		timeBadgeItem,
 		progressMeterItem,

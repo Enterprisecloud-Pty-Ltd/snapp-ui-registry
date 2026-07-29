@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-catalogue-result-card",
+  "title": "Snapp Catalogue Result Card",
+  "description": "Shared bordered result card for knowledge articles and Service Catalogue Items.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/catalogue/catalogue-result-card.tsx",
+      "content": "import type * as React from \"react\"\nimport { SquareArrowOutUpRight } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface CatalogueResultCardProps\n  extends Omit<React.ComponentProps<\"button\">, \"children\" | \"title\"> {\n  description?: React.ReactNode\n  endIcon?: React.ReactNode | false\n  title: React.ReactNode\n}\n\nfunction CatalogueResultCard({\n  className,\n  description,\n  endIcon,\n  title,\n  type = \"button\",\n  ...props\n}: CatalogueResultCardProps) {\n  return (\n    <button\n      className={cn(\n        \"box-border flex w-full cursor-pointer flex-col items-start justify-center gap-2 overflow-hidden rounded-snapp-m border border-snapp-card-border bg-snapp-surface-primary p-4 text-left transition-colors hover:bg-snapp-surface-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-brand-primary\",\n        className,\n      )}\n      data-slot=\"snapp-catalogue-result-card\"\n      type={type}\n      {...props}\n    >\n      <span className=\"flex w-full items-center gap-2\">\n        <strong className=\"min-w-0 flex-1 text-base font-normal leading-5 text-snapp-text-brand underline underline-offset-2\">\n          {title}\n        </strong>\n        {endIcon === false\n          ? null\n          : endIcon ?? (\n              <SquareArrowOutUpRight\n                aria-hidden=\"true\"\n                className=\"shrink-0 text-snapp-text-brand\"\n                size={20}\n                strokeWidth={1.5}\n              />\n            )}\n      </span>\n      {description ? (\n        <span className=\"block w-full text-sm font-normal leading-4 text-snapp-text-primary\">\n          {description}\n        </span>\n      ) : null}\n    </button>\n  )\n}\n\nexport { CatalogueResultCard }\nexport type { CatalogueResultCardProps }\n",
+      "type": "registry:component",
+      "target": "@components/snapp/catalogue/catalogue-result-card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

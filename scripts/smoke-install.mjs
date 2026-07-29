@@ -143,14 +143,12 @@ try {
 		[
 			'import { StrictMode } from "react"',
 			'import { createRoot } from "react-dom/client"',
-			'import { LandingCard } from "@/components/snapp/catalogue/landing-card"',
-			'import { LandingSkeleton } from "@/components/snapp/catalogue/landing-skeleton"',
-			'import { FeatureShell, PageBody, SurfaceCard } from "@/components/snapp/layout/feature-layout"',
+			'import { CatalogueHero, CatalogueResultCard, FeatureBreadcrumb, FeatureShell, HelpArticleAccordion, LandingCard, LandingSkeleton, PageBody, SurfaceCard, matchesSearch, resolveShowNavBar } from "@/components/snapp/catalogue/catalogue-core"',
 			'import { WorkItemCard } from "@/components/snapp/work-os/work-item-card"',
-			'import { resolveShowNavBar } from "@/lib/snapp-feature-parameters"',
 			'import "./index.css"',
 			"",
 			'const showNavBar = resolveShowNavBar(new URLSearchParams("showNavBar=false"))',
+			'const searchMatches = matchesSearch("knowledge base", ["Knowledge Base"])',
 			"",
 			"const item = {",
 			'  id: "55231",',
@@ -168,7 +166,13 @@ try {
 			"  <StrictMode>",
 			'    <FeatureShell navigation={<aside>Navigation</aside>} showNavBar={showNavBar}>',
 			"      <PageBody>",
+			'        <FeatureBreadcrumb items={[{ id: "home", label: "Home", onSelect: () => undefined }, { id: "current", label: "Current", current: true }]} />',
+			'        <CatalogueHero description="Browse shared content" onSearch={() => undefined} searchLabel="Search catalogue" searchPlaceholder="Search..." title="Catalogue">',
+			'          <LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard>',
+			"        </CatalogueHero>",
 			'        <SurfaceCard><LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard></SurfaceCard>',
+			'        <CatalogueResultCard description="Shared result" title={searchMatches ? "Knowledge article" : "No result"} />',
+			'        <HelpArticleAccordion articles={[{ id: "help", title: "Help", content: <p>Answer</p> }]} heading="Helpful information" />',
 			'        <LandingSkeleton aria-label="Loading knowledge base" itemCount={2} />',
 			"        <WorkItemCard item={item} />",
 			"      </PageBody>",
@@ -184,11 +188,8 @@ try {
 		[
 			shadcnCli,
 			"add",
-			"@snapp/snapp-landing-card",
-			"@snapp/snapp-landing-skeleton",
+			"@snapp/snapp-catalogue-core",
 			"@snapp/snapp-work-item-card",
-			"@snapp/snapp-feature-parameters",
-			"@snapp/snapp-feature-layout",
 			"-y",
 			"-o",
 		],
@@ -282,6 +283,48 @@ try {
 		!featureParameters.includes("defaultValue = true")
 	) {
 		throw new Error("Clean install did not preserve feature parameter defaults");
+	}
+
+	const catalogueCore = await readFile(
+		path.join(
+			sourceRoot,
+			"components",
+			"snapp",
+			"catalogue",
+			"catalogue-core.ts",
+		),
+		"utf8",
+	);
+	for (const requiredExport of [
+		"catalogue-hero",
+		"catalogue-result-card",
+		"help-article-accordion",
+		"feature-breadcrumb",
+		"snapp-feature-parameters",
+	]) {
+		if (!catalogueCore.includes(requiredExport)) {
+			throw new Error(`Catalogue core is missing ${requiredExport}`);
+		}
+	}
+
+	const helpAccordion = await readFile(
+		path.join(
+			sourceRoot,
+			"components",
+			"snapp",
+			"catalogue",
+			"help-article-accordion.tsx",
+		),
+		"utf8",
+	);
+	if (
+		!helpAccordion.includes('ec:type="single"') &&
+		!helpAccordion.includes('type="single"')
+	) {
+		throw new Error("Help article accordion did not preserve single expansion");
+	}
+	if (helpAccordion.includes("defaultValue={articles[0]")) {
+		throw new Error("Help article accordion must load collapsed by default");
 	}
 
 	await execFileAsync(
