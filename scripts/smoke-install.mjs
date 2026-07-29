@@ -307,6 +307,34 @@ try {
 		}
 	}
 
+	const featureBreadcrumb = await readFile(
+		path.join(
+			sourceRoot,
+			"components",
+			"snapp",
+			"navigation",
+			"feature-breadcrumb.tsx",
+		),
+		"utf8",
+	);
+	for (const className of [
+		"ec:list-none",
+		"ec:m-0",
+		"ec:p-0",
+		"ec:bg-snapp-skeleton-soft",
+	]) {
+		if (!featureBreadcrumb.includes(className)) {
+			throw new Error(
+				`Feature breadcrumb clean install is missing ${className}`,
+			);
+		}
+	}
+	if (featureBreadcrumb.includes("bg-snapp-surface-transparent")) {
+		throw new Error(
+			"Feature breadcrumb clean install uses the 30% transparent surface token",
+		);
+	}
+
 	const helpAccordion = await readFile(
 		path.join(
 			sourceRoot,

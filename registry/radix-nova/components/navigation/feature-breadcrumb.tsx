@@ -38,7 +38,7 @@ function FeatureBreadcrumb({
       data-slot="snapp-feature-breadcrumb"
       {...props}
     >
-      <BreadcrumbList className="gap-2 text-snapp-text-soft">
+      <BreadcrumbList className="m-0 list-none gap-2 p-0 text-snapp-text-soft">
         <BreadcrumbItem aria-hidden="true">
           {icon ?? <BookOpen className="size-5" strokeWidth={1.5} />}
         </BreadcrumbItem>
@@ -53,14 +53,14 @@ function FeatureBreadcrumb({
               {item.onSelect ? (
                 <button
                   aria-current={item.current ? "page" : undefined}
-                  className="min-h-7 cursor-pointer rounded-full border-0 bg-snapp-surface-transparent px-4 py-1.5 text-snapp-text-soft transition-colors hover:bg-snapp-surface-secondary hover:text-snapp-text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-brand-primary"
+                  className="min-h-7 cursor-pointer rounded-full border-0 bg-snapp-skeleton-soft px-4 py-1.5 text-snapp-text-soft transition-colors hover:bg-snapp-surface-secondary hover:text-snapp-text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-brand-primary"
                   type="button"
                   onClick={item.onSelect}
                 >
                   {item.label}
                 </button>
               ) : (
-                <BreadcrumbPage className="min-h-7 max-w-64 truncate rounded-full bg-snapp-surface-transparent px-4 py-1.5 text-snapp-text-brand">
+                <BreadcrumbPage className="min-h-7 max-w-64 truncate rounded-full bg-snapp-skeleton-soft px-4 py-1.5 text-snapp-text-brand">
                   {item.label}
                 </BreadcrumbPage>
               )}

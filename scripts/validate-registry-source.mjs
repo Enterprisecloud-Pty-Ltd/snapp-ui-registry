@@ -193,6 +193,29 @@ if (helpArticleAccordionItem) {
 	}
 }
 
+const featureBreadcrumbItem = itemsByName.get("snapp-feature-breadcrumb");
+if (featureBreadcrumbItem) {
+	const featureBreadcrumbSource = await readFile(
+		path.join(registryRoot, featureBreadcrumbItem.files[0].path),
+		"utf8",
+	);
+	for (const className of [
+		"list-none",
+		"m-0",
+		"p-0",
+		"bg-snapp-skeleton-soft",
+	]) {
+		if (!featureBreadcrumbSource.includes(className)) {
+			errors.push(`snapp-feature-breadcrumb is missing ${className}`);
+		}
+	}
+	if (featureBreadcrumbSource.includes("bg-snapp-surface-transparent")) {
+		errors.push(
+			"snapp-feature-breadcrumb still uses the 30% transparent surface token",
+		);
+	}
+}
+
 const landingCardItem = itemsByName.get("snapp-landing-card");
 if (!landingCardItem) {
 	errors.push("Missing snapp-landing-card registry item");
