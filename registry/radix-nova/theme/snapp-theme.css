@@ -165,6 +165,7 @@
 	--leading-snapp-xl: var(--snapp-font-line-height-xl);
 	--leading-snapp-2xl: var(--snapp-font-line-height-2xl);
 	--color-snapp-border-card: var(--snapp-border-card);
+	--color-snapp-card-border: var(--snapp-border-card);
 	--color-snapp-skeleton-icon: var(--snapp-skeleton-icon);
 	--color-snapp-skeleton-line: var(--snapp-skeleton-line);
 	--color-snapp-skeleton-soft: var(--snapp-skeleton-soft);
@@ -318,6 +319,33 @@
 	--snapp-hairline: 1px;
 	--snapp-control-inset: 2px;
 	--snapp-tooltip-arrow-offset: 2px;
+	--radius: var(--snapp-radius-m);
+	--background: var(--snapp-surface);
+	--foreground: var(--snapp-ink);
+	--card: var(--snapp-surface);
+	--card-foreground: var(--snapp-ink);
+	--popover: var(--snapp-surface);
+	--popover-foreground: var(--snapp-ink);
+	--primary: var(--snapp-brand);
+	--primary-foreground: var(--snapp-text-invert);
+	--secondary: var(--snapp-surface-secondary);
+	--secondary-foreground: var(--snapp-text-primary);
+	--muted: var(--snapp-surface-secondary);
+	--muted-foreground: var(--snapp-text-secondary);
+	--accent: var(--snapp-surface-accent);
+	--accent-foreground: var(--snapp-text-primary);
+	--destructive: var(--snapp-danger);
+	--border: var(--snapp-border-primary);
+	--input: var(--snapp-border-card);
+	--ring: var(--snapp-border-brand);
+	--sidebar: var(--snapp-surface-secondary);
+	--sidebar-foreground: var(--snapp-text-primary);
+	--sidebar-primary: var(--snapp-brand);
+	--sidebar-primary-foreground: var(--snapp-text-invert);
+	--sidebar-accent: var(--snapp-surface-primary);
+	--sidebar-accent-foreground: var(--snapp-text-primary);
+	--sidebar-border: var(--snapp-border-primary);
+	--sidebar-ring: var(--snapp-border-brand);
 }
 
 .dark,
@@ -333,4 +361,51 @@
 	--snapp-hairline: 1px;
 	--snapp-control-inset: 2px;
 	--snapp-tooltip-arrow-offset: 2px;
+	--radius: var(--snapp-radius-m);
+	--background: var(--snapp-surface);
+	--foreground: var(--snapp-ink);
+	--card: var(--snapp-surface);
+	--card-foreground: var(--snapp-ink);
+	--popover: var(--snapp-surface);
+	--popover-foreground: var(--snapp-ink);
+	--primary: var(--snapp-brand);
+	--primary-foreground: var(--snapp-text-invert);
+	--secondary: var(--snapp-surface-secondary);
+	--secondary-foreground: var(--snapp-text-primary);
+	--muted: var(--snapp-surface-secondary);
+	--muted-foreground: var(--snapp-text-secondary);
+	--accent: var(--snapp-surface-accent);
+	--accent-foreground: var(--snapp-text-primary);
+	--destructive: var(--snapp-danger);
+	--border: var(--snapp-border-primary);
+	--input: var(--snapp-border-card);
+	--ring: var(--snapp-border-brand);
+	--sidebar: var(--snapp-surface-secondary);
+	--sidebar-foreground: var(--snapp-text-primary);
+	--sidebar-primary: var(--snapp-brand);
+	--sidebar-primary-foreground: var(--snapp-text-invert);
+	--sidebar-accent: var(--snapp-surface-primary);
+	--sidebar-accent-foreground: var(--snapp-text-primary);
+	--sidebar-border: var(--snapp-border-primary);
+	--sidebar-ring: var(--snapp-border-brand);
+}
+
+@layer base {
+	.ec-app,
+	.ec-app *,
+	.ec-app *::before,
+	.ec-app *::after {
+		box-sizing: border-box;
+	}
+
+	.ec-app button,
+	.ec-app input,
+	.ec-app select,
+	.ec-app textarea {
+		font: inherit;
+	}
+
+	.ec-app button {
+		appearance: none;
+	}
 }

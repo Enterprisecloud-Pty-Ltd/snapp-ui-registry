@@ -89,6 +89,9 @@ if (!utilityItem) {
 }
 
 const themeItem = itemsByName.get("snapp-theme");
+if (!themeItem) {
+	errors.push("Missing snapp-theme registry item");
+}
 for (const fontPackage of [
 	"@fontsource/ibm-plex-sans",
 	"@fontsource/judson",
@@ -97,9 +100,36 @@ for (const fontPackage of [
 		errors.push(`snapp-theme does not install ${fontPackage}`);
 	}
 }
+const themeImport = '@import "./styles/snapp-theme.css"';
+if (!themeItem?.css?.[themeImport]) {
+	errors.push(`snapp-theme is missing ${themeImport}`);
+}
 const fontImport = '@import "./styles/snapp-fonts.css"';
 if (!themeItem?.css?.[fontImport]) {
 	errors.push(`snapp-theme is missing ${fontImport}`);
+}
+
+const themeFile = themeItem?.files?.find(
+	(file) => file.target === "src/styles/snapp-theme.css",
+);
+if (!themeFile) {
+	errors.push("snapp-theme is missing the generated theme source file");
+} else {
+	const themeSource = await readFile(
+		path.join(registryRoot, themeFile.path),
+		"utf8",
+	);
+	for (const contract of [
+		"--radius: var(--snapp-radius-m);",
+		"--background: var(--snapp-surface);",
+		"--border: var(--snapp-border-primary);",
+		"box-sizing: border-box;",
+		"font: inherit;",
+	]) {
+		if (!themeSource.includes(contract)) {
+			errors.push(`snapp-theme.css is missing ${contract}`);
+		}
+	}
 }
 
 const fontFile = themeItem?.files?.find(
@@ -123,6 +153,39 @@ if (!fontFile) {
 	}
 	if (fontSource.includes(".woff)") || fontSource.includes(".ttf")) {
 		errors.push("snapp-fonts.css must only use WOFF2 font sources");
+	}
+}
+
+for (const requiredItem of [
+	"snapp-feature-parameters",
+	"snapp-feature-layout",
+]) {
+	if (!itemsByName.has(requiredItem)) {
+		errors.push(`Missing ${requiredItem} registry item`);
+	}
+}
+
+const landingCardItem = itemsByName.get("snapp-landing-card");
+if (!landingCardItem) {
+	errors.push("Missing snapp-landing-card registry item");
+} else {
+	const landingCardSource = await readFile(
+		path.join(registryRoot, landingCardItem.files[0].path),
+		"utf8",
+	);
+	for (const className of [
+		"box-border",
+		"rounded-snapp-m",
+		"border-snapp-card-border",
+	]) {
+		if (!landingCardSource.includes(className)) {
+			errors.push(`snapp-landing-card is missing ${className}`);
+		}
+	}
+	for (const legacyClassName of ["rounded-lg", "border-[#2a2c2e26]"]) {
+		if (landingCardSource.includes(legacyClassName)) {
+			errors.push(`snapp-landing-card still uses ${legacyClassName}`);
+		}
 	}
 }
 

@@ -137,6 +137,7 @@ const existingThemeVariables = {
 };
 const existingInlineThemeVariables = {
 	"color-snapp-border-card": "var(--snapp-border-card)",
+	"color-snapp-card-border": "var(--snapp-border-card)",
 	"color-snapp-skeleton-icon": "var(--snapp-skeleton-icon)",
 	"color-snapp-skeleton-line": "var(--snapp-skeleton-line)",
 	"color-snapp-skeleton-soft": "var(--snapp-skeleton-soft)",
@@ -147,6 +148,35 @@ const existingInlineThemeVariables = {
 	"color-snapp-surface": "var(--snapp-surface)",
 	"color-snapp-danger": "var(--snapp-danger)",
 	"shadow-snapp-card-hover": "var(--snapp-shadow-card-hover)",
+};
+const shadcnCompatibilityVariables = {
+	radius: "var(--snapp-radius-m)",
+	background: "var(--snapp-surface)",
+	foreground: "var(--snapp-ink)",
+	card: "var(--snapp-surface)",
+	"card-foreground": "var(--snapp-ink)",
+	popover: "var(--snapp-surface)",
+	"popover-foreground": "var(--snapp-ink)",
+	primary: "var(--snapp-brand)",
+	"primary-foreground": "var(--snapp-text-invert)",
+	secondary: "var(--snapp-surface-secondary)",
+	"secondary-foreground": "var(--snapp-text-primary)",
+	muted: "var(--snapp-surface-secondary)",
+	"muted-foreground": "var(--snapp-text-secondary)",
+	accent: "var(--snapp-surface-accent)",
+	"accent-foreground": "var(--snapp-text-primary)",
+	destructive: "var(--snapp-danger)",
+	border: "var(--snapp-border-primary)",
+	input: "var(--snapp-border-card)",
+	ring: "var(--snapp-border-brand)",
+	sidebar: "var(--snapp-surface-secondary)",
+	"sidebar-foreground": "var(--snapp-text-primary)",
+	"sidebar-primary": "var(--snapp-brand)",
+	"sidebar-primary-foreground": "var(--snapp-text-invert)",
+	"sidebar-accent": "var(--snapp-surface-primary)",
+	"sidebar-accent-foreground": "var(--snapp-text-primary)",
+	"sidebar-border": "var(--snapp-border-primary)",
+	"sidebar-ring": "var(--snapp-border-brand)",
 };
 const lightVariables = {
 	...figmaTokens.light,
@@ -165,6 +195,7 @@ const lightVariables = {
 	"snapp-hairline": "1px",
 	"snapp-control-inset": "2px",
 	"snapp-tooltip-arrow-offset": "2px",
+	...shadcnCompatibilityVariables,
 };
 const darkVariables = {
 	"snapp-brand": "#d8e3ec",
@@ -177,6 +208,7 @@ const darkVariables = {
 	"snapp-hairline": "1px",
 	"snapp-control-inset": "2px",
 	"snapp-tooltip-arrow-offset": "2px",
+	...shadcnCompatibilityVariables,
 };
 const inlineThemeVariables = {
 	...figmaTokens.theme,
@@ -189,7 +221,7 @@ const formatCssVariables = (variables) =>
 
 await writeFile(
 	themeCssPath,
-	`@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n`,
+	`@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n}\n`,
 );
 
 const themeItem = {
@@ -203,6 +235,7 @@ const themeItem = {
 		"@fontsource/judson",
 	],
 	css: {
+		'@import "./styles/snapp-theme.css"': {},
 		'@import "./styles/snapp-fonts.css"': {},
 	},
 	files: [
@@ -240,6 +273,41 @@ const utilityItem = {
 			path: "registry/radix-nova/lib/utils.ts",
 			type: "registry:lib",
 			target: "@lib/utils.ts",
+		},
+	],
+};
+
+const featureParametersItem = {
+	name: "snapp-feature-parameters",
+	type: "registry:lib",
+	title: "Snapp Feature Parameters",
+	description:
+		"Shared, typed parsing for boolean feature parameters such as showNavBar.",
+	dependencies: ["zod"],
+	files: [
+		{
+			path: "registry/radix-nova/lib/feature-parameters.ts",
+			type: "registry:lib",
+			target: "@lib/snapp-feature-parameters.ts",
+		},
+	],
+};
+
+const featureLayoutItem = {
+	name: "snapp-feature-layout",
+	type: "registry:component",
+	title: "Snapp Feature Layout",
+	description:
+		"Shared feature shell, page body, and bordered surface primitives for embedded Snapps.",
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/layout/feature-layout.tsx",
+			type: "registry:component",
+			target: "@components/snapp/layout/feature-layout.tsx",
 		},
 	],
 };
@@ -372,7 +440,9 @@ const registry = {
 	items: [
 		themeItem,
 		utilityItem,
+		featureParametersItem,
 		...componentItems,
+		featureLayoutItem,
 		landingCardItem,
 		landingSkeletonItem,
 		workItemCore,

@@ -145,8 +145,12 @@ try {
 			'import { createRoot } from "react-dom/client"',
 			'import { LandingCard } from "@/components/snapp/catalogue/landing-card"',
 			'import { LandingSkeleton } from "@/components/snapp/catalogue/landing-skeleton"',
+			'import { FeatureShell, PageBody, SurfaceCard } from "@/components/snapp/layout/feature-layout"',
 			'import { WorkItemCard } from "@/components/snapp/work-os/work-item-card"',
+			'import { resolveShowNavBar } from "@/lib/snapp-feature-parameters"',
 			'import "./index.css"',
+			"",
+			'const showNavBar = resolveShowNavBar(new URLSearchParams("showNavBar=false"))',
 			"",
 			"const item = {",
 			'  id: "55231",',
@@ -162,9 +166,13 @@ try {
 			"",
 			"createRoot(document.getElementById(\"root\")!).render(",
 			"  <StrictMode>",
-			"    <LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard>",
-			'    <LandingSkeleton aria-label="Loading knowledge base" itemCount={2} />',
-			"    <WorkItemCard item={item} />",
+			'    <FeatureShell navigation={<aside>Navigation</aside>} showNavBar={showNavBar}>',
+			"      <PageBody>",
+			'        <SurfaceCard><LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard></SurfaceCard>',
+			'        <LandingSkeleton aria-label="Loading knowledge base" itemCount={2} />',
+			"        <WorkItemCard item={item} />",
+			"      </PageBody>",
+			"    </FeatureShell>",
 			"  </StrictMode>,",
 			")",
 			"",
@@ -179,6 +187,8 @@ try {
 			"@snapp/snapp-landing-card",
 			"@snapp/snapp-landing-skeleton",
 			"@snapp/snapp-work-item-card",
+			"@snapp/snapp-feature-parameters",
+			"@snapp/snapp-feature-layout",
 			"-y",
 			"-o",
 		],
@@ -205,6 +215,7 @@ try {
 		"@fontsource/judson",
 		"clsx",
 		"tailwind-merge",
+		"zod",
 	]) {
 		if (!packageJson.dependencies?.[dependency]) {
 			throw new Error(`Clean install did not add ${dependency}`);
@@ -212,6 +223,10 @@ try {
 	}
 
 	const indexCss = await readFile(path.join(sourceRoot, "index.css"), "utf8");
+	const themeImport = '@import "./styles/snapp-theme.css"';
+	if (!indexCss.includes(themeImport)) {
+		throw new Error(`Clean install did not add ${themeImport}`);
+	}
 	const fontImport = '@import "./styles/snapp-fonts.css"';
 	if (!indexCss.includes(fontImport)) {
 		throw new Error(`Clean install did not add ${fontImport}`);
@@ -248,11 +263,25 @@ try {
 	);
 	if (
 		!landingCard.includes("ec:hover:bg-snapp-surface-primary") ||
-		landingCard.includes("hover:ec:")
+		landingCard.includes("hover:ec:") ||
+		!landingCard.includes("ec:rounded-snapp-m") ||
+		!landingCard.includes("ec:border-snapp-card-border") ||
+		!landingCard.includes("ec:box-border")
 	) {
 		throw new Error(
-			"Clean prefixed install did not place the ec prefix before Tailwind variants",
+			"Clean prefixed install did not preserve the SNAPP card contract",
 		);
+	}
+
+	const featureParameters = await readFile(
+		path.join(sourceRoot, "lib", "snapp-feature-parameters.ts"),
+		"utf8",
+	);
+	if (
+		!featureParameters.includes("resolveShowNavBar") ||
+		!featureParameters.includes("defaultValue = true")
+	) {
+		throw new Error("Clean install did not preserve feature parameter defaults");
 	}
 
 	await execFileAsync(
@@ -269,6 +298,26 @@ try {
 	const distFiles = await readdir(path.join(fixtureRoot, "dist"), {
 		recursive: true,
 	});
+	const bundledCss = (
+		await Promise.all(
+			distFiles
+				.filter((fileName) => fileName.endsWith(".css"))
+				.map((fileName) =>
+					readFile(path.join(fixtureRoot, "dist", fileName), "utf8"),
+				),
+		)
+	).join("\n");
+	const compactCss = bundledCss.replace(/\s+/g, "");
+	for (const contract of [
+		"--radius:var(--snapp-radius-m)",
+		"--background:var(--snapp-surface)",
+		"box-sizing:border-box",
+		"font:inherit",
+	]) {
+		if (!compactCss.includes(contract)) {
+			throw new Error(`Production CSS is missing ${contract}`);
+		}
+	}
 	const bundledFontFiles = distFiles.filter((fileName) =>
 		/\.(woff2?|ttf)$/i.test(fileName),
 	);

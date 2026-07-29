@@ -18,7 +18,7 @@ function LandingCard({
       data-slot="snapp-landing-card"
       type={type}
       className={cn(
-        "flex h-snapp-card w-snapp-card-width appearance-none cursor-pointer flex-col items-center gap-3 rounded-lg border border-[#2a2c2e26] bg-transparent p-6 text-center font-snapp-body text-base font-normal leading-5 text-snapp-text-primary transition-[background-color,box-shadow] duration-150 hover:bg-snapp-surface-primary hover:shadow-snapp-card-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-brand-primary disabled:cursor-not-allowed disabled:opacity-50 max-snapp-mobile:w-snapp-card-half max-snapp-compact:w-full",
+        "box-border flex h-snapp-card w-snapp-card-width appearance-none cursor-pointer flex-col items-center gap-3 rounded-snapp-m border border-snapp-card-border bg-transparent p-6 text-center font-snapp-body text-base font-normal leading-5 text-snapp-text-primary transition-[background-color,box-shadow] duration-150 hover:bg-snapp-surface-primary hover:shadow-snapp-card-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-brand-primary disabled:cursor-not-allowed disabled:opacity-50 max-snapp-mobile:w-snapp-card-half max-snapp-compact:w-full",
         className,
       )}
       {...props}

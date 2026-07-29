@@ -44,7 +44,7 @@ function LandingSkeleton({
               <div className="flex w-full flex-wrap items-start gap-6">
                 {itemKeys.map((key) => (
                   <div
-                    className="flex h-snapp-card w-snapp-card-width flex-col items-center justify-center gap-3 rounded-lg border border-snapp-skeleton-line bg-snapp-surface-primary p-5.75 max-snapp-mobile:w-snapp-card-half max-snapp-compact:w-full"
+                    className="box-border flex h-snapp-card w-snapp-card-width flex-col items-center justify-center gap-3 rounded-snapp-m border border-snapp-skeleton-line bg-snapp-surface-primary p-5.75 max-snapp-mobile:w-snapp-card-half max-snapp-compact:w-full"
                     key={key}
                   >
                     <Skeleton className="size-10 bg-snapp-skeleton-icon" />

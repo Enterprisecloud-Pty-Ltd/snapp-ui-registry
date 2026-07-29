@@ -13,6 +13,7 @@
         "@fontsource/judson"
       ],
       "css": {
+        "@import \"./styles/snapp-theme.css\"": {},
         "@import \"./styles/snapp-fonts.css\"": {}
       },
       "files": [
@@ -207,6 +208,7 @@
           "leading-snapp-xl": "var(--snapp-font-line-height-xl)",
           "leading-snapp-2xl": "var(--snapp-font-line-height-2xl)",
           "color-snapp-border-card": "var(--snapp-border-card)",
+          "color-snapp-card-border": "var(--snapp-border-card)",
           "color-snapp-skeleton-icon": "var(--snapp-skeleton-icon)",
           "color-snapp-skeleton-line": "var(--snapp-skeleton-line)",
           "color-snapp-skeleton-soft": "var(--snapp-skeleton-soft)",
@@ -357,7 +359,34 @@
           "snapp-indicator-border": "1.5px",
           "snapp-hairline": "1px",
           "snapp-control-inset": "2px",
-          "snapp-tooltip-arrow-offset": "2px"
+          "snapp-tooltip-arrow-offset": "2px",
+          "radius": "var(--snapp-radius-m)",
+          "background": "var(--snapp-surface)",
+          "foreground": "var(--snapp-ink)",
+          "card": "var(--snapp-surface)",
+          "card-foreground": "var(--snapp-ink)",
+          "popover": "var(--snapp-surface)",
+          "popover-foreground": "var(--snapp-ink)",
+          "primary": "var(--snapp-brand)",
+          "primary-foreground": "var(--snapp-text-invert)",
+          "secondary": "var(--snapp-surface-secondary)",
+          "secondary-foreground": "var(--snapp-text-primary)",
+          "muted": "var(--snapp-surface-secondary)",
+          "muted-foreground": "var(--snapp-text-secondary)",
+          "accent": "var(--snapp-surface-accent)",
+          "accent-foreground": "var(--snapp-text-primary)",
+          "destructive": "var(--snapp-danger)",
+          "border": "var(--snapp-border-primary)",
+          "input": "var(--snapp-border-card)",
+          "ring": "var(--snapp-border-brand)",
+          "sidebar": "var(--snapp-surface-secondary)",
+          "sidebar-foreground": "var(--snapp-text-primary)",
+          "sidebar-primary": "var(--snapp-brand)",
+          "sidebar-primary-foreground": "var(--snapp-text-invert)",
+          "sidebar-accent": "var(--snapp-surface-primary)",
+          "sidebar-accent-foreground": "var(--snapp-text-primary)",
+          "sidebar-border": "var(--snapp-border-primary)",
+          "sidebar-ring": "var(--snapp-border-brand)"
         },
         "dark": {
           "snapp-brand": "#d8e3ec",
@@ -369,7 +398,34 @@
           "snapp-indicator-border": "1.5px",
           "snapp-hairline": "1px",
           "snapp-control-inset": "2px",
-          "snapp-tooltip-arrow-offset": "2px"
+          "snapp-tooltip-arrow-offset": "2px",
+          "radius": "var(--snapp-radius-m)",
+          "background": "var(--snapp-surface)",
+          "foreground": "var(--snapp-ink)",
+          "card": "var(--snapp-surface)",
+          "card-foreground": "var(--snapp-ink)",
+          "popover": "var(--snapp-surface)",
+          "popover-foreground": "var(--snapp-ink)",
+          "primary": "var(--snapp-brand)",
+          "primary-foreground": "var(--snapp-text-invert)",
+          "secondary": "var(--snapp-surface-secondary)",
+          "secondary-foreground": "var(--snapp-text-primary)",
+          "muted": "var(--snapp-surface-secondary)",
+          "muted-foreground": "var(--snapp-text-secondary)",
+          "accent": "var(--snapp-surface-accent)",
+          "accent-foreground": "var(--snapp-text-primary)",
+          "destructive": "var(--snapp-danger)",
+          "border": "var(--snapp-border-primary)",
+          "input": "var(--snapp-border-card)",
+          "ring": "var(--snapp-border-brand)",
+          "sidebar": "var(--snapp-surface-secondary)",
+          "sidebar-foreground": "var(--snapp-text-primary)",
+          "sidebar-primary": "var(--snapp-brand)",
+          "sidebar-primary-foreground": "var(--snapp-text-invert)",
+          "sidebar-accent": "var(--snapp-surface-primary)",
+          "sidebar-accent-foreground": "var(--snapp-text-primary)",
+          "sidebar-border": "var(--snapp-border-primary)",
+          "sidebar-ring": "var(--snapp-border-brand)"
         }
       }
     },
@@ -387,6 +443,22 @@
           "path": "registry/radix-nova/lib/utils.ts",
           "type": "registry:lib",
           "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "snapp-feature-parameters",
+      "type": "registry:lib",
+      "title": "Snapp Feature Parameters",
+      "description": "Shared, typed parsing for boolean feature parameters such as showNavBar.",
+      "dependencies": [
+        "zod"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/lib/feature-parameters.ts",
+          "type": "registry:lib",
+          "target": "@lib/snapp-feature-parameters.ts"
         }
       ]
     },
@@ -1547,6 +1619,23 @@
           "path": "registry/radix-nova/ui/tooltip.tsx",
           "type": "registry:ui",
           "target": "@ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-feature-layout",
+      "type": "registry:component",
+      "title": "Snapp Feature Layout",
+      "description": "Shared feature shell, page body, and bordered surface primitives for embedded Snapps.",
+      "registryDependencies": [
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/layout/feature-layout.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/layout/feature-layout.tsx"
         }
       ]
     },

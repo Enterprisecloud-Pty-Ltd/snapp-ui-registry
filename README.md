@@ -28,6 +28,18 @@ npx shadcn@latest add @snapp/snapp-work-item-card
 The card pulls in its theme, SNAPP-aware class utility, exact vector icons,
 duration badge, progress meter, and card primitive automatically.
 
+Feature Snapps can install the shared host-safe layout and parameter parser:
+
+```powershell
+npx shadcn@latest add @snapp/snapp-feature-layout @snapp/snapp-feature-parameters
+```
+
+`resolveShowNavBar()` implements the common `snapp_parameters` contract:
+`showNavBar=false` hides navigation, `showNavBar=true` shows it, and a missing
+or invalid value defaults to showing it. `FeatureShell`, `PageBody`, and
+`SurfaceCard` provide the shared full-height layout, content sizing, border,
+radius, and padding behavior without coupling a Snapp to a specific host.
+
 The local endpoint is `http://127.0.0.1:4173/r/{name}.json`. Replace it with the
 published registry URL in each `components.json` when the registry is hosted.
 
@@ -57,6 +69,10 @@ npm run registry:verify
   primitive, semantic, and typography exports.
 - `npm run sync` converts those exports into shadcn `cssVars` and regenerates
   `registry/radix-nova/theme/snapp-theme.css`.
+- The generated theme maps shadcn's standard semantic variables (including
+  `--radius`, `--background`, and `--border`) to SNAPP tokens. Its `.ec-app`
+  scoped base layer also normalizes border-box sizing and form typography
+  without leaking a global reset into Dynamics, PCF, Power Pages, or shells.
 - The sync script retains Snapp-specific responsive breakpoints and layout
   sizing alongside the Figma variables.
 - `scripts/normalize-tailwind-sizes.mjs` applies the shared tokens and Tailwind

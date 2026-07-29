@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-feature-layout",
+  "title": "Snapp Feature Layout",
+  "description": "Shared feature shell, page body, and bordered surface primitives for embedded Snapps.",
+  "registryDependencies": [
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/layout/feature-layout.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface FeatureShellProps extends React.ComponentProps<\"div\"> {\n  navigation?: React.ReactNode\n  showNavBar?: boolean\n}\n\nfunction FeatureShell({\n  children,\n  className,\n  navigation,\n  showNavBar = true,\n  ...props\n}: FeatureShellProps) {\n  return (\n    <div\n      className={cn(\n        \"box-border flex min-h-screen w-full bg-snapp-surface-primary text-snapp-text-brand max-snapp-mobile:flex-col\",\n        className,\n      )}\n      data-slot=\"snapp-feature-shell\"\n      {...props}\n    >\n      {showNavBar ? navigation : null}\n      {children}\n    </div>\n  )\n}\n\nfunction PageBody({\n  className,\n  ...props\n}: React.ComponentProps<\"main\">) {\n  return (\n    <main\n      className={cn(\n        \"box-border flex min-h-screen min-w-0 flex-1 flex-col gap-6 bg-snapp-surface-primary px-7.5 py-8 max-snapp-mobile:px-4 max-snapp-mobile:py-6\",\n        className,\n      )}\n      data-slot=\"snapp-page-body\"\n      {...props}\n    />\n  )\n}\n\ninterface SurfaceCardProps extends React.ComponentProps<\"div\"> {\n  padding?: \"compact\" | \"default\"\n}\n\nfunction SurfaceCard({\n  className,\n  padding = \"default\",\n  ...props\n}: SurfaceCardProps) {\n  return (\n    <div\n      className={cn(\n        \"box-border flex w-full flex-col gap-4 rounded-snapp-m border border-snapp-card-border bg-snapp-surface-primary\",\n        padding === \"compact\" ? \"p-4\" : \"p-6\",\n        className,\n      )}\n      data-padding={padding}\n      data-slot=\"snapp-surface-card\"\n      {...props}\n    />\n  )\n}\n\nexport { FeatureShell, PageBody, SurfaceCard }\nexport type { FeatureShellProps, SurfaceCardProps }\n",
+      "type": "registry:component",
+      "target": "@components/snapp/layout/feature-layout.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

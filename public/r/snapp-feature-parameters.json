@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-feature-parameters",
+  "title": "Snapp Feature Parameters",
+  "description": "Shared, typed parsing for boolean feature parameters such as showNavBar.",
+  "dependencies": [
+    "zod"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/lib/feature-parameters.ts",
+      "content": "import { z } from \"zod\"\n\nconst booleanParameterSchema = z.enum([\"true\", \"false\"])\n\nfunction resolveBooleanParameter(\n  params: URLSearchParams,\n  name: string,\n  defaultValue = true,\n) {\n  const value = params.get(name)\n  if (value === null) return defaultValue\n\n  const result = booleanParameterSchema.safeParse(value.trim().toLowerCase())\n  return result.success ? result.data === \"true\" : defaultValue\n}\n\nfunction resolveShowNavBar(params: URLSearchParams) {\n  return resolveBooleanParameter(params, \"showNavBar\", true)\n}\n\nexport { resolveBooleanParameter, resolveShowNavBar }\n",
+      "type": "registry:lib",
+      "target": "@lib/snapp-feature-parameters.ts"
+    }
+  ],
+  "type": "registry:lib"
+}
