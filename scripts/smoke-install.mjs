@@ -326,6 +326,14 @@ try {
 	if (helpAccordion.includes("defaultValue={articles[0]")) {
 		throw new Error("Help article accordion must load collapsed by default");
 	}
+	if (
+		!helpAccordion.includes("ec:bg-transparent") ||
+		!helpAccordion.includes("ec:hover:bg-transparent")
+	) {
+		throw new Error(
+			"Help article accordion must keep Figma-aligned transparent rows",
+		);
+	}
 
 	await execFileAsync(
 		process.execPath,

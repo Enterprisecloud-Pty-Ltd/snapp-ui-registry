@@ -184,6 +184,13 @@ if (helpArticleAccordionItem) {
 			"snapp-help-article-accordion must not expand the first article by default",
 		);
 	}
+	for (const className of ["bg-transparent", "hover:bg-transparent"]) {
+		if (!helpArticleAccordionSource.includes(className)) {
+			errors.push(
+				`snapp-help-article-accordion is missing ${className}`,
+			);
+		}
+	}
 }
 
 const landingCardItem = itemsByName.get("snapp-landing-card");

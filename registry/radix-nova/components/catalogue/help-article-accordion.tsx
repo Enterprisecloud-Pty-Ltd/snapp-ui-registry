@@ -51,7 +51,7 @@ function HelpArticleAccordion({
             key={article.id}
             value={article.id}
           >
-            <AccordionTrigger className="rounded-none border-0 px-4 py-4 text-base font-normal leading-5 text-snapp-text-brand hover:no-underline">
+            <AccordionTrigger className="rounded-none border-0 bg-transparent px-4 py-4 text-base font-normal leading-5 text-snapp-text-brand hover:bg-transparent hover:no-underline">
               {article.title}
             </AccordionTrigger>
             <AccordionContent className="px-4 pb-4 text-sm font-normal leading-4 text-snapp-text-primary">
