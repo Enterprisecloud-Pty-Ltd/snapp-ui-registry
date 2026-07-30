@@ -2,12 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "snapp-select",
   "title": "Snapp Select",
-  "description": "The shared Snapp select UI primitive.",
+  "description": "The non-searchable Snapp option picker for exceptional fixed-choice controls where search is intentionally not required.",
   "dependencies": [
     "lucide-react",
     "radix-ui"
   ],
   "registryDependencies": [
+    "@snapp/snapp-portal-container",
     "@snapp/snapp-utils"
   ],
   "files": [

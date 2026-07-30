@@ -9,6 +9,7 @@
   ],
   "registryDependencies": [
     "@snapp/snapp-button",
+    "@snapp/snapp-portal-container",
     "@snapp/snapp-utils"
   ],
   "files": [

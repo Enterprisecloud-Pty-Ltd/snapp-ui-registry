@@ -52,18 +52,23 @@ function DialogOverlay({
 function DialogContent({
   className,
   children,
+  overlayClassName,
   showCloseButton = true,
+  size = "default",
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Content> & {
+  overlayClassName?: string
   showCloseButton?: boolean
+  size?: "default" | "sm" | "form"
 }) {
   return (
     <DialogPortal>
-      <DialogOverlay />
+      <DialogOverlay className={overlayClassName} />
       <DialogPrimitive.Content
         data-slot="dialog-content"
+        data-size={size}
         className={cn(
-          "fixed top-1/2 left-1/2 z-50 grid w-full max-w-snapp-dialog -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-sm text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+          "group/dialog-content fixed top-1/2 left-1/2 z-50 w-full max-w-snapp-dialog -translate-x-1/2 -translate-y-1/2 rounded-xl bg-popover text-sm text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none data-[size=default]:grid data-[size=default]:gap-4 data-[size=default]:p-4 data-[size=default]:sm:max-w-sm data-[size=sm]:grid data-[size=sm]:gap-4 data-[size=sm]:p-4 data-[size=sm]:sm:max-w-xs data-[size=form]:flex data-[size=form]:max-h-[calc(100vh-2rem)] data-[size=form]:flex-col data-[size=form]:gap-6 data-[size=form]:overflow-hidden data-[size=form]:rounded-lg data-[size=form]:p-6 data-[size=form]:sm:max-w-180 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
           className
         )}
         {...props}

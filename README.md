@@ -19,6 +19,61 @@ All included Snapp `components.json` files register the local namespace:
 npx shadcn@latest add @snapp/snapp-theme @snapp/snapp-button
 ```
 
+## Selection controls
+
+Use `@snapp/snapp-combobox` as the standard option picker for new and updated
+Snapp interfaces. This applies even to short lists: consistent search,
+keyboard navigation, popup positioning, and visual treatment are more useful
+than switching control types based on option count.
+
+Configure `itemToStringLabel`, `itemToStringValue`, `isItemEqualToValue`, and a
+case-insensitive `filter` for the option type. Render options through
+`ComboboxCollection` (or a render-function child of `ComboboxList`) so Base UI
+can supply the filtered collection; directly mapping the original `items`
+array bypasses search filtering. The canonical Combobox opens below and aligns
+to the start of its trigger, matches the trigger width, and uses the standard
+neutral selected/hover treatment.
+
+Keep `@snapp/snapp-select` only for an explicitly non-searchable fixed-choice
+interaction. Do not use native `select` elements or app-specific dropdown
+implementations when the registry Combobox meets the requirement.
+
+## Form controls and action menus
+
+Use the shared form variants instead of repeating modal-specific class strings:
+
+```tsx
+<DialogContent size="form" overlayClassName="bg-black/50">
+  <Input variant="form" />
+  <Textarea variant="form" />
+  <Button variant="form-secondary" size="form">Cancel</Button>
+  <Button variant="form-primary" size="form">Save</Button>
+</DialogContent>
+```
+
+Overflow menus use a horizontal Lucide `EllipsisIcon` inside the registry
+button's `overflow` size. The size applies the canonical 22px by 20px geometry,
+3px horizontal padding, 2px vertical padding, and `icon/icon-primary` colour:
+
+```tsx
+<Button variant="ghost" size="overflow" aria-label="Open actions">
+  <EllipsisIcon />
+</Button>
+```
+
+Use `size="quick-actions"` on both menu content and menu items when implementing
+compact overflow actions. If the same actions apply to the whole component,
+expose them through the registry `ContextMenu` as well as the visible
+`DropdownMenu`.
+
+## Native drag and drop
+
+Keep application-owned drag payloads and tree mutations outside the registry.
+Native drag sources should use a stable `draggable` element, while drop targets
+must remain mounted for the complete drag lifecycle. Show drop indicators by
+toggling classes or data attributes; do not replace the element beneath the
+pointer during `dragover`, because the browser can lose the active drop target.
+
 The Work OS components can be installed independently or as a complete card:
 
 ```powershell

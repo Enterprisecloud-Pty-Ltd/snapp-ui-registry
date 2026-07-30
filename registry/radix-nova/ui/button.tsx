@@ -14,6 +14,10 @@ const buttonVariants = cva(
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+        "form-primary":
+          "bg-foreground text-background shadow-none hover:bg-foreground/90 hover:text-background",
+        "form-secondary":
+          "border-snapp-card-border bg-popover text-foreground/50 shadow-none hover:bg-muted hover:text-foreground",
         ghost:
           "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
         destructive:
@@ -27,6 +31,10 @@ const buttonVariants = cva(
         sm: "h-7 gap-1 rounded-md px-2.5 text-snapp-caption in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
         lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
         icon: "size-8",
+        overflow:
+          "h-5 w-5.5 rounded-sm px-0.75 py-0.5 text-snapp-icon-primary [&_svg:not([class*='size-'])]:size-4",
+        form:
+          "h-10.5 min-h-10.5 rounded-lg px-6 py-0 text-sm font-normal leading-none",
         "icon-xs":
           "size-6 rounded-md in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
         "icon-sm":

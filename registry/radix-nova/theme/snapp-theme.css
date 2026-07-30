@@ -332,7 +332,7 @@
 	--secondary-foreground: var(--snapp-text-primary);
 	--muted: var(--snapp-surface-secondary);
 	--muted-foreground: var(--snapp-text-secondary);
-	--accent: var(--snapp-surface-accent);
+	--accent: var(--snapp-surface-secondary);
 	--accent-foreground: var(--snapp-text-primary);
 	--destructive: var(--snapp-danger);
 	--border: var(--snapp-border-primary);
@@ -374,7 +374,7 @@
 	--secondary-foreground: var(--snapp-text-primary);
 	--muted: var(--snapp-surface-secondary);
 	--muted-foreground: var(--snapp-text-secondary);
-	--accent: var(--snapp-surface-accent);
+	--accent: var(--snapp-surface-secondary);
 	--accent-foreground: var(--snapp-text-primary);
 	--destructive: var(--snapp-danger);
 	--border: var(--snapp-border-primary);

@@ -40,6 +40,9 @@ const registryDependencies = (content, ownName) => {
 	if (content.includes("@/lib/utils")) {
 		dependencies.add("@snapp/snapp-utils");
 	}
+	if (content.includes("@/runtime/PortalContainer")) {
+		dependencies.add("@snapp/snapp-portal-container");
+	}
 	for (const match of content.matchAll(/@\/components\/ui\/([a-z0-9.-]+)/g)) {
 		const dependencyName = match[1].split(".")[0];
 		if (dependencyName !== ownName) {
@@ -62,6 +65,13 @@ for (const fileName of sourceFiles) {
 	groups.set(itemName, files);
 }
 
+const componentDescriptions = {
+	combobox:
+		"The standard searchable Snapp option picker for single-select and autocomplete controls.",
+	select:
+		"The non-searchable Snapp option picker for exceptional fixed-choice controls where search is intentionally not required.",
+};
+
 const componentItems = [];
 for (const [itemName, files] of [...groups.entries()].sort(([left], [right]) =>
 	left.localeCompare(right),
@@ -81,7 +91,9 @@ for (const [itemName, files] of [...groups.entries()].sort(([left], [right]) =>
 			.split("-")
 			.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
 			.join(" ")}`,
-		description: `The shared Snapp ${itemName} UI primitive.`,
+		description:
+			componentDescriptions[itemName] ??
+			`The shared Snapp ${itemName} UI primitive.`,
 		...(dependencies.length > 0 ? { dependencies } : {}),
 		...(registryDeps.length > 0
 			? { registryDependencies: registryDeps }
@@ -163,7 +175,7 @@ const shadcnCompatibilityVariables = {
 	"secondary-foreground": "var(--snapp-text-primary)",
 	muted: "var(--snapp-surface-secondary)",
 	"muted-foreground": "var(--snapp-text-secondary)",
-	accent: "var(--snapp-surface-accent)",
+	accent: "var(--snapp-surface-secondary)",
 	"accent-foreground": "var(--snapp-text-primary)",
 	destructive: "var(--snapp-danger)",
 	border: "var(--snapp-border-primary)",
@@ -304,6 +316,21 @@ const searchUtilitiesItem = {
 			path: "registry/radix-nova/lib/search.ts",
 			type: "registry:lib",
 			target: "@lib/search.ts",
+		},
+	],
+};
+
+const portalContainerItem = {
+	name: "snapp-portal-container",
+	type: "registry:lib",
+	title: "Snapp Portal Container",
+	description:
+		"Shared portal-container context for cabinet-safe dialogs, menus, popovers, tooltips, and searchable comboboxes.",
+	files: [
+		{
+			path: "registry/radix-nova/runtime/PortalContainer.ts",
+			type: "registry:lib",
+			target: "src/runtime/PortalContainer.ts",
 		},
 	],
 };
@@ -565,6 +592,7 @@ const registry = {
 		utilityItem,
 		featureParametersItem,
 		searchUtilitiesItem,
+		portalContainerItem,
 		...componentItems,
 		featureLayoutItem,
 		landingCardItem,

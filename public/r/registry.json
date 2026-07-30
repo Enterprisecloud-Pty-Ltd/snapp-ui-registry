@@ -373,7 +373,7 @@
           "secondary-foreground": "var(--snapp-text-primary)",
           "muted": "var(--snapp-surface-secondary)",
           "muted-foreground": "var(--snapp-text-secondary)",
-          "accent": "var(--snapp-surface-accent)",
+          "accent": "var(--snapp-surface-secondary)",
           "accent-foreground": "var(--snapp-text-primary)",
           "destructive": "var(--snapp-danger)",
           "border": "var(--snapp-border-primary)",
@@ -412,7 +412,7 @@
           "secondary-foreground": "var(--snapp-text-primary)",
           "muted": "var(--snapp-surface-secondary)",
           "muted-foreground": "var(--snapp-text-secondary)",
-          "accent": "var(--snapp-surface-accent)",
+          "accent": "var(--snapp-surface-secondary)",
           "accent-foreground": "var(--snapp-text-primary)",
           "destructive": "var(--snapp-danger)",
           "border": "var(--snapp-border-primary)",
@@ -476,6 +476,19 @@
       ]
     },
     {
+      "name": "snapp-portal-container",
+      "type": "registry:lib",
+      "title": "Snapp Portal Container",
+      "description": "Shared portal-container context for cabinet-safe dialogs, menus, popovers, tooltips, and searchable comboboxes.",
+      "files": [
+        {
+          "path": "registry/radix-nova/runtime/PortalContainer.ts",
+          "type": "registry:lib",
+          "target": "src/runtime/PortalContainer.ts"
+        }
+      ]
+    },
+    {
       "name": "snapp-accordion",
       "type": "registry:ui",
       "title": "Snapp Accordion",
@@ -524,6 +537,7 @@
       ],
       "registryDependencies": [
         "@snapp/snapp-button",
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -807,7 +821,7 @@
       "name": "snapp-combobox",
       "type": "registry:ui",
       "title": "Snapp Combobox",
-      "description": "The shared Snapp combobox UI primitive.",
+      "description": "The standard searchable Snapp option picker for single-select and autocomplete controls.",
       "dependencies": [
         "@base-ui/react",
         "lucide-react"
@@ -815,6 +829,7 @@
       "registryDependencies": [
         "@snapp/snapp-button",
         "@snapp/snapp-input-group",
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -857,6 +872,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -878,6 +894,7 @@
       ],
       "registryDependencies": [
         "@snapp/snapp-button",
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -913,6 +930,7 @@
         "vaul"
       ],
       "registryDependencies": [
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -933,6 +951,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -992,6 +1011,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -1146,6 +1166,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -1262,6 +1283,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -1349,12 +1371,13 @@
       "name": "snapp-select",
       "type": "registry:ui",
       "title": "Snapp Select",
-      "description": "The shared Snapp select UI primitive.",
+      "description": "The non-searchable Snapp option picker for exceptional fixed-choice controls where search is intentionally not required.",
       "dependencies": [
         "lucide-react",
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -1395,6 +1418,7 @@
       ],
       "registryDependencies": [
         "@snapp/snapp-button",
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -1625,6 +1649,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
       "files": [
