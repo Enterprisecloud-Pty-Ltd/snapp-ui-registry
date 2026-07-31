@@ -240,6 +240,39 @@ if (!landingCardItem) {
 	}
 }
 
+for (const menuItemName of [
+	"snapp-context-menu",
+	"snapp-dropdown-menu",
+]) {
+	const menuItem = itemsByName.get(menuItemName);
+	if (!menuItem) {
+		errors.push(`Missing ${menuItemName} registry item`);
+		continue;
+	}
+	const menuSource = await readFile(
+		path.join(registryRoot, menuItem.files[0].path),
+		"utf8",
+	);
+	for (const className of [
+		"w-34 min-w-34",
+		"gap-1",
+		"p-2",
+		"min-h-7",
+		"px-2 py-1.5",
+	]) {
+		if (!menuSource.includes(className)) {
+			errors.push(`${menuItemName} quick-actions is missing ${className}`);
+		}
+	}
+	for (const legacyClassName of ["w-29.5 min-w-29.5", "rounded-none p-0"]) {
+		if (menuSource.includes(legacyClassName)) {
+			errors.push(
+				`${menuItemName} quick-actions still uses ${legacyClassName}`,
+			);
+		}
+	}
+}
+
 if (errors.length > 0) {
 	console.error("Registry source validation failed:");
 	for (const error of errors) {

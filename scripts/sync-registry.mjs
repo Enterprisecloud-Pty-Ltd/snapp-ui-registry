@@ -231,9 +231,42 @@ const formatCssVariables = (variables) =>
 		.map(([name, value]) => `\t--${name}: ${value};`)
 		.join("\n");
 
+const interactiveCursorCss = `\t.ec-app :where(
+\t\ta[href],
+\t\tbutton:not(:disabled),
+\t\tinput:is([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="file"]):not(:disabled),
+\t\tlabel[for],
+\t\tselect:not(:disabled),
+\t\tsummary,
+\t\t[role="button"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="checkbox"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="link"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="menuitem"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="menuitemcheckbox"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="menuitemradio"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="option"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="radio"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="slider"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="switch"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="tab"]:not([aria-disabled="true"]):not([data-disabled]),
+\t\t[role="treeitem"]:not([aria-disabled="true"]):not([data-disabled])
+\t) {
+\t\tcursor: pointer !important;
+\t}
+
+\t.ec-app :where(
+\t\tbutton:disabled,
+\t\tinput:disabled,
+\t\tselect:disabled,
+\t\t[aria-disabled="true"],
+\t\t[data-disabled]
+\t) {
+\t\tcursor: not-allowed !important;
+\t}`;
+
 await writeFile(
 	themeCssPath,
-	`@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n}\n`,
+	`@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n\n${interactiveCursorCss}\n}\n`,
 );
 
 const themeItem = {

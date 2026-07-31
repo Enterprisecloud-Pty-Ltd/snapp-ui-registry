@@ -64,7 +64,9 @@ button's `overflow` size. The size applies the canonical 22px by 20px geometry,
 Use `size="quick-actions"` on both menu content and menu items when implementing
 compact overflow actions. If the same actions apply to the whole component,
 expose them through the registry `ContextMenu` as well as the visible
-`DropdownMenu`.
+`DropdownMenu`. The variant owns the standard 136px width, 8px surface inset,
+4px row gap, 28px minimum row height, and 8px horizontal/6px vertical item
+padding. Do not reproduce those classes in consumer components.
 
 ## Native drag and drop
 

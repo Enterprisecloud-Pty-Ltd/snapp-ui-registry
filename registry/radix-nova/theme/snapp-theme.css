@@ -408,4 +408,37 @@
 	.ec-app button {
 		appearance: none;
 	}
+
+	.ec-app :where(
+		a[href],
+		button:not(:disabled),
+		input:is([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="file"]):not(:disabled),
+		label[for],
+		select:not(:disabled),
+		summary,
+		[role="button"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="checkbox"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="link"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="menuitem"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="menuitemcheckbox"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="menuitemradio"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="option"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="radio"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="slider"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="switch"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="tab"]:not([aria-disabled="true"]):not([data-disabled]),
+		[role="treeitem"]:not([aria-disabled="true"]):not([data-disabled])
+	) {
+		cursor: pointer !important;
+	}
+
+	.ec-app :where(
+		button:disabled,
+		input:disabled,
+		select:disabled,
+		[aria-disabled="true"],
+		[data-disabled]
+	) {
+		cursor: not-allowed !important;
+	}
 }
