@@ -64,7 +64,7 @@ function ComboboxInput({
   return (
     <InputGroup
       className={cn(
-        "h-10.25 w-full rounded-md bg-popover shadow-none has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-0 **:data-[slot=input-group-control]:px-4",
+        "h-10.25 w-full rounded-lg bg-popover shadow-none has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-0 **:data-[slot=input-group-control]:px-4",
         className
       )}
     >
@@ -77,7 +77,7 @@ function ComboboxInput({
           <span
             aria-hidden="true"
             data-slot="combobox-trailing-icon"
-            className="pointer-events-none flex size-6 shrink-0 items-center justify-center text-snapp-icon-primary [&_svg:not([class*='size-'])]:size-3"
+            className="pointer-events-none flex size-6 shrink-0 items-center justify-center text-snapp-icon-primary [&_svg:not([class*='size-'])]:size-4.5"
           >
             {trailingIcon}
           </span>

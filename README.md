@@ -40,8 +40,11 @@ implementations when the registry Combobox meets the requirement.
 
 `ComboboxInput` accepts a `trailingIcon` for Figma variants that use a passive
 search or lookup affordance instead of the default chevron. The icon slot keeps
-the shared input geometry and disables pointer events so the input retains the
-interaction.
+the shared 41px-high, 8px-radius input geometry, centres passive icons at 18px,
+and disables pointer events so the input retains the interaction. Compose
+multi-value access/lookup features from the existing Combobox plus Badge or
+ComboboxChip; keep entity-specific selection and mutation logic in the feature
+instead of adding a domain-specific registry selector.
 
 ## Filter controls and nested overlays
 
