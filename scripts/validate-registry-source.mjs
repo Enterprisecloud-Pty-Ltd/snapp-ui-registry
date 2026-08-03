@@ -163,11 +163,44 @@ for (const requiredItem of [
 	"snapp-feature-breadcrumb",
 	"snapp-feature-parameters",
 	"snapp-feature-layout",
+	"snapp-filter-controls",
 	"snapp-help-article-accordion",
 	"snapp-search-utils",
 ]) {
 	if (!itemsByName.has(requiredItem)) {
 		errors.push(`Missing ${requiredItem} registry item`);
+	}
+}
+
+const filterControlsItem = itemsByName.get("snapp-filter-controls");
+if (filterControlsItem) {
+	const filterControlsSource = await readFile(
+		path.join(registryRoot, filterControlsItem.files[0].path),
+		"utf8",
+	);
+	for (const contract of [
+		"data-snapp-filter-interaction",
+		"event.composedPath()",
+		"shadow-snapp-flyout",
+		"bg-snapp-colour-grey-100",
+		"h-9",
+	]) {
+		if (!filterControlsSource.includes(contract)) {
+			errors.push(`snapp-filter-controls is missing ${contract}`);
+		}
+	}
+}
+
+const comboboxItem = itemsByName.get("snapp-combobox");
+if (comboboxItem) {
+	const comboboxSource = await readFile(
+		path.join(registryRoot, comboboxItem.files[0].path),
+		"utf8",
+	);
+	for (const contract of ["trailingIcon?: React.ReactNode", "combobox-trailing-icon"]) {
+		if (!comboboxSource.includes(contract)) {
+			errors.push(`snapp-combobox is missing ${contract}`);
+		}
 	}
 }
 

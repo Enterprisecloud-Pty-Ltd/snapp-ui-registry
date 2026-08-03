@@ -38,6 +38,33 @@ Keep `@snapp/snapp-select` only for an explicitly non-searchable fixed-choice
 interaction. Do not use native `select` elements or app-specific dropdown
 implementations when the registry Combobox meets the requirement.
 
+`ComboboxInput` accepts a `trailingIcon` for Figma variants that use a passive
+search or lookup affordance instead of the default chevron. The icon slot keeps
+the shared input geometry and disables pointer events so the input retains the
+interaction.
+
+## Filter controls and nested overlays
+
+Install the shared filter surface and active-token primitives instead of
+repeating flyout and pill class bundles:
+
+```powershell
+npx shadcn@latest add @snapp/snapp-filter-controls @snapp/snapp-combobox
+```
+
+`FilterMenuSurface`, `FilterTokenList`, and `FilterChip` own the Figma-aligned
+260px surface, flyout shadow, 8px layout rhythm, 36px pill geometry, neutral
+tokens, dismiss affordance, focus state, and pointer cursor. Applications own
+the available filters, selected values, query behavior, labels, separators,
+and whether selection closes the menu.
+
+For a filter surface containing portalled combobox or popup content, apply
+`data-snapp-filter-interaction` to each nested overlay and use
+`isFilterInteraction(event)` in any application-owned outside-pointer handler.
+It checks `event.composedPath()` so Dynamics, PCF, shadow-root, and reparented
+portal content are not mistaken for outside clicks. Do not use only
+`event.target.closest(...)` for a composite overlay boundary.
+
 ## Form controls and action menus
 
 Use the shared form variants instead of repeating modal-specific class strings:

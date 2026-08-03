@@ -54,10 +54,12 @@ function ComboboxInput({
   disabled = false,
   showTrigger = true,
   showClear = false,
+  trailingIcon,
   ...props
 }: ComboboxPrimitive.Input.Props & {
   showTrigger?: boolean
   showClear?: boolean
+  trailingIcon?: React.ReactNode
 }) {
   return (
     <InputGroup
@@ -71,7 +73,15 @@ function ComboboxInput({
         {...props}
       />
       <InputGroupAddon align="inline-end">
-        {showTrigger && (
+        {trailingIcon ? (
+          <span
+            aria-hidden="true"
+            data-slot="combobox-trailing-icon"
+            className="pointer-events-none flex size-6 shrink-0 items-center justify-center text-snapp-icon-primary [&_svg:not([class*='size-'])]:size-3"
+          >
+            {trailingIcon}
+          </span>
+        ) : showTrigger ? (
           <InputGroupButton
             size="icon-xs"
             variant="ghost"
@@ -82,7 +92,7 @@ function ComboboxInput({
           >
             <ComboboxTrigger />
           </InputGroupButton>
-        )}
+        ) : null}
         {showClear && <ComboboxClear disabled={disabled} />}
       </InputGroupAddon>
       {children}

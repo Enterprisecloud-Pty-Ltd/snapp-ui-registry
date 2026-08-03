@@ -161,6 +161,7 @@ const existingInlineThemeVariables = {
 	"color-snapp-danger": "var(--snapp-danger)",
 	"shadow-snapp-card-hover": "var(--snapp-shadow-card-hover)",
 	"shadow-snapp-drag-preview": "var(--snapp-shadow-drag-preview)",
+	"shadow-snapp-flyout": "var(--snapp-shadow-flyout)",
 };
 const shadcnCompatibilityVariables = {
 	radius: "var(--snapp-radius-m)",
@@ -199,6 +200,7 @@ const lightVariables = {
 	"snapp-skeleton-soft": "rgb(42 44 46 / 5%)",
 	"snapp-shadow-card-hover": "0 0.25rem 0.46875rem rgb(0 0 0 / 10%)",
 	"snapp-shadow-drag-preview": "0 0.25rem 0.375rem rgb(0 0 0 / 25%)",
+	"snapp-shadow-flyout": "0 0.25rem 0.375rem rgb(0 0 0 / 25%)",
 	"snapp-brand": "var(--snapp-colour-brand-primary)",
 	"snapp-accent": "var(--snapp-colour-brand-accent)",
 	"snapp-ink": "var(--snapp-text-primary)",
@@ -219,6 +221,7 @@ const darkVariables = {
 	"snapp-surface": "#202d39",
 	"snapp-danger": "#fda29b",
 	"snapp-shadow-drag-preview": "0 0.25rem 0.375rem rgb(0 0 0 / 45%)",
+	"snapp-shadow-flyout": "0 0.25rem 0.375rem rgb(0 0 0 / 45%)",
 	"snapp-indicator-border": "1.5px",
 	"snapp-hairline": "1px",
 	"snapp-control-inset": "2px",
@@ -390,6 +393,26 @@ const featureLayoutItem = {
 	],
 };
 
+const filterControlsItem = {
+	name: "snapp-filter-controls",
+	type: "registry:component",
+	title: "Snapp Filter Controls",
+	description:
+		"Figma-aligned filter menu surface and removable active-filter pills with portal-safe interaction detection.",
+	dependencies: ["lucide-react"],
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/filters/filter-controls.tsx",
+			type: "registry:component",
+			target: "@components/snapp/filters/filter-controls.tsx",
+		},
+	],
+};
+
 const landingCardItem = {
 	name: "snapp-landing-card",
 	type: "registry:component",
@@ -523,6 +546,7 @@ const catalogueCoreItem = {
 		"@snapp/snapp-feature-breadcrumb",
 		"@snapp/snapp-feature-layout",
 		"@snapp/snapp-feature-parameters",
+		"@snapp/snapp-filter-controls",
 		"@snapp/snapp-help-article-accordion",
 		"@snapp/snapp-landing-card",
 		"@snapp/snapp-landing-skeleton",
@@ -655,6 +679,7 @@ const registry = {
 		portalContainerItem,
 		...componentItems,
 		featureLayoutItem,
+		filterControlsItem,
 		landingCardItem,
 		landingSkeletonItem,
 		featureBreadcrumbItem,

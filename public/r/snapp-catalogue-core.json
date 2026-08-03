@@ -9,6 +9,7 @@
     "@snapp/snapp-feature-breadcrumb",
     "@snapp/snapp-feature-layout",
     "@snapp/snapp-feature-parameters",
+    "@snapp/snapp-filter-controls",
     "@snapp/snapp-help-article-accordion",
     "@snapp/snapp-landing-card",
     "@snapp/snapp-landing-skeleton",
@@ -17,7 +18,7 @@
   "files": [
     {
       "path": "registry/radix-nova/components/catalogue/catalogue-core.ts",
-      "content": "export * from \"@/components/snapp/catalogue/catalogue-hero\"\nexport * from \"@/components/snapp/catalogue/catalogue-result-card\"\nexport * from \"@/components/snapp/catalogue/help-article-accordion\"\nexport * from \"@/components/snapp/catalogue/landing-card\"\nexport * from \"@/components/snapp/catalogue/landing-skeleton\"\nexport * from \"@/components/snapp/layout/feature-layout\"\nexport * from \"@/components/snapp/navigation/feature-breadcrumb\"\nexport * from \"@/lib/search\"\nexport * from \"@/lib/snapp-feature-parameters\"\n",
+      "content": "export * from \"@/components/snapp/catalogue/catalogue-hero\"\nexport * from \"@/components/snapp/catalogue/catalogue-result-card\"\nexport * from \"@/components/snapp/catalogue/help-article-accordion\"\nexport * from \"@/components/snapp/catalogue/landing-card\"\nexport * from \"@/components/snapp/catalogue/landing-skeleton\"\nexport * from \"@/components/snapp/filters/filter-controls\"\nexport * from \"@/components/snapp/layout/feature-layout\"\nexport * from \"@/components/snapp/navigation/feature-breadcrumb\"\nexport * from \"@/lib/search\"\nexport * from \"@/lib/snapp-feature-parameters\"\n",
       "type": "registry:component",
       "target": "@components/snapp/catalogue/catalogue-core.ts"
     }
