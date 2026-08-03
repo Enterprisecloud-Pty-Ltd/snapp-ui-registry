@@ -2,11 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "snapp-search-utils",
   "title": "Snapp Search Utilities",
-  "description": "Shared normalization and multi-word matching helpers for feature-owned search fields.",
+  "description": "Shared normalization, multi-word matching, and collection-scoped filtering helpers for feature-owned search fields.",
   "files": [
     {
       "path": "registry/radix-nova/lib/search.ts",
-      "content": "function normalizeSearch(value: string) {\n  return value.trim().toLocaleLowerCase()\n}\n\nfunction matchesSearch(query: string, values: string[]) {\n  const normalizedQuery = normalizeSearch(query)\n  if (!normalizedQuery) return true\n\n  const searchableValue = normalizeSearch(values.join(\" \"))\n  return normalizedQuery\n    .split(/\\s+/)\n    .every((word) => searchableValue.includes(word))\n}\n\nexport { matchesSearch, normalizeSearch }\n",
+      "content": "type SearchValue = boolean | number | string | null | undefined\n\nfunction normalizeSearch(value: string) {\n  return value.trim().toLocaleLowerCase()\n}\n\nfunction matchesSearch(query: string, values: readonly SearchValue[]) {\n  const normalizedQuery = normalizeSearch(query)\n  if (!normalizedQuery) return true\n\n  const searchableValue = normalizeSearch(\n    values.filter((value) => value != null).join(\" \")\n  )\n  return normalizedQuery\n    .split(/\\s+/)\n    .every((word) => searchableValue.includes(word))\n}\n\nfunction filterSearchCollection<T>(\n  items: readonly T[],\n  query: string,\n  getValues: (item: T) => readonly SearchValue[]\n) {\n  return items.filter((item) => matchesSearch(query, getValues(item)))\n}\n\nexport { filterSearchCollection, matchesSearch, normalizeSearch }\nexport type { SearchValue }\n",
       "type": "registry:lib",
       "target": "@lib/search.ts"
     }

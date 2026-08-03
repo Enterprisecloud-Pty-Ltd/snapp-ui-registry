@@ -191,6 +191,23 @@ if (filterControlsItem) {
 	}
 }
 
+const searchUtilitiesItem = itemsByName.get("snapp-search-utils");
+if (searchUtilitiesItem) {
+	const searchUtilitiesSource = await readFile(
+		path.join(registryRoot, searchUtilitiesItem.files[0].path),
+		"utf8",
+	);
+	for (const contract of [
+		"function filterSearchCollection",
+		"readonly SearchValue[]",
+		"items.filter",
+	]) {
+		if (!searchUtilitiesSource.includes(contract)) {
+			errors.push(`snapp-search-utils is missing ${contract}`);
+		}
+	}
+}
+
 const comboboxItem = itemsByName.get("snapp-combobox");
 if (comboboxItem) {
 	const comboboxSource = await readFile(
@@ -200,6 +217,41 @@ if (comboboxItem) {
 	for (const contract of ["trailingIcon?: React.ReactNode", "combobox-trailing-icon"]) {
 		if (!comboboxSource.includes(contract)) {
 			errors.push(`snapp-combobox is missing ${contract}`);
+		}
+	}
+}
+
+const buttonItem = itemsByName.get("snapp-button");
+if (buttonItem) {
+	const buttonSource = await readFile(
+		path.join(registryRoot, buttonItem.files[0].path),
+		"utf8",
+	);
+	for (const contract of [
+		'"form-primary"',
+		'"form-secondary"',
+		'"form-destructive"',
+		"bg-snapp-button-primary",
+		"bg-snapp-danger",
+		"hover:brightness-90",
+	]) {
+		if (!buttonSource.includes(contract)) {
+			errors.push(`snapp-button modal actions are missing ${contract}`);
+		}
+	}
+	for (const contract of [
+		"overflow:",
+		"border-0 bg-transparent",
+		"text-snapp-icon-primary",
+		"hover:bg-snapp-grey-900/5",
+		"hover:text-snapp-icon-primary",
+		"aria-expanded:bg-snapp-grey-900/5",
+		"aria-expanded:text-snapp-icon-primary",
+		"h-5 w-5.5 rounded-sm px-0.75 py-0.5",
+		"[&_svg:not([class*='size-'])]:size-4",
+	]) {
+		if (!buttonSource.includes(contract)) {
+			errors.push(`snapp-button overflow actions are missing ${contract}`);
 		}
 	}
 }
@@ -292,6 +344,8 @@ for (const menuItemName of [
 		"p-2",
 		"min-h-7",
 		"px-2 py-1.5",
+		"cursor-pointer",
+		"usePortalContainer",
 	]) {
 		if (!menuSource.includes(className)) {
 			errors.push(`${menuItemName} quick-actions is missing ${className}`);

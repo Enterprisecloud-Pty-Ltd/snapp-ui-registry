@@ -66,6 +66,8 @@ for (const fileName of sourceFiles) {
 }
 
 const componentDescriptions = {
+	button:
+		"The standard Snapp action primitive, including shared modal and horizontal overflow-action treatments.",
 	combobox:
 		"The standard searchable Snapp option picker for single-select and autocomplete controls.",
 	select:
@@ -349,7 +351,7 @@ const searchUtilitiesItem = {
 	type: "registry:lib",
 	title: "Snapp Search Utilities",
 	description:
-		"Shared normalization and multi-word matching helpers for feature-owned search fields.",
+		"Shared normalization, multi-word matching, and collection-scoped filtering helpers for feature-owned search fields.",
 	files: [
 		{
 			path: "registry/radix-nova/lib/search.ts",

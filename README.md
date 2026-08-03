@@ -65,6 +65,29 @@ It checks `event.composedPath()` so Dynamics, PCF, shadow-root, and reparented
 portal content are not mistaken for outside clicks. Do not use only
 `event.target.closest(...)` for a composite overlay boundary.
 
+## Search scope
+
+Use `filterSearchCollection()` from `@snapp/snapp-search-utils` to filter the
+exact result collection owned by a search field. Pass only the fields that are
+searchable for that resource type:
+
+```ts
+const visibleArticles = filterSearchCollection(articles, query, (article) => [
+  article.title,
+  article.content,
+  article.publicNumber,
+])
+```
+
+Search must not filter a shared catalogue model, navigation tree, categories,
+or sibling panel merely because those surfaces derive from the same data
+object. Apply the query at the nearest collection boundary. Keep separate
+queries separate when a screen contains different resource types.
+
+Registry search helpers own normalization and matching only. Feature code owns
+the searched collection, searchable fields, query state, and empty-result
+behavior.
+
 ## Form controls and action menus
 
 Use the shared form variants instead of repeating modal-specific class strings:
@@ -90,15 +113,28 @@ horizontal-overflow prevention, footer reset, action spacing, and close-button
 placement. Keep only Figma-specific width, height, overlay opacity, and field
 layout overrides in the consuming application.
 
+Modal actions use exactly three shared button variants: `form-secondary` for
+cancel/back, `form-primary` for create/save, and `form-destructive` for a final
+destructive confirmation. Pair each with `size="form"`; do not repeat modal
+button colours, borders, typography, disabled opacity, or hover rules in a
+consumer.
+
 Overflow menus use a horizontal Lucide `EllipsisIcon` inside the registry
-button's `overflow` size. The size applies the canonical 22px by 20px geometry,
-3px horizontal padding, 2px vertical padding, and `icon/icon-primary` colour:
+button's `overflow` variant and size. The pair applies the canonical 22px by
+20px geometry, 3px horizontal padding, 2px vertical padding,
+`icon/icon-primary` (`#7f8082`) colour, pointer cursor, and matching hover/open
+background:
 
 ```tsx
-<Button variant="ghost" size="overflow" aria-label="Open actions">
+<Button variant="overflow" size="overflow" aria-label="Open actions for Item name">
   <EllipsisIcon />
 </Button>
 ```
+
+Always use the variant and size together. Do not render the icon in a raw
+`button`, use vertical dots, reuse a Figma `more.svg`, apply a feature colour,
+or copy the geometry/hover utilities into a consumer. Give each trigger a
+contextual accessible name.
 
 Use `size="quick-actions"` on both menu content and menu items when implementing
 compact overflow actions. If the same actions apply to the whole component,
@@ -106,6 +142,36 @@ expose them through the registry `ContextMenu` as well as the visible
 `DropdownMenu`. The variant owns the standard 136px width, 8px surface inset,
 4px row gap, 28px minimum row height, and 8px horizontal/6px vertical item
 padding. Do not reproduce those classes in consumer components.
+
+For an action that opens a modal, keep the controlled `Dialog` outside the
+transient menu content and open it from `DropdownMenuItem.onSelect` (or the
+matching `ContextMenuItem.onSelect`):
+
+```tsx
+const [editOpen, setEditOpen] = React.useState(false)
+
+<>
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>{actionButton}</DropdownMenuTrigger>
+    <DropdownMenuContent size="quick-actions">
+      <DropdownMenuItem
+        size="quick-actions"
+        onSelect={() => setEditOpen(true)}
+      >
+        Edit
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+  <Dialog open={editOpen} onOpenChange={setEditOpen}>
+    <DialogContent size="form">...</DialogContent>
+  </Dialog>
+</>
+```
+
+Do not replace the registry menu with a document-level outside-click listener.
+If a feature-owned composite interaction still requires one, determine inside
+versus outside from `event.composedPath()` so Dynamics, PCF, shadow-root, and
+portalled events cannot close the menu before its action is dispatched.
 
 ## Native drag and drop
 

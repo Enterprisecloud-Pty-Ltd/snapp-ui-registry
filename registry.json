@@ -472,7 +472,7 @@
       "name": "snapp-search-utils",
       "type": "registry:lib",
       "title": "Snapp Search Utilities",
-      "description": "Shared normalization and multi-word matching helpers for feature-owned search fields.",
+      "description": "Shared normalization, multi-word matching, and collection-scoped filtering helpers for feature-owned search fields.",
       "files": [
         {
           "path": "registry/radix-nova/lib/search.ts",
@@ -674,7 +674,7 @@
       "name": "snapp-button",
       "type": "registry:ui",
       "title": "Snapp Button",
-      "description": "The shared Snapp button UI primitive.",
+      "description": "The standard Snapp action primitive, including shared modal and horizontal overflow-action treatments.",
       "dependencies": [
         "class-variance-authority",
         "radix-ui"
