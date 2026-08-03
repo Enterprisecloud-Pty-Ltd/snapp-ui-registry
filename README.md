@@ -44,12 +44,24 @@ Use the shared form variants instead of repeating modal-specific class strings:
 
 ```tsx
 <DialogContent size="form" overlayClassName="bg-black/50">
-  <Input variant="form" />
-  <Textarea variant="form" />
-  <Button variant="form-secondary" size="form">Cancel</Button>
-  <Button variant="form-primary" size="form">Save</Button>
+  <DialogHeader size="form">
+    <DialogTitle size="form">Edit item</DialogTitle>
+  </DialogHeader>
+  <DialogBody size="form">
+    <Input variant="form" />
+    <Textarea variant="form" />
+  </DialogBody>
+  <DialogFooter size="form">
+    <Button variant="form-secondary" size="form">Cancel</Button>
+    <Button variant="form-primary" size="form">Save</Button>
+  </DialogFooter>
 </DialogContent>
 ```
+
+The form dialog sections own the shared header geometry, scroll-safe body,
+horizontal-overflow prevention, footer reset, action spacing, and close-button
+placement. Keep only Figma-specific width, height, overlay opacity, and field
+layout overrides in the consuming application.
 
 Overflow menus use a horizontal Lucide `EllipsisIcon` inside the registry
 button's `overflow` size. The size applies the canonical 22px by 20px geometry,
@@ -69,6 +81,19 @@ expose them through the registry `ContextMenu` as well as the visible
 padding. Do not reproduce those classes in consumer components.
 
 ## Native drag and drop
+
+Install the shared Figma-aligned drag feedback where a Snapp supports native
+dragging:
+
+```powershell
+npx shadcn@latest add @snapp/snapp-drag-feedback
+```
+
+`DragPreview` owns the compact white drag surface, exact order handle, item
+icon slot, typography, border, radius, and shadow. `DropIndicator` owns the
+blue two-pixel line and fixed-size triangle for before/after insertion states.
+Applications still own drag payloads, allowed targets, nesting rules, and data
+mutations.
 
 Keep application-owned drag payloads and tree mutations outside the registry.
 Native drag sources should use a stable `draggable` element, while drop targets

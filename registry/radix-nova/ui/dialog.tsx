@@ -8,6 +8,9 @@ import { Button } from "@/components/ui/button"
 import { XIcon } from "lucide-react"
 import { usePortalContainer } from "@/runtime/PortalContainer"
 
+type DialogSize = "default" | "sm" | "form"
+type DialogSectionSize = "default" | "form"
+
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
@@ -59,7 +62,7 @@ function DialogContent({
 }: React.ComponentProps<typeof DialogPrimitive.Content> & {
   overlayClassName?: string
   showCloseButton?: boolean
-  size?: "default" | "sm" | "form"
+  size?: DialogSize
 }) {
   return (
     <DialogPortal>
@@ -78,11 +81,10 @@ function DialogContent({
           <DialogPrimitive.Close data-slot="dialog-close" asChild>
             <Button
               variant="ghost"
-              className="absolute top-2 right-2"
+              className="absolute top-2 right-2 group-data-[size=form]/dialog-content:top-6 group-data-[size=form]/dialog-content:right-6 group-data-[size=form]/dialog-content:size-6 group-data-[size=form]/dialog-content:rounded-sm group-data-[size=form]/dialog-content:p-0 group-data-[size=form]/dialog-content:text-snapp-text-brand group-data-[size=form]/dialog-content:hover:bg-snapp-surface-secondary"
               size="icon-sm"
             >
-              <XIcon
-              />
+              <XIcon className="group-data-[size=form]/dialog-content:size-5.5" />
               <span className="sr-only">Close</span>
             </Button>
           </DialogPrimitive.Close>
@@ -92,11 +94,37 @@ function DialogContent({
   )
 }
 
-function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
+function DialogHeader({
+  className,
+  size = "default",
+  ...props
+}: React.ComponentProps<"div"> & { size?: DialogSectionSize }) {
   return (
     <div
       data-slot="dialog-header"
-      className={cn("flex flex-col gap-2", className)}
+      data-size={size}
+      className={cn(
+        "flex flex-col gap-2 data-[size=form]:h-8 data-[size=form]:shrink-0 data-[size=form]:flex-row data-[size=form]:items-center data-[size=form]:justify-between data-[size=form]:gap-0",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function DialogBody({
+  className,
+  size = "default",
+  ...props
+}: React.ComponentProps<"div"> & { size?: DialogSectionSize }) {
+  return (
+    <div
+      data-slot="dialog-body"
+      data-size={size}
+      className={cn(
+        "min-w-0 data-[size=form]:flex data-[size=form]:min-h-0 data-[size=form]:flex-1 data-[size=form]:flex-col data-[size=form]:gap-6 data-[size=form]:overflow-x-hidden data-[size=form]:overflow-y-auto",
+        className
+      )}
       {...props}
     />
   )
@@ -105,16 +133,19 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
 function DialogFooter({
   className,
   showCloseButton = false,
+  size = "default",
   children,
   ...props
 }: React.ComponentProps<"div"> & {
   showCloseButton?: boolean
+  size?: DialogSectionSize
 }) {
   return (
     <div
       data-slot="dialog-footer"
+      data-size={size}
       className={cn(
-        "-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 sm:flex-row sm:justify-end",
+        "-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 sm:flex-row sm:justify-end data-[size=form]:mx-0 data-[size=form]:mb-0 data-[size=form]:shrink-0 data-[size=form]:flex-row data-[size=form]:items-start data-[size=form]:justify-end data-[size=form]:gap-4 data-[size=form]:rounded-none data-[size=form]:border-0 data-[size=form]:bg-transparent data-[size=form]:p-0",
         className
       )}
       {...props}
@@ -131,13 +162,17 @@ function DialogFooter({
 
 function DialogTitle({
   className,
+  size = "default",
   ...props
-}: React.ComponentProps<typeof DialogPrimitive.Title>) {
+}: React.ComponentProps<typeof DialogPrimitive.Title> & {
+  size?: DialogSectionSize
+}) {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
+      data-size={size}
       className={cn(
-        "text-base leading-none font-medium",
+        "text-base leading-none font-medium data-[size=form]:text-[18px] data-[size=form]:leading-normal data-[size=form]:font-semibold data-[size=form]:text-snapp-text-brand data-[size=form]:select-none",
         className
       )}
       {...props}
@@ -163,6 +198,7 @@ function DialogDescription({
 
 export {
   Dialog,
+  DialogBody,
   DialogClose,
   DialogContent,
   DialogDescription,

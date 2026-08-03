@@ -160,6 +160,7 @@ const existingInlineThemeVariables = {
 	"color-snapp-surface": "var(--snapp-surface)",
 	"color-snapp-danger": "var(--snapp-danger)",
 	"shadow-snapp-card-hover": "var(--snapp-shadow-card-hover)",
+	"shadow-snapp-drag-preview": "var(--snapp-shadow-drag-preview)",
 };
 const shadcnCompatibilityVariables = {
 	radius: "var(--snapp-radius-m)",
@@ -197,6 +198,7 @@ const lightVariables = {
 	"snapp-skeleton-line": "rgb(42 44 46 / 10%)",
 	"snapp-skeleton-soft": "rgb(42 44 46 / 5%)",
 	"snapp-shadow-card-hover": "0 0.25rem 0.46875rem rgb(0 0 0 / 10%)",
+	"snapp-shadow-drag-preview": "0 0.25rem 0.375rem rgb(0 0 0 / 25%)",
 	"snapp-brand": "var(--snapp-colour-brand-primary)",
 	"snapp-accent": "var(--snapp-colour-brand-accent)",
 	"snapp-ink": "var(--snapp-text-primary)",
@@ -216,6 +218,7 @@ const darkVariables = {
 	"snapp-canvas": "#18222c",
 	"snapp-surface": "#202d39",
 	"snapp-danger": "#fda29b",
+	"snapp-shadow-drag-preview": "0 0.25rem 0.375rem rgb(0 0 0 / 45%)",
 	"snapp-indicator-border": "1.5px",
 	"snapp-hairline": "1px",
 	"snapp-control-inset": "2px",
@@ -534,6 +537,30 @@ const catalogueCoreItem = {
 	],
 };
 
+const dragFeedbackItem = {
+	name: "snapp-drag-feedback",
+	type: "registry:component",
+	title: "Snapp Drag Feedback",
+	description:
+		"Figma-aligned native drag preview and fixed-size drop indicator for draggable Snapp interfaces.",
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/drag/drag-feedback.tsx",
+			type: "registry:component",
+			target: "@components/snapp/drag/drag-feedback.tsx",
+		},
+		{
+			path: "registry/radix-nova/components/drag/order.svg",
+			type: "registry:file",
+			target: "@components/snapp/drag/order.svg",
+		},
+	],
+};
+
 const workItemCore = {
 	name: "snapp-work-item-core",
 	type: "registry:component",
@@ -635,6 +662,7 @@ const registry = {
 		catalogueResultCardItem,
 		helpArticleAccordionItem,
 		catalogueCoreItem,
+		dragFeedbackItem,
 		workItemCore,
 		timeBadgeItem,
 		progressMeterItem,

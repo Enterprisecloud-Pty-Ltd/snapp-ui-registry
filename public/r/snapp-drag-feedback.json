@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-drag-feedback",
+  "title": "Snapp Drag Feedback",
+  "description": "Figma-aligned native drag preview and fixed-size drop indicator for draggable Snapp interfaces.",
+  "registryDependencies": [
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/drag/drag-feedback.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport orderIcon from \"./order.svg\"\n\nconst DragPreview = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentProps<\"div\"> & { icon: React.ReactNode }\n>(({ className, icon, children, ...props }, ref) => (\n  <div\n    ref={ref}\n    data-slot=\"drag-preview\"\n    className={cn(\n      \"inline-flex h-8 w-fit max-w-full items-center gap-2 rounded-snapp-rounded border border-snapp-border-primary bg-snapp-surface-primary px-2 font-snapp-body text-snapp-sm leading-snapp-xxs font-normal whitespace-nowrap text-snapp-text-primary shadow-snapp-drag-preview\",\n      className\n    )}\n    {...props}\n  >\n    <img\n      alt=\"\"\n      aria-hidden=\"true\"\n      className=\"h-1.25 w-3 shrink-0\"\n      src={orderIcon}\n    />\n    <span\n      aria-hidden=\"true\"\n      className=\"flex size-5 shrink-0 items-center justify-center overflow-hidden [&_img]:size-full [&_svg]:size-5\"\n    >\n      {icon}\n    </span>\n    <span className=\"min-w-0 truncate\">{children}</span>\n  </div>\n))\n\nDragPreview.displayName = \"DragPreview\"\n\nfunction DropIndicator({\n  className,\n  position = \"before\",\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  position?: \"before\" | \"after\"\n}) {\n  return (\n    <div\n      aria-hidden=\"true\"\n      data-position={position}\n      data-slot=\"drop-indicator\"\n      className={cn(\n        \"pointer-events-none absolute right-0 left-0 z-10 h-0.5 bg-snapp-border-highlight data-[position=after]:-bottom-px data-[position=before]:-top-px\",\n        className\n      )}\n      {...props}\n    >\n      <span className=\"absolute -left-px top-1/2 h-0 w-0 -translate-y-1/2 border-y-5 border-l-8 border-y-transparent border-l-snapp-border-highlight\" />\n    </div>\n  )\n}\n\nexport { DragPreview, DropIndicator }\n",
+      "type": "registry:component",
+      "target": "@components/snapp/drag/drag-feedback.tsx"
+    },
+    {
+      "path": "registry/radix-nova/components/drag/order.svg",
+      "content": "<svg preserveAspectRatio=\"none\" width=\"100%\" height=\"100%\" overflow=\"visible\" style=\"display: block;\" viewBox=\"0 0 12 5\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path id=\"Order\" d=\"M0 0.5C0 0.223858 0.223858 0 0.5 0H11.5C11.7761 0 12 0.223858 12 0.5C12 0.776142 11.7761 1 11.5 1H0.5C0.223858 1 0 0.776142 0 0.5ZM0 4.5C0 4.22386 0.223858 4 0.5 4H11.5C11.7761 4 12 4.22386 12 4.5C12 4.77614 11.7761 5 11.5 5H0.5C0.223858 5 0 4.77614 0 4.5Z\" fill=\"var(--fill-0, #2A2C2E)\" fill-opacity=\"0.34\"/>\n</svg>\n",
+      "type": "registry:file",
+      "target": "@components/snapp/drag/order.svg"
+    }
+  ],
+  "type": "registry:component"
+}
