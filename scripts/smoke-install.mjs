@@ -287,6 +287,11 @@ try {
 	if (!indexCss.includes(fontImport)) {
 		throw new Error(`Clean install did not add ${fontImport}`);
 	}
+	if (!indexCss.includes("--color-popover: var(--popover);")) {
+		throw new Error(
+			"Clean install did not register the semantic popover colour with Tailwind",
+		);
+	}
 
 	const fontCss = await readFile(
 		path.join(sourceRoot, "styles", "snapp-fonts.css"),
@@ -445,6 +450,7 @@ try {
 	for (const contract of [
 		"--radius:var(--snapp-radius-m)",
 		"--background:var(--snapp-surface)",
+		"background-color:var(--popover)",
 		"box-sizing:border-box",
 		"font:inherit",
 	]) {
