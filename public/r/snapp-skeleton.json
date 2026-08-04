@@ -2,14 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "snapp-skeleton",
   "title": "Snapp Skeleton",
-  "description": "The shared Snapp skeleton UI primitive.",
+  "description": "The required Shadcn loading primitive and accessible loading-group wrapper for layout-shaped Snapp loading states.",
   "registryDependencies": [
+    "@snapp/snapp-theme",
     "@snapp/snapp-utils"
   ],
   "files": [
     {
       "path": "registry/radix-nova/ui/skeleton.tsx",
-      "content": "import { cn } from \"@/lib/utils\"\n\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(\"animate-pulse rounded-md bg-muted\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { Skeleton }\n",
+      "content": "import { cn } from \"@/lib/utils\"\n\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(\n        \"animate-pulse rounded-md bg-snapp-skeleton-soft motion-reduce:animate-none\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\ninterface SkeletonGroupProps\n  extends Omit<\n    React.ComponentProps<\"div\">,\n    \"aria-busy\" | \"aria-label\" | \"role\"\n  > {\n  \"aria-label\": string\n  \"data-slot\"?: string\n}\n\nfunction SkeletonGroup({\n  \"aria-label\": ariaLabel,\n  className,\n  \"data-slot\": dataSlot = \"skeleton-group\",\n  ...props\n}: SkeletonGroupProps) {\n  return (\n    <div\n      {...props}\n      aria-busy=\"true\"\n      aria-label={ariaLabel}\n      className={cn(className)}\n      data-slot={dataSlot}\n      role=\"status\"\n    />\n  )\n}\n\nexport { Skeleton, SkeletonGroup }\nexport type { SkeletonGroupProps }\n",
       "type": "registry:ui",
       "target": "@ui/skeleton.tsx"
     }

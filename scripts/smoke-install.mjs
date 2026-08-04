@@ -153,6 +153,7 @@ try {
 			'import { Dialog, DialogBody, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"',
 			'import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"',
 			'import { Input } from "@/components/ui/input"',
+			'import { Skeleton, SkeletonGroup } from "@/components/ui/skeleton"',
 			'import { Textarea } from "@/components/ui/textarea"',
 			'import "./index.css"',
 			"",
@@ -186,6 +187,7 @@ try {
 			'        <CatalogueResultCard description="Shared result" title={searchMatches && scopedSearchResults.length === 1 ? scopedSearchResults[0].title : "No result"} />',
 			'        <HelpArticleAccordion articles={[{ id: "help", title: "Help", content: <p>Answer</p> }]} heading="Helpful information" />',
 			'        <LandingSkeleton aria-label="Loading knowledge base" itemCount={2} />',
+			'        <SkeletonGroup aria-label="Loading shared component"><Skeleton className="h-4 w-32" /></SkeletonGroup>',
 			'        <FilterMenuSurface><Combobox items={["HR", "IT"]}><ComboboxInput aria-label="Filter values" trailingIcon={<SearchIcon />} /><ComboboxContent data-snapp-filter-interaction=""><ComboboxList><ComboboxCollection>{(option) => <ComboboxItem key={option} value={option}>{option}</ComboboxItem>}</ComboboxCollection></ComboboxList></ComboboxContent></Combobox></FilterMenuSurface>',
 			'        <FilterTokenList><FilterChip removeLabel="Remove Business Domain filter HR">Business Domain: HR</FilterChip></FilterTokenList>',
 			"        <WorkItemCard item={item} />",
@@ -292,6 +294,19 @@ try {
 			"Clean install did not register the semantic popover colour with Tailwind",
 		);
 	}
+	const installedThemeCss = await readFile(
+		path.join(sourceRoot, "styles", "snapp-theme.css"),
+		"utf8",
+	);
+	if (
+		!installedThemeCss.includes(
+			"@custom-variant dark (&:where(.dark, .dark *));",
+		)
+	) {
+		throw new Error(
+			"Clean install did not scope dark utilities to the explicit dark theme",
+		);
+	}
 
 	const fontCss = await readFile(
 		path.join(sourceRoot, "styles", "snapp-fonts.css"),
@@ -310,6 +325,60 @@ try {
 	const utils = await readFile(path.join(sourceRoot, "lib", "utils.ts"), "utf8");
 	if (!utils.includes("extendTailwindMerge")) {
 		throw new Error("Clean install did not install the SNAPP-aware utils");
+	}
+
+	const combobox = await readFile(
+		path.join(sourceRoot, "components", "ui", "combobox.tsx"),
+		"utf8",
+	);
+	for (const requiredComboboxClass of [
+		"font-snapp-body",
+		"shadow-snapp-flyout",
+		"p-1!",
+		"min-h-9!",
+		"py-2!",
+		"pr-8!",
+		"pl-2!",
+		'aria-label="Toggle options"',
+		"<ComboboxTrigger>",
+	]) {
+		if (!combobox.includes(requiredComboboxClass)) {
+			throw new Error(
+				`Installed Combobox is missing ${requiredComboboxClass}`,
+			);
+		}
+	}
+
+	const skeleton = await readFile(
+		path.join(sourceRoot, "components", "ui", "skeleton.tsx"),
+		"utf8",
+	);
+	for (const requiredSkeletonContract of [
+		"SkeletonGroup",
+		'aria-busy="true"',
+		'role="status"',
+		"bg-snapp-skeleton-soft",
+		"motion-reduce:animate-none",
+	]) {
+		if (!skeleton.includes(requiredSkeletonContract)) {
+			throw new Error(
+				`Installed Skeleton is missing ${requiredSkeletonContract}`,
+			);
+		}
+	}
+
+	const landingSkeleton = await readFile(
+		path.join(
+			sourceRoot,
+			"components",
+			"snapp",
+			"catalogue",
+			"landing-skeleton.tsx",
+		),
+		"utf8",
+	);
+	if (!landingSkeleton.includes("<SkeletonGroup")) {
+		throw new Error("Landing Skeleton must use the accessible SkeletonGroup");
 	}
 
 	const landingCard = await readFile(

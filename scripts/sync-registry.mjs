@@ -72,6 +72,8 @@ const componentDescriptions = {
 		"The standard searchable Snapp option picker for single-select and autocomplete controls.",
 	select:
 		"The non-searchable Snapp option picker for exceptional fixed-choice controls where search is intentionally not required.",
+	skeleton:
+		"The required Shadcn loading primitive and accessible loading-group wrapper for layout-shaped Snapp loading states.",
 };
 
 const componentItems = [];
@@ -86,6 +88,10 @@ for (const [itemName, files] of [...groups.entries()].sort(([left], [right]) =>
 	const combinedContent = contents.join("\n");
 	const dependencies = externalDependencies(combinedContent);
 	const registryDeps = registryDependencies(combinedContent, itemName);
+	if (itemName === "skeleton") {
+		registryDeps.push("@snapp/snapp-theme");
+		registryDeps.sort();
+	}
 	componentItems.push({
 		name: `snapp-${itemName}`,
 		type: "registry:ui",
@@ -300,7 +306,7 @@ const interactiveCursorCss = `\t.ec-app :where(
 
 await writeFile(
 	themeCssPath,
-	`@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n\n${interactiveCursorCss}\n}\n`,
+	`@custom-variant dark (&:where(.dark, .dark *));\n\n@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n\n${interactiveCursorCss}\n}\n`,
 );
 
 const themeItem = {

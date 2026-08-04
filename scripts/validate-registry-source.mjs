@@ -88,6 +88,34 @@ if (!utilityItem) {
 	}
 }
 
+const skeletonItem = itemsByName.get("snapp-skeleton");
+if (!skeletonItem) {
+	errors.push("Missing snapp-skeleton registry item");
+} else {
+	if (
+		!(skeletonItem.registryDependencies ?? []).includes(
+			"@snapp/snapp-theme",
+		)
+	) {
+		errors.push("snapp-skeleton must install the SNAPP theme");
+	}
+	const skeletonSource = await readFile(
+		path.join(registryRoot, skeletonItem.files[0].path),
+		"utf8",
+	);
+	for (const contract of [
+		"SkeletonGroup",
+		'aria-busy="true"',
+		'role="status"',
+		"bg-snapp-skeleton-soft",
+		"motion-reduce:animate-none",
+	]) {
+		if (!skeletonSource.includes(contract)) {
+			errors.push(`snapp-skeleton is missing ${contract}`);
+		}
+	}
+}
+
 const themeItem = itemsByName.get("snapp-theme");
 if (!themeItem) {
 	errors.push("Missing snapp-theme registry item");

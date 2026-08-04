@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton, SkeletonGroup } from "@/components/ui/skeleton"
 import { cn } from "@/lib/utils"
 
 interface LandingSkeletonProps
@@ -18,15 +18,13 @@ function LandingSkeleton({
   )
 
   return (
-    <div
-      aria-busy="true"
+    <SkeletonGroup
       aria-label={ariaLabel}
       className={cn(
         "flex min-h-screen flex-1 bg-snapp-surface-primary",
         className,
       )}
       data-slot="snapp-landing-skeleton"
-      role="status"
       {...props}
     >
       <main className="flex flex-1 flex-col justify-between">
@@ -60,7 +58,7 @@ function LandingSkeleton({
           <Skeleton className="mx-auto h-4 w-64 bg-snapp-skeleton-soft" />
         </footer>
       </main>
-    </div>
+    </SkeletonGroup>
   )
 }
 

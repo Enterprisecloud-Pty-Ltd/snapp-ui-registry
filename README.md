@@ -19,6 +19,27 @@ All included Snapp `components.json` files register the local namespace:
 npx shadcn@latest add @snapp/snapp-theme @snapp/snapp-button
 ```
 
+## Loading states
+
+Use `@snapp/snapp-skeleton` for every component or screen loading state. Build
+the skeleton from the same layout regions and approximate geometry as the
+loaded result so content does not jump when data arrives. Wrap each loading
+surface in `SkeletonGroup` with a useful `aria-label`; the wrapper supplies the
+shared busy/status semantics.
+
+```tsx
+<SkeletonGroup aria-label="Loading service catalogue items">
+  <div className="space-y-2">
+    <Skeleton className="h-9 w-full" />
+    <Skeleton className="h-9 w-full" />
+  </div>
+</SkeletonGroup>
+```
+
+Do not replace a component or page loading state with a centered spinner. Keep
+`Spinner` for compact indeterminate actions such as an in-progress button or
+upload where there is no meaningful destination layout to represent.
+
 ## Selection controls
 
 Use `@snapp/snapp-combobox` as the standard option picker for new and updated

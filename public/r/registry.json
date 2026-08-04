@@ -1492,8 +1492,9 @@
       "name": "snapp-skeleton",
       "type": "registry:ui",
       "title": "Snapp Skeleton",
-      "description": "The shared Snapp skeleton UI primitive.",
+      "description": "The required Shadcn loading primitive and accessible loading-group wrapper for layout-shaped Snapp loading states.",
       "registryDependencies": [
+        "@snapp/snapp-theme",
         "@snapp/snapp-utils"
       ],
       "files": [
