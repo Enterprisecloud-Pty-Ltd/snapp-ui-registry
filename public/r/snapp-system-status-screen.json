@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-system-status-screen",
+  "title": "Snapp System Status Screen",
+  "description": "Figma-aligned shell status screen for operational errors and subscription-required access states.",
+  "registryDependencies": [
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/system/system-status-screen.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst statusContent = {\n  error: {\n    title: \"Error\",\n    lines: [\"Something went wrong.\", \"Please contact your administrator.\"],\n    role: \"alert\" as const,\n    live: \"assertive\" as const,\n  },\n  \"subscription-required\": {\n    title: \"Sorry!\",\n    lines: [\n      \"It seems like you don’t have a subscription with us.\",\n      \"Please contact your administrator.\",\n    ],\n    role: \"status\" as const,\n    live: \"polite\" as const,\n  },\n}\n\ntype SnappSystemStatusVariant = keyof typeof statusContent\n\ninterface SnappSystemStatusScreenProps\n  extends Omit<React.ComponentProps<\"div\">, \"children\"> {\n  variant: SnappSystemStatusVariant\n  viewport?: boolean\n}\n\nfunction SnappSystemStatusScreen({\n  className,\n  variant,\n  viewport = false,\n  ...props\n}: SnappSystemStatusScreenProps) {\n  const titleId = React.useId()\n  const content = statusContent[variant]\n\n  return (\n    <div\n      className={cn(\n        \"flex h-full min-h-0 w-full items-center justify-center bg-background p-6 font-snapp-body\",\n        viewport && \"min-h-screen\",\n        className,\n      )}\n      data-slot=\"snapp-system-status-screen\"\n      data-variant={variant}\n      {...props}\n    >\n      <section\n        aria-labelledby={titleId}\n        aria-live={content.live}\n        className=\"flex min-h-31 w-full max-w-120 flex-col items-center justify-center gap-snapp-m rounded-snapp-standard p-snapp-lg text-center text-snapp-text-brand\"\n        role={content.role}\n      >\n        <h1\n          className=\"m-0 whitespace-nowrap text-snapp-2xl leading-snapp-md font-light\"\n          id={titleId}\n        >\n          {content.title}\n        </h1>\n        <p className=\"m-0 text-snapp-sm leading-snapp-xxs font-normal whitespace-pre-wrap\">\n          {content.lines[0]}\n          <br aria-hidden=\"true\" />\n          {content.lines[1]}\n        </p>\n      </section>\n    </div>\n  )\n}\n\nexport { SnappSystemStatusScreen }\nexport type { SnappSystemStatusScreenProps, SnappSystemStatusVariant }\n",
+      "type": "registry:component",
+      "target": "@components/snapp/system/system-status-screen.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -11,6 +11,13 @@ const errors = [];
 const itemsByName = new Map();
 const localDependencyName = (dependency) =>
 	dependency.startsWith("@snapp/") ? dependency.slice("@snapp/".length) : null;
+const forbiddenHostRuntimeMarkers = [
+	"data-snapp-host-context",
+	"getSnappHostContext",
+	"installSnappHostContextBridge",
+	"snapp.host.",
+	"sessionStorage",
+];
 
 for (const item of registry.items) {
 	if (itemsByName.has(item.name)) {
@@ -51,6 +58,14 @@ for (const item of registry.items) {
 			!(item.registryDependencies ?? []).includes("@snapp/snapp-utils")
 		) {
 			errors.push(`${item.name} imports @/lib/utils without snapp-utils`);
+		}
+
+		for (const marker of forbiddenHostRuntimeMarkers) {
+			if (content.includes(marker)) {
+				errors.push(
+					`${item.name} owns host runtime marker ${marker}; inject host state from the consuming app instead`,
+				);
+			}
 		}
 	}
 }
@@ -211,6 +226,7 @@ for (const requiredItem of [
 	"snapp-feature-breadcrumb",
 	"snapp-feature-parameters",
 	"snapp-feature-layout",
+	"snapp-system-status-screen",
 	"snapp-filter-controls",
 	"snapp-help-article-accordion",
 	"snapp-search-utils",

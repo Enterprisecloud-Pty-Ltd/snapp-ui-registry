@@ -31,6 +31,17 @@ Run the shared webresource converter again after this overwrite when the
 consumer is hosted by Dynamics or compiled by a sibling PCF. The converter
 restores host/runtime adaptations that generated registry files must not own.
 
+## Runtime ownership boundary
+
+Registry components are host-agnostic. They may consume values supplied through
+props or shared React providers such as `PortalContainerContext`, but they must
+not read Dynamics/PCF entity or record context from `sessionStorage`,
+`snapp.host.*`, or document-wide `[data-snapp-host-context]` queries.
+
+The shared webresource converter owns host-root registration, entity/record
+context, API-mode selection, and legacy storage fallbacks. Keeping this boundary
+prevents one inline PCF control from leaking its table or record into another.
+
 ## Loading states
 
 Use `@snapp/snapp-skeleton` for every component or screen loading state. Build

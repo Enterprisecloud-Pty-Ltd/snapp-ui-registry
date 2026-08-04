@@ -57,11 +57,13 @@ function ComboboxInput({
   showTrigger = true,
   showClear = false,
   trailingIcon,
+  triggerClassName,
   ...props
 }: ComboboxPrimitive.Input.Props & {
   showTrigger?: boolean
   showClear?: boolean
   trailingIcon?: React.ReactNode
+  triggerClassName?: string
 }) {
   return (
     <InputGroup
@@ -81,7 +83,10 @@ function ComboboxInput({
             variant="ghost"
             asChild
             data-slot="input-group-button"
-            className="group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent"
+            className={cn(
+              "group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent",
+              triggerClassName
+            )}
             disabled={disabled}
           >
             <ComboboxTrigger>

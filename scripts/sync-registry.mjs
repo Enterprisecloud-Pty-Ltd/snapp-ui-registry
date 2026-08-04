@@ -464,6 +464,25 @@ const featureLayoutItem = {
 	],
 };
 
+const systemStatusScreenItem = {
+	name: "snapp-system-status-screen",
+	type: "registry:component",
+	title: "Snapp System Status Screen",
+	description:
+		"Figma-aligned shell status screen for operational errors and subscription-required access states.",
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/system/system-status-screen.tsx",
+			type: "registry:component",
+			target: "@components/snapp/system/system-status-screen.tsx",
+		},
+	],
+};
+
 const filterControlsItem = {
 	name: "snapp-filter-controls",
 	type: "registry:component",
@@ -752,6 +771,7 @@ const registry = {
 		...componentItems,
 		uiFoundationItem,
 		featureLayoutItem,
+		systemStatusScreenItem,
 		filterControlsItem,
 		landingCardItem,
 		landingSkeletonItem,
