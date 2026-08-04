@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-use-mobile",
+  "title": "Snapp Use Mobile",
+  "description": "Shared responsive viewport hook required by adaptive primitives.",
+  "files": [
+    {
+      "path": "registry/radix-nova/hooks/use-mobile.ts",
+      "content": "import * as React from \"react\"\n\nconst MOBILE_BREAKPOINT = 768\n\nexport function useIsMobile() {\n  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)\n\n  React.useEffect(() => {\n    const mediaQuery = window.matchMedia(\n      `(max-width: ${MOBILE_BREAKPOINT - 1}px)`\n    )\n    const update = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)\n\n    mediaQuery.addEventListener(\"change\", update)\n    update()\n    return () => mediaQuery.removeEventListener(\"change\", update)\n  }, [])\n\n  return Boolean(isMobile)\n}\n",
+      "type": "registry:hook",
+      "target": "@hooks/use-mobile.ts"
+    }
+  ],
+  "type": "registry:hook"
+}

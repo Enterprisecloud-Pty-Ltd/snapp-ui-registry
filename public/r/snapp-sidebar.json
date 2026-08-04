@@ -15,6 +15,7 @@
     "@snapp/snapp-sheet",
     "@snapp/snapp-skeleton",
     "@snapp/snapp-tooltip",
+    "@snapp/snapp-use-mobile",
     "@snapp/snapp-utils"
   ],
   "files": [

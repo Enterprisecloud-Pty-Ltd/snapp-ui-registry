@@ -27,7 +27,8 @@ const externalDependencies = (content) => {
 		if (
 			!specifier.startsWith(".") &&
 			!specifier.startsWith("@/") &&
-			!specifier.startsWith("react")
+			specifier !== "react" &&
+			!specifier.startsWith("react/")
 		) {
 			dependencies.add(packageName(specifier));
 		}
@@ -48,6 +49,9 @@ const registryDependencies = (content, ownName) => {
 		if (dependencyName !== ownName) {
 			dependencies.add(`@snapp/snapp-${dependencyName}`);
 		}
+	}
+	for (const match of content.matchAll(/@\/hooks\/([a-z0-9.-]+)/g)) {
+		dependencies.add(`@snapp/snapp-${match[1].split(".")[0]}`);
 	}
 	return [...dependencies].sort();
 };
@@ -113,6 +117,25 @@ for (const [itemName, files] of [...groups.entries()].sort(([left], [right]) =>
 		})),
 	});
 }
+
+const uiFoundationItem = {
+	name: "snapp-ui-foundation",
+	type: "registry:component",
+	title: "Snapp UI Foundation",
+	description:
+		"Installs the complete canonical Snapp Shadcn UI primitive set and theme for a clean consumer refresh.",
+	registryDependencies: [
+		"@snapp/snapp-theme",
+		...componentItems.map((item) => `@snapp/${item.name}`),
+	],
+	files: [
+		{
+			path: "registry/radix-nova/components/foundation/ui-foundation.ts",
+			type: "registry:component",
+			target: "@components/snapp/foundation/ui-foundation.ts",
+		},
+	],
+};
 
 const figmaTokens = await loadFigmaTokens(registryRoot);
 const existingThemeVariables = {
@@ -404,6 +427,20 @@ const portalContainerItem = {
 			path: "registry/radix-nova/runtime/PortalContainer.ts",
 			type: "registry:lib",
 			target: "src/runtime/PortalContainer.ts",
+		},
+	],
+};
+
+const useMobileItem = {
+	name: "snapp-use-mobile",
+	type: "registry:hook",
+	title: "Snapp Use Mobile",
+	description: "Shared responsive viewport hook required by adaptive primitives.",
+	files: [
+		{
+			path: "registry/radix-nova/hooks/use-mobile.ts",
+			type: "registry:hook",
+			target: "@hooks/use-mobile.ts",
 		},
 	],
 };
@@ -711,7 +748,9 @@ const registry = {
 		featureParametersItem,
 		searchUtilitiesItem,
 		portalContainerItem,
+		useMobileItem,
 		...componentItems,
+		uiFoundationItem,
 		featureLayoutItem,
 		filterControlsItem,
 		landingCardItem,

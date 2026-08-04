@@ -116,6 +116,26 @@ if (!skeletonItem) {
 	}
 }
 
+const uiFoundationItem = itemsByName.get("snapp-ui-foundation");
+if (!uiFoundationItem) {
+	errors.push("Missing snapp-ui-foundation registry item");
+} else {
+	const foundationDependencies = new Set(
+		uiFoundationItem.registryDependencies ?? [],
+	);
+	for (const item of registry.items.filter(
+		(candidate) => candidate.type === "registry:ui",
+	)) {
+		const dependency = `@snapp/${item.name}`;
+		if (!foundationDependencies.has(dependency)) {
+			errors.push(`snapp-ui-foundation is missing ${dependency}`);
+		}
+	}
+	if (!foundationDependencies.has("@snapp/snapp-theme")) {
+		errors.push("snapp-ui-foundation must install the SNAPP theme");
+	}
+}
+
 const themeItem = itemsByName.get("snapp-theme");
 if (!themeItem) {
 	errors.push("Missing snapp-theme registry item");

@@ -521,6 +521,19 @@
       ]
     },
     {
+      "name": "snapp-use-mobile",
+      "type": "registry:hook",
+      "title": "Snapp Use Mobile",
+      "description": "Shared responsive viewport hook required by adaptive primitives.",
+      "files": [
+        {
+          "path": "registry/radix-nova/hooks/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-mobile.ts"
+        }
+      ]
+    },
+    {
       "name": "snapp-accordion",
       "type": "registry:ui",
       "title": "Snapp Accordion",
@@ -743,7 +756,8 @@
       "title": "Snapp Calendar",
       "description": "The shared Snapp calendar UI primitive.",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "react-day-picker"
       ],
       "registryDependencies": [
         "@snapp/snapp-button",
@@ -1369,6 +1383,9 @@
       "type": "registry:ui",
       "title": "Snapp Resizable",
       "description": "The shared Snapp resizable UI primitive.",
+      "dependencies": [
+        "react-resizable-panels"
+      ],
       "registryDependencies": [
         "@snapp/snapp-utils"
       ],
@@ -1478,6 +1495,7 @@
         "@snapp/snapp-sheet",
         "@snapp/snapp-skeleton",
         "@snapp/snapp-tooltip",
+        "@snapp/snapp-use-mobile",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -1690,6 +1708,82 @@
           "path": "registry/radix-nova/ui/tooltip.tsx",
           "type": "registry:ui",
           "target": "@ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-ui-foundation",
+      "type": "registry:component",
+      "title": "Snapp UI Foundation",
+      "description": "Installs the complete canonical Snapp Shadcn UI primitive set and theme for a clean consumer refresh.",
+      "registryDependencies": [
+        "@snapp/snapp-theme",
+        "@snapp/snapp-accordion",
+        "@snapp/snapp-alert",
+        "@snapp/snapp-alert-dialog",
+        "@snapp/snapp-aspect-ratio",
+        "@snapp/snapp-attachment",
+        "@snapp/snapp-avatar",
+        "@snapp/snapp-badge",
+        "@snapp/snapp-breadcrumb",
+        "@snapp/snapp-bubble",
+        "@snapp/snapp-button",
+        "@snapp/snapp-button-group",
+        "@snapp/snapp-calendar",
+        "@snapp/snapp-card",
+        "@snapp/snapp-carousel",
+        "@snapp/snapp-chart",
+        "@snapp/snapp-checkbox",
+        "@snapp/snapp-collapsible",
+        "@snapp/snapp-combobox",
+        "@snapp/snapp-command",
+        "@snapp/snapp-context-menu",
+        "@snapp/snapp-dialog",
+        "@snapp/snapp-direction",
+        "@snapp/snapp-drawer",
+        "@snapp/snapp-dropdown-menu",
+        "@snapp/snapp-empty",
+        "@snapp/snapp-field",
+        "@snapp/snapp-hover-card",
+        "@snapp/snapp-input",
+        "@snapp/snapp-input-group",
+        "@snapp/snapp-input-otp",
+        "@snapp/snapp-item",
+        "@snapp/snapp-kbd",
+        "@snapp/snapp-label",
+        "@snapp/snapp-marker",
+        "@snapp/snapp-menubar",
+        "@snapp/snapp-message",
+        "@snapp/snapp-message-scroller",
+        "@snapp/snapp-native-select",
+        "@snapp/snapp-navigation-menu",
+        "@snapp/snapp-pagination",
+        "@snapp/snapp-popover",
+        "@snapp/snapp-progress",
+        "@snapp/snapp-radio-group",
+        "@snapp/snapp-resizable",
+        "@snapp/snapp-scroll-area",
+        "@snapp/snapp-select",
+        "@snapp/snapp-separator",
+        "@snapp/snapp-sheet",
+        "@snapp/snapp-sidebar",
+        "@snapp/snapp-skeleton",
+        "@snapp/snapp-slider",
+        "@snapp/snapp-sonner",
+        "@snapp/snapp-spinner",
+        "@snapp/snapp-switch",
+        "@snapp/snapp-table",
+        "@snapp/snapp-tabs",
+        "@snapp/snapp-textarea",
+        "@snapp/snapp-toggle",
+        "@snapp/snapp-toggle-group",
+        "@snapp/snapp-tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/foundation/ui-foundation.ts",
+          "type": "registry:component",
+          "target": "@components/snapp/foundation/ui-foundation.ts"
         }
       ]
     },

@@ -19,6 +19,18 @@ All included Snapp `components.json` files register the local namespace:
 npx shadcn@latest add @snapp/snapp-theme @snapp/snapp-button
 ```
 
+For a new project or a substantial registry refresh, install the complete
+canonical Shadcn primitive set instead of refreshing only the components the
+current screen happens to import:
+
+```powershell
+npx shadcn@latest add @snapp/snapp-ui-foundation --overwrite
+```
+
+Run the shared webresource converter again after this overwrite when the
+consumer is hosted by Dynamics or compiled by a sibling PCF. The converter
+restores host/runtime adaptations that generated registry files must not own.
+
 ## Loading states
 
 Use `@snapp/snapp-skeleton` for every component or screen loading state. Build
@@ -66,6 +78,18 @@ and disables pointer events so the input retains the interaction. Compose
 multi-value access/lookup features from the existing Combobox plus Badge or
 ComboboxChip; keep entity-specific selection and mutation logic in the feature
 instead of adding a domain-specific registry selector.
+
+Compose a labelled multi-value picker from `Field`, `FieldLabel`, `Combobox`,
+`Badge` or `ComboboxChip`, and a layout-shaped `SkeletonGroup`. Do not add a
+domain-specific access-selector component while these primitives cover the
+contract. Do not introduce a Card or other surface unless the exact Figma node
+being implemented contains that surface; parent and adjacent frames provide
+context, not implicit component ownership.
+
+Prefer Lucide icons when they match the design. If the exact Figma glyph is
+material and no shared icon matches, pass a small inline SVG through the
+primitive's icon slot instead of requiring an app-specific registry component
+or an SVG-loader dependency that a sibling PCF may not provide.
 
 ## Filter controls and nested overlays
 

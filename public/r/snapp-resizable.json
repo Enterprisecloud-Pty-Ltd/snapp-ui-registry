@@ -3,6 +3,9 @@
   "name": "snapp-resizable",
   "title": "Snapp Resizable",
   "description": "The shared Snapp resizable UI primitive.",
+  "dependencies": [
+    "react-resizable-panels"
+  ],
   "registryDependencies": [
     "@snapp/snapp-utils"
   ],

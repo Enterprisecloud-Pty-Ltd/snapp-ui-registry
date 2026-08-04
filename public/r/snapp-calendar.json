@@ -4,7 +4,8 @@
   "title": "Snapp Calendar",
   "description": "The shared Snapp calendar UI primitive.",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "react-day-picker"
   ],
   "registryDependencies": [
     "@snapp/snapp-button",
