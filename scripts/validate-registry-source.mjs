@@ -183,6 +183,7 @@ if (!themeFile) {
 		"utf8",
 	);
 	for (const contract of [
+		"--radius-snapp-action-menu: 0.375rem;",
 		"--radius: var(--snapp-radius-m);",
 		"--background: var(--snapp-surface);",
 		"--border: var(--snapp-border-primary);",
@@ -278,9 +279,57 @@ if (comboboxItem) {
 		path.join(registryRoot, comboboxItem.files[0].path),
 		"utf8",
 	);
-	for (const contract of ["trailingIcon?: React.ReactNode", "combobox-trailing-icon"]) {
+	for (const contract of [
+		"trailingIcon?: React.ReactNode",
+		"combobox-trailing-icon",
+		'positionMethod={positionMethod ?? "fixed"}',
+		"border-snapp-card-border!",
+		"bg-popover!",
+		"text-popover-foreground!",
+		"shadow-snapp-flyout!",
+		"p-1!",
+		"min-h-9!",
+		"py-2!",
+		"pl-2!",
+		"pr-8!",
+	]) {
 		if (!comboboxSource.includes(contract)) {
 			errors.push(`snapp-combobox is missing ${contract}`);
+		}
+	}
+}
+
+for (const portalItemName of [
+	"snapp-alert-dialog",
+	"snapp-combobox",
+	"snapp-context-menu",
+	"snapp-dialog",
+	"snapp-drawer",
+	"snapp-dropdown-menu",
+	"snapp-hover-card",
+	"snapp-menubar",
+	"snapp-popover",
+	"snapp-select",
+	"snapp-sheet",
+	"snapp-tooltip",
+]) {
+	const portalItem = itemsByName.get(portalItemName);
+	if (!portalItem) {
+		errors.push(`Missing ${portalItemName} registry item`);
+		continue;
+	}
+
+	const portalSource = await readFile(
+		path.join(registryRoot, portalItem.files[0].path),
+		"utf8",
+	);
+	for (const contract of [
+		'from "@/runtime/PortalContainer"',
+		"usePortalContainer()",
+		"container={portalContainer ?? undefined}",
+	]) {
+		if (!portalSource.includes(contract)) {
+			errors.push(`${portalItemName} is missing portal contract ${contract}`);
 		}
 	}
 }
@@ -403,11 +452,13 @@ for (const menuItemName of [
 		"utf8",
 	);
 	for (const className of [
-		"w-34 min-w-34",
-		"gap-1",
-		"p-2",
-		"min-h-7",
-		"px-2 py-1.5",
+		"w-52 min-w-52",
+		"gap-2",
+		"p-3",
+		"h-5.5",
+		"px-2 py-0.5",
+		"shadow-snapp-flyout",
+		"rounded-snapp-action-menu",
 		"cursor-pointer",
 		"usePortalContainer",
 	]) {

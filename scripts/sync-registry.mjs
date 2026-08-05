@@ -176,6 +176,7 @@ const existingThemeVariables = {
 	"leading-snapp-display-sm": "2.5rem",
 	"leading-snapp-display": "2.75rem",
 	"radius-snapp-control": "0.625rem",
+	"radius-snapp-action-menu": "0.375rem",
 	"radius-snapp-mark": "0.125rem 0.4375rem 0.125rem 0.4375rem",
 };
 const existingInlineThemeVariables = {
@@ -421,7 +422,7 @@ const portalContainerItem = {
 	type: "registry:lib",
 	title: "Snapp Portal Container",
 	description:
-		"Shared portal-container context for cabinet-safe dialogs, menus, popovers, tooltips, and searchable comboboxes.",
+		"Injected portal-container context for host-safe dialogs, menus, popovers, tooltips, and searchable comboboxes; the consuming runtime owns local versus external placement.",
 	files: [
 		{
 			path: "registry/radix-nova/runtime/PortalContainer.ts",

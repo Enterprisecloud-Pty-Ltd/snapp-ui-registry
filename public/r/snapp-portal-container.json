@@ -2,11 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "snapp-portal-container",
   "title": "Snapp Portal Container",
-  "description": "Shared portal-container context for cabinet-safe dialogs, menus, popovers, tooltips, and searchable comboboxes.",
+  "description": "Injected portal-container context for host-safe dialogs, menus, popovers, tooltips, and searchable comboboxes; the consuming runtime owns local versus external placement.",
   "files": [
     {
       "path": "registry/radix-nova/runtime/PortalContainer.ts",
-      "content": "import * as React from \"react\"\n\nexport const PortalContainerContext =\n  React.createContext<HTMLElement | null>(null)\n\nexport function usePortalContainer() {\n  return React.useContext(PortalContainerContext)\n}\n",
+      "content": "import * as React from \"react\"\n\n// The consuming runtime owns portal placement. Registry primitives consume\n// this injected container and must not infer a host from document.body.\nexport const PortalContainerContext =\n  React.createContext<HTMLElement | null>(null)\n\nexport function usePortalContainer() {\n  return React.useContext(PortalContainerContext)\n}\n",
       "type": "registry:lib",
       "target": "src/runtime/PortalContainer.ts"
     }
