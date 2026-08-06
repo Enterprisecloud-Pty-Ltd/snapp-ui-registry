@@ -1,4 +1,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant data-horizontal (&[data-orientation="horizontal"]);
+@custom-variant data-vertical (&[data-orientation="vertical"]);
 
 @theme {
 	--breakpoint-snapp-phone: 26.25rem;

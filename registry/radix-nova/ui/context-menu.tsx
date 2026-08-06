@@ -93,7 +93,7 @@ function ContextMenuItem({
 }: React.ComponentProps<typeof ContextMenuPrimitive.Item> & {
   inset?: boolean
   variant?: "default" | "destructive"
-  size?: "default" | "quick-actions"
+  size?: "default" | "quick-actions" | "quick-actions-compact"
 }) {
   return (
     <ContextMenuPrimitive.Item
@@ -105,6 +105,8 @@ function ContextMenuItem({
         "group/context-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 focus:*:[svg]:text-accent-foreground data-[variant=destructive]:*:[svg]:text-destructive",
         size === "quick-actions" &&
           "h-5.5 cursor-pointer gap-2 rounded-sm px-2 py-0.5 text-sm font-normal leading-[normal] text-foreground hover:bg-accent hover:text-foreground focus:bg-accent focus:text-foreground data-disabled:cursor-not-allowed",
+        size === "quick-actions-compact" &&
+          "h-4 cursor-pointer gap-2 rounded-sm px-0 py-0 text-sm font-normal leading-4 text-foreground hover:bg-accent hover:text-foreground focus:bg-accent focus:text-foreground data-disabled:cursor-not-allowed",
         className
       )}
       {...props}
@@ -116,16 +118,21 @@ function ContextMenuSubTrigger({
   className,
   inset,
   children,
+  size = "default",
   ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.SubTrigger> & {
   inset?: boolean
+  size?: "default" | "quick-actions"
 }) {
   return (
     <ContextMenuPrimitive.SubTrigger
       data-slot="context-menu-sub-trigger"
       data-inset={inset}
+      data-size={size}
       className={cn(
         "flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        size === "quick-actions" &&
+          "h-5 cursor-pointer gap-2 rounded-sm px-2 py-0.5 text-sm font-normal leading-4 text-foreground hover:bg-accent hover:text-foreground focus:bg-accent focus:text-foreground data-open:bg-accent data-open:text-foreground",
         className
       )}
       {...props}
@@ -138,12 +145,21 @@ function ContextMenuSubTrigger({
 
 function ContextMenuSubContent({
   className,
+  size = "default",
   ...props
-}: React.ComponentProps<typeof ContextMenuPrimitive.SubContent>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.SubContent> & {
+  size?: "default" | "quick-actions-compact"
+}) {
   return (
     <ContextMenuPrimitive.SubContent
       data-slot="context-menu-sub-content"
-      className={cn("z-50 min-w-32 origin-(--radix-context-menu-content-transform-origin) overflow-hidden rounded-lg border bg-popover p-1 text-popover-foreground shadow-lg duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className )}
+      data-size={size}
+      className={cn(
+        "z-50 min-w-32 origin-(--radix-context-menu-content-transform-origin) overflow-hidden rounded-lg border bg-popover p-1 text-popover-foreground shadow-lg duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+        size === "quick-actions-compact" &&
+          "flex w-29.5 min-w-29.5 flex-col gap-3 rounded-snapp-action-menu border border-snapp-card-border bg-popover p-3 shadow-snapp-flyout ring-0",
+        className
+      )}
       {...props}
     />
   )

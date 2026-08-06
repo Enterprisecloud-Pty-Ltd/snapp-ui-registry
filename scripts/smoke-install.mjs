@@ -145,13 +145,13 @@ try {
 			'import { createRoot } from "react-dom/client"',
 			'import { EllipsisIcon, PuzzleIcon, SearchIcon } from "lucide-react"',
 			'import { CatalogueHero, CatalogueResultCard, FeatureBreadcrumb, FeatureShell, FilterChip, FilterMenuSurface, FilterTokenList, HelpArticleAccordion, LandingCard, LandingSkeleton, PageBody, SurfaceCard, filterSearchCollection, matchesSearch, resolveShowNavBar } from "@/components/snapp/catalogue/catalogue-core"',
-			'import { DragPreview, DropIndicator } from "@/components/snapp/drag/drag-feedback"',
+			'import { DragPreview, DropIndicator, StatusDropTarget } from "@/components/snapp/drag/drag-feedback"',
 			'import { WorkItemCard } from "@/components/snapp/work-os/work-item-card"',
 			'import { Button } from "@/components/ui/button"',
 			'import { Combobox, ComboboxCollection, ComboboxContent, ComboboxInput, ComboboxItem, ComboboxList } from "@/components/ui/combobox"',
 			'import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "@/components/ui/context-menu"',
 			'import { Dialog, DialogBody, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"',
-			'import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"',
+			'import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"',
 			'import { Input } from "@/components/ui/input"',
 			'import { Skeleton, SkeletonGroup } from "@/components/ui/skeleton"',
 			'import { Textarea } from "@/components/ui/textarea"',
@@ -194,6 +194,7 @@ try {
 			'        <Input aria-label="Form input" variant="form" />',
 			'        <Textarea aria-label="Form description" variant="form" />',
 			'        <div className="relative"><DragPreview icon={<PuzzleIcon />}>Catalogue item</DragPreview><DropIndicator position="after" /></div>',
+			'        <div className="relative h-32"><StatusDropTarget icon={<PuzzleIcon />} label="Drop to change status" /></div>',
 			'        <Button size="form" variant="form-primary">Save</Button>',
 			'        <Button size="form" variant="form-secondary">Cancel</Button>',
 			'        <Button size="form" variant="form-destructive">Delete</Button>',
@@ -209,6 +210,7 @@ try {
 			'            <Button aria-label="Open actions for registry example" size="overflow" variant="overflow"><EllipsisIcon /></Button>',
 			"          </DropdownMenuTrigger>",
 			'          <DropdownMenuContent size="quick-actions">',
+			'            <DropdownMenuSub><DropdownMenuSubTrigger size="quick-actions">Add time</DropdownMenuSubTrigger><DropdownMenuSubContent size="quick-actions-compact"><DropdownMenuItem size="quick-actions-compact">30 mins</DropdownMenuItem></DropdownMenuSubContent></DropdownMenuSub>',
 			'            <DropdownMenuItem onSelect={() => setActiveDialog("edit")} size="quick-actions">Edit</DropdownMenuItem>',
 			'            <DropdownMenuItem onSelect={() => setActiveDialog("delete")} size="quick-actions">Delete</DropdownMenuItem>',
 			"          </DropdownMenuContent>",
@@ -300,6 +302,16 @@ try {
 		throw new Error(
 			"Clean install did not scope dark utilities to the explicit dark theme",
 		);
+	}
+	for (const orientationVariant of [
+		'@custom-variant data-horizontal (&[data-orientation="horizontal"]);',
+		'@custom-variant data-vertical (&[data-orientation="vertical"]);',
+	]) {
+		if (!installedThemeCss.includes(orientationVariant)) {
+			throw new Error(
+				`Clean install did not define ${orientationVariant}`,
+			);
+		}
 	}
 
 	const fontCss = await readFile(
@@ -516,6 +528,8 @@ try {
 		"background-color:var(--popover)",
 		"box-sizing:border-box",
 		"font:inherit",
+		"[data-orientation=horizontal]",
+		"[data-orientation=vertical]",
 	]) {
 		if (!compactCss.includes(contract)) {
 			throw new Error(`Production CSS is missing ${contract}`);

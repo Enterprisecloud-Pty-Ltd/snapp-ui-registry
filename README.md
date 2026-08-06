@@ -42,6 +42,12 @@ The shared webresource converter owns host-root registration, entity/record
 context, API-mode selection, and legacy storage fallbacks. Keeping this boundary
 prevents one inline PCF control from leaking its table or record into another.
 
+Dataverse entity-set/logical-name resolution and its environment-scoped memory
+cache also belong to the converter-owned runtime. Registry components may
+receive resolved records or loading/error state through props and providers,
+but must not query `EntityDefinitions`, infer table plurals, or maintain entity
+metadata caches.
+
 ## Loading states
 
 Use `@snapp/snapp-skeleton` for every component or screen loading state. Build
@@ -195,12 +201,14 @@ Always use the variant and size together. Do not render the icon in a raw
 or copy the geometry/hover utilities into a consumer. Give each trigger a
 contextual accessible name.
 
-Use `size="quick-actions"` on both menu content and menu items when implementing
-compact overflow actions. If the same actions apply to the whole component,
-expose them through the registry `ContextMenu` as well as the visible
-`DropdownMenu`. The variant owns the standard 136px width, 8px surface inset,
-4px row gap, 28px minimum row height, and 8px horizontal/6px vertical item
-padding. Do not reproduce those classes in consumer components.
+Use `size="quick-actions"` on menu content, main menu items, and submenu
+triggers when implementing compact overflow actions. The main surface owns the
+standard 208px width, 12px inset, 8px row gap, shared border, radius, and
+flyout shadow. For the narrow nested choice surface, use
+`size="quick-actions-compact"` on both `DropdownMenuSubContent` and its items;
+that variant owns the 118px width, 12px inset and gap, and 16px rows. The same
+sizes are available on the matching `ContextMenu` primitives. Do not reproduce
+those class bundles in consumer components.
 
 For an action that opens a modal, keep the controlled `Dialog` outside the
 transient menu content and open it from `DropdownMenuItem.onSelect` (or the
@@ -213,6 +221,16 @@ const [editOpen, setEditOpen] = React.useState(false)
   <DropdownMenu>
     <DropdownMenuTrigger asChild>{actionButton}</DropdownMenuTrigger>
     <DropdownMenuContent size="quick-actions">
+      <DropdownMenuSub>
+        <DropdownMenuSubTrigger size="quick-actions">
+          Add time
+        </DropdownMenuSubTrigger>
+        <DropdownMenuSubContent size="quick-actions-compact">
+          <DropdownMenuItem size="quick-actions-compact">
+            30 mins
+          </DropdownMenuItem>
+        </DropdownMenuSubContent>
+      </DropdownMenuSub>
       <DropdownMenuItem
         size="quick-actions"
         onSelect={() => setEditOpen(true)}

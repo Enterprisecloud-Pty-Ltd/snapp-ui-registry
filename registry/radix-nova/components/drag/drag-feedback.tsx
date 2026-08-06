@@ -57,4 +57,38 @@ function DropIndicator({
   )
 }
 
-export { DragPreview, DropIndicator }
+function StatusDropTarget({
+  className,
+  edges = "both",
+  icon,
+  label,
+  ...props
+}: React.ComponentProps<"div"> & {
+  edges?: "both" | "top"
+  icon: React.ReactNode
+  label: React.ReactNode
+}) {
+  return (
+    <div
+      data-edges={edges}
+      data-slot="status-drop-target"
+      className={cn(
+        "pointer-events-none absolute inset-0 z-20 flex items-center justify-center border-y border-dashed border-snapp-border-highlight bg-snapp-border-highlight/10 px-4 py-6 text-center data-[edges=top]:border-b-0",
+        className
+      )}
+      {...props}
+    >
+      <div className="flex flex-col items-center gap-1 rounded-snapp-large px-6 py-4 font-snapp-body text-snapp-md leading-snapp-xs font-normal text-snapp-colour-brand-primary">
+        <span
+          aria-hidden="true"
+          className="flex size-6 shrink-0 items-center justify-center overflow-hidden [&_img]:size-full [&_svg]:size-6"
+        >
+          {icon}
+        </span>
+        <span>{label}</span>
+      </div>
+    </div>
+  )
+}
+
+export { DragPreview, DropIndicator, StatusDropTarget }

@@ -1778,7 +1778,8 @@
         "@snapp/snapp-textarea",
         "@snapp/snapp-toggle",
         "@snapp/snapp-toggle-group",
-        "@snapp/snapp-tooltip"
+        "@snapp/snapp-tooltip",
+        "@snapp/snapp-searchable-combobox"
       ],
       "files": [
         {
@@ -1839,6 +1840,24 @@
           "path": "registry/radix-nova/components/filters/filter-controls.tsx",
           "type": "registry:component",
           "target": "@components/snapp/filters/filter-controls.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-searchable-combobox",
+      "type": "registry:component",
+      "title": "Snapp Searchable Combobox",
+      "description": "Controlled, searchable single-select control with canonical Snapp styling and host-safe overlay behavior.",
+      "registryDependencies": [
+        "@snapp/snapp-combobox",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/forms/searchable-combobox.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/forms/searchable-combobox.tsx"
         }
       ]
     },
@@ -1985,7 +2004,7 @@
       "name": "snapp-drag-feedback",
       "type": "registry:component",
       "title": "Snapp Drag Feedback",
-      "description": "Figma-aligned native drag preview and fixed-size drop indicator for draggable Snapp interfaces.",
+      "description": "Figma-aligned native drag preview, fixed-size insertion indicator, and status drop target for draggable Snapp interfaces.",
       "registryDependencies": [
         "@snapp/snapp-theme",
         "@snapp/snapp-utils"

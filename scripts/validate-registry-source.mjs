@@ -183,6 +183,8 @@ if (!themeFile) {
 		"utf8",
 	);
 	for (const contract of [
+		'@custom-variant data-horizontal (&[data-orientation="horizontal"]);',
+		'@custom-variant data-vertical (&[data-orientation="vertical"]);',
 		"--radius-snapp-action-menu: 0.375rem;",
 		"--radius: var(--snapp-radius-m);",
 		"--background: var(--snapp-surface);",
@@ -453,10 +455,15 @@ for (const menuItemName of [
 	);
 	for (const className of [
 		"w-52 min-w-52",
+		"w-29.5 min-w-29.5",
 		"gap-2",
+		"gap-3",
 		"p-3",
 		"h-5.5",
+		"h-4",
 		"px-2 py-0.5",
+		"px-0 py-0",
+		'"quick-actions-compact"',
 		"shadow-snapp-flyout",
 		"rounded-snapp-action-menu",
 		"cursor-pointer",
@@ -466,7 +473,7 @@ for (const menuItemName of [
 			errors.push(`${menuItemName} quick-actions is missing ${className}`);
 		}
 	}
-	for (const legacyClassName of ["w-29.5 min-w-29.5", "rounded-none p-0"]) {
+	for (const legacyClassName of ["rounded-none p-0"]) {
 		if (menuSource.includes(legacyClassName)) {
 			errors.push(
 				`${menuItemName} quick-actions still uses ${legacyClassName}`,

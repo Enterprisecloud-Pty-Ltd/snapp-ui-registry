@@ -127,6 +127,7 @@ const uiFoundationItem = {
 	registryDependencies: [
 		"@snapp/snapp-theme",
 		...componentItems.map((item) => `@snapp/${item.name}`),
+		"@snapp/snapp-searchable-combobox",
 	],
 	files: [
 		{
@@ -330,7 +331,7 @@ const interactiveCursorCss = `\t.ec-app :where(
 
 await writeFile(
 	themeCssPath,
-	`@custom-variant dark (&:where(.dark, .dark *));\n\n@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n\n${interactiveCursorCss}\n}\n`,
+	`@custom-variant dark (&:where(.dark, .dark *));\n@custom-variant data-horizontal (&[data-orientation="horizontal"]);\n@custom-variant data-vertical (&[data-orientation="vertical"]);\n\n@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n\n${interactiveCursorCss}\n}\n`,
 );
 
 const themeItem = {
@@ -504,6 +505,27 @@ const filterControlsItem = {
 	],
 };
 
+const searchableComboboxItem = {
+	name: "snapp-searchable-combobox",
+	type: "registry:component",
+	title: "Snapp Searchable Combobox",
+	description:
+		"Controlled, searchable single-select control with canonical Snapp styling and host-safe overlay behavior.",
+	registryDependencies: [
+		"@snapp/snapp-combobox",
+		"@snapp/snapp-theme",
+		"@snapp/snapp-utils",
+	],
+	files: [
+		{
+			path:
+				"registry/radix-nova/components/forms/searchable-combobox.tsx",
+			type: "registry:component",
+			target: "@components/snapp/forms/searchable-combobox.tsx",
+		},
+	],
+};
+
 const landingCardItem = {
 	name: "snapp-landing-card",
 	type: "registry:component",
@@ -657,7 +679,7 @@ const dragFeedbackItem = {
 	type: "registry:component",
 	title: "Snapp Drag Feedback",
 	description:
-		"Figma-aligned native drag preview and fixed-size drop indicator for draggable Snapp interfaces.",
+		"Figma-aligned native drag preview, fixed-size insertion indicator, and status drop target for draggable Snapp interfaces.",
 	registryDependencies: [
 		"@snapp/snapp-theme",
 		"@snapp/snapp-utils",
@@ -774,6 +796,7 @@ const registry = {
 		featureLayoutItem,
 		systemStatusScreenItem,
 		filterControlsItem,
+		searchableComboboxItem,
 		landingCardItem,
 		landingSkeletonItem,
 		featureBreadcrumbItem,

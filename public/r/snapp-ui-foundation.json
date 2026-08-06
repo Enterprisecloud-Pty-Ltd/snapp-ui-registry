@@ -64,7 +64,8 @@
     "@snapp/snapp-textarea",
     "@snapp/snapp-toggle",
     "@snapp/snapp-toggle-group",
-    "@snapp/snapp-tooltip"
+    "@snapp/snapp-tooltip",
+    "@snapp/snapp-searchable-combobox"
   ],
   "files": [
     {
