@@ -466,7 +466,7 @@
 		[role="tab"]:not([aria-disabled="true"]):not([data-disabled]),
 		[role="treeitem"]:not([aria-disabled="true"]):not([data-disabled])
 	) {
-		cursor: pointer !important;
+		cursor: pointer;
 	}
 
 	.ec-app :where(
@@ -476,6 +476,6 @@
 		[aria-disabled="true"],
 		[data-disabled]
 	) {
-		cursor: not-allowed !important;
+		cursor: not-allowed;
 	}
 }

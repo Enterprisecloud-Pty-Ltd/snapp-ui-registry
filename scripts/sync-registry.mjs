@@ -316,7 +316,7 @@ const interactiveCursorCss = `\t.ec-app :where(
 \t\t[role="tab"]:not([aria-disabled="true"]):not([data-disabled]),
 \t\t[role="treeitem"]:not([aria-disabled="true"]):not([data-disabled])
 \t) {
-\t\tcursor: pointer !important;
+\t\tcursor: pointer;
 \t}
 
 \t.ec-app :where(
@@ -326,7 +326,7 @@ const interactiveCursorCss = `\t.ec-app :where(
 \t\t[aria-disabled="true"],
 \t\t[data-disabled]
 \t) {
-\t\tcursor: not-allowed !important;
+\t\tcursor: not-allowed;
 \t}`;
 
 await writeFile(
