@@ -3,6 +3,7 @@
   "name": "snapp-search-utils",
   "title": "Snapp Search Utilities",
   "description": "Shared normalization, multi-word matching, and collection-scoped filtering helpers for feature-owned search fields.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/radix-nova/lib/search.ts",

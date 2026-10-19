@@ -78,10 +78,10 @@ const formatColor = (value) => {
 		return hex;
 	}
 
-	const alphaHex = Math.round(Math.max(0, Math.min(1, alpha)) * 255)
-		.toString(16)
-		.padStart(2, "0");
-	return `${hex}${alphaHex}`;
+	const channels = hex.replace(/^#/, "").match(/.{2}/g);
+	if (channels?.length !== 3) throw new Error("Expected a six-digit Figma color.");
+	const rgb = channels.map(channel => Number.parseInt(channel, 16)).join(" ");
+	return `rgb(${rgb} / ${Number((Math.max(0, Math.min(1, alpha)) * 100).toFixed(6))}%)`;
 };
 
 const formatString = (value, parts) => {
@@ -91,10 +91,13 @@ const formatString = (value, parts) => {
 	if (parts.includes("weight")) {
 		if (finalPart === "regular") return "400";
 		if (finalPart === "bold") return "700";
+		if (finalPart === "light") return "300";
+		if (finalPart === "extra-light") return "200";
+		if (finalPart === "semi-bold") return "600";
 	}
 
 	if (parts.includes("family")) {
-		const fallback = finalPart === "title" ? "serif" : "sans-serif";
+		const fallback = normalizedValue === "Judson" ? "serif" : "sans-serif";
 		return `"${normalizedValue}", ${fallback}`;
 	}
 

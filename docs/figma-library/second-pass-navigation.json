@@ -1,0 +1,661 @@
+{
+  "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "reviewedOn": "2026-10-19",
+  "scope": "Independent second pass of all 21 navigation families and 51 named variants, including nested controls and popup content.",
+  "status": "All seven actionable findings corrected and verified in the final production consumer; original Figma font/shaping identity remains unverified.",
+  "sourceFreshness": {
+    "families": 21,
+    "freshHighFidelityContexts": 21,
+    "freshScreenshots": 21,
+    "normalizedSourceChangesSincePreviousCapture": 0,
+    "additionalPopupAndNestedReads": [
+      "334:2623",
+      "334:2646",
+      "334:2769",
+      "342:2403",
+      "342:2551",
+      "283:2327",
+      "334:2535",
+      "334:2718",
+      "1:2662"
+    ],
+    "method": "Read-only Figma connector; all references used as evidence only."
+  },
+  "baseline": {
+    "javascriptSha256": "315ade1601a24322abe480a1a290683d91f3b5e3cedc9f48a1bff8853afbac46",
+    "cssSha256": "647fbebc6e52f29632e20e9949e5d457a99790d4de7b04b49e59a3ba61c418e7",
+    "browserFamilies": 21,
+    "browserVariants": 51,
+    "existingAssertionsPassed": 249,
+    "actualBundledFontSamples": 68,
+    "warning": "Passing baseline assertions missed the concrete defects below. This audit does not equate a passing gate with pixel identity."
+  },
+  "families": [
+    {
+      "nodeId": "1:2386",
+      "name": "Tabbed Header Navigation",
+      "variants": [
+        "1:2387",
+        "1:2427",
+        "1:2447",
+        "1:2464",
+        "1:2481"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2386.txt",
+      "referenceCodeSha256": "6a5095c3d01f5e1155f84e34ca9fc7eacb8373624b58f6c20e81cf0aeb8fe7c2",
+      "referenceScreenshotSha256": "92b306bc9a0a6023ea26667609680e0bd59f9f9313b51229d07ec29c59000014",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "5 selected branches;1652x48;Aptos 14/20;regular inactive400/bold active700;16px tab rhythm;2px blue active line;338px achievement summary;20px exact trophy"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:2498",
+      "name": "Tree Menu",
+      "variants": [
+        "1:2498"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2498.txt",
+      "referenceCodeSha256": "50c62c33602282753ac5761e25a3e3f1e9c9b7c04cad5c1628409585dbbf2dc2",
+      "referenceScreenshotSha256": "92b4bc935f94728bd59dc69ef64fa3e541c81ba3042c9458c376e2ab149d0711",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "300x1031;12px vertical rhythm/16px inset;41px search field;20px header/search/tree assets;32px folders/28px leaves;primary task text vs brand folder text;4px group separation"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:2549",
+      "name": "Row",
+      "variants": [
+        "1:2549"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2549.txt",
+      "referenceCodeSha256": "9fb1076301d8462ece492dcfa4424d8b8c2745b769ed671ab302274e9553e334",
+      "referenceScreenshotSha256": "61cd2086e9cf6a97614f231ac1e33ee905e6b55d33896aef1d7323119e6d5493",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "961x28;Aptos 14/20;172px category;120px progress track;164px progress group;90px date;100px status;exact20px book/chevron/flashlight assets"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:2567",
+      "name": "Row Title",
+      "variants": [
+        "1:2567"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2567.txt",
+      "referenceCodeSha256": "3560a00a925b96c9b0353efd3778d48095052c63ddab29d6197acbbc6bdf711a",
+      "referenceScreenshotSha256": "1e3c1ddfe5a7f535fbcdbe452ac9f5ec42fa80a9972ca50281ed87194a968737",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "985x32;8px padding/gap;Aptos 14/20 brand text;20px folder-open;1px source delimiter"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:2572",
+      "name": "Tree Item",
+      "variants": [
+        "1:2573",
+        "1:2587",
+        "1:2601",
+        "1:2615",
+        "39:4571",
+        "312:2880"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2572.txt",
+      "referenceCodeSha256": "03f9c299a9dd44b4d9cc1c458801f29ee9db2b8678942ac112e48a39f7565d6c",
+      "referenceScreenshotSha256": "ff2c5d4ecea0acb755f2f55069dd31403e900b665428049e8e70e3d3eb086a77",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "6 states;268x32 outer/28px selected surface;20px icon;8px inset/gaps;IBM Plex Sans notification counter;10px date;disabled asset;natural 268x32 drop SVG"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:2617",
+      "name": "Tree Folder",
+      "variants": [
+        "1:2618",
+        "1:2629",
+        "1:2640",
+        "1:2651",
+        "39:4591",
+        "312:2904"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2617.txt",
+      "referenceCodeSha256": "604545c034bd8930dc403a6d237a418969683e9a204c2bfbf9798211aabf9585",
+      "referenceScreenshotSha256": "0b0b12fe6cfe29d5406e1e45e85c46aa00700d9069b928c9f6db1fd8b94a46ca",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "6 states;268x32 outer/28px selected surface;Aptos 14/20 brand text;20px folder/add;4px radius;notification/date fonts and exact disabled asset"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:2655",
+      "name": "Pagination",
+      "variants": [
+        "1:2655"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2655.txt",
+      "referenceCodeSha256": "5b6f07a45b99544b506ccb0f2657312b4a5d893dab8b82af98c1b01fee4d4a4b",
+      "referenceScreenshotSha256": "228afe6411881570f3727fdea2bae07513be821c15daf5aa7b1ff0461be2d8a7",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "36px height;4px gaps;12px arrow-button inset/8px label inset;20px exact SVGs;Aptos 14/20 400/letterSpacing0;source 413 vs browser409.71875 visible intrinsic width limitation"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:2675",
+      "name": "Tree",
+      "variants": [
+        "1:2675"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2675.txt",
+      "referenceCodeSha256": "fe85b4696f3a0018db279db77f15650b25c9153f2bdf66bc3e9784fed78b87cf",
+      "referenceScreenshotSha256": "2ec49a4cecb87849418a832a744272b774d44b4cdc2b66490b62f8240fae07c3",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "499x704;32px rows;primary document/brand folder colors;section label12/16;source nested document row origins96/352 and96/384;icon slots104/358 and104/390;guideline88/352/96;source 10px arrow fixed at local12px;no chevron on row544"
+      ],
+      "findings": [
+        "NAV-01",
+        "NAV-02",
+        "NAV-03"
+      ],
+      "status": "reviewed and verified after correction"
+    },
+    {
+      "nodeId": "1:2790",
+      "name": "Tree Builder",
+      "variants": [
+        "1:2790"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-2790.txt",
+      "referenceCodeSha256": "0a358f98c20d499abc5751d282d09f951388f93dfccdb8d6185fa8ff490ff026",
+      "referenceScreenshotSha256": "5cd51272a2cd6c8ae71373ca690598c8837163bb9c3792de94b1f4d786c6f993",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "1322x780;32px rows;12/16 muted section labels with70% parent opacity and50% text alpha;268px selected card;exact folder/document/grid/lock/notebook/menu assets;no fabricated wraps"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:3029",
+      "name": "Profile Controls",
+      "variants": [
+        "1:3029"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-3029.txt",
+      "referenceCodeSha256": "7af193f4e0d8c22672cb6a54e1f0d9e6b278d5ebdc2b42131ec954448ad939ea",
+      "referenceScreenshotSha256": "8a8a64639b18c0b861765d8b7c3c54ca8850f2134433876a5da098f397cf05bd",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "1920x50;50px app trigger with16px nine-square glyph;84x21 exact logo;20px left gaps/32px right gaps;natural Search/Activity overflow offsets;Arial 20 help with-.2px tracking;32px profile asset"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "1:3098",
+      "name": "Left Menu",
+      "variants": [
+        "1:3098"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/1-3098.txt",
+      "referenceCodeSha256": "e5bae04f4949b932847a28a2905f59b36d81c6070140c24d9ee0e36bf378a0b3",
+      "referenceScreenshotSha256": "060d86e9c957120a884060dce8feae84b22b2f30f93052e489c6c2f01c036e01",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "268x864;24px header/feature-group rhythm;14/20 regular navigation/12px captions;112x28 logo;exact eight feature glyphs;48px sign-out target;81px selected area;inside rules"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "13:934",
+      "name": "Header",
+      "variants": [
+        "1:2536",
+        "13:935"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/13-934.txt",
+      "referenceCodeSha256": "69d0500f20cac5f671a74870fe247636d5a66884233c00507effdcc2c249d0da",
+      "referenceScreenshotSha256": "8e27b06be4210203e72dd356cf5b225d02da735a1b86d993c93aa0dcab9b668a",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "Achievements/Standard branches;1650x48;Aptos 14/20 400;16px left inset;338px summary;bold6/21 with 20px trophy;1px bottom rule"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "13:1199",
+      "name": "Dynamics Menu",
+      "variants": [
+        "13:1199"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/13-1199.txt",
+      "referenceCodeSha256": "7c4de3beb77c96d4feb9a26fd3311696ddd4a0bd82b597d75d14b7c48fb92790",
+      "referenceScreenshotSha256": "e7baf991533cb6817b3c19d555c0e728fb0dda4d0c6c7f488f96c4f3bd7accc9",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "201x1031;40px rows;14px top inset;9px CSS hamburger;20px exact icons;4px active marker;14px bold group title;two-line selected label;24px group rhythm"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "50:5887",
+      "name": "Side menu",
+      "variants": [
+        "50:5887"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/50-5887.txt",
+      "referenceCodeSha256": "ae7d95011f62995628ea312d67d9a8bebbff00e9d4e719ed3fd72351023d7299",
+      "referenceScreenshotSha256": "f11d80c06b725be7eb31c2616e151d32ced6b1f94e37fd07d30b624273cdfe65",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "768x1280;201px Dynamics column +284px panels;48px panel headers;12px vertical rhythm;16px panel inset;41px search;32px item rows;source exact panel/search/tree assets"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "74:9562",
+      "name": "Editor Toolbar",
+      "variants": [
+        "74:9562"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/74-9562.txt",
+      "referenceCodeSha256": "355f381ab5adba0dacfa8e19b1aeff1496a45ecef1186b86ea3a872b7990fda8",
+      "referenceScreenshotSha256": "7c1c7dfcc2bea553713beb7b1d77ed84d821031ffe4ebe1c8a950bc3697e55d5",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "349x54;8px inset/gaps;38px buttons with1px overlap;28x1 separators;16px original icons;grey100 base/grey300 selected center;0/4/6 rgba(0,0,0,.25) shadow"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "74:9647",
+      "name": "Sidebar",
+      "variants": [
+        "74:9647"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/74-9647.txt",
+      "referenceCodeSha256": "764cf14a9bed6d99273e068c92f1cea57262a765dc5bec42b4d6387d40c23542",
+      "referenceScreenshotSha256": "a758edd1db80352eadf3c4902f4b542a45c125633aa10352f1c3573e8a79e95d",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "537x1080;48px header;41px search;36px filter pills;12px rhythm;32px tree rows;exact clipboard/flag/target/add/more/chevron/search/dismiss assets;individual removal/clear behavior"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "281:2267",
+      "name": "Updated Header",
+      "variants": [
+        "279:2191",
+        "281:2268",
+        "283:2327"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/281-2267.txt",
+      "referenceCodeSha256": "fcc2c5380c17e67885c3895c663e1288ac75d9389206274eae7f813443fbac8e",
+      "referenceScreenshotSha256": "e7a57fbb629ff649f7132e139775917f2c48d0ead5111c813c8ca62232aa2399",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "3 branches;1562x56;24px outer inset/gap;40px item gaps;400px IBM Plex Sans 16 global search;292px full feature-menu state;448x241 launcher at 1090/64;80px app cells/8px rhythm"
+      ],
+      "findings": [
+        "NAV-06",
+        "NAV-07"
+      ],
+      "status": "reviewed and verified after correction"
+    },
+    {
+      "nodeId": "300:2763",
+      "name": "Tab Item",
+      "variants": [
+        "300:2762",
+        "300:2764",
+        "307:2840"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/300-2763.txt",
+      "referenceCodeSha256": "5d6374ed00be0db7f4f42fa2eaf7d074e713d5955743661aefea80dcbe962d92",
+      "referenceScreenshotSha256": "30a1823dd4dfdd01dcea39e594dbadc6566854a4731ab1a9591d672470412072",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "3 branches;36px height;16px/8px padding;Aptos 14/20;brand-selected/invert text;12px original Chevron;source expanded shadow4/0/20/5 rgba(0,0,0,.1);intrinsic HUG differences recorded"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "300:2784",
+      "name": "Tabbed Menu",
+      "variants": [
+        "300:2784"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/300-2784.txt",
+      "referenceCodeSha256": "6ebea943c0e2f2393d758bb8a2d562fe28597d188599687e26ab05d229cb494f",
+      "referenceScreenshotSha256": "b9bf302a77a708c059648808d623c7925f58bffdbcf86b7d27fa4dd4436ade3a",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "52px height;8px outer inset;36px pill tabs;4px gaps;8 text runs Aptos 14/20 regular400;white surface/brand selected;source 524 vs fractional browser519.375 width"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    },
+    {
+      "nodeId": "334:2201",
+      "name": "Square Top Menu",
+      "variants": [
+        "348:2227",
+        "334:2535",
+        "334:2623",
+        "334:2718",
+        "334:2769",
+        "342:2403"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/334-2201.txt",
+      "referenceCodeSha256": "efaa6b931d2b7d6eb39e4688e261ad9de07f4388f481331d804aaf4fae20d66a",
+      "referenceScreenshotSha256": "89af0e651298226dca35aeb90448a63bd59c5ce8b450f48101bd5188dee24bdb",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "6 branches;1562x52;24px outer inset;36px circular action slots;20px exact action glyphs;448x241 app launcher;360x96 area picker;132x96 user menu;182x240 feature menu;370x500 chat;area16/20px centered puzzles;chat16px title/IBM16px message/41px input+send;pointer vs keyboard focus"
+      ],
+      "findings": [
+        "NAV-04",
+        "NAV-05",
+        "NAV-06",
+        "NAV-07"
+      ],
+      "status": "reviewed and verified after correction"
+    },
+    {
+      "nodeId": "347:2904",
+      "name": "Tool Menu",
+      "variants": [
+        "347:2903",
+        "347:2905",
+        "347:3029",
+        "347:3077",
+        "347:3125",
+        "347:3173",
+        "347:3223"
+      ],
+      "currentContext": "fresh get_design_context + screenshot, high fidelity, no sparse fallback",
+      "referenceCode": "artifacts/figma-qa/navigation-second-pass/references/347-2904.txt",
+      "referenceCodeSha256": "ac1d38bcfa484316add360afb99768f105e32ea3c85c600b260fc7cb79b20c22",
+      "referenceScreenshotSha256": "9a0a8e1bc178b7e5ba1ed87b3ea68d8806966d1a29ea097da1ca10f3bbf966e4",
+      "unchangedFromPreviousContextAfterTemporaryAssetPrefixNormalization": true,
+      "visualAndNestedChecks": [
+        "7 breadcrumb depths;1510x52;8px outer inset;36px pill;14/20 labels with 700 current; 12/20 separator slots;4px breadcrumb gaps;284x36 rounded search;exact search/filter/dismiss/add assets;source repeated 5th-Level labels preserved"
+      ],
+      "findings": [],
+      "status": "reviewed and verified; no new actionable visual defect found"
+    }
+  ],
+  "findings": [
+    {
+      "id": "NAV-01",
+      "node": "1:2729 instance of1:2615 in1:2675",
+      "owner": "registry/radix-nova/components/navigation/tree.tsx",
+      "before": {
+        "rowWidth": 427,
+        "svgCssWidth": 427,
+        "svgNaturalWidth": 268,
+        "arrowLocalX": 19.119402985,
+        "arrowWidth": 15.932835821
+      },
+      "expected": {
+        "rowWidth": 427,
+        "svgCssWidth": 268,
+        "svgNaturalWidth": 268,
+        "arrowLocalX": 12,
+        "arrowWidth": 10,
+        "lineRightInset": 12,
+        "lineHeight": 2
+      },
+      "change": "Keep exact 268x32 SVG natural size in a 24px leading clip window and extend only the 2px layout rule. No original SVG bytes or glyph paths changed.",
+      "status": "verified on final production artifact"
+    },
+    {
+      "id": "NAV-02",
+      "node": "1:2735 group /1:2736 first nested document",
+      "owner": [
+        "docs/figma-library/navigation-preview.tsx",
+        "snappcomponents navigation-fixtures.ts"
+      ],
+      "before": {
+        "firstDocumentIconSlotX": 80,
+        "firstDocumentLabelX": 108,
+        "guidelineY": 384,
+        "guidelineHeight": 64
+      },
+      "expected": {
+        "firstDocumentIconSlotX": 104,
+        "firstDocumentLabelX": 132,
+        "guidelineY": 352,
+        "guidelineHeight": 96
+      },
+      "change": "Correct dummy-data hierarchy: drop boundary owns both nested documents and Add row; use existing generic Tree API.",
+      "status": "verified on final production artifact"
+    },
+    {
+      "id": "NAV-03",
+      "node": "1:2769 Tree Folder instance in1:2675",
+      "owner": [
+        "docs/figma-library/navigation-preview.tsx",
+        "snappcomponents navigation-fixtures.ts"
+      ],
+      "before": "An extra chevron is rendered on folder row544.",
+      "expected": "Only the folder icon is visible; no chevron or menu.",
+      "change": "Use existing showChevron:false for the source fixture.",
+      "status": "verified on final production artifact"
+    },
+    {
+      "id": "NAV-04",
+      "node": "334:2649/2652/2655/2658 area cells in334:2623",
+      "owner": [
+        "docs/figma-library/navigation-preview.tsx",
+        "snappcomponents NavigationHeaderFixture.tsx"
+      ],
+      "before": "Wrong app glyphs and bottom-left puzzle badges overlap labels; first label App.",
+      "expected": "Only a centered puzzle glyph in each cell; first 16px at32/20, others 20px at30/18; all Area Name labels at44/46.",
+      "change": "Use existing iconName with the exact source puzzle assets; remove badge misuse.",
+      "status": "verified on final production artifact"
+    },
+    {
+      "id": "NAV-05",
+      "node": "342:2574 empty composer Send button",
+      "owner": "registry/radix-nova/components/navigation/navigation-header.tsx",
+      "before": "Empty draft automatically disables button and applies 50% opacity.",
+      "expected": "Brand-filled, full-opacity button as source; empty submit dispatches nothing.",
+      "change": "Honor explicit disabled prop only; retain draft.trim() guard before callback.",
+      "status": "verified on final production artifact"
+    },
+    {
+      "id": "NAV-06",
+      "node": [
+        "283:2327",
+        "334:2535"
+      ],
+      "owner": "registry/radix-nova/components/navigation/navigation-header.tsx",
+      "before": "Default/pointer opening auto-focuses Find Apps input, adding a blue ring absent from source resting state.",
+      "expected": "Pointer/default opening retains resting input; Enter/Space opening focuses search with keyboard visibility; Tab reaches choices; Escape restores trigger.",
+      "change": "Track activation modality for header action popovers; prevent auto-focus only for pointer/default opening.",
+      "status": "verified on final production artifact"
+    },
+    {
+      "id": "NAV-07",
+      "node": "NavigationHeader app launcher under native ShadowRoot hosting",
+      "owner": "registry/radix-nova/components/navigation/navigation-header.tsx",
+      "before": "Keyboard Enter opens the correct popup but Radix FocusScope falls back to its container (tabindex=-1), leaving Find Apps unfocused inside ShadowRoot. Standalone keyboard checks pass, so this defect requires an actual native mount.",
+      "expected": "Enter and Space focus the first owned, enabled focusable descendant in standalone and native modes. Tab reaches applications and Escape restores the owning trigger.",
+      "change": "The header action owns its open-focus callback. Always prevent Radix default, and explicitly focus its first enabled visible input, button, anchor, select, textarea or valid tabindex descendant only for keyboard activation. Pointer/default opens keep resting input state; no document-global focus lookup is added.",
+      "status": "verified on final production artifact"
+    }
+  ],
+  "typographyLimit": {
+    "status": "visible intrinsic-width difference remains; do not claim pixel identity",
+    "node": "1:2655 Pagination; affected HUG labels elsewhere",
+    "figma": {
+      "totalWidth": 413,
+      "weekTextWidths": [
+        63,
+        63,
+        63
+      ],
+      "nextTextWidth": 28,
+      "font": "Aptos Regular400",
+      "size": 14,
+      "lineHeight": 20,
+      "letterSpacing": "0%",
+      "openTypeFeatures": {},
+      "hasMissingFont": true,
+      "availableAptosFacesInFigmaToolEnvironment": []
+    },
+    "approvedFont": {
+      "family": "Aptos",
+      "style": "Regular",
+      "version": "2.01/O365",
+      "weight": 400,
+      "widthClass": 5,
+      "unitsPerEm": 2048,
+      "sha256": "01bbd2d3bd483045e1dbf4f106935cb86478b937f8d334258ad12eea60554a05",
+      "bytes": 220832
+    },
+    "browser": {
+      "totalWidth": 409.71875,
+      "weekAdvanceWithKerning": 61.9609375,
+      "weekAdvanceWithoutKerning": 62.3095703125,
+      "nextAdvanceWithKerning": 27.8017578125,
+      "nextAdvanceWithoutKerning": 27.9794921875,
+      "fontKerning": "auto; normal gives same result"
+    },
+    "conclusion": "Provided approved Aptos glyph advances plus GPOS reproduce browser measurements exactly. Figma cached HUG frame geometry cannot identify the original font binary/version or shaping behavior while Aptos is missing. The 63px frame is not explained solely by ceil(61.9609). No unsupported global kerning override or business-label width was added.",
+    "fontInvestigationEvidence": "docs/figma-library/second-pass-typography.json"
+  },
+  "verification": {
+    "status": "passed",
+    "consumerGate": "snappcomponents/scripts/verify-navigation-showcase.mjs",
+    "registryGate": "scripts/verify-navigation-browser.mjs",
+    "newCoverage": [
+      "natural SVG geometry at 268 and 427px row widths",
+      "exact nested document/guideline origins",
+      "no fabricated folder chevron",
+      "exact centered16/20px area puzzle assets",
+      "empty Send visual state and no dispatch",
+      "pointer resting search and keyboard Enter/Space/Tab/Escape focus",
+      "2400px capture viewport includes full1920px Profile Controls",
+      "two actual native production mounts: Enter/Space focus, Tab, Escape restoration, sibling state and native SVG geometry"
+    ],
+    "nativeConsumerGate": "snappcomponents/scripts/verify-native-navigation-browser.mjs",
+    "verifiedOn": "2026-10-19",
+    "javascriptSha256": "2cfee08a485943e250e80315e42ec31cfcbb2fd79b8c2fa9facaed6629477e04",
+    "cssSha256": "43e2f6abcc58d0807fda625082825cf42194ab937977ec8b70c8f8586217f215",
+    "registryGraphSha256": "7f1ce83b48c7d36a3a02cb4861eb4cad640678ffce6f098caed16fa4c55062de",
+    "standalone": {
+      "families": 21,
+      "variants": 51,
+      "passedAssertions": 273,
+      "failedAssertions": 0,
+      "actualCustomFontSamples": 68,
+      "browserErrors": [],
+      "viewport": {
+        "width": 2400,
+        "height": 3600
+      },
+      "consumerReport": "artifacts/figma-qa/navigation/navigation-qa.json",
+      "retainedReviewReport": "artifacts/figma-qa/navigation-second-pass/after/standalone/navigation-qa.json"
+    },
+    "native": {
+      "passedChecks": 23,
+      "failures": [],
+      "errors": [],
+      "dataRequests": [],
+      "consumerReport": "artifacts/figma-qa/native-navigation/native-navigation-qa.json",
+      "retainedReviewReport": "artifacts/figma-qa/navigation-second-pass/after/native/native-navigation-qa.json",
+      "sequentialHeaderInteraction": "Updated Header Enter/Space \u2192 search \u2192 Tab \u2192 first app \u2192 Escape \u2192 own trigger. Square header Apps \u2192 Escape \u2192 Shift+Tab \u2192 Area \u2192 Enter \u2192 first area \u2192 Tab \u2192 second area \u2192 Escape \u2192 own Area trigger. Area precedes Apps in the source action order."
+    },
+    "visualReinspection": [
+      "Tree1:2675 natural arrow, line, nested rows, 96px guideline and no extra chevron compared with fresh source screenshot.",
+      "Area Switcher334:2623 centered exact16px/20px puzzle icons and all Area Name labels, without badges or overlap.",
+      "Both app-launcher resting states283:2327/334:2535 have source neutral search outlines; keyboard activation still visibly focuses search.",
+      "Live Support342:2403 empty Send has full-opacity brand fill and dispatches no empty message.",
+      "Profile Controls1:3029 full1920px screenshot includes all right-side controls; prior1718px clipping was a capture limitation."
+    ],
+    "gateSequencing": "Close/reopen tests wait for popup detachment and the specific owning trigger to regain focus before the next opening, respecting Radix deferred close-focus restoration. The earlier immediate-reopen test timeout did not reproduce in an isolated real interaction."
+  },
+  "redVerification": {
+    "status": "failed as expected before corrections installed",
+    "javascriptSha256": "315ade1601a24322abe480a1a290683d91f3b5e3cedc9f48a1bff8853afbac46",
+    "cssSha256": "647fbebc6e52f29632e20e9949e5d457a99790d4de7b04b49e59a3ba61c418e7",
+    "families": 21,
+    "variants": 51,
+    "passedAssertions": 262,
+    "failedAssertions": 11,
+    "failures": [
+      "Tree drop arrow retains natural 268px SVG width: expected 268, got 427",
+      "Tree drop arrow leading window24px: expected 24, got 427",
+      "Both source nested documents have104px icon-slot indent",
+      "Nested guideline starts at 352 and spans all three rows",
+      "Source folder at544 has no fabricated chevron",
+      "283:2327 pointer opening leaves search in source resting state",
+      "334:2535 pointer opening leaves search in source resting state",
+      "Area switcher uses only source puzzle icon and Area Name labels",
+      "First area exact16px puzzle slot32/20 and label44",
+      "Support empty composer retains source enabled appearance",
+      "Support send button retains source full-opacity brand fill"
+    ],
+    "keyboardEnterSpaceTabEscapeChecks": "passed on baseline, retained for post-fix regression",
+    "report": "artifacts/figma-qa/navigation-second-pass/before/navigation-qa.json"
+  },
+  "nativeRedVerification": {
+    "status": "failed before correction installed",
+    "bundleSha256": "315ade1601a24322abe480a1a290683d91f3b5e3cedc9f48a1bff8853afbac46",
+    "successfulChecks": 3,
+    "failure": "Keyboard Enter focus timed out; actual first ShadowRoot.activeElement is PopoverContent div with tabindex=-1, despite the correct search and 10 app choices being present.",
+    "isolationsProved": [
+      "Popup remains in first ShadowRoot",
+      "Sibling default header remains closed"
+    ],
+    "report": "artifacts/figma-qa/navigation-second-pass/before/native-header.json"
+  }
+}

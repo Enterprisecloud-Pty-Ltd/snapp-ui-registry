@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "native": {
+    "before": 0,
+    "registered": [
+      {
+        "family": "Aptos",
+        "weight": "300",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "Aptos",
+        "weight": "400",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "Aptos",
+        "weight": "600",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "Aptos",
+        "weight": "700",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "200",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "300",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "400",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "700",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "Inter",
+        "weight": "400",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "Inter",
+        "weight": "500",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "Judson",
+        "weight": "400",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "Judson",
+        "weight": "700",
+        "style": "normal",
+        "status": "loaded"
+      }
+    ],
+    "rendered": 89,
+    "documentStylesheets": 0,
+    "hostColor": "rgb(10, 20, 30)",
+    "after": 0,
+    "remainingChildren": 0
+  },
+  "standalone": {
+    "faces": 12,
+    "rendered": 89
+  },
+  "errors": []
+}

@@ -1,0 +1,1586 @@
+{
+  "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "auditedOn": "2026-10-19",
+  "scope": "14 forms/actions/filter families",
+  "status": "implemented-reference-reviewed-browser-contracts-verified",
+  "evidence": "All 14 families have high-fidelity get_design_context responses and screenshots. None are sparse. Additional child requests stopped at the Figma plan quota; the complete parent responses contain the variant geometry.",
+  "families": [
+    {
+      "nodeId": "1:3048",
+      "name": "Button",
+      "owner": "ui/button.tsx",
+      "purpose": "Primary and secondary task actions, outlined alternate action, plain text action",
+      "variants": [
+        {
+          "nodeId": "1:3049",
+          "name": "primary/Standard",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2123",
+          "name": "primary/Hover",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2125",
+          "name": "primary/Focus",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2127",
+          "name": "primary/Pressed",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2129",
+          "name": "primary/Disabled",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "1:3051",
+          "name": "outline/Standard",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2133",
+          "name": "outline/Hover",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2137",
+          "name": "outline/Focus",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2167",
+          "name": "outline/Pressed",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2171",
+          "name": "outline/Disabled",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "1:3053",
+          "name": "secondary/Standard",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2149",
+          "name": "secondary/Hover",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2153",
+          "name": "secondary/Focus",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2157",
+          "name": "secondary/Pressed",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "243:2161",
+          "name": "secondary/Disabled",
+          "height": 44,
+          "padding": [
+            12,
+            24
+          ],
+          "radius": 8
+        },
+        {
+          "nodeId": "248:2188",
+          "name": "text/Standard",
+          "height": 20,
+          "padding": [
+            0,
+            0
+          ],
+          "radius": 0
+        },
+        {
+          "nodeId": "248:2192",
+          "name": "text/Hover",
+          "height": 20,
+          "padding": [
+            0,
+            0
+          ],
+          "radius": 0
+        },
+        {
+          "nodeId": "248:2196",
+          "name": "text/Focus",
+          "height": 20,
+          "padding": [
+            0,
+            0
+          ],
+          "radius": 0
+        },
+        {
+          "nodeId": "248:2200",
+          "name": "text/Pressed",
+          "height": 20,
+          "padding": [
+            0,
+            0
+          ],
+          "radius": 0
+        },
+        {
+          "nodeId": "248:2204",
+          "name": "text/Disabled",
+          "height": 20,
+          "padding": [
+            0,
+            0
+          ],
+          "radius": 0
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "primary": [
+          "#2f455c",
+          "#43576c",
+          "#2f455c",
+          "#2a2c2e",
+          "#eaeaeb"
+        ],
+        "secondary": [
+          "#e94435",
+          "#971b13",
+          "#e94435",
+          "#7a150f",
+          "#eaeaeb"
+        ],
+        "outlineBorder": "#7f8082",
+        "focusBorder": "#0078d4"
+      }
+    },
+    {
+      "nodeId": "13:1296",
+      "name": "Fields",
+      "owner": "components/forms/form-controls.tsx",
+      "purpose": "Composable label/control/helpers/validation/upload/comments; business values remain caller supplied",
+      "variants": [
+        {
+          "nodeId": "13:1295",
+          "name": "Standard Field",
+          "width": 670,
+          "height": 65,
+          "api": "FormField + Input"
+        },
+        {
+          "nodeId": "13:1297",
+          "name": "Required Field",
+          "width": 670,
+          "height": 65,
+          "api": "FormField required + Input"
+        },
+        {
+          "nodeId": "255:2210",
+          "name": "Is Disabled",
+          "width": 670,
+          "height": 65,
+          "api": "FormField + Input disabled"
+        },
+        {
+          "nodeId": "13:1301",
+          "name": "Error Field",
+          "width": 670,
+          "height": 65,
+          "api": "FormField required + Input aria-invalid"
+        },
+        {
+          "nodeId": "248:2179",
+          "name": "Is Selected",
+          "width": 670,
+          "height": 65,
+          "api": "FormControlSurface selected"
+        },
+        {
+          "nodeId": "13:1305",
+          "name": "Look up/Drop Down",
+          "width": 670,
+          "height": 65,
+          "api": "SearchableCombobox"
+        },
+        {
+          "nodeId": "127:1943",
+          "name": "Drop down Open",
+          "width": 670,
+          "height": 265,
+          "api": "SearchableCombobox (open)"
+        },
+        {
+          "nodeId": "153:2212",
+          "name": "Number select",
+          "width": 670,
+          "height": 229,
+          "api": "NumberSelect"
+        },
+        {
+          "nodeId": "13:1312",
+          "name": "Drop down with pills",
+          "width": 670,
+          "height": 113,
+          "api": "SearchableCombobox + Pill"
+        },
+        {
+          "nodeId": "13:1355",
+          "name": "Text Entry",
+          "width": 670,
+          "height": 108,
+          "api": "FormField + Textarea"
+        },
+        {
+          "nodeId": "13:1399",
+          "name": "Error",
+          "width": 670,
+          "height": 44,
+          "api": "FieldNotice error"
+        },
+        {
+          "nodeId": "13:1383",
+          "name": "Error Multiple",
+          "width": 670,
+          "height": 142,
+          "api": "FieldNotice error messages"
+        },
+        {
+          "nodeId": "311:2855",
+          "name": "Positive Notice",
+          "width": 670,
+          "height": 44,
+          "api": "FieldNotice success"
+        },
+        {
+          "nodeId": "311:2863",
+          "name": "Warning",
+          "width": 670,
+          "height": 44,
+          "api": "FieldNotice warning"
+        },
+        {
+          "nodeId": "13:1434",
+          "name": "Notice",
+          "width": 670,
+          "height": 44,
+          "api": "FieldNotice info"
+        },
+        {
+          "nodeId": "313:2933",
+          "name": "General Message",
+          "width": 670,
+          "height": 44,
+          "api": "FieldNotice general"
+        },
+        {
+          "nodeId": "13:1413",
+          "name": "Date Picker",
+          "width": 670,
+          "height": 69,
+          "api": "DatePickerField"
+        },
+        {
+          "nodeId": "19:1588",
+          "name": "Upload",
+          "width": 670,
+          "height": 65,
+          "api": "UploadField"
+        },
+        {
+          "nodeId": "23:1804",
+          "name": "Colour Picker",
+          "width": 670,
+          "height": 65,
+          "api": "ColorPickerField (native pointer/keyboard picker; controlled or defaultValue; onValueChange)"
+        },
+        {
+          "nodeId": "13:1463",
+          "name": "Large Uploader",
+          "width": 670,
+          "height": 143,
+          "api": "UploadField large"
+        },
+        {
+          "nodeId": "13:1482",
+          "name": "Switch",
+          "width": 670,
+          "height": 24,
+          "api": "SwitchField"
+        },
+        {
+          "nodeId": "158:2394",
+          "name": "Checkbox",
+          "width": 670,
+          "height": 20,
+          "api": "CheckboxField"
+        },
+        {
+          "nodeId": "35:2080",
+          "name": "Inline Search",
+          "width": 670,
+          "height": 41,
+          "api": "SearchField"
+        },
+        {
+          "nodeId": "36:4528",
+          "name": "Search",
+          "width": 670,
+          "height": 69,
+          "api": "SearchField label"
+        },
+        {
+          "nodeId": "96:9862",
+          "name": "Comment Box",
+          "width": 670,
+          "height": 68,
+          "api": "CommentBox"
+        },
+        {
+          "nodeId": "96:9877",
+          "name": "Comment Box Edit",
+          "width": 670,
+          "height": 68,
+          "api": "CommentBox toolbar slot (shared Editor composition)"
+        },
+        {
+          "nodeId": "96:9937",
+          "name": "Comment Box Buttons",
+          "width": 670,
+          "height": 116,
+          "api": "CommentBox actions + TextButton"
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "control": {
+          "height": 41,
+          "paddingX": 16,
+          "radius": 8
+        },
+        "labelGap": 8,
+        "textarea": 80,
+        "lookup": {
+          "rowHeight": 28,
+          "padding": 8,
+          "gap": 8,
+          "check": [
+            20,
+            16
+          ]
+        },
+        "notices": {
+          "padding": [
+            12,
+            16
+          ],
+          "icon": 20
+        },
+        "comment": {
+          "padding": 16,
+          "actionsGap": 24,
+          "toolbar": "shared Editor slot"
+        },
+        "upload": {
+          "largeIcon": 24,
+          "largePadding": 24,
+          "hint": "Aptos40012/16"
+        },
+        "anomalies": [
+          "Nominal65px standard field frame contains20px label+8px gap+41px control(69px naturalflow). Natural flow preserves unclipped content.",
+          "670px single notice contains672px notification. Responsive implementationuses100%width."
+        ]
+      }
+    },
+    {
+      "nodeId": "13:1541",
+      "name": "Switch",
+      "owner": "ui/switch.tsx + SwitchField",
+      "purpose": "Binary setting with accessible label",
+      "variants": [
+        {
+          "nodeId": "13:1542",
+          "name": "Off"
+        },
+        {
+          "nodeId": "13:1548",
+          "name": "On"
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "track": [
+          44,
+          24
+        ],
+        "thumb": 20,
+        "inset": 2,
+        "checkedThumbX": 22,
+        "labelGap": 8
+      }
+    },
+    {
+      "nodeId": "19:1647",
+      "name": "Modal",
+      "owner": "ui/dialog.tsx",
+      "purpose": "Focused form task with heading/subtext/dismiss/footer",
+      "variants": [
+        {
+          "nodeId": "19:1601",
+          "name": "Large",
+          "width": 720,
+          "height": 1208
+        },
+        {
+          "nodeId": "19:1648",
+          "name": "Medium",
+          "width": 600,
+          "height": 1208
+        },
+        {
+          "nodeId": "19:1698",
+          "name": "small",
+          "width": 480,
+          "height": 1248
+        }
+      ],
+      "measurements": {
+        "font": "Aptos",
+        "heading": [
+          18,
+          24,
+          700
+        ],
+        "subtext": [
+          12,
+          16,
+          400
+        ],
+        "padding": 24,
+        "gap": 24,
+        "radius": 8,
+        "closeIcon": 24,
+        "footerGap": 16,
+        "hasSubtext": [
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "nodeId": "26:1899",
+      "name": "Pill",
+      "owner": "Pill + FilterChip",
+      "purpose": "Removable selected value token",
+      "variants": [
+        {
+          "nodeId": "26:1898",
+          "name": "Standard"
+        },
+        {
+          "nodeId": "26:1900",
+          "name": "White"
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "height": 36,
+        "padding": [
+          8,
+          16
+        ],
+        "gap": 8,
+        "radius": 128,
+        "icon": 12,
+        "surfaces": [
+          "#f4f4f4",
+          "#ffffff"
+        ]
+      }
+    },
+    {
+      "nodeId": "36:4345",
+      "name": "Quick Actions",
+      "owner": "components/forms/quick-actions.tsx + ui/dropdown-menu.tsx",
+      "purpose": "One-to-three-level action tree; compact time and simple actions",
+      "variants": [
+        {
+          "nodeId": "36:4344",
+          "name": "1 Level",
+          "width": 208,
+          "height": 170
+        },
+        {
+          "nodeId": "36:4388",
+          "name": "2 Levels",
+          "width": 416,
+          "height": 170
+        },
+        {
+          "nodeId": "36:4428",
+          "name": "3 Levels",
+          "width": 624,
+          "height": 170
+        },
+        {
+          "nodeId": "36:4479",
+          "name": "Time",
+          "width": 208,
+          "height": 126
+        },
+        {
+          "nodeId": "36:4512",
+          "name": "Action",
+          "width": 208,
+          "height": 126
+        },
+        {
+          "nodeId": "38:4550",
+          "name": "No title",
+          "width": 208,
+          "height": 98
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "panelWidth": 208,
+        "padding": 8,
+        "radius": 8,
+        "titleGap": 8,
+        "rowGap": 4,
+        "rowHeight": 28,
+        "compactRowHeight": 24,
+        "icon": 16
+      }
+    },
+    {
+      "nodeId": "49:4991",
+      "name": "Picker with Input",
+      "owner": "DatePickerField variant=inter + ui/calendar.tsx",
+      "purpose": "Legacy Inter date/calendar input with month/year selection",
+      "variants": [
+        {
+          "nodeId": "49:4992",
+          "name": "Default"
+        },
+        {
+          "nodeId": "49:4999",
+          "name": "Open"
+        }
+      ],
+      "measurements": {
+        "label": {
+          "font": "Inter",
+          "size": 14,
+          "weight": 500,
+          "lineHeight": 20
+        },
+        "value": {
+          "font": "Inter",
+          "size": 16,
+          "weight": 400,
+          "lineHeight": 24
+        },
+        "weekday": {
+          "font": "Aptos",
+          "size": 12,
+          "weight": 400,
+          "lineHeight": 16
+        },
+        "width": 224,
+        "labelGap": 12,
+        "controlHeight": 36,
+        "paddingX": 12,
+        "radius": 6,
+        "icon": 16,
+        "day": 32,
+        "weekdayHeight": 21,
+        "calendarPadding": 12,
+        "weekGap": 8
+      }
+    },
+    {
+      "nodeId": "49:5114",
+      "name": "Select",
+      "owner": "ui/select.tsx",
+      "purpose": "Non-searchable fixed-choice selector; separate from searchable SNAPP lookup",
+      "variants": [
+        {
+          "nodeId": "49:5115",
+          "name": "Default"
+        },
+        {
+          "nodeId": "49:5120",
+          "name": "Open"
+        }
+      ],
+      "measurements": {
+        "font": "Inter40014/20",
+        "groupLabelFont": "Aptos40012/16",
+        "width": 180,
+        "height": 36,
+        "padding": [
+          8,
+          12
+        ],
+        "radius": 6,
+        "icon": 16,
+        "popupGap": 4,
+        "popupPadding": 4,
+        "rowPadding": [
+          6,
+          8
+        ],
+        "rowRadius": 4
+      }
+    },
+    {
+      "nodeId": "49:5143",
+      "name": "Input Group",
+      "owner": "ui/input-group.tsx + FormIcon",
+      "purpose": "Search/results, prefixed URL, message composer, verified handle",
+      "variants": [
+        {
+          "nodeId": "49:5144",
+          "name": "1/Search results"
+        },
+        {
+          "nodeId": "49:5151",
+          "name": "2/URL prefix"
+        },
+        {
+          "nodeId": "49:5158",
+          "name": "3/Composer"
+        },
+        {
+          "nodeId": "49:5175",
+          "name": "4/Verified"
+        }
+      ],
+      "measurements": {
+        "font": "Inter40014/20",
+        "prefixWeight": 500,
+        "composerFont": "Inter40016/24",
+        "width": 344,
+        "height": 36,
+        "composerInputHeight": 64,
+        "radius": 6,
+        "icon": 16,
+        "paddingX": 12,
+        "composerHeight": 106
+      }
+    },
+    {
+      "nodeId": "49:5180",
+      "name": "Default",
+      "owner": "CheckboxField variant=inter",
+      "purpose": "Legacy Inter consent composition",
+      "variants": [
+        {
+          "nodeId": "49:5180",
+          "name": "Default"
+        }
+      ],
+      "measurements": {
+        "font": "Inter50014/20",
+        "box": 16,
+        "radius": 4,
+        "gap": 12,
+        "shadow": "0 1px 2px #0000001a"
+      }
+    },
+    {
+      "nodeId": "69:9406",
+      "name": "Text Button",
+      "owner": "TextButton",
+      "purpose": "Inline approval/action with exact Fluent glyph",
+      "variants": [
+        {
+          "nodeId": "69:9405",
+          "name": "Default"
+        },
+        {
+          "nodeId": "69:9407",
+          "name": "Invert"
+        },
+        {
+          "nodeId": "69:9411",
+          "name": "Reject"
+        },
+        {
+          "nodeId": "69:9415",
+          "name": "Disable"
+        },
+        {
+          "nodeId": "74:9427",
+          "name": "Hover"
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "colors": [
+          "#2f455c",
+          "#f4f4f4",
+          "#e94435",
+          "#aaabab",
+          "#7f8082"
+        ],
+        "gap": 8,
+        "icon": 16,
+        "height": 20
+      }
+    },
+    {
+      "nodeId": "102:10661",
+      "name": "Filter Button",
+      "owner": "components/filters/filter-controls.tsx",
+      "purpose": "Category selection, applied clauses, add/remove, count, clear; caller-owned definitions",
+      "variants": [
+        {
+          "nodeId": "102:10660",
+          "name": "Filter Button",
+          "width": 79,
+          "height": 36
+        },
+        {
+          "nodeId": "248:2206",
+          "name": "Hover",
+          "width": 79,
+          "height": 36
+        },
+        {
+          "nodeId": "102:10662",
+          "name": "Filter Open",
+          "width": 364,
+          "height": 332
+        },
+        {
+          "nodeId": "102:10739",
+          "name": "Filter Selection",
+          "width": 364,
+          "height": 224
+        },
+        {
+          "nodeId": "102:10810",
+          "name": "Filtered",
+          "width": 98,
+          "height": 36
+        },
+        {
+          "nodeId": "102:10814",
+          "name": "Filter Applied",
+          "width": 364,
+          "height": 116
+        },
+        {
+          "nodeId": "102:10929",
+          "name": "Add Filter Open",
+          "width": 364,
+          "height": 412
+        },
+        {
+          "nodeId": "102:11018",
+          "name": "Add Filter Open 2",
+          "width": 364,
+          "height": 412
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "padding": [
+          8,
+          12
+        ],
+        "gap": 8,
+        "radius": 8,
+        "triggerRadius": 4,
+        "icon": 16,
+        "clauseHeight": 28,
+        "clauseGap": 2,
+        "addButton": 28,
+        "addIcon": 11,
+        "clearHeight": 28
+      }
+    },
+    {
+      "nodeId": "112:11237",
+      "name": "Filter Selection",
+      "owner": "FilterSelection",
+      "purpose": "Category/option row with optional icon/checkbox and optional native drag source",
+      "variants": [
+        {
+          "nodeId": "112:11236",
+          "name": "Default"
+        },
+        {
+          "nodeId": "112:11238",
+          "name": "Unchecked"
+        },
+        {
+          "nodeId": "112:11254",
+          "name": "Checked"
+        },
+        {
+          "nodeId": "112:11359",
+          "name": "No Icon Unselected"
+        },
+        {
+          "nodeId": "112:11419",
+          "name": "No Icon Selected"
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "height": 28,
+        "width": 135,
+        "gap": 8,
+        "radius": 4,
+        "checkbox": 16,
+        "checkboxRadius": 2,
+        "check": 12,
+        "icon": 16,
+        "dragIcon": 20,
+        "draggable": [
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "nodeId": "158:2384",
+      "name": "Checkbox",
+      "owner": "ui/checkbox.tsx + CheckboxField",
+      "purpose": "Binary choice or consent with accessible label",
+      "variants": [
+        {
+          "nodeId": "158:2383",
+          "name": "Default"
+        },
+        {
+          "nodeId": "158:2385",
+          "name": "Selected"
+        }
+      ],
+      "measurements": {
+        "font": "Aptos40014/20",
+        "box": 16,
+        "radius": 2,
+        "check": 12,
+        "gap": 8,
+        "labelFrame": 80
+      }
+    }
+  ],
+  "assets": [
+    {
+      "path": "registry/radix-nova/assets/forms/2f239.svg",
+      "nodes": [
+        "26:1899",
+        "13:1296"
+      ],
+      "roles": [
+        "imgDismiss",
+        "imgDismiss"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/f7b63.svg",
+      "nodes": [
+        "13:1296",
+        "69:9406"
+      ],
+      "roles": [
+        "imgCheckmark",
+        "imgCheckmark"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/b7931.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgChevron"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/43304.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgChevron1"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/85373.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgChevron2"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/5ccad.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgSearch"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/cac04.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgCheckmark1"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/46297.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgWarning"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/fe229.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgWarning1"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/1ddae.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgWarning2"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/18abf.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgErrorCircle"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/a98ab.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgErrorCircle1"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/ca494.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgCalendar"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/af529.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgArrowUpload"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/04a5a.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgEyedropper"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/04372.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgArrowUpload1"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/281df.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgSearch1"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/7e97e.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgBold"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/04586.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgItalic"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/5414c.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgUnderline"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/d2380.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgListOrdered"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/3cdee.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgListUnordered"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/314dc.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgAlignLeft"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/c29fc.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgAlignCenter"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/0720f.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgAlignRight"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/f2794.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgDelimiter"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/c7ec0.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgArrowClockwise"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/7de11.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgProhibited"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/089d9.svg",
+      "nodes": [
+        "13:1296"
+      ],
+      "roles": [
+        "imgDismiss1"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/bed95.svg",
+      "nodes": [
+        "19:1647"
+      ],
+      "roles": [
+        "imgDismiss"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/bdb38.svg",
+      "nodes": [
+        "36:4345"
+      ],
+      "roles": [
+        "imgChevron"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/2e911.svg",
+      "nodes": [
+        "36:4345"
+      ],
+      "roles": [
+        "imgAdd"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/aa14a.svg",
+      "nodes": [
+        "49:4991"
+      ],
+      "roles": [
+        "imgCalendar"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/cad1d.svg",
+      "nodes": [
+        "49:4991"
+      ],
+      "roles": [
+        "imgChevronLeft"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/d601f.svg",
+      "nodes": [
+        "49:4991"
+      ],
+      "roles": [
+        "imgChevronDown"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/3ac06.svg",
+      "nodes": [
+        "49:4991"
+      ],
+      "roles": [
+        "imgChevronRight"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/fb5ec.svg",
+      "nodes": [
+        "49:5114"
+      ],
+      "roles": [
+        "imgChevronDown"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/75657.svg",
+      "nodes": [
+        "49:5114"
+      ],
+      "roles": [
+        "imgCheck"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/4e8e8.svg",
+      "nodes": [
+        "49:5143"
+      ],
+      "roles": [
+        "imgSearch"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/4e21d.svg",
+      "nodes": [
+        "49:5143"
+      ],
+      "roles": [
+        "imgInfo"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/353a2.svg",
+      "nodes": [
+        "49:5143"
+      ],
+      "roles": [
+        "imgPlus"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/a0f15.svg",
+      "nodes": [
+        "49:5143"
+      ],
+      "roles": [
+        "imgLine3"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/93986.svg",
+      "nodes": [
+        "49:5143"
+      ],
+      "roles": [
+        "imgArrowUp"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/edb53.svg",
+      "nodes": [
+        "49:5143"
+      ],
+      "roles": [
+        "imgCircleCheck"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/b2167.svg",
+      "nodes": [
+        "69:9406"
+      ],
+      "roles": [
+        "imgCheckmark1"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/6d339.svg",
+      "nodes": [
+        "69:9406"
+      ],
+      "roles": [
+        "imgCheckmark2"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/901a5.svg",
+      "nodes": [
+        "69:9406"
+      ],
+      "roles": [
+        "imgCheckmark3"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/ccfd4.svg",
+      "nodes": [
+        "69:9406"
+      ],
+      "roles": [
+        "imgCheckmark4"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/9cb34.svg",
+      "nodes": [
+        "102:10661",
+        "112:11237"
+      ],
+      "roles": [
+        "imgDraggable",
+        "imgDraggable"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/dd133.svg",
+      "nodes": [
+        "102:10661",
+        "112:11237"
+      ],
+      "roles": [
+        "imgPerson",
+        "imgPerson"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/8befd.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgFilter"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/91d33.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgSearch"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/4a221.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgLine9"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/e9e37.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgBook"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/c9690.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgCheckmarkCircle"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/ceace.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgBuilding"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/8b12b.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgWrench"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/47f1b.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgBranchFork"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/187bf.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgTable"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/97161.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgArrow"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/73dfa.svg",
+      "nodes": [
+        "102:10661",
+        "112:11237",
+        "158:2384"
+      ],
+      "roles": [
+        "imgCheckmark",
+        "imgCheckmark",
+        "imgCheckmark"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/2b288.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgDismiss"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/cad5e.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgAdd"
+      ]
+    },
+    {
+      "path": "registry/radix-nova/assets/forms/f5e29.svg",
+      "nodes": [
+        "102:10661"
+      ],
+      "roles": [
+        "imgDelimiter"
+      ]
+    }
+  ],
+  "verification": {
+    "visual": "All 14 family references and 89 browser variant wrappers reviewed. Separate real-interaction popup checks and exact inset/size assertions pass; this is not a claim of pixel-identical rasterization for every state.",
+    "assets": "64 nonempty exact original SVG files retain their native dimensions and are packaged transitively through the forms registry dependencies. The clean whole-library CLI install and production build include their installed asset imports.",
+    "fonts": "Approved Aptos and Inter font faces are packaged transitively as self-contained font data with their registry license files. docs/figma-library/font-manifest.json records the face weights, exact SHA-256 hashes, source files and confirmed Aptos redistribution/webfont rights; source and installed-production checks verify the decoded data.",
+    "geometryEvidence": "artifacts/figma-qa/forms/geometry-review.json",
+    "rawReferenceReview": {
+      "familyCount": 14,
+      "variantWrapperCount": 89,
+      "status": "complete; production source frozen",
+      "scope": "All 14 complete parent contexts and reference screenshots reviewed for geometry, font family/weight/line height, icon dimensions, state colors, insets and shadows. Final corrections include inside-border content compensation, literal required-label spacing, exact 10% Figma shadows, modal close-icon reservation and the multiple-notice icon holder inset."
+    },
+    "focusedBrowserGate": {
+      "script": "scripts/verify-form-geometry-browser.mjs",
+      "command": "node scripts/verify-form-geometry-browser.mjs",
+      "result": "PASS",
+      "capturedAt": "2026-10-19T00:03:10.663Z",
+      "fixture": "Clean whole-library registry CLI install and production preview, including the final generated-source prefix corrections",
+      "measuredControlCount": 10,
+      "contracts": [
+        "16px Aptos and 12px Inter content insets, 106px multiline input group and intrinsic numeric field width",
+        "Select popup 180x196px with 12px label and 4px row insets",
+        "Filter layouts 332/224/116/412px reached through real interaction, including the checked 224px state, immediate callbacks, back/reopen/clear transitions and 12px/8px token gaps",
+        "Native disabled state for both compound-number inputs and the color picker",
+        "Exact 10% Figma XS/SM shadows, actual-font required-label space and 13px multiple-notice icon inset",
+        "Native color input pointer activation, keyboard focus, visible focus border and callback-driven selected value"
+      ],
+      "evidence": [
+        "artifacts/figma-qa/forms/geometry-review.json",
+        "artifacts/figma-qa/forms/geometry-filter-selection-checked.png"
+      ]
+    },
+    "broadBrowserGate": {
+      "result": "PASS",
+      "verifiedOn": "2026-10-19",
+      "variantWrapperCount": 89,
+      "checkCount": 55,
+      "evidence": "artifacts/figma-qa/forms/report.json"
+    },
+    "comparisonLimits": [
+      "Browser text has fractional intrinsic widths while Figma HUG text boxes round to integer pixels. Button Text is 115.015625px vs Figma 116px with matching approved Aptos face and 24px padding.",
+      "Figma Fields nominal 65px frame contains 69px of label/gap/control. Production fields retain unclipped natural flow; modal specimen source frame annotations are separate.",
+      "Calendar demo contains a duplicated 25 instead of 27 and a historical today marker; production date arithmetic/current clock stay correct.",
+      "Popup reference states were reached through real interaction; closed trigger wrappers alone do not establish popup fidelity."
+    ]
+  }
+}

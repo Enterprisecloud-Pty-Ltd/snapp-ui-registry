@@ -16,6 +16,8 @@ const snappTextSizes = [
   "snapp-3xl",
   "snapp-4xl",
   "snapp-5xl",
+  "snapp-6xl",
+  "snapp-7xl",
   "snapp-display-sm",
   "snapp-display",
 ] as const
@@ -24,6 +26,7 @@ const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {
       "font-size": [{ text: [...snappTextSizes] }],
+      leading: [{ leading: [...snappTextSizes, "snapp-xxxs"] }],
     },
   },
 })

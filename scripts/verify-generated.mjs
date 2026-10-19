@@ -48,6 +48,8 @@ for (const item of sourceRegistry.items) {
 		if (typeof file.content !== "string" || file.content.length === 0) {
 			errors.push(`${item.name}.json has an empty generated file ${file.path}`);
 		}
+		const source = await readFile(path.join(registryRoot, file.path), 'utf8');
+		if (source !== file.content) errors.push(`${item.name}.json is stale: ${file.path}`);
 	}
 }
 

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-action-node",
+  "title": "Action Node",
+  "description": "Shared SNAPP component-library building block: Action Node.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@snapp/snapp-figma-work-assets",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/data/action-node.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport flash from \"@/assets/snapp/work/82d30.svg\";\nimport actionMarkers from \"@/assets/snapp/work/eb3b4.svg\";\nimport branch from \"@/assets/snapp/work/dee39.svg\";\nimport conditionMarkers from \"@/assets/snapp/work/5fa13.svg\";\nimport flag from \"@/assets/snapp/work/dc570.svg\";\nimport { cn } from \"@/lib/utils\";\n\ninterface ActionNodeProps extends Omit<ComponentProps<\"button\">, \"title\"> {\n\tkind?: \"action\" | \"condition\" | \"trigger\";\n\ttitle: string;\n\tsubtitle: string;\n\tselected?: boolean;\n\tonPortClick?: (port: \"error\" | \"success\" | \"default\") => void;\n}\n\n/** Flow canvas node. Positioning, connections and execution remain owned by the consuming canvas. */\nfunction ActionNode({\n\tkind = \"action\",\n\ttitle,\n\tsubtitle,\n\tselected = false,\n\tonPortClick,\n\tclassName,\n\t...props\n}: ActionNodeProps) {\n\tconst trigger = kind === \"trigger\";\n\tconst ports: (\"error\" | \"success\" | \"default\")[] =\n\t\tkind === \"condition\"\n\t\t\t? [\"error\", \"success\"]\n\t\t\t: [\"error\", \"success\", \"default\"];\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"snapp-action-node\"\n\t\t\tdata-kind={kind}\n\t\t\tdata-state={selected ? \"selected\" : \"default\"}\n\t\t\tclassName={cn(\n\t\t\t\t\"relative w-34 font-snapp-body font-normal\",\n\t\t\t\ttrigger ? \"h-14\" : \"h-15.25\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t>\n\t\t\t<button\n\t\t\t\ttype=\"button\"\n\t\t\t\taria-pressed={selected}\n\t\t\t\tclassName={cn(\n\t\t\t\t\t\"absolute inset-x-0 top-0 flex h-14 items-center rounded-lg inset-ring-1 bg-snapp-surface-primary py-3 pr-5 pl-4 text-left focus-visible:outline-2 focus-visible:outline-snapp-border-highlight\",\n\t\t\t\t\tselected\n\t\t\t\t\t\t? \"inset-ring-snapp-border-highlight\"\n\t\t\t\t\t\t: \"inset-ring-snapp-border-primary\",\n\t\t\t\t)}\n\t\t\t\t{...props}\n\t\t\t>\n\t\t\t\t<span className=\"flex items-center gap-2\">\n\t\t\t\t\t<img\n\t\t\t\t\t\tsrc={{ action: flash, condition: branch, trigger: flag }[kind]}\n\t\t\t\t\t\talt=\"\"\n\t\t\t\t\t\twidth={20}\n\t\t\t\t\t\theight={20}\n\t\t\t\t\t\tclassName=\"shrink-0\"\n\t\t\t\t\t/>\n\t\t\t\t\t<span className=\"flex w-18 shrink-0 flex-col items-start gap-0.5 overflow-hidden whitespace-nowrap\">\n\t\t\t\t\t\t<span className=\"text-snapp-sm leading-snapp-xs text-snapp-text-brand\">\n\t\t\t\t\t\t\t{title}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span className=\"text-snapp-xxs leading-snapp-xxxs text-snapp-text-secondary\">\n\t\t\t\t\t\t\t{subtitle}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</span>\n\t\t\t\t</span>\n\t\t\t</button>\n\t\t\t{!trigger && (\n\t\t\t\t<div\n\t\t\t\t\tclassName={cn(\n\t\t\t\t\t\t\"absolute top-12.75 h-2.5\",\n\t\t\t\t\t\tkind === \"condition\" ? \"left-11.25 w-10.5\" : \"left-8 w-18.5\",\n\t\t\t\t\t)}\n\t\t\t\t>\n\t\t\t\t\t<img\n\t\t\t\t\t\tsrc={kind === \"condition\" ? conditionMarkers : actionMarkers}\n\t\t\t\t\t\talt=\"\"\n\t\t\t\t\t/>\n\t\t\t\t\t{onPortClick &&\n\t\t\t\t\t\tports.map((port, index) => (\n\t\t\t\t\t\t\t<button\n\t\t\t\t\t\t\t\tkey={port}\n\t\t\t\t\t\t\t\ttype=\"button\"\n\t\t\t\t\t\t\t\taria-label={`${title}: ${port} connection`}\n\t\t\t\t\t\t\t\tonClick={() => onPortClick(port)}\n\t\t\t\t\t\t\t\tclassName=\"absolute top-0 size-2.5 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-border-highlight\"\n\t\t\t\t\t\t\t\tstyle={{ left: index * 32 }}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t))}\n\t\t\t\t</div>\n\t\t\t)}\n\t\t</div>\n\t);\n}\n\nexport { ActionNode };\nexport type { ActionNodeProps };\n",
+      "type": "registry:component",
+      "target": "@components/snapp/data/action-node.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

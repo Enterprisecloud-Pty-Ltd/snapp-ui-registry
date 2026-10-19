@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-quick-actions",
+  "title": "Quick Actions",
+  "description": "Shared SNAPP component-library building block: Quick Actions.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@snapp/snapp-dropdown-menu",
+    "@snapp/snapp-figma-form-icons",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/forms/quick-actions.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cn } from \"@/lib/utils\"\nimport {\n  DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,\n  DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\"\nimport { FormIcon, type FormIconName } from \"@/components/snapp/forms/figma-form-icons\"\n\ninterface QuickActionItem {\n  id: string\n  label: React.ReactNode\n  icon?: FormIconName\n  disabled?: boolean\n  onSelect?: () => void\n  children?: readonly QuickActionItem[]\n}\ninterface QuickActionsProps {\n  children: React.ReactNode\n  items: readonly QuickActionItem[]\n  title?: React.ReactNode\n  compact?: boolean\n  className?: string\n  open?: boolean\n  onOpenChange?: (open: boolean) => void\n}\n\nfunction QuickActionRows({ items, compact, depth = 0 }: { items: readonly QuickActionItem[]; compact: boolean; depth?: number }) {\n  return <div className=\"flex w-full flex-col gap-1\">\n    {items.map(item => item.children?.length ? <DropdownMenuSub key={item.id}>\n      <DropdownMenuSubTrigger size=\"quick-actions\" disabled={item.disabled}>{item.label}</DropdownMenuSubTrigger>\n      {/* The trigger ends 9px inside the panel edge (8px padding + 1px border).\n          Figma 36:4388/36:4428 joins the panels at that edge, with the first\n          submenu 13px above its trigger and later submenus 9px above theirs. */}\n      <DropdownMenuSubContent size=\"quick-actions-compact\" sideOffset={9} alignOffset={depth === 0 ? -13 : -9}><QuickActionRows items={item.children} compact={false} depth={depth + 1} /></DropdownMenuSubContent>\n    </DropdownMenuSub> : <DropdownMenuItem key={item.id} size={compact ? \"quick-actions-compact\" : \"quick-actions\"} className={cn(!compact && depth > 0 && \"px-1\")} disabled={item.disabled} onSelect={item.onSelect}>{item.icon && <FormIcon name={item.icon} />}{item.label}</DropdownMenuItem>)}\n  </div>\n}\n\nfunction QuickActions({ children, items, title, compact = false, className, open, onOpenChange }: QuickActionsProps) {\n  return <DropdownMenu open={open} onOpenChange={onOpenChange}>\n    <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>\n    <DropdownMenuContent size=\"quick-actions\" className={cn(!title && \"gap-1\", className)}>\n      {title && <DropdownMenuLabel className=\"p-0 font-sans text-sm leading-5 font-normal text-snapp-text-blue\">{title}</DropdownMenuLabel>}\n      <QuickActionRows items={items} compact={compact} />\n    </DropdownMenuContent>\n  </DropdownMenu>\n}\n\nexport { QuickActions }\nexport type { QuickActionItem, QuickActionsProps }\n",
+      "type": "registry:component",
+      "target": "@components/snapp/forms/quick-actions.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

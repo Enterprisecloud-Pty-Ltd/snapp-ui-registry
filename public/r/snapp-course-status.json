@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-course-status",
+  "title": "Course Status",
+  "description": "Shared SNAPP component-library building block: Course Status.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@snapp/snapp-figma-work-assets",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/learning/course-status.tsx",
+      "content": "import type { ComponentProps, ReactNode } from \"react\";\nimport checkmark from \"@/assets/snapp/work/3add4.svg\";\nimport notice from \"@/assets/snapp/work/32bdb.svg\";\nimport warning from \"@/assets/snapp/work/a6bf4.svg\";\nimport { cn } from \"@/lib/utils\";\n\ntype CourseStatusState = \"default\" | \"complete\" | \"notice\" | \"warning\";\ninterface CourseStatusProps extends ComponentProps<\"div\"> {\n\tname: string;\n\tdate: ReactNode;\n\tstate?: CourseStatusState;\n}\nfunction CourseStatus({\n\tname,\n\tdate,\n\tstate = \"default\",\n\tclassName,\n\t...props\n}: CourseStatusProps) {\n\tconst icon = { default: undefined, complete: checkmark, notice, warning }[\n\t\tstate\n\t];\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"snapp-course-status\"\n\t\t\tdata-state={state}\n\t\t\tclassName={cn(\n\t\t\t\t\"flex w-[333.667px] max-w-full flex-col items-start gap-2 rounded-lg inset-ring-1 p-3 font-snapp-body text-snapp-sm leading-snapp-xs font-normal\",\n\t\t\t\tstate === \"default\" &&\n\t\t\t\t\t\"inset-ring-snapp-border-primary bg-snapp-surface-primary text-snapp-text-secondary\",\n\t\t\t\tstate === \"complete\" &&\n\t\t\t\t\t\"inset-ring-snapp-border-green bg-snapp-surface-green-soft text-snapp-text-green\",\n\t\t\t\tstate === \"notice\" &&\n\t\t\t\t\t\"inset-ring-snapp-border-amber bg-snapp-surface-amber-soft text-snapp-text-amber\",\n\t\t\t\tstate === \"warning\" &&\n\t\t\t\t\t\"inset-ring-snapp-border-red bg-snapp-surface-red-soft text-snapp-text-red\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t>\n\t\t\t<div className=\"flex w-full items-center gap-2\">\n\t\t\t\t<span className=\"sr-only\">{state}</span>\n\t\t\t\t{icon ? (\n\t\t\t\t\t<img src={icon} alt=\"\" width={16} height={16} className=\"shrink-0\" />\n\t\t\t\t) : (\n\t\t\t\t\t<span\n\t\t\t\t\t\taria-hidden=\"true\"\n\t\t\t\t\t\tclassName=\"size-4 shrink-0 rounded-3xl inset-ring-1 inset-ring-snapp-border-primary\"\n\t\t\t\t\t/>\n\t\t\t\t)}\n\t\t\t\t<span className=\"min-w-0 flex-1\">{name}</span>\n\t\t\t\t<span className=\"shrink-0 whitespace-nowrap\">{date}</span>\n\t\t\t</div>\n\t\t</div>\n\t);\n}\n\nexport { CourseStatus };\nexport type { CourseStatusProps, CourseStatusState };\n",
+      "type": "registry:component",
+      "target": "@components/snapp/learning/course-status.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
