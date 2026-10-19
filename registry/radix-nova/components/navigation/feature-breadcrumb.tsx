@@ -1,76 +1,105 @@
-import type * as React from "react"
-import { Fragment } from "react"
-import { BookOpen, ChevronRight } from "lucide-react"
+import type * as React from "react";
+import { Fragment } from "react";
 
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { cn } from "@/lib/utils"
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { cn } from "@/lib/utils";
 
 interface FeatureBreadcrumbItem {
-  id: string
-  label: React.ReactNode
-  onSelect?: () => void
-  current?: boolean
+	id: string;
+	label: React.ReactNode;
+	onSelect?: () => void;
+	current?: boolean;
 }
 
 interface FeatureBreadcrumbProps
-  extends Omit<React.ComponentProps<typeof Breadcrumb>, "children"> {
-  icon?: React.ReactNode
-  items: FeatureBreadcrumbItem[]
+	extends Omit<React.ComponentProps<typeof Breadcrumb>, "children"> {
+	icon?: React.ReactNode;
+	items: FeatureBreadcrumbItem[];
+	collapseAncestors?: boolean;
 }
 
 function FeatureBreadcrumb({
-  className,
-  icon,
-  items,
-  ...props
+	className,
+	icon,
+	items,
+	collapseAncestors = true,
+	...props
 }: FeatureBreadcrumbProps) {
-  if (items.length === 0) return null
-
-  return (
-    <Breadcrumb
-      className={cn("text-sm font-normal leading-4", className)}
-      data-slot="snapp-feature-breadcrumb"
-      {...props}
-    >
-      <BreadcrumbList className="m-0 list-none gap-2 p-0 text-snapp-text-soft">
-        <BreadcrumbItem aria-hidden="true">
-          {icon ?? <BookOpen className="size-5" strokeWidth={1.5} />}
-        </BreadcrumbItem>
-        {items.map((item, index) => (
-          <Fragment key={item.id}>
-            {index > 0 ? (
-              <BreadcrumbSeparator className="[&>svg]:size-4">
-                <ChevronRight strokeWidth={1.5} />
-              </BreadcrumbSeparator>
-            ) : null}
-            <BreadcrumbItem>
-              {item.onSelect ? (
-                <button
-                  aria-current={item.current ? "page" : undefined}
-                  className="min-h-7 cursor-pointer rounded-full border-0 bg-snapp-skeleton-soft px-4 py-1.5 text-snapp-text-soft transition-colors hover:bg-snapp-surface-secondary hover:text-snapp-text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-brand-primary"
-                  type="button"
-                  onClick={item.onSelect}
-                >
-                  {item.label}
-                </button>
-              ) : (
-                <BreadcrumbPage className="min-h-7 max-w-64 truncate rounded-full bg-snapp-skeleton-soft px-4 py-1.5 text-snapp-text-brand">
-                  {item.label}
-                </BreadcrumbPage>
-              )}
-            </BreadcrumbItem>
-          </Fragment>
-        ))}
-      </BreadcrumbList>
-    </Breadcrumb>
-  )
+	if (items.length === 0) return null;
+	return (
+		<Breadcrumb
+			className={cn("w-fit font-sans text-sm leading-5 font-normal", className)}
+			data-slot="snapp-feature-breadcrumb"
+			{...props}
+		>
+			<BreadcrumbList className="m-0 flex-nowrap gap-2 rounded-full bg-snapp-surface-secondary px-4 py-2 text-snapp-text-secondary">
+				{icon ? (
+					<BreadcrumbItem aria-hidden="true">{icon}</BreadcrumbItem>
+				) : null}
+				{items.map((item, index) => {
+					const current = item.current ?? index === items.length - 1;
+					const collapsed = collapseAncestors && index < items.length - 3;
+					const label = collapsed ? (
+						<>
+							<span aria-hidden="true">...</span>
+							<span className="sr-only">{item.label}</span>
+						</>
+					) : (
+						item.label
+					);
+					return (
+						<Fragment key={item.id}>
+							<BreadcrumbSeparator
+								className={cn(
+									"font-normal",
+									current && "text-snapp-text-brand",
+								)}
+							>
+								/
+							</BreadcrumbSeparator>
+							<BreadcrumbItem className="min-w-0">
+								{item.onSelect ? (
+									<button
+										aria-current={current ? "page" : undefined}
+										className={cn(
+											"max-w-64 truncate rounded-sm bg-transparent text-left outline-none hover:underline focus-visible:ring-2 focus-visible:ring-snapp-border-highlight",
+											current && "font-bold text-snapp-text-brand",
+										)}
+										onClick={item.onSelect}
+										title={
+											collapsed && typeof item.label === "string"
+												? item.label
+												: undefined
+										}
+										type="button"
+									>
+										{label}
+									</button>
+								) : (
+									<BreadcrumbPage
+										aria-current={current ? "page" : undefined}
+										className={cn(
+											"max-w-64 truncate text-snapp-text-secondary",
+											current && "font-bold text-snapp-text-brand",
+										)}
+									>
+										{label}
+									</BreadcrumbPage>
+								)}
+							</BreadcrumbItem>
+						</Fragment>
+					);
+				})}
+			</BreadcrumbList>
+		</Breadcrumb>
+	);
 }
 
-export { FeatureBreadcrumb }
-export type { FeatureBreadcrumbItem, FeatureBreadcrumbProps }
+export { FeatureBreadcrumb };
+export type { FeatureBreadcrumbItem, FeatureBreadcrumbProps };

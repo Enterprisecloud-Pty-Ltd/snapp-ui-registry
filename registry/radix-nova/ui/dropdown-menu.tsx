@@ -6,6 +6,7 @@ import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 import { usePortalContainer } from "@/runtime/PortalContainer"
+import { FormIcon } from "@/components/snapp/forms/figma-form-icons"
 
 function DropdownMenu({
   ...props
@@ -53,7 +54,7 @@ function DropdownMenuContent({
         className={cn(
           "z-50 max-h-(--radix-dropdown-menu-content-available-height) w-(--radix-dropdown-menu-trigger-width) min-w-32 origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:overflow-hidden data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
           size === "quick-actions" &&
-            "flex w-52 min-w-52 flex-col gap-2 rounded-snapp-action-menu border border-snapp-card-border bg-popover p-3 shadow-snapp-flyout ring-0",
+          "flex w-52 min-w-52 flex-col gap-2 rounded-lg border border-snapp-border-primary bg-snapp-surface-primary p-2 font-sans text-sm leading-5 font-normal text-snapp-text-primary shadow-snapp-flyout ring-0",
           className
         )}
         {...props}
@@ -90,9 +91,9 @@ function DropdownMenuItem({
       className={cn(
         "group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 data-[variant=destructive]:*:[svg]:text-destructive",
         size === "quick-actions" &&
-          "h-5.5 cursor-pointer gap-2 rounded-sm px-2 py-0.5 text-sm font-normal leading-[normal] text-foreground hover:bg-accent hover:text-foreground focus:bg-accent focus:text-foreground data-disabled:cursor-not-allowed",
+        "h-7 cursor-pointer gap-2 rounded px-2 py-1 text-sm font-normal leading-5 text-foreground hover:bg-accent hover:text-foreground focus:bg-accent focus:text-foreground data-disabled:cursor-not-allowed",
         size === "quick-actions-compact" &&
-          "h-4 cursor-pointer gap-2 rounded-sm px-0 py-0 text-sm font-normal leading-4 text-foreground hover:bg-accent hover:text-foreground focus:bg-accent focus:text-foreground data-disabled:cursor-not-allowed",
+        "h-6 cursor-pointer gap-2 rounded px-1 py-0.5 text-sm font-normal leading-5 text-foreground hover:bg-accent hover:text-foreground focus:bg-accent focus:text-foreground data-disabled:cursor-not-allowed",
         className
       )}
       {...props}
@@ -250,13 +251,13 @@ function DropdownMenuSubTrigger({
       className={cn(
         "flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         size === "quick-actions" &&
-          "h-5 cursor-pointer gap-2 rounded-sm px-2 py-0.5 text-sm font-normal leading-4 text-foreground hover:bg-accent hover:text-foreground focus:bg-accent focus:text-foreground data-open:bg-accent data-open:text-foreground",
+        "h-7 cursor-pointer gap-2 rounded px-2 py-1 font-sans text-sm leading-5 font-normal text-snapp-text-primary hover:bg-snapp-surface-secondary focus:bg-snapp-surface-secondary data-open:bg-snapp-surface-secondary",
         className
       )}
       {...props}
     >
       {children}
-      <ChevronRightIcon className="ml-auto" />
+      {size === "quick-actions" ? <FormIcon name="submenuChevron" className="ml-auto" /> : <ChevronRightIcon className="ml-auto" />}
     </DropdownMenuPrimitive.SubTrigger>
   )
 }
@@ -275,7 +276,7 @@ function DropdownMenuSubContent({
       className={cn(
         "z-50 min-w-24 origin-(--radix-dropdown-menu-content-transform-origin) overflow-hidden rounded-lg bg-popover p-1 text-popover-foreground shadow-lg ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
         size === "quick-actions-compact" &&
-          "flex w-29.5 min-w-29.5 flex-col gap-3 rounded-snapp-action-menu border border-snapp-card-border bg-popover p-3 shadow-snapp-flyout ring-0",
+        "flex w-52 min-w-52 flex-col gap-1 rounded-lg border border-snapp-border-primary bg-snapp-surface-primary p-2 font-sans text-sm leading-5 font-normal text-snapp-text-primary shadow-snapp-flyout ring-0",
         className
       )}
       {...props}

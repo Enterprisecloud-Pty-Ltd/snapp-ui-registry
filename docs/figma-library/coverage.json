@@ -1,0 +1,394 @@
+{
+  "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "observedOn": "2026-10-19",
+  "definitions": 55,
+  "duplicateInstances": 2,
+  "coverage": [
+    {
+      "nodeId": "1:2164",
+      "name": "TaskListItem",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "1:2289",
+      "name": "Day",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "1:2304",
+      "name": "Work Item",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "1:2386",
+      "name": "Tabbed Header Navigation",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:2498",
+      "name": "Tree Menu",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:2549",
+      "name": "Row",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:2567",
+      "name": "Row Title",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:2572",
+      "name": "Tree Item",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:2617",
+      "name": "Tree Folder",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:2655",
+      "name": "Pagination",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:2675",
+      "name": "Tree",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:2790",
+      "name": "Tree Builder",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:3029",
+      "name": "Profile Controls",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "1:3048",
+      "name": "Button",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "1:3055",
+      "name": "Work OS Personal Productivity Right Panel",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "1:3098",
+      "name": "Left Menu",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "13:934",
+      "name": "Header",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "13:960",
+      "name": "Achievements",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "13:1199",
+      "name": "Dynamics Menu",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "13:1296",
+      "name": "Fields",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "13:1541",
+      "name": "Switch",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "19:1647",
+      "name": "Modal",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "26:1899",
+      "name": "Pill",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "36:4345",
+      "name": "Quick Actions",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "48:4696",
+      "name": "Check Item",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "49:4861",
+      "name": "Course",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "49:4890",
+      "name": "EmployeeCard",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "49:4981",
+      "name": "EC_Light",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "49:4986",
+      "name": "EC_Dark",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "49:4991",
+      "name": "Picker with Input",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "49:5114",
+      "name": "Select",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "49:5143",
+      "name": "Input Group",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "49:5180",
+      "name": "Default",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "50:5887",
+      "name": "Side menu",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "61:6351",
+      "name": "Course Status",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "69:9406",
+      "name": "Text Button",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "74:9562",
+      "name": "Editor Toolbar",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "74:9647",
+      "name": "Sidebar",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "102:10661",
+      "name": "Filter Button",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "112:11237",
+      "name": "Filter Selection",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "158:2384",
+      "name": "Check box",
+      "owners": [
+        "forms"
+      ]
+    },
+    {
+      "nodeId": "219:2062",
+      "name": "Table Cell",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "219:2126",
+      "name": "Table Row",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "219:2228",
+      "name": "Table",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "228:2376",
+      "name": "Inbox Category",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "230:2426",
+      "name": "Inbox Item",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "236:2502",
+      "name": "Action Node",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "267:2185",
+      "name": "snapp_logo",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "279:2228",
+      "name": "snapp_symbol",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "281:2267",
+      "name": "Updated Header",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "294:2678",
+      "name": "Card",
+      "owners": [
+        "work"
+      ]
+    },
+    {
+      "nodeId": "300:2763",
+      "name": "Tab Item",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "300:2784",
+      "name": "Tabbed Menu",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "334:2201",
+      "name": "Square Top Menu",
+      "owners": [
+        "navigation"
+      ]
+    },
+    {
+      "nodeId": "347:2904",
+      "name": "Tool Menu",
+      "owners": [
+        "navigation"
+      ]
+    }
+  ],
+  "scope": "Inventory ownership coverage; visual and behavioral verification is a separate gate."
+}

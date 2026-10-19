@@ -3,6 +3,7 @@
   "name": "snapp-portal-container",
   "title": "Snapp Portal Container",
   "description": "Injected portal-container context for host-safe dialogs, menus, popovers, tooltips, and searchable comboboxes; the consuming runtime owns local versus external placement.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/radix-nova/runtime/PortalContainer.ts",

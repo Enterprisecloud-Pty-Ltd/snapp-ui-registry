@@ -8,6 +8,7 @@
     "next-themes",
     "sonner"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/radix-nova/ui/sonner.tsx",

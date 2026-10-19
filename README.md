@@ -2,7 +2,8 @@
 
 Shared shadcn/ui registry source for Snapp applications. The registry contains
 the Snapp theme and the canonical Radix Nova UI primitives used across the
-workspace.
+workspace. The complete Figma component library, exact assets and fonts are
+mapped in [the library audit](docs/figma-library/README.md).
 
 ## Local workflow
 
@@ -16,20 +17,38 @@ npm run registry:serve
 All included Snapp `components.json` files register the local namespace:
 
 ```powershell
-npx shadcn@latest add @snapp/snapp-theme @snapp/snapp-button
+npx shadcn@4.12.0 add @snapp/snapp-theme @snapp/snapp-button
 ```
 
 For a new project or a substantial registry refresh, install the complete
-canonical Shadcn primitive set instead of refreshing only the components the
-current screen happens to import:
+component library, including every canonical Shadcn primitive, reusable Figma
+family, exact asset and the theme:
 
 ```powershell
-npx shadcn@latest add @snapp/snapp-ui-foundation --overwrite
+npx shadcn@4.12.0 add @snapp/snapp-component-library --overwrite
 ```
 
 Run the shared webresource converter again after this overwrite when the
 consumer is hosted by Dynamics or compiled by a sibling PCF. The converter
 restores host/runtime adaptations that generated registry files must not own.
+Use the Engineering Hub's `runbooks/ui-registry-rollout.md` for the complete
+new/existing Snapp procedure. A local candidate must pass verification before
+publication; serving it locally does not update the published namespace.
+
+## Authoring shared components
+
+Keep utility strings in literal `className`/`classNames` expressions or `cva`
+definitions. The tested shadcn installer does not prefix standalone class maps,
+ordinary `cn()` constants or custom class props. For a reusable recipe or a
+custom prop, use `cva("literal utilities")()`; verify the installed output with
+the registry smoke gate. A correct unprefixed source preview is insufficient.
+
+Check Figma inside strokes against actual text/child coordinates. A CSS border
+consumes layout space; use an inset ring or explicitly compensate its inset
+where needed. Preserve intentional consuming borders and measure each case.
+Validate computed styles and interactions, including open popups, rather than
+only checking class names. Keep sample records and specimen layout overrides
+in `docs/figma-library/*-preview.tsx`, outside distributed product components.
 
 ## Runtime ownership boundary
 
@@ -103,10 +122,10 @@ contract. Do not introduce a Card or other surface unless the exact Figma node
 being implemented contains that surface; parent and adjacent frames provide
 context, not implicit component ownership.
 
-Prefer Lucide icons when they match the design. If the exact Figma glyph is
-material and no shared icon matches, pass a small inline SVG through the
-primitive's icon slot instead of requiring an app-specific registry component
-or an SVG-loader dependency that a sibling PCF may not provide.
+Use the exact installed Figma glyph when one is supplied. Preserve its SVG
+bytes, viewBox and natural dimensions. The shared runtime owns SVG URL support
+in generated PCF builds; do not redraw a glyph or add a feature-owned loader.
+Use Lucide for controls without an explicit design asset.
 
 ## Filter controls and nested overlays
 
@@ -114,11 +133,11 @@ Install the shared filter surface and active-token primitives instead of
 repeating flyout and pill class bundles:
 
 ```powershell
-npx shadcn@latest add @snapp/snapp-filter-controls @snapp/snapp-combobox
+npx shadcn@4.12.0 add @snapp/snapp-filter-controls @snapp/snapp-combobox
 ```
 
 `FilterMenuSurface`, `FilterTokenList`, and `FilterChip` own the Figma-aligned
-260px surface, flyout shadow, 8px layout rhythm, 36px pill geometry, neutral
+364px surface, flyout shadow, 8px layout rhythm, 36px pill geometry, neutral
 tokens, dismiss affordance, focus state, and pointer cursor. Applications own
 the available filters, selected values, query behavior, labels, separators,
 and whether selection closes the menu.
@@ -197,16 +216,16 @@ background:
 ```
 
 Always use the variant and size together. Do not render the icon in a raw
-`button`, use vertical dots, reuse a Figma `more.svg`, apply a feature colour,
+`button`, use vertical dots, apply a feature colour,
 or copy the geometry/hover utilities into a consumer. Give each trigger a
 contextual accessible name.
 
 Use `size="quick-actions"` on menu content, main menu items, and submenu
 triggers when implementing compact overflow actions. The main surface owns the
-standard 208px width, 12px inset, 8px row gap, shared border, radius, and
-flyout shadow. For the narrow nested choice surface, use
+standard 208px width, 8px inset, 8px section gap, 4px row gap, 28px rows,
+shared border, radius, and flyout shadow. For compact nested choice rows, use
 `size="quick-actions-compact"` on both `DropdownMenuSubContent` and its items;
-that variant owns the 118px width, 12px inset and gap, and 16px rows. The same
+that variant owns the 208px surface, 8px inset, 4px gap and 24px rows. The same
 sizes are available on the matching `ContextMenu` primitives. Do not reproduce
 those class bundles in consumer components.
 
@@ -256,7 +275,7 @@ Install the shared Figma-aligned drag feedback where a Snapp supports native
 dragging:
 
 ```powershell
-npx shadcn@latest add @snapp/snapp-drag-feedback
+npx shadcn@4.12.0 add @snapp/snapp-drag-feedback
 ```
 
 `DragPreview` owns the compact white drag surface, exact order handle, item
@@ -274,7 +293,7 @@ pointer during `dragover`, because the browser can lose the active drop target.
 The Work OS components can be installed independently or as a complete card:
 
 ```powershell
-npx shadcn@latest add @snapp/snapp-work-item-card
+npx shadcn@4.12.0 add @snapp/snapp-work-item-card
 ```
 
 The card pulls in its theme, SNAPP-aware class utility, exact vector icons,
@@ -283,7 +302,7 @@ duration badge, progress meter, and card primitive automatically.
 Feature Snapps can install the shared host-safe layout and parameter parser:
 
 ```powershell
-npx shadcn@latest add @snapp/snapp-feature-layout @snapp/snapp-feature-parameters
+npx shadcn@4.12.0 add @snapp/snapp-feature-layout @snapp/snapp-feature-parameters
 ```
 
 `resolveShowNavBar()` implements the common `snapp_parameters` contract:
@@ -295,7 +314,7 @@ radius, and padding behavior without coupling a Snapp to a specific host.
 Catalogue and knowledge-base Snapps can install the complete shared pattern:
 
 ```powershell
-npx shadcn@latest add @snapp/snapp-catalogue-core
+npx shadcn@4.12.0 add @snapp/snapp-catalogue-core
 ```
 
 The bundle includes the landing hero and cards, loading skeleton, feature
@@ -330,8 +349,9 @@ npm run registry:verify
 - `registry/radix-nova/lib/utils.ts` is the canonical `cn()` implementation. It
   extends `tailwind-merge` so SNAPP text sizes are not mistaken for text colors.
 - `registry/radix-nova/tokens/*.tokens.json` contains the canonical Figma
-  primitive, semantic, and typography exports.
-- `npm run sync` converts those exports into shadcn `cssVars` and regenerates
+  primitive, semantic, and typography sources, normalized from captured live
+  variables with compatibility-only values retained.
+- `npm run sync` converts those sources into shadcn `cssVars` and regenerates
   `registry/radix-nova/theme/snapp-theme.css`.
 - The generated theme maps shadcn's standard semantic variables (including
   `--radius`, `--background`, and `--border`) to SNAPP tokens. Its `.ec-app`
@@ -339,16 +359,20 @@ npm run registry:verify
   without leaking a global reset into Dynamics, PCF, Power Pages, or shells.
 - The sync script retains Snapp-specific responsive breakpoints and layout
   sizing alongside the Figma variables.
-- `scripts/normalize-tailwind-sizes.mjs` applies the shared tokens and Tailwind
-  scale utilities to every owned Snapp while excluding `Depricated` and
-  `not my snapps`.
+- `npm run normalize` applies canonical Tailwind suggestions only inside this
+  registry. Consumer adoption is an explicit per-project workflow; registry
+  maintenance must not overwrite sibling projects or their registry URLs.
 
 Run `npm run normalize:check` in CI to prevent new simple pixel/rem arbitrary
 size utilities from being introduced. Run `npm run registry:verify` to validate
 the schema, dependency graph, font provisioning, SNAPP class merging,
 canonical Tailwind syntax, and the complete generated artifact set. It then
-installs the Work OS card into a temporary clean Vite app, type-checks it, and
-runs a production build.
+installs the complete library into a temporary clean Vite app with the `ec`
+Tailwind prefix, type-checks every installed source, verifies font byte hashes,
+and runs a production build. `node scripts/check-figma-coverage.mjs` verifies
+that all 55 top-level Figma definitions have an audit owner. For browser QA,
+retain a fixture with `SNAPP_KEEP_REGISTRY_FIXTURE=1`, then run
+`node scripts/figma-preview.mjs <fixture-root>` and inspect its three groups.
 
 ## Rollout safety
 
@@ -357,10 +381,33 @@ Registry source is never copied from an individual consuming application.
 `public/r`, then rebuilds the complete catalog so removed items cannot remain as
 stale public endpoints.
 
-The SNAPP theme installs IBM Plex Sans (200/300/400/700) and Judson (400/700)
-automatically. Each face tries the SNAPP Front Door asset first, the matching
-Google Fonts WOFF2 asset second, and a bundled `@fontsource` WOFF2 file last.
-The bundled fallback keeps Dynamics, PCF, Power Pages, offline, and CSP-limited
-consumers reliable while avoiding duplicate legacy WOFF output. Shared
+The SNAPP theme installs Aptos (300/400/600/700), Inter (400/500), IBM Plex Sans
+(200/300/400/700) and Judson (400/700) automatically as self-contained data
+URLs. Aptos is the current default; preserve explicit component exceptions.
+The original designer Aptos 1.09 files are retained under the separate
+redistribution/webfont license confirmed by the owner. Delivery copies prepare
+advance and positioning metrics to match the precision observed in Figma while
+preserving glyph outlines and substitutions. See
+`registry/radix-nova/fonts/README.md` and
+`docs/figma-library/font-manifest.json` for original/delivery hashes and proofs.
+`HugText` rounds intrinsic label slots in Tabs, ExpandedTab and Pagination;
+consumers must install the shared primitive and theme rather than substitute
+local fonts, disable kerning or add label-specific widths. Font preparation
+tests run in `registry:verify`; `registry:text:test` checks layout and fallback
+behavior in standalone and two ShadowRoots.
+
+Tabs install `tabs.keyboard.ts` as part of `snapp-tabs`; keep it with the
+component during consumer refreshes. Arrow navigation and keyboard entry use
+the owning root's actual focus, with a cancellable timer per tab list and
+independent nested lists. Radix still owns selection, automatic/manual
+activation and roving tab stops. Cancel navigation through a trigger's
+`onKeyDown` or a list's `onKeyDownCapture`; a bubbling list handler runs after
+Radix's trigger handling. `registry:verify` runs the keyboard matrix against
+the freshly installed, prefixed consumer as part of its clean-install gate.
+Use `registry:keyboard:test` for the canonical-source fixture. See
+[keyboard evidence](docs/figma-library/tabs-keyboard-audit.json).
+Native shadow hosts register font faces through the shared runtime while
+keeping ordinary styles scoped. Hosted deployment must permit these font
+sources in its CSP. Shared
 primitives depend on `snapp-utils`, ensuring typography classes such as
 `text-snapp-xs` remain intact when combined with SNAPP text color classes.

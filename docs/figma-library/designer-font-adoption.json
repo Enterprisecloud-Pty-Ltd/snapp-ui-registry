@@ -1,0 +1,746 @@
+{
+  "date": "2026-10-19",
+  "status": "verified-local-production-candidate-not-published-or-deployed",
+  "ownerConfirmation": "The owner reports that the designer uses the supplied aptos-font package.",
+  "package": {
+    "name": "aptos-font",
+    "version": "1.09;O365",
+    "realFiles": 11,
+    "uniqueFiles": 10,
+    "installedWeights": [
+      300,
+      400,
+      600,
+      700
+    ],
+    "sourcePathPolicy": "Package identity and original filenames are recorded; no contributor workstation path is a shared dependency."
+  },
+  "license": "Existing separate Aptos redistribution/webfont rights were confirmed by the owner. Retain commercial evidence with the owner; earlier desktop EULA remains historical provenance.",
+  "previousCandidate": {
+    "javascriptSha256": "2cfee08a485943e250e80315e42ec31cfcbb2fd79b8c2fa9facaed6629477e04",
+    "stylesheetSha256": "43e2f6abcc58d0807fda625082825cf42194ab937977ec8b70c8f8586217f215",
+    "generatedGraphSha256": "7f1ce83b48c7d36a3a02cb4861eb4cad640678ffce6f098caed16fa4c55062de"
+  },
+  "faces": [
+    {
+      "designerFilename": "aptos-bold.ttf",
+      "version": [
+        "Version 1.09;O365"
+      ],
+      "weight": 700,
+      "bytes": 235860,
+      "sha256": "e59d983f8752146b8d02df5cad8f545ce677ef71dbe113afa3b395a9088c7f53",
+      "previous": {
+        "file": "Aptos-Bold.ttf",
+        "sha256": "ae318584be8737164e24842e0b27ab180ee6761c1bedd799f5a29c93a8a4e65c",
+        "sameWholeFile": false,
+        "sameHmtx": false,
+        "sameGPOS": false,
+        "changedTables": [
+          "GPOS",
+          "GSUB",
+          "OS/2",
+          "cmap",
+          "glyf",
+          "head",
+          "hhea",
+          "hmtx",
+          "kern",
+          "name"
+        ],
+        "version": [
+          "Version 2.01;240513210638;O365"
+        ],
+        "sameWholeGlyfTable": false
+      },
+      "metrics": [
+        {
+          "text": "Week 1 - 3",
+          "unshaped14px": 64.4697265625,
+          "kerned14px": 63.984375,
+          "ceilKerned": 64,
+          "advanceUnits": 9431,
+          "kerningUnits": -71,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -71
+            }
+          ]
+        },
+        {
+          "text": "Week 4 - 6",
+          "unshaped14px": 64.4697265625,
+          "kerned14px": 63.984375,
+          "ceilKerned": 64,
+          "advanceUnits": 9431,
+          "kerningUnits": -71,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -71
+            }
+          ]
+        },
+        {
+          "text": "Week 7 - 8",
+          "unshaped14px": 64.4697265625,
+          "kerned14px": 63.984375,
+          "ceilKerned": 64,
+          "advanceUnits": 9431,
+          "kerningUnits": -71,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -71
+            }
+          ]
+        },
+        {
+          "text": "Next",
+          "unshaped14px": 29.8115234375,
+          "kerned14px": 29.6953125,
+          "ceilKerned": 30,
+          "advanceUnits": 4361,
+          "kerningUnits": -17,
+          "pairs": [
+            {
+              "pair": "ex",
+              "units": -31
+            },
+            {
+              "pair": "xt",
+              "units": 14
+            }
+          ]
+        },
+        {
+          "text": "Item",
+          "unshaped14px": 29.326171875,
+          "kerned14px": 29.2578125,
+          "ceilKerned": 30,
+          "advanceUnits": 4290,
+          "kerningUnits": -10,
+          "pairs": [
+            {
+              "pair": "te",
+              "units": -10
+            }
+          ]
+        },
+        {
+          "text": "Alegra",
+          "unshaped14px": 40.66015625,
+          "kerned14px": 40.22265625,
+          "ceilKerned": 41,
+          "advanceUnits": 5948,
+          "kerningUnits": -64,
+          "pairs": [
+            {
+              "pair": "eg",
+              "units": -3
+            },
+            {
+              "pair": "ra",
+              "units": -61
+            }
+          ]
+        },
+        {
+          "text": "Button",
+          "unshaped14px": 42.8955078125,
+          "kerned14px": 42.8544921875,
+          "ceilKerned": 43,
+          "advanceUnits": 6275,
+          "kerningUnits": -6,
+          "pairs": [
+            {
+              "pair": "ut",
+              "units": 4
+            },
+            {
+              "pair": "to",
+              "units": -10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "designerFilename": "aptos-light.ttf",
+      "version": [
+        "Version 1.09;O365"
+      ],
+      "weight": 300,
+      "bytes": 233944,
+      "sha256": "e38fc1bef9b7e971bfdfdba4897abe72ef9bd72182b8ad9d463e11307a802b54",
+      "previous": {
+        "file": "Aptos-Light.ttf",
+        "sha256": "dbe7b9c8f07e8580ecee4c01befc4ff574cdf16bb2b90f88eaf945a9b662b0ba",
+        "sameWholeFile": false,
+        "sameHmtx": false,
+        "sameGPOS": false,
+        "changedTables": [
+          "GPOS",
+          "GSUB",
+          "cmap",
+          "glyf",
+          "head",
+          "hhea",
+          "hmtx",
+          "kern",
+          "name"
+        ],
+        "version": [
+          "Version 2.01;240513210638;O365"
+        ],
+        "sameWholeGlyfTable": false
+      },
+      "metrics": [
+        {
+          "text": "Week 1 - 3",
+          "unshaped14px": 61.2294921875,
+          "kerned14px": 60.94921875,
+          "ceilKerned": 61,
+          "advanceUnits": 8957,
+          "kerningUnits": -41,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -41
+            }
+          ]
+        },
+        {
+          "text": "Week 4 - 6",
+          "unshaped14px": 61.2294921875,
+          "kerned14px": 60.94921875,
+          "ceilKerned": 61,
+          "advanceUnits": 8957,
+          "kerningUnits": -41,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -41
+            }
+          ]
+        },
+        {
+          "text": "Week 7 - 8",
+          "unshaped14px": 61.2294921875,
+          "kerned14px": 60.94921875,
+          "ceilKerned": 61,
+          "advanceUnits": 8957,
+          "kerningUnits": -41,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -41
+            }
+          ]
+        },
+        {
+          "text": "Next",
+          "unshaped14px": 27.0634765625,
+          "kerned14px": 26.8515625,
+          "ceilKerned": 27,
+          "advanceUnits": 3959,
+          "kerningUnits": -31,
+          "pairs": [
+            {
+              "pair": "ex",
+              "units": -31
+            }
+          ]
+        },
+        {
+          "text": "Item",
+          "unshaped14px": 26.5712890625,
+          "kerned14px": 26.5029296875,
+          "ceilKerned": 27,
+          "advanceUnits": 3887,
+          "kerningUnits": -10,
+          "pairs": [
+            {
+              "pair": "te",
+              "units": -10
+            }
+          ]
+        },
+        {
+          "text": "Alegra",
+          "unshaped14px": 36.927734375,
+          "kerned14px": 36.4423828125,
+          "ceilKerned": 37,
+          "advanceUnits": 5402,
+          "kerningUnits": -71,
+          "pairs": [
+            {
+              "pair": "eg",
+              "units": -10
+            },
+            {
+              "pair": "ra",
+              "units": -61
+            }
+          ]
+        },
+        {
+          "text": "Button",
+          "unshaped14px": 39.6962890625,
+          "kerned14px": 39.5595703125,
+          "ceilKerned": 40,
+          "advanceUnits": 5807,
+          "kerningUnits": -20,
+          "pairs": [
+            {
+              "pair": "ut",
+              "units": -10
+            },
+            {
+              "pair": "to",
+              "units": -10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "designerFilename": "aptos-semibold.ttf",
+      "version": [
+        "Version 1.09;O365"
+      ],
+      "weight": 600,
+      "bytes": 235476,
+      "sha256": "b69e74cd43331c68cc8a4e82acc70dc5fe183524fe6e28d0da5e209b0ccd9f3d",
+      "previous": {
+        "file": "Aptos-SemiBold.ttf",
+        "sha256": "3bd631a7ecb762df8aa7bca31b147db54d441babc83d91b96ba4a69d438880d9",
+        "sameWholeFile": false,
+        "sameHmtx": false,
+        "sameGPOS": false,
+        "changedTables": [
+          "GPOS",
+          "GSUB",
+          "OS/2",
+          "cmap",
+          "glyf",
+          "head",
+          "hhea",
+          "hmtx",
+          "kern",
+          "name"
+        ],
+        "version": [
+          "Version 2.01;240513210638;O365"
+        ],
+        "sameWholeGlyfTable": false
+      },
+      "metrics": [
+        {
+          "text": "Week 1 - 3",
+          "unshaped14px": 63.3896484375,
+          "kerned14px": 62.97265625,
+          "ceilKerned": 63,
+          "advanceUnits": 9273,
+          "kerningUnits": -61,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -61
+            }
+          ]
+        },
+        {
+          "text": "Week 4 - 6",
+          "unshaped14px": 63.3896484375,
+          "kerned14px": 62.97265625,
+          "ceilKerned": 63,
+          "advanceUnits": 9273,
+          "kerningUnits": -61,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -61
+            }
+          ]
+        },
+        {
+          "text": "Week 7 - 8",
+          "unshaped14px": 63.3896484375,
+          "kerned14px": 62.97265625,
+          "ceilKerned": 63,
+          "advanceUnits": 9273,
+          "kerningUnits": -61,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -61
+            }
+          ]
+        },
+        {
+          "text": "Next",
+          "unshaped14px": 28.8955078125,
+          "kerned14px": 28.751953125,
+          "ceilKerned": 29,
+          "advanceUnits": 4227,
+          "kerningUnits": -21,
+          "pairs": [
+            {
+              "pair": "ex",
+              "units": -31
+            },
+            {
+              "pair": "xt",
+              "units": 10
+            }
+          ]
+        },
+        {
+          "text": "Item",
+          "unshaped14px": 28.41015625,
+          "kerned14px": 28.341796875,
+          "ceilKerned": 29,
+          "advanceUnits": 4156,
+          "kerningUnits": -10,
+          "pairs": [
+            {
+              "pair": "te",
+              "units": -10
+            }
+          ]
+        },
+        {
+          "text": "Alegra",
+          "unshaped14px": 39.416015625,
+          "kerned14px": 38.96484375,
+          "ceilKerned": 39,
+          "advanceUnits": 5766,
+          "kerningUnits": -66,
+          "pairs": [
+            {
+              "pair": "eg",
+              "units": -5
+            },
+            {
+              "pair": "ra",
+              "units": -61
+            }
+          ]
+        },
+        {
+          "text": "Button",
+          "unshaped14px": 41.822265625,
+          "kerned14px": 41.75390625,
+          "ceilKerned": 42,
+          "advanceUnits": 6118,
+          "kerningUnits": -10,
+          "pairs": [
+            {
+              "pair": "to",
+              "units": -10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "designerFilename": "aptos.ttf",
+      "version": [
+        "Version 1.09;O365"
+      ],
+      "weight": 400,
+      "bytes": 235288,
+      "sha256": "b46c7865bdecc68d7d82075a2d1e93e31cb73146eae6740bc7c090c8d0b2842a",
+      "previous": {
+        "file": "Aptos.ttf",
+        "sha256": "01bbd2d3bd483045e1dbf4f106935cb86478b937f8d334258ad12eea60554a05",
+        "sameWholeFile": false,
+        "sameHmtx": false,
+        "sameGPOS": false,
+        "changedTables": [
+          "GPOS",
+          "GSUB",
+          "cmap",
+          "glyf",
+          "head",
+          "hhea",
+          "hmtx",
+          "kern",
+          "name"
+        ],
+        "version": [
+          "Version 2.01;240513210638;O365"
+        ],
+        "sameWholeGlyfTable": false
+      },
+      "metrics": [
+        {
+          "text": "Week 1 - 3",
+          "unshaped14px": 62.3095703125,
+          "kerned14px": 61.9609375,
+          "ceilKerned": 62,
+          "advanceUnits": 9115,
+          "kerningUnits": -51,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -51
+            }
+          ]
+        },
+        {
+          "text": "Week 4 - 6",
+          "unshaped14px": 62.3095703125,
+          "kerned14px": 61.9609375,
+          "ceilKerned": 62,
+          "advanceUnits": 9115,
+          "kerningUnits": -51,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -51
+            }
+          ]
+        },
+        {
+          "text": "Week 7 - 8",
+          "unshaped14px": 62.3095703125,
+          "kerned14px": 61.9609375,
+          "ceilKerned": 62,
+          "advanceUnits": 9115,
+          "kerningUnits": -51,
+          "pairs": [
+            {
+              "pair": "We",
+              "units": -51
+            }
+          ]
+        },
+        {
+          "text": "Next",
+          "unshaped14px": 27.9794921875,
+          "kerned14px": 27.8017578125,
+          "ceilKerned": 28,
+          "advanceUnits": 4093,
+          "kerningUnits": -26,
+          "pairs": [
+            {
+              "pair": "ex",
+              "units": -31
+            },
+            {
+              "pair": "xt",
+              "units": 5
+            }
+          ]
+        },
+        {
+          "text": "Item",
+          "unshaped14px": 27.4873046875,
+          "kerned14px": 27.4189453125,
+          "ceilKerned": 28,
+          "advanceUnits": 4021,
+          "kerningUnits": -10,
+          "pairs": [
+            {
+              "pair": "te",
+              "units": -10
+            }
+          ]
+        },
+        {
+          "text": "Alegra",
+          "unshaped14px": 38.171875,
+          "kerned14px": 37.7001953125,
+          "ceilKerned": 38,
+          "advanceUnits": 5584,
+          "kerningUnits": -69,
+          "pairs": [
+            {
+              "pair": "eg",
+              "units": -8
+            },
+            {
+              "pair": "ra",
+              "units": -61
+            }
+          ]
+        },
+        {
+          "text": "Button",
+          "unshaped14px": 40.76953125,
+          "kerned14px": 40.6669921875,
+          "ceilKerned": 41,
+          "advanceUnits": 5964,
+          "kerningUnits": -15,
+          "pairs": [
+            {
+              "pair": "ut",
+              "units": -5
+            },
+            {
+              "pair": "to",
+              "units": -10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "method": "Read-only TrueType table and decoded glyph comparison against the previous approved package; no operating-system font installation.",
+    "printableAsciiPerFace": 95,
+    "asciiAdvanceAndDecodedOutlineChanges": 0,
+    "probeStringsPerFace": 7,
+    "probeAdvanceAndKerningChanges": 0,
+    "week14px": 61.9609375,
+    "next14px": 27.8017578125,
+    "figmaWeekTextFrame": 63,
+    "scope": "ASCII/English probe equality does not imply all Unicode outlines, hinting or features are identical. Detailed comparison is retained alongside this audit.",
+    "detailedReport": {
+      "file": "designer-font-comparison.json",
+      "sha256": "4d586d2aa09ee3c3baa939e2e1dbf41453d9b465dee42b818f5057271ad4cc88"
+    },
+    "unicodeScope": "Each used face shares 1,086 codepoints with the previous version. Light has no shared advance changes; Regular/SemiBold/Bold each differ for five currency symbols. Non-ASCII decoded outlines differ, so full glyph identity is not claimed."
+  },
+  "decisions": [
+    "Install the four normal Aptos faces used by the library from the designer-confirmed package, preserving original bytes and canonical registry filenames.",
+    "Preserve explicit Inter/IBM Plex Sans/Judson faces; do not copy unused extra weights, italics, duplicates or macOS sidecars into the theme.",
+    "Keep source font size/weight/line height/letter spacing/kerning behavior. The 63px Figma Week frame is still not reproduced by the 61.9609375px Regular advance, so no label-width or global shaping workaround is justified."
+  ],
+  "limits": [
+    "The Figma tool reports missing Aptos. Package identity is now supplied by the designer, but exact Figma/browser shaping and raster parity remain unverified.",
+    "Historical second-pass audits and the Aptos 2.01 consumer evidence snapshot are retained unchanged. Current browser gates were rerun against the new 1.09 artifact.",
+    "Local implementation only; no publication, deployment, commit, push or live data action."
+  ],
+  "completedAt": "2026-10-19T10:49:09.899Z",
+  "verification": {
+    "registry": {
+      "fullVerificationPassed": true,
+      "registryItems": 111,
+      "generatedArtifacts": 112,
+      "freshWholeLibraryInstallTypesAndBuild": true
+    },
+    "consumer": {
+      "repository": "snappcomponents",
+      "evidenceDirectory": "docs/figma-showcase",
+      "completeCliInstall": true,
+      "publishedNamespaceRestored": true,
+      "runtimeConverterVersion": "0.1.50",
+      "runtimeContract": 34,
+      "registrySourceFiles": 422,
+      "strictTypeScript": true,
+      "build": true,
+      "lint": true,
+      "format": true,
+      "canonicalTailwind": true,
+      "foundation": true,
+      "overlayCss": true,
+      "generatedRuntimeVerification": true,
+      "classicArtifactSmoke": true,
+      "noProductIframes": true
+    },
+    "artifact": {
+      "javascriptSha256": "2d0c5581200bbde1241fe243bd1ba9149176e37dcdb63ed0cefbd42e2c7a6ebb",
+      "stylesheetSha256": "a0ab665205d72b685443b0fb8064e78176a5be3c3ba96dbc145c8811cd6d6903",
+      "generatedGraphSha256": "31cd58ca644302cc73a13f34c0cfa72c67e3371f8035800bb473ab5407881d27"
+    },
+    "browser": {
+      "families": 55,
+      "specimens": 190,
+      "catalogueAssertions": 246,
+      "formsAssertions": 235,
+      "formsPointerAssertions": 9,
+      "formsInteractionRecords": 23,
+      "navigationAssertions": 273,
+      "navigationFontSamples": 68,
+      "workSpecimens": 50,
+      "workFontSamples": 214,
+      "workInteractions": 17,
+      "nativeGeneralAssertions": 22,
+      "nativeNavigationAssertions": 23,
+      "totalNativeAssertions": 45
+    },
+    "fontIdentity": {
+      "exactCompiledAptosFaces": 4,
+      "version": "1.09;O365",
+      "actualCustomFontWeightsProbed": [
+        400,
+        600,
+        700
+      ],
+      "osFontsInstalled": false
+    },
+    "workBaseline": {
+      "comparedProperties": 1926,
+      "unchangedProperties": 1918,
+      "documentedSourceColorCorrections": 8,
+      "unexplainedChanges": 0,
+      "originalBaselineReplaced": false
+    },
+    "textWidthLimits": {
+      "pagination": {
+        "figma": 413,
+        "chromium": 409.71875,
+        "reason": "The designer-confirmed Aptos 1.09 font is bundled. Its Regular Week/Next glyph advances and GPOS kerning match the previously bundled 2.01 font, so correcting the font source does not resolve Figma's cached 63px HUG week labels versus Chromium's fractional advances. The remaining Figma HUG-width shaping difference is unresolved, not proven ceil-only rounding. Aptos 14px/20px at weight 400, 8px/12px padding and 4px gaps are preserved; no label widths or global kerning overrides are forced."
+      },
+      "tabItem": {
+        "figma": 60,
+        "chromium": 59.421875
+      },
+      "expandedTab": {
+        "figma": 132,
+        "chromium": 130.84375
+      },
+      "tabbedMenu": {
+        "figma": 524,
+        "chromium": 519.375,
+        "textRuns": 8
+      }
+    },
+    "reports": {
+      "catalogue": {
+        "file": "reports/catalogue.json",
+        "sha256": "f4e51cb9621476c42f5888e7566cc02cbe32e360e9a72679af0e2b131bdd473f"
+      },
+      "forms": {
+        "file": "reports/forms.json",
+        "sha256": "0a47783ca6fd8f4772c570382ae00377769dbd370b4b757cd48d1b759b14d58f"
+      },
+      "formsPointer": {
+        "file": "reports/formsPointer.json",
+        "sha256": "565b7324f0af8d1f98ab9f534bed5f52a0d9016844c9d324bbc748b02fb2b3dd"
+      },
+      "navigation": {
+        "file": "reports/navigation.json",
+        "sha256": "8b6dea3b8487bb9ea4750955386dd5dac14e5f3fe71becef9497fc3e5ac34204"
+      },
+      "work": {
+        "file": "reports/work.json",
+        "sha256": "58c0f0df2d9586bd1396f0542f267faddd3c40d507a116df06c0de09def993a3"
+      },
+      "workText": {
+        "file": "reports/workText.json",
+        "sha256": "b64b2e9c8ce795f59c94a2ab23f980eb1108a3d213a42cf1e85835c34f34656a"
+      },
+      "native": {
+        "file": "reports/native.json",
+        "sha256": "95de13f325d3825a321044282d112085a0ff19d41b288c8820cac085b2a5b1d6"
+      },
+      "nativeNavigation": {
+        "file": "reports/nativeNavigation.json",
+        "sha256": "093e87906f85fba5b895f16ed9b1c70d737ecf09b766d928e3d286f6ddc2c333"
+      },
+      "compiledFonts": {
+        "file": "reports/compiledFonts.json",
+        "sha256": "c14b134abe805b4d368dcb036ffa60b7c714ea141d7e2945219f04d80c9afef8"
+      },
+      "browserFonts": {
+        "file": "reports/browserFonts.json",
+        "sha256": "452aefc8072b797826fa7d7c1f74a22f5f3fed6f618ffe1ce9d04a8b9a74ce2e"
+      }
+    }
+  }
+}

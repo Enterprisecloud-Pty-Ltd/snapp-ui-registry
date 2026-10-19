@@ -1,0 +1,628 @@
+{
+  "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "observedOn": "2026-10-19",
+  "source": "Read-only Figma Plugin API; original sample composition, including the small-modal annotation.",
+  "nodes": [
+    {
+      "id": "19:1601",
+      "width": 720,
+      "height": 1208,
+      "gap": 24,
+      "children": [
+        {
+          "name": "Title + Dismiss",
+          "id": "13:892",
+          "type": "FRAME",
+          "x": 24,
+          "y": 24,
+          "width": 672,
+          "height": 24,
+          "gap": 374.7578125,
+          "children": [
+            {
+              "name": "Container",
+              "id": "59:6301",
+              "y": 0,
+              "height": 24
+            },
+            {
+              "name": "Dismiss",
+              "id": "13:894",
+              "y": 0,
+              "height": 24
+            }
+          ]
+        },
+        {
+          "name": "Fields",
+          "id": "19:1602",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 72,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1606",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 161,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1610",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 250,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1614",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 339,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Two Column",
+          "id": "19:1756",
+          "type": "FRAME",
+          "x": 24,
+          "y": 428,
+          "width": 672,
+          "height": 65,
+          "gap": 24,
+          "children": [
+            {
+              "name": "Fields",
+              "id": "19:1748",
+              "y": 0,
+              "height": 65
+            },
+            {
+              "name": "Fields",
+              "id": "19:1752",
+              "y": 0,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "name": "Two Column",
+          "id": "19:1757",
+          "type": "FRAME",
+          "x": 24,
+          "y": 517,
+          "width": 672,
+          "height": 65,
+          "gap": 24,
+          "children": [
+            {
+              "name": "Fields",
+              "id": "19:1758",
+              "y": 0,
+              "height": 65
+            },
+            {
+              "name": "Fields",
+              "id": "19:1759",
+              "y": 0,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "name": "Fields",
+          "id": "19:1618",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 606,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1622",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 695,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1626",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 784,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1630",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 873,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1634",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 962,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1638",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 1051,
+          "width": 670,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Buttons",
+          "id": "13:921",
+          "type": "FRAME",
+          "x": 24,
+          "y": 1140,
+          "width": 672,
+          "height": 44,
+          "gap": 12,
+          "children": [
+            {
+              "name": "Button",
+              "id": "19:1642",
+              "y": 0,
+              "height": 44
+            },
+            {
+              "name": "Button",
+              "id": "19:1644",
+              "y": 0,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19:1648",
+      "width": 600,
+      "height": 1208,
+      "gap": 24,
+      "children": [
+        {
+          "name": "Title + Dismiss",
+          "id": "59:6302",
+          "type": "FRAME",
+          "x": 24,
+          "y": 24,
+          "width": 552,
+          "height": 24,
+          "gap": 374.7578125,
+          "children": [
+            {
+              "name": "Container",
+              "id": "59:6303",
+              "y": 0,
+              "height": 24
+            },
+            {
+              "name": "Dismiss",
+              "id": "59:6306",
+              "y": 0,
+              "height": 24
+            }
+          ]
+        },
+        {
+          "name": "Fields",
+          "id": "19:1652",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 72,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1653",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 161,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1654",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 250,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1655",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 339,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Two Column",
+          "id": "19:1766",
+          "type": "FRAME",
+          "x": 24,
+          "y": 428,
+          "width": 552,
+          "height": 65,
+          "gap": 24,
+          "children": [
+            {
+              "name": "Fields",
+              "id": "19:1767",
+              "y": 0,
+              "height": 65
+            },
+            {
+              "name": "Fields",
+              "id": "19:1768",
+              "y": 0,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "name": "Two Column",
+          "id": "19:1769",
+          "type": "FRAME",
+          "x": 24,
+          "y": 517,
+          "width": 552,
+          "height": 65,
+          "gap": 24,
+          "children": [
+            {
+              "name": "Fields",
+              "id": "19:1770",
+              "y": 0,
+              "height": 65
+            },
+            {
+              "name": "Fields",
+              "id": "19:1771",
+              "y": 0,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "name": "Fields",
+          "id": "19:1656",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 606,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1657",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 695,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1658",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 784,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1659",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 873,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1660",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 962,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1661",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 1051,
+          "width": 552,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Buttons",
+          "id": "19:1662",
+          "type": "FRAME",
+          "x": 24,
+          "y": 1140,
+          "width": 552,
+          "height": 44,
+          "gap": 12,
+          "children": [
+            {
+              "name": "Button",
+              "id": "19:1663",
+              "y": 0,
+              "height": 44
+            },
+            {
+              "name": "Button",
+              "id": "19:1664",
+              "y": 0,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19:1698",
+      "width": 480,
+      "height": 1248,
+      "gap": 24,
+      "children": [
+        {
+          "name": "Title + Dismiss",
+          "id": "59:6309",
+          "type": "FRAME",
+          "x": 24,
+          "y": 24,
+          "width": 432,
+          "height": 24,
+          "gap": 374.7578125,
+          "children": [
+            {
+              "name": "Container",
+              "id": "59:6310",
+              "y": 0,
+              "height": 24
+            },
+            {
+              "name": "Dismiss",
+              "id": "59:6313",
+              "y": 0,
+              "height": 24
+            }
+          ]
+        },
+        {
+          "name": "Fields",
+          "id": "19:1702",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 72,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1703",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 161,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Field Content",
+          "id": "58:1956",
+          "type": "TEXT",
+          "x": 24,
+          "y": 250,
+          "width": 400,
+          "height": 16
+        },
+        {
+          "name": "Fields",
+          "id": "19:1704",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 290,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1705",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 379,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Two Column",
+          "id": "19:1785",
+          "type": "FRAME",
+          "x": 24,
+          "y": 468,
+          "width": 432,
+          "height": 65,
+          "gap": 24,
+          "children": [
+            {
+              "name": "Fields",
+              "id": "19:1786",
+              "y": 0,
+              "height": 65
+            },
+            {
+              "name": "Fields",
+              "id": "19:1787",
+              "y": 0,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "name": "Two Column",
+          "id": "19:1788",
+          "type": "FRAME",
+          "x": 24,
+          "y": 557,
+          "width": 432,
+          "height": 65,
+          "gap": 24,
+          "children": [
+            {
+              "name": "Fields",
+              "id": "19:1789",
+              "y": 0,
+              "height": 65
+            },
+            {
+              "name": "Fields",
+              "id": "19:1790",
+              "y": 0,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "name": "Fields",
+          "id": "19:1706",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 646,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1707",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 735,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1708",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 824,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1709",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 913,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1710",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 1002,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Fields",
+          "id": "19:1711",
+          "type": "INSTANCE",
+          "x": 24,
+          "y": 1091,
+          "width": 432,
+          "height": 65,
+          "gap": 8
+        },
+        {
+          "name": "Buttons",
+          "id": "19:1712",
+          "type": "FRAME",
+          "x": 24,
+          "y": 1180,
+          "width": 432,
+          "height": 44,
+          "gap": 12,
+          "children": [
+            {
+              "name": "Button",
+              "id": "19:1713",
+              "y": 0,
+              "height": 44
+            },
+            {
+              "name": "Button",
+              "id": "19:1714",
+              "y": 0,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

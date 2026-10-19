@@ -1,0 +1,425 @@
+{
+  "observedOn": "2026-10-19",
+  "status": "verified-local-production-candidate-not-published",
+  "scope": "Registry-owned text-width correction; existing component and font adoption audits remain historical evidence. No publication, deployment or git publication is included.",
+  "figma": {
+    "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+    "url": "https://www.figma.com/design/YUYB5jtCxUwT8OefeLP9f7/SNAPP-Component-Library",
+    "source": "Fresh exact text properties, absoluteRenderBounds and read-only outlined SVG exports. Source hasMissingFont flags are retained in the raw nonregular evidence."
+  },
+  "causes": [
+    {
+      "id": "TEXT-WIDTH-01",
+      "status": "verified",
+      "cause": "The source HUG text frames use whole CSS-pixel slots while browser intrinsic text widths remain fractional.",
+      "correction": "HugText ceilings each natural label slot before surrounding padding/gaps are laid out. It preserves the natural glyph positions and source text origin; rounding a whole centered control can move those positions.",
+      "owner": "registry/radix-nova/ui/hug-text.tsx",
+      "nativeCss": "inline-size: calc-size(max-content, round(up, size, 1px))",
+      "fallback": "When native intrinsic rounding is unavailable, measure the untransformed natural inner text using the owning view and ResizeObserver, and ceil its inline size. Adjacent text through transparent fragments remains one label.",
+      "contractLimit": "Observed source behavior for these controls; Figma textAutoResize documentation does not specify a universal pixel-ceiling algorithm."
+    },
+    {
+      "id": "TEXT-WIDTH-02",
+      "status": "verified-vector-quantization",
+      "cause": "The source independently quantizes glyph advances and positioning adjustments before summing them. Raw Aptos metrics retain finer precision in Chromium, putting the Week labels just below a pixel threshold.",
+      "formula": "q(u) = 2 * floor(u / 2 + 0.5)",
+      "units": "Original Aptos is 2048 units per em. Each hmtx advance, GPOS PairPos xAdvance, GPOS Format 1 mark-anchor coordinate and legacy kern pair value is prepared on the observed two-unit grid.",
+      "example": {
+        "text": "Week 1 - 3",
+        "sourceNodeId": "1:2662",
+        "rawAdvance14px": 61.9609375,
+        "rawCeilPx": 62,
+        "preparedAdvance14px": 62.001953125,
+        "sourceHugPx": 63
+      },
+      "correction": "Generate deterministic prepared delivery copies at build time, retain all four approved original TTFs unchanged, and use normal browser shaping and kerning with those delivery faces.",
+      "owner": "scripts/prepare-aptos-fonts.mjs",
+      "internalScaleInference": "HarfBuzz scale 1024 for this 2048 UPM face implements the observed rule. Exact source vectors establish the quantization behavior; the queried Figma API does not expose its internal shaping scale/version.",
+      "preparationProfile": {
+        "version": 1,
+        "figmaPrecision": 1024,
+        "unitsPerEm": 2048,
+        "rounding": "half-toward-positive-infinity"
+      }
+    }
+  ],
+  "delivery": {
+    "fontManifest": "docs/figma-library/font-manifest.json",
+    "preparationProof": "registry/radix-nova/fonts/aptos/prepared/preparation.json",
+    "faces": [
+      {
+        "weight": 300,
+        "original": {
+          "path": "registry/radix-nova/fonts/aptos/Aptos-Light.ttf",
+          "sha256": "e38fc1bef9b7e971bfdfdba4897abe72ef9bd72182b8ad9d463e11307a802b54",
+          "bytes": 233944
+        },
+        "delivery": {
+          "path": "registry/radix-nova/fonts/aptos/prepared/Aptos-Light.ttf",
+          "sha256": "6de8663653bd7e2a8462e8308bf50ffd79b8c2a12712a615130d33b75569022e",
+          "bytes": 233944
+        },
+        "quantizedFields": {
+          "hmtxAdvances": 572,
+          "gposValues": 960,
+          "anchorX": 225,
+          "anchorY": 171,
+          "legacyKern": 4692
+        },
+        "originalOutlinesAndSubstitutionsPreserved": {
+          "glyfUnchanged": true,
+          "locaUnchanged": true,
+          "gsubUnchanged": true,
+          "cmapUnchanged": true,
+          "nameUnchanged": true
+        },
+        "glyfSha256": "852b242f24a76451c21644020d2e4923d730807cf1c01422e62910fe322c157c",
+        "wholeFontChecksum": "0xb1b0afba",
+        "allTableChecksumsValid": true
+      },
+      {
+        "weight": 400,
+        "original": {
+          "path": "registry/radix-nova/fonts/aptos/Aptos.ttf",
+          "sha256": "b46c7865bdecc68d7d82075a2d1e93e31cb73146eae6740bc7c090c8d0b2842a",
+          "bytes": 235288
+        },
+        "delivery": {
+          "path": "registry/radix-nova/fonts/aptos/prepared/Aptos.ttf",
+          "sha256": "c312aa2f557c09c69b55127bfd4934fa5a718594f69323adbe4374a869b739fc",
+          "bytes": 235288
+        },
+        "quantizedFields": {
+          "hmtxAdvances": 524,
+          "gposValues": 1192,
+          "anchorX": 235,
+          "anchorY": 151,
+          "legacyKern": 5132
+        },
+        "originalOutlinesAndSubstitutionsPreserved": {
+          "glyfUnchanged": true,
+          "locaUnchanged": true,
+          "gsubUnchanged": true,
+          "cmapUnchanged": true,
+          "nameUnchanged": true
+        },
+        "glyfSha256": "6d0e680745e3d444da8c7cee67f176aeaad08d07dfec7eb44122af7833a01f54",
+        "wholeFontChecksum": "0xb1b0afba",
+        "allTableChecksumsValid": true
+      },
+      {
+        "weight": 600,
+        "original": {
+          "path": "registry/radix-nova/fonts/aptos/Aptos-SemiBold.ttf",
+          "sha256": "b69e74cd43331c68cc8a4e82acc70dc5fe183524fe6e28d0da5e209b0ccd9f3d",
+          "bytes": 235476
+        },
+        "delivery": {
+          "path": "registry/radix-nova/fonts/aptos/prepared/Aptos-SemiBold.ttf",
+          "sha256": "b07d18c67370e7bbabc9ed59d7aea4145e279c952a96c4e69a95286639a86d5c",
+          "bytes": 235476
+        },
+        "quantizedFields": {
+          "hmtxAdvances": 574,
+          "gposValues": 1113,
+          "anchorX": 212,
+          "anchorY": 237,
+          "legacyKern": 5206
+        },
+        "originalOutlinesAndSubstitutionsPreserved": {
+          "glyfUnchanged": true,
+          "locaUnchanged": true,
+          "gsubUnchanged": true,
+          "cmapUnchanged": true,
+          "nameUnchanged": true
+        },
+        "glyfSha256": "e14f88204699c46bdbf29ae8b7f72917074df77380097fb39f16a8f5e7e4a16a",
+        "wholeFontChecksum": "0xb1b0afba",
+        "allTableChecksumsValid": true
+      },
+      {
+        "weight": 700,
+        "original": {
+          "path": "registry/radix-nova/fonts/aptos/Aptos-Bold.ttf",
+          "sha256": "e59d983f8752146b8d02df5cad8f545ce677ef71dbe113afa3b395a9088c7f53",
+          "bytes": 235860
+        },
+        "delivery": {
+          "path": "registry/radix-nova/fonts/aptos/prepared/Aptos-Bold.ttf",
+          "sha256": "7cf7ef8cb53102f354ae97fd5a15e58c758359664f527aa4f3be9a362a85eb7d",
+          "bytes": 235860
+        },
+        "quantizedFields": {
+          "hmtxAdvances": 520,
+          "gposValues": 1214,
+          "anchorX": 249,
+          "anchorY": 147,
+          "legacyKern": 5460
+        },
+        "originalOutlinesAndSubstitutionsPreserved": {
+          "glyfUnchanged": true,
+          "locaUnchanged": true,
+          "gsubUnchanged": true,
+          "cmapUnchanged": true,
+          "nameUnchanged": true
+        },
+        "glyfSha256": "218690b92ec77611fe9bcca510c2e2598b07f872255f416cd73aa3f549891202",
+        "wholeFontChecksum": "0xb1b0afba",
+        "allTableChecksumsValid": true
+      }
+    ],
+    "shaping": "Browser-native OpenType shaping, including original GSUB substitutions. No runtime custom font shaper or label-specific widths are introduced; kerning remains enabled.",
+    "preservation": "Original TTF bytes remain unchanged. Prepared glyf,loca,GSUB,cmap,name and GDEF tables remain byte-identical. Side bearings remain unchanged; hhea maximum advance/right-bearing metadata and all SFNT checksums are recomputed as required.",
+    "inputBoundary": "Preparation pins the four approved static Aptos 1.09 source hashes. It rejects unknown source bytes, signatures, variation/vertical metric tables and unvalidated positioning formats instead of guessing.",
+    "formatCoverage": "All four inputs use PairPos formats 1+2 with xAdvance-only ValueRecords, and Format 1 mark-to-base/mark-to-ligature/mark-to-mark anchors. No cursive lookup, device/variation positioning reference, vertical metric table or ligature-caret coordinate is present."
+  },
+  "sourceGeometryTargets": [
+    {
+      "name": "Pagination",
+      "familyNodeId": "1:2655",
+      "beforeBrowserWidthPx": 409.71875,
+      "sourceWidthPx": 413,
+      "productionAfterWidthPx": 413
+    },
+    {
+      "name": "Single Tab",
+      "familyNodeId": "300:2763",
+      "beforeBrowserWidthPx": 59.421875,
+      "sourceWidthPx": 60,
+      "productionAfterWidthPx": 60,
+      "sourceVariantNodeId": "300:2762",
+      "sourceTextNodeId": "300:2757"
+    },
+    {
+      "name": "Expanded Tab",
+      "familyNodeId": "300:2763",
+      "beforeBrowserWidthPx": 130.84375,
+      "sourceWidthPx": 132,
+      "productionAfterWidthPx": 132,
+      "sourceVariantNodeId": "307:2840",
+      "sourceTextNodeIds": [
+        "307:2841",
+        "307:2842"
+      ]
+    },
+    {
+      "name": "Tabbed Menu",
+      "familyNodeId": "300:2784",
+      "beforeBrowserWidthPx": 519.375,
+      "sourceWidthPx": 524,
+      "productionAfterWidthPx": 524
+    }
+  ],
+  "sourceVectorVerification": {
+    "regular": {
+      "status": "passed",
+      "sourceNodeIds": [
+        "1:2662",
+        "1:2665",
+        "1:2668",
+        "1:2673",
+        "300:2757"
+      ],
+      "exactInkRectangles": 5,
+      "sourceHugFrames": 5,
+      "svgTexts": 3,
+      "svgContourStarts": 21,
+      "svgCoordinates": 42,
+      "maxSerializedCoordinateErrorPx": 0.00004687500000244427,
+      "evidence": "docs/figma-library/text-width/figma-shaper-quantization.json"
+    },
+    "nonregular": {
+      "status": "passed-for-visible-source",
+      "sourceNodeIds": [
+        "13:893",
+        "294:2682",
+        "1:2393"
+      ],
+      "exactInkRectangles": 3,
+      "sourceHugFrames": 2,
+      "svgContourStarts": 46,
+      "svgCoordinates": 92,
+      "maxSerializedCoordinateErrorPx": 0.00004531249999928377,
+      "evidence": "docs/figma-library/text-width/prepared-nonregular-raw-shaping-proof.json",
+      "method": "Read the actual prepared font metrics and unchanged contours without applying q again; compare to source vectors."
+    },
+    "light": {
+      "status": "visible-source-ink-unverified",
+      "sourceNodeId": "304:2838",
+      "text": "Service Name",
+      "reason": "The Light source layer is hidden and has no exportable visible ink bounds. Its prepared metric/model/browser advance agrees, but this does not establish a visible Figma ink match."
+    },
+    "independentBytes": {
+      "status": "passed",
+      "facesCompared": 4,
+      "allExpectedFontBytesEqualDeliveries": true,
+      "evidence": "docs/figma-library/text-width/prepared-font-independent-verification.json",
+      "method": "Independent stdlib Python decoder rebuilt expected complete prepared fonts in memory and matched all four Node outputs byte-for-byte. Python is not a build dependency."
+    },
+    "nonregularBrowser": {
+      "status": "passed",
+      "preparedFaces": 4,
+      "evidence": "docs/figma-library/text-width/prepared-nonregular-browser-proof.json",
+      "limit": "Canvas ink boxes retain platform/raster rounding and are not an exact unhinted-SVG oracle."
+    }
+  },
+  "verification": {
+    "preparation": {
+      "status": "passed",
+      "command": "node --test scripts/test-prepare-aptos-fonts.mjs",
+      "tests": 4,
+      "sourceAdvanceAndCeilChecks": 5,
+      "loadedOriginalAndPreparedFaces": 8,
+      "customFontShapingSpecimens": 64,
+      "shadowRoots": 2,
+      "browserErrors": 0,
+      "coverage": [
+        "Quantizer signed ties and idempotence",
+        "Original byte immutability and all table checksums",
+        "Deterministic regeneration and changed-source rejection before partial output",
+        "Browser-native ligature/combining-mark/Greek/Cyrillic custom-font shaping in two ShadowRoots"
+      ]
+    },
+    "hugText": {
+      "status": "passed",
+      "command": "node scripts/verify-hug-text-browser.mjs",
+      "passedChecks": 60,
+      "provenance": "Current prepared-font fixture result confirmed by the integration owner.",
+      "limit": "Native intrinsic CSS and feature-disabled fallback are exercised in Chromium; this does not certify Safari or Firefox."
+    },
+    "production": {
+      "status": "passed",
+      "verifiedAt": "2026-10-19T11:21:52.967Z",
+      "registryItems": 112,
+      "generatedJsonFiles": 113,
+      "installedCanonicalFiles": 423,
+      "generatedGraphSha256": "0acc1417fdaee8cbb190330e7afbd3e23de82d229a1b6a1d2a122546e5db7a4f",
+      "consumerRepository": "snappcomponents",
+      "consumerVerification": "docs/figma-showcase/verification.json",
+      "consumerTextWidthEvidence": "docs/figma-showcase/text-width-alignment.json",
+      "artifact": {
+        "entry": "dist/index.js",
+        "entrySha256": "74b28a11aaa583d38253d6b29804c7984485a3cce802b12925b63d53cf89c7d3",
+        "stylesheet": "dist/main.css",
+        "stylesheetSha256": "689d2e0b9a8325bd9736d99e7b763a6b442b2727e8220f085193980f30cbcc73",
+        "entryFormat": "Single deferred classic IIFE, relative local assets",
+        "runtimeVersion": "0.1.50",
+        "runtimeContract": 34,
+        "nativeIframeCount": 0
+      },
+      "checks": {
+        "registryVerification": "passed (core full graph/install/type/build checks; focused font tests also passed)",
+        "fontTests": 4,
+        "hugTextChecks": 60,
+        "catalogue": 246,
+        "forms": 235,
+        "formsPointer": 9,
+        "navigation": 298,
+        "native": 22,
+        "nativeNavigation": 23,
+        "workSpecimens": 50,
+        "workFontSamples": 214,
+        "workInteractions": 17,
+        "unchangedTextStylePropertiesFromPreviousCandidate": 1926,
+        "compiledFontFaces": 12
+      },
+      "foundationAudit": {
+        "passed": false,
+        "preExistingFilenameFinding": "token.json",
+        "contentInspected": false
+      }
+    }
+  },
+  "limitations": [
+    "Native ShadowRoot tab Arrow-key navigation has a known unresolved baseline; the text-width correction does not establish that interaction as fixed.",
+    "Light 300 visible Figma ink remains unverified because its source text layer is hidden.",
+    "Exact vector metrics do not promise identical platform rasterization; browser Canvas ink boxes are not used as exact Figma-vector evidence.",
+    "Figma internal scale 1024 is an inference. The source-observed quantization and sampled vector matches are verified.",
+    "Live Dynamics/PCF/Shell certification and Safari/Firefox certification require their own host/browser evidence."
+  ],
+  "historicalScope": {
+    "preserved": [
+      "docs/figma-library/designer-font-adoption.json",
+      "docs/figma-library/second-pass-typography.json",
+      "docs/figma-library/second-pass-navigation.json"
+    ],
+    "previousVerificationSnapshot": "docs/figma-library/text-width/previous-verification.json",
+    "note": "Prior font adoption and second-pass numbers describe their recorded candidates; this audit adds the current cause/correction evidence without rewriting those historical claims."
+  },
+  "evidence": [
+    {
+      "path": "docs/figma-library/text-width/canvas-pair-quantization.json",
+      "sha256": "6b054a384352fc02a5a411db56d415e0d381b75e9c131220ab484aed3b957b72",
+      "bytes": 4675
+    },
+    {
+      "path": "docs/figma-library/text-width/figma-shaper-quantization.json",
+      "sha256": "ebf18081e9ed6931c44cf254fd2b7533d6cf1997acc7eb9877010ff06e00eafd",
+      "bytes": 28598
+    },
+    {
+      "path": "docs/figma-library/text-width/figma-text-width-research.md",
+      "sha256": "4b1539eddfd93dbd397132e3c63346713d6904e4ad37f5a3e9de057f1f26adce",
+      "bytes": 5230
+    },
+    {
+      "path": "docs/figma-library/text-width/legacy-kern-comparison.json",
+      "sha256": "3d823d975a2fc68fb47ad5a1cda0736a65d51f0abdaa49092cc83c03b98605cc",
+      "bytes": 3707
+    },
+    {
+      "path": "docs/figma-library/text-width/nonregular-quantization-proof.json",
+      "sha256": "dd81aed53d840b1d62febe12ee79006d8334ec6a8f6ab6cbf15adf1b168ee32a",
+      "bytes": 36019
+    },
+    {
+      "path": "docs/figma-library/text-width/prepared-font-independent-verification.json",
+      "sha256": "ccac40a68cdd1c0dcaf6ba517fed6fcd5cad09209ab6973fc8ae6d6c9ee8ef73",
+      "bytes": 3308
+    },
+    {
+      "path": "docs/figma-library/text-width/prepared-nonregular-browser-proof.json",
+      "sha256": "ff9dbf38c84266f307b02e23ec4153ef819be4a08ca5e5ed0554d2f172459363",
+      "bytes": 8963
+    },
+    {
+      "path": "docs/figma-library/text-width/prepared-nonregular-raw-shaping-proof.json",
+      "sha256": "4f948f65485a95bbb252cb15fdf28009bf38ece3ccfaa8136cd1a91c78bcd485",
+      "bytes": 36011
+    },
+    {
+      "path": "docs/figma-library/text-width/previous-verification.json",
+      "sha256": "aa0214583f61668ff4966b7cbce4156402f12fbb1bfe0339c942cc136f5cb56a",
+      "bytes": 7853
+    },
+    {
+      "path": "docs/figma-library/text-width/snapp-nonregular-quantization-source-v2.json",
+      "sha256": "001a38f2adb6fbba694fd3452216235ea2af33d911ea9b5cfb07d7dd5aee3991",
+      "bytes": 22340
+    },
+    {
+      "path": "docs/figma-library/text-width/snapp-text-width-glyph-exports.json",
+      "sha256": "84ff91c2ed79c8ac8c2e8e5e195816c2378ba65ba2e2027d28574f3d66261400",
+      "bytes": 9120
+    }
+  ],
+  "primaryReferences": [
+    {
+      "url": "https://raw.githubusercontent.com/harfbuzz/harfbuzz/main/src/hb-font.hh",
+      "supports": "em_mult uses(v * mult +32768)>>16; changed() derives mult from x_scale*65536/UPEM. At1024/2048 this implements the observed quantization."
+    },
+    {
+      "url": "https://harfbuzz.github.io/harfbuzz-hb-font.html#hb-font-set-scale",
+      "supports": "Font scale is client-controlled and position values are integer; fractional precision varies with chosen scale. Does not document Figma client settings."
+    },
+    {
+      "url": "https://developers.figma.com/docs/plugins/api/properties/TextNode-textautoresize/",
+      "supports": "WIDTH_AND_HEIGHT sizes text to content; it does not specify the internal shaper scale or a universal pixelceil contract."
+    },
+    {
+      "url": "https://www.w3.org/TR/css-fonts-3/#font-kerning-prop",
+      "supports": "font-kerning controls kerning availability, not the fixed precision at which a client computes advances."
+    }
+  ],
+  "verifiedAt": "2026-10-19T11:21:52.967Z"
+}

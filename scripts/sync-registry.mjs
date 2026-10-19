@@ -1,7 +1,9 @@
-import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadFigmaTokens } from "./figma-tokens.mjs";
+import "./build-fonts.mjs";
+import { completeComponentCatalog } from "./complete-component-catalog.mjs";
 
 const registryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const uiDirectory = path.join(registryRoot, "registry", "radix-nova", "ui");
@@ -140,6 +142,14 @@ const uiFoundationItem = {
 
 const figmaTokens = await loadFigmaTokens(registryRoot);
 const existingThemeVariables = {
+	"radius-xs": "0.125rem",
+	"radius-sm": "0.25rem",
+	"radius-md": "0.375rem",
+	"radius-lg": "0.5rem",
+	"radius-xl": "0.75rem",
+	"radius-2xl": "1rem",
+	"radius-3xl": "1.5rem",
+	"radius-4xl": "2rem",
 	"breakpoint-snapp-phone": "26.25rem",
 	"breakpoint-snapp-narrow": "30rem",
 	"breakpoint-snapp-compact": "35rem",
@@ -176,7 +186,7 @@ const existingThemeVariables = {
 	"text-snapp-display": "2.5rem",
 	"leading-snapp-display-sm": "2.5rem",
 	"leading-snapp-display": "2.75rem",
-	"radius-snapp-control": "0.625rem",
+	"radius-snapp-control": "0.5rem",
 	"radius-snapp-action-menu": "0.375rem",
 	"radius-snapp-mark": "0.125rem 0.4375rem 0.125rem 0.4375rem",
 };
@@ -223,7 +233,7 @@ const existingInlineThemeVariables = {
 	"shadow-snapp-flyout": "var(--snapp-shadow-flyout)",
 };
 const shadcnCompatibilityVariables = {
-	radius: "var(--snapp-radius-m)",
+	radius: "var(--snapp-radius-standard)",
 	background: "var(--snapp-surface)",
 	foreground: "var(--snapp-ink)",
 	card: "var(--snapp-surface)",
@@ -289,6 +299,9 @@ const darkVariables = {
 };
 const inlineThemeVariables = {
 	...figmaTokens.theme,
+	"font-sans": "var(--snapp-font-family-body)",
+	"font-snapp-inter": '"Inter", sans-serif',
+	"font-snapp-ibm": '"IBM Plex Sans", sans-serif',
 	...existingInlineThemeVariables,
 };
 const formatCssVariables = (variables) =>
@@ -360,6 +373,13 @@ const themeItem = {
 			target: "src/styles/snapp-fonts.css",
 		},
 		...figmaTokens.files,
+		...['inter', 'ibm-plex-sans', 'judson'].map(name => ({
+			path: 'registry/radix-nova/fonts/licenses/' + name + '-LICENSE.txt',
+			type: 'registry:file', target: 'src/styles/licenses/' + name + '-LICENSE.txt',
+		})),
+		{path: 'registry/radix-nova/fonts/README.md', type: 'registry:file', target: 'src/styles/licenses/README.md'},
+		{path: 'docs/figma-library/font-manifest.json', type: 'registry:file', target: 'src/styles/snapp-font-manifest.json'},
+		{path: 'registry/radix-nova/fonts/aptos/Microsoft Aptos Fonts EULA.rtf', type: 'registry:file', target: 'src/styles/licenses/Microsoft Aptos Fonts EULA.rtf'},
 	],
 	cssVars: {
 		theme: {
@@ -812,6 +832,8 @@ const registry = {
 	],
 };
 
+await appendFile(themeCssPath, '\n@layer base {\n  .ec-app {\n    font-family: var(--snapp-font-family-body);\n    font-synthesis: none;\n    font-size: var(--snapp-font-size-sm);\n    line-height: var(--snapp-font-line-height-xs);\n  }\n}\n');
+await completeComponentCatalog(registryRoot, registry, externalDependencies);
 await writeFile(
 	path.join(registryRoot, "registry.json"),
 	`${JSON.stringify(registry, null, 2)}\n`,

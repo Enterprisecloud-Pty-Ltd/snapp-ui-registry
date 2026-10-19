@@ -1,61 +1,73 @@
-import { ProgressMeter } from "@/components/snapp/work-os/progress-meter"
-import { TimeBadge } from "@/components/snapp/work-os/time-badge"
-import {
-  WorkGripIcon,
-  WorkTypeIcon,
-} from "@/components/snapp/work-os/work-item-icons"
-import type { WorkItem } from "@/components/snapp/work-os/work-item.types"
-import { Card } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
+import type { ComponentProps } from "react";
+import bug from "@/assets/snapp/work/33d87.svg";
+import task from "@/assets/snapp/work/658d0.svg";
+import itemIcon from "@/assets/snapp/work/f68ac.svg";
+import { ProgressMeter } from "@/components/snapp/work-os/progress-meter";
+import { TimeBadge } from "@/components/snapp/work-os/time-badge";
+import type { WorkItem } from "@/components/snapp/work-os/work-item.types";
+import { cn } from "@/lib/utils";
 
-interface WorkItemCardProps {
-  item: WorkItem
-  className?: string
+interface WorkItemCardProps extends ComponentProps<"div"> {
+	item: WorkItem;
 }
 
-function WorkItemCard({ item, className }: WorkItemCardProps) {
-  return (
-    <Card
-      className={cn(
-        "h-20.5 gap-1 rounded-sm bg-snapp-surface-primary px-2 py-2 text-snapp-text-primary inset-ring-1 inset-ring-snapp-border-primary ring-0",
-        className,
-      )}
-      data-slot="snapp-work-item-card"
-    >
-      <div className="flex min-h-0 flex-1 items-center gap-2">
-        <div className="flex h-full shrink-0 items-start">
-          <div className="flex w-10 items-center justify-between">
-            <WorkGripIcon className="h-1.25 w-3 text-snapp-icon-primary" />
-            <WorkTypeIcon type={item.icon} />
-          </div>
-        </div>
-
-        <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5 font-snapp-body font-normal">
-          <p className="truncate text-snapp-xs leading-snapp-xxs text-snapp-text-brand">
-            {item.action}
-          </p>
-          <p className="truncate text-snapp-xxs leading-snapp-xxxs text-snapp-text-secondary">
-            {item.id} <span>{item.name}</span>
-          </p>
-          <p className="truncate text-snapp-xxs leading-snapp-xxxs text-snapp-text-secondary">
-            {item.assignment}
-          </p>
-        </div>
-
-        <div className="flex h-full w-21.5 shrink-0 flex-col items-end">
-          <TimeBadge time={item.time} tone={item.tone} />
-        </div>
-      </div>
-
-      <ProgressMeter
-        className="pl-12"
-        label={item.capacity}
-        tone={item.tone}
-        value={item.progress}
-      />
-    </Card>
-  )
+/** Backlog work card, distinct from a scheduling TaskListItem. */
+function WorkItemCard({ item, className, ...props }: WorkItemCardProps) {
+	const typeAsset = { bug, clipboard: task, book: itemIcon, none: undefined }[
+		item.icon
+	];
+	return (
+		<div
+			className={cn(
+				"flex w-[323.667px] max-w-full flex-col items-start justify-center gap-1 rounded-snapp-rounded inset-ring-1 inset-ring-snapp-border-primary bg-snapp-surface-primary p-2 font-snapp-body font-normal text-snapp-text-primary",
+				className,
+			)}
+			data-slot="snapp-work-item-card"
+			{...props}
+		>
+			<div className="flex w-full items-center gap-2">
+				<div className="flex shrink-0 self-stretch items-start">
+					{typeAsset ? (
+						<img src={typeAsset} alt="" width={40} height={20} />
+					) : (
+						<span className="h-5 w-10" aria-hidden="true" />
+					)}
+				</div>
+				<div className="flex min-w-0 flex-1 flex-col items-start justify-center gap-0.5 pt-0.5 text-snapp-xs leading-snapp-xxs">
+					<p className="w-full text-snapp-text-brand">{item.action}</p>
+					<p className="flex w-full items-center gap-1 whitespace-nowrap text-snapp-text-secondary">
+						<span>{item.id}</span>
+						<span>{item.name}</span>
+					</p>
+					{(item.assignments ?? (item.assignment ? [item.assignment] : [])).map(
+						(assignment, index) => (
+							<p
+								key={`${index}:${assignment}`}
+								className="whitespace-nowrap text-snapp-text-secondary"
+							>
+								{assignment}
+							</p>
+						),
+					)}
+				</div>
+				<div className="flex shrink-0 self-stretch flex-col items-end">
+					<TimeBadge time={item.time} tone={item.tone} />
+				</div>
+			</div>
+			<ProgressMeter
+				className="w-full pl-12"
+				label={item.capacity}
+				tone={item.tone}
+				value={item.progress}
+			/>
+		</div>
+	);
 }
 
-export { WorkItemCard }
-export type { WorkItem, WorkItemIcon, WorkItemTone } from "@/components/snapp/work-os/work-item.types"
+export { WorkItemCard };
+export type { WorkItemCardProps };
+export type {
+	WorkItem,
+	WorkItemIcon,
+	WorkItemTone,
+} from "@/components/snapp/work-os/work-item.types";

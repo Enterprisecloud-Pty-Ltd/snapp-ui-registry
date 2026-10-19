@@ -1,0 +1,173 @@
+{
+  "observedOn": "2026-10-19",
+  "verifiedAt": "2026-10-19T11:44:50.068Z",
+  "status": "verified-local-registry-and-production-showcase-candidate-not-published",
+  "problem": "Radix focusFirst compares document.activeElement, which remains the host during ShadowRoot focus changes. It continues through tabs after focus succeeded, leaving selection, focus and roving tab stop inconsistent. The wrapper also omitted the orientation prop to Radix Root.",
+  "owner": {
+    "repository": "snapp-ui-registry",
+    "item": "snapp-tabs",
+    "sources": {
+      "registry/radix-nova/ui/tabs.tsx": "71c5a477d9d760af29befbfa900623ccdfd008664d7e161767e8e070e482d871",
+      "registry/radix-nova/ui/tabs.keyboard.ts": "81da5a37f90175ebff5db1908a9849fd9e86c05f964a3848e0750d817d304285",
+      "scripts/verify-tabs-keyboard-browser.mjs": "6c90e9c7d316024fbe7a7496caa313b4e9e59ecc67ad9c3c8090ee39c03588a0",
+      "docs/figma-library/tabs-keyboard-preview.tsx": "b5ddfb4d5d4bc1437cec477c971f0322b0dc7a422c1c0c2ecd8b5d2518c6b446",
+      "scripts/smoke-install.mjs": "37bf829ae76efe46c497702fe57b70a03299b26f3e01f958d47831e3659f39e9"
+    },
+    "dependencyVersions": {
+      "tabs": "1.1.21",
+      "rovingFocus": "1.1.19"
+    },
+    "dependencyPatching": false,
+    "runtimeChanged": false
+  },
+  "correction": [
+    "Forward orientation to Radix Root.",
+    "Keep Radix selection, automatic/manual activation, controlled values and roving tab-stop state.",
+    "Intercept supported trigger navigation keys before the faulty deferred Radix handler; use the owning list and actual root focus, never document-wide tab selectors.",
+    "Use one cancellable owner-window timer per list; preserve React event batching, normal scroll-to-focus and consumer focus redirects; recheck connected/enabled/owned source before deferred movement.",
+    "Repair direct keyboard entry into a ShadowRoot list using selected enabled, current tab-stop, then first enabled tab; preserve pointer focus, Shift+Tab and public handler cancellation.",
+    "Exclude nested lists and disabled items; resolve actual orientation/direction from the owning rendered list."
+  ],
+  "eventContract": {
+    "cancellation": [
+      "TabsTrigger.onKeyDown",
+      "TabsList.onKeyDownCapture",
+      "TabsList.onFocus for keyboard entry"
+    ],
+    "bubbleTiming": "TabsList.onKeyDown runs after trigger handling, matching existing Radix semantics; use capture or trigger cancellation."
+  },
+  "verification": {
+    "canonical": {
+      "checks": 534,
+      "failures": 0
+    },
+    "cleanInstalled": {
+      "checks": 534,
+      "failures": 0,
+      "prefixed": true,
+      "strictTypes": true,
+      "productionBuild": true,
+      "mandatoryInRegistryVerify": true
+    },
+    "baseline": {
+      "checks": 534,
+      "failures": 291,
+      "errors": 0,
+      "sameHarnessSha256": true
+    },
+    "productionNative": {
+      "checks": 87,
+      "failures": 0,
+      "contexts": [
+        "standalone",
+        "pcf-light-dom",
+        "first-shadow",
+        "second-shadow",
+        "shell-shadow",
+        "nested-cabinet-shadow"
+      ],
+      "previousBundleFailures": 30,
+      "previousBundleChecks": 87,
+      "actualRegisteredMountApi": true,
+      "physicalBrowserKeys": true,
+      "dataRequests": 0
+    },
+    "hugText": {
+      "checks": 60,
+      "knownIssues": 0
+    },
+    "completeCatalogue": {
+      "families": 55,
+      "specimens": 190,
+      "catalogue": 246,
+      "forms": 235,
+      "formsPointer": 9,
+      "navigation": 298,
+      "workFontSamples": 214
+    },
+    "existingNativeChecks": 45,
+    "totalProductionNativeChecks": 132,
+    "fontFaces": 12,
+    "unchangedTextStyleProperties": 1926,
+    "unchangedWidthHeightValues": 428,
+    "sourceFiles": 424,
+    "foundationAudit": "passed",
+    "runtimeVerification": "passed",
+    "runtimeArtifactSmoke": "passed"
+  },
+  "artifact": {
+    "entry": "dist/index.js",
+    "entrySha256": "d213c57b86c3baf431dfb557bf6f19528efe85f3f68ac40eede65ef046e2b80d",
+    "stylesheet": "dist/main.css",
+    "stylesheetSha256": "689d2e0b9a8325bd9736d99e7b763a6b442b2727e8220f085193980f30cbcc73",
+    "entryFormat": "Single deferred classic IIFE, relative local assets",
+    "runtimeVersion": "0.1.50",
+    "runtimeContract": 34,
+    "nativeIframeCount": 0
+  },
+  "registryCandidate": {
+    "items": 112,
+    "generatedJsonFiles": 113,
+    "uiItems": 61,
+    "uiSourceFiles": 62,
+    "generatedGraphSha256": "63d06fb13890389b93fcdffc66a557ea14958f913047383b9fe0470501cb7f1a"
+  },
+  "adoption": {
+    "showcase": "Complete registry CLI overwrite and canonical runtime converter applied; published namespace restored; production artifact verified.",
+    "otherConsumers": "Refresh and rebuild each adopting Snapp; source copies and compiled child bundles do not update through publication or a parent loader alone.",
+    "parents": "Refresh affected parent Shell/Cabinet foundations and loaders as required by the platform host/font contract.",
+    "publication": "Not performed.",
+    "deployment": "Not performed."
+  },
+  "evidence": [
+    {
+      "file": "tabs-keyboard/adoption-inventory.json",
+      "sha256": "4191f225dddb6d1bae3bb0ccdcdfb57e55d217df9e295ff2ca0b053e1b6f9182",
+      "bytes": 16405
+    },
+    {
+      "file": "tabs-keyboard/baseline.json",
+      "sha256": "6958bfaa856d5dc467130295003e8f56f325c9616c55acfe571633174584e48f",
+      "bytes": 319872
+    },
+    {
+      "file": "tabs-keyboard/canonical.json",
+      "sha256": "891bee5481d11f15706aeca5db42ed6c3634aa31304939e6117b33757a0e56dc",
+      "bytes": 204439
+    },
+    {
+      "file": "tabs-keyboard/installed.json",
+      "sha256": "32ec6d128cfe2343eea640626c06994149d2a8bf8682a88a84913e7d66bf0643",
+      "bytes": 204514
+    }
+  ],
+  "consumerEvidence": {
+    "repository": "snappcomponents",
+    "verification": "docs/figma-showcase/verification.json",
+    "reports": [
+      "reports/nativeTabs.json",
+      "reports/nativeTabsBaseline.json",
+      "reports/tabsKeyboardCanonical.json",
+      "reports/tabsKeyboardInstalled.json",
+      "reports/tabsKeyboardBaseline.json"
+    ]
+  },
+  "limits": [
+    "Six local host representations exercise the actual production mount/update/unmount API; deployed standalone Shell, WebResourceShell, PCFShell and Cabinet applications remain Not Verified.",
+    "Other existing Snapps and host owners were inventoried read-only; they were not migrated, rebuilt or deployed by this task.",
+    "Existing Cabinet product iframe fallbacks remain separate redesign gaps; no iframe fallback is introduced or exercised by this fix.",
+    "Chromium verified; Safari/Firefox and assistive-technology combinations are not certified by these checks.",
+    "RadioGroup, ToggleGroup and Toolbar share the upstream roving-focus dependency; their behavior is outside this Tabs correction.",
+    "The earlier generic repository filename audit flag for tracked token.json remains historical; no credential content was inspected, used or changed."
+  ],
+  "primaryReferences": [
+    {
+      "title": "WAI-ARIA Tabs pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/"
+    },
+    {
+      "title": "Radix Tabs API and keyboard interactions",
+      "url": "https://www.radix-ui.com/primitives/docs/components/tabs"
+    }
+  ]
+}

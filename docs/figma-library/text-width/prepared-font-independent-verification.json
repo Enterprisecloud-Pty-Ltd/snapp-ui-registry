@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "method": "Independent stdlib Python SFNT/GPOS decoder constructs expected output bytes in memory from each unchanged approved source, rounds every hmtx advance, PairPos ValueRecord, mark anchor coordinate and legacy kern value, recomputes hhea/global checksum, and compares byte-for-byte with Node-generated canonical prepared fonts. Repo files read-only.",
+  "rows": [
+    {
+      "file": "Aptos-Light.ttf",
+      "originalSha256": "e38fc1bef9b7e971bfdfdba4897abe72ef9bd72182b8ad9d463e11307a802b54",
+      "deliverySha256": "6de8663653bd7e2a8462e8308bf50ffd79b8c2a12712a615130d33b75569022e",
+      "independentExpectedBytesEqualActual": true,
+      "wholeFileChecksum": "0xb1b0afba",
+      "changedTables": [
+        "GPOS",
+        "head",
+        "hhea",
+        "hmtx",
+        "kern"
+      ],
+      "allOtherTableBytesPreserved": true,
+      "allHmtxSideBearingsPreserved": true,
+      "GPOSFieldsCompared": 15940,
+      "GPOSAnchorsCompared": 423,
+      "legacyKernPairsCompared": 10897,
+      "verticalMetricTablesAbsent": true,
+      "gdefCaretCoordinatesAbsent": true
+    },
+    {
+      "file": "Aptos.ttf",
+      "originalSha256": "b46c7865bdecc68d7d82075a2d1e93e31cb73146eae6740bc7c090c8d0b2842a",
+      "deliverySha256": "c312aa2f557c09c69b55127bfd4934fa5a718594f69323adbe4374a869b739fc",
+      "independentExpectedBytesEqualActual": true,
+      "wholeFileChecksum": "0xb1b0afba",
+      "changedTables": [
+        "GPOS",
+        "head",
+        "hmtx",
+        "kern"
+      ],
+      "allOtherTableBytesPreserved": true,
+      "allHmtxSideBearingsPreserved": true,
+      "GPOSFieldsCompared": 15945,
+      "GPOSAnchorsCompared": 465,
+      "legacyKernPairsCompared": 11108,
+      "verticalMetricTablesAbsent": true,
+      "gdefCaretCoordinatesAbsent": true
+    },
+    {
+      "file": "Aptos-SemiBold.ttf",
+      "originalSha256": "b69e74cd43331c68cc8a4e82acc70dc5fe183524fe6e28d0da5e209b0ccd9f3d",
+      "deliverySha256": "b07d18c67370e7bbabc9ed59d7aea4145e279c952a96c4e69a95286639a86d5c",
+      "independentExpectedBytesEqualActual": true,
+      "wholeFileChecksum": "0xb1b0afba",
+      "changedTables": [
+        "GPOS",
+        "head",
+        "hhea",
+        "hmtx",
+        "kern"
+      ],
+      "allOtherTableBytesPreserved": true,
+      "allHmtxSideBearingsPreserved": true,
+      "GPOSFieldsCompared": 15945,
+      "GPOSAnchorsCompared": 454,
+      "legacyKernPairsCompared": 11110,
+      "verticalMetricTablesAbsent": true,
+      "gdefCaretCoordinatesAbsent": true
+    },
+    {
+      "file": "Aptos-Bold.ttf",
+      "originalSha256": "e59d983f8752146b8d02df5cad8f545ce677ef71dbe113afa3b395a9088c7f53",
+      "deliverySha256": "7cf7ef8cb53102f354ae97fd5a15e58c758359664f527aa4f3be9a362a85eb7d",
+      "independentExpectedBytesEqualActual": true,
+      "wholeFileChecksum": "0xb1b0afba",
+      "changedTables": [
+        "GPOS",
+        "head",
+        "hmtx",
+        "kern"
+      ],
+      "allOtherTableBytesPreserved": true,
+      "allHmtxSideBearingsPreserved": true,
+      "GPOSFieldsCompared": 15945,
+      "GPOSAnchorsCompared": 449,
+      "legacyKernPairsCompared": 11117,
+      "verticalMetricTablesAbsent": true,
+      "gdefCaretCoordinatesAbsent": true
+    }
+  ]
+}

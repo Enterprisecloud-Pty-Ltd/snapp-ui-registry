@@ -6,6 +6,7 @@
   "dependencies": [
     "radix-ui"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/radix-nova/ui/direction.tsx",

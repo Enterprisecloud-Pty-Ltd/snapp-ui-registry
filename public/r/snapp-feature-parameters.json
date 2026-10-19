@@ -6,6 +6,7 @@
   "dependencies": [
     "zod"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/radix-nova/lib/feature-parameters.ts",

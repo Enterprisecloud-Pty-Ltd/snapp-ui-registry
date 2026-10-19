@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-brand-mark",
+  "title": "Brand Mark",
+  "description": "Shared SNAPP component-library building block: Brand Mark.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@snapp/snapp-figma-brand-assets",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/data/brand-mark.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport ecLight from \"@/assets/snapp/brand/2e5e5.svg\";\nimport ecDark from \"@/assets/snapp/brand/f4c1f.svg\";\nimport snappLogo from \"@/assets/snapp/brand/f9e47.svg\";\nimport snappSymbol from \"@/assets/snapp/brand/098c7.svg\";\n\ninterface BrandMarkProps\n\textends Omit<ComponentProps<\"img\">, \"src\" | \"width\" | \"height\"> {\n\tmark: \"ec-light\" | \"ec-dark\" | \"snapp-logo\" | \"snapp-symbol\";\n}\nconst marks = {\n\t\"ec-light\": {\n\t\tsrc: ecLight,\n\t\twidth: 400,\n\t\theight: 51.5846,\n\t\talt: \"Enterprisecloud\",\n\t},\n\t\"ec-dark\": {\n\t\tsrc: ecDark,\n\t\twidth: 400,\n\t\theight: 51.5846,\n\t\talt: \"Enterprisecloud\",\n\t},\n\t\"snapp-logo\": { src: snappLogo, width: 196.66, height: 50.4, alt: \"SNAPP\" },\n\t\"snapp-symbol\": {\n\t\tsrc: snappSymbol,\n\t\twidth: 47.9643,\n\t\theight: 50.4043,\n\t\talt: \"SNAPP\",\n\t},\n};\n\nfunction BrandMark({ mark, alt, ...props }: BrandMarkProps) {\n\tconst asset = marks[mark];\n\treturn (\n\t\t<img\n\t\t\tdata-slot=\"snapp-brand-mark\"\n\t\t\t{...asset}\n\t\t\talt={alt ?? asset.alt}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { BrandMark };\nexport type { BrandMarkProps };\n",
+      "type": "registry:component",
+      "target": "@components/snapp/data/brand-mark.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

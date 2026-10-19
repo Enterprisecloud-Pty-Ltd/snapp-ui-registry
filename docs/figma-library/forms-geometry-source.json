@@ -1,0 +1,1431 @@
+{
+  "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "observedOn": "2026-10-19",
+  "source": "Read-only Figma Plugin API; original auto-layout boxes and stroke alignment.",
+  "nodes": [
+    {
+      "family": "1:3048",
+      "id": "1:3049",
+      "name": "Appearance=Primary, Style=Standard",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "1:3051",
+      "name": "Appearance=Outline, Style=Standard",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2123",
+      "name": "Appearance=Primary, Style=Hover",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2125",
+      "name": "Appearance=Primary, Style=Focus",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2127",
+      "name": "Appearance=Primary, Style=Pressed",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2129",
+      "name": "Appearance=Primary, Style=Disabled",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "1:3053",
+      "name": "Appearance=Secondary, Style=Standard",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2133",
+      "name": "Appearance=Outline, Style=Hover",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2137",
+      "name": "Appearance=Outline, Style=Focus",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2149",
+      "name": "Appearance=Secondary, Style=Hover",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2153",
+      "name": "Appearance=Secondary, Style=Focus",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2157",
+      "name": "Appearance=Secondary, Style=Pressed",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2161",
+      "name": "Appearance=Secondary, Style=Disabled",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2167",
+      "name": "Appearance=Outline, Style=Pressed",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "243:2171",
+      "name": "Appearance=Outline, Style=Disabled",
+      "width": 116,
+      "height": 44,
+      "padding": [
+        12,
+        24,
+        12,
+        24
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "248:2188",
+      "name": "Appearance=Text, Style=Standard",
+      "width": 68,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "248:2192",
+      "name": "Appearance=Text, Style=Hover",
+      "width": 68,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "248:2196",
+      "name": "Appearance=Text, Style=Focus",
+      "width": 68,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "248:2200",
+      "name": "Appearance=Text, Style=Pressed",
+      "width": 68,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "1:3048",
+      "id": "248:2204",
+      "name": "Appearance=Text, Style=Disabled",
+      "width": 68,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 10,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1295",
+      "name": "Fields=Standard Field",
+      "width": 670,
+      "height": 65,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1297",
+      "name": "Fields=Required Field",
+      "width": 670,
+      "height": 65,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "255:2210",
+      "name": "Fields=Is Disabled",
+      "width": 670,
+      "height": 65,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1301",
+      "name": "Fields=Error Field",
+      "width": 670,
+      "height": 65,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "248:2179",
+      "name": "Fields=Is Selected",
+      "width": 670,
+      "height": 65,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1305",
+      "name": "Fields=Look up/Drop Down",
+      "width": 670,
+      "height": 65,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "127:1943",
+      "name": "Fields=Drop down Open",
+      "width": 670,
+      "height": 265,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "153:2212",
+      "name": "Fields=Number select",
+      "width": 670,
+      "height": 229,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1312",
+      "name": "Fields=Drop down with pills",
+      "width": 670,
+      "height": 113,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1355",
+      "name": "Fields=Text Entry",
+      "width": 670,
+      "height": 108,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1399",
+      "name": "Fields=Error",
+      "width": 670,
+      "height": 44,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1383",
+      "name": "Fields=Error Multiple",
+      "width": 670,
+      "height": 142,
+      "padding": [
+        12,
+        16,
+        12,
+        16
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "311:2855",
+      "name": "Fields=Positive Notice",
+      "width": 670,
+      "height": 44,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "311:2863",
+      "name": "Fields=Warning",
+      "width": 670,
+      "height": 44,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1434",
+      "name": "Fields=Notice",
+      "width": 670,
+      "height": 44,
+      "padding": [
+        12,
+        16,
+        12,
+        16
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "313:2933",
+      "name": "Fields=General Message",
+      "width": 670,
+      "height": 44,
+      "padding": [
+        12,
+        16,
+        12,
+        16
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1413",
+      "name": "Fields=Date Picker",
+      "width": 670,
+      "height": 69,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "19:1588",
+      "name": "Fields=Upload",
+      "width": 670,
+      "height": 65,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "23:1804",
+      "name": "Fields=Colour Picker",
+      "width": 670,
+      "height": 65,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1463",
+      "name": "Fields=Large Uploader",
+      "width": 670,
+      "height": 143,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "13:1482",
+      "name": "Fields=Switch",
+      "width": 670,
+      "height": 24,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "158:2394",
+      "name": "Fields=Checkbox",
+      "width": 670,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "35:2080",
+      "name": "Fields=Inline Search",
+      "width": 670,
+      "height": 41,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "36:4528",
+      "name": "Fields=Search",
+      "width": 670,
+      "height": 69,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "96:9862",
+      "name": "Fields=Comment Box",
+      "width": 670,
+      "height": 68,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "96:9877",
+      "name": "Fields=Comment Box Edit",
+      "width": 670,
+      "height": 68,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1296",
+      "id": "96:9937",
+      "name": "Fields=Comment Box Buttons",
+      "width": 670,
+      "height": 116,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1541",
+      "id": "13:1542",
+      "name": "State=Off",
+      "width": 141,
+      "height": 24,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "13:1541",
+      "id": "13:1548",
+      "name": "State=On",
+      "width": 141,
+      "height": 24,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "19:1647",
+      "id": "19:1601",
+      "name": "Width=Large",
+      "width": 720,
+      "height": 1208,
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "gap": 24,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "19:1647",
+      "id": "19:1648",
+      "name": "Width=Medium",
+      "width": 600,
+      "height": 1208,
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "gap": 24,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "19:1647",
+      "id": "19:1698",
+      "name": "Width=small",
+      "width": 480,
+      "height": 1248,
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "gap": 24,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "26:1899",
+      "id": "26:1898",
+      "name": "State=Standard",
+      "width": 191,
+      "height": 36,
+      "padding": [
+        8,
+        16,
+        8,
+        16
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "26:1899",
+      "id": "26:1900",
+      "name": "State=White",
+      "width": 191,
+      "height": 36,
+      "padding": [
+        8,
+        16,
+        8,
+        16
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "36:4345",
+      "id": "36:4344",
+      "name": "Variant=1 Level",
+      "width": 208,
+      "height": 170,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "36:4345",
+      "id": "36:4388",
+      "name": "Variant=2 Levels",
+      "width": 416,
+      "height": 170,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "36:4345",
+      "id": "36:4428",
+      "name": "Variant=3 Levels",
+      "width": 624,
+      "height": 170,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "36:4345",
+      "id": "36:4479",
+      "name": "Variant=Time",
+      "width": 208,
+      "height": 126,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "36:4345",
+      "id": "36:4512",
+      "name": "Variant=Action",
+      "width": 208,
+      "height": 126,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "36:4345",
+      "id": "38:4550",
+      "name": "Variant=No title",
+      "width": 208,
+      "height": 98,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:4991",
+      "id": "49:4992",
+      "name": "State=Default",
+      "width": 224,
+      "height": 68,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 12,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:4991",
+      "id": "49:4999",
+      "name": "State=Open",
+      "width": 250,
+      "height": 365,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 12,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:5114",
+      "id": "49:5115",
+      "name": "State=Default",
+      "width": 180,
+      "height": 36,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 65,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:5114",
+      "id": "49:5120",
+      "name": "State=Open",
+      "width": 180,
+      "height": 236,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 4,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:5143",
+      "id": "49:5144",
+      "name": "Type=1",
+      "width": 344,
+      "height": 36,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:5143",
+      "id": "49:5151",
+      "name": "Type=2",
+      "width": 344,
+      "height": 36,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:5143",
+      "id": "49:5158",
+      "name": "Type=3",
+      "width": 344,
+      "height": 106,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:5143",
+      "id": "49:5175",
+      "name": "Type=4",
+      "width": 344,
+      "height": 36,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "49:5180",
+      "id": "49:5180",
+      "name": "Default",
+      "width": 221,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 12,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "69:9406",
+      "id": "69:9405",
+      "name": "Property 1=Default",
+      "width": 74,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "69:9406",
+      "id": "69:9411",
+      "name": "Property 1=Reject",
+      "width": 74,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "69:9406",
+      "id": "69:9407",
+      "name": "Property 1=Invert",
+      "width": 74,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "69:9406",
+      "id": "69:9415",
+      "name": "Property 1=Disable",
+      "width": 74,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "69:9406",
+      "id": "74:9427",
+      "name": "Property 1=Hover",
+      "width": 74,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "102:10661",
+      "id": "102:10660",
+      "name": "State=Filter Button",
+      "width": 79,
+      "height": 36,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "102:10661",
+      "id": "248:2206",
+      "name": "State=Hover",
+      "width": 79,
+      "height": 36,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "102:10661",
+      "id": "102:10662",
+      "name": "State=Filter Open",
+      "width": 364,
+      "height": 332,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "102:10661",
+      "id": "102:10739",
+      "name": "State=Filter Selection",
+      "width": 364,
+      "height": 224,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "102:10661",
+      "id": "102:10810",
+      "name": "State=Filtered",
+      "width": 98,
+      "height": 36,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "102:10661",
+      "id": "102:10814",
+      "name": "State=Filter Applied",
+      "width": 364,
+      "height": 116,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "102:10661",
+      "id": "102:10929",
+      "name": "State=Add Filter Open",
+      "width": 364,
+      "height": 412,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "102:10661",
+      "id": "102:11018",
+      "name": "State=Add Filter Open 2",
+      "width": 364,
+      "height": 412,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "112:11237",
+      "id": "112:11236",
+      "name": "Version=Default",
+      "width": 135,
+      "height": 28,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "112:11237",
+      "id": "112:11238",
+      "name": "Version=Unchecked",
+      "width": 135,
+      "height": 28,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "112:11237",
+      "id": "112:11254",
+      "name": "Version=Checked",
+      "width": 135,
+      "height": 28,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "112:11237",
+      "id": "112:11359",
+      "name": "Version=No Icon Unselected",
+      "width": 135,
+      "height": 28,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "112:11237",
+      "id": "112:11419",
+      "name": "Version=No Icon Selected",
+      "width": 135,
+      "height": 28,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "158:2384",
+      "id": "158:2383",
+      "name": "State=Default",
+      "width": 80,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    },
+    {
+      "family": "158:2384",
+      "id": "158:2385",
+      "name": "State=Selected",
+      "width": 80,
+      "height": 20,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 8,
+      "strokeAlign": "INSIDE",
+      "strokeWeight": 1
+    }
+  ]
+}

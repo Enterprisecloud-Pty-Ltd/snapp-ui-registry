@@ -1,0 +1,875 @@
+{
+  "source": "https://www.figma.com/design/YUYB5jtCxUwT8OefeLP9f7/SNAPP-Component-Library",
+  "inspectionDate": "2026-10-19",
+  "scope": "Work, learning, employee, table, inbox, canvas, catalogue-card and brand families",
+  "method": "All 16 assigned families and 4 brand nodes inspected through high-fidelity get_design_context responses and returned screenshots. Supplemental child-node contexts were inspected for exact task, work and employee sizing. No sparse response was used as implementation authority.",
+  "classification": "Reusable presentation and interaction components; record examples live only in the non-distributed work-preview.tsx visual fixture. Generic UI Card is not the folder/item component.",
+  "status": {
+    "implementation": "Complete and installed through the registry CLI into an isolated consumer. Local candidate; publication and live host certification are separate gates.",
+    "assetDownloads": "All provided SVG assets downloaded with curl as instructed by the design context. Root SVG dimensions inspected; paths were not redrawn or edited.",
+    "canonical": "Assigned sources use canonical Tailwind candidates. The repository-wide registry:verify gate owns final canonical, generated-source integrity and consumer build validation.",
+    "format": "Biome 2.4.16 formatted assigned TypeScript sources and preview.",
+    "browserVerification": "Final production Chromium consumer: 50 state/property examples match live Figma geometry within 1/32 CSS pixel; 214 Aptos/Inter text samples use actual custom fonts; 18 screenshots and 17 callback/keyboard checks passed. All 16 family and 4 brand reference screenshots were manually compared; changed task/folder/table examples were rechecked after correction. Master-cell optional-property surface and equal text widths passed after the final fixture refresh. Raster antialiasing differs; pixel-byte equality is not claimed."
+  },
+  "conventions": {
+    "font": "font-snapp-body resolves live Figma body-family token. Employee avatar explicitly uses Inter.",
+    "stroke": "Figma inside strokes are inset rings where intrinsic layout must remain unchanged.",
+    "storage": "No browser storage or data transport belongs to these UI components.",
+    "assets": "Registry SVG imports target @/assets/snapp/{work,brand}/<hash>.svg. Preserve exact local SVG roots and natural geometry; no temporary Figma URL is used at runtime."
+  },
+  "browserGate": {
+    "command": "node scripts/verify-work-browser.mjs",
+    "previewOverride": "SNAPP_FIGMA_PREVIEW_URL",
+    "defaultPreview": "http://127.0.0.1:4799/?group=work",
+    "ignoredArtifacts": "artifacts/figma-qa/work/report.json and 18 PNG files",
+    "scope": "All named variants of the 16 assigned families, 4 brand assets, a master TableCell optional-property example and native callback/keyboard paths.",
+    "checks": [
+      "50 reference width/height pairs; Chromium 1/64 pixel layout quantization tolerated below 1/32 CSS pixel",
+      "214 text samples record family, size, weight, line-height, color and CDP actual font identity; all rendered glyphs require custom Aptos or Inter faces",
+      "Every image is loaded with nonzero natural dimensions, including root brand images",
+      "Master dual-text widths are equal; the Table instance explicitly uses compact primary text",
+      "17 callback and controlled-state checks include native keyboard completion and expansion",
+      "Geometry/font/asset evidence is saved before interactions so a callback failure cannot discard measurements"
+    ],
+    "limits": [
+      "Reference PNG comparisons are manual. Figma and browser font rasterization do not produce identical PNG bytes.",
+      "Optional property combinations use the live master context and individual measurements; the gate does not claim a Cartesian-product screenshot matrix.",
+      "Live Dynamics, Power Pages, PCF and Cabinet execution are not certified by this isolated consumer preview."
+    ]
+  },
+  "families": [
+    {
+      "node": "1:2164",
+      "name": "TaskListItem",
+      "purpose": "Scheduled record tile for boards, calendars, compact lists and drag feedback.",
+      "files": [
+        "components/work-os/task-list-item.tsx"
+      ],
+      "variants": [
+        "high",
+        "mid",
+        "low",
+        "dragged",
+        "placing",
+        "minimal",
+        "list",
+        "tiny"
+      ],
+      "geometry": {
+        "width": 300,
+        "heightByVariant": {
+          "high": 113,
+          "mid": 113,
+          "low": 113,
+          "dragged": 100,
+          "placing": 113,
+          "minimal": 60,
+          "list": 44,
+          "tiny": 20
+        },
+        "padding": {
+          "regular": 12,
+          "list": "6px 12px",
+          "tiny": "2px 4px 2px 8px"
+        },
+        "gap": {
+          "regular": 8,
+          "metadata": 2,
+          "footer": 12
+        },
+        "radius": {
+          "high": 4,
+          "regular": 6,
+          "tiny": 24
+        }
+      },
+      "typography": [
+        "Aptos 14/20 400 record identifier",
+        "Aptos 12/16 400 description, client and time",
+        "Aptos 14/20 700 minimal identifier",
+        "Aptos 11/12 700 list identifier",
+        "Aptos 11 normal 400 dragged detail"
+      ],
+      "properties": [
+        "bug/task/item icon switches -> icons array",
+        "state -> state"
+      ],
+      "interaction": "Native time/menu buttons when callbacks supplied; consumers own record navigation and dragging."
+    },
+    {
+      "node": "1:2289",
+      "name": "Day",
+      "purpose": "Calendar day cell containing scheduled TaskListItem children.",
+      "files": [
+        "components/work-os/calendar-day.tsx"
+      ],
+      "variants": [
+        "dark",
+        "light"
+      ],
+      "geometry": {
+        "width": 141.714,
+        "height": 90.333,
+        "padding": "13px 12px 12px",
+        "gap": 6,
+        "headingGap": 16
+      },
+      "typography": [
+        "Aptos 11/12 700 day and total time"
+      ],
+      "properties": [
+        "showContent -> optional totalTime and children",
+        "version -> version"
+      ],
+      "interaction": "Caller supplies calendar state, date semantics and scheduled child records."
+    },
+    {
+      "node": "1:2304",
+      "name": "Work Item",
+      "purpose": "Backlog work record with allocation, time and progress; distinct from scheduling tiles.",
+      "files": [
+        "components/work-os/work-item-card.tsx",
+        "components/work-os/time-badge.tsx",
+        "components/work-os/progress-meter.tsx",
+        "components/work-os/work-item-icons.tsx",
+        "components/work-os/work-item.types.ts"
+      ],
+      "variants": [
+        "bug",
+        "clipboard/task",
+        "book/item"
+      ],
+      "geometry": {
+        "width": 323.667,
+        "defaultHeight": 90,
+        "padding": 8,
+        "gap": 4,
+        "metadataGap": 2,
+        "typeAndGrip": "40 x 20",
+        "timeBadgeWidth": 86,
+        "timeIcon": 16,
+        "progressHeight": 8,
+        "progressLeftInset": 48,
+        "progressLabelWidth": 42
+      },
+      "typography": [
+        "Aptos 12/16 400 action, metadata, assignment, time and capacity"
+      ],
+      "properties": [
+        "unallocated/soft/hard -> assignment or assignments",
+        "property1 -> item.icon"
+      ],
+      "interaction": "Existing WorkItem API preserved; optional assignments supports multiple booking lines. Consumers own mutations and drag behavior."
+    },
+    {
+      "node": "1:3055",
+      "name": "WorkOS Personal Productivity Right Panel",
+      "purpose": "Focus and overdue summary panel with reusable record rows and controlled collapse.",
+      "files": [
+        "components/work-os/productivity-panel.tsx"
+      ],
+      "variants": [
+        "open",
+        "collapsed"
+      ],
+      "geometry": {
+        "openWidth": 338,
+        "collapsedWidth": 52,
+        "height": 1031,
+        "firstSectionPadding": "12px 16px",
+        "secondSectionPadding": "24px 16px",
+        "sectionGap": 16,
+        "headingHeight": 32,
+        "rowHeight": 28,
+        "icons": 20
+      },
+      "typography": [
+        "Aptos 14/20 400 labels, totals and row records",
+        "Headings and totals use text-brand #2f455c; nested Tree Item record identifiers and names use text-primary #2a2c2e (second-pass live Figma verification)."
+      ],
+      "properties": [
+        "style -> collapsed"
+      ],
+      "interaction": "Native collapse toggle and optional row activation. Feature supplies lists and totals."
+    },
+    {
+      "node": "13:960",
+      "name": "Achievements",
+      "purpose": "Finished-work counts for the current week and month.",
+      "files": [
+        "components/work-os/achievements.tsx"
+      ],
+      "variants": [
+        "default"
+      ],
+      "geometry": {
+        "width": 338,
+        "height": 48,
+        "paddingLeft": 16,
+        "gap": 16,
+        "innerGap": 4,
+        "icon": 20
+      },
+      "typography": [
+        "Aptos 14/20 400 labels",
+        "Aptos 14/20 700 counts"
+      ],
+      "properties": [],
+      "interaction": "Read-only summary with caller-provided counts and localized labels."
+    },
+    {
+      "node": "48:4696",
+      "name": "CheckItem",
+      "purpose": "Learning assignment summary with completion and issued date.",
+      "files": [
+        "components/learning/check-item.tsx"
+      ],
+      "variants": [
+        "default",
+        "selected",
+        "completed"
+      ],
+      "geometry": {
+        "width": 394,
+        "height": 74,
+        "padding": 16,
+        "gap": 8,
+        "checkbox": 16,
+        "checkmark": 12,
+        "dateWidth": 84,
+        "radius": 8
+      },
+      "typography": [
+        "Aptos 14/20 400 title and code",
+        "Aptos 12/16 400 state and date"
+      ],
+      "properties": [
+        "state -> state"
+      ],
+      "interaction": "Controlled completion checkbox when onCompletedChange is supplied."
+    },
+    {
+      "node": "49:4861",
+      "name": "Course",
+      "purpose": "Reorderable certification row with completion, issued date and overflow actions.",
+      "files": [
+        "components/learning/course.tsx"
+      ],
+      "variants": [
+        "complete",
+        "incomplete",
+        "embedded employee complete/incomplete"
+      ],
+      "geometry": {
+        "width": 456,
+        "height": 32,
+        "rowHeight": 28,
+        "padding": 8,
+        "gap": 8,
+        "dragIcon": 20,
+        "embeddedGrip": "12 x 5",
+        "checkbox": 16,
+        "checkmark": 12,
+        "more": 16,
+        "dateWidth": 84
+      },
+      "typography": [
+        "Aptos 14/20 400 all row text"
+      ],
+      "properties": [
+        "state -> completed",
+        "EmployeeCard embedded instance assets -> variant=employee"
+      ],
+      "interaction": "Native completion/overflow buttons and caller-provided drag-handle attributes. No domain queries."
+    },
+    {
+      "node": "49:4890",
+      "name": "EmployeeCard",
+      "purpose": "Employee certification summary with progress, certification groups and optional-group expansion.",
+      "files": [
+        "components/people/employee-card.tsx"
+      ],
+      "variants": [
+        "closed",
+        "expanded",
+        "minimal"
+      ],
+      "geometry": {
+        "width": 312.5,
+        "referenceHeights": {
+          "closed": 336,
+          "expanded": 580,
+          "minimal": 150
+        },
+        "padding": 17,
+        "gap": 16,
+        "headerWidth": 270.5,
+        "avatar": 48,
+        "progressHeight": 8,
+        "groupGap": 12,
+        "courseGap": 10,
+        "chevrons": {
+          "header": 20,
+          "group": 16
+        }
+      },
+      "typography": [
+        "Aptos 18/24 700 employee name",
+        "Aptos 14/20 400 role, progress and expanded group labels",
+        "Aptos 12/16 400 closed optional label",
+        "Inter 16/24 400 avatar initials"
+      ],
+      "properties": [
+        "optional -> state"
+      ],
+      "interaction": "Controlled minimal/full and optional expansion. Slot content owns courses; counters are caller supplied. Progress defaults to completed / total and accepts an independently supplied progressPercentage clamped to 0–100; the accessible progressbar reports the same rendered value.",
+      "designNotes": [
+        "The Figma course instances overflow the 312.5px card with 432.5px inner rows / 456px default rows. Preserved as a design fact; applications may deliberately override course widths for constrained layouts.",
+        "The second completed course instance is 22px high while neighboring rows are 32px. The visual fixture preserves that override.",
+        "The Figma progress geometry shows 64.84% despite its 2/3 counter. The reference fixture supplies that explicit design percentage; normal business usage keeps the derived ratio unless its domain owns a different percentage.",
+        "Header references non-token raw colors #0a0a0a, #4a5565, #364153 and progress #0073de. Preserved rather than silently remapping."
+      ]
+    },
+    {
+      "node": "61:6351",
+      "name": "CourseStatus",
+      "purpose": "Person/date course completion state with default, success, notice and warning tones.",
+      "files": [
+        "components/learning/course-status.tsx"
+      ],
+      "variants": [
+        "default",
+        "complete",
+        "notice",
+        "warning"
+      ],
+      "geometry": {
+        "width": 333.667,
+        "height": 44,
+        "padding": 12,
+        "gap": 8,
+        "radius": 8,
+        "icons": 16
+      },
+      "typography": [
+        "Aptos 14/20 400 name and date"
+      ],
+      "properties": [
+        "state -> state"
+      ],
+      "interaction": "Read-only status presentation."
+    },
+    {
+      "node": "219:2062",
+      "name": "TableCell",
+      "purpose": "Reusable header/body cell content with optional icon, secondary text, chevron and sort action.",
+      "files": [
+        "ui/table.tsx",
+        "components/data/data-table.tsx"
+      ],
+      "variants": [
+        "header",
+        "regular"
+      ],
+      "geometry": {
+        "referenceWidth": 297,
+        "padding": 8,
+        "headerGap": 10,
+        "bodyGap": 8,
+        "sort": 16,
+        "documentIcon": 20,
+        "chevron": 16
+      },
+      "typography": [
+        "Aptos 14/20 400, brand header / primary and secondary body"
+      ],
+      "properties": [
+        "cellText -> children",
+        "dualText -> secondary",
+        "primarySizing=fill preserves equal-width master text regions; content preserves compact record instance override",
+        "cellIcon -> documentIcon or icon",
+        "cellChevron -> showChevron",
+        "headerSort -> column.onSort"
+      ],
+      "interaction": "Header sort is a native button with aria-sort and caller-owned sorting."
+    },
+    {
+      "node": "219:2126",
+      "name": "TableRow",
+      "purpose": "Semantic row composed from reusable cells.",
+      "files": [
+        "ui/table.tsx"
+      ],
+      "variants": [
+        "default row of six cells"
+      ],
+      "geometry": {
+        "referenceWidth": 874,
+        "height": 36,
+        "paddingPerCell": 8
+      },
+      "typography": [
+        "Aptos 14/20 400"
+      ],
+      "properties": [
+        "Visible cell composition -> children"
+      ],
+      "interaction": "Semantic tr; application owns row selection."
+    },
+    {
+      "node": "219:2228",
+      "name": "Table",
+      "purpose": "Four-column record decision table example, implemented as a generic data table rather than embedding example records.",
+      "files": [
+        "components/data/data-table.tsx",
+        "ui/table.tsx"
+      ],
+      "variants": [
+        "default"
+      ],
+      "geometry": {
+        "referenceWidth": 648,
+        "referenceHeight": 268,
+        "headerHeight": 36,
+        "fixedExampleColumns": [
+          162,
+          162,
+          162
+        ],
+        "cellPadding": 8
+      },
+      "typography": [
+        "Aptos 14/20 400"
+      ],
+      "properties": [
+        "Sample columns and rows -> columns, rows and getRowKey"
+      ],
+      "interaction": "Caller owns filtering, complete-result fetching, sorting and paging.",
+      "designNotes": [
+        "Figma uses middle-aligned flex cells; shorter cells have white content backgrounds while taller neighboring cells leave transparent space. DataTable uses semantic cells with inner white content wrappers to retain that geometry."
+      ]
+    },
+    {
+      "node": "228:2376",
+      "name": "InboxCategory",
+      "purpose": "Selectable inbox category navigation with optional count.",
+      "files": [
+        "components/inbox/inbox-category.tsx"
+      ],
+      "variants": [
+        "default",
+        "selected",
+        "disabled"
+      ],
+      "geometry": {
+        "width": 298,
+        "referenceHeight": 24,
+        "outerPaddingX": 16,
+        "buttonPadding": "4px 8px",
+        "radius": 4,
+        "count": 16
+      },
+      "typography": [
+        "Aptos 14/20 400 label",
+        "Aptos 11/12 400 count"
+      ],
+      "properties": [
+        "hasNumber -> optional count",
+        "state -> selected / disabled"
+      ],
+      "interaction": "Native navigation button with selected and disabled semantics.",
+      "designNotes": [
+        "Figma declares a 24px wrapper around a 28px padded menu row; retained rather than changing the design."
+      ]
+    },
+    {
+      "node": "230:2426",
+      "name": "InboxItem",
+      "purpose": "Selectable message summary showing sender, category, priority, subject and preview.",
+      "files": [
+        "components/inbox/inbox-item.tsx"
+      ],
+      "variants": [
+        "default",
+        "selected"
+      ],
+      "geometry": {
+        "width": 298,
+        "padding": "12px 16px",
+        "gap": 8,
+        "avatar": 24,
+        "readIndicator": 6
+      },
+      "typography": [
+        "Aptos 12/16 700 sender and subject",
+        "Aptos 11/12 400 initials, timestamp, category, priority and preview"
+      ],
+      "properties": [
+        "read/unread -> readState",
+        "state -> selected"
+      ],
+      "interaction": "Native selection button with aria-pressed; callers own inbox content."
+    },
+    {
+      "node": "236:2502",
+      "name": "ActionNode",
+      "purpose": "Canvas action, condition or trigger node with selectable body and optional connection handlers.",
+      "files": [
+        "components/data/action-node.tsx"
+      ],
+      "variants": [
+        "action",
+        "action-selected",
+        "condition",
+        "condition-selected",
+        "trigger",
+        "trigger-selected"
+      ],
+      "geometry": {
+        "width": 136,
+        "bodyHeight": 56,
+        "withPortsHeight": 61,
+        "padding": "12px 20px 12px 16px",
+        "gap": 8,
+        "textWidth": 72,
+        "icons": 20,
+        "markers": {
+          "action": "74 x 10",
+          "condition": "42 x 10"
+        }
+      },
+      "typography": [
+        "Aptos 14/20 400 title",
+        "Aptos 11/12 400 subtitle"
+      ],
+      "properties": [
+        "action -> kind + selected"
+      ],
+      "interaction": "Native selection and connection buttons; consuming canvas owns layout and connections."
+    },
+    {
+      "node": "294:2678",
+      "name": "Card",
+      "purpose": "Folder group or individual service navigation card; distinct from the generic UI Card primitive.",
+      "files": [
+        "components/data/catalogue-card.tsx"
+      ],
+      "variants": [
+        "folder",
+        "item"
+      ],
+      "geometry": {
+        "folder": "240 x 166",
+        "folderFrontHeight": 140,
+        "itemWidth": 420,
+        "itemReferenceHeight": 112,
+        "padding": 24,
+        "radius": 16,
+        "categoryGap": 8,
+        "icons": 16
+      },
+      "typography": [
+        "Aptos 12/16 600 category",
+        "Aptos 14/20 400 description",
+        "Aptos 14/20 700 item title"
+      ],
+      "properties": [
+        "style -> variant",
+        "featureGroup -> optional category"
+      ],
+      "interaction": "Native navigation/action button with caller-supplied click handler."
+    }
+  ],
+  "brands": [
+    {
+      "node": "49:4981",
+      "name": "EC_Light",
+      "mark": "ec-light",
+      "width": 400,
+      "height": 51.5846
+    },
+    {
+      "node": "49:4986",
+      "name": "EC_Dark",
+      "mark": "ec-dark",
+      "width": 400,
+      "height": 51.5846
+    },
+    {
+      "node": "267:2185",
+      "name": "snapp_logo",
+      "mark": "snapp-logo",
+      "width": 196.66,
+      "height": 50.4
+    },
+    {
+      "node": "279:2228",
+      "name": "snapp_symbol",
+      "mark": "snapp-symbol",
+      "width": 47.9643,
+      "height": 50.4043
+    }
+  ],
+  "assets": [
+    {
+      "path": "registry/radix-nova/assets/work/69e44.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgBug"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/dda9c.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgTask"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/f382f.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgItem"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/558f7.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgClock"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/d602c.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgNavigation"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/f51f0.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgBug1"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/c4431.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgClock1"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/198bd.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgNavigation1"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/28ae1.svg",
+      "sourceNode": "1:2164",
+      "sourceName": "imgClock2"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/66936.svg",
+      "sourceNode": "1:2289",
+      "sourceName": "imgClock"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/33d87.svg",
+      "sourceNode": "1:2304",
+      "sourceName": "imgFrame634106"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/6ce07.svg",
+      "sourceNode": "1:2304",
+      "sourceName": "imgClock"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/658d0.svg",
+      "sourceNode": "1:2304",
+      "sourceName": "imgFrame634107"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/f68ac.svg",
+      "sourceNode": "1:2304",
+      "sourceName": "imgFrame634108"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/4bb4a.svg",
+      "sourceNode": "1:3055",
+      "sourceName": "imgFlashlight"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/8b1d2.svg",
+      "sourceNode": "1:3055",
+      "sourceName": "imgDelimiter"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/234ca.svg",
+      "sourceNode": "1:3055",
+      "sourceName": "imgClipboardTask"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/18d12.svg",
+      "sourceNode": "1:3055",
+      "sourceName": "imgBug"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/a7955.svg",
+      "sourceNode": "1:3055",
+      "sourceName": "imgClock"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/e7672.svg",
+      "sourceNode": "1:3055",
+      "sourceName": "imgBook"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/489fc.svg",
+      "sourceNode": "13:960",
+      "sourceName": "imgTrophy"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/73dfa.svg",
+      "sourceNode": "49:4861",
+      "sourceName": "imgCheckmark"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/cfdce.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgDraggable"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/fe3f2.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgMore1"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/d6a3e.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgChevron"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/2c7aa.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgOrder"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/6210e.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgIcon"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/1fdac.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgMore"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/17bc7.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgChevron1"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/53a5b.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgChevron2"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/0879c.svg",
+      "sourceNode": "49:4890",
+      "sourceName": "imgChevron3"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/3add4.svg",
+      "sourceNode": "61:6351",
+      "sourceName": "imgCheckmark"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/32bdb.svg",
+      "sourceNode": "61:6351",
+      "sourceName": "imgErrorCircle"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/a6bf4.svg",
+      "sourceNode": "61:6351",
+      "sourceName": "imgWarning"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/ea056.svg",
+      "sourceNode": "219:2062",
+      "sourceName": "imgArrowSort"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/acc9b.svg",
+      "sourceNode": "219:2126",
+      "sourceName": "imgDocumentPerson"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/33162.svg",
+      "sourceNode": "219:2126",
+      "sourceName": "imgChevron"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/88fa1.svg",
+      "sourceNode": "219:2228",
+      "sourceName": "imgDocumentPerson"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/82d30.svg",
+      "sourceNode": "236:2502",
+      "sourceName": "imgFlash"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/eb3b4.svg",
+      "sourceNode": "236:2502",
+      "sourceName": "imgMarkers"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/dee39.svg",
+      "sourceNode": "236:2502",
+      "sourceName": "imgBranch"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/5fa13.svg",
+      "sourceNode": "236:2502",
+      "sourceName": "imgMarkers1"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/dc570.svg",
+      "sourceNode": "236:2502",
+      "sourceName": "imgFlag"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/b6fd8.svg",
+      "sourceNode": "294:2678",
+      "sourceName": "imgFolder"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/0dca3.svg",
+      "sourceNode": "294:2678",
+      "sourceName": "imgFolder1"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/31d84.svg",
+      "sourceNode": "294:2678",
+      "sourceName": "imgFiRrFolder"
+    },
+    {
+      "path": "registry/radix-nova/assets/work/dcef3.svg",
+      "sourceNode": "294:2678",
+      "sourceName": "imgFiRrDocument"
+    },
+    {
+      "path": "registry/radix-nova/assets/brand/2e5e5.svg",
+      "sourceNode": "49:4981",
+      "sourceName": "imgEcLight"
+    },
+    {
+      "path": "registry/radix-nova/assets/brand/f4c1f.svg",
+      "sourceNode": "49:4986",
+      "sourceName": "imgEcDark"
+    },
+    {
+      "path": "registry/radix-nova/assets/brand/f9e47.svg",
+      "sourceNode": "267:2185",
+      "sourceName": "imgSnappLogo"
+    },
+    {
+      "path": "registry/radix-nova/assets/brand/098c7.svg",
+      "sourceNode": "279:2228",
+      "sourceName": "imgSnappSymbol"
+    }
+  ],
+  "followup": [
+    "The final registry:verify gate passed after the last shared source change, including a fresh complete consumer install, strict types, production build and generated-file integrity. The work browser gate also passed with all corrections applied; see verification.json.",
+    "Publication and rollout use the registry-first engineering-hub process and remain separate from local candidate verification.",
+    "Intentional Figma overflow/instance overrides are recorded per family; do not silently label a constrained application variant as an exact reference reproduction."
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "source": "https://www.figma.com/design/YUYB5jtCxUwT8OefeLP9f7/SNAPP-Component-Library",
+  "inspectionDate": "2026-10-19",
+  "scope": "Read-only investigation of Pagination text advances and the approved Aptos Regular font; no font, global style or UI changes.",
+  "status": "Verified browser/font math; original Figma font binary and shaping identity remain unverified.",
+  "font": {
+    "registryPath": "registry/radix-nova/fonts/aptos/Aptos.ttf",
+    "manifestPath": "docs/figma-library/font-manifest.json",
+    "approvedSource": "User-supplied approved Microsoft Aptos Fonts package, Aptos.ttf",
+    "approvedSourceMatchesRegistryBytes": true,
+    "sha256": "01bbd2d3bd483045e1dbf4f106935cb86478b937f8d334258ad12eea60554a05",
+    "bytes": 220832,
+    "family": "Aptos",
+    "subfamily": "Regular",
+    "postScriptName": "Aptos",
+    "nameTableVersion": "Version 2.01;240513210638;O365",
+    "headFontRevision": 2.0099945068359375,
+    "unitsPerEm": 2048,
+    "weightClass": 400,
+    "widthClass": 5,
+    "vendor": "MS  ",
+    "relevantTables": [
+      "cmap",
+      "hmtx",
+      "GPOS",
+      "GSUB",
+      "kern",
+      "name",
+      "head",
+      "OS/2"
+    ],
+    "relevantFeatures": {
+      "GPOS": [
+        "kern",
+        "mark",
+        "mkmk"
+      ],
+      "GSUB": [
+        "liga",
+        "dlig",
+        "lnum",
+        "tnum",
+        "pnum",
+        "onum",
+        "ss01",
+        "ss02",
+        "ss03",
+        "ss04"
+      ]
+    },
+    "excludedFace": {
+      "source": "Supplied Aptos-Display.ttf",
+      "family": "Aptos Display",
+      "sha256": "049b18e4ca1780af39b00966491723565612eee9d18bc726f312b47372f58074",
+      "kernedWeekLabelAt14px": 59.7734375,
+      "conclusion": "The bundled face is Aptos Regular; the separate Display face is not the source of the browser's measured Week width."
+    }
+  },
+  "figmaMetadata": {
+    "method": "Read-only figma_use_figma calls using exact known TEXT node IDs and getStyledTextSegments; no Figma nodes or fonts were modified.",
+    "parentNode": "1:2655",
+    "commonSettings": {
+      "fontName": {
+        "family": "Aptos",
+        "style": "Regular"
+      },
+      "fontWeight": 400,
+      "fontSize": 14,
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 20
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "openTypeFeatures": {},
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "layoutSizingHorizontal": "HUG",
+      "hasMissingFont": true,
+      "textStyleId": "S:c50ccdb4bde046dbc5fbdee892ac1e419bddcfbe,"
+    },
+    "nodes": [
+      {
+        "id": "1:2662",
+        "characters": "Week 1 - 3",
+        "width": 63,
+        "height": 20
+      },
+      {
+        "id": "1:2665",
+        "characters": "Week 4 - 6",
+        "width": 63,
+        "height": 20
+      },
+      {
+        "id": "1:2668",
+        "characters": "Week 7 - 8",
+        "width": 63,
+        "height": 20
+      },
+      {
+        "id": "1:2673",
+        "characters": "Next",
+        "width": 28,
+        "height": 20
+      }
+    ],
+    "availableAptosFacesInToolEnvironment": [],
+    "interpretation": "The Figma tool environment has no available Aptos face and reports these existing text nodes as having a missing font. The recorded frame geometry is readable, but the tool cannot identify or reproduce the original author's Aptos binary/version or font shaping. This finding concerns the tool environment; it does not establish the font availability in the author's own Figma session.",
+    "featureLimit": "An empty openTypeFeatures map records no explicit feature overrides. It does not prove whether kerning was enabled or disabled by the original rendering environment."
+  },
+  "measurements": {
+    "method": "Parsed the approved and bundled TrueType cmap/hmtx/GPOS tables with Python standard-library struct/hashlib; independently compared the result with Chromium Canvas measureText using the loaded bundled face.",
+    "sizePx": 14,
+    "letterSpacingPx": 0,
+    "weekLabels": {
+      "sourceNodes": [
+        "1:2662",
+        "1:2665",
+        "1:2668"
+      ],
+      "strings": [
+        "Week 1 - 3",
+        "Week 4 - 6",
+        "Week 7 - 8"
+      ],
+      "unkernedAdvanceUnits": 9115,
+      "kerningPairs": [
+        {
+          "pair": "We",
+          "xAdvanceUnits": -51
+        }
+      ],
+      "kernedAdvanceUnits": 9064,
+      "unitsPerEm": 2048,
+      "unkernedWidthPx": 62.3095703125,
+      "kerningAdjustmentPx": -0.3486328125,
+      "kernedWidthPx": 61.9609375,
+      "chromiumCanvasAutoAndNormal": 61.9609375,
+      "chromiumCanvasKerningNone": 62.3095703125,
+      "chromiumDomWidth": 61.96875,
+      "figmaTextFrameWidth": 63,
+      "formula": "(9115 - 51) / 2048 * 14 = 61.9609375",
+      "ceilingOfKernedWidth": 62,
+      "ceilingOfUnkernedWidth": 63
+    },
+    "nextLabel": {
+      "sourceNode": "1:2673",
+      "text": "Next",
+      "unkernedAdvanceUnits": 4093,
+      "kerningPairs": [
+        {
+          "pair": "ex",
+          "xAdvanceUnits": -31
+        },
+        {
+          "pair": "xt",
+          "xAdvanceUnits": 5
+        }
+      ],
+      "kernedAdvanceUnits": 4067,
+      "unkernedWidthPx": 27.9794921875,
+      "kernedWidthPx": 27.8017578125,
+      "figmaTextFrameWidth": 28
+    }
+  },
+  "conclusions": [
+    {
+      "classification": "Verified",
+      "finding": "The browser's Week width is explained exactly by the approved Aptos Regular 2.01 advances and its We kerning pair; it is not evidence of fallback or an accidental Display face."
+    },
+    {
+      "classification": "Verified",
+      "finding": "Rounding the current kerned Week advance upward gives 62px, so a ceil-only explanation of Figma's 63px frame is incomplete."
+    },
+    {
+      "classification": "Inference",
+      "finding": "Disabling kerning and rounding upward is numerically compatible with the 63px frame, but the available Figma metadata does not establish that this was the intended setting."
+    },
+    {
+      "classification": "Open",
+      "finding": "The original Figma font binary/version and shaping behavior are unverified. Missing-font tool metadata and preserved text frames cannot settle their identity."
+    },
+    {
+      "classification": "Decision",
+      "finding": "Retain the approved font bytes and source typography settings. Do not add hardcoded label widths, substitute fonts, or change global kerning/letter spacing solely to force these unexplained intrinsic text-frame differences."
+    }
+  ],
+  "provenance": {
+    "fontFiles": "Registry-owned Aptos.ttf and the task-supplied approved Aptos.ttf were hashed independently; hashes and all relevant metrics matched.",
+    "fontParser": "Read-only temporary Python probe using only struct, json, hashlib and pathlib; no additional font packages installed.",
+    "browserProbe": "Independent Chromium Canvas probe on the production showcase, with document.fonts.ready awaited; auto/normal/none kerning measurements compared to table-derived values.",
+    "figmaProbe": "Read-only Figma Plugin API exact-node properties, text segments and listAvailableFontsAsync, with figma-use guidance loaded.",
+    "relatedEvidence": [
+      "docs/figma-library/font-manifest.json",
+      "docs/figma-library/navigation-audit.json",
+      "docs/figma-library/second-pass-work.json"
+    ],
+    "portability": "Repository paths are relative. The approved font package is identified logically rather than by a contributor's workstation directory."
+  },
+  "limitations": [
+    "No equality of Figma and Chromium raster pixels is claimed.",
+    "This investigation does not establish what font binary the original Figma author used.",
+    "No font, global CSS, component source, Figma document or deployment was modified for this investigation."
+  ],
+  "ownerClarification": {
+    "date": "2026-10-19",
+    "originalFigmaFontPackage": "The owner does not know which font package was used to author the Figma library.",
+    "decision": "Retain the supplied approved Aptos Regular 2.01. Do not guess at kerning or change global typography to force saved source widths."
+  }
+}

@@ -1,4 +1,5 @@
 import { execFile } from "node:child_process";
+import { createHash } from "node:crypto";
 import {
 	mkdtemp,
 	mkdir,
@@ -12,6 +13,7 @@ import path from "node:path";
 import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
 import { createServer } from "vite";
+import { checkInstalledPrefix } from "./check-install-prefix.mjs";
 
 const execFileAsync = promisify(execFile);
 const registryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -239,6 +241,7 @@ try {
 		[
 			shadcnCli,
 			"add",
+			"@snapp/snapp-component-library",
 			"@snapp/snapp-catalogue-core",
 			"@snapp/snapp-drag-feedback",
 			"@snapp/snapp-work-item-card",
@@ -276,6 +279,8 @@ try {
 		}
 	}
 
+	const unprefixedClasses = await checkInstalledPrefix(sourceRoot);
+	if (unprefixedClasses.length) throw new Error(`Installed utility classes lost their Tailwind prefix:\n${unprefixedClasses.join("\n")}`);
 	const indexCss = await readFile(path.join(sourceRoot, "index.css"), "utf8");
 	const themeImport = '@import "./styles/snapp-theme.css"';
 	if (!indexCss.includes(themeImport)) {
@@ -318,15 +323,12 @@ try {
 		path.join(sourceRoot, "styles", "snapp-fonts.css"),
 		"utf8",
 	);
-	for (const requiredSource of [
-		"https://experience.snappcabinets.com/snapp/assets/fonts/",
-		"https://fonts.gstatic.com/",
-		"../../node_modules/@fontsource/",
-	]) {
-		if (!fontCss.includes(requiredSource)) {
-			throw new Error(`Installed font CSS is missing ${requiredSource}`);
-		}
+	const installedFontHashes = new Set([...fontCss.matchAll(/data:font\/(?:ttf|woff2);base64,([A-Za-z0-9+/=]+)/g)].map(match => createHash("sha256").update(Buffer.from(match[1], "base64")).digest("hex")));
+	const installedFontManifest = JSON.parse(await readFile(path.join(registryRoot, "docs/figma-library/font-manifest.json"), "utf8"));
+	for (const face of installedFontManifest.faces) {
+		if (!installedFontHashes.has(face.sha256)) throw new Error(`Installed font CSS changed the exact bytes for ${face.family} ${face.weight}`);
 	}
+	if (/url\(\s*["']?(?:https?:|\.\.|\/)/i.test(fontCss)) throw new Error("Installed font CSS must be self-contained");
 
 	const utils = await readFile(path.join(sourceRoot, "lib", "utils.ts"), "utf8");
 	if (!utils.includes("extendTailwindMerge")) {
@@ -340,9 +342,9 @@ try {
 	for (const requiredComboboxClass of [
 		"font-snapp-body",
 		"shadow-snapp-flyout",
-		"p-1!",
-		"min-h-9!",
-		"py-2!",
+		"p-2!",
+		"min-h-7!",
+		"py-1!",
 		"pr-8!",
 		"pl-2!",
 		'aria-label="Toggle options"',
@@ -453,10 +455,13 @@ try {
 		"utf8",
 	);
 	for (const className of [
-		"ec:list-none",
 		"ec:m-0",
-		"ec:p-0",
-		"ec:bg-snapp-skeleton-soft",
+		"ec:rounded-full",
+		"ec:bg-snapp-surface-secondary",
+		"ec:px-4",
+		"ec:py-2",
+		"ec:font-bold",
+		"ec:text-snapp-text-brand",
 	]) {
 		if (!featureBreadcrumb.includes(className)) {
 			throw new Error(
@@ -523,7 +528,7 @@ try {
 	).join("\n");
 	const compactCss = bundledCss.replace(/\s+/g, "");
 	for (const contract of [
-		"--radius:var(--snapp-radius-m)",
+		"--radius:var(--snapp-radius-standard)",
 		"--background:var(--snapp-surface)",
 		"background-color:var(--popover)",
 		"box-sizing:border-box",
@@ -538,20 +543,33 @@ try {
 	const bundledFontFiles = distFiles.filter((fileName) =>
 		/\.(woff2?|ttf)$/i.test(fileName),
 	);
-	if (
-		bundledFontFiles.length !== 6 ||
-		bundledFontFiles.some((fileName) => !fileName.endsWith(".woff2"))
-	) {
-		throw new Error(
-			`Expected six bundled WOFF2 fallbacks, found: ${bundledFontFiles.join(", ")}`,
-		);
-	}
+	if (bundledFontFiles.length !== 0) throw new Error('Fonts must remain self-contained data sources, not external emitted files.');
+	const embeddedFontHashes = new Set([...bundledCss.matchAll(/data:font\/(?:ttf|woff2);base64,([A-Za-z0-9+/=]+)/g)].map(match => createHash('sha256').update(Buffer.from(match[1], 'base64')).digest('hex')));
+	const fontManifest = JSON.parse(await readFile(path.join(registryRoot, 'docs/figma-library/font-manifest.json'), 'utf8'));
+	for (const face of fontManifest.faces) if (!embeddedFontHashes.has(face.sha256)) throw new Error('Production CSS did not preserve the exact font bytes: ' + face.family + ' ' + face.weight);
 
-	console.log("Clean consumer install, type-check, and production build passed.");
+	const keyboard = await execFileAsync(
+		process.execPath,
+		[path.join(registryRoot, "scripts/verify-tabs-keyboard-browser.mjs"), fixtureRoot],
+		{
+			cwd: registryRoot,
+			timeout: 180_000,
+			maxBuffer: 4 * 1024 * 1024,
+			env: {
+				...process.env,
+				SNAPP_TABS_SOURCE: path.join(sourceRoot, "components/ui/tabs.tsx"),
+				SNAPP_TABS_QA_OUTPUT: path.join(registryRoot, "artifacts/figma-qa/installed-tabs-keyboard"),
+			},
+		},
+	);
+	console.log(keyboard.stdout.trim());
+	console.log("Clean consumer install, type-check, production build and Tabs keyboard checks passed.");
 } finally {
 	await server?.close();
 	const expectedPrefix = path.join(tmpdir(), "snapp-registry-smoke-");
-	if (fixtureRoot.startsWith(expectedPrefix)) {
+	if (process.env.SNAPP_KEEP_REGISTRY_FIXTURE === '1') {
+		console.log('SNAPP_REGISTRY_FIXTURE=' + fixtureRoot);
+	} else if (fixtureRoot.startsWith(expectedPrefix)) {
 		await rm(fixtureRoot, { recursive: true, force: true });
 	}
 }

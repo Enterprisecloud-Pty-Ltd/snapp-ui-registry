@@ -1,0 +1,239 @@
+{
+  "method": "Math.round each loaded-Aptos Canvas1024px glyph advance and pair delta separately, then scale to14/1024 and ceil. Read-only layout model; no rendering or source modification.",
+  "results": [
+    {
+      "text": "Week 1 - 3",
+      "singleAdvances1024": [
+        913.5,
+        539.5,
+        539.5,
+        498.5,
+        208,
+        547,
+        208,
+        348.5,
+        208,
+        547
+      ],
+      "pairDeltas1024": [
+        -25.5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole1024": 4532,
+      "pairModelUnquantized1024": 4532,
+      "pairModelAgreesWithWhole": true,
+      "quantized1024": 4535,
+      "quantized14": 62.001953125,
+      "quantizedHugCeil14": 63,
+      "browser14": 61.9609375,
+      "browserHugCeil14": 62
+    },
+    {
+      "text": "Week 4 - 6",
+      "singleAdvances1024": [
+        913.5,
+        539.5,
+        539.5,
+        498.5,
+        208,
+        547,
+        208,
+        348.5,
+        208,
+        547
+      ],
+      "pairDeltas1024": [
+        -25.5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole1024": 4532,
+      "pairModelUnquantized1024": 4532,
+      "pairModelAgreesWithWhole": true,
+      "quantized1024": 4535,
+      "quantized14": 62.001953125,
+      "quantizedHugCeil14": 63,
+      "browser14": 61.9609375,
+      "browserHugCeil14": 62
+    },
+    {
+      "text": "Week 7 - 8",
+      "singleAdvances1024": [
+        913.5,
+        539.5,
+        539.5,
+        498.5,
+        208,
+        547,
+        208,
+        348.5,
+        208,
+        547
+      ],
+      "pairDeltas1024": [
+        -25.5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole1024": 4532,
+      "pairModelUnquantized1024": 4532,
+      "pairModelAgreesWithWhole": true,
+      "quantized1024": 4535,
+      "quantized14": 62.001953125,
+      "quantizedHugCeil14": 63,
+      "browser14": 61.9609375,
+      "browserHugCeil14": 62
+    },
+    {
+      "text": "Next",
+      "singleAdvances1024": [
+        723,
+        539.5,
+        453,
+        331
+      ],
+      "pairDeltas1024": [
+        0,
+        -15.5,
+        2.5
+      ],
+      "whole1024": 2033.5,
+      "pairModelUnquantized1024": 2033.5,
+      "pairModelAgreesWithWhole": true,
+      "quantized1024": 2035,
+      "quantized14": 27.822265625,
+      "quantizedHugCeil14": 28,
+      "browser14": 27.8017578125,
+      "browserHugCeil14": 28
+    },
+    {
+      "text": "Item",
+      "singleAdvances1024": [
+        266.5,
+        331,
+        539.5,
+        873.5
+      ],
+      "pairDeltas1024": [
+        0,
+        -5,
+        0
+      ],
+      "whole1024": 2005.5,
+      "pairModelUnquantized1024": 2005.5,
+      "pairModelAgreesWithWhole": true,
+      "quantized1024": 2007,
+      "quantized14": 27.439453125,
+      "quantizedHugCeil14": 28,
+      "browser14": 27.4189453125,
+      "browserHugCeil14": 28
+    },
+    {
+      "text": "Alegra",
+      "singleAdvances1024": [
+        603.5,
+        266.5,
+        539.5,
+        496,
+        342.5,
+        544
+      ],
+      "pairDeltas1024": [
+        0,
+        0,
+        -4,
+        0,
+        -30.5
+      ],
+      "whole1024": 2757.5,
+      "pairModelUnquantized1024": 2757.5,
+      "pairModelAgreesWithWhole": true,
+      "quantized1024": 2760,
+      "quantized14": 37.734375,
+      "quantizedHugCeil14": 38,
+      "browser14": 37.7001953125,
+      "browserHugCeil14": 38
+    },
+    {
+      "text": "Button",
+      "singleAdvances1024": [
+        618.5,
+        572,
+        331,
+        331,
+        565,
+        564.5
+      ],
+      "pairDeltas1024": [
+        0,
+        -2.5,
+        0,
+        -5,
+        0
+      ],
+      "whole1024": 2974.5,
+      "pairModelUnquantized1024": 2974.5,
+      "pairModelAgreesWithWhole": true,
+      "quantized1024": 2976,
+      "quantized14": 40.6875,
+      "quantizedHugCeil14": 41,
+      "browser14": 40.6669921875,
+      "browserHugCeil14": 41
+    },
+    {
+      "text": "Button Text",
+      "singleAdvances1024": [
+        618.5,
+        572,
+        331,
+        331,
+        565,
+        564.5,
+        208,
+        490,
+        539.5,
+        453,
+        331
+      ],
+      "pairDeltas1024": [
+        0,
+        -2.5,
+        0,
+        -5,
+        0,
+        0,
+        0,
+        -82,
+        -15.5,
+        2.5
+      ],
+      "whole1024": 4901,
+      "pairModelUnquantized1024": 4901,
+      "pairModelAgreesWithWhole": true,
+      "quantized1024": 4904,
+      "quantized14": 67.046875,
+      "quantizedHugCeil14": 68,
+      "browser14": 67.005859375,
+      "browserHugCeil14": 68
+    }
+  ]
+}

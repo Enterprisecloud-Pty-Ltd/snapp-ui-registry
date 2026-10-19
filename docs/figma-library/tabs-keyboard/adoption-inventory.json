@@ -1,0 +1,331 @@
+{
+  "observedOn": "2026-10-19",
+  "scope": "Read-only audit. No repo changes, builds, registry installs, dependency installs, publication or deployment.",
+  "scan": {
+    "root": "workspace-root",
+    "exclusions": [
+      "node_modules",
+      "dist",
+      "build",
+      "public",
+      "obj",
+      "bin",
+      "out",
+      ".git",
+      "Depricated",
+      "not my snapps"
+    ],
+    "tabsDefinitions": 36,
+    "rootRepositoryTabsCopies": 19,
+    "candidateRepositoryTabsCopies": 17,
+    "featureImportFiles": 5,
+    "featureImportApplications": 2,
+    "limits": "Owned and candidate workspaces only; explicitly unowned and deprecated repositories remain excluded. Import and JSX scans found no extra barrel-only Tabs use."
+  },
+  "hosts": [
+    {
+      "repository": "cabinettool",
+      "role": "Authenticated standalone browser Shell",
+      "packageVersion": "0.1.0",
+      "registryAlias": "https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/refs/heads/main/public/r/{name}.json",
+      "runtimeContract": 32,
+      "fontRegistrationCapability": false,
+      "uiFoundationMarker": true,
+      "fullLibraryMarker": false,
+      "fontManifest": false,
+      "tabsSource": {
+        "path": "cabinettool/src/components/ui/tabs.tsx",
+        "sha256": "73588a8b83167342491ac1fbc8ef3c0921d274347aaaed3670613e0f255c6f08"
+      },
+      "featureTabsImports": [],
+      "lockedDependencies": {
+        "radixUi": "1.6.7",
+        "tabs": "1.1.21",
+        "rovingFocus": "1.1.19"
+      },
+      "loading": {
+        "primary": "Inject versioned index.js as a classic script, require its registered mount API, and load main.css in an owned open ShadowRoot.",
+        "primaryVerifiedFrom": "cabinettool/src/lib/snapp-runtime/snapp-host-runtime.ts",
+        "shadowRoot": true,
+        "entryIndexJs": true,
+        "fallback": "Product iframe via SnappFrame remains on native failure. Existing redesign-policy gap, outside this Tabs correction.",
+        "fallbackSource": "cabinettool/src/lib/snapp-runtime/SnappModuleHost.tsx"
+      }
+    },
+    {
+      "repository": "cabinettoolAnon",
+      "role": "Anonymous standalone browser Shell",
+      "packageVersion": "0.1.0",
+      "registryAlias": "https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/refs/heads/main/public/r/{name}.json",
+      "runtimeContract": 31,
+      "fontRegistrationCapability": false,
+      "uiFoundationMarker": true,
+      "fullLibraryMarker": false,
+      "fontManifest": false,
+      "tabsSource": {
+        "path": "cabinettoolAnon/src/components/ui/tabs.tsx",
+        "sha256": "3934d394c0c0cd9a483adb95849cc2cc391943f296f53552c78b7e739aeed666"
+      },
+      "featureTabsImports": [],
+      "lockedDependencies": {
+        "radixUi": "1.6.7",
+        "tabs": "1.1.21",
+        "rovingFocus": "1.1.19"
+      },
+      "loading": {
+        "primary": "Inject versioned index.js as a classic script, require its registered mount API, and load main.css in an owned open ShadowRoot.",
+        "primaryVerifiedFrom": "cabinettoolAnon/src/lib/snapp-runtime/snapp-host-runtime.ts",
+        "shadowRoot": true,
+        "entryIndexJs": true,
+        "fallback": "Product iframe via SnappFrame remains on native failure. Existing redesign-policy gap, outside this Tabs correction.",
+        "fallbackSource": "cabinettoolAnon/src/lib/snapp-runtime/SnappModuleHost.tsx"
+      }
+    },
+    {
+      "repository": "webresourceshellsnapp",
+      "role": "Dynamics HTML WebResourceShell",
+      "packageVersion": "0.1.0",
+      "registryAlias": "https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/refs/heads/main/public/r/{name}.json",
+      "runtimeContract": 32,
+      "fontRegistrationCapability": false,
+      "uiFoundationMarker": true,
+      "fullLibraryMarker": false,
+      "fontManifest": false,
+      "tabsSource": {
+        "path": "webresourceshellsnapp/src/components/ui/tabs.tsx",
+        "sha256": "73588a8b83167342491ac1fbc8ef3c0921d274347aaaed3670613e0f255c6f08"
+      },
+      "featureTabsImports": [],
+      "lockedDependencies": {
+        "radixUi": "1.6.7",
+        "tabs": "1.1.21",
+        "rovingFocus": "1.1.19"
+      },
+      "loading": {
+        "primary": "Inject versioned index.js as a classic script, require its registered mount API, and load main.css in an owned open ShadowRoot.",
+        "primaryVerifiedFrom": "webresourceshellsnapp/src/lib/snapp-runtime/snapp-host-runtime.ts",
+        "shadowRoot": true,
+        "entryIndexJs": true,
+        "fallback": "Legacy classic script/CSS inline ShadowRoot path; no product iframe in this adapter.",
+        "fallbackSource": "webresourceshellsnapp/src/lib/snapp-runtime/SnappModuleHost.tsx"
+      }
+    },
+    {
+      "repository": "pcfshellsnapp",
+      "role": "Inline PCFShell, direct React PCF wrapper",
+      "packageVersion": "0.1.0",
+      "registryAlias": "https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/refs/heads/main/public/r/{name}.json",
+      "runtimeContract": 32,
+      "fontRegistrationCapability": false,
+      "uiFoundationMarker": true,
+      "fullLibraryMarker": false,
+      "fontManifest": false,
+      "tabsSource": {
+        "path": "pcfshellsnapp/src/components/ui/tabs.tsx",
+        "sha256": "73588a8b83167342491ac1fbc8ef3c0921d274347aaaed3670613e0f255c6f08"
+      },
+      "featureTabsImports": [],
+      "lockedDependencies": {
+        "radixUi": "1.6.7",
+        "tabs": "1.1.21",
+        "rovingFocus": "1.1.19"
+      },
+      "loading": {
+        "primary": "Inject versioned index.js as a classic script, require its registered mount API, and load main.css in an owned open ShadowRoot.",
+        "primaryVerifiedFrom": "pcfshellsnapp/src/lib/snapp-runtime/snapp-host-runtime.ts",
+        "shadowRoot": true,
+        "entryIndexJs": true,
+        "fallback": "Legacy classic script/CSS inline ShadowRoot path; no product iframe in this adapter.",
+        "fallbackSource": "pcfshellsnapp/src/lib/snapp-runtime/SnappModuleHost.tsx"
+      },
+      "pcfWrapper": {
+        "entry": "pcfshellsnapp/pcf/pcfshellsnapp/index.ts",
+        "imports": "../../src/App",
+        "mount": "createRoot(container)",
+        "manifestVersion": "1.0.29"
+      }
+    },
+    {
+      "repository": "snappcabinet",
+      "role": "Nested authenticated Cabinet",
+      "packageVersion": "0.1.0",
+      "registryAlias": "https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/refs/heads/main/public/r/{name}.json",
+      "runtimeContract": 32,
+      "fontRegistrationCapability": false,
+      "uiFoundationMarker": true,
+      "fullLibraryMarker": false,
+      "fontManifest": false,
+      "tabsSource": {
+        "path": "snappcabinet/src/components/ui/tabs.tsx",
+        "sha256": "24edd2cc3db90f5e297a365beca5ba5b6b8c976fb3158fa2fcb5e6e600f10299"
+      },
+      "featureTabsImports": [],
+      "lockedDependencies": {
+        "radixUi": "1.6.7",
+        "tabs": "1.1.21",
+        "rovingFocus": "1.1.19"
+      },
+      "loading": {
+        "primary": "Inject versioned index.js as a classic script, require its registered mount API, and load main.css in an owned open ShadowRoot.",
+        "primaryVerifiedFrom": "snappcabinet/src/lib/snapp-runtime/snapp-host-runtime.ts",
+        "shadowRoot": true,
+        "entryIndexJs": true,
+        "fallback": "Product iframe via SnappFrame remains on native failure. Existing redesign-policy gap, outside this Tabs correction.",
+        "fallbackSource": "snappcabinet/src/lib/snapp-runtime/SnappModuleHost.tsx"
+      }
+    },
+    {
+      "repository": "snappcabinetAnon",
+      "role": "Nested anonymous Cabinet",
+      "packageVersion": "0.1.0",
+      "registryAlias": "https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/refs/heads/main/public/r/{name}.json",
+      "runtimeContract": 31,
+      "fontRegistrationCapability": false,
+      "uiFoundationMarker": true,
+      "fullLibraryMarker": false,
+      "fontManifest": false,
+      "tabsSource": {
+        "path": "snappcabinetAnon/src/components/ui/tabs.tsx",
+        "sha256": "45e73c4636e2c3b2072016e433fe655bab3c5ba63e7268d07882a516ee3b7067"
+      },
+      "featureTabsImports": [],
+      "lockedDependencies": {
+        "radixUi": "1.6.7",
+        "tabs": "1.1.21",
+        "rovingFocus": "1.1.19"
+      },
+      "loading": {
+        "primary": "Inject versioned index.js as a classic script, require its registered mount API, and load main.css in an owned open ShadowRoot.",
+        "primaryVerifiedFrom": "snappcabinetAnon/src/lib/snapp-runtime/snapp-host-runtime.ts",
+        "shadowRoot": true,
+        "entryIndexJs": true,
+        "fallback": "Product iframe via SnappFrame remains on native failure. Existing redesign-policy gap, outside this Tabs correction.",
+        "fallbackSource": "snappcabinetAnon/src/lib/snapp-runtime/SnappModuleHost.tsx"
+      }
+    }
+  ],
+  "activeTabsConsumers": [
+    {
+      "file": "snappcomponents/src/features/figma-showcase/examples/navigation/NavigationHeaderExamples.tsx",
+      "line": 1,
+      "text": "import { Tabs, TabsList, TabsTrigger } from \"@/components/ui/tabs\";"
+    },
+    {
+      "file": "snappcomponents/src/components/snapp/navigation/navigation-header.tsx",
+      "line": 8,
+      "text": "import { Tabs, TabsList, TabsTrigger } from \"@/components/ui/tabs\";"
+    },
+    {
+      "file": "snappcomponents/src/components/showcase/catalogue-pages.tsx",
+      "line": 310,
+      "text": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";"
+    },
+    {
+      "file": "snappcomponents/src/components/showcase/component-catalogue.tsx",
+      "line": 6,
+      "text": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";"
+    },
+    {
+      "file": "OtherSnapps/snapp.timesheets.webresource/src/components/TimesheetEntryDialog.tsx",
+      "line": 22,
+      "text": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";"
+    }
+  ],
+  "allCopiedTabsDefinitions": [
+    "myitemmanagersnapp/src/components/ui/tabs.tsx",
+    "webresourceshellsnapp/src/components/ui/tabs.tsx",
+    "blobstoragemanagersnapp/src/components/ui/tabs.tsx",
+    "snappcabinet/src/components/ui/tabs.tsx",
+    "sidenavbarsnapp/src/components/ui/tabs.tsx",
+    "searchsnapp/src/components/ui/tabs.tsx",
+    "pcfshellsnapp/src/components/ui/tabs.tsx",
+    "snappcomponents/src/components/ui/tabs.tsx",
+    "servicerequestsnapp/src/components/ui/tabs.tsx",
+    "managerequestssnapp/src/components/ui/tabs.tsx",
+    "formloadersnapp/src/components/ui/tabs.tsx",
+    "logrequestsnapp/src/components/ui/tabs.tsx",
+    "cabinettoolAnon/src/components/ui/tabs.tsx",
+    "loginsnapp/src/components/ui/tabs.tsx",
+    "conversationsnapp/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.timesheets.webresource/src/components/ui/tabs.tsx",
+    "itemformloadersnapp/src/components/ui/tabs.tsx",
+    "cabinettool/src/components/ui/tabs.tsx",
+    "snappcabinetAnon/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.tableconfig.webresource/src/components/ui/tabs.tsx",
+    "knowledgebasesnapp/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.groupfilter.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/catalogueexperiencedesigner/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.statusmapper.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.accessgroups.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.cataloguedesigner.webresource/cataloguedesigner/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.taskmanager.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.resourcerequest.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.pathmanager.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.cabinetmanager.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.formbuilder.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.alegra.webresource/apps/frontend/standalone-alegra/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.tagmanager.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.mylearning.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.knowledgeexperiencedesigner.webresource/src/components/ui/tabs.tsx",
+    "OtherSnapps/snapp.learning-goals.webresource/src/components/ui/tabs.tsx"
+  ],
+  "otherRovingFocus": {
+    "verifiedDependencies": [
+      {
+        "package": "Tabs1.1.21",
+        "rovingFocus": "1.1.19"
+      },
+      {
+        "package": "RadioGroup1.4.7",
+        "rovingFocus": "1.1.19"
+      },
+      {
+        "package": "ToggleGroup1.1.19",
+        "rovingFocus": "1.1.19"
+      },
+      {
+        "package": "Toolbar1.1.19",
+        "rovingFocus": "1.1.19"
+      }
+    ],
+    "focusComparatorSource": "snappcomponents/node_modules/@radix-ui/react-roving-focus/dist/index.mjs:227,231",
+    "behavior": "focusFirst compares document.activeElement; reuse identifies a possible validation surface, not proof that every primitive has the same user-visible defect.",
+    "navigationMenu": "Installed NavigationMenu1.2.22 does not depend on react-roving-focus.",
+    "actualFeatureImports": [
+      {
+        "file": "snappcomponents/src/components/snapp/navigation/editor-toolbar.tsx",
+        "line": 7,
+        "text": "import { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";"
+      },
+      {
+        "file": "snappcomponents/src/components/showcase/catalogue-pages.tsx",
+        "line": 260,
+        "text": "import { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";"
+      },
+      {
+        "file": "snappcomponents/src/components/showcase/catalogue-pages.tsx",
+        "line": 312,
+        "text": "import { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";"
+      }
+    ]
+  },
+  "propagation": {
+    "owner": "snapp-ui-registry/registry/radix-nova/ui/tabs.tsx and declared registry dependencies",
+    "mechanism": "Source-copy installation and consumer compilation; the @snapp alias is an installer source, not a runtime subscription. Hosts load each child bundle; a host update cannot replace its embedded child Tabs source.",
+    "immediate": [
+      "Complete canonical registry fix/regeneration, source tests, installed-output tests and native showcase Arrow/Home/End/manual/automatic/RTL/disabled/two-root/cleanup verification.",
+      "snappcomponents is the proven current consumer. Reinstall the verified local graph with its declared dependencies, rerun the runtime converter as required by its current delivery flow, rebuild and compare source/provenance/artifact identities.",
+      "TimesheetEntryDialog is an additional affected candidate consumer; record it for its owner rather than silently modifying that repository."
+    ],
+    "existingFocusedMaintenance": "A bounded primitive maintenance rollout can install the reviewed snapp-tabs item with --overwrite and its declared registry dependencies into an explicitly selected consumer. Preserve feature logic and independently verify the installed result; do not copy a helper manually or patch every shell.",
+    "newOrRedesigned": "Use the complete snapp-component-library overwrite workflow in the Engineering Hub, including markers, tokens, fonts, converter and host matrix. The six host owners currently show an older foundation-only baseline and need their planned adoption separately.",
+    "hostBoundary": "Tabs itself needs a registry/root-scoped DOM fix, not a new API transport or host runtime contract. Existing font-registration, runtime31/32 and Cabinet iframe fallback gaps are separate release/adoption concerns and must not be described as solved by this patch.",
+    "artifactIdentity": "Record installed Tabs/support-helper hashes and registry graph identity. All six host package versions are0.1.0 and existing foundation markers are booleans; neither proves the fix is installed. Native scripts are cached by entry URL, so verify a fresh page or correctly versioned asset URL when checking a rebuilt child.",
+    "publication": "Only publish/deploy/update version routes when separately authorized. No app fleet rebuild is implied by this audit."
+  },
+  "references": [
+    "snapp.engineeringhub/runbooks/ui-registry-rollout.md",
+    "snapp.engineeringhub/standards/runtime-and-hosting.md",
+    "snapp.engineeringhub/source-of-truth/repository-catalog.md"
+  ]
+}

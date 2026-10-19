@@ -1,0 +1,367 @@
+{
+  "collection": {
+    "id": "VariableCollectionId:13:853",
+    "name": "Typography",
+    "modes": [
+      {
+        "name": "Mode 1",
+        "modeId": "13:2"
+      }
+    ],
+    "defaultModeId": "13:2"
+  },
+  "variables": [
+    {
+      "id": "VariableID:13:854",
+      "name": "font/family/Title",
+      "type": "STRING",
+      "valuesByMode": {
+        "13:2": "Aptos"
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:855",
+      "name": "font/family/Body",
+      "type": "STRING",
+      "valuesByMode": {
+        "13:2": "Aptos"
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:856",
+      "name": "font/weight/Regular",
+      "type": "STRING",
+      "valuesByMode": {
+        "13:2": "Regular"
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:857",
+      "name": "font/weight/Bold",
+      "type": "STRING",
+      "valuesByMode": {
+        "13:2": "Bold"
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:858",
+      "name": "font/weight/Light",
+      "type": "STRING",
+      "valuesByMode": {
+        "13:2": "Light"
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:859",
+      "name": "font/weight/Extra Light",
+      "type": "STRING",
+      "valuesByMode": {
+        "13:2": "Extra Light"
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:860",
+      "name": "font/size/xxs",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 11
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:861",
+      "name": "font/size/xs",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 12
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:862",
+      "name": "font/size/sm",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 14
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:863",
+      "name": "font/size/md",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 16
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:864",
+      "name": "font/size/lg",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 18
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:865",
+      "name": "font/size/xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 20
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:866",
+      "name": "font/size/2xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 24
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:867",
+      "name": "font/size/3xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 32
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:868",
+      "name": "font/size/4xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 40
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:869",
+      "name": "font/size/5xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 48
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:870",
+      "name": "font/line-height/xxxs",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 12
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:871",
+      "name": "font/line-height/xxs",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 16
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:872",
+      "name": "font/line-height/xs",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 20
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:873",
+      "name": "font/line-height/sm",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 24
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:874",
+      "name": "font/line-height/md",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 28
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:875",
+      "name": "font/line-height/lg",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 32
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:876",
+      "name": "font/line-height/xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 40
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:13:877",
+      "name": "font/line-height/2xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 48
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:283:2314",
+      "name": "font/weight/Semi Bold",
+      "type": "STRING",
+      "valuesByMode": {
+        "13:2": "SemiBold"
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:292:2533",
+      "name": "font/size/6xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 64
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:292:2535",
+      "name": "font/line-height/3xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 56
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:292:2536",
+      "name": "font/line-height/4xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 64
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:292:2537",
+      "name": "font/line-height/5xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 72
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:292:2538",
+      "name": "font/line-height/6xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 80
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:293:2539",
+      "name": "font/size/7xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 80
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    },
+    {
+      "id": "VariableID:293:2540",
+      "name": "font/line-height/7xl",
+      "type": "FLOAT",
+      "valuesByMode": {
+        "13:2": 88
+      },
+      "scopes": [
+        "ALL_SCOPES"
+      ]
+    }
+  ]
+}

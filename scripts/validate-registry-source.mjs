@@ -1,7 +1,8 @@
 import { readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { extendTailwindMerge } from "tailwind-merge";
+import ts from "typescript";
 
 const registryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const registry = JSON.parse(
@@ -78,21 +79,10 @@ if (!utilityItem) {
 		path.join(registryRoot, utilityItem.files[0].path),
 		"utf8",
 	);
-	const arraySource = utilitySource.match(
-		/const snappTextSizes = \[([\s\S]*?)\] as const/,
-	)?.[1];
-	const textSizes = Array.from(
-		arraySource?.matchAll(/"([^"]+)"/g) ?? [],
-		(match) => match[1],
-	);
-	const twMerge = extendTailwindMerge({
-		extend: {
-			classGroups: {
-				"font-size": [{ text: textSizes }],
-			},
-		},
-	});
-	const merged = twMerge(
+	let executable = ts.transpileModule(utilitySource, {compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+	for (const dependency of ['clsx','tailwind-merge']) executable = executable.replaceAll(`from "${dependency}"`, `from ${JSON.stringify(import.meta.resolve(dependency))}`);
+	const {cn} = await import('data:text/javascript;base64,' + Buffer.from(executable).toString('base64'));
+	const merged = cn(
 		"text-snapp-xs leading-snapp-xxs text-snapp-text-secondary",
 	);
 	if (
@@ -100,6 +90,10 @@ if (!utilityItem) {
 		"text-snapp-xs leading-snapp-xxs text-snapp-text-secondary"
 	) {
 		errors.push(`snapp-utils typography merge failed: ${merged}`);
+	}
+	for (const prefix of ['', 'ec:']) {
+		if (cn(prefix+'leading-snapp-xxs', prefix+'leading-[normal]') !== prefix+'leading-[normal]') errors.push('SNAPP line-height must yield to a later explicit normal line-height');
+		if (cn(prefix+'leading-5', prefix+'leading-snapp-xs') !== prefix+'leading-snapp-xs') errors.push('SNAPP line-height must replace an earlier scale line-height');
 	}
 }
 
@@ -186,7 +180,7 @@ if (!themeFile) {
 		'@custom-variant data-horizontal (&[data-orientation="horizontal"]);',
 		'@custom-variant data-vertical (&[data-orientation="vertical"]);',
 		"--radius-snapp-action-menu: 0.375rem;",
-		"--radius: var(--snapp-radius-m);",
+		"--radius: var(--snapp-radius-standard);",
 		"--background: var(--snapp-surface);",
 		"--border: var(--snapp-border-primary);",
 		"box-sizing: border-box;",
@@ -208,17 +202,43 @@ if (!fontFile) {
 		path.join(registryRoot, fontFile.path),
 		"utf8",
 	);
-	for (const requiredSource of [
-		"https://experience.snappcabinets.com/snapp/assets/fonts/",
-		"https://fonts.gstatic.com/",
-		"../../node_modules/@fontsource/",
-	]) {
-		if (!fontSource.includes(requiredSource)) {
-			errors.push(`snapp-fonts.css is missing ${requiredSource}`);
+	const manifest = JSON.parse(await readFile(path.join(registryRoot, "docs/figma-library/font-manifest.json"), "utf8"));
+	const embeddedFaces = new Map();
+	for (const match of fontSource.matchAll(/@font-face\s*\{([\s\S]*?)\}/g)) {
+		const body = match[1];
+		const family = body.match(/font-family:\s*["']([^"']+)["']/)?.[1];
+		const weight = Number(body.match(/font-weight:\s*(\d+)/)?.[1]);
+		const style = body.match(/font-style:\s*([^;\s]+)/)?.[1];
+		const source = body.match(/data:font\/(ttf|woff2);base64,([A-Za-z0-9+/=]+)/);
+		if (!family || !weight || style !== "normal" || !source) {
+			errors.push("snapp-fonts.css contains an incomplete or non-self-contained font face");
+			continue;
 		}
+		const key = `${family}/${weight}/${style}`;
+		if (embeddedFaces.has(key)) errors.push(`snapp-fonts.css contains duplicate face ${key}`);
+		const bytes = Buffer.from(source[2], "base64");
+		embeddedFaces.set(key, { bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex") });
 	}
-	if (fontSource.includes(".woff)") || fontSource.includes(".ttf")) {
-		errors.push("snapp-fonts.css must only use WOFF2 font sources");
+	if (embeddedFaces.size !== manifest.faces.length) errors.push("snapp-fonts.css face count differs from the source font manifest");
+	for (const face of manifest.faces) {
+		const key = `${face.family}/${face.weight}/${face.style}`;
+		const embedded = embeddedFaces.get(key);
+		if (!embedded || embedded.bytes !== face.bytes || embedded.sha256 !== face.sha256) errors.push(`snapp-fonts.css does not preserve the exact font bytes for ${key}`);
+		const sourcePath = path.resolve(registryRoot, face.source);
+		if (!sourcePath.startsWith(`${registryRoot}${path.sep}`)) {
+			errors.push(`Font manifest source escapes the registry: ${face.source}`);
+			continue;
+		}
+		const bytes = await readFile(sourcePath);
+		if (bytes.length !== face.bytes || createHash("sha256").update(bytes).digest("hex") !== face.sha256) errors.push(`Font manifest source hash mismatch: ${face.source}`);
+	}
+	for (const required of ["Aptos/300/normal", "Aptos/400/normal", "Aptos/600/normal", "Aptos/700/normal", "Inter/400/normal", "Inter/500/normal", "IBM Plex Sans/400/normal", "IBM Plex Sans/700/normal"]) {
+		if (!embeddedFaces.has(required)) errors.push(`snapp-fonts.css is missing required face ${required}`);
+	}
+	if (/url\(\s*["']?(?:https?:|\.\.|\/)/i.test(fontSource)) errors.push("snapp-fonts.css must not depend on remote or filesystem font URLs");
+	for (const target of ["src/styles/licenses/inter-LICENSE.txt", "src/styles/licenses/ibm-plex-sans-LICENSE.txt", "src/styles/licenses/judson-LICENSE.txt", "src/styles/licenses/Microsoft Aptos Fonts EULA.rtf", "src/styles/licenses/README.md"]) {
+		const license = themeItem.files.find(file => file.target === target);
+		if (!license || !(await readFile(path.join(registryRoot, license.path))).length) errors.push(`snapp-theme must retain the nonempty font license ${target}`);
 	}
 }
 
@@ -249,7 +269,12 @@ if (filterControlsItem) {
 		"data-snapp-filter-interaction",
 		"event.composedPath()",
 		"shadow-snapp-flyout",
-		"bg-snapp-colour-grey-100",
+		"bg-snapp-surface-secondary",
+		"w-91",
+		"h-7",
+		// The 1px native stroke participates in Figma's 12px/8px outer insets.
+		"px-2.75 py-1.75",
+		"font-sans text-sm leading-5 font-normal",
 		"h-9",
 	]) {
 		if (!filterControlsSource.includes(contract)) {
@@ -285,13 +310,13 @@ if (comboboxItem) {
 		"trailingIcon?: React.ReactNode",
 		"combobox-trailing-icon",
 		'positionMethod={positionMethod ?? "fixed"}',
-		"border-snapp-card-border!",
+		"border-snapp-border-primary!",
 		"bg-popover!",
 		"text-popover-foreground!",
 		"shadow-snapp-flyout!",
-		"p-1!",
-		"min-h-9!",
-		"py-2!",
+		"p-2!",
+		"min-h-7!",
+		"py-1!",
 		"pl-2!",
 		"pr-8!",
 	]) {
@@ -346,9 +371,13 @@ if (buttonItem) {
 		'"form-primary"',
 		'"form-secondary"',
 		'"form-destructive"',
-		"bg-snapp-button-primary",
-		"bg-snapp-danger",
-		"hover:brightness-90",
+		"bg-snapp-surface-brand",
+		"bg-snapp-surface-red",
+		"hover:bg-[#43576c]",
+		"hover:bg-[#971b13]",
+		"active:bg-[#7a150f]",
+		"h-11 gap-2.5 px-6 py-3",
+		"text-sm leading-5 font-normal",
 	]) {
 		if (!buttonSource.includes(contract)) {
 			errors.push(`snapp-button modal actions are missing ${contract}`);
@@ -358,11 +387,9 @@ if (buttonItem) {
 		"overflow:",
 		"border-0 bg-transparent",
 		"text-snapp-icon-primary",
-		"hover:bg-snapp-grey-900/5",
-		"hover:text-snapp-icon-primary",
-		"aria-expanded:bg-snapp-grey-900/5",
-		"aria-expanded:text-snapp-icon-primary",
-		"h-5 w-5.5 rounded-sm px-0.75 py-0.5",
+		"hover:bg-snapp-surface-secondary",
+		"focus-visible:ring-snapp-border-highlight",
+		"h-5 w-5.5 rounded-sm p-0",
 		"[&_svg:not([class*='size-'])]:size-4",
 	]) {
 		if (!buttonSource.includes(contract)) {
@@ -400,10 +427,10 @@ if (featureBreadcrumbItem) {
 		"utf8",
 	);
 	for (const className of [
-		"list-none",
 		"m-0",
-		"p-0",
-		"bg-snapp-skeleton-soft",
+		"rounded-full bg-snapp-surface-secondary px-4 py-2",
+		"font-sans text-sm leading-5 font-normal",
+		"font-bold text-snapp-text-brand",
 	]) {
 		if (!featureBreadcrumbSource.includes(className)) {
 			errors.push(`snapp-feature-breadcrumb is missing ${className}`);
@@ -455,17 +482,18 @@ for (const menuItemName of [
 	);
 	for (const className of [
 		"w-52 min-w-52",
-		"w-29.5 min-w-29.5",
 		"gap-2",
-		"gap-3",
-		"p-3",
-		"h-5.5",
-		"h-4",
-		"px-2 py-0.5",
-		"px-0 py-0",
+		"gap-1",
+		"p-2",
+		"h-7",
+		"h-6",
+		"px-2 py-1",
+		"px-1 py-0.5",
 		'"quick-actions-compact"',
 		"shadow-snapp-flyout",
-		"rounded-snapp-action-menu",
+		"rounded-lg",
+		"border-snapp-border-primary",
+		"font-sans text-sm leading-5 font-normal",
 		"cursor-pointer",
 		"usePortalContainer",
 	]) {

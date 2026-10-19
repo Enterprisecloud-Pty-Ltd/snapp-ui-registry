@@ -1,0 +1,1407 @@
+{
+  "date": "2026-10-19",
+  "scope": "Independent read-only Bold/SemiBold/hidden-Light source verification; original fonts and Figma unchanged.",
+  "sourceFileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "sourceEvidence": "snapp-nonregular-quantization-source-v2.json",
+  "sourceEvidenceSha256": "001a38f2adb6fbba694fd3452216235ea2af33d911ea9b5cfb07d7dd5aee3991",
+  "formula": "q(u)=2*floor(u/2+.5), independently applied to each hmtx advance and each GPOS pair adjustment before scaling; glyph outlines unchanged.",
+  "summary": {
+    "sourceTextNodes": 4,
+    "visibleExportedTextNodes": 3,
+    "visibleInkBoundsAllExact": true,
+    "sourceHugFramesCompared": 2,
+    "svgContourStarts": 46,
+    "svgCoordinates": 92,
+    "allSvgStartsMatchExportPrecision": true,
+    "maxSvgCoordinateErrorPx": 0.00004531249999928377
+  },
+  "rows": [
+    {
+      "id": "13:893",
+      "text": "Heading Text",
+      "style": "Bold",
+      "fontSize": 18,
+      "fontSha256": "e59d983f8752146b8d02df5cad8f545ce677ef71dbe113afa3b395a9088c7f53",
+      "sourceHug": false,
+      "sourceFrameWidth": 648,
+      "sourceRenderBounds": {
+        "x": 2604.4150390625,
+        "y": -2205.970703125,
+        "width": 102.6123046875,
+        "height": 15.2841796875
+      },
+      "rawAdvance": 104.5458984375,
+      "rawHugCeil": 105,
+      "predicted": {
+        "advance": 104.607421875,
+        "hugCeil": 105,
+        "inkLeft": 1.4150390625,
+        "inkWidth": 102.6123046875,
+        "inkHeight": 15.2841796875
+      },
+      "matches": {
+        "inkLeft": true,
+        "inkWidth": true,
+        "inkHeight": true,
+        "hugFrame": null
+      },
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "H",
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0,
+          "hmtxUnits": 1493,
+          "quantizedHmtxUnits": 1494,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 1,
+          "character": "e",
+          "rawOriginUnits": 1493,
+          "quantizedOriginUnits": 1494,
+          "hmtxUnits": 1139,
+          "quantizedHmtxUnits": 1140,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 2,
+          "character": "a",
+          "rawOriginUnits": 2632,
+          "quantizedOriginUnits": 2634,
+          "hmtxUnits": 1130,
+          "quantizedHmtxUnits": 1130,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 3,
+          "character": "d",
+          "rawOriginUnits": 3762,
+          "quantizedOriginUnits": 3764,
+          "hmtxUnits": 1200,
+          "quantizedHmtxUnits": 1200,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 4,
+          "character": "i",
+          "rawOriginUnits": 4962,
+          "quantizedOriginUnits": 4964,
+          "hmtxUnits": 549,
+          "quantizedHmtxUnits": 550,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 5,
+          "character": "n",
+          "rawOriginUnits": 5511,
+          "quantizedOriginUnits": 5514,
+          "hmtxUnits": 1186,
+          "quantizedHmtxUnits": 1186,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 6,
+          "character": "g",
+          "rawOriginUnits": 6697,
+          "quantizedOriginUnits": 6700,
+          "hmtxUnits": 1047,
+          "quantizedHmtxUnits": 1048,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 7,
+          "character": " ",
+          "rawOriginUnits": 7744,
+          "quantizedOriginUnits": 7748,
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 8,
+          "character": "T",
+          "rawOriginUnits": 8160,
+          "quantizedOriginUnits": 8164,
+          "hmtxUnits": 1035,
+          "quantizedHmtxUnits": 1036,
+          "gposAfterUnits": -164,
+          "quantizedGposAfterUnits": -164
+        },
+        {
+          "index": 9,
+          "character": "e",
+          "rawOriginUnits": 9031,
+          "quantizedOriginUnits": 9036,
+          "hmtxUnits": 1139,
+          "quantizedHmtxUnits": 1140,
+          "gposAfterUnits": -31,
+          "quantizedGposAfterUnits": -30
+        },
+        {
+          "index": 10,
+          "character": "x",
+          "rawOriginUnits": 10139,
+          "quantizedOriginUnits": 10146,
+          "hmtxUnits": 1014,
+          "quantizedHmtxUnits": 1014,
+          "gposAfterUnits": 14,
+          "quantizedGposAfterUnits": 14
+        },
+        {
+          "index": 11,
+          "character": "t",
+          "rawOriginUnits": 11167,
+          "quantizedOriginUnits": 11174,
+          "hmtxUnits": 728,
+          "quantizedHmtxUnits": 728,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        }
+      ],
+      "svgContourChecks": [
+        {
+          "characterIndex": 0,
+          "character": "H",
+          "contourIndex": 0,
+          "sourceM": [
+            0,
+            11.9707
+          ],
+          "predictedM": [
+            0,
+            11.970703125
+          ],
+          "absoluteErrorPx": [
+            0,
+            0.000003124999999215561
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "e",
+          "contourIndex": 0,
+          "sourceM": [
+            16.9102,
+            12.1289
+          ],
+          "predictedM": [
+            16.91015625,
+            12.12890625
+          ],
+          "absoluteErrorPx": [
+            0.00004374999999967599,
+            0.0000062500000002074785
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "e",
+          "contourIndex": 1,
+          "sourceM": [
+            14.8799,
+            6.66211
+          ],
+          "predictedM": [
+            14.8798828125,
+            6.662109375
+          ],
+          "absoluteErrorPx": [
+            0.000017187499999238298,
+            6.250000001983835e-7
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "a",
+          "contourIndex": 0,
+          "sourceM": [
+            25.3213,
+            12.1201
+          ],
+          "predictedM": [
+            25.3212890625,
+            12.1201171875
+          ],
+          "absoluteErrorPx": [
+            0.000010937500000807177,
+            0.000017187499999238298
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "a",
+          "contourIndex": 1,
+          "sourceM": [
+            26.0859,
+            10.5205
+          ],
+          "predictedM": [
+            26.0859375,
+            10.5205078125
+          ],
+          "absoluteErrorPx": [
+            0.00003750000000124487,
+            0.000007812499999815259
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "d",
+          "contourIndex": 0,
+          "sourceM": [
+            35.8682,
+            12.1201
+          ],
+          "predictedM": [
+            35.8681640625,
+            12.1201171875
+          ],
+          "absoluteErrorPx": [
+            0.00003593750000163709,
+            0.000017187499999238298
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "d",
+          "contourIndex": 1,
+          "sourceM": [
+            36.5537,
+            10.3447
+          ],
+          "predictedM": [
+            36.5537109375,
+            10.3447265625
+          ],
+          "absoluteErrorPx": [
+            0.000010937500000807177,
+            0.000026562500000437694
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 4,
+          "character": "i",
+          "contourIndex": 0,
+          "sourceM": [
+            43.4619,
+            11.9707
+          ],
+          "predictedM": [
+            43.4619140625,
+            11.970703125
+          ],
+          "absoluteErrorPx": [
+            0.000014062500000022737,
+            0.000003124999999215561
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 4,
+          "character": "i",
+          "contourIndex": 1,
+          "sourceM": [
+            44.6309,
+            2.26758
+          ],
+          "predictedM": [
+            44.630859375,
+            2.267578125
+          ],
+          "absoluteErrorPx": [
+            0.00004062499999690772,
+            0.0000018750000001510614
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 5,
+          "character": "n",
+          "contourIndex": 0,
+          "sourceM": [
+            48.2959,
+            11.9707
+          ],
+          "predictedM": [
+            48.2958984375,
+            11.970703125
+          ],
+          "absoluteErrorPx": [
+            0.000001562500003160494,
+            0.000003124999999215561
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 6,
+          "character": "g",
+          "contourIndex": 0,
+          "sourceM": [
+            62.0947,
+            15.2842
+          ],
+          "predictedM": [
+            62.0947265625,
+            15.2841796875
+          ],
+          "absoluteErrorPx": [
+            0.00002656249999688498,
+            0.000020312500000230216
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 6,
+          "character": "g",
+          "contourIndex": 1,
+          "sourceM": [
+            62.0596,
+            13.8252
+          ],
+          "predictedM": [
+            62.0595703125,
+            13.8251953125
+          ],
+          "absoluteErrorPx": [
+            0.00002968750000320597,
+            0.000004687500000599698
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 6,
+          "character": "g",
+          "contourIndex": 2,
+          "sourceM": [
+            60.8818,
+            11.7773
+          ],
+          "predictedM": [
+            60.8818359375,
+            11.77734375
+          ],
+          "absoluteErrorPx": [
+            0.00003593750000163709,
+            0.00004374999999967599
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 6,
+          "character": "g",
+          "contourIndex": 3,
+          "sourceM": [
+            61.9365,
+            9.2373
+          ],
+          "predictedM": [
+            61.9365234375,
+            9.2373046875
+          ],
+          "absoluteErrorPx": [
+            0.00002343749999766942,
+            0.000004687500000599698
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 6,
+          "character": "g",
+          "contourIndex": 4,
+          "sourceM": [
+            61.9365,
+            7.83984
+          ],
+          "predictedM": [
+            61.9365234375,
+            7.83984375
+          ],
+          "absoluteErrorPx": [
+            0.00002343749999766942,
+            0.0000037500000003021228
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 6,
+          "character": "g",
+          "contourIndex": 5,
+          "sourceM": [
+            64.3887,
+            4.58789
+          ],
+          "predictedM": [
+            64.388671875,
+            4.587890625
+          ],
+          "absoluteErrorPx": [
+            0.000028125000000045475,
+            6.250000001983835e-7
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 8,
+          "character": "T",
+          "contourIndex": 0,
+          "sourceM": [
+            73.6611,
+            11.9707
+          ],
+          "predictedM": [
+            73.6611328125,
+            11.970703125
+          ],
+          "absoluteErrorPx": [
+            0.0000328124999953161,
+            0.000003124999999215561
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 9,
+          "character": "e",
+          "contourIndex": 0,
+          "sourceM": [
+            83.1973,
+            12.1289
+          ],
+          "predictedM": [
+            83.197265625,
+            12.12890625
+          ],
+          "absoluteErrorPx": [
+            0.000034374999998476596,
+            0.0000062500000002074785
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 9,
+          "character": "e",
+          "contourIndex": 1,
+          "sourceM": [
+            81.167,
+            6.66211
+          ],
+          "predictedM": [
+            81.1669921875,
+            6.662109375
+          ],
+          "absoluteErrorPx": [
+            0.000007812500001591616,
+            6.250000001983835e-7
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 10,
+          "character": "x",
+          "contourIndex": 0,
+          "sourceM": [
+            87.7852,
+            11.9707
+          ],
+          "predictedM": [
+            87.78515625,
+            11.970703125
+          ],
+          "absoluteErrorPx": [
+            0.000043750000003228706,
+            0.000003124999999215561
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 10,
+          "character": "x",
+          "contourIndex": 1,
+          "sourceM": [
+            94.1572,
+            11.9707
+          ],
+          "predictedM": [
+            94.1572265625,
+            11.970703125
+          ],
+          "absoluteErrorPx": [
+            0.00002656249999688498,
+            0.000003124999999215561
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 11,
+          "character": "t",
+          "contourIndex": 0,
+          "sourceM": [
+            101.707,
+            11.9707
+          ],
+          "predictedM": [
+            101.70703125,
+            11.970703125
+          ],
+          "absoluteErrorPx": [
+            0.00003125000000636646,
+            0.000003124999999215561
+          ],
+          "matchesExportPrecision": true
+        }
+      ],
+      "exclusion": null
+    },
+    {
+      "id": "294:2682",
+      "text": "FOLDER GROUP",
+      "style": "SemiBold",
+      "fontSize": 12,
+      "fontSha256": "b69e74cd43331c68cc8a4e82acc70dc5fe183524fe6e28d0da5e209b0ccd9f3d",
+      "sourceHug": true,
+      "sourceFrameWidth": 87,
+      "sourceRenderBounds": {
+        "x": -2208.009765625,
+        "y": 629.0078125,
+        "width": 84.78515625,
+        "height": 8.09765625
+      },
+      "rawAdvance": 86.162109375,
+      "rawHugCeil": 87,
+      "predicted": {
+        "advance": 86.21484375,
+        "hugCeil": 87,
+        "inkLeft": 0.990234375,
+        "inkWidth": 84.78515625,
+        "inkHeight": 8.09765625
+      },
+      "matches": {
+        "inkLeft": true,
+        "inkWidth": true,
+        "inkHeight": true,
+        "hugFrame": true
+      },
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "F",
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0,
+          "hmtxUnits": 1086,
+          "quantizedHmtxUnits": 1086,
+          "gposAfterUnits": -10,
+          "quantizedGposAfterUnits": -10
+        },
+        {
+          "index": 1,
+          "character": "O",
+          "rawOriginUnits": 1076,
+          "quantizedOriginUnits": 1076,
+          "hmtxUnits": 1505,
+          "quantizedHmtxUnits": 1506,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 2,
+          "character": "L",
+          "rawOriginUnits": 2581,
+          "quantizedOriginUnits": 2582,
+          "hmtxUnits": 1035,
+          "quantizedHmtxUnits": 1036,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 3,
+          "character": "D",
+          "rawOriginUnits": 3616,
+          "quantizedOriginUnits": 3618,
+          "hmtxUnits": 1426,
+          "quantizedHmtxUnits": 1426,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 4,
+          "character": "E",
+          "rawOriginUnits": 5042,
+          "quantizedOriginUnits": 5044,
+          "hmtxUnits": 1157,
+          "quantizedHmtxUnits": 1158,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 5,
+          "character": "R",
+          "rawOriginUnits": 6199,
+          "quantizedOriginUnits": 6202,
+          "hmtxUnits": 1269,
+          "quantizedHmtxUnits": 1270,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 6,
+          "character": " ",
+          "rawOriginUnits": 7468,
+          "quantizedOriginUnits": 7472,
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 7,
+          "character": "G",
+          "rawOriginUnits": 7884,
+          "quantizedOriginUnits": 7888,
+          "hmtxUnits": 1461,
+          "quantizedHmtxUnits": 1462,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 8,
+          "character": "R",
+          "rawOriginUnits": 9345,
+          "quantizedOriginUnits": 9350,
+          "hmtxUnits": 1269,
+          "quantizedHmtxUnits": 1270,
+          "gposAfterUnits": -30,
+          "quantizedGposAfterUnits": -30
+        },
+        {
+          "index": 9,
+          "character": "O",
+          "rawOriginUnits": 10584,
+          "quantizedOriginUnits": 10590,
+          "hmtxUnits": 1505,
+          "quantizedHmtxUnits": 1506,
+          "gposAfterUnits": -5,
+          "quantizedGposAfterUnits": -4
+        },
+        {
+          "index": 10,
+          "character": "U",
+          "rawOriginUnits": 12084,
+          "quantizedOriginUnits": 12092,
+          "hmtxUnits": 1410,
+          "quantizedHmtxUnits": 1410,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 11,
+          "character": "P",
+          "rawOriginUnits": 13494,
+          "quantizedOriginUnits": 13502,
+          "hmtxUnits": 1211,
+          "quantizedHmtxUnits": 1212,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        }
+      ],
+      "svgContourChecks": [
+        {
+          "characterIndex": 0,
+          "character": "F",
+          "contourIndex": 0,
+          "sourceM": [
+            0,
+            7.99219
+          ],
+          "predictedM": [
+            0,
+            7.9921875
+          ],
+          "absoluteErrorPx": [
+            0,
+            0.0000024999999999053557
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "O",
+          "contourIndex": 0,
+          "sourceM": [
+            9.72656,
+            8.09766
+          ],
+          "predictedM": [
+            9.7265625,
+            8.09765625
+          ],
+          "absoluteErrorPx": [
+            0.000002500000000793534,
+            0.0000037499999994139444
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "O",
+          "contourIndex": 1,
+          "sourceM": [
+            9.72656,
+            6.98438
+          ],
+          "predictedM": [
+            9.7265625,
+            6.984375
+          ],
+          "absoluteErrorPx": [
+            0.000002500000000793534,
+            0.000004999999999810711
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "L",
+          "contourIndex": 0,
+          "sourceM": [
+            15.1289,
+            7.99219
+          ],
+          "predictedM": [
+            15.12890625,
+            7.9921875
+          ],
+          "absoluteErrorPx": [
+            0.0000062500000002074785,
+            0.0000024999999999053557
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "D",
+          "contourIndex": 0,
+          "sourceM": [
+            21.1992,
+            7.99219
+          ],
+          "predictedM": [
+            21.19921875,
+            7.9921875
+          ],
+          "absoluteErrorPx": [
+            0.00001874999999884608,
+            0.0000024999999999053557
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "D",
+          "contourIndex": 1,
+          "sourceM": [
+            22.5469,
+            6.86133
+          ],
+          "predictedM": [
+            22.546875,
+            6.861328125
+          ],
+          "absoluteErrorPx": [
+            0.000025000000000829914,
+            0.0000018749999997069722
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 4,
+          "character": "E",
+          "contourIndex": 0,
+          "sourceM": [
+            29.5547,
+            7.99219
+          ],
+          "predictedM": [
+            29.5546875,
+            7.9921875
+          ],
+          "absoluteErrorPx": [
+            0.000012500000000414957,
+            0.0000024999999999053557
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 5,
+          "character": "R",
+          "contourIndex": 0,
+          "sourceM": [
+            36.3398,
+            7.99219
+          ],
+          "predictedM": [
+            36.33984375,
+            7.9921875
+          ],
+          "absoluteErrorPx": [
+            0.000043750000003228706,
+            0.0000024999999999053557
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 5,
+          "character": "R",
+          "contourIndex": 1,
+          "sourceM": [
+            37.6875,
+            3.69727
+          ],
+          "predictedM": [
+            37.6875,
+            3.697265625
+          ],
+          "absoluteErrorPx": [
+            0,
+            0.000004375000000056417
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 7,
+          "character": "G",
+          "contourIndex": 0,
+          "sourceM": [
+            49.6641,
+            8.09766
+          ],
+          "predictedM": [
+            49.6640625,
+            8.09765625
+          ],
+          "absoluteErrorPx": [
+            0.00003749999999769216,
+            0.0000037499999994139444
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 8,
+          "character": "R",
+          "contourIndex": 0,
+          "sourceM": [
+            54.7852,
+            7.99219
+          ],
+          "predictedM": [
+            54.78515625,
+            7.9921875
+          ],
+          "absoluteErrorPx": [
+            0.000043750000003228706,
+            0.0000024999999999053557
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 8,
+          "character": "R",
+          "contourIndex": 1,
+          "sourceM": [
+            56.1328,
+            3.69727
+          ],
+          "predictedM": [
+            56.1328125,
+            3.697265625
+          ],
+          "absoluteErrorPx": [
+            0.000012499999996862243,
+            0.000004375000000056417
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 9,
+          "character": "O",
+          "contourIndex": 0,
+          "sourceM": [
+            65.4727,
+            8.09766
+          ],
+          "predictedM": [
+            65.47265625,
+            8.09765625
+          ],
+          "absoluteErrorPx": [
+            0.000043750000003228706,
+            0.0000037499999994139444
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 9,
+          "character": "O",
+          "contourIndex": 1,
+          "sourceM": [
+            65.4727,
+            6.98438
+          ],
+          "predictedM": [
+            65.47265625,
+            6.984375
+          ],
+          "absoluteErrorPx": [
+            0.000043750000003228706,
+            0.000004999999999810711
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 10,
+          "character": "U",
+          "contourIndex": 0,
+          "sourceM": [
+            73.9922,
+            8.09766
+          ],
+          "predictedM": [
+            73.9921875,
+            8.09765625
+          ],
+          "absoluteErrorPx": [
+            0.000012499999996862243,
+            0.0000037499999994139444
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 11,
+          "character": "P",
+          "contourIndex": 0,
+          "sourceM": [
+            79.1133,
+            7.99219
+          ],
+          "predictedM": [
+            79.11328125,
+            7.9921875
+          ],
+          "absoluteErrorPx": [
+            0.000018749999995293365,
+            0.0000024999999999053557
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 11,
+          "character": "P",
+          "contourIndex": 1,
+          "sourceM": [
+            80.4609,
+            3.9375
+          ],
+          "predictedM": [
+            80.4609375,
+            3.9375
+          ],
+          "absoluteErrorPx": [
+            0.000037500000004797585,
+            0
+          ],
+          "matchesExportPrecision": true
+        }
+      ],
+      "exclusion": null
+    },
+    {
+      "id": "304:2838",
+      "text": "Service Name",
+      "style": "Light",
+      "fontSize": 20,
+      "fontSha256": "e38fc1bef9b7e971bfdfdba4897abe72ef9bd72182b8ad9d463e11307a802b54",
+      "sourceHug": false,
+      "sourceFrameWidth": 232,
+      "sourceRenderBounds": null,
+      "rawAdvance": 117.177734375,
+      "rawHugCeil": 118,
+      "predicted": {
+        "advance": 117.28515625,
+        "hugCeil": 118,
+        "inkLeft": 0.7421875,
+        "inkWidth": 115.4296875,
+        "inkHeight": 13.49609375
+      },
+      "matches": null,
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "S",
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0,
+          "hmtxUnits": 1126,
+          "quantizedHmtxUnits": 1126,
+          "gposAfterUnits": 31,
+          "quantizedGposAfterUnits": 32
+        },
+        {
+          "index": 1,
+          "character": "e",
+          "rawOriginUnits": 1157,
+          "quantizedOriginUnits": 1158,
+          "hmtxUnits": 1049,
+          "quantizedHmtxUnits": 1050,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 2,
+          "character": "r",
+          "rawOriginUnits": 2206,
+          "quantizedOriginUnits": 2208,
+          "hmtxUnits": 649,
+          "quantizedHmtxUnits": 650,
+          "gposAfterUnits": 31,
+          "quantizedGposAfterUnits": 32
+        },
+        {
+          "index": 3,
+          "character": "v",
+          "rawOriginUnits": 2886,
+          "quantizedOriginUnits": 2890,
+          "hmtxUnits": 883,
+          "quantizedHmtxUnits": 884,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 4,
+          "character": "i",
+          "rawOriginUnits": 3769,
+          "quantizedOriginUnits": 3774,
+          "hmtxUnits": 459,
+          "quantizedHmtxUnits": 460,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 5,
+          "character": "c",
+          "rawOriginUnits": 4228,
+          "quantizedOriginUnits": 4234,
+          "hmtxUnits": 1051,
+          "quantizedHmtxUnits": 1052,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 6,
+          "character": "e",
+          "rawOriginUnits": 5279,
+          "quantizedOriginUnits": 5286,
+          "hmtxUnits": 1049,
+          "quantizedHmtxUnits": 1050,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 7,
+          "character": " ",
+          "rawOriginUnits": 6328,
+          "quantizedOriginUnits": 6336,
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 8,
+          "character": "N",
+          "rawOriginUnits": 6744,
+          "quantizedOriginUnits": 6752,
+          "hmtxUnits": 1429,
+          "quantizedHmtxUnits": 1430,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 9,
+          "character": "a",
+          "rawOriginUnits": 8173,
+          "quantizedOriginUnits": 8182,
+          "hmtxUnits": 1067,
+          "quantizedHmtxUnits": 1068,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 10,
+          "character": "m",
+          "rawOriginUnits": 9240,
+          "quantizedOriginUnits": 9250,
+          "hmtxUnits": 1710,
+          "quantizedHmtxUnits": 1710,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 11,
+          "character": "e",
+          "rawOriginUnits": 10950,
+          "quantizedOriginUnits": 10960,
+          "hmtxUnits": 1049,
+          "quantizedHmtxUnits": 1050,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        }
+      ],
+      "svgContourChecks": [],
+      "exclusion": "Error: Failed to export node. This node may not have any visible layers."
+    },
+    {
+      "id": "1:2393",
+      "text": "My Work",
+      "style": "Bold",
+      "fontSize": 14,
+      "fontSha256": "e59d983f8752146b8d02df5cad8f545ce677ef71dbe113afa3b395a9088c7f53",
+      "sourceHug": true,
+      "sourceFrameWidth": 55,
+      "sourceRenderBounds": {
+        "x": 123.1005859375,
+        "y": -1189.201171875,
+        "width": 53.6826171875,
+        "height": 11.6484375
+      },
+      "rawAdvance": 54.6943359375,
+      "rawHugCeil": 55,
+      "predicted": {
+        "advance": 54.71484375,
+        "hugCeil": 55,
+        "inkLeft": 1.1005859375,
+        "inkWidth": 53.6826171875,
+        "inkHeight": 11.6484375
+      },
+      "matches": {
+        "inkLeft": true,
+        "inkWidth": true,
+        "inkHeight": true,
+        "hugFrame": true
+      },
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "M",
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0,
+          "hmtxUnits": 1681,
+          "quantizedHmtxUnits": 1682,
+          "gposAfterUnits": 14,
+          "quantizedGposAfterUnits": 14
+        },
+        {
+          "index": 1,
+          "character": "y",
+          "rawOriginUnits": 1695,
+          "quantizedOriginUnits": 1696,
+          "hmtxUnits": 1011,
+          "quantizedHmtxUnits": 1012,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 2,
+          "character": " ",
+          "rawOriginUnits": 2706,
+          "quantizedOriginUnits": 2708,
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 3,
+          "character": "W",
+          "rawOriginUnits": 3122,
+          "quantizedOriginUnits": 3124,
+          "hmtxUnits": 1926,
+          "quantizedHmtxUnits": 1926,
+          "gposAfterUnits": -71,
+          "quantizedGposAfterUnits": -70
+        },
+        {
+          "index": 4,
+          "character": "o",
+          "rawOriginUnits": 4977,
+          "quantizedOriginUnits": 4980,
+          "hmtxUnits": 1174,
+          "quantizedHmtxUnits": 1174,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 5,
+          "character": "r",
+          "rawOriginUnits": 6151,
+          "quantizedOriginUnits": 6154,
+          "hmtxUnits": 756,
+          "quantizedHmtxUnits": 756,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        },
+        {
+          "index": 6,
+          "character": "k",
+          "rawOriginUnits": 6907,
+          "quantizedOriginUnits": 6910,
+          "hmtxUnits": 1094,
+          "quantizedHmtxUnits": 1094,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0
+        }
+      ],
+      "svgContourChecks": [
+        {
+          "characterIndex": 0,
+          "character": "M",
+          "contourIndex": 0,
+          "sourceM": [
+            0,
+            9.20117
+          ],
+          "predictedM": [
+            0,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            0,
+            0.0000018750000005951506
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "y",
+          "contourIndex": 0,
+          "sourceM": [
+            11.2725,
+            11.6484
+          ],
+          "predictedM": [
+            11.2724609375,
+            11.6484375
+          ],
+          "absoluteErrorPx": [
+            0.00003906250000085265,
+            0.000037499999999468514
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "W",
+          "contourIndex": 0,
+          "sourceM": [
+            23.0303,
+            9.20117
+          ],
+          "predictedM": [
+            23.0302734375,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            0.000026562500000437694,
+            0.0000018750000005951506
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 4,
+          "character": "o",
+          "contourIndex": 0,
+          "sourceM": [
+            36.9414,
+            9.31055
+          ],
+          "predictedM": [
+            36.94140625,
+            9.310546875
+          ],
+          "absoluteErrorPx": [
+            0.000006249999998431122,
+            0.000003124999999215561
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 4,
+          "character": "o",
+          "contourIndex": 1,
+          "sourceM": [
+            36.9414,
+            7.92969
+          ],
+          "predictedM": [
+            36.94140625,
+            7.9296875
+          ],
+          "absoluteErrorPx": [
+            0.000006249999998431122,
+            0.0000024999999999053557
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 5,
+          "character": "r",
+          "contourIndex": 0,
+          "sourceM": [
+            41.9385,
+            9.20117
+          ],
+          "predictedM": [
+            41.9384765625,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            0.00002343749999766942,
+            0.0000018750000005951506
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 6,
+          "character": "k",
+          "contourIndex": 0,
+          "sourceM": [
+            47.1064,
+            9.20117
+          ],
+          "predictedM": [
+            47.1064453125,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            0.00004531249999928377,
+            0.0000018750000005951506
+          ],
+          "matchesExportPrecision": true
+        }
+      ],
+      "exclusion": null
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="list-unordered">
+<g id="vector">
+<path d="M6 2H15V3H6V2Z" fill="#212121"/>
+<path d="M6 7H15V8H6V7Z" fill="#212121"/>
+<path d="M6 12H15V13H6V12Z" fill="#212121"/>
+<path d="M2.5 1C1.67188 1 1 1.67188 1 2.5C1 3.32812 1.67188 4 2.5 4C3.32812 4 4 3.32812 4 2.5C4 1.67188 3.32812 1 2.5 1Z" fill="#212121"/>
+<path d="M2.5 6C1.67188 6 1 6.67188 1 7.5C1 8.32812 1.67188 9 2.5 9C3.32812 9 4 8.32812 4 7.5C4 6.67188 3.32812 6 2.5 6Z" fill="#212121"/>
+<path d="M2.5 11C1.67188 11 1 11.6719 1 12.5C1 13.3281 1.67188 14 2.5 14C3.32812 14 4 13.3281 4 12.5C4 11.6719 3.32812 11 2.5 11Z" fill="#212121"/>
+</g>
+</g>
+</svg>
