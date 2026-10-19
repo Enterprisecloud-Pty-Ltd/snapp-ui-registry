@@ -4,7 +4,6 @@
   "title": "Snapp UI Foundation",
   "description": "Installs the complete canonical Snapp Shadcn UI primitive set and theme for a clean consumer refresh.",
   "registryDependencies": [
-    "@snapp/snapp-theme",
     "@snapp/snapp-accordion",
     "@snapp/snapp-alert",
     "@snapp/snapp-alert-dialog",
@@ -32,6 +31,7 @@
     "@snapp/snapp-empty",
     "@snapp/snapp-field",
     "@snapp/snapp-hover-card",
+    "@snapp/snapp-hug-text",
     "@snapp/snapp-input",
     "@snapp/snapp-input-group",
     "@snapp/snapp-input-otp",
@@ -50,6 +50,7 @@
     "@snapp/snapp-radio-group",
     "@snapp/snapp-resizable",
     "@snapp/snapp-scroll-area",
+    "@snapp/snapp-searchable-combobox",
     "@snapp/snapp-select",
     "@snapp/snapp-separator",
     "@snapp/snapp-sheet",
@@ -62,10 +63,10 @@
     "@snapp/snapp-table",
     "@snapp/snapp-tabs",
     "@snapp/snapp-textarea",
+    "@snapp/snapp-theme",
     "@snapp/snapp-toggle",
     "@snapp/snapp-toggle-group",
-    "@snapp/snapp-tooltip",
-    "@snapp/snapp-searchable-combobox"
+    "@snapp/snapp-tooltip"
   ],
   "files": [
     {

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-check-item",
+  "title": "Check Item",
+  "description": "Shared SNAPP component-library building block: Check Item.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@snapp/snapp-figma-work-assets",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/learning/check-item.tsx",
+      "content": "import type { ComponentProps, ReactNode } from \"react\";\nimport checkmark from \"@/assets/snapp/work/73dfa.svg\";\nimport { cn } from \"@/lib/utils\";\n\ninterface CheckItemProps extends Omit<ComponentProps<\"div\">, \"title\"> {\n\ttitle: string;\n\tcode?: string;\n\tdate: ReactNode;\n\tstate?: \"default\" | \"selected\" | \"completed\";\n\tstatusLabel?: string;\n\tonCompletedChange?: (completed: boolean) => void;\n}\n\nfunction CheckItem({\n\ttitle,\n\tcode,\n\tdate,\n\tstate = \"default\",\n\tstatusLabel,\n\tonCompletedChange,\n\tclassName,\n\t...props\n}: CheckItemProps) {\n\tconst completed = state === \"completed\";\n\tconst checkbox = (\n\t\t<span\n\t\t\tclassName={cn(\n\t\t\t\t\"flex size-4 shrink-0 items-center justify-center rounded-snapp-minimal\",\n\t\t\t\tcompleted\n\t\t\t\t\t? \"bg-snapp-surface-green\"\n\t\t\t\t\t: \"border border-snapp-border-primary p-px\",\n\t\t\t)}\n\t\t>\n\t\t\t{completed && <img src={checkmark} alt=\"\" width={12} height={12} />}\n\t\t</span>\n\t);\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"snapp-check-item\"\n\t\t\tdata-state={state}\n\t\t\tclassName={cn(\n\t\t\t\t\"flex h-18.5 w-98.5 max-w-full flex-col items-start justify-center gap-2 rounded-snapp-standard inset-ring-1 bg-snapp-surface-primary p-4 font-snapp-body font-normal\",\n\t\t\t\tstate === \"selected\"\n\t\t\t\t\t? \"inset-ring-snapp-border-highlight\"\n\t\t\t\t\t: \"inset-ring-snapp-border-primary\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t>\n\t\t\t<div className=\"flex items-center gap-2\">\n\t\t\t\t{onCompletedChange ? (\n\t\t\t\t\t<button\n\t\t\t\t\t\ttype=\"button\"\n\t\t\t\t\t\trole=\"checkbox\"\n\t\t\t\t\t\taria-checked={completed}\n\t\t\t\t\t\taria-label={`Complete ${title}`}\n\t\t\t\t\t\tonClick={() => onCompletedChange(!completed)}\n\t\t\t\t\t\tclassName=\"rounded-snapp-minimal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-border-highlight\"\n\t\t\t\t\t>\n\t\t\t\t\t\t{checkbox}\n\t\t\t\t\t</button>\n\t\t\t\t) : (\n\t\t\t\t\tcheckbox\n\t\t\t\t)}\n\t\t\t\t<p className=\"flex h-4.5 items-center gap-1 text-snapp-sm leading-snapp-xs\">\n\t\t\t\t\t<span className=\"text-snapp-text-brand\">{title}</span>\n\t\t\t\t\t{code && <span className=\"text-snapp-text-secondary\">{code}</span>}\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t\t<div className=\"flex w-full items-center gap-2 text-snapp-xs leading-snapp-xxs\">\n\t\t\t\t<p\n\t\t\t\t\tclassName={cn(\n\t\t\t\t\t\t\"min-w-0 flex-1\",\n\t\t\t\t\t\tcompleted ? \"text-snapp-text-green\" : \"text-snapp-text-secondary\",\n\t\t\t\t\t)}\n\t\t\t\t>\n\t\t\t\t\t{statusLabel ?? (completed ? \"Completed\" : \"Issued\")}\n\t\t\t\t</p>\n\t\t\t\t<span className=\"w-21 shrink-0 text-right text-snapp-text-secondary\">\n\t\t\t\t\t{date}\n\t\t\t\t</span>\n\t\t\t</div>\n\t\t</div>\n\t);\n}\n\nexport { CheckItem };\nexport type { CheckItemProps };\n",
+      "type": "registry:component",
+      "target": "@components/snapp/learning/check-item.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

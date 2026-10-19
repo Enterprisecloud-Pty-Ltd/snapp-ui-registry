@@ -1,0 +1,3001 @@
+{
+	"fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+	"auditedOn": "2026-10-19",
+	"scope": "21 navigation, hierarchy, shell-header and editor families",
+	"status": "implemented-and-browser-verified",
+	"evidence": "All 21 families inspected through complete high-fidelity get_design_context responses and screenshots. No sparse response was used. Metadata confirms each family variant ID; supplemental individual variant requests stopped at the shared Figma plan quota. Complete family responses contain all state branches.",
+	"conventions": {
+		"fonts": "Aptos body at400/700, with source IBM Plex Sans notification/search/support exceptions and Arial help glyph. Root font manifest owns licensed assets.",
+		"strokes": "Inside strokes use inset rings or positioned rules where border-box layout would alter measured padding.",
+		"data": "Business examples live only in navigation-preview.tsx. These presentation components contain no Dataverse transport, browser storage, persistence or product iframe.",
+		"assets": "188 exact SVG references downloaded without path editing. navigation-icons.tsx imports local @/assets/snapp/navigation sources and preserves natural SVG root dimensions.",
+		"verification": "Portable Chromium gate passes across21 families/51 variants with179 geometry, typography, asset and interaction assertions. Every popup variant is explicitly activated before its state screenshot; family overviews alone are not popup evidence. Intrinsic text metrics are recorded separately and no business-label width is forced."
+	},
+	"families": [
+		{
+			"nodeId": "1:2386",
+			"name": "Tabbed Header Navigation",
+			"purpose": "Switch the current work or approvals section while keeping an achievement summary visible.",
+			"owners": ["components/navigation/navigation-header.tsx", "ui/tabs.tsx"],
+			"variants": [
+				{
+					"nodeId": "1:2387",
+					"name": "Tab Selected=1",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2387.png"
+				},
+				{
+					"nodeId": "1:2427",
+					"name": "Tab Selected=3",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2427.png"
+				},
+				{
+					"nodeId": "1:2447",
+					"name": "Tab Selected=4",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2447.png"
+				},
+				{
+					"nodeId": "1:2464",
+					"name": "Tab Selected=5",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2464.png"
+				},
+				{
+					"nodeId": "1:2481",
+					"name": "Tab Selected=6",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2481.png"
+				}
+			],
+			"geometry": {
+				"height": 48,
+				"leftPadding": 16,
+				"tabGap": 16,
+				"titleDividerHeight": 24,
+				"activeUnderline": 2,
+				"summaryWidth": 338,
+				"summaryGap": 16,
+				"icon": 20,
+				"font": "Aptos",
+				"fontSize": 14,
+				"lineHeight": 20,
+				"inactiveWeight": 400,
+				"activeWeight": 700
+			},
+			"implementation": "TabbedHeaderNavigation composes Radix Tabs; normal pill Tabs remain a separate display variant.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2386.png",
+				"states": [
+					{
+						"id": "1:2387",
+						"variant": "Tab Selected=1",
+						"width": 1652,
+						"height": 48
+					},
+					{
+						"id": "1:2427",
+						"variant": "Tab Selected=3",
+						"width": 1652,
+						"height": 48
+					},
+					{
+						"id": "1:2447",
+						"variant": "Tab Selected=4",
+						"width": 1652,
+						"height": 48
+					},
+					{
+						"id": "1:2464",
+						"variant": "Tab Selected=5",
+						"width": 1652,
+						"height": 48
+					},
+					{
+						"id": "1:2481",
+						"variant": "Tab Selected=6",
+						"width": 1652,
+						"height": 48
+					}
+				],
+				"renderedImages": 5
+			}
+		},
+		{
+			"nodeId": "1:2498",
+			"name": "Tree Menu",
+			"purpose": "Search and select grouped assigned records in a narrow cabinet or Snapp side panel.",
+			"owners": [
+				"components/navigation/navigation-panels.tsx",
+				"components/navigation/tree.tsx"
+			],
+			"variants": [
+				{
+					"nodeId": "1:2498",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2498.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 300,
+				"sourceHeight": 1031,
+				"paddingX": 16,
+				"paddingY": 12,
+				"gap": 12,
+				"titleHeight": 32,
+				"searchHeight": 41,
+				"searchRadius": 8,
+				"folderRow": 32,
+				"itemRow": 28,
+				"icon": 20,
+				"childIndent": 26
+			},
+			"implementation": "TreeMenu owns the panel; Tree recipe='menu' supplies compact leaf rows and closed-folder icon styling. Source example records are fixture-only.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2498.png",
+				"states": [
+					{
+						"id": "1:2498",
+						"variant": "Default",
+						"width": 300,
+						"height": 1031
+					}
+				],
+				"renderedImages": 23
+			}
+		},
+		{
+			"nodeId": "1:2549",
+			"name": "Row",
+			"purpose": "Compact structured record row with identifier, title, category, progress, date, status action and trailing indicator.",
+			"owners": ["components/navigation/tree.tsx"],
+			"variants": [
+				{
+					"nodeId": "1:2549",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2549.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 961,
+				"height": 28,
+				"paddingX": 8,
+				"gap": 8,
+				"radius": 6,
+				"icon": 20,
+				"categoryWidth": 172,
+				"progressColumnWidth": 164,
+				"progressTrackWidth": 120,
+				"progressTrackHeight": 8,
+				"dateWidth": 90,
+				"statusWidth": 100,
+				"statusChevron": 16,
+				"fontSize": 14,
+				"lineHeight": 20
+			},
+			"implementation": "TreeRow offers named semantic slots and a native status-action callback; Progress reuses the shared primitive.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2549.png",
+				"states": [
+					{
+						"id": "1:2549",
+						"variant": "Default",
+						"width": 961,
+						"height": 28
+					}
+				],
+				"renderedImages": 3
+			}
+		},
+		{
+			"nodeId": "1:2567",
+			"name": "Row Title",
+			"purpose": "Name a group of structured record rows, with a folder glyph and aligned trailing-column space.",
+			"owners": ["components/navigation/tree.tsx"],
+			"variants": [
+				{
+					"nodeId": "1:2567",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2567.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 985,
+				"height": 32,
+				"padding": 8,
+				"gap": 8,
+				"icon": 20,
+				"trailingSlots": [90, 20],
+				"insideBottomStroke": 1,
+				"fontSize": 14,
+				"lineHeight": 20
+			},
+			"implementation": "TreeRowTitle supplies exact fixed trailing slots when used with its label API, or accepts composed children.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2567.png",
+				"states": [
+					{
+						"id": "1:2567",
+						"variant": "Default",
+						"width": 985,
+						"height": 32
+					}
+				],
+				"renderedImages": 1
+			}
+		},
+		{
+			"nodeId": "1:2572",
+			"name": "Tree Item",
+			"purpose": "Selectable, unavailable, insertion, creation or notification state of one tree leaf.",
+			"owners": [
+				"components/navigation/tree.tsx",
+				"components/navigation/navigation-icons.tsx"
+			],
+			"variants": [
+				{
+					"nodeId": "1:2573",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2573.png"
+				},
+				{
+					"nodeId": "1:2587",
+					"name": "Selected",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2587.png"
+				},
+				{
+					"nodeId": "1:2601",
+					"name": "Unselectable",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2601.png"
+				},
+				{
+					"nodeId": "1:2615",
+					"name": "Drop Indicator",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2615.png"
+				},
+				{
+					"nodeId": "39:4571",
+					"name": "Add",
+					"browserImage": "artifacts/figma-qa/navigation/state-39-4571.png"
+				},
+				{
+					"nodeId": "312:2880",
+					"name": "Notification",
+					"browserImage": "artifacts/figma-qa/navigation/state-312-2880.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 268,
+				"rowHeight": 32,
+				"contentHeight": 28,
+				"paddingX": 8,
+				"paddingY": 4,
+				"gap": 8,
+				"radius": 4,
+				"icon": 20,
+				"notificationWidth": 18,
+				"notificationFont": "IBM Plex Sans",
+				"notificationFontSize": 11,
+				"notificationLineHeight": "normal",
+				"dateFont": "Aptos",
+				"dateFontSize": 11,
+				"dateLineHeight": 12,
+				"fontSize": 14,
+				"lineHeight": 20
+			},
+			"implementation": "TreeItem is keyboard focusable, supports an independent menu callback, optional native dragging and exact state-specific SVGs. Data and dates are supplied by the consumer.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2572.png",
+				"states": [
+					{
+						"id": "1:2573",
+						"variant": "default",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "1:2587",
+						"variant": "selected",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "1:2601",
+						"variant": "unselectable",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "1:2615",
+						"variant": "drop-indicator",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "39:4571",
+						"variant": "add",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "312:2880",
+						"variant": "notification",
+						"width": 268,
+						"height": 32
+					}
+				],
+				"renderedImages": 6
+			}
+		},
+		{
+			"nodeId": "1:2617",
+			"name": "Tree Folder",
+			"purpose": "Expandable container in a record hierarchy, with the same six visual states as a leaf.",
+			"owners": [
+				"components/navigation/tree.tsx",
+				"components/navigation/navigation-icons.tsx"
+			],
+			"variants": [
+				{
+					"nodeId": "1:2618",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2618.png"
+				},
+				{
+					"nodeId": "1:2629",
+					"name": "Selected",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2629.png"
+				},
+				{
+					"nodeId": "1:2640",
+					"name": "Unselectable",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2640.png"
+				},
+				{
+					"nodeId": "1:2651",
+					"name": "Drop Indicator",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2651.png"
+				},
+				{
+					"nodeId": "39:4591",
+					"name": "Add",
+					"browserImage": "artifacts/figma-qa/navigation/state-39-4591.png"
+				},
+				{
+					"nodeId": "312:2904",
+					"name": "Notification",
+					"browserImage": "artifacts/figma-qa/navigation/state-312-2904.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 268,
+				"rowHeight": 32,
+				"contentHeight": 28,
+				"verticalInset": 2,
+				"paddingX": 8,
+				"gap": 8,
+				"radius": 4,
+				"icon": 20,
+				"fontSize": 14,
+				"lineHeight": 20
+			},
+			"implementation": "TreeFolder extends the shared tree item, exposes aria-expanded, uses exact open/closed/disabled folder exports, and keeps expand state separate from menu actions.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2617.png",
+				"states": [
+					{
+						"id": "1:2618",
+						"variant": "default",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "1:2629",
+						"variant": "selected",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "1:2640",
+						"variant": "unselectable",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "1:2651",
+						"variant": "drop-indicator",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "39:4591",
+						"variant": "add",
+						"width": 268,
+						"height": 32
+					},
+					{
+						"id": "312:2904",
+						"variant": "notification",
+						"width": 268,
+						"height": 32
+					}
+				],
+				"renderedImages": 6
+			}
+		},
+		{
+			"nodeId": "1:2655",
+			"name": "Pagination",
+			"purpose": "Move through explicit groups of weeks or result pages with previous, next and overflow indicators.",
+			"owners": [
+				"ui/pagination.tsx",
+				"components/navigation/navigation-icons.tsx"
+			],
+			"variants": [
+				{
+					"nodeId": "1:2655",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2655.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 413,
+				"height": 36,
+				"gap": 4,
+				"pagePadding": 8,
+				"directionalPaddingX": 12,
+				"icon": 20,
+				"radius": 8,
+				"activeInsideStroke": 1,
+				"fontSize": 14,
+				"lineHeight": 20,
+				"fontWeight": 400
+			},
+			"implementation": "Existing link API preserved; selected state uses aria-current and the Figma brand outline rather than a filled button.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2655.png",
+				"states": [
+					{
+						"id": "1:2655",
+						"variant": "Default",
+						"width": 409.71875,
+						"height": 36
+					}
+				],
+				"renderedImages": 3
+			}
+		},
+		{
+			"nodeId": "1:2675",
+			"name": "Tree",
+			"purpose": "Explore a nested domain hierarchy and select records at multiple levels.",
+			"owners": ["components/navigation/tree.tsx"],
+			"variants": [
+				{
+					"nodeId": "1:2675",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2675.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 499,
+				"sourceHeight": 704,
+				"rowHeight": 32,
+				"labelFontSize": 12,
+				"labelLineHeight": 16,
+				"firstChildIndent": 22,
+				"secondChildIndent": 26,
+				"subsequentIndent": 24,
+				"connectorStroke": 1
+			},
+			"implementation": "Tree uses data-driven nodes and the hierarchy recipe. Keyboard navigation supports arrows, Home/End and first-letter traversal; expand and selection are independently controlled. Full source business example is not distributed as product data.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2675.png",
+				"states": [
+					{
+						"id": "1:2675",
+						"variant": "Default",
+						"width": 499,
+						"height": 704
+					}
+				],
+				"renderedImages": 36
+			}
+		},
+		{
+			"nodeId": "1:2790",
+			"name": "Tree Builder",
+			"purpose": "Author a nested service catalogue hierarchy using item/folder, insertion, add and selected states.",
+			"owners": ["components/navigation/tree.tsx"],
+			"variants": [
+				{
+					"nodeId": "1:2790",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2790.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 1322,
+				"sourceHeight": 780,
+				"rowHeight": 32,
+				"childIndent": 24,
+				"compactInset": 10,
+				"labelFontSize": 12,
+				"labelLineHeight": 16,
+				"labelOpacity": 0.7,
+				"labelBaseOpacity": 0.5,
+				"exampleNarrowLeafWidth": 268,
+				"captionInsets": [8, 34, 62, 90],
+				"editableGroupInsets": [70, 42, 14],
+				"editableRowHeight": 28,
+				"fixedCatalogueGap": 4
+			},
+			"implementation": "TreeBuilder supports both data-driven nodes and composed tree children with shared keyboard navigation. The faithful preview uses exact source mixed268px catalogue cards,28px editable rows, source indent rules and original family SVGs. Small optional menu/lock icon overrides and label truncation control cover source differences. Domain records and mutations remain consumer-owned.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-2790.png",
+				"states": [
+					{
+						"id": "1:2790",
+						"variant": "Default",
+						"width": 1322,
+						"height": 780
+					}
+				],
+				"renderedImages": 36
+			}
+		},
+		{
+			"nodeId": "1:3029",
+			"name": "Profile Controls",
+			"purpose": "Classic branded Shell bar with application launcher, logo, global actions, help and profile.",
+			"owners": ["components/navigation/navigation-header.tsx"],
+			"variants": [
+				{
+					"nodeId": "1:3029",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-3029.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 1920,
+				"height": 50,
+				"launcherSize": 50,
+				"launcherGrid": 16,
+				"logo": [84, 21],
+				"leftGap": 20,
+				"actionGap": 32,
+				"actionWrapperSizes": [15, 15, 15, 18, 17, 32],
+				"helpFont": "Arial",
+				"helpFontSize": 20,
+				"helpTracking": -0.2
+			},
+			"implementation": "ProfileControls exposes explicit action identifiers to the host; exact exported logo and profile/action assets are local.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-3029.png",
+				"states": [
+					{
+						"id": "1:3029",
+						"variant": "Default",
+						"width": 1920,
+						"height": 50
+					}
+				],
+				"renderedImages": 7
+			}
+		},
+		{
+			"nodeId": "1:3098",
+			"name": "Left Menu",
+			"purpose": "Branded vertical application navigation, feature groups, sign-out, area choice and current area.",
+			"owners": ["components/navigation/navigation-panels.tsx"],
+			"variants": [
+				{
+					"nodeId": "1:3098",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-3098.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 268,
+				"sourceHeight": 864,
+				"headerHeight": 116,
+				"rootGap": 24,
+				"paddingX": 16,
+				"groupGap": 24,
+				"groupLabelFontSize": 12,
+				"groupLabelLineHeight": 16,
+				"rowHeight": 28,
+				"rowGap": 4,
+				"itemIcon": 16,
+				"logo": [109, 28],
+				"signOutIcon": 24,
+				"signOutSectionHeight": 62,
+				"areaRowHeight": 30,
+				"selectedAreaHeight": 81,
+				"selectedAreaMark": 32,
+				"groupRowGaps": [8, 4, 4],
+				"groupTopOffsets": [140, 256, 400],
+				"appSelectorWidth": 220,
+				"signOutRadius": 10
+			},
+			"implementation": "BrandedSidebar owns visual geometry while the host supplies groups and callbacks. No application name or menu route is hardcoded in registry source.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/1-3098.png",
+				"states": [
+					{
+						"id": "1:3098",
+						"variant": "Default",
+						"width": 268,
+						"height": 864
+					}
+				],
+				"renderedImages": 13
+			}
+		},
+		{
+			"nodeId": "13:934",
+			"name": "Header",
+			"purpose": "Compact screen title with optional trophy/achievement summary or filter and collapse actions.",
+			"owners": ["components/navigation/navigation-header.tsx"],
+			"variants": [
+				{
+					"nodeId": "1:2536",
+					"name": "Achievements",
+					"browserImage": "artifacts/figma-qa/navigation/state-1-2536.png"
+				},
+				{
+					"nodeId": "13:935",
+					"name": "Standard",
+					"browserImage": "artifacts/figma-qa/navigation/state-13-935.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 1650,
+				"height": 48,
+				"paddingX": 16,
+				"icon": 20,
+				"titleGap": 12,
+				"filterIcon": 16,
+				"summaryWidth": 338,
+				"fontSize": 14,
+				"lineHeight": 20
+			},
+			"implementation": "FeatureHeader and AchievementSummary compose both variants and optional controls; title and counts are supplied.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/13-934.png",
+				"states": [
+					{
+						"id": "1:2536",
+						"variant": "Achievements",
+						"width": 1650,
+						"height": 48
+					},
+					{
+						"id": "13:935",
+						"variant": "Standard",
+						"width": 1650,
+						"height": 48
+					}
+				],
+				"renderedImages": 1
+			}
+		},
+		{
+			"nodeId": "13:1199",
+			"name": "Dynamics Menu",
+			"purpose": "Light Dynamics-style navigation rail with collapsible primary sections, grouped links and an accent current-location mark.",
+			"owners": ["components/navigation/navigation-panels.tsx"],
+			"variants": [
+				{
+					"nodeId": "13:1199",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-13-1199.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 201,
+				"sourceHeight": 1030,
+				"contentWidth": 199,
+				"topPadding": 14,
+				"groupGap": 24,
+				"rowHeight": 40,
+				"icon": 24,
+				"titleFontSize": 14,
+				"titleLineHeight": "normal",
+				"titleWeight": 700,
+				"activeMark": [4, 20],
+				"hamburgerBarOffsets": [0, 4, 8],
+				"hamburgerSize": [16, 9]
+			},
+			"implementation": "DynamicsMenu is an independent navigation composition with aria-current, aria-expanded and host actions; generic Sidebar remains an accessible responsive layout primitive.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/13-1199.png",
+				"states": [
+					{
+						"id": "13:1199",
+						"variant": "Default",
+						"width": 201,
+						"height": 1030
+					}
+				],
+				"renderedImages": 11
+			}
+		},
+		{
+			"nodeId": "50:5887",
+			"name": "Side menu",
+			"purpose": "Compose Dynamics navigation with form-manager tree and draggable form-element palette.",
+			"owners": [
+				"components/navigation/navigation-panels.tsx",
+				"components/navigation/tree.tsx"
+			],
+			"variants": [
+				{
+					"nodeId": "50:5887",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-50-5887.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 770,
+				"sourceHeight": 1280,
+				"dynamicsWidth": 201,
+				"panelWidth": 284,
+				"titleHeight": 48,
+				"panelGap": 12,
+				"searchHeight": 41,
+				"panelPaddingX": 16,
+				"rowHeight": 32
+			},
+			"implementation": "SideMenu composes independent DynamicsMenu and NavigationPanel surfaces. Form definitions and insert/reorder behavior are consumer-owned, not copied demo records.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/50-5887.png",
+				"states": [
+					{
+						"id": "50:5887",
+						"variant": "Default",
+						"width": 770,
+						"height": 1280
+					}
+				],
+				"renderedImages": 38
+			}
+		},
+		{
+			"nodeId": "74:9562",
+			"name": "Editor Toolbar",
+			"purpose": "Control text emphasis, list styles and exclusive paragraph alignment.",
+			"owners": ["components/navigation/editor-toolbar.tsx"],
+			"variants": [
+				{
+					"nodeId": "74:9562",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-74-9562.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 349,
+				"height": 54,
+				"padding": 8,
+				"gap": 8,
+				"buttonSize": 38,
+				"buttonPadding": 11,
+				"buttonIcon": 16,
+				"buttonOverlap": 1,
+				"separator": [1, 28],
+				"radius": 8,
+				"selectedFill": "#c0c0c1",
+				"shadow": "0 4px 6px rgba(0,0,0,.25)"
+			},
+			"implementation": "EditorToolbar composes Radix multiple/single ToggleGroups with actual pressed states, accessible labels and controlled callbacks.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/74-9562.png",
+				"states": [
+					{
+						"id": "74:9562",
+						"variant": "Default",
+						"width": 349,
+						"height": 54
+					}
+				],
+				"renderedImages": 8
+			}
+		},
+		{
+			"nodeId": "74:9647",
+			"name": "Sidebar",
+			"purpose": "Search and filter a learning-goal hierarchy within a wide auxiliary panel.",
+			"owners": [
+				"components/navigation/navigation-panels.tsx",
+				"components/navigation/tree.tsx"
+			],
+			"variants": [
+				{
+					"nodeId": "74:9647",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-74-9647.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 537,
+				"sourceHeight": 1080,
+				"titleHeight": 48,
+				"gap": 12,
+				"paddingX": 16,
+				"searchHeight": 41,
+				"filterPillHeight": 36,
+				"filterPillPaddingX": 16,
+				"filterGap": 4,
+				"fontSize": 14,
+				"lineHeight": 20
+			},
+			"implementation": "NavigationPanel provides the surface/title/search/content slots; existing filter controls and Tree provide the remaining composition. Source example goals are fixture-only.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/74-9647.png",
+				"states": [
+					{
+						"id": "74:9647",
+						"variant": "Default",
+						"width": 537,
+						"height": 1080
+					}
+				],
+				"renderedImages": 13
+			}
+		},
+		{
+			"nodeId": "281:2267",
+			"name": "Updated Header",
+			"purpose": "Primary navigation with an expanded feature menu, global search and searchable application chooser.",
+			"owners": ["components/navigation/navigation-header.tsx"],
+			"variants": [
+				{
+					"nodeId": "279:2191",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-279-2191.png"
+				},
+				{
+					"nodeId": "281:2268",
+					"name": "Open Menu",
+					"browserImage": "artifacts/figma-qa/navigation/state-281-2268.png"
+				},
+				{
+					"nodeId": "283:2327",
+					"name": "Select App",
+					"browserImage": "artifacts/figma-qa/navigation/state-283-2327.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 1562,
+				"height": 56,
+				"expandedHeight": 292,
+				"paddingX": 24,
+				"headerGap": 24,
+				"navItemGap": 40,
+				"searchWidth": 400,
+				"searchFont": "IBM Plex Sans",
+				"searchFontSize": 16,
+				"searchLineHeight": "normal",
+				"iconButton": 32,
+				"icon": 20,
+				"appPanelWidth": 448,
+				"appSearchWidth": 432,
+				"appTile": 80,
+				"appGap": 8,
+				"appLabelSize": 12,
+				"appLabelLineHeight": 16,
+				"featurePanelPadding": [24, 24, 48, 80]
+			},
+			"implementation": "NavigationHeader variant='updated' shares application and feature data with the square variant. Portals use the injected container; full-width feature menu stays inside its header.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/281-2267.png",
+				"states": [
+					{
+						"id": "279:2191",
+						"variant": "Default",
+						"width": 1562,
+						"height": 56
+					},
+					{
+						"id": "281:2268",
+						"variant": "Open Menu",
+						"width": 1562,
+						"height": 292
+					},
+					{
+						"id": "283:2327",
+						"variant": "Select App",
+						"width": 1562,
+						"height": 56
+					}
+				],
+				"renderedImages": 9
+			}
+		},
+		{
+			"nodeId": "300:2763",
+			"name": "Tab Item",
+			"purpose": "Select a section or expose the next level of a contextual navigation path.",
+			"owners": ["ui/tabs.tsx", "components/navigation/navigation-header.tsx"],
+			"variants": [
+				{
+					"nodeId": "300:2762",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-300-2762.png"
+				},
+				{
+					"nodeId": "300:2764",
+					"name": "Selected",
+					"browserImage": "artifacts/figma-qa/navigation/state-300-2764.png"
+				},
+				{
+					"nodeId": "307:2840",
+					"name": "Expanded",
+					"browserImage": "artifacts/figma-qa/navigation/state-307-2840.png"
+				}
+			],
+			"geometry": {
+				"height": 36,
+				"paddingX": 16,
+				"paddingY": 8,
+				"radius": 128,
+				"fontSize": 14,
+				"lineHeight": 20,
+				"fontWeight": 400,
+				"expandedChevron": 12,
+				"expandedGap": 8,
+				"expandedSourceWidth": 132
+			},
+			"implementation": "Radix TabsTrigger handles default/selected states. ExpandedTab supplies two separate accessible navigation actions without nesting buttons or tab controls.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/300-2763.png",
+				"states": [
+					{
+						"id": "300:2762",
+						"variant": "Default",
+						"width": 60,
+						"height": 36
+					},
+					{
+						"id": "300:2764",
+						"variant": "Selected",
+						"width": 60,
+						"height": 36
+					},
+					{
+						"id": "307:2840",
+						"variant": "Expanded",
+						"width": 130.84375,
+						"height": 36
+					}
+				],
+				"renderedImages": 1
+			}
+		},
+		{
+			"nodeId": "300:2784",
+			"name": "Tabbed Menu",
+			"purpose": "Group horizontal section tabs in a rounded white container.",
+			"owners": ["ui/tabs.tsx"],
+			"variants": [
+				{
+					"nodeId": "300:2784",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-300-2784.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 524,
+				"height": 52,
+				"padding": 8,
+				"gap": 4,
+				"triggerHeight": 36,
+				"radius": 128,
+				"fontSize": 14,
+				"lineHeight": 20,
+				"fontWeight": 400
+			},
+			"implementation": "TabsList default variant is the Figma pill treatment; line variant is explicitly selected by the tabbed header.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/300-2784.png",
+				"states": [
+					{
+						"id": "300:2784",
+						"variant": "Default",
+						"width": 524,
+						"height": 52
+					}
+				],
+				"renderedImages": 0
+			}
+		},
+		{
+			"nodeId": "334:2201",
+			"name": "Square Top Menu",
+			"purpose": "Compact primary navigation with application, area, user, feature and support surfaces.",
+			"owners": ["components/navigation/navigation-header.tsx"],
+			"variants": [
+				{
+					"nodeId": "348:2227",
+					"name": "Default",
+					"browserImage": "artifacts/figma-qa/navigation/state-348-2227.png"
+				},
+				{
+					"nodeId": "334:2535",
+					"name": "Select App",
+					"browserImage": "artifacts/figma-qa/navigation/state-334-2535.png"
+				},
+				{
+					"nodeId": "334:2623",
+					"name": "Area Switcher",
+					"browserImage": "artifacts/figma-qa/navigation/state-334-2623.png"
+				},
+				{
+					"nodeId": "334:2718",
+					"name": "User Controls",
+					"browserImage": "artifacts/figma-qa/navigation/state-334-2718.png"
+				},
+				{
+					"nodeId": "334:2769",
+					"name": "Menu Open 1 level",
+					"browserImage": "artifacts/figma-qa/navigation/state-334-2769.png"
+				},
+				{
+					"nodeId": "342:2403",
+					"name": "AI Chat",
+					"browserImage": "artifacts/figma-qa/navigation/state-342-2403.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 1562,
+				"height": 52,
+				"paddingX": 24,
+				"paddingY": 8,
+				"gap": 4,
+				"navItemPadding": [8, 16],
+				"iconButton": 36,
+				"icon": 20,
+				"actionGap": 12,
+				"popupTop": 60,
+				"appPanelWidth": 448,
+				"appTile": 80,
+				"areaBadge": 16,
+				"userContentWidth": 100,
+				"userPadding": 16,
+				"supportPanel": [370, 500],
+				"supportHeader": 56,
+				"supportComposer": 41,
+				"supportMessageFont": "IBM Plex Sans",
+				"supportMessageSize": 16,
+				"supportMessageLineHeight": 20
+			},
+			"implementation": "NavigationHeader variant='square' uses controlled Popovers, searches data-supplied apps and accepts host-owned area/user controls. LiveSupportPanel exposes message, close and expand callbacks; text messages remain dynamic.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/334-2201.png",
+				"states": [
+					{
+						"id": "348:2227",
+						"variant": "Default",
+						"width": 1562,
+						"height": 52
+					},
+					{
+						"id": "334:2535",
+						"variant": "Select App",
+						"width": 1562,
+						"height": 52
+					},
+					{
+						"id": "334:2623",
+						"variant": "Area Switcher",
+						"width": 1562,
+						"height": 52
+					},
+					{
+						"id": "334:2718",
+						"variant": "User Controls",
+						"width": 1562,
+						"height": 52
+					},
+					{
+						"id": "334:2769",
+						"variant": "Menu Open 1 level",
+						"width": 1562,
+						"height": 52
+					},
+					{
+						"id": "342:2403",
+						"variant": "AI Chat",
+						"width": 1562,
+						"height": 52
+					}
+				],
+				"renderedImages": 30
+			}
+		},
+		{
+			"nodeId": "347:2904",
+			"name": "Tool Menu",
+			"purpose": "Show the current hierarchy path with optional date, search and active filter tools.",
+			"owners": [
+				"components/navigation/tool-menu.tsx",
+				"components/navigation/feature-breadcrumb.tsx"
+			],
+			"variants": [
+				{
+					"nodeId": "347:2903",
+					"name": "1st Level",
+					"browserImage": "artifacts/figma-qa/navigation/state-347-2903.png"
+				},
+				{
+					"nodeId": "347:2905",
+					"name": "2nd Level",
+					"browserImage": "artifacts/figma-qa/navigation/state-347-2905.png"
+				},
+				{
+					"nodeId": "347:3029",
+					"name": "3rd Level",
+					"browserImage": "artifacts/figma-qa/navigation/state-347-3029.png"
+				},
+				{
+					"nodeId": "347:3077",
+					"name": "4th Level",
+					"browserImage": "artifacts/figma-qa/navigation/state-347-3077.png"
+				},
+				{
+					"nodeId": "347:3125",
+					"name": "5th Level",
+					"browserImage": "artifacts/figma-qa/navigation/state-347-3125.png"
+				},
+				{
+					"nodeId": "347:3173",
+					"name": "6th Level",
+					"browserImage": "artifacts/figma-qa/navigation/state-347-3173.png"
+				},
+				{
+					"nodeId": "347:3223",
+					"name": "7th Level",
+					"browserImage": "artifacts/figma-qa/navigation/state-347-3223.png"
+				}
+			],
+			"geometry": {
+				"sourceWidth": 1510,
+				"height": 52,
+				"padding": 8,
+				"gap": 24,
+				"radius": 128,
+				"pathPadding": [8, 16],
+				"pathGap": 8,
+				"searchWidth": 284,
+				"searchPadding": [8, 16],
+				"searchIcon": 20,
+				"fontSize": 14,
+				"lineHeight": 20,
+				"currentWeight": 700,
+				"ancestorWeight": 400
+			},
+			"implementation": "ToolMenu composes the shared single-pill FeatureBreadcrumb, collapses older labels to source '...' text, preserves accessible ancestor labels, and accepts existing filter controls.",
+			"context": {
+				"highFidelity": true,
+				"screenshotInspected": true,
+				"sparse": false
+			},
+			"browserVerification": {
+				"status": "passed",
+				"script": "scripts/verify-navigation-browser.mjs",
+				"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+				"familyImage": "artifacts/figma-qa/navigation/347-2904.png",
+				"states": [
+					{
+						"id": "347:2903",
+						"variant": "Depth=1",
+						"width": 1510,
+						"height": 52
+					},
+					{
+						"id": "347:2905",
+						"variant": "Depth=2",
+						"width": 1510,
+						"height": 52
+					},
+					{
+						"id": "347:3029",
+						"variant": "Depth=3",
+						"width": 1510,
+						"height": 52
+					},
+					{
+						"id": "347:3077",
+						"variant": "Depth=4",
+						"width": 1510,
+						"height": 52
+					},
+					{
+						"id": "347:3125",
+						"variant": "Depth=5",
+						"width": 1510,
+						"height": 52
+					},
+					{
+						"id": "347:3173",
+						"variant": "Depth=6",
+						"width": 1510,
+						"height": 52
+					},
+					{
+						"id": "347:3223",
+						"variant": "Depth=7",
+						"width": 1510,
+						"height": 52
+					}
+				],
+				"renderedImages": 7
+			}
+		}
+	],
+	"assets": [
+		{
+			"sourceNode": "1:2386",
+			"name": "GanttChart",
+			"path": "registry/radix-nova/assets/navigation/1-2386-gantt-chart.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 936
+		},
+		{
+			"sourceNode": "1:2386",
+			"name": "Line8",
+			"path": "registry/radix-nova/assets/navigation/1-2386-line8.svg",
+			"width": 24.0,
+			"height": 1.0,
+			"bytes": 222
+		},
+		{
+			"sourceNode": "1:2386",
+			"name": "Trophy",
+			"path": "registry/radix-nova/assets/navigation/1-2386-trophy.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1407
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "ClipboardTask",
+			"path": "registry/radix-nova/assets/navigation/1-2498-clipboard-task.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1112
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "Panel",
+			"path": "registry/radix-nova/assets/navigation/1-2498-panel.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 522
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "Delimiter",
+			"path": "registry/radix-nova/assets/navigation/1-2498-delimiter.svg",
+			"width": 268.0,
+			"height": 1.0,
+			"bytes": 228
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "Search",
+			"path": "registry/radix-nova/assets/navigation/1-2498-search.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 657
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "Folder",
+			"path": "registry/radix-nova/assets/navigation/1-2498-folder.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1033
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "Draggable",
+			"path": "registry/radix-nova/assets/navigation/1-2498-draggable.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 505
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "ClipboardTask1",
+			"path": "registry/radix-nova/assets/navigation/1-2498-clipboard-task1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1112
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "Book",
+			"path": "registry/radix-nova/assets/navigation/1-2498-book.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1675
+		},
+		{
+			"sourceNode": "1:2498",
+			"name": "Bug",
+			"path": "registry/radix-nova/assets/navigation/1-2498-bug.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1387
+		},
+		{
+			"sourceNode": "1:2549",
+			"name": "Book",
+			"path": "registry/radix-nova/assets/navigation/1-2549-book.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1675
+		},
+		{
+			"sourceNode": "1:2549",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/1-2549-chevron.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 549
+		},
+		{
+			"sourceNode": "1:2549",
+			"name": "Flashlight",
+			"path": "registry/radix-nova/assets/navigation/1-2549-flashlight.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1966
+		},
+		{
+			"sourceNode": "1:2567",
+			"name": "FolderOpen",
+			"path": "registry/radix-nova/assets/navigation/1-2567-folder-open.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1197
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Draggable",
+			"path": "registry/radix-nova/assets/navigation/1-2572-draggable.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 505
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "ClipboardTask",
+			"path": "registry/radix-nova/assets/navigation/1-2572-clipboard-task.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1112
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Book",
+			"path": "registry/radix-nova/assets/navigation/1-2572-book.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1675
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Bug",
+			"path": "registry/radix-nova/assets/navigation/1-2572-bug.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1387
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Lock",
+			"path": "registry/radix-nova/assets/navigation/1-2572-lock.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 485
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/1-2572-chevron.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "More",
+			"path": "registry/radix-nova/assets/navigation/1-2572-more.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Draggable1",
+			"path": "registry/radix-nova/assets/navigation/1-2572-draggable1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 505
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "ClipboardTask1",
+			"path": "registry/radix-nova/assets/navigation/1-2572-clipboard-task1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1112
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Book1",
+			"path": "registry/radix-nova/assets/navigation/1-2572-book1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1675
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Bug1",
+			"path": "registry/radix-nova/assets/navigation/1-2572-bug1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1387
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Lock1",
+			"path": "registry/radix-nova/assets/navigation/1-2572-lock1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 485
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Chevron1",
+			"path": "registry/radix-nova/assets/navigation/1-2572-chevron1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "More1",
+			"path": "registry/radix-nova/assets/navigation/1-2572-more1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "TypeDropIndicator",
+			"path": "registry/radix-nova/assets/navigation/1-2572-type-drop-indicator.svg",
+			"width": 268.0,
+			"height": 32.0,
+			"bytes": 308
+		},
+		{
+			"sourceNode": "1:2572",
+			"name": "Add",
+			"path": "registry/radix-nova/assets/navigation/1-2572-add.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 488
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Draggable",
+			"path": "registry/radix-nova/assets/navigation/1-2617-draggable.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 505
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "FolderOpen",
+			"path": "registry/radix-nova/assets/navigation/1-2617-folder-open.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1197
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Folder",
+			"path": "registry/radix-nova/assets/navigation/1-2617-folder.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1033
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Lock",
+			"path": "registry/radix-nova/assets/navigation/1-2617-lock.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 485
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/1-2617-chevron.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "More",
+			"path": "registry/radix-nova/assets/navigation/1-2617-more.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Draggable1",
+			"path": "registry/radix-nova/assets/navigation/1-2617-draggable1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 505
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "FolderOpen1",
+			"path": "registry/radix-nova/assets/navigation/1-2617-folder-open1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1197
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Folder1",
+			"path": "registry/radix-nova/assets/navigation/1-2617-folder1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1033
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Lock1",
+			"path": "registry/radix-nova/assets/navigation/1-2617-lock1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 485
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Chevron1",
+			"path": "registry/radix-nova/assets/navigation/1-2617-chevron1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "More1",
+			"path": "registry/radix-nova/assets/navigation/1-2617-more1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "TypeDropIndicator",
+			"path": "registry/radix-nova/assets/navigation/1-2617-type-drop-indicator.svg",
+			"width": 268.0,
+			"height": 32.0,
+			"bytes": 310
+		},
+		{
+			"sourceNode": "1:2617",
+			"name": "Add",
+			"path": "registry/radix-nova/assets/navigation/1-2617-add.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 488
+		},
+		{
+			"sourceNode": "1:2655",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/1-2655-chevron.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 552
+		},
+		{
+			"sourceNode": "1:2655",
+			"name": "More",
+			"path": "registry/radix-nova/assets/navigation/1-2655-more.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2655",
+			"name": "Chevron1",
+			"path": "registry/radix-nova/assets/navigation/1-2655-chevron1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 548
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Draggable",
+			"path": "registry/radix-nova/assets/navigation/1-2675-draggable.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 505
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "ClipboardTask",
+			"path": "registry/radix-nova/assets/navigation/1-2675-clipboard-task.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1112
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Book",
+			"path": "registry/radix-nova/assets/navigation/1-2675-book.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1675
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Bug",
+			"path": "registry/radix-nova/assets/navigation/1-2675-bug.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1387
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Lock",
+			"path": "registry/radix-nova/assets/navigation/1-2675-lock.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 485
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/1-2675-chevron.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "More",
+			"path": "registry/radix-nova/assets/navigation/1-2675-more.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "TypeDropIndicator",
+			"path": "registry/radix-nova/assets/navigation/1-2675-type-drop-indicator.svg",
+			"width": 268.0,
+			"height": 32.0,
+			"bytes": 308
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Folder",
+			"path": "registry/radix-nova/assets/navigation/1-2675-folder.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1033
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Chevron1",
+			"path": "registry/radix-nova/assets/navigation/1-2675-chevron1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "More1",
+			"path": "registry/radix-nova/assets/navigation/1-2675-more1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Document",
+			"path": "registry/radix-nova/assets/navigation/1-2675-document.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 618
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Add",
+			"path": "registry/radix-nova/assets/navigation/1-2675-add.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 488
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Chevron2",
+			"path": "registry/radix-nova/assets/navigation/1-2675-chevron2.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "1:2675",
+			"name": "Lock1",
+			"path": "registry/radix-nova/assets/navigation/1-2675-lock1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 485
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Folder",
+			"path": "registry/radix-nova/assets/navigation/1-2790-folder.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1033
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/1-2790-chevron.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "More",
+			"path": "registry/radix-nova/assets/navigation/1-2790-more.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "More1",
+			"path": "registry/radix-nova/assets/navigation/1-2790-more1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Document",
+			"path": "registry/radix-nova/assets/navigation/1-2790-document.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 618
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Add",
+			"path": "registry/radix-nova/assets/navigation/1-2790-add.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 488
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Document1",
+			"path": "registry/radix-nova/assets/navigation/1-2790-document1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 618
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "More2",
+			"path": "registry/radix-nova/assets/navigation/1-2790-more2.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Add1",
+			"path": "registry/radix-nova/assets/navigation/1-2790-add1.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 479
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "FolderOpen",
+			"path": "registry/radix-nova/assets/navigation/1-2790-folder-open.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1197
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Grid",
+			"path": "registry/radix-nova/assets/navigation/1-2790-grid.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1335
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Lock",
+			"path": "registry/radix-nova/assets/navigation/1-2790-lock.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 485
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Notebook",
+			"path": "registry/radix-nova/assets/navigation/1-2790-notebook.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 868
+		},
+		{
+			"sourceNode": "1:2790",
+			"name": "Chevron1",
+			"path": "registry/radix-nova/assets/navigation/1-2790-chevron1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 569
+		},
+		{
+			"sourceNode": "1:3029",
+			"name": "SnappLogo",
+			"path": "registry/radix-nova/assets/navigation/1-3029-snapp-logo.svg",
+			"width": 84.0,
+			"height": 21.0,
+			"bytes": 3783
+		},
+		{
+			"sourceNode": "1:3029",
+			"name": "IconSearch",
+			"path": "registry/radix-nova/assets/navigation/1-3029-icon-search.svg",
+			"width": 15.7803,
+			"height": 15.7803,
+			"bytes": 394
+		},
+		{
+			"sourceNode": "1:3029",
+			"name": "IconActivity",
+			"path": "registry/radix-nova/assets/navigation/1-3029-icon-activity.svg",
+			"width": 16.25,
+			"height": 16.0,
+			"bytes": 617
+		},
+		{
+			"sourceNode": "1:3029",
+			"name": "IconAdd",
+			"path": "registry/radix-nova/assets/navigation/1-3029-icon-add.svg",
+			"width": 15.0,
+			"height": 15.0,
+			"bytes": 342
+		},
+		{
+			"sourceNode": "1:3029",
+			"name": "IconFilter",
+			"path": "registry/radix-nova/assets/navigation/1-3029-icon-filter.svg",
+			"width": 18.0,
+			"height": 18.0,
+			"bytes": 295
+		},
+		{
+			"sourceNode": "1:3029",
+			"name": "IconSettings",
+			"path": "registry/radix-nova/assets/navigation/1-3029-icon-settings.svg",
+			"width": 17.0,
+			"height": 17.0,
+			"bytes": 7086
+		},
+		{
+			"sourceNode": "1:3029",
+			"name": "IconProfile",
+			"path": "registry/radix-nova/assets/navigation/1-3029-icon-profile.svg",
+			"width": 32.0,
+			"height": 32.0,
+			"bytes": 352
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "SnappLogo",
+			"path": "registry/radix-nova/assets/navigation/1-3098-snapp-logo.svg",
+			"width": 109.0,
+			"height": 28.0,
+			"bytes": 3786
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/1-3098-chevron.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 549
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "ChatMultiple",
+			"path": "registry/radix-nova/assets/navigation/1-3098-chat-multiple.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1709
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "MailUnread",
+			"path": "registry/radix-nova/assets/navigation/1-3098-mail-unread.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1257
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "BookOpen",
+			"path": "registry/radix-nova/assets/navigation/1-3098-book-open.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 790
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "Notebook",
+			"path": "registry/radix-nova/assets/navigation/1-3098-notebook.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 945
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "Trophy",
+			"path": "registry/radix-nova/assets/navigation/1-3098-trophy.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1114
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "Frame634093",
+			"path": "registry/radix-nova/assets/navigation/1-3098-frame634093.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1120
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "Tag",
+			"path": "registry/radix-nova/assets/navigation/1-3098-tag.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1005
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "HatGraduation",
+			"path": "registry/radix-nova/assets/navigation/1-3098-hat-graduation.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1853
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "ApprovalsApp",
+			"path": "registry/radix-nova/assets/navigation/1-3098-approvals-app.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1186
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "SignOut",
+			"path": "registry/radix-nova/assets/navigation/1-3098-sign-out.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 1337
+		},
+		{
+			"sourceNode": "1:3098",
+			"name": "ChevronUpDown",
+			"path": "registry/radix-nova/assets/navigation/1-3098-chevron-up-down.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 961
+		},
+		{
+			"sourceNode": "13:934",
+			"name": "Trophy",
+			"path": "registry/radix-nova/assets/navigation/13-934-trophy.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1407
+		},
+		{
+			"sourceNode": "13:934",
+			"name": "Trophy1",
+			"path": "registry/radix-nova/assets/navigation/13-934-trophy1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1407
+		},
+		{
+			"sourceNode": "13:934",
+			"name": "Filter",
+			"path": "registry/radix-nova/assets/navigation/13-934-filter.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 612
+		},
+		{
+			"sourceNode": "13:934",
+			"name": "Panel",
+			"path": "registry/radix-nova/assets/navigation/13-934-panel.svg",
+			"width": 20.0,
+			"height": 48.0,
+			"bytes": 535
+		},
+		{
+			"sourceNode": "13:1199",
+			"name": "Home",
+			"path": "registry/radix-nova/assets/navigation/13-1199-home.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 1139
+		},
+		{
+			"sourceNode": "13:1199",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/13-1199-chevron.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "13:1199",
+			"name": "AppRecent",
+			"path": "registry/radix-nova/assets/navigation/13-1199-app-recent.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 844
+		},
+		{
+			"sourceNode": "13:1199",
+			"name": "Pin",
+			"path": "registry/radix-nova/assets/navigation/13-1199-pin.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 981
+		},
+		{
+			"sourceNode": "13:1199",
+			"name": "Board",
+			"path": "registry/radix-nova/assets/navigation/13-1199-board.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 562
+		},
+		{
+			"sourceNode": "13:1199",
+			"name": "Headset",
+			"path": "registry/radix-nova/assets/navigation/13-1199-headset.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 868
+		},
+		{
+			"sourceNode": "13:1199",
+			"name": "Toolbox",
+			"path": "registry/radix-nova/assets/navigation/13-1199-toolbox.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 1020
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Home",
+			"path": "registry/radix-nova/assets/navigation/50-5887-home.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 1139
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/50-5887-chevron.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "AppRecent",
+			"path": "registry/radix-nova/assets/navigation/50-5887-app-recent.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 844
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Pin",
+			"path": "registry/radix-nova/assets/navigation/50-5887-pin.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 981
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Board",
+			"path": "registry/radix-nova/assets/navigation/50-5887-board.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 562
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Headset",
+			"path": "registry/radix-nova/assets/navigation/50-5887-headset.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 868
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Toolbox",
+			"path": "registry/radix-nova/assets/navigation/50-5887-toolbox.svg",
+			"width": 24.0,
+			"height": 24.0,
+			"bytes": 1020
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "FormMultiple",
+			"path": "registry/radix-nova/assets/navigation/50-5887-form-multiple.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1497
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Panel",
+			"path": "registry/radix-nova/assets/navigation/50-5887-panel.svg",
+			"width": 20.0,
+			"height": 48.0,
+			"bytes": 535
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Search",
+			"path": "registry/radix-nova/assets/navigation/50-5887-search.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 657
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "FolderOpen",
+			"path": "registry/radix-nova/assets/navigation/50-5887-folder-open.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1197
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Chevron1",
+			"path": "registry/radix-nova/assets/navigation/50-5887-chevron1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Form",
+			"path": "registry/radix-nova/assets/navigation/50-5887-form.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1323
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "More",
+			"path": "registry/radix-nova/assets/navigation/50-5887-more.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Add",
+			"path": "registry/radix-nova/assets/navigation/50-5887-add.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 488
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Folder",
+			"path": "registry/radix-nova/assets/navigation/50-5887-folder.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1033
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Chevron2",
+			"path": "registry/radix-nova/assets/navigation/50-5887-chevron2.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "TaskList",
+			"path": "registry/radix-nova/assets/navigation/50-5887-task-list.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1577
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "Draggable",
+			"path": "registry/radix-nova/assets/navigation/50-5887-draggable.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 505
+		},
+		{
+			"sourceNode": "50:5887",
+			"name": "TetrisApp",
+			"path": "registry/radix-nova/assets/navigation/50-5887-tetris-app.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1357
+		},
+		{
+			"sourceNode": "74:9562",
+			"name": "Bold",
+			"path": "registry/radix-nova/assets/navigation/74-9562-bold.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1387
+		},
+		{
+			"sourceNode": "74:9562",
+			"name": "Italic",
+			"path": "registry/radix-nova/assets/navigation/74-9562-italic.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 348
+		},
+		{
+			"sourceNode": "74:9562",
+			"name": "Underline",
+			"path": "registry/radix-nova/assets/navigation/74-9562-underline.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 487
+		},
+		{
+			"sourceNode": "74:9562",
+			"name": "ListOrdered",
+			"path": "registry/radix-nova/assets/navigation/74-9562-list-ordered.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 2495
+		},
+		{
+			"sourceNode": "74:9562",
+			"name": "ListUnordered",
+			"path": "registry/radix-nova/assets/navigation/74-9562-list-unordered.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 778
+		},
+		{
+			"sourceNode": "74:9562",
+			"name": "AlignLeft",
+			"path": "registry/radix-nova/assets/navigation/74-9562-align-left.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 483
+		},
+		{
+			"sourceNode": "74:9562",
+			"name": "AlignCenter",
+			"path": "registry/radix-nova/assets/navigation/74-9562-align-center.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 485
+		},
+		{
+			"sourceNode": "74:9562",
+			"name": "AlignRight",
+			"path": "registry/radix-nova/assets/navigation/74-9562-align-right.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 479
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "Search",
+			"path": "registry/radix-nova/assets/navigation/74-9647-search.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 657
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "ClipboardTask",
+			"path": "registry/radix-nova/assets/navigation/74-9647-clipboard-task.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1112
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "Dismiss",
+			"path": "registry/radix-nova/assets/navigation/74-9647-dismiss.svg",
+			"width": 12.0,
+			"height": 12.0,
+			"bytes": 825
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "Flag",
+			"path": "registry/radix-nova/assets/navigation/74-9647-flag.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 535
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "More",
+			"path": "registry/radix-nova/assets/navigation/74-9647-more.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 567
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "TargetArrow",
+			"path": "registry/radix-nova/assets/navigation/74-9647-target-arrow.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1753
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/74-9647-chevron.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "Chevron1",
+			"path": "registry/radix-nova/assets/navigation/74-9647-chevron1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 550
+		},
+		{
+			"sourceNode": "74:9647",
+			"name": "Add",
+			"path": "registry/radix-nova/assets/navigation/74-9647-add.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 488
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "Home",
+			"path": "registry/radix-nova/assets/navigation/281-2267-home.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1132
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "Search",
+			"path": "registry/radix-nova/assets/navigation/281-2267-search.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 657
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "GridDots",
+			"path": "registry/radix-nova/assets/navigation/281-2267-grid-dots.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1586
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "Book",
+			"path": "registry/radix-nova/assets/navigation/281-2267-book.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1675
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "BuildingMultiple",
+			"path": "registry/radix-nova/assets/navigation/281-2267-building-multiple.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1750
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "TreeDeciduous",
+			"path": "registry/radix-nova/assets/navigation/281-2267-tree-deciduous.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1342
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "DualScreenDesktop",
+			"path": "registry/radix-nova/assets/navigation/281-2267-dual-screen-desktop.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1029
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "VehicleCarProfile",
+			"path": "registry/radix-nova/assets/navigation/281-2267-vehicle-car-profile.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1518
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "Globe",
+			"path": "registry/radix-nova/assets/navigation/281-2267-globe.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1870
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "Headset",
+			"path": "registry/radix-nova/assets/navigation/281-2267-headset.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 847
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "Airplane",
+			"path": "registry/radix-nova/assets/navigation/281-2267-airplane.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1687
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "BuildingLighthouse",
+			"path": "registry/radix-nova/assets/navigation/281-2267-building-lighthouse.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1865
+		},
+		{
+			"sourceNode": "281:2267",
+			"name": "Apps",
+			"path": "registry/radix-nova/assets/navigation/281-2267-apps.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1419
+		},
+		{
+			"sourceNode": "300:2763",
+			"name": "Chevron",
+			"path": "registry/radix-nova/assets/navigation/300-2763-chevron.svg",
+			"width": 12.0,
+			"height": 12.0,
+			"bytes": 549
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Home",
+			"path": "registry/radix-nova/assets/navigation/334-2201-home.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1132
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Chat",
+			"path": "registry/radix-nova/assets/navigation/334-2201-chat.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1236
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "ArrowAutofit",
+			"path": "registry/radix-nova/assets/navigation/334-2201-arrow-autofit.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1317
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "GridDots",
+			"path": "registry/radix-nova/assets/navigation/334-2201-grid-dots.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1586
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Person",
+			"path": "registry/radix-nova/assets/navigation/334-2201-person.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 893
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Search",
+			"path": "registry/radix-nova/assets/navigation/334-2201-search.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 657
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Book",
+			"path": "registry/radix-nova/assets/navigation/334-2201-book.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1675
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "BuildingMultiple",
+			"path": "registry/radix-nova/assets/navigation/334-2201-building-multiple.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1750
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "TreeDeciduous",
+			"path": "registry/radix-nova/assets/navigation/334-2201-tree-deciduous.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1342
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "DualScreenDesktop",
+			"path": "registry/radix-nova/assets/navigation/334-2201-dual-screen-desktop.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1029
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "VehicleCarProfile",
+			"path": "registry/radix-nova/assets/navigation/334-2201-vehicle-car-profile.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1518
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Globe",
+			"path": "registry/radix-nova/assets/navigation/334-2201-globe.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1870
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Headset",
+			"path": "registry/radix-nova/assets/navigation/334-2201-headset.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 847
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Airplane",
+			"path": "registry/radix-nova/assets/navigation/334-2201-airplane.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1687
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "BuildingLighthouse",
+			"path": "registry/radix-nova/assets/navigation/334-2201-building-lighthouse.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1865
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Apps",
+			"path": "registry/radix-nova/assets/navigation/334-2201-apps.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1419
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "PuzzlePiece",
+			"path": "registry/radix-nova/assets/navigation/334-2201-puzzle-piece.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1691
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "PuzzlePiece1",
+			"path": "registry/radix-nova/assets/navigation/334-2201-puzzle-piece1.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 1883
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Vector",
+			"path": "registry/radix-nova/assets/navigation/334-2201-vector.svg",
+			"width": 5.33333,
+			"height": 5.33333,
+			"bytes": 339
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Vector1",
+			"path": "registry/radix-nova/assets/navigation/334-2201-vector1.svg",
+			"width": 5.33333,
+			"height": 5.33333,
+			"bytes": 339
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Vector2",
+			"path": "registry/radix-nova/assets/navigation/334-2201-vector2.svg",
+			"width": 6.0,
+			"height": 6.0,
+			"bytes": 315
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Vector3",
+			"path": "registry/radix-nova/assets/navigation/334-2201-vector3.svg",
+			"width": 9.33333,
+			"height": 9.33333,
+			"bytes": 339
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Vector4",
+			"path": "registry/radix-nova/assets/navigation/334-2201-vector4.svg",
+			"width": 9.33333,
+			"height": 9.33333,
+			"bytes": 339
+		},
+		{
+			"sourceNode": "334:2201",
+			"name": "Icon",
+			"path": "registry/radix-nova/assets/navigation/334-2201-icon.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 1320
+		},
+		{
+			"sourceNode": "347:2904",
+			"name": "Search",
+			"path": "registry/radix-nova/assets/navigation/347-2904-search.svg",
+			"width": 20.0,
+			"height": 20.0,
+			"bytes": 657
+		},
+		{
+			"sourceNode": "347:2904",
+			"name": "Filter",
+			"path": "registry/radix-nova/assets/navigation/347-2904-filter.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 612
+		},
+		{
+			"sourceNode": "347:2904",
+			"name": "Dismiss",
+			"path": "registry/radix-nova/assets/navigation/347-2904-dismiss.svg",
+			"width": 16.0,
+			"height": 16.0,
+			"bytes": 821
+		},
+		{
+			"sourceNode": "347:2904",
+			"name": "Add",
+			"path": "registry/radix-nova/assets/navigation/347-2904-add.svg",
+			"width": 11.0,
+			"height": 11.0,
+			"bytes": 610
+		}
+	],
+	"knownBoundaries": [
+		"All21 complete parent contexts and screenshots were inspected; additional per-child remote reads stopped at the shared Figma plan quota. Parent contexts include every assigned variant branch.",
+		"The registry owns presentation and local interaction state. Data mutations, storage, authorization and Dataverse callbacks remain consumer-owned; no business sample records, iframe, API transport or persistence were added to production navigation components.",
+		"Typography uses the exact source families and styles. Natural widths differ slightly between Figma integer text geometry and Chromium fractional glyph advances: pagination409.71875 vs413, Item59.421875 vs60, expanded tab130.84375 vs132, eight-item menu519.375 vs524. These measurements and the per-text-run tolerance are explicit in the portable gate; this audit does not claim bit-identical cross-platform text rasterization.",
+		"Browser verification is Chromium156.0.8078.4 on Windows at device scale1. Popup collision avoidance remains enabled; a3600px-tall fixture viewport makes the authored below-header popup variants visible without disabling production behavior."
+	],
+	"browserVerification": {
+		"status": "passed",
+		"renderedAt": "2026-10-18T23:56:22.478Z",
+		"renderer": {
+			"browser": "156.0.8078.4",
+			"platform": "win32",
+			"viewport": {
+				"width": 2040,
+				"height": 3600
+			},
+			"deviceScaleFactor": 1
+		},
+		"command": "node scripts/verify-navigation-browser.mjs",
+		"previewCommand": "node scripts/figma-preview.mjs <clean-installed-consumer>",
+		"previewEnvironment": "SNAPP_FIGMA_PREVIEW_URL (default http://127.0.0.1:4799/)",
+		"report": "artifacts/figma-qa/navigation/navigation-qa.json",
+		"families": 21,
+		"variants": 51,
+		"assertions": 179,
+		"errors": 0,
+		"popupStates": [
+			{
+				"node": "283:2327",
+				"x": 1090,
+				"y": 64,
+				"width": 448,
+				"height": 241,
+				"padding": "8px",
+				"radius": "8px"
+			},
+			{
+				"node": "334:2535",
+				"x": 1042,
+				"y": 60,
+				"width": 448,
+				"height": 241,
+				"padding": "8px",
+				"radius": "8px"
+			},
+			{
+				"node": "334:2623",
+				"x": 1082,
+				"y": 60,
+				"width": 360,
+				"height": 96,
+				"padding": "8px",
+				"radius": "8px"
+			},
+			{
+				"node": "334:2718",
+				"x": 1406,
+				"y": 60,
+				"width": 132,
+				"height": 96,
+				"padding": "16px",
+				"radius": "8px"
+			},
+			{
+				"node": "334:2769",
+				"x": 130,
+				"y": 60,
+				"width": 182.015625,
+				"height": 240,
+				"padding": "24px",
+				"radius": "8px"
+			},
+			{
+				"node": "342:2403",
+				"x": 1024,
+				"y": 60,
+				"width": 370,
+				"height": 500,
+				"padding": "0px",
+				"radius": "8px"
+			}
+		],
+		"intrinsicTextDifferences": {
+			"pagination": {
+				"figma": 413,
+				"chromium": 409.71875,
+				"reason": "Intrinsic text metrics differ across Figma integer geometry and Chromium fractional advances; exact14/20 Aptos400,p8/12,gap4 preserved. No sample-specific widths are forced."
+			},
+			"tabItem": {
+				"figma": 60,
+				"chromium": 59.421875
+			},
+			"expandedTab": {
+				"figma": 132,
+				"chromium": 130.84375
+			},
+			"tabbedMenu": {
+				"figma": 524,
+				"chromium": 519.375,
+				"textRuns": 8
+			}
+		}
+	}
+}

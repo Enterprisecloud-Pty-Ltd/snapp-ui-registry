@@ -1,0 +1,948 @@
+{
+  "date": "2026-10-19",
+  "status": "exact-model-match",
+  "scope": "Read-only source-font, source-Figma vector and browser measurement investigation; no repo, font, style or Figma edits.",
+  "sourceFace": {
+    "canonicalPath": "registry/radix-nova/fonts/aptos/Aptos.ttf",
+    "family": "Aptos",
+    "style": "Regular",
+    "weight": 400,
+    "version": "1.09/O365",
+    "unitsPerEm": 2048,
+    "fontSizePx": 14,
+    "sha256": "b46c7865bdecc68d7d82075a2d1e93e31cb73146eae6740bc7c090c8d0b2842a"
+  },
+  "sourceFileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "sourceSvgEvidence": {
+    "file": "snapp-text-width-glyph-exports.json",
+    "sha256": "84ff91c2ed79c8ac8c2e8e5e195816c2378ba65ba2e2027d28574f3d66261400",
+    "provenance": "Integration owner fresh read-only Figma exportAsync SVG with svgOutlineText true for the exact TEXT nodes; this investigator decoded and compared canonical TTF glyph contours."
+  },
+  "quantizationModel": {
+    "formula": "q(u) = 2 * floor(u / 2 + 0.5)",
+    "application": "Quantize each hmtx advance and each GPOS xAdvance independently, then sum. Keep original outline geometry. Multiply by actual fontSize / 2048. HUG frame is ceil of resulting total advance.",
+    "equivalentScaleHypothesis": "HarfBuzz integer shaping at scale1024 for a2048UPM font with half-ties rounded toward +infinity, then glyph positions converted back to2048UPM.",
+    "hypothesisLimit": "Exact vector positions and source frames prove this quantization model for the sampled source text; Figma does not expose its internal HarfBuzz scale or version through the queried API, so the scale1024 implementation mechanism remains an inference."
+  },
+  "summary": {
+    "textRowsCompared": 5,
+    "sourceInkBoundsExactMatches": 5,
+    "sourceHugFrameMatches": 5,
+    "svgTextsCompared": 3,
+    "svgVisibleGlyphOriginsCompared": 15,
+    "svgContourStartsCompared": 21,
+    "svgXYCoordinatesCompared": 42,
+    "maxSvgCoordinateErrorPx": 4.687500000244427e-05,
+    "allSvgContourStartsMatchSerializedPrecision": true
+  },
+  "excludedCauses": [
+    "The designer1.09 and earlier2.01 hmtx, sampled GPOS and normalized ASCII outlines agree; changing between these versions does not remove the width discrepancy.",
+    "Legacy kern values are not alternate\u221245/\u22128/\u221223 values: both fonts have We\u221251,te\u221210,ex\u221231 and no xt pair in legacykern.",
+    "Kerning:none has materially wider vector ink and predicts an incorrect39px Alegra HUG frame instead of source38px; it is not the source behavior.",
+    "Raster antialiasing does not explain differences already present in exported vector glyph positions.",
+    "Ceiling the unmodified browser whole-string advance61.9609375 produces62; the actual source model crosses62 at62.001953125 before ceiling63."
+  ],
+  "primaryReferences": [
+    {
+      "url": "https://raw.githubusercontent.com/harfbuzz/harfbuzz/main/src/hb-font.hh",
+      "supports": "em_mult uses(v * mult +32768)>>16; changed() derives mult from x_scale*65536/UPEM. At1024/2048 this implements the observed quantization."
+    },
+    {
+      "url": "https://harfbuzz.github.io/harfbuzz-hb-font.html#hb-font-set-scale",
+      "supports": "Font scale is client-controlled and position values are integer; fractional precision varies with chosen scale. Does not document Figma client settings."
+    },
+    {
+      "url": "https://developers.figma.com/docs/plugins/api/properties/TextNode-textautoresize/",
+      "supports": "WIDTH_AND_HEIGHT sizes text to content; it does not specify the internal shaper scale or a universal pixelceil contract."
+    },
+    {
+      "url": "https://www.w3.org/TR/css-fonts-3/#font-kerning-prop",
+      "supports": "font-kerning controls kerning availability, not the fixed precision at which a client computes advances."
+    }
+  ],
+  "dynamicCanvasProof": {
+    "file": "canvas-pair-quantization.json",
+    "sha256": "6b054a384352fc02a5a411db56d415e0d381b75e9c131220ab484aed3b957b72",
+    "method": "Use loaded Aptos Canvas normal kerning at1024px. Derive each single-character advance and pair delta independently; Math.round each; sum and multiply by actualFontSize/1024 before ceil.",
+    "result": "All8 probe strings have pair-decomposed unquantized widths equal to whole-string Canvas; the quantized result predicts Week63,Next28,Item28,Alegra38,ButtonText68 without storing any label width.",
+    "limitations": [
+      "ASCII sample proof; pair decomposition is not a general substitute for GSUB shaping, ligatures, joining, bidi or complex-script layout.",
+      "Font readiness, actual face/weight, feature settings and fallback must be handled before production use.",
+      "Canvas measurement can be used to set a layout slot while normal text paints; this would match HUG frame geometry but not remove the tiny subpixel vector-position delta in normal browser paint.",
+      "A universal exact-paint solution would require the same shaping quantization and glyph positioning; no CSS font-kerning setting alone provides this."
+    ]
+  },
+  "rows": [
+    {
+      "sourceNodeId": "1:2662",
+      "text": "Week 1 - 3",
+      "figma": {
+        "frame": 63,
+        "left": 0.013671875,
+        "width": 61.33203125
+      },
+      "quantizedAdvanceUnits": 9070,
+      "quantizedAdvance14px": 62.001953125,
+      "quantizedHugCeil14px": 63,
+      "rawAdvanceUnits": 9064,
+      "rawAdvance14px": 61.9609375,
+      "rawHugCeil14px": 62,
+      "quantizedInkLeft": 0.013671875,
+      "quantizedInkWidth": 61.33203125,
+      "matchesExactSourceInk": true,
+      "matchesSourceHugFrame": true,
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "W",
+          "hmtxUnits": 1827,
+          "quantizedHmtxUnits": 1828,
+          "gposAfterUnits": -51,
+          "quantizedGposAfterUnits": -50,
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0
+        },
+        {
+          "index": 1,
+          "character": "e",
+          "hmtxUnits": 1079,
+          "quantizedHmtxUnits": 1080,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 1776,
+          "quantizedOriginUnits": 1778
+        },
+        {
+          "index": 2,
+          "character": "e",
+          "hmtxUnits": 1079,
+          "quantizedHmtxUnits": 1080,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 2855,
+          "quantizedOriginUnits": 2858
+        },
+        {
+          "index": 3,
+          "character": "k",
+          "hmtxUnits": 997,
+          "quantizedHmtxUnits": 998,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 3934,
+          "quantizedOriginUnits": 3938
+        },
+        {
+          "index": 4,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 4931,
+          "quantizedOriginUnits": 4936
+        },
+        {
+          "index": 5,
+          "character": "1",
+          "hmtxUnits": 1094,
+          "quantizedHmtxUnits": 1094,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 5347,
+          "quantizedOriginUnits": 5352
+        },
+        {
+          "index": 6,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 6441,
+          "quantizedOriginUnits": 6446
+        },
+        {
+          "index": 7,
+          "character": "-",
+          "hmtxUnits": 697,
+          "quantizedHmtxUnits": 698,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 6857,
+          "quantizedOriginUnits": 6862
+        },
+        {
+          "index": 8,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 7554,
+          "quantizedOriginUnits": 7560
+        },
+        {
+          "index": 9,
+          "character": "3",
+          "hmtxUnits": 1094,
+          "quantizedHmtxUnits": 1094,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 7970,
+          "quantizedOriginUnits": 7976
+        }
+      ],
+      "svgFirstContourChecks": [
+        {
+          "characterIndex": 0,
+          "character": "W",
+          "contourIndex": 0,
+          "sourceM": [
+            2.69336,
+            9.20117
+          ],
+          "predictedM": [
+            2.693359375,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            6.250000001983835e-07,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "e",
+          "contourIndex": 0,
+          "sourceM": [
+            16.0098,
+            9.32422
+          ],
+          "predictedM": [
+            16.009765625,
+            9.32421875
+          ],
+          "absoluteErrorPx": [
+            3.4374999998476596e-05,
+            1.250000000396767e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "e",
+          "contourIndex": 1,
+          "sourceM": [
+            14.0137,
+            5.21582
+          ],
+          "predictedM": [
+            14.013671875,
+            5.2158203125
+          ],
+          "absoluteErrorPx": [
+            2.8125000000045475e-05,
+            3.1250000009919177e-07
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "e",
+          "contourIndex": 0,
+          "sourceM": [
+            23.3926,
+            9.32422
+          ],
+          "predictedM": [
+            23.392578125,
+            9.32421875
+          ],
+          "absoluteErrorPx": [
+            2.1875000001614353e-05,
+            1.250000000396767e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "e",
+          "contourIndex": 1,
+          "sourceM": [
+            21.3965,
+            5.21582
+          ],
+          "predictedM": [
+            21.396484375,
+            5.2158203125
+          ],
+          "absoluteErrorPx": [
+            1.5624999999630518e-05,
+            3.1250000009919177e-07
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "k",
+          "contourIndex": 0,
+          "sourceM": [
+            28.0068,
+            9.20117
+          ],
+          "predictedM": [
+            28.0068359375,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            3.593750000163709e-05,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 5,
+          "character": "1",
+          "contourIndex": 0,
+          "sourceM": [
+            40.25,
+            9.20117
+          ],
+          "predictedM": [
+            40.25,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            0.0,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 7,
+          "character": "-",
+          "contourIndex": 0,
+          "sourceM": [
+            47.5713,
+            6.30957
+          ],
+          "predictedM": [
+            47.5712890625,
+            6.3095703125
+          ],
+          "absoluteErrorPx": [
+            1.0937500000807177e-05,
+            3.1250000009919177e-07
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 9,
+          "character": "3",
+          "contourIndex": 0,
+          "sourceM": [
+            58.3105,
+            9.32422
+          ],
+          "predictedM": [
+            58.310546875,
+            9.32421875
+          ],
+          "absoluteErrorPx": [
+            4.687500000244427e-05,
+            1.250000000396767e-06
+          ],
+          "matchesExportPrecision": true
+        }
+      ]
+    },
+    {
+      "sourceNodeId": "1:2665",
+      "text": "Week 4 - 6",
+      "figma": {
+        "frame": 63,
+        "left": 0.013671875,
+        "width": 61.4140625
+      },
+      "quantizedAdvanceUnits": 9070,
+      "quantizedAdvance14px": 62.001953125,
+      "quantizedHugCeil14px": 63,
+      "rawAdvanceUnits": 9064,
+      "rawAdvance14px": 61.9609375,
+      "rawHugCeil14px": 62,
+      "quantizedInkLeft": 0.013671875,
+      "quantizedInkWidth": 61.4140625,
+      "matchesExactSourceInk": true,
+      "matchesSourceHugFrame": true,
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "W",
+          "hmtxUnits": 1827,
+          "quantizedHmtxUnits": 1828,
+          "gposAfterUnits": -51,
+          "quantizedGposAfterUnits": -50,
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0
+        },
+        {
+          "index": 1,
+          "character": "e",
+          "hmtxUnits": 1079,
+          "quantizedHmtxUnits": 1080,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 1776,
+          "quantizedOriginUnits": 1778
+        },
+        {
+          "index": 2,
+          "character": "e",
+          "hmtxUnits": 1079,
+          "quantizedHmtxUnits": 1080,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 2855,
+          "quantizedOriginUnits": 2858
+        },
+        {
+          "index": 3,
+          "character": "k",
+          "hmtxUnits": 997,
+          "quantizedHmtxUnits": 998,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 3934,
+          "quantizedOriginUnits": 3938
+        },
+        {
+          "index": 4,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 4931,
+          "quantizedOriginUnits": 4936
+        },
+        {
+          "index": 5,
+          "character": "4",
+          "hmtxUnits": 1094,
+          "quantizedHmtxUnits": 1094,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 5347,
+          "quantizedOriginUnits": 5352
+        },
+        {
+          "index": 6,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 6441,
+          "quantizedOriginUnits": 6446
+        },
+        {
+          "index": 7,
+          "character": "-",
+          "hmtxUnits": 697,
+          "quantizedHmtxUnits": 698,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 6857,
+          "quantizedOriginUnits": 6862
+        },
+        {
+          "index": 8,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 7554,
+          "quantizedOriginUnits": 7560
+        },
+        {
+          "index": 9,
+          "character": "6",
+          "hmtxUnits": 1094,
+          "quantizedHmtxUnits": 1094,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 7970,
+          "quantizedOriginUnits": 7976
+        }
+      ],
+      "svgFirstContourChecks": []
+    },
+    {
+      "sourceNodeId": "1:2668",
+      "text": "Week 7 - 8",
+      "figma": {
+        "frame": 63,
+        "left": 0.013671875,
+        "width": 61.2978515625
+      },
+      "quantizedAdvanceUnits": 9070,
+      "quantizedAdvance14px": 62.001953125,
+      "quantizedHugCeil14px": 63,
+      "rawAdvanceUnits": 9064,
+      "rawAdvance14px": 61.9609375,
+      "rawHugCeil14px": 62,
+      "quantizedInkLeft": 0.013671875,
+      "quantizedInkWidth": 61.2978515625,
+      "matchesExactSourceInk": true,
+      "matchesSourceHugFrame": true,
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "W",
+          "hmtxUnits": 1827,
+          "quantizedHmtxUnits": 1828,
+          "gposAfterUnits": -51,
+          "quantizedGposAfterUnits": -50,
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0
+        },
+        {
+          "index": 1,
+          "character": "e",
+          "hmtxUnits": 1079,
+          "quantizedHmtxUnits": 1080,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 1776,
+          "quantizedOriginUnits": 1778
+        },
+        {
+          "index": 2,
+          "character": "e",
+          "hmtxUnits": 1079,
+          "quantizedHmtxUnits": 1080,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 2855,
+          "quantizedOriginUnits": 2858
+        },
+        {
+          "index": 3,
+          "character": "k",
+          "hmtxUnits": 997,
+          "quantizedHmtxUnits": 998,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 3934,
+          "quantizedOriginUnits": 3938
+        },
+        {
+          "index": 4,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 4931,
+          "quantizedOriginUnits": 4936
+        },
+        {
+          "index": 5,
+          "character": "7",
+          "hmtxUnits": 1094,
+          "quantizedHmtxUnits": 1094,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 5347,
+          "quantizedOriginUnits": 5352
+        },
+        {
+          "index": 6,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 6441,
+          "quantizedOriginUnits": 6446
+        },
+        {
+          "index": 7,
+          "character": "-",
+          "hmtxUnits": 697,
+          "quantizedHmtxUnits": 698,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 6857,
+          "quantizedOriginUnits": 6862
+        },
+        {
+          "index": 8,
+          "character": " ",
+          "hmtxUnits": 416,
+          "quantizedHmtxUnits": 416,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 7554,
+          "quantizedOriginUnits": 7560
+        },
+        {
+          "index": 9,
+          "character": "8",
+          "hmtxUnits": 1094,
+          "quantizedHmtxUnits": 1094,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 7970,
+          "quantizedOriginUnits": 7976
+        }
+      ],
+      "svgFirstContourChecks": []
+    },
+    {
+      "sourceNodeId": "1:2673",
+      "text": "Next",
+      "figma": {
+        "frame": 28,
+        "left": 1.203125,
+        "width": 26.2158203125
+      },
+      "quantizedAdvanceUnits": 4070,
+      "quantizedAdvance14px": 27.822265625,
+      "quantizedHugCeil14px": 28,
+      "rawAdvanceUnits": 4067,
+      "rawAdvance14px": 27.8017578125,
+      "rawHugCeil14px": 28,
+      "quantizedInkLeft": 1.203125,
+      "quantizedInkWidth": 26.2158203125,
+      "matchesExactSourceInk": true,
+      "matchesSourceHugFrame": true,
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "N",
+          "hmtxUnits": 1446,
+          "quantizedHmtxUnits": 1446,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0
+        },
+        {
+          "index": 1,
+          "character": "e",
+          "hmtxUnits": 1079,
+          "quantizedHmtxUnits": 1080,
+          "gposAfterUnits": -31,
+          "quantizedGposAfterUnits": -30,
+          "rawOriginUnits": 1446,
+          "quantizedOriginUnits": 1446
+        },
+        {
+          "index": 2,
+          "character": "x",
+          "hmtxUnits": 906,
+          "quantizedHmtxUnits": 906,
+          "gposAfterUnits": 5,
+          "quantizedGposAfterUnits": 6,
+          "rawOriginUnits": 2494,
+          "quantizedOriginUnits": 2496
+        },
+        {
+          "index": 3,
+          "character": "t",
+          "hmtxUnits": 662,
+          "quantizedHmtxUnits": 662,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 3405,
+          "quantizedOriginUnits": 3408
+        }
+      ],
+      "svgFirstContourChecks": [
+        {
+          "characterIndex": 0,
+          "character": "N",
+          "contourIndex": 0,
+          "sourceM": [
+            0.0,
+            9.20117
+          ],
+          "predictedM": [
+            0.0,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            0.0,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "e",
+          "contourIndex": 0,
+          "sourceM": [
+            12.5508,
+            9.32422
+          ],
+          "predictedM": [
+            12.55078125,
+            9.32421875
+          ],
+          "absoluteErrorPx": [
+            1.8750000000622435e-05,
+            1.250000000396767e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "e",
+          "contourIndex": 1,
+          "sourceM": [
+            10.5547,
+            5.21582
+          ],
+          "predictedM": [
+            10.5546875,
+            5.2158203125
+          ],
+          "absoluteErrorPx": [
+            1.2500000000414957e-05,
+            3.1250000009919177e-07
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "x",
+          "contourIndex": 0,
+          "sourceM": [
+            15.9209,
+            9.20117
+          ],
+          "predictedM": [
+            15.9208984375,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            1.5624999996077804e-06,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "x",
+          "contourIndex": 1,
+          "sourceM": [
+            20.7744,
+            9.20117
+          ],
+          "predictedM": [
+            20.7744140625,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            1.4062500000022737e-05,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "t",
+          "contourIndex": 0,
+          "sourceM": [
+            25.416,
+            9.20117
+          ],
+          "predictedM": [
+            25.416015625,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            1.5624999999630518e-05,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        }
+      ]
+    },
+    {
+      "sourceNodeId": "300:2757",
+      "text": "Item",
+      "figma": {
+        "frame": 28,
+        "left": 1.203125,
+        "width": 25.197265625
+      },
+      "quantizedAdvanceUnits": 4014,
+      "quantizedAdvance14px": 27.439453125,
+      "quantizedHugCeil14px": 28,
+      "rawAdvanceUnits": 4011,
+      "rawAdvance14px": 27.4189453125,
+      "rawHugCeil14px": 28,
+      "quantizedInkLeft": 1.203125,
+      "quantizedInkWidth": 25.197265625,
+      "matchesExactSourceInk": true,
+      "matchesSourceHugFrame": true,
+      "glyphs": [
+        {
+          "index": 0,
+          "character": "I",
+          "hmtxUnits": 533,
+          "quantizedHmtxUnits": 534,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 0,
+          "quantizedOriginUnits": 0
+        },
+        {
+          "index": 1,
+          "character": "t",
+          "hmtxUnits": 662,
+          "quantizedHmtxUnits": 662,
+          "gposAfterUnits": -10,
+          "quantizedGposAfterUnits": -10,
+          "rawOriginUnits": 533,
+          "quantizedOriginUnits": 534
+        },
+        {
+          "index": 2,
+          "character": "e",
+          "hmtxUnits": 1079,
+          "quantizedHmtxUnits": 1080,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 1185,
+          "quantizedOriginUnits": 1186
+        },
+        {
+          "index": 3,
+          "character": "m",
+          "hmtxUnits": 1747,
+          "quantizedHmtxUnits": 1748,
+          "gposAfterUnits": 0,
+          "quantizedGposAfterUnits": 0,
+          "rawOriginUnits": 2264,
+          "quantizedOriginUnits": 2266
+        }
+      ],
+      "svgFirstContourChecks": [
+        {
+          "characterIndex": 0,
+          "character": "I",
+          "contourIndex": 0,
+          "sourceM": [
+            0.0,
+            9.20117
+          ],
+          "predictedM": [
+            0.0,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            0.0,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 1,
+          "character": "t",
+          "contourIndex": 0,
+          "sourceM": [
+            5.76953,
+            9.20117
+          ],
+          "predictedM": [
+            5.76953125,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            1.250000000396767e-06,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "e",
+          "contourIndex": 0,
+          "sourceM": [
+            10.7734,
+            9.32422
+          ],
+          "predictedM": [
+            10.7734375,
+            9.32421875
+          ],
+          "absoluteErrorPx": [
+            3.7499999999468514e-05,
+            1.250000000396767e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 2,
+          "character": "e",
+          "contourIndex": 1,
+          "sourceM": [
+            8.77734,
+            5.21582
+          ],
+          "predictedM": [
+            8.77734375,
+            5.2158203125
+          ],
+          "absoluteErrorPx": [
+            3.7499999994139444e-06,
+            3.1250000009919177e-07
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "m",
+          "contourIndex": 0,
+          "sourceM": [
+            15.3877,
+            9.20117
+          ],
+          "predictedM": [
+            15.3876953125,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            4.687500000599698e-06,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        },
+        {
+          "characterIndex": 3,
+          "character": "m",
+          "contourIndex": 1,
+          "sourceM": [
+            24.0557,
+            9.20117
+          ],
+          "predictedM": [
+            24.0556640625,
+            9.201171875
+          ],
+          "absoluteErrorPx": [
+            3.593750000163709e-05,
+            1.8750000005951506e-06
+          ],
+          "matchesExportPrecision": true
+        }
+      ]
+    }
+  ]
+}

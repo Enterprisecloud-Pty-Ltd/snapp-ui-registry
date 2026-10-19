@@ -1,0 +1,293 @@
+{
+  "verifiedAt": "2026-10-19T09:35:57.586Z",
+  "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "pageId": "0:1",
+  "source": "Fresh read-only Figma metadata; component styling reviewed separately through high-fidelity design contexts.",
+  "nodes": [
+    {
+      "type": "frame",
+      "id": "1:2164",
+      "name": "TaskListItem"
+    },
+    {
+      "type": "frame",
+      "id": "1:2289",
+      "name": "Day"
+    },
+    {
+      "type": "frame",
+      "id": "1:2304",
+      "name": "Work Item"
+    },
+    {
+      "type": "frame",
+      "id": "1:2386",
+      "name": "Tabbed Header Navigation"
+    },
+    {
+      "type": "symbol",
+      "id": "1:2498",
+      "name": "Tree Menu"
+    },
+    {
+      "type": "symbol",
+      "id": "1:2549",
+      "name": "Row"
+    },
+    {
+      "type": "symbol",
+      "id": "1:2567",
+      "name": "Row Title"
+    },
+    {
+      "type": "frame",
+      "id": "1:2572",
+      "name": "Tree Item"
+    },
+    {
+      "type": "frame",
+      "id": "1:2617",
+      "name": "Tree Folder"
+    },
+    {
+      "type": "instance",
+      "id": "1:2653",
+      "name": "Tree Item"
+    },
+    {
+      "type": "instance",
+      "id": "1:2654",
+      "name": "Tree Folder"
+    },
+    {
+      "type": "symbol",
+      "id": "1:2655",
+      "name": "Pagination"
+    },
+    {
+      "type": "symbol",
+      "id": "1:2675",
+      "name": "Tree"
+    },
+    {
+      "type": "frame",
+      "id": "1:2790",
+      "name": "Tree Builder"
+    },
+    {
+      "type": "symbol",
+      "id": "1:3029",
+      "name": "Profile Controls"
+    },
+    {
+      "type": "frame",
+      "id": "1:3048",
+      "name": "Button"
+    },
+    {
+      "type": "frame",
+      "id": "1:3055",
+      "name": "Work OS Personal Productivity Right Panel"
+    },
+    {
+      "type": "symbol",
+      "id": "1:3098",
+      "name": "Left Menu"
+    },
+    {
+      "type": "frame",
+      "id": "13:934",
+      "name": "Header"
+    },
+    {
+      "type": "symbol",
+      "id": "13:960",
+      "name": "Achievements"
+    },
+    {
+      "type": "symbol",
+      "id": "13:1199",
+      "name": "Dynamics Menu"
+    },
+    {
+      "type": "frame",
+      "id": "13:1296",
+      "name": "Fields"
+    },
+    {
+      "type": "frame",
+      "id": "13:1541",
+      "name": "Switch"
+    },
+    {
+      "type": "frame",
+      "id": "19:1647",
+      "name": "Modal"
+    },
+    {
+      "type": "frame",
+      "id": "26:1899",
+      "name": "Pill"
+    },
+    {
+      "type": "frame",
+      "id": "36:4345",
+      "name": "Quick Actions"
+    },
+    {
+      "type": "frame",
+      "id": "48:4696",
+      "name": "Check Item"
+    },
+    {
+      "type": "frame",
+      "id": "49:4861",
+      "name": "Course"
+    },
+    {
+      "type": "frame",
+      "id": "49:4890",
+      "name": "EmployeeCard"
+    },
+    {
+      "type": "symbol",
+      "id": "49:4981",
+      "name": "EC_Light"
+    },
+    {
+      "type": "symbol",
+      "id": "49:4986",
+      "name": "EC_Dark"
+    },
+    {
+      "type": "frame",
+      "id": "49:4991",
+      "name": "Picker with Input"
+    },
+    {
+      "type": "frame",
+      "id": "49:5114",
+      "name": "Select"
+    },
+    {
+      "type": "frame",
+      "id": "49:5143",
+      "name": "Input Group"
+    },
+    {
+      "type": "symbol",
+      "id": "49:5180",
+      "name": "Default"
+    },
+    {
+      "type": "symbol",
+      "id": "50:5887",
+      "name": "Side menu"
+    },
+    {
+      "type": "frame",
+      "id": "61:6351",
+      "name": "Course Status"
+    },
+    {
+      "type": "frame",
+      "id": "69:9406",
+      "name": "Text Button"
+    },
+    {
+      "type": "symbol",
+      "id": "74:9562",
+      "name": "Editor Toolbar"
+    },
+    {
+      "type": "symbol",
+      "id": "74:9647",
+      "name": "Sidebar"
+    },
+    {
+      "type": "frame",
+      "id": "102:10661",
+      "name": "Filter Button"
+    },
+    {
+      "type": "frame",
+      "id": "112:11237",
+      "name": "Filter Selection"
+    },
+    {
+      "type": "frame",
+      "id": "158:2384",
+      "name": "Check box"
+    },
+    {
+      "type": "frame",
+      "id": "219:2062",
+      "name": "Table Cell"
+    },
+    {
+      "type": "symbol",
+      "id": "219:2126",
+      "name": "Table Row"
+    },
+    {
+      "type": "frame",
+      "id": "219:2228",
+      "name": "Table"
+    },
+    {
+      "type": "frame",
+      "id": "228:2376",
+      "name": "Inbox Category"
+    },
+    {
+      "type": "frame",
+      "id": "230:2426",
+      "name": "Inbox Item"
+    },
+    {
+      "type": "frame",
+      "id": "236:2502",
+      "name": "Action Node"
+    },
+    {
+      "type": "symbol",
+      "id": "267:2185",
+      "name": "snapp_logo"
+    },
+    {
+      "type": "symbol",
+      "id": "279:2228",
+      "name": "snapp_symbol"
+    },
+    {
+      "type": "frame",
+      "id": "281:2267",
+      "name": "Updated Header"
+    },
+    {
+      "type": "frame",
+      "id": "294:2678",
+      "name": "Card"
+    },
+    {
+      "type": "frame",
+      "id": "300:2763",
+      "name": "Tab Item"
+    },
+    {
+      "type": "symbol",
+      "id": "300:2784",
+      "name": "Tabbed Menu"
+    },
+    {
+      "type": "frame",
+      "id": "334:2201",
+      "name": "Square Top Menu"
+    },
+    {
+      "type": "frame",
+      "id": "347:2904",
+      "name": "Tool Menu"
+    }
+  ]
+}

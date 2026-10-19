@@ -1,10 +1,15 @@
 "use client"
 
 import * as React from "react"
+import { cva } from "class-variance-authority"
 import { OTPInput, OTPInputContext } from "input-otp"
 
 import { cn } from "@/lib/utils"
 import { MinusIcon } from "lucide-react"
+
+const inputOTPContainerVariants = cva(
+  "cn-input-otp flex items-center has-disabled:opacity-50"
+)
 
 function InputOTP({
   className,
@@ -17,7 +22,7 @@ function InputOTP({
     <OTPInput
       data-slot="input-otp"
       containerClassName={cn(
-        "cn-input-otp flex items-center has-disabled:opacity-50",
+        inputOTPContainerVariants(),
         containerClassName
       )}
       spellCheck={false}

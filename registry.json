@@ -41,10 +41,48 @@
           "path": "registry/radix-nova/tokens/typography.tokens.json",
           "type": "registry:file",
           "target": "src/styles/tokens/snapp-typography.tokens.json"
+        },
+        {
+          "path": "registry/radix-nova/fonts/licenses/inter-LICENSE.txt",
+          "type": "registry:file",
+          "target": "src/styles/licenses/inter-LICENSE.txt"
+        },
+        {
+          "path": "registry/radix-nova/fonts/licenses/ibm-plex-sans-LICENSE.txt",
+          "type": "registry:file",
+          "target": "src/styles/licenses/ibm-plex-sans-LICENSE.txt"
+        },
+        {
+          "path": "registry/radix-nova/fonts/licenses/judson-LICENSE.txt",
+          "type": "registry:file",
+          "target": "src/styles/licenses/judson-LICENSE.txt"
+        },
+        {
+          "path": "registry/radix-nova/fonts/README.md",
+          "type": "registry:file",
+          "target": "src/styles/licenses/README.md"
+        },
+        {
+          "path": "docs/figma-library/font-manifest.json",
+          "type": "registry:file",
+          "target": "src/styles/snapp-font-manifest.json"
+        },
+        {
+          "path": "registry/radix-nova/fonts/aptos/Microsoft Aptos Fonts EULA.rtf",
+          "type": "registry:file",
+          "target": "src/styles/licenses/Microsoft Aptos Fonts EULA.rtf"
         }
       ],
       "cssVars": {
         "theme": {
+          "radius-xs": "0.125rem",
+          "radius-sm": "0.25rem",
+          "radius-md": "0.375rem",
+          "radius-lg": "0.5rem",
+          "radius-xl": "0.75rem",
+          "radius-2xl": "1rem",
+          "radius-3xl": "1.5rem",
+          "radius-4xl": "2rem",
           "breakpoint-snapp-phone": "26.25rem",
           "breakpoint-snapp-narrow": "30rem",
           "breakpoint-snapp-compact": "35rem",
@@ -81,7 +119,7 @@
           "text-snapp-display": "2.5rem",
           "leading-snapp-display-sm": "2.5rem",
           "leading-snapp-display": "2.75rem",
-          "radius-snapp-control": "0.625rem",
+          "radius-snapp-control": "0.5rem",
           "radius-snapp-action-menu": "0.375rem",
           "radius-snapp-mark": "0.125rem 0.4375rem 0.125rem 0.4375rem",
           "color-snapp-brand-primary": "var(--snapp-colour-brand-primary)",
@@ -105,12 +143,15 @@
           "color-snapp-secondary-blue": "var(--snapp-colour-secondary-blue)",
           "color-snapp-secondary-baby-blue": "var(--snapp-colour-secondary-baby-blue)",
           "color-snapp-secondary-red": "var(--snapp-colour-secondary-red)",
+          "color-snapp-secondary-dark-red": "var(--snapp-colour-secondary-dark-red)",
+          "color-snapp-secondary-darker-red": "var(--snapp-colour-secondary-darker-red)",
           "color-snapp-transparency-grey": "var(--snapp-colour-transparency-grey)",
           "spacing-snapp-2": "var(--snapp-spacing-2)",
           "spacing-snapp-4": "var(--snapp-spacing-4)",
           "spacing-snapp-8": "var(--snapp-spacing-8)",
           "spacing-snapp-12": "var(--snapp-spacing-12)",
           "spacing-snapp-16": "var(--snapp-spacing-16)",
+          "spacing-snapp-20": "var(--snapp-spacing-20)",
           "spacing-snapp-24": "var(--snapp-spacing-24)",
           "spacing-snapp-32": "var(--snapp-spacing-32)",
           "spacing-snapp-40": "var(--snapp-spacing-40)",
@@ -128,6 +169,7 @@
           "radius-snapp-xl": "var(--snapp-radius-xl)",
           "radius-snapp-2xl": "var(--snapp-radius-2xl)",
           "radius-snapp-3xl": "var(--snapp-radius-3xl)",
+          "radius-snapp-reg": "var(--snapp-radius-reg)",
           "color-snapp-text-primary": "var(--snapp-text-primary)",
           "color-snapp-text-secondary": "var(--snapp-text-secondary)",
           "color-snapp-text-brand": "var(--snapp-text-brand)",
@@ -138,6 +180,7 @@
           "color-snapp-text-green": "var(--snapp-text-green)",
           "color-snapp-text-amber": "var(--snapp-text-amber)",
           "color-snapp-text-blue": "var(--snapp-text-blue)",
+          "color-snapp-text-disabled": "var(--snapp-text-disabled)",
           "color-snapp-surface-primary": "var(--snapp-surface-primary)",
           "color-snapp-surface-secondary": "var(--snapp-surface-secondary)",
           "color-snapp-surface-brand": "var(--snapp-surface-brand)",
@@ -148,12 +191,21 @@
           "color-snapp-surface-amber": "var(--snapp-surface-amber)",
           "color-snapp-surface-blue": "var(--snapp-surface-blue)",
           "color-snapp-surface-transparent": "var(--snapp-surface-transparent)",
+          "color-snapp-surface-disabled": "var(--snapp-surface-disabled)",
+          "color-snapp-surface-pills": "var(--snapp-surface-pills)",
+          "color-snapp-surface-blue-soft": "var(--snapp-surface-blue-soft)",
+          "color-snapp-surface-red-soft": "var(--snapp-surface-red-soft)",
+          "color-snapp-surface-green-soft": "var(--snapp-surface-green-soft)",
+          "color-snapp-surface-amber-soft": "var(--snapp-surface-amber-soft)",
           "color-snapp-border-primary": "var(--snapp-border-primary)",
           "color-snapp-border-invert": "var(--snapp-border-invert)",
           "color-snapp-border-brand": "var(--snapp-border-brand)",
           "color-snapp-border-accent": "var(--snapp-border-accent)",
           "color-snapp-border-subtle": "var(--snapp-border-subtle)",
           "color-snapp-border-highlight": "var(--snapp-border-highlight)",
+          "color-snapp-border-red": "var(--snapp-border-red)",
+          "color-snapp-border-amber": "var(--snapp-border-amber)",
+          "color-snapp-border-green": "var(--snapp-border-green)",
           "color-snapp-icon-red": "var(--snapp-icon-red)",
           "color-snapp-icon-green": "var(--snapp-icon-green)",
           "color-snapp-icon-amber": "var(--snapp-icon-amber)",
@@ -163,12 +215,16 @@
           "color-snapp-icon-invert": "var(--snapp-icon-invert)",
           "color-snapp-icon-primary": "var(--snapp-icon-primary)",
           "color-snapp-icon-subtle": "var(--snapp-icon-subtle)",
+          "color-snapp-icon-disabled": "var(--snapp-icon-disabled)",
           "color-snapp-button-primary": "var(--snapp-button-primary)",
           "color-snapp-button-secondary": "var(--snapp-button-secondary)",
           "color-snapp-button-brand": "var(--snapp-button-brand)",
           "color-snapp-button-invert": "var(--snapp-button-invert)",
           "color-snapp-button-accent": "var(--snapp-button-accent)",
           "color-snapp-button-outline": "var(--snapp-button-outline)",
+          "color-snapp-button-inactive": "var(--snapp-button-inactive)",
+          "color-snapp-button-red-hover": "var(--snapp-button-red-hover)",
+          "color-snapp-button-red-selected": "var(--snapp-button-red-selected)",
           "spacing-snapp-none": "var(--snapp-spacing-none)",
           "spacing-snapp-xxxs": "var(--snapp-spacing-xxxs)",
           "spacing-snapp-xxs": "var(--snapp-spacing-xxs)",
@@ -181,15 +237,20 @@
           "spacing-snapp-3xl": "var(--snapp-spacing-3xl)",
           "spacing-snapp-4xl": "var(--snapp-spacing-4xl)",
           "spacing-snapp-5xl": "var(--snapp-spacing-5xl)",
+          "spacing-snapp-ml": "var(--snapp-spacing-ml)",
           "radius-snapp-minimal": "var(--snapp-radius-minimal)",
           "radius-snapp-rounded": "var(--snapp-radius-rounded)",
           "radius-snapp-standard": "var(--snapp-radius-standard)",
           "radius-snapp-large": "var(--snapp-radius-large)",
           "radius-snapp-full": "var(--snapp-radius-full)",
+          "radius-snapp-medium": "var(--snapp-radius-medium)",
           "font-snapp-title": "var(--snapp-font-family-title)",
           "font-snapp-body": "var(--snapp-font-family-body)",
           "font-weight-snapp-regular": "var(--snapp-font-weight-regular)",
           "font-weight-snapp-bold": "var(--snapp-font-weight-bold)",
+          "font-weight-snapp-light": "var(--snapp-font-weight-light)",
+          "font-weight-snapp-extra-light": "var(--snapp-font-weight-extra-light)",
+          "font-weight-snapp-semi-bold": "var(--snapp-font-weight-semi-bold)",
           "text-snapp-xxs": "var(--snapp-font-size-xxs)",
           "text-snapp-xs": "var(--snapp-font-size-xs)",
           "text-snapp-sm": "var(--snapp-font-size-sm)",
@@ -200,6 +261,8 @@
           "text-snapp-3xl": "var(--snapp-font-size-3xl)",
           "text-snapp-4xl": "var(--snapp-font-size-4xl)",
           "text-snapp-5xl": "var(--snapp-font-size-5xl)",
+          "text-snapp-6xl": "var(--snapp-font-size-6xl)",
+          "text-snapp-7xl": "var(--snapp-font-size-7xl)",
           "leading-snapp-xxxs": "var(--snapp-font-line-height-xxxs)",
           "leading-snapp-xxs": "var(--snapp-font-line-height-xxs)",
           "leading-snapp-xs": "var(--snapp-font-line-height-xs)",
@@ -208,6 +271,14 @@
           "leading-snapp-lg": "var(--snapp-font-line-height-lg)",
           "leading-snapp-xl": "var(--snapp-font-line-height-xl)",
           "leading-snapp-2xl": "var(--snapp-font-line-height-2xl)",
+          "leading-snapp-3xl": "var(--snapp-font-line-height-3xl)",
+          "leading-snapp-4xl": "var(--snapp-font-line-height-4xl)",
+          "leading-snapp-5xl": "var(--snapp-font-line-height-5xl)",
+          "leading-snapp-6xl": "var(--snapp-font-line-height-6xl)",
+          "leading-snapp-7xl": "var(--snapp-font-line-height-7xl)",
+          "font-sans": "var(--snapp-font-family-body)",
+          "font-snapp-inter": "\"Inter\", sans-serif",
+          "font-snapp-ibm": "\"IBM Plex Sans\", sans-serif",
           "color-background": "var(--background)",
           "color-foreground": "var(--foreground)",
           "color-card": "var(--card)",
@@ -271,12 +342,15 @@
           "snapp-colour-secondary-blue": "#0078d4",
           "snapp-colour-secondary-baby-blue": "#e6f2fb",
           "snapp-colour-secondary-red": "#e94435",
-          "snapp-colour-transparency-grey": "#2a2c2e4d",
+          "snapp-colour-secondary-dark-red": "#971b13",
+          "snapp-colour-secondary-darker-red": "#7a150f",
+          "snapp-colour-transparency-grey": "rgb(42 44 46 / 30.000001%)",
           "snapp-spacing-2": "0.125rem",
           "snapp-spacing-4": "0.25rem",
           "snapp-spacing-8": "0.5rem",
           "snapp-spacing-12": "0.75rem",
           "snapp-spacing-16": "1rem",
+          "snapp-spacing-20": "1.25rem",
           "snapp-spacing-24": "1.5rem",
           "snapp-spacing-32": "2rem",
           "snapp-spacing-40": "2.5rem",
@@ -289,11 +363,12 @@
           "snapp-spacing-96": "6rem",
           "snapp-radius-xs": "0.125rem",
           "snapp-radius-s": "0.25rem",
-          "snapp-radius-m": "0.5rem",
+          "snapp-radius-m": "0.75rem",
           "snapp-radius-lg": "1rem",
           "snapp-radius-xl": "2rem",
           "snapp-radius-2xl": "4rem",
           "snapp-radius-3xl": "8rem",
+          "snapp-radius-reg": "0.5rem",
           "snapp-text-primary": "var(--snapp-colour-grey-900)",
           "snapp-text-secondary": "var(--snapp-colour-grey-600)",
           "snapp-text-brand": "var(--snapp-colour-brand-primary)",
@@ -304,6 +379,7 @@
           "snapp-text-green": "var(--snapp-colour-secondary-green)",
           "snapp-text-amber": "var(--snapp-colour-secondary-amber)",
           "snapp-text-blue": "var(--snapp-colour-secondary-blue)",
+          "snapp-text-disabled": "var(--snapp-colour-grey-400)",
           "snapp-surface-primary": "var(--snapp-colour-grey-0)",
           "snapp-surface-secondary": "var(--snapp-colour-grey-50)",
           "snapp-surface-brand": "var(--snapp-colour-brand-primary)",
@@ -314,12 +390,21 @@
           "snapp-surface-amber": "var(--snapp-colour-secondary-amber)",
           "snapp-surface-blue": "var(--snapp-colour-secondary-blue)",
           "snapp-surface-transparent": "var(--snapp-colour-transparency-grey)",
+          "snapp-surface-disabled": "var(--snapp-colour-grey-100)",
+          "snapp-surface-pills": "var(--snapp-colour-grey-50)",
+          "snapp-surface-blue-soft": "#eaf6ff",
+          "snapp-surface-red-soft": "#ffe2e0",
+          "snapp-surface-green-soft": "#f8fff8",
+          "snapp-surface-amber-soft": "#fff1de",
           "snapp-border-primary": "var(--snapp-colour-grey-150)",
           "snapp-border-invert": "var(--snapp-colour-grey-50)",
           "snapp-border-brand": "var(--snapp-colour-brand-primary)",
           "snapp-border-accent": "var(--snapp-colour-brand-accent)",
           "snapp-border-subtle": "var(--snapp-colour-brand-shade)",
           "snapp-border-highlight": "var(--snapp-colour-secondary-blue)",
+          "snapp-border-red": "var(--snapp-colour-secondary-red)",
+          "snapp-border-amber": "var(--snapp-colour-secondary-amber)",
+          "snapp-border-green": "var(--snapp-colour-secondary-green)",
           "snapp-icon-red": "var(--snapp-colour-secondary-red)",
           "snapp-icon-green": "var(--snapp-colour-secondary-green)",
           "snapp-icon-amber": "var(--snapp-colour-secondary-amber)",
@@ -329,12 +414,16 @@
           "snapp-icon-invert": "var(--snapp-colour-grey-50)",
           "snapp-icon-primary": "var(--snapp-colour-grey-600)",
           "snapp-icon-subtle": "var(--snapp-colour-grey-150)",
+          "snapp-icon-disabled": "var(--snapp-colour-grey-400)",
           "snapp-button-primary": "var(--snapp-colour-brand-primary)",
           "snapp-button-secondary": "var(--snapp-colour-secondary-baby-blue)",
           "snapp-button-brand": "var(--snapp-colour-brand-primary)",
           "snapp-button-invert": "var(--snapp-colour-grey-50)",
           "snapp-button-accent": "var(--snapp-colour-brand-accent)",
           "snapp-button-outline": "var(--snapp-colour-grey-150)",
+          "snapp-button-inactive": "var(--snapp-colour-grey-200)",
+          "snapp-button-red-hover": "var(--snapp-colour-secondary-dark-red)",
+          "snapp-button-red-selected": "var(--snapp-colour-secondary-darker-red)",
           "snapp-spacing-none": "0",
           "snapp-spacing-xxxs": "var(--snapp-spacing-2)",
           "snapp-spacing-xxs": "var(--snapp-spacing-4)",
@@ -347,15 +436,20 @@
           "snapp-spacing-3xl": "var(--snapp-spacing-48)",
           "snapp-spacing-4xl": "var(--snapp-spacing-56)",
           "snapp-spacing-5xl": "var(--snapp-spacing-64)",
+          "snapp-spacing-ml": "var(--snapp-spacing-20)",
           "snapp-radius-minimal": "var(--snapp-radius-xs)",
           "snapp-radius-rounded": "var(--snapp-radius-s)",
-          "snapp-radius-standard": "var(--snapp-radius-m)",
+          "snapp-radius-standard": "var(--snapp-radius-reg)",
           "snapp-radius-large": "var(--snapp-radius-lg)",
           "snapp-radius-full": "var(--snapp-radius-3xl)",
-          "snapp-font-family-title": "\"Judson\", serif",
-          "snapp-font-family-body": "\"IBM Plex Sans\", sans-serif",
+          "snapp-radius-medium": "var(--snapp-radius-m)",
+          "snapp-font-family-title": "\"Aptos\", sans-serif",
+          "snapp-font-family-body": "\"Aptos\", sans-serif",
           "snapp-font-weight-regular": "400",
           "snapp-font-weight-bold": "700",
+          "snapp-font-weight-light": "300",
+          "snapp-font-weight-extra-light": "200",
+          "snapp-font-weight-semi-bold": "600",
           "snapp-font-size-xxs": "0.6875rem",
           "snapp-font-size-xs": "0.75rem",
           "snapp-font-size-sm": "0.875rem",
@@ -366,6 +460,8 @@
           "snapp-font-size-3xl": "2rem",
           "snapp-font-size-4xl": "2.5rem",
           "snapp-font-size-5xl": "3rem",
+          "snapp-font-size-6xl": "4rem",
+          "snapp-font-size-7xl": "5rem",
           "snapp-font-line-height-xxxs": "0.75rem",
           "snapp-font-line-height-xxs": "1rem",
           "snapp-font-line-height-xs": "1.25rem",
@@ -374,6 +470,11 @@
           "snapp-font-line-height-lg": "2rem",
           "snapp-font-line-height-xl": "2.5rem",
           "snapp-font-line-height-2xl": "3rem",
+          "snapp-font-line-height-3xl": "3.5rem",
+          "snapp-font-line-height-4xl": "4rem",
+          "snapp-font-line-height-5xl": "4.5rem",
+          "snapp-font-line-height-6xl": "5rem",
+          "snapp-font-line-height-7xl": "5.5rem",
           "snapp-border-card": "rgb(42 44 46 / 15%)",
           "snapp-skeleton-icon": "rgb(64 191 172 / 20%)",
           "snapp-skeleton-line": "rgb(42 44 46 / 10%)",
@@ -391,7 +492,7 @@
           "snapp-hairline": "1px",
           "snapp-control-inset": "2px",
           "snapp-tooltip-arrow-offset": "2px",
-          "radius": "var(--snapp-radius-m)",
+          "radius": "var(--snapp-radius-standard)",
           "background": "var(--snapp-surface)",
           "foreground": "var(--snapp-ink)",
           "card": "var(--snapp-surface)",
@@ -432,7 +533,7 @@
           "snapp-hairline": "1px",
           "snapp-control-inset": "2px",
           "snapp-tooltip-arrow-offset": "2px",
-          "radius": "var(--snapp-radius-m)",
+          "radius": "var(--snapp-radius-standard)",
           "background": "var(--snapp-surface)",
           "foreground": "var(--snapp-ink)",
           "card": "var(--snapp-surface)",
@@ -460,7 +561,8 @@
           "sidebar-border": "var(--snapp-border-primary)",
           "sidebar-ring": "var(--snapp-border-brand)"
         }
-      }
+      },
+      "registryDependencies": []
     },
     {
       "name": "snapp-utils",
@@ -477,7 +579,8 @@
           "type": "registry:lib",
           "target": "@lib/utils.ts"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-feature-parameters",
@@ -493,7 +596,8 @@
           "type": "registry:lib",
           "target": "@lib/snapp-feature-parameters.ts"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-search-utils",
@@ -506,7 +610,8 @@
           "type": "registry:lib",
           "target": "@lib/search.ts"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-portal-container",
@@ -519,7 +624,8 @@
           "type": "registry:lib",
           "target": "src/runtime/PortalContainer.ts"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-use-mobile",
@@ -532,7 +638,8 @@
           "type": "registry:hook",
           "target": "@hooks/use-mobile.ts"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-accordion",
@@ -608,7 +715,8 @@
           "type": "registry:ui",
           "target": "@ui/aspect-ratio.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-attachment",
@@ -757,11 +865,11 @@
       "title": "Snapp Calendar",
       "description": "The shared Snapp calendar UI primitive.",
       "dependencies": [
-        "lucide-react",
         "react-day-picker"
       ],
       "registryDependencies": [
         "@snapp/snapp-button",
+        "@snapp/snapp-figma-form-icons",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -834,10 +942,10 @@
       "title": "Snapp Checkbox",
       "description": "The shared Snapp checkbox UI primitive.",
       "dependencies": [
-        "lucide-react",
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-figma-form-icons",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -862,7 +970,8 @@
           "type": "registry:ui",
           "target": "@ui/collapsible.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-combobox",
@@ -870,11 +979,11 @@
       "title": "Snapp Combobox",
       "description": "The standard searchable Snapp option picker for single-select and autocomplete controls.",
       "dependencies": [
-        "@base-ui/react",
-        "lucide-react"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@snapp/snapp-button",
+        "@snapp/snapp-figma-form-icons",
         "@snapp/snapp-input-group",
         "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
@@ -936,11 +1045,11 @@
       "title": "Snapp Dialog",
       "description": "The shared Snapp dialog UI primitive.",
       "dependencies": [
-        "lucide-react",
         "radix-ui"
       ],
       "registryDependencies": [
         "@snapp/snapp-button",
+        "@snapp/snapp-figma-form-icons",
         "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
@@ -966,7 +1075,8 @@
           "type": "registry:ui",
           "target": "@ui/direction.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-drawer",
@@ -998,6 +1108,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-figma-form-icons",
         "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
@@ -1070,6 +1181,22 @@
       ]
     },
     {
+      "name": "snapp-hug-text",
+      "type": "registry:ui",
+      "title": "Snapp Hug Text",
+      "description": "The shared Snapp hug-text UI primitive.",
+      "registryDependencies": [
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/ui/hug-text.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hug-text.tsx"
+        }
+      ]
+    },
+    {
       "name": "snapp-input",
       "type": "registry:ui",
       "title": "Snapp Input",
@@ -1113,6 +1240,7 @@
       "title": "Snapp Input Otp",
       "description": "The shared Snapp input-otp UI primitive.",
       "dependencies": [
+        "class-variance-authority",
         "input-otp",
         "lucide-react"
       ],
@@ -1306,11 +1434,10 @@
       "type": "registry:ui",
       "title": "Snapp Pagination",
       "description": "The shared Snapp pagination UI primitive.",
-      "dependencies": [
-        "lucide-react"
-      ],
       "registryDependencies": [
         "@snapp/snapp-button",
+        "@snapp/snapp-hug-text",
+        "@snapp/snapp-navigation-icons",
         "@snapp/snapp-utils"
       ],
       "files": [
@@ -1427,6 +1554,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-figma-form-icons",
         "@snapp/snapp-portal-container",
         "@snapp/snapp-utils"
       ],
@@ -1559,7 +1687,8 @@
           "type": "registry:ui",
           "target": "@ui/sonner.tsx"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "snapp-spinner",
@@ -1625,9 +1754,15 @@
         "radix-ui"
       ],
       "registryDependencies": [
+        "@snapp/snapp-hug-text",
         "@snapp/snapp-utils"
       ],
       "files": [
+        {
+          "path": "registry/radix-nova/ui/tabs.keyboard.ts",
+          "type": "registry:ui",
+          "target": "@ui/tabs.keyboard.ts"
+        },
         {
           "path": "registry/radix-nova/ui/tabs.tsx",
           "type": "registry:ui",
@@ -1718,7 +1853,6 @@
       "title": "Snapp UI Foundation",
       "description": "Installs the complete canonical Snapp Shadcn UI primitive set and theme for a clean consumer refresh.",
       "registryDependencies": [
-        "@snapp/snapp-theme",
         "@snapp/snapp-accordion",
         "@snapp/snapp-alert",
         "@snapp/snapp-alert-dialog",
@@ -1746,6 +1880,7 @@
         "@snapp/snapp-empty",
         "@snapp/snapp-field",
         "@snapp/snapp-hover-card",
+        "@snapp/snapp-hug-text",
         "@snapp/snapp-input",
         "@snapp/snapp-input-group",
         "@snapp/snapp-input-otp",
@@ -1764,6 +1899,7 @@
         "@snapp/snapp-radio-group",
         "@snapp/snapp-resizable",
         "@snapp/snapp-scroll-area",
+        "@snapp/snapp-searchable-combobox",
         "@snapp/snapp-select",
         "@snapp/snapp-separator",
         "@snapp/snapp-sheet",
@@ -1776,10 +1912,10 @@
         "@snapp/snapp-table",
         "@snapp/snapp-tabs",
         "@snapp/snapp-textarea",
+        "@snapp/snapp-theme",
         "@snapp/snapp-toggle",
         "@snapp/snapp-toggle-group",
-        "@snapp/snapp-tooltip",
-        "@snapp/snapp-searchable-combobox"
+        "@snapp/snapp-tooltip"
       ],
       "files": [
         {
@@ -1832,6 +1968,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
+        "@snapp/snapp-figma-form-icons",
+        "@snapp/snapp-popover",
         "@snapp/snapp-theme",
         "@snapp/snapp-utils"
       ],
@@ -1850,6 +1988,7 @@
       "description": "Controlled, searchable single-select control with canonical Snapp styling and host-safe overlay behavior.",
       "registryDependencies": [
         "@snapp/snapp-combobox",
+        "@snapp/snapp-figma-form-icons",
         "@snapp/snapp-theme",
         "@snapp/snapp-utils"
       ],
@@ -2028,6 +2167,7 @@
       "title": "Snapp Work Item Core",
       "description": "Shared Work OS work-item types and exact vector icons.",
       "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
         "@snapp/snapp-theme"
       ],
       "files": [
@@ -2049,6 +2189,7 @@
       "title": "Snapp Time Badge",
       "description": "Figma-aligned Work OS duration badge with danger state.",
       "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
         "@snapp/snapp-theme",
         "@snapp/snapp-utils",
         "@snapp/snapp-work-item-core"
@@ -2086,6 +2227,7 @@
       "description": "Figma-aligned Work OS item card with fixed icon, duration, and capacity geometry.",
       "registryDependencies": [
         "@snapp/snapp-card",
+        "@snapp/snapp-figma-work-assets",
         "@snapp/snapp-progress-meter",
         "@snapp/snapp-theme",
         "@snapp/snapp-time-badge",
@@ -2099,6 +2241,2075 @@
           "target": "@components/snapp/work-os/work-item-card.tsx"
         }
       ]
+    },
+    {
+      "name": "snapp-action-node",
+      "type": "registry:component",
+      "title": "Action Node",
+      "description": "Shared SNAPP component-library building block: Action Node.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/data/action-node.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/data/action-node.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-brand-mark",
+      "type": "registry:component",
+      "title": "Brand Mark",
+      "description": "Shared SNAPP component-library building block: Brand Mark.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-brand-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/data/brand-mark.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/data/brand-mark.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-catalogue-card",
+      "type": "registry:component",
+      "title": "Catalogue Card",
+      "description": "Shared SNAPP component-library building block: Catalogue Card.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/data/catalogue-card.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/data/catalogue-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-data-table",
+      "type": "registry:component",
+      "title": "Data Table",
+      "description": "Shared SNAPP component-library building block: Data Table.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-table",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/data/data-table.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/data/data-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-figma-form-icons",
+      "type": "registry:component",
+      "title": "Figma Form Icons",
+      "description": "Shared SNAPP component-library building block: Figma Form Icons.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-forms-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/forms/figma-form-icons.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/forms/figma-form-icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-form-controls",
+      "type": "registry:component",
+      "title": "Form Controls",
+      "description": "Shared SNAPP component-library building block: Form Controls.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@snapp/snapp-calendar",
+        "@snapp/snapp-checkbox",
+        "@snapp/snapp-figma-form-icons",
+        "@snapp/snapp-input",
+        "@snapp/snapp-label",
+        "@snapp/snapp-popover",
+        "@snapp/snapp-searchable-combobox",
+        "@snapp/snapp-switch",
+        "@snapp/snapp-textarea",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/forms/form-controls.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/forms/form-controls.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-quick-actions",
+      "type": "registry:component",
+      "title": "Quick Actions",
+      "description": "Shared SNAPP component-library building block: Quick Actions.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-dropdown-menu",
+        "@snapp/snapp-figma-form-icons",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/forms/quick-actions.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/forms/quick-actions.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-component-library",
+      "type": "registry:component",
+      "title": "SNAPP Component Library",
+      "description": "Complete SNAPP Figma component-library installation with its shared primitives, theme and assets.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-achievements",
+        "@snapp/snapp-action-node",
+        "@snapp/snapp-brand-mark",
+        "@snapp/snapp-calendar-day",
+        "@snapp/snapp-catalogue-card",
+        "@snapp/snapp-catalogue-core",
+        "@snapp/snapp-catalogue-hero",
+        "@snapp/snapp-catalogue-result-card",
+        "@snapp/snapp-check-item",
+        "@snapp/snapp-course",
+        "@snapp/snapp-course-status",
+        "@snapp/snapp-data-table",
+        "@snapp/snapp-drag-feedback",
+        "@snapp/snapp-editor-toolbar",
+        "@snapp/snapp-employee-card",
+        "@snapp/snapp-feature-breadcrumb",
+        "@snapp/snapp-feature-layout",
+        "@snapp/snapp-figma-form-icons",
+        "@snapp/snapp-filter-controls",
+        "@snapp/snapp-form-controls",
+        "@snapp/snapp-help-article-accordion",
+        "@snapp/snapp-inbox-category",
+        "@snapp/snapp-inbox-item",
+        "@snapp/snapp-landing-card",
+        "@snapp/snapp-landing-skeleton",
+        "@snapp/snapp-navigation-header",
+        "@snapp/snapp-navigation-icons",
+        "@snapp/snapp-navigation-panels",
+        "@snapp/snapp-productivity-panel",
+        "@snapp/snapp-progress-meter",
+        "@snapp/snapp-quick-actions",
+        "@snapp/snapp-searchable-combobox",
+        "@snapp/snapp-system-status-screen",
+        "@snapp/snapp-task-list-item",
+        "@snapp/snapp-time-badge",
+        "@snapp/snapp-tool-menu",
+        "@snapp/snapp-tree",
+        "@snapp/snapp-ui-foundation",
+        "@snapp/snapp-work-item-card",
+        "@snapp/snapp-work-item-core"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/foundation/component-library.ts",
+          "type": "registry:component",
+          "target": "@components/snapp/foundation/component-library.ts"
+        }
+      ]
+    },
+    {
+      "name": "snapp-inbox-category",
+      "type": "registry:component",
+      "title": "Inbox Category",
+      "description": "Shared SNAPP component-library building block: Inbox Category.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/inbox/inbox-category.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/inbox/inbox-category.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-inbox-item",
+      "type": "registry:component",
+      "title": "Inbox Item",
+      "description": "Shared SNAPP component-library building block: Inbox Item.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/inbox/inbox-item.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/inbox/inbox-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-check-item",
+      "type": "registry:component",
+      "title": "Check Item",
+      "description": "Shared SNAPP component-library building block: Check Item.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/learning/check-item.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/learning/check-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-course-status",
+      "type": "registry:component",
+      "title": "Course Status",
+      "description": "Shared SNAPP component-library building block: Course Status.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/learning/course-status.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/learning/course-status.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-course",
+      "type": "registry:component",
+      "title": "Course",
+      "description": "Shared SNAPP component-library building block: Course.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/learning/course.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/learning/course.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-editor-toolbar",
+      "type": "registry:component",
+      "title": "Editor Toolbar",
+      "description": "Shared SNAPP component-library building block: Editor Toolbar.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@snapp/snapp-navigation-icons",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-toggle-group",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/navigation/editor-toolbar.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/navigation/editor-toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-navigation-header",
+      "type": "registry:component",
+      "title": "Navigation Header",
+      "description": "Shared SNAPP component-library building block: Navigation Header.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@snapp/snapp-hug-text",
+        "@snapp/snapp-navigation-icons",
+        "@snapp/snapp-navigation-panels",
+        "@snapp/snapp-popover",
+        "@snapp/snapp-tabs",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/navigation/navigation-header.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/navigation/navigation-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-navigation-icons",
+      "type": "registry:component",
+      "title": "Navigation Icons",
+      "description": "Shared SNAPP component-library building block: Navigation Icons.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-navigation-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/navigation/navigation-icons.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/navigation/navigation-icons.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-navigation-panels",
+      "type": "registry:component",
+      "title": "Navigation Panels",
+      "description": "Shared SNAPP component-library building block: Navigation Panels.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@snapp/snapp-input",
+        "@snapp/snapp-navigation-icons",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/navigation/navigation-panels.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/navigation/navigation-panels.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-tool-menu",
+      "type": "registry:component",
+      "title": "Tool Menu",
+      "description": "Shared SNAPP component-library building block: Tool Menu.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-feature-breadcrumb",
+        "@snapp/snapp-navigation-panels",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/navigation/tool-menu.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/navigation/tool-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-tree",
+      "type": "registry:component",
+      "title": "Tree",
+      "description": "Shared SNAPP component-library building block: Tree.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@snapp/snapp-navigation-icons",
+        "@snapp/snapp-progress",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/navigation/tree.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/navigation/tree.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-employee-card",
+      "type": "registry:component",
+      "title": "Employee Card",
+      "description": "Shared SNAPP component-library building block: Employee Card.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/people/employee-card.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/people/employee-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-achievements",
+      "type": "registry:component",
+      "title": "Achievements",
+      "description": "Shared SNAPP component-library building block: Achievements.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/work-os/achievements.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/work-os/achievements.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-calendar-day",
+      "type": "registry:component",
+      "title": "Calendar Day",
+      "description": "Shared SNAPP component-library building block: Calendar Day.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/work-os/calendar-day.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/work-os/calendar-day.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-productivity-panel",
+      "type": "registry:component",
+      "title": "Productivity Panel",
+      "description": "Shared SNAPP component-library building block: Productivity Panel.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/work-os/productivity-panel.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/work-os/productivity-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-task-list-item",
+      "type": "registry:component",
+      "title": "Task List Item",
+      "description": "Shared SNAPP component-library building block: Task List Item.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@snapp/snapp-figma-work-assets",
+        "@snapp/snapp-theme",
+        "@snapp/snapp-utils"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/components/work-os/task-list-item.tsx",
+          "type": "registry:component",
+          "target": "@components/snapp/work-os/task-list-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snapp-figma-brand-assets",
+      "type": "registry:component",
+      "title": "SNAPP Brand Assets",
+      "description": "Unmodified SVG assets from the SNAPP Figma component library.",
+      "files": [
+        {
+          "path": "registry/radix-nova/assets/brand/098c7.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/brand/098c7.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/brand/2e5e5.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/brand/2e5e5.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/brand/f4c1f.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/brand/f4c1f.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/brand/f9e47.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/brand/f9e47.svg"
+        }
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "snapp-figma-forms-assets",
+      "type": "registry:component",
+      "title": "SNAPP Forms Assets",
+      "description": "Unmodified SVG assets from the SNAPP Figma component library.",
+      "files": [
+        {
+          "path": "registry/radix-nova/assets/forms/04372.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/04372.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/04586.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/04586.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/04a5a.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/04a5a.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/0720f.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/0720f.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/089d9.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/089d9.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/187bf.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/187bf.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/18abf.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/18abf.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/1ddae.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/1ddae.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/281df.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/281df.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/2b288.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/2b288.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/2e911.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/2e911.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/2f239.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/2f239.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/314dc.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/314dc.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/353a2.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/353a2.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/3ac06.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/3ac06.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/3cdee.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/3cdee.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/43304.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/43304.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/46297.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/46297.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/47f1b.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/47f1b.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/4a221.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/4a221.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/4e21d.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/4e21d.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/4e8e8.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/4e8e8.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/5414c.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/5414c.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/5ccad.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/5ccad.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/6d339.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/6d339.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/73dfa.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/73dfa.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/75657.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/75657.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/7de11.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/7de11.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/7e97e.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/7e97e.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/85373.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/85373.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/8b12b.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/8b12b.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/8befd.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/8befd.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/901a5.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/901a5.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/91d33.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/91d33.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/93986.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/93986.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/97161.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/97161.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/9cb34.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/9cb34.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/a0f15.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/a0f15.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/a98ab.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/a98ab.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/aa14a.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/aa14a.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/af529.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/af529.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/b2167.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/b2167.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/b7931.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/b7931.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/bdb38.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/bdb38.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/bed95.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/bed95.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/c29fc.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/c29fc.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/c7ec0.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/c7ec0.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/c9690.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/c9690.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/ca494.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/ca494.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/cac04.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/cac04.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/cad1d.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/cad1d.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/cad5e.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/cad5e.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/ccfd4.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/ccfd4.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/ceace.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/ceace.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/d2380.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/d2380.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/d601f.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/d601f.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/dd133.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/dd133.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/e9e37.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/e9e37.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/edb53.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/edb53.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/f2794.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/f2794.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/f5e29.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/f5e29.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/f7b63.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/f7b63.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/fb5ec.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/fb5ec.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/forms/fe229.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/forms/fe229.svg"
+        }
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "snapp-figma-navigation-assets",
+      "type": "registry:component",
+      "title": "SNAPP Navigation Assets",
+      "description": "Unmodified SVG assets from the SNAPP Figma component library.",
+      "files": [
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2386-gantt-chart.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2386-gantt-chart.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2386-line8.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2386-line8.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2386-trophy.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2386-trophy.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-book.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-book.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-bug.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-bug.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-clipboard-task.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-clipboard-task.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-clipboard-task1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-clipboard-task1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-delimiter.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-delimiter.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-draggable.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-draggable.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-folder.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-folder.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-panel.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-panel.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2498-search.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2498-search.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2549-book.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2549-book.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2549-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2549-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2549-flashlight.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2549-flashlight.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2567-folder-open.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2567-folder-open.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-add.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-add.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-book.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-book.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-book1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-book1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-bug.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-bug.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-bug1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-bug1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-chevron1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-chevron1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-clipboard-task.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-clipboard-task.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-clipboard-task1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-clipboard-task1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-draggable.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-draggable.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-draggable1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-draggable1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-lock.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-lock.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-lock1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-lock1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-more.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-more.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-more1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-more1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2572-type-drop-indicator.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2572-type-drop-indicator.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-add.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-add.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-chevron1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-chevron1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-draggable.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-draggable.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-draggable1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-draggable1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-folder-open.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-folder-open.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-folder-open1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-folder-open1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-folder.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-folder.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-folder1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-folder1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-lock.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-lock.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-lock1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-lock1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-more.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-more.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-more1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-more1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2617-type-drop-indicator.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2617-type-drop-indicator.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2655-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2655-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2655-chevron1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2655-chevron1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2655-more.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2655-more.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-add.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-add.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-book.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-book.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-bug.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-bug.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-chevron1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-chevron1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-chevron2.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-chevron2.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-clipboard-task.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-clipboard-task.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-document.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-document.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-draggable.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-draggable.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-folder.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-folder.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-lock.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-lock.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-lock1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-lock1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-more.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-more.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-more1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-more1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2675-type-drop-indicator.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2675-type-drop-indicator.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-add.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-add.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-add1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-add1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-chevron1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-chevron1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-document.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-document.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-document1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-document1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-folder-open.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-folder-open.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-folder.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-folder.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-grid.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-grid.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-lock.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-lock.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-more.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-more.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-more1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-more1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-more2.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-more2.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-2790-notebook.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-2790-notebook.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3029-icon-activity.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3029-icon-activity.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3029-icon-add.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3029-icon-add.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3029-icon-filter.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3029-icon-filter.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3029-icon-profile.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3029-icon-profile.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3029-icon-search.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3029-icon-search.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3029-icon-settings.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3029-icon-settings.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3029-snapp-logo.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3029-snapp-logo.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-approvals-app.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-approvals-app.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-book-open.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-book-open.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-chat-multiple.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-chat-multiple.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-chevron-up-down.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-chevron-up-down.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-frame634093.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-frame634093.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-hat-graduation.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-hat-graduation.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-mail-unread.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-mail-unread.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-notebook.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-notebook.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-sign-out.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-sign-out.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-snapp-logo.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-snapp-logo.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-tag.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-tag.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/1-3098-trophy.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/1-3098-trophy.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-1199-app-recent.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-1199-app-recent.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-1199-board.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-1199-board.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-1199-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-1199-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-1199-headset.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-1199-headset.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-1199-home.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-1199-home.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-1199-pin.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-1199-pin.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-1199-toolbox.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-1199-toolbox.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-934-filter.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-934-filter.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-934-panel.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-934-panel.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-934-trophy.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-934-trophy.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/13-934-trophy1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/13-934-trophy1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-airplane.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-airplane.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-apps.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-apps.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-book.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-book.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-building-lighthouse.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-building-lighthouse.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-building-multiple.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-building-multiple.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-dual-screen-desktop.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-dual-screen-desktop.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-globe.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-globe.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-grid-dots.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-grid-dots.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-headset.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-headset.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-home.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-home.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-search.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-search.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-tree-deciduous.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-tree-deciduous.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/281-2267-vehicle-car-profile.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/281-2267-vehicle-car-profile.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/300-2763-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/300-2763-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-airplane.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-airplane.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-apps.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-apps.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-arrow-autofit.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-arrow-autofit.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-book.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-book.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-building-lighthouse.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-building-lighthouse.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-building-multiple.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-building-multiple.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-chat.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-chat.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-dual-screen-desktop.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-dual-screen-desktop.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-globe.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-globe.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-grid-dots.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-grid-dots.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-headset.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-headset.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-home.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-home.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-icon.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-icon.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-person.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-person.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-puzzle-piece.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-puzzle-piece.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-puzzle-piece1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-puzzle-piece1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-search.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-search.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-tree-deciduous.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-tree-deciduous.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-vector.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-vector.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-vector1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-vector1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-vector2.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-vector2.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-vector3.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-vector3.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-vector4.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-vector4.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/334-2201-vehicle-car-profile.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/334-2201-vehicle-car-profile.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/347-2904-add.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/347-2904-add.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/347-2904-dismiss.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/347-2904-dismiss.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/347-2904-filter.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/347-2904-filter.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/347-2904-search.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/347-2904-search.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-add.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-add.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-app-recent.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-app-recent.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-board.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-board.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-chevron1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-chevron1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-chevron2.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-chevron2.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-draggable.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-draggable.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-folder-open.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-folder-open.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-folder.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-folder.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-form-multiple.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-form-multiple.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-form.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-form.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-headset.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-headset.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-home.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-home.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-more.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-more.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-panel.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-panel.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-pin.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-pin.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-search.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-search.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-task-list.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-task-list.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-tetris-app.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-tetris-app.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/50-5887-toolbox.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/50-5887-toolbox.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9562-align-center.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9562-align-center.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9562-align-left.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9562-align-left.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9562-align-right.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9562-align-right.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9562-bold.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9562-bold.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9562-italic.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9562-italic.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9562-list-ordered.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9562-list-ordered.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9562-list-unordered.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9562-list-unordered.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9562-underline.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9562-underline.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-add.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-add.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-chevron.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-chevron.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-chevron1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-chevron1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-clipboard-task.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-clipboard-task.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-dismiss.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-dismiss.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-flag.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-flag.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-more.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-more.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-search.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-search.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/navigation/74-9647-target-arrow.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/navigation/74-9647-target-arrow.svg"
+        }
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "snapp-figma-work-assets",
+      "type": "registry:component",
+      "title": "SNAPP Work Assets",
+      "description": "Unmodified SVG assets from the SNAPP Figma component library.",
+      "files": [
+        {
+          "path": "registry/radix-nova/assets/work/0879c.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/0879c.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/0dca3.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/0dca3.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/17bc7.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/17bc7.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/18d12.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/18d12.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/198bd.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/198bd.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/1fdac.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/1fdac.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/234ca.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/234ca.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/28ae1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/28ae1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/2c7aa.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/2c7aa.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/31d84.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/31d84.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/32bdb.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/32bdb.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/33162.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/33162.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/33d87.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/33d87.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/3add4.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/3add4.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/489fc.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/489fc.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/4bb4a.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/4bb4a.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/53a5b.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/53a5b.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/558f7.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/558f7.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/5fa13.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/5fa13.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/6210e.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/6210e.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/658d0.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/658d0.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/66936.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/66936.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/69e44.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/69e44.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/6ce07.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/6ce07.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/73dfa.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/73dfa.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/82d30.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/82d30.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/88fa1.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/88fa1.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/8b1d2.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/8b1d2.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/a6bf4.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/a6bf4.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/a7955.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/a7955.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/acc9b.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/acc9b.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/b6fd8.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/b6fd8.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/c4431.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/c4431.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/cfdce.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/cfdce.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/d602c.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/d602c.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/d6a3e.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/d6a3e.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/dc570.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/dc570.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/dcef3.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/dcef3.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/dda9c.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/dda9c.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/dee39.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/dee39.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/e7672.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/e7672.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/ea056.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/ea056.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/eb3b4.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/eb3b4.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/f382f.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/f382f.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/f51f0.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/f51f0.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/f68ac.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/f68ac.svg"
+        },
+        {
+          "path": "registry/radix-nova/assets/work/fe3f2.svg",
+          "type": "registry:file",
+          "target": "src/assets/snapp/work/fe3f2.svg"
+        }
+      ],
+      "registryDependencies": []
     }
   ]
 }

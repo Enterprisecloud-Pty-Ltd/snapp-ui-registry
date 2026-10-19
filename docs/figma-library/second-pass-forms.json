@@ -1,0 +1,1477 @@
+{
+  "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+  "reviewedOn": "2026-10-19",
+  "scope": {
+    "families": 14,
+    "variants": 89
+  },
+  "method": [
+    "Fresh context and screenshot for each exact family, compared with canonical code and all source variant PNGs",
+    "Independent browser probes read nested text typography/geometry, full three-panel Quick Actions and calendar anatomy",
+    "Read-only Figma Plugin API verified actual source child rectangles, source stroke participation and selection data",
+    "Exact original SVGs and approved bundled fonts remain canonical; no replacement glyph, screenshot-as-code, iframe or consumer visual fork"
+  ],
+  "baseline": {
+    "url": "http://127.0.0.1:4175/",
+    "indexJsSha256": "315ade1601a24322abe480a1a290683d91f3b5e3cedc9f48a1bff8853afbac46",
+    "mainCssSha256": "647fbebc6e52f29632e20e9949e5d457a99790d4de7b04b49e59a3ba61c418e7",
+    "status": "reviewed-baseline-before-shared-corrections"
+  },
+  "families": [
+    {
+      "familyId": "1:3048",
+      "name": "Button",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent root fresh Button context/screenshot plus forms reviewer20-state visual matrix",
+      "freshContextSha256": null,
+      "variants": [
+        {
+          "id": "1:3049",
+          "name": "primary/Standard",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2123",
+          "name": "primary/Hover",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2125",
+          "name": "primary/Focus",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2127",
+          "name": "primary/Pressed",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2129",
+          "name": "primary/Disabled",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "1:3051",
+          "name": "outline/Standard",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2133",
+          "name": "outline/Hover",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2137",
+          "name": "outline/Focus",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2167",
+          "name": "outline/Pressed",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2171",
+          "name": "outline/Disabled",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "1:3053",
+          "name": "secondary/Standard",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2149",
+          "name": "secondary/Hover",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2153",
+          "name": "secondary/Focus",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2157",
+          "name": "secondary/Pressed",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "243:2161",
+          "name": "secondary/Disabled",
+          "width": 116,
+          "height": 44
+        },
+        {
+          "id": "248:2188",
+          "name": "text/Standard",
+          "width": 68,
+          "height": 20
+        },
+        {
+          "id": "248:2192",
+          "name": "text/Hover",
+          "width": 68,
+          "height": 20
+        },
+        {
+          "id": "248:2196",
+          "name": "text/Focus",
+          "width": 68,
+          "height": 20
+        },
+        {
+          "id": "248:2200",
+          "name": "text/Pressed",
+          "width": 68,
+          "height": 20
+        },
+        {
+          "id": "248:2204",
+          "name": "text/Disabled",
+          "width": 68,
+          "height": 20
+        }
+      ],
+      "owners": [
+        "ui/button.tsx"
+      ],
+      "checked": [
+        "20 appearance/state definitions, all original state colours and inside strokes",
+        "Aptos400,14px/20px;44px solid/outlined height,20px text action;24px/12px padding and8px radius",
+        "Actual hover/focus/active pseudo states and native disabled behavior"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "13:1296",
+      "name": "Fields",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "25663352ca85433475290877f4c2b29bec1dd052f4566bc8c2efc34f58f7c956",
+      "variants": [
+        {
+          "id": "13:1295",
+          "name": "Standard Field",
+          "width": 670,
+          "height": 65
+        },
+        {
+          "id": "13:1297",
+          "name": "Required Field",
+          "width": 670,
+          "height": 65
+        },
+        {
+          "id": "255:2210",
+          "name": "Is Disabled",
+          "width": 670,
+          "height": 65
+        },
+        {
+          "id": "13:1301",
+          "name": "Error Field",
+          "width": 670,
+          "height": 65
+        },
+        {
+          "id": "248:2179",
+          "name": "Is Selected",
+          "width": 670,
+          "height": 65
+        },
+        {
+          "id": "13:1305",
+          "name": "Look up/Drop Down",
+          "width": 670,
+          "height": 65
+        },
+        {
+          "id": "127:1943",
+          "name": "Drop down Open",
+          "width": 670,
+          "height": 265
+        },
+        {
+          "id": "153:2212",
+          "name": "Number select",
+          "width": 670,
+          "height": 229
+        },
+        {
+          "id": "13:1312",
+          "name": "Drop down with pills",
+          "width": 670,
+          "height": 113
+        },
+        {
+          "id": "13:1355",
+          "name": "Text Entry",
+          "width": 670,
+          "height": 108
+        },
+        {
+          "id": "13:1399",
+          "name": "Error",
+          "width": 670,
+          "height": 44
+        },
+        {
+          "id": "13:1383",
+          "name": "Error Multiple",
+          "width": 670,
+          "height": 142
+        },
+        {
+          "id": "311:2855",
+          "name": "Positive Notice",
+          "width": 670,
+          "height": 44
+        },
+        {
+          "id": "311:2863",
+          "name": "Warning",
+          "width": 670,
+          "height": 44
+        },
+        {
+          "id": "13:1434",
+          "name": "Notice",
+          "width": 670,
+          "height": 44
+        },
+        {
+          "id": "313:2933",
+          "name": "General Message",
+          "width": 670,
+          "height": 44
+        },
+        {
+          "id": "13:1413",
+          "name": "Date Picker",
+          "width": 670,
+          "height": 69
+        },
+        {
+          "id": "19:1588",
+          "name": "Upload",
+          "width": 670,
+          "height": 65
+        },
+        {
+          "id": "23:1804",
+          "name": "Colour Picker",
+          "width": 670,
+          "height": 65
+        },
+        {
+          "id": "13:1463",
+          "name": "Large Uploader",
+          "width": 670,
+          "height": 143
+        },
+        {
+          "id": "13:1482",
+          "name": "Switch",
+          "width": 670,
+          "height": 24
+        },
+        {
+          "id": "158:2394",
+          "name": "Checkbox",
+          "width": 670,
+          "height": 20
+        },
+        {
+          "id": "35:2080",
+          "name": "Inline Search",
+          "width": 670,
+          "height": 41
+        },
+        {
+          "id": "36:4528",
+          "name": "Search",
+          "width": 670,
+          "height": 69
+        },
+        {
+          "id": "96:9862",
+          "name": "Comment Box",
+          "width": 670,
+          "height": 68
+        },
+        {
+          "id": "96:9877",
+          "name": "Comment Box Edit",
+          "width": 670,
+          "height": 68
+        },
+        {
+          "id": "96:9937",
+          "name": "Comment Box Buttons",
+          "width": 670,
+          "height": 116
+        }
+      ],
+      "owners": [
+        "components/forms/form-controls.tsx",
+        "components/forms/searchable-combobox.tsx",
+        "ui/input.tsx",
+        "ui/textarea.tsx",
+        "navigation/editor-toolbar.tsx"
+      ],
+      "checked": [
+        "27 visible nested compositions and original label/notice/placeholder data",
+        "Aptos400,14px/20px;20px labels+8px gap+41px input,16px outer-edge content inset,8px radius;80px text entry",
+        "670x188 searchable lookup with28px search row;670x152 search-free compound numeric popup; original20px/16px glyph slots",
+        "672px source notification overflow,142px multiple notice,69px date field and143px upload region",
+        "349x54 editor toolbar at120/-37,38px grouped buttons, center selection and genuine editable sample text",
+        "Switch/checkbox/search/file/colour controls and original four comment actions"
+      ],
+      "findings": [
+        "forms-field-gap",
+        "forms-comment-selection"
+      ],
+      "reviewStatus": "corrected-at-registry-owner-and-verified-in-production-consumer"
+    },
+    {
+      "familyId": "13:1541",
+      "name": "Switch",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "ae750b4dbf8148bcbadd6021ec83381f58b226422a8949bf6528874f7bb1b047",
+      "variants": [
+        {
+          "id": "13:1542",
+          "name": "Off",
+          "width": 141,
+          "height": 24
+        },
+        {
+          "id": "13:1548",
+          "name": "On",
+          "width": 141,
+          "height": 24
+        }
+      ],
+      "owners": [
+        "components/forms/form-controls.tsx",
+        "ui/switch.tsx"
+      ],
+      "checked": [
+        "Both states:44x24 track,20px thumb,2px inset and20px translation",
+        "8px label gap, original off/on colour and Airplane mode label; actual pointer/keyboard toggling"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "19:1647",
+      "name": "Modal",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "1625d03c0c4b4128530e82f93b504b3884711962253feceb378e26017c7a6ff3",
+      "variants": [
+        {
+          "id": "19:1601",
+          "name": "Large",
+          "width": 720,
+          "height": 1208
+        },
+        {
+          "id": "19:1648",
+          "name": "Medium",
+          "width": 600,
+          "height": 1208
+        },
+        {
+          "id": "19:1698",
+          "name": "small",
+          "width": 480,
+          "height": 1248
+        }
+      ],
+      "owners": [
+        "ui/dialog.tsx",
+        "ui/input.tsx"
+      ],
+      "checked": [
+        "All three actual dialog surfaces:720/600/480 widths and1208/1208/1248 heights",
+        "24px padding/gaps,18px/24px700 heading, original24px dismiss asset, two paired-field rows, source small-modal annotation",
+        "Source65px field slots preserve visible69px children; footer44px actions use actual Aptos400,14px/20px and16px gap",
+        "Initial focus on dialog surface, editable fields, footer close and Escape"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "26:1899",
+      "name": "Pill",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "450379f634f8fcae7ccf750eaaa19a3c9ad565e669f360126f2dd1b4aedb9852",
+      "variants": [
+        {
+          "id": "26:1898",
+          "name": "Standard",
+          "width": 191,
+          "height": 36
+        },
+        {
+          "id": "26:1900",
+          "name": "White",
+          "width": 191,
+          "height": 36
+        }
+      ],
+      "owners": [
+        "components/forms/form-controls.tsx"
+      ],
+      "checked": [
+        "Both36px-high pills,16px horizontal/8px vertical inset,8px gap and original12px dismiss asset",
+        "Aptos400,14px/20px, gray label, source standard/white surfaces and real remove callback"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "36:4345",
+      "name": "Quick Actions",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "14a15957ad201f0a38a10dac77e7977d25c9dadcd6029bf8a9487e1c7789785d",
+      "variants": [
+        {
+          "id": "36:4344",
+          "name": "1 Level",
+          "width": 208,
+          "height": 170
+        },
+        {
+          "id": "36:4388",
+          "name": "2 Levels",
+          "width": 416,
+          "height": 170
+        },
+        {
+          "id": "36:4428",
+          "name": "3 Levels",
+          "width": 624,
+          "height": 170
+        },
+        {
+          "id": "36:4479",
+          "name": "Time",
+          "width": 208,
+          "height": 126
+        },
+        {
+          "id": "36:4512",
+          "name": "Action",
+          "width": 208,
+          "height": 126
+        },
+        {
+          "id": "38:4550",
+          "name": "No title",
+          "width": 208,
+          "height": 98
+        }
+      ],
+      "owners": [
+        "components/forms/quick-actions.tsx",
+        "ui/dropdown-menu.tsx"
+      ],
+      "checked": [
+        "All six original payloads and panel heights170/126/98;208px panel widths",
+        "Root submenu triggers28px high with8px horizontal inset; compact root leaves24px high with4px inset",
+        "Full two- and three-panel unions, source x0/208/416 and y0/24/24; nested panels142px high",
+        "Third-panel28px leaves with4px inset, original16px plus/chevron assets, Aptos400,14px/20px",
+        "Native DropdownMenu keyboard opening, selection and Escape; no ContextMenu API is exposed by QuickActions"
+      ],
+      "findings": [
+        "forms-quick-panels"
+      ],
+      "reviewStatus": "corrected-at-registry-owner-and-verified-in-production-consumer"
+    },
+    {
+      "familyId": "49:4991",
+      "name": "Picker with Input",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "4e29fbcfd97b18ff189af91f202486dd8dba000b35455ac7a7c358f4d0c8abac",
+      "variants": [
+        {
+          "id": "49:4992",
+          "name": "Default",
+          "width": 224,
+          "height": 68
+        },
+        {
+          "id": "49:4999",
+          "name": "Open",
+          "width": 250,
+          "height": 365
+        }
+      ],
+      "owners": [
+        "components/forms/form-controls.tsx",
+        "ui/calendar.tsx"
+      ],
+      "checked": [
+        "Both224x68 field states, Inter50014px/20px label, Inter40016px/24px value,36px trigger and original16px calendar icon",
+        "Source250x293 calendar,12px outside-edge inset,226x32 header, weekday origin12/60 and21px height",
+        "35 valid32px day cells at x12+column*32,y89+row*40;226px header retains source2px trailing space beside224px day rows",
+        "Month/year controls and original navigation assets; source selected June01,2025; valid date selection"
+      ],
+      "findings": [
+        "forms-calendar-border"
+      ],
+      "reviewStatus": "corrected-at-registry-owner-and-verified-in-production-consumer"
+    },
+    {
+      "familyId": "49:5114",
+      "name": "Select",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "51c922fc6929c1faaff471e81f18ced711023b07235e46baa4700d36851d29e7",
+      "variants": [
+        {
+          "id": "49:5115",
+          "name": "Default",
+          "width": 180,
+          "height": 36
+        },
+        {
+          "id": "49:5120",
+          "name": "Open",
+          "width": 180,
+          "height": 236
+        }
+      ],
+      "owners": [
+        "ui/select.tsx"
+      ],
+      "checked": [
+        "Default placeholder versus Apple selected Open state; original16px down/check assets",
+        "180x36 Inter40014px/20px trigger,6px radius,12px outer-edge inset",
+        "180x196 popup; source Fruits Aptos40012px/16px group heading and all five Inter rows",
+        "Selected#f5f5f5/#171717 versus ordinary#0a0a0a, original borders/shadows and actual selection/Escape"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "49:5143",
+      "name": "Input Group",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "1002ee781cb9987a56a83703d8a3470851653ab8ea8816e6d17702788880520b",
+      "variants": [
+        {
+          "id": "49:5144",
+          "name": "1/Search results",
+          "width": 344,
+          "height": 36
+        },
+        {
+          "id": "49:5151",
+          "name": "2/URL prefix",
+          "width": 344,
+          "height": 36
+        },
+        {
+          "id": "49:5158",
+          "name": "3/Composer",
+          "width": 344,
+          "height": 106
+        },
+        {
+          "id": "49:5175",
+          "name": "4/Verified",
+          "width": 344,
+          "height": 36
+        }
+      ],
+      "owners": [
+        "ui/input-group.tsx"
+      ],
+      "checked": [
+        "All four344px compositions,36px single-line fields and106px composer",
+        "Source Inter sizes/weights and Search…/12results,https:// prefix,verified @shadcn payloads",
+        "Original search/info/verified glyphs,24px plus/send controls,16px Auto/52% used labels and zero-width separator slot",
+        "Editable input/composer state and local attachment/send callbacks"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "49:5180",
+      "name": "Default",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "c7b407e8174ffb09905665139e12848f90e3c48941ca3494997560731e26333f",
+      "variants": [
+        {
+          "id": "49:5180",
+          "name": "Default",
+          "width": 221,
+          "height": 20
+        }
+      ],
+      "owners": [
+        "components/forms/form-controls.tsx",
+        "ui/checkbox.tsx"
+      ],
+      "checked": [
+        "Accept terms and conditions; Inter50014px/20px,12px gap",
+        "16px white checkbox,4px radius, original source border/shadow and keyboard toggle"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "69:9406",
+      "name": "Text Button",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "f307b981e406aa99cfff7872db5730fd9437f1f0cc293614eceabc50ff7e3143",
+      "variants": [
+        {
+          "id": "69:9405",
+          "name": "Default",
+          "width": 74,
+          "height": 20
+        },
+        {
+          "id": "69:9407",
+          "name": "Invert",
+          "width": 74,
+          "height": 20
+        },
+        {
+          "id": "69:9411",
+          "name": "Reject",
+          "width": 74,
+          "height": 20
+        },
+        {
+          "id": "69:9415",
+          "name": "Disable",
+          "width": 74,
+          "height": 20
+        },
+        {
+          "id": "74:9427",
+          "name": "Hover",
+          "width": 74,
+          "height": 20
+        }
+      ],
+      "owners": [
+        "components/forms/form-controls.tsx"
+      ],
+      "checked": [
+        "All five original tones and Approve payload;16px original per-state icon plus8px gap",
+        "Aptos40014px/20px; default/invert/reject/disabled/hover text colours and genuine hover/disabled behavior"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "102:10661",
+      "name": "Filter Button",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "d288c7c610fd84b77f15b6c9c8be8f96b2c88d7e6433d7b1cf0f9e8dec107cca",
+      "variants": [
+        {
+          "id": "102:10660",
+          "name": "Filter Button",
+          "width": 79,
+          "height": 36
+        },
+        {
+          "id": "248:2206",
+          "name": "Hover",
+          "width": 79,
+          "height": 36
+        },
+        {
+          "id": "102:10662",
+          "name": "Filter Open",
+          "width": 364,
+          "height": 332
+        },
+        {
+          "id": "102:10739",
+          "name": "Filter Selection",
+          "width": 364,
+          "height": 224
+        },
+        {
+          "id": "102:10810",
+          "name": "Filtered",
+          "width": 98,
+          "height": 36
+        },
+        {
+          "id": "102:10814",
+          "name": "Filter Applied",
+          "width": 364,
+          "height": 116
+        },
+        {
+          "id": "102:10929",
+          "name": "Add Filter Open",
+          "width": 364,
+          "height": 412
+        },
+        {
+          "id": "102:11018",
+          "name": "Add Filter Open 2",
+          "width": 364,
+          "height": 412
+        }
+      ],
+      "owners": [
+        "components/filters/filter-controls.tsx"
+      ],
+      "checked": [
+        "All eight source compositions and original category/status payloads",
+        "36px standalone button,12px outer-edge inset, icon16x16 at12/10 and text at36/8;8px gap and4px radius",
+        "364px popup widths; category332px, checked status224px, applied116px, add-category/add-status412px heights",
+        "Two selected status clauses in final source state; original category/check/dismiss/add/divider assets",
+        "Actual search/add/select/remove/back/clear flows; hover highlight is cleared for baseline comparison"
+      ],
+      "findings": [
+        "forms-filter-button-border"
+      ],
+      "reviewStatus": "corrected-at-registry-owner-and-verified-in-production-consumer"
+    },
+    {
+      "familyId": "112:11237",
+      "name": "Filter Selection",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "e54d8d34246a14310cb08f5843a5657b885a79c3d1fff6dcc512ee0b0cdd005b",
+      "variants": [
+        {
+          "id": "112:11236",
+          "name": "Default",
+          "width": 135,
+          "height": 28
+        },
+        {
+          "id": "112:11238",
+          "name": "Unchecked",
+          "width": 135,
+          "height": 28
+        },
+        {
+          "id": "112:11254",
+          "name": "Checked",
+          "width": 135,
+          "height": 28
+        },
+        {
+          "id": "112:11359",
+          "name": "No Icon Unselected",
+          "width": 135,
+          "height": 28
+        },
+        {
+          "id": "112:11419",
+          "name": "No Icon Selected",
+          "width": 135,
+          "height": 28
+        }
+      ],
+      "owners": [
+        "components/filters/filter-controls.tsx"
+      ],
+      "checked": [
+        "All five135x28 rows; original Client/person/check assets and8px gaps",
+        "16px green checked box,2px radius, icon/no-icon combinations and draggable=false source default",
+        "Aptos40014px/20px; actual checked callback and keyboard interaction"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    },
+    {
+      "familyId": "158:2384",
+      "name": "Checkbox",
+      "source": "Live read-only Figma get_design_context with screenshot2026-10-19",
+      "provenance": "Independent forms reviewer fresh non-sparse high-fidelity context and screenshot",
+      "freshContextSha256": "96b577dc421066073eeb64cdd77579904cbe499b4a415e8546f2230a5604b03d",
+      "variants": [
+        {
+          "id": "158:2383",
+          "name": "Default",
+          "width": 80,
+          "height": 20
+        },
+        {
+          "id": "158:2385",
+          "name": "Selected",
+          "width": 80,
+          "height": 20
+        }
+      ],
+      "owners": [
+        "components/forms/form-controls.tsx",
+        "ui/checkbox.tsx"
+      ],
+      "checked": [
+        "Both16px controls,2px radius,8px gap and original12px check asset",
+        "Selection Aptos40014px/20px; transparent unchecked versus brand checked surface and pointer/keyboard toggling"
+      ],
+      "findings": [],
+      "reviewStatus": "reviewed-no-additional-registry-difference-found"
+    }
+  ],
+  "findings": [
+    {
+      "id": "forms-quick-panels",
+      "sourceNodes": [
+        "36:4388",
+        "36:4428",
+        "36:4445",
+        "36:4459",
+        "36:4460"
+      ],
+      "before": {
+        "panelOffsets": [
+          [
+            0,
+            0
+          ],
+          [
+            199,
+            29
+          ],
+          [
+            398,
+            30
+          ]
+        ],
+        "nestedLeafPadding": 8
+      },
+      "expected": {
+        "panelOffsets": [
+          [
+            0,
+            0
+          ],
+          [
+            208,
+            24
+          ],
+          [
+            416,
+            24
+          ]
+        ],
+        "panelSizes": [
+          [
+            208,
+            170
+          ],
+          [
+            208,
+            142
+          ],
+          [
+            208,
+            142
+          ]
+        ],
+        "nestedLeafPadding": 4
+      },
+      "fix": "QuickActions compensates the9px trigger-to-panel edge; first submenu aligns13px above its trigger and later menus9px above. Only nested noncompact leaf rows receive4px inset; root and compact APIs retain their own source geometry.",
+      "regression": "Both canonical and consumer gates assert every panel rectangle and capture full two-/three-panel unions; old gate captured only the first panel.",
+      "status": "verified-passed-in-current-production-consumer"
+    },
+    {
+      "id": "forms-calendar-border",
+      "sourceNodes": [
+        "49:4999",
+        "49:5007",
+        "49:5008",
+        "49:5023",
+        "49:5039"
+      ],
+      "before": {
+        "popup": [
+          250,
+          295
+        ],
+        "headerOrigin": [
+          13,
+          13
+        ],
+        "headerWidth": 224,
+        "dayOrigin": [
+          13,
+          90
+        ]
+      },
+      "expected": {
+        "popup": [
+          250,
+          293
+        ],
+        "header": [
+          12,
+          12,
+          226,
+          32
+        ],
+        "weekday": [
+          12,
+          60,
+          226,
+          21
+        ],
+        "dayOrigin": [
+          12,
+          89
+        ],
+        "cell": [
+          32,
+          32
+        ],
+        "rowPitch": 40
+      },
+      "fix": "DatePickerField owns the250px popup,11px inner Calendar padding plus1px native stroke, and fixed224px weeks. Calendar primitive is unchanged; source day math stays valid.",
+      "regression": "Canonical and consumer gates assert height, header, weekday origin, all35 cell rectangles and row pitch.",
+      "status": "verified-passed-in-current-production-consumer"
+    },
+    {
+      "id": "forms-field-gap",
+      "sourceNodes": [
+        "13:1303",
+        "248:2181",
+        "13:1307",
+        "35:2082",
+        "36:4529"
+      ],
+      "before": {
+        "gap": 4,
+        "textSlot": 614
+      },
+      "expected": {
+        "gap": 0,
+        "textSlot": 618
+      },
+      "fix": "FormControlSurface and button-mode SearchableCombobox remove the extra4px gap. DatePickerField retains its explicit source4px gap.",
+      "regression": "Canonical and consumer gates assert zero gap and618px text slots for four surfaces plus lookup trigger.",
+      "status": "verified-passed-in-current-production-consumer"
+    },
+    {
+      "id": "forms-comment-selection",
+      "sourceNodes": [
+        "96:9877",
+        "96:9879",
+        "96:10016"
+      ],
+      "before": "Comment edit used a placeholder and could not show the source selected word.",
+      "expected": {
+        "text": "Add a comment",
+        "selectedRange": [
+          6,
+          13
+        ],
+        "selectionBackground": "#eaf6ff",
+        "selectionText": "#7f8082",
+        "sourceRectangle": [
+          50,
+          16,
+          63,
+          17
+        ]
+      },
+      "fix": "CommentBox supplies source native selection colours and secondary text. Canonical and consumer fixtures seed actual editable text and expose an explicit Select sample text control; no automatic focus or fake absolute selection rectangle.",
+      "regression": "Both gates activate the gallery control before the edit capture and assert actual focus, value, range and computed ::selection colours.",
+      "status": "verified-passed-in-current-production-consumer"
+    },
+    {
+      "id": "forms-filter-button-border",
+      "sourceNodes": [
+        "102:10660",
+        "248:2206",
+        "102:10810",
+        "96:9836",
+        "96:9837"
+      ],
+      "before": {
+        "buttonWidth": 80.578125,
+        "iconOrigin": [
+          13,
+          10
+        ],
+        "textOrigin": [
+          37,
+          8
+        ],
+        "cssPadding": [
+          8,
+          12
+        ]
+      },
+      "expected": {
+        "figmaWidth": 79,
+        "iconOrigin": [
+          12,
+          10
+        ],
+        "textOrigin": [
+          36,
+          8
+        ],
+        "icon": [
+          16,
+          16
+        ],
+        "outsidePadding": [
+          8,
+          12
+        ],
+        "strokesIncludedInLayout": false
+      },
+      "fix": "FilterButton subtracts its1px native border from CSS padding, matching existing FilterMenuSurface compensation; intrinsic label width is not forced.",
+      "regression": "Canonical and consumer gates assert icon and text origins for source standalone/count variants.",
+      "status": "verified-passed-in-current-production-consumer"
+    }
+  ],
+  "verification": {
+    "red": {
+      "check": "36:4388:panel2 joins the source edge without overlap or vertical drift",
+      "result": "failed-as-expected against315ade after197 earlier assertions",
+      "errors": [],
+      "evidence": "snappcomponents/artifacts/figma-showcase/forms/report.json was the red report; final gate replaces it"
+    },
+    "sourceChecks": {
+      "registryCanonical": "passed",
+      "consumerStrictTypeScript": "passed",
+      "browserScriptsSyntax": "passed"
+    },
+    "finalBrowser": {
+      "status": "passed",
+      "capturedAt": "2026-10-19T10:04:16.26Z",
+      "families": 14,
+      "variants": 89,
+      "assertions": 235,
+      "interactionRecords": 23,
+      "errors": [],
+      "servedAssets": {
+        "index.js": "2cfee08a485943e250e80315e42ec31cfcbb2fd79b8c2fa9facaed6629477e04",
+        "main.css": "43e2f6abcc58d0807fda625082825cf42194ab937977ec8b70c8f8586217f215"
+      },
+      "registryGraphSha256": "7f1ce83b48c7d36a3a02cb4861eb4cad640678ffce6f098caed16fa4c55062de",
+      "report": "snappcomponents/artifacts/figma-showcase/forms/report.json"
+    },
+    "canonicalGate": "scripts/verify-forms-browser.mjs",
+    "consumerGate": "snappcomponents/scripts/verify-forms-showcase.mjs",
+    "correctedGeometry": {
+      "calendar": {
+        "name": "calendar-nested-source-layout",
+        "header": {
+          "x": 12,
+          "y": 12,
+          "width": 226,
+          "height": 32
+        },
+        "weekdays": {
+          "x": 12,
+          "y": 60,
+          "width": 226,
+          "height": 21
+        },
+        "weekdayCells": [
+          {
+            "x": 12,
+            "y": 60,
+            "width": 32,
+            "height": 21
+          },
+          {
+            "x": 44,
+            "y": 60,
+            "width": 32,
+            "height": 21
+          },
+          {
+            "x": 76,
+            "y": 60,
+            "width": 32,
+            "height": 21
+          },
+          {
+            "x": 108,
+            "y": 60,
+            "width": 32,
+            "height": 21
+          },
+          {
+            "x": 140,
+            "y": 60,
+            "width": 32,
+            "height": 21
+          },
+          {
+            "x": 172,
+            "y": 60,
+            "width": 32,
+            "height": 21
+          },
+          {
+            "x": 204,
+            "y": 60,
+            "width": 32,
+            "height": 21
+          }
+        ],
+        "days": [
+          {
+            "x": 12,
+            "y": 89,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 44,
+            "y": 89,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 76,
+            "y": 89,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 108,
+            "y": 89,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 140,
+            "y": 89,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 172,
+            "y": 89,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 204,
+            "y": 89,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 12,
+            "y": 129,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 44,
+            "y": 129,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 76,
+            "y": 129,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 108,
+            "y": 129,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 140,
+            "y": 129,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 172,
+            "y": 129,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 204,
+            "y": 129,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 12,
+            "y": 169,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 44,
+            "y": 169,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 76,
+            "y": 169,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 108,
+            "y": 169,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 140,
+            "y": 169,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 172,
+            "y": 169,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 204,
+            "y": 169,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 12,
+            "y": 209,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 44,
+            "y": 209,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 76,
+            "y": 209,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 108,
+            "y": 209,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 140,
+            "y": 209,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 172,
+            "y": 209,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 204,
+            "y": 209,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 12,
+            "y": 249,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 44,
+            "y": 249,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 76,
+            "y": 249,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 108,
+            "y": 249,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 140,
+            "y": 249,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 172,
+            "y": 249,
+            "width": 32,
+            "height": 32
+          },
+          {
+            "x": 204,
+            "y": 249,
+            "width": 32,
+            "height": 32
+          }
+        ]
+      },
+      "quickActions": [
+        {
+          "name": "quick-complete-36:4388",
+          "panels": [
+            {
+              "x": 321,
+              "y": 556,
+              "width": 208,
+              "height": 170
+            },
+            {
+              "x": 529,
+              "y": 580,
+              "width": 208,
+              "height": 142
+            }
+          ]
+        },
+        {
+          "name": "quick-complete-36:4428",
+          "panels": [
+            {
+              "x": 321,
+              "y": 708,
+              "width": 208,
+              "height": 170
+            },
+            {
+              "x": 529,
+              "y": 732,
+              "width": 208,
+              "height": 142
+            },
+            {
+              "x": 737,
+              "y": 732,
+              "width": 208,
+              "height": 142
+            }
+          ]
+        }
+      ],
+      "comment": {
+        "name": "comment-real-text-selection",
+        "value": "Add a comment",
+        "start": 6,
+        "end": 13,
+        "focused": true,
+        "background": "rgb(234, 246, 255)",
+        "color": "rgb(127, 128, 130)"
+      }
+    },
+    "inspectedCaptures": [
+      "snappcomponents/artifacts/figma-showcase/forms/quick-complete-36-4388.png",
+      "snappcomponents/artifacts/figma-showcase/forms/quick-complete-36-4428.png",
+      "snappcomponents/artifacts/figma-showcase/forms/calendar-open.png",
+      "snappcomponents/artifacts/figma-showcase/forms/96-9877.png",
+      "snappcomponents/artifacts/figma-showcase/forms/102-10660.png",
+      "snappcomponents/artifacts/figma-showcase/forms/quick-pointer-36-4428.png"
+    ],
+    "testMaintenance": [
+      "FilterControl PopoverTrigger forwards the native button while changing data-slot; geometry checks now target its actual button role.",
+      "DatePickerField classNames.week intentionally replaces the default rdp-week class; day checks target native td.rdp-day cells, retaining all 35 exact rectangle assertions."
+    ],
+    "canonicalBrowser": "Canonical forms browser gate strengthened with the same checks; final standalone consumer production execution is recorded here. Full canonical registry install/build verification is recorded by the root audit.",
+    "pointerReferenceGate": {
+      "status": "passed",
+      "checks": 9,
+      "errors": [],
+      "servedAssets": {
+        "index.js": "2cfee08a485943e250e80315e42ec31cfcbb2fd79b8c2fa9facaed6629477e04",
+        "main.css": "43e2f6abcc58d0807fda625082825cf42194ab937977ec8b70c8f8586217f215"
+      },
+      "panels": [
+        {
+          "x": 321,
+          "y": 708,
+          "width": 208,
+          "height": 170
+        },
+        {
+          "x": 529,
+          "y": 732,
+          "width": 208,
+          "height": 142
+        },
+        {
+          "x": 737,
+          "y": 732,
+          "width": 208,
+          "height": 142
+        }
+      ],
+      "leaf": {
+        "focused": false,
+        "highlighted": false,
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(42, 44, 46)",
+        "padding": "4px"
+      },
+      "script": "snappcomponents/scripts/verify-quick-actions-pointer.mjs",
+      "report": "snappcomponents/artifacts/figma-showcase/forms/pointer-report.json",
+      "capture": "snappcomponents/artifacts/figma-showcase/forms/quick-pointer-36-4428.png"
+    }
+  },
+  "limits": [
+    "Figma Aptos is reported missing in the execution environment by the independent root audit; exact approved font metadata/bytes are retained. Intrinsic HUG widths and glyph rasterization are not certified as pixel-identical to Figma fallback rendering.",
+    "Standard Fields source frame is65px while visible children reach69px; generic fields remain unclipped and modal fixtures retain source65px slots.",
+    "Error/Positive/Warning source notices are672px inside nominal670px frames; fixture preserves source overflow.",
+    "Source calendar duplicates25 instead of27 and contains a historical today marker. Production preserves valid date arithmetic and current clock.",
+    "Browser native caret/selection geometry uses real approved font metrics; no fake cursor or selection rectangle is drawn.",
+    "This review covers standalone production composition. Cross-host live Dynamics/PCF deployment is not certified by this static supporting showcase.",
+    "Keyboard and pointer reference paths are captured separately: keyboard H1 focus shows its normal focused background; pointer-open H1 remains unfocused and matches the source white leaf state."
+  ],
+  "status": "reviewed-corrections-verified-with-documented-source-and-font-limits"
+}

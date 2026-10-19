@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="underline">
+<g id="vector">
+<path d="M4 13H12V14H4V13Z" fill="#212121"/>
+<path d="M10 2V9C10 9.3625 9.89062 9.5 9.67812 9.63438C9.30937 9.86562 8.7 10 8 10C7.3 10 6.69063 9.86562 6.32188 9.63438C6.10938 9.5 6 9.3625 6 9V2H4V9C4 11.2 6.00938 12 8 12C9.99062 12 12 11.2 12 9V2H10Z" fill="#212121"/>
+</g>
+</g>
+</svg>

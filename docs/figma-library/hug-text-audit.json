@@ -1,0 +1,127 @@
+{
+  "reviewedOn": "2026-10-19",
+  "status": "Canonical source correction verified in focused fixtures; generated graph and production integration are owned by the parent task.",
+  "scope": [
+    "Tab Item 300:2763",
+    "Expanded Tab 307:2840",
+    "Tabbed Menu 300:2784"
+  ],
+  "sourceTextNodes": [
+    "300:2757",
+    "300:2765",
+    "307:2841",
+    "307:2842"
+  ],
+  "sourceFacts": {
+    "text": "Item",
+    "family": "Aptos",
+    "weight": 400,
+    "fontSize": 14,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "hugTextFrameWidth": 28,
+    "defaultAndSelectedControlWidth": 60,
+    "expandedControlWidths": [
+      60,
+      72
+    ],
+    "expandedWidth": 132,
+    "menuWidth": 524,
+    "menuInset": 8,
+    "menuGap": 4
+  },
+  "before": {
+    "tabItem": 59.421875,
+    "expandedTab": 130.84375,
+    "tabbedMenu": 519.375,
+    "paintTextWidth": 27.421875
+  },
+  "after": {
+    "tabItem": 60,
+    "expandedTab": 132,
+    "tabbedMenu": 524,
+    "textSlot": 28,
+    "paintTextWidth": 27.421875,
+    "baselinePaintTextWidth": 27.421875,
+    "defaultTextOrigin": 16,
+    "expandedTextOrigins": [
+      {
+        "x": 16,
+        "y": 8
+      },
+      {
+        "x": 28,
+        "y": 8
+      }
+    ]
+  },
+  "rationale": "Rounding whole controls centers the unchanged glyph run at x16.28125. Rounding only the intrinsic text slot retains Figma x16 (and expanded secondary x28), normal kerning and one rendered text copy. Labels remain dynamic; no business strings receive fixed widths.",
+  "implementation": {
+    "primitive": "registry/radix-nova/ui/hug-text.tsx",
+    "consumers": [
+      "registry/radix-nova/ui/tabs.tsx",
+      "registry/radix-nova/components/navigation/navigation-header.tsx"
+    ],
+    "nativeCss": "inline-size: calc-size(max-content, round(up, size, 1px))",
+    "fallback": "Feature-detected owner-window ResizeObserver watches only the natural inner span, prefers untransformed contentBoxSize, uses computed inline size for legacy entries, avoids redundant state, and disconnects on unmount.",
+    "composition": "Adjacent strings/numbers across transparent fragments form one label slot. Icons and custom elements remain functional, and Radix asChild keeps its original child.",
+    "unchanged": [
+      "Original font binaries and kerning",
+      "Global typography",
+      "Pagination"
+    ]
+  },
+  "validation": {
+    "browser": "156.0.8078.4",
+    "sourceSha256": {
+      "registry/radix-nova/ui/hug-text.tsx": "9ebd0cc0c57f3df1871ed14321e3a6f980262b35cbcd6a3cf5171eb05922fb32",
+      "registry/radix-nova/ui/tabs.tsx": "932ac1d41d384f0804a5e672045cde51c9fe311590dd8f6b8cf2a459b4ab59a4",
+      "registry/radix-nova/components/navigation/navigation-header.tsx": "35684508a6e3589c6f6f0b74a41d661c6f30696949cb6c04c6b5b1fc28f4a359"
+    },
+    "focusedChecks": 60,
+    "failures": 0,
+    "errors": 0,
+    "modes": [
+      "Native intrinsic CSS",
+      "Forced unsupported intrinsic CSS with ResizeObserver contentBoxSize",
+      "Forced unsupported intrinsic CSS with legacy observer entries"
+    ],
+    "mounts": [
+      "Standalone",
+      "First ShadowRoot",
+      "Second ShadowRoot"
+    ],
+    "covered": [
+      "Exact 60/132/524 widths and text origins",
+      "Single accessible text copy",
+      "Adjacent fragments and numeric labels",
+      "Icon gap and custom labels",
+      "Radix asChild",
+      "Dynamic labels, weight and family",
+      "Late font loading",
+      "Transformed hosts",
+      "Owned observer cleanup and sibling isolation",
+      "Standalone ArrowRight immediate-next selection"
+    ],
+    "strictTypeScript": "PASS for all three changed production modules",
+    "canonicalTailwind": "PASS",
+    "artifacts": "artifacts/figma-qa/hug-text/hug-text-qa.json and three mode PNGs",
+    "productionGateChanges": "Canonical and consumer navigation gates now require exact 60/132/524 widths, four nested text slots/origins, and every eight-tab slot/position."
+  },
+  "preExistingFinding": {
+    "name": "Radix Tabs ArrowRight in ShadowRoot",
+    "expectedSelectedIndex": 1,
+    "actualSelectedIndex": 3,
+    "baselineSelectedIndex": 3,
+    "baselineSource": "<snapshot-root>/snapp-ui-registry/registry/radix-nova/ui/tabs.tsx",
+    "baselineSha256": "b804f3ee8cc68fef4c5b4ec1f04a5166c601df52980a5a21e1348c4020f06f00",
+    "independentlyReproducedModes": 3,
+    "cause": "Radix roving-focus focusFirst compares document.activeElement while the actual focused element is inside a ShadowRoot. The document active element remains the host, so it continues walking candidates.",
+    "status": "Reproduced before and after; explicitly recorded as an unresolved product defect, not counted as passing keyboard accessibility. No keyboard implementation changed in this width correction."
+  },
+  "limits": [
+    "Focused canonical-source React fixture, not the generated registry or production consumer.",
+    "Unsupported intrinsic CSS is feature-disabled in Chromium; this is not a Firefox/Safari certification.",
+    "Pagination is outside this correction."
+  ]
+}

@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Scanner } from "@tailwindcss/oxide";
@@ -38,7 +38,24 @@ for (const candidate of scanner.scan()) {
 	}
 }
 
-if (suggestions.length > 0) {
+if (suggestions.length > 0 && process.argv.includes('--fix')) {
+	async function fix(directory) {
+		for (const entry of await readdir(directory, {withFileTypes:true})) {
+			const file = path.join(directory, entry.name);
+			if (entry.isDirectory()) { await fix(file); continue; }
+			if (!/\.tsx?$/.test(entry.name)) continue;
+			const original = await readFile(file, 'utf8');
+			let updated = original;
+			for (const {candidate, canonical} of suggestions) {
+				const escaped = candidate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+				updated = updated.replace(new RegExp(`(?<=[\\s\"'\x60])${escaped}(?=[\\s\"'\x60])`, 'g'), canonical);
+			}
+			if (updated !== original) await writeFile(file, updated);
+		}
+	}
+	await fix(sourceRoot);
+	console.log('Applied registry-only canonical Tailwind replacements. Rerun the check.');
+} else if (suggestions.length > 0) {
 	console.error("Non-canonical Tailwind classes found:");
 	for (const { candidate, canonical } of suggestions) {
 		console.error(`  ${candidate} -> ${canonical}`);

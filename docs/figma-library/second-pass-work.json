@@ -1,0 +1,401 @@
+{
+  "source": "https://www.figma.com/design/YUYB5jtCxUwT8OefeLP9f7/SNAPP-Component-Library",
+  "reviewDate": "2026-10-19",
+  "scope": {
+    "families": 20,
+    "specimens": 50
+  },
+  "status": "Independent second-pass review complete; canonical correction adopted through full registry refresh and strengthened production browser verification passed.",
+  "method": [
+    "Fetched fresh get_design_context with screenshot for all 20 exact family nodes; every fresh PNG was byte-identical to the previously captured original Figma PNG inspected side by side with the production consumer.",
+    "Manually viewed all 20 Figma/consumer screenshot pairs and audited nested typography, colors, original glyph slots, spacing, progress geometry, line breaks, clipping and source instance overrides.",
+    "Compared the fresh high-fidelity nested source values against current canonical implementations and actual production computed styles. The existing geometry/font gate was treated as baseline evidence, not proof of complete fidelity."
+  ],
+  "corrections": [
+    {
+      "family": "1:3055",
+      "variant": "1:3056",
+      "sourceNodes": [
+        "I1:3065;1:2580",
+        "I1:3065;1:2582",
+        "I1:3066;1:2580",
+        "I1:3066;1:2582",
+        "I1:3075;1:2580",
+        "I1:3075;1:2582",
+        "I1:3076;1:2580",
+        "I1:3076;1:2582"
+      ],
+      "affectedText": [
+        "55145",
+        "Item Name 1",
+        "56743",
+        "Item Name 1",
+        "55167",
+        "Item Name 1",
+        "56743",
+        "Item Name 1"
+      ],
+      "actualBefore": "rgb(47, 69, 92) / #2f455c inherited from panel",
+      "expected": "rgb(42, 44, 46) / text-primary #2a2c2e",
+      "owner": "registry/radix-nova/components/work-os/productivity-panel.tsx",
+      "change": "Set text-snapp-text-primary at the ProductivityList ul so interactive and read-only rows share the source color; headings and time totals remain brand #2f455c.",
+      "regression": "Both registry and consumer browser gates now require all 8 row strings to be primary and all 4 heading/time strings to remain brand.",
+      "redEvidence": "Before source correction and consumer refresh, the strengthened consumer gate failed only the new nested-row color check for all 8 values. All 50 geometry checks, 214 custom-font samples and 17 interactions remained valid.",
+      "greenEvidence": "Production consumer on the verified current JS/CSS passed all 50 specimen geometry checks, 214 actual Aptos/Inter font samples, 17 interactions, eight corrected primary row strings and four retained brand heading/time strings. The corrected 338 x 300 ProductivityPanel capture was visually inspected against the original Figma reference."
+    }
+  ],
+  "checklist": [
+    {
+      "node": "1:2164",
+      "name": "TaskListItem",
+      "specimens": 8,
+      "checked": [
+        "High, Mid, Low, Dragged, Placing, Minimal, List and Tiny variants",
+        "Record/body/time typography and colors, separator and drop-target stroke",
+        "Exact 16px and 12px glyphs, 12px/6px/2px padding and source radii"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "1:2289",
+      "name": "Day",
+      "specimens": 2,
+      "checked": [
+        "Dark and Light backgrounds and top stroke",
+        "141.714 x 90.333 dimensions, 13/12px inset, 6px gap, 11/12 bold heading",
+        "Nested tiny task wraps into two lines with 12px clock"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "1:2304",
+      "name": "Work Item",
+      "specimens": 3,
+      "checked": [
+        "Bug, task and item original 40 x 20 composite assets",
+        "323.667 x 90 dimensions, 8px inset, 2px metadata gap",
+        "86px time badge, 48px progress inset, 8px rail, 33px fill and 42px label"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "1:3055",
+      "name": "WorkOS Personal Productivity Right Panel",
+      "specimens": 2,
+      "checked": [
+        "Open 338px and collapsed 52px widths, 1031px height",
+        "32px heading rows, 28px list rows, 20px original glyphs and delimiter",
+        "Nested record identifiers and names versus separate heading/totals colors"
+      ],
+      "result": "Corrected nested list text color in canonical ProductivityList"
+    },
+    {
+      "node": "13:960",
+      "name": "Achievements",
+      "specimens": 1,
+      "checked": [
+        "338 x 48 surface, 20px trophy, 16px groups and 4px text gaps",
+        "14/20 body labels and bold numeric counts"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "48:4696",
+      "name": "CheckItem",
+      "specimens": 3,
+      "checked": [
+        "Default, Selected and Completed borders and status colors",
+        "394 x 74, 16px inset, 8px gap, 16px checkbox and 12px original checkmark",
+        "14/20 title/code, 12/16 issued/date, 84px date region"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "49:4861",
+      "name": "Course",
+      "specimens": 2,
+      "checked": [
+        "Completed and incomplete row, exact grip/more/checkmark assets",
+        "456 x 32 outer region and 28px row, 8px gap and inset",
+        "14/20 title/code/status/date and source status/date alignment"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "49:4890",
+      "name": "EmployeeCard",
+      "specimens": 3,
+      "checked": [
+        "Closed, Expanded and Minimal states, source widths and 336/580/150px heights",
+        "48px avatar with actual Inter-Regular 400 at 16/24, 18/24 bold Aptos name and 14/20 role",
+        "Source 64.84% progress fill, nested employee Course overrides, section spacing and chevrons",
+        "Intentional source course-row overflow retained and gallery's independent scroll framing distinguished from component design"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "61:6351",
+      "name": "CourseStatus",
+      "specimens": 4,
+      "checked": [
+        "Default, Complete, Notice and Warning surfaces, strokes, icons and text colors",
+        "333.667 x 44, 12px inset, 8px gap and 16px icon",
+        "14/20 name/date with exact right alignment"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "219:2062",
+      "name": "TableCell",
+      "specimens": 3,
+      "checked": [
+        "Header and Regular masters plus explicit optional-property specimen",
+        "297 x 36 surface, 8px inset, header/body text colors and sort asset slot",
+        "Dual-text fill behavior, 20px document and 16px chevron slots"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "219:2126",
+      "name": "TableRow",
+      "specimens": 1,
+      "checked": [
+        "874 x 36 semantic row, six cells and 8px insets",
+        "Five 162px cells with compact 64px final right-aligned cell"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "219:2228",
+      "name": "Table",
+      "specimens": 1,
+      "checked": [
+        "648 x 268 and four 162px columns",
+        "Header 36px, two 116px rows, multiline secondary text and middle-aligned white cell content",
+        "Document Person acc9b.svg is byte-identical to this node's 88fa1.svg; no substituted glyph",
+        "Capacity/override/CAS-01012/Leonard/Baxter line breaks and body outcome green"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "228:2376",
+      "name": "InboxCategory",
+      "specimens": 3,
+      "checked": [
+        "Default, Selected and Disabled label/count colors and selected surface",
+        "298 x 24 nominal wrapper around source 28px padded menu item",
+        "16px count badge, 16px wrapper inset and 8/4px item inset"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "230:2426",
+      "name": "InboxItem",
+      "specimens": 2,
+      "checked": [
+        "Default and Selected surface/bottom-stroke treatment",
+        "298 x 84, 16/12px inset, 24px avatar and 8px gap",
+        "12/16 bold sender/title, 11/12 metadata/preview, exact ellipsis and priority text",
+        "Read indicator optional API retains the design's 6px slots"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "236:2502",
+      "name": "ActionNode",
+      "specimens": 6,
+      "checked": [
+        "Action, Condition and Trigger in Default/Selected states",
+        "136px width, 56px body, 61px ported height, 16/20/12px insets",
+        "20px original glyphs, 72px clipped text region and 2px text gap",
+        "Original 74 x 10 or 42 x 10 port assets at source 32px or 45px left / 51px top"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "294:2678",
+      "name": "Card",
+      "specimens": 2,
+      "checked": [
+        "Folder 240 x 166 with 140px front and Item 420 x 112",
+        "Original folder/back/paper/document assets, 16px radii, source shadow",
+        "600 12/16 category, 400 14/20 body, 700 14/20 service title and exact source text wrapping"
+      ],
+      "result": "No remaining visible or source-value mismatch found"
+    },
+    {
+      "node": "49:4981",
+      "name": "EC_Light",
+      "specimens": 1,
+      "checked": [
+        "Original 2e5e5.svg at natural 400 x 51.5846, white mark and red center"
+      ],
+      "result": "Exact asset and source geometry retained"
+    },
+    {
+      "node": "49:4986",
+      "name": "EC_Dark",
+      "specimens": 1,
+      "checked": [
+        "Original f4c1f.svg at natural 400 x 51.5846, dark mark and red center"
+      ],
+      "result": "Exact asset and source geometry retained"
+    },
+    {
+      "node": "267:2185",
+      "name": "snapp_logo",
+      "specimens": 1,
+      "checked": [
+        "Original f9e47.svg at natural 196.66 x 50.4, full white symbol and wordmark"
+      ],
+      "result": "Exact asset and source geometry retained"
+    },
+    {
+      "node": "279:2228",
+      "name": "snapp_symbol",
+      "specimens": 1,
+      "checked": [
+        "Original 098c7.svg at natural 47.9643 x 50.4043, full white mark"
+      ],
+      "result": "Exact asset and source geometry retained"
+    }
+  ],
+  "limits": [
+    "Chromium and Figma font rasterization differ; pixel-byte equality between design and browser is not claimed.",
+    "Only explicitly designed variants and visible optional-property slots were reviewed; this is not a Cartesian-product property matrix.",
+    "Local production consumer and isolated native/browser checks do not certify live Dynamics, Power Pages, PCF or Cabinet deployment."
+  ],
+  "finalVerification": {
+    "checkedAt": "2026-10-19T10:03:05.853Z",
+    "command": "node scripts/verify-work-showcase.mjs http://127.0.0.1:4175/ component",
+    "status": "passed",
+    "families": 20,
+    "specimens": 50,
+    "fontSamples": 214,
+    "interactions": 17,
+    "failures": 0,
+    "browserErrors": 0,
+    "artifact": {
+      "javascriptSha256": "2cfee08a485943e250e80315e42ec31cfcbb2fd79b8c2fa9facaed6629477e04",
+      "stylesheetSha256": "43e2f6abcc58d0807fda625082825cf42194ab937977ec8b70c8f8586217f215"
+    },
+    "evidencePaths": {
+      "browserReport": "snappcomponents/artifacts/figma-qa/work/report.json",
+      "comparisonReport": "snappcomponents/artifacts/figma-qa/work/registry-text-comparison.json",
+      "correctedTextScreenshot": "snappcomponents/artifacts/figma-qa/work/productivity-corrected-text.png"
+    },
+    "browserReportSha256": "36b6945df032b4d7d60c37696f18eea5730569cc4c2f086afa7f31a21b513953",
+    "originalBaselineComparison": {
+      "status": "passed",
+      "baselinePath": "snapp-ui-registry/artifacts/figma-qa/work/report.json",
+      "baselineSha256": "472ac1803f8eb56b6d84a90ff0af21c9fba670ad993294d19663f3607c57acb7",
+      "baselineReplaced": false,
+      "samples": 214,
+      "properties": [
+        "text",
+        "fontFamily",
+        "fontSize",
+        "fontWeight",
+        "lineHeight",
+        "color",
+        "padding",
+        "gap",
+        "radius"
+      ],
+      "propertiesCompared": 1926,
+      "unchangedProperties": 1918,
+      "documentedPropertyChanges": 8,
+      "unexplainedChanges": 0,
+      "changes": [
+        {
+          "node": "1:3056",
+          "variant": "open",
+          "textIndex": 2,
+          "text": "55145",
+          "property": "color",
+          "before": "rgb(47, 69, 92)",
+          "after": "rgb(42, 44, 46)",
+          "sourceId": "I1:3065;1:2580",
+          "reason": "Fresh Figma Tree Item source explicitly uses text-primary #2a2c2e; corrected inherited panel brand color in registry ProductivityList."
+        },
+        {
+          "node": "1:3056",
+          "variant": "open",
+          "textIndex": 3,
+          "text": "Item Name 1",
+          "property": "color",
+          "before": "rgb(47, 69, 92)",
+          "after": "rgb(42, 44, 46)",
+          "sourceId": "I1:3065;1:2582",
+          "reason": "Fresh Figma Tree Item source explicitly uses text-primary #2a2c2e; corrected inherited panel brand color in registry ProductivityList."
+        },
+        {
+          "node": "1:3056",
+          "variant": "open",
+          "textIndex": 4,
+          "text": "56743",
+          "property": "color",
+          "before": "rgb(47, 69, 92)",
+          "after": "rgb(42, 44, 46)",
+          "sourceId": "I1:3066;1:2580",
+          "reason": "Fresh Figma Tree Item source explicitly uses text-primary #2a2c2e; corrected inherited panel brand color in registry ProductivityList."
+        },
+        {
+          "node": "1:3056",
+          "variant": "open",
+          "textIndex": 5,
+          "text": "Item Name 1",
+          "property": "color",
+          "before": "rgb(47, 69, 92)",
+          "after": "rgb(42, 44, 46)",
+          "sourceId": "I1:3066;1:2582",
+          "reason": "Fresh Figma Tree Item source explicitly uses text-primary #2a2c2e; corrected inherited panel brand color in registry ProductivityList."
+        },
+        {
+          "node": "1:3056",
+          "variant": "open",
+          "textIndex": 8,
+          "text": "55167",
+          "property": "color",
+          "before": "rgb(47, 69, 92)",
+          "after": "rgb(42, 44, 46)",
+          "sourceId": "I1:3075;1:2580",
+          "reason": "Fresh Figma Tree Item source explicitly uses text-primary #2a2c2e; corrected inherited panel brand color in registry ProductivityList."
+        },
+        {
+          "node": "1:3056",
+          "variant": "open",
+          "textIndex": 9,
+          "text": "Item Name 1",
+          "property": "color",
+          "before": "rgb(47, 69, 92)",
+          "after": "rgb(42, 44, 46)",
+          "sourceId": "I1:3075;1:2582",
+          "reason": "Fresh Figma Tree Item source explicitly uses text-primary #2a2c2e; corrected inherited panel brand color in registry ProductivityList."
+        },
+        {
+          "node": "1:3056",
+          "variant": "open",
+          "textIndex": 10,
+          "text": "56743",
+          "property": "color",
+          "before": "rgb(47, 69, 92)",
+          "after": "rgb(42, 44, 46)",
+          "sourceId": "I1:3076;1:2580",
+          "reason": "Fresh Figma Tree Item source explicitly uses text-primary #2a2c2e; corrected inherited panel brand color in registry ProductivityList."
+        },
+        {
+          "node": "1:3056",
+          "variant": "open",
+          "textIndex": 11,
+          "text": "Item Name 1",
+          "property": "color",
+          "before": "rgb(47, 69, 92)",
+          "after": "rgb(42, 44, 46)",
+          "sourceId": "I1:3076;1:2582",
+          "reason": "Fresh Figma Tree Item source explicitly uses text-primary #2a2c2e; corrected inherited panel brand color in registry ProductivityList."
+        }
+      ]
+    }
+  }
+}

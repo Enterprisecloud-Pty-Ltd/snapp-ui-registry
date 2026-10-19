@@ -1,0 +1,318 @@
+{
+  "date": "2026-10-19",
+  "scope": "Isolated headless Chromium FontFace aliases; no application/UI/repository source changes. Canvas advances use actual loaded original versus prepared TTF.",
+  "inkMeasurementLimit": "Canvas actualBoundingBox values reflect platform glyph bounds rather than exact unhinted vector bounds, at both actual font size and2048px normalized. They cannot serve as exact Figma SVG contour/ink oracle. Direct prepared-binary outline+GPOS proof is in prepared-nonregular-raw-shaping-proof.json. Light model is tested in Chromium but not source-verified because its sole Figma TEXT is hidden.",
+  "browser": "156.0.8078.4",
+  "summary": {
+    "rows": 8,
+    "preparedRows": 4,
+    "allPreparedAdvancesMatchModel": true,
+    "platformCanvasBoundsEqualUnhintedVectorBounds": false
+  },
+  "rows": [
+    {
+      "id": "13:893",
+      "text": "Heading Text",
+      "style": "Bold",
+      "fontSize": 18,
+      "alias": "Independent_Bold_original",
+      "variant": "original",
+      "actual": {
+        "advance": 104.5458984375,
+        "inkLeft": 1,
+        "inkWidth": 104.1474609375,
+        "inkHeight": 16,
+        "hugCeil": 105,
+        "domWidth": 104.546875
+      },
+      "largeSizeCanvasNormalized": {
+        "advance": 104.5458984375,
+        "inkLeft": 1.40625,
+        "inkWidth": 102.6474609375,
+        "inkHeight": 15.46875
+      },
+      "expected": {
+        "advance": 104.607421875,
+        "hugCeil": 105,
+        "inkLeft": 1.4150390625,
+        "inkWidth": 102.6123046875,
+        "inkHeight": 15.2841796875
+      },
+      "differences": {
+        "advance": -0.0615234375,
+        "inkLeft": -0.0087890625,
+        "inkWidth": 0.03515625,
+        "inkHeight": 0.1845703125
+      },
+      "visibleFigmaSource": true,
+      "matchesFigmaAdvanceModel": false,
+      "canvasBoundsEqualUnhintedVectorBounds": false
+    },
+    {
+      "id": "13:893",
+      "text": "Heading Text",
+      "style": "Bold",
+      "fontSize": 18,
+      "alias": "Independent_Bold_prepared",
+      "variant": "prepared",
+      "actual": {
+        "advance": 104.607421875,
+        "inkLeft": 1,
+        "inkWidth": 104.208984375,
+        "inkHeight": 16,
+        "hugCeil": 105,
+        "domWidth": 104.609375
+      },
+      "largeSizeCanvasNormalized": {
+        "advance": 104.607421875,
+        "inkLeft": 1.40625,
+        "inkWidth": 102.708984375,
+        "inkHeight": 15.46875
+      },
+      "expected": {
+        "advance": 104.607421875,
+        "hugCeil": 105,
+        "inkLeft": 1.4150390625,
+        "inkWidth": 102.6123046875,
+        "inkHeight": 15.2841796875
+      },
+      "differences": {
+        "advance": 0,
+        "inkLeft": -0.0087890625,
+        "inkWidth": 0.0966796875,
+        "inkHeight": 0.1845703125
+      },
+      "visibleFigmaSource": true,
+      "matchesFigmaAdvanceModel": true,
+      "canvasBoundsEqualUnhintedVectorBounds": false
+    },
+    {
+      "id": "294:2682",
+      "text": "FOLDER GROUP",
+      "style": "SemiBold",
+      "fontSize": 12,
+      "alias": "Independent_SemiBold_original",
+      "variant": "original",
+      "actual": {
+        "advance": 86.162109375,
+        "inkLeft": 0,
+        "inkWidth": 86.06640625,
+        "inkHeight": 8,
+        "hugCeil": 87,
+        "domWidth": 86.171875
+      },
+      "largeSizeCanvasNormalized": {
+        "advance": 86.162109375,
+        "inkLeft": 0.9375,
+        "inkWidth": 84.87890625,
+        "inkHeight": 8.25
+      },
+      "expected": {
+        "advance": 86.21484375,
+        "hugCeil": 87,
+        "inkLeft": 0.990234375,
+        "inkWidth": 84.78515625,
+        "inkHeight": 8.09765625
+      },
+      "differences": {
+        "advance": -0.052734375,
+        "inkLeft": -0.052734375,
+        "inkWidth": 0.09375,
+        "inkHeight": 0.15234375
+      },
+      "visibleFigmaSource": true,
+      "matchesFigmaAdvanceModel": false,
+      "canvasBoundsEqualUnhintedVectorBounds": false
+    },
+    {
+      "id": "294:2682",
+      "text": "FOLDER GROUP",
+      "style": "SemiBold",
+      "fontSize": 12,
+      "alias": "Independent_SemiBold_prepared",
+      "variant": "prepared",
+      "actual": {
+        "advance": 86.21484375,
+        "inkLeft": 0,
+        "inkWidth": 86.11328125,
+        "inkHeight": 8,
+        "hugCeil": 87,
+        "domWidth": 86.21875
+      },
+      "largeSizeCanvasNormalized": {
+        "advance": 86.21484375,
+        "inkLeft": 0.9375,
+        "inkWidth": 84.92578125,
+        "inkHeight": 8.25
+      },
+      "expected": {
+        "advance": 86.21484375,
+        "hugCeil": 87,
+        "inkLeft": 0.990234375,
+        "inkWidth": 84.78515625,
+        "inkHeight": 8.09765625
+      },
+      "differences": {
+        "advance": 0,
+        "inkLeft": -0.052734375,
+        "inkWidth": 0.140625,
+        "inkHeight": 0.15234375
+      },
+      "visibleFigmaSource": true,
+      "matchesFigmaAdvanceModel": true,
+      "canvasBoundsEqualUnhintedVectorBounds": false
+    },
+    {
+      "id": "304:2838",
+      "text": "Service Name",
+      "style": "Light",
+      "fontSize": 20,
+      "alias": "Independent_Light_original",
+      "variant": "original",
+      "actual": {
+        "advance": 117.177734375,
+        "inkLeft": 0,
+        "inkWidth": 116.93359375,
+        "inkHeight": 14,
+        "hugCeil": 118,
+        "domWidth": 117.1875
+      },
+      "largeSizeCanvasNormalized": {
+        "advance": 117.177734375,
+        "inkLeft": 0.625,
+        "inkWidth": 115.68359375,
+        "inkHeight": 13.75
+      },
+      "expected": {
+        "advance": 117.28515625,
+        "hugCeil": 118,
+        "inkLeft": 0.7421875,
+        "inkWidth": 115.4296875,
+        "inkHeight": 13.49609375
+      },
+      "differences": {
+        "advance": -0.107421875,
+        "inkLeft": -0.1171875,
+        "inkWidth": 0.25390625,
+        "inkHeight": 0.25390625
+      },
+      "visibleFigmaSource": false,
+      "matchesFigmaAdvanceModel": false,
+      "canvasBoundsEqualUnhintedVectorBounds": false
+    },
+    {
+      "id": "304:2838",
+      "text": "Service Name",
+      "style": "Light",
+      "fontSize": 20,
+      "alias": "Independent_Light_prepared",
+      "variant": "prepared",
+      "actual": {
+        "advance": 117.28515625,
+        "inkLeft": 0,
+        "inkWidth": 117.03125,
+        "inkHeight": 14,
+        "hugCeil": 118,
+        "domWidth": 117.296875
+      },
+      "largeSizeCanvasNormalized": {
+        "advance": 117.28515625,
+        "inkLeft": 0.625,
+        "inkWidth": 115.78125,
+        "inkHeight": 13.75
+      },
+      "expected": {
+        "advance": 117.28515625,
+        "hugCeil": 118,
+        "inkLeft": 0.7421875,
+        "inkWidth": 115.4296875,
+        "inkHeight": 13.49609375
+      },
+      "differences": {
+        "advance": 0,
+        "inkLeft": -0.1171875,
+        "inkWidth": 0.3515625,
+        "inkHeight": 0.25390625
+      },
+      "visibleFigmaSource": false,
+      "matchesFigmaAdvanceModel": true,
+      "canvasBoundsEqualUnhintedVectorBounds": false
+    },
+    {
+      "id": "1:2393",
+      "text": "My Work",
+      "style": "Bold",
+      "fontSize": 14,
+      "alias": "Independent_Bold_original",
+      "variant": "original",
+      "actual": {
+        "advance": 54.6943359375,
+        "inkLeft": 0,
+        "inkWidth": 55.2158203125,
+        "inkHeight": 11,
+        "hugCeil": 55,
+        "domWidth": 54.703125
+      },
+      "largeSizeCanvasNormalized": {
+        "advance": 54.6943359375,
+        "inkLeft": 1.09375,
+        "inkWidth": 53.7783203125,
+        "inkHeight": 11.8125
+      },
+      "expected": {
+        "advance": 54.71484375,
+        "hugCeil": 55,
+        "inkLeft": 1.1005859375,
+        "inkWidth": 53.6826171875,
+        "inkHeight": 11.6484375
+      },
+      "differences": {
+        "advance": -0.0205078125,
+        "inkLeft": -0.0068359375,
+        "inkWidth": 0.095703125,
+        "inkHeight": 0.1640625
+      },
+      "visibleFigmaSource": true,
+      "matchesFigmaAdvanceModel": false,
+      "canvasBoundsEqualUnhintedVectorBounds": false
+    },
+    {
+      "id": "1:2393",
+      "text": "My Work",
+      "style": "Bold",
+      "fontSize": 14,
+      "alias": "Independent_Bold_prepared",
+      "variant": "prepared",
+      "actual": {
+        "advance": 54.71484375,
+        "inkLeft": 0,
+        "inkWidth": 55.236328125,
+        "inkHeight": 11,
+        "hugCeil": 55,
+        "domWidth": 54.71875
+      },
+      "largeSizeCanvasNormalized": {
+        "advance": 54.71484375,
+        "inkLeft": 1.09375,
+        "inkWidth": 53.798828125,
+        "inkHeight": 11.8125
+      },
+      "expected": {
+        "advance": 54.71484375,
+        "hugCeil": 55,
+        "inkLeft": 1.1005859375,
+        "inkWidth": 53.6826171875,
+        "inkHeight": 11.6484375
+      },
+      "differences": {
+        "advance": 0,
+        "inkLeft": -0.0068359375,
+        "inkWidth": 0.1162109375,
+        "inkHeight": 0.1640625
+      },
+      "visibleFigmaSource": true,
+      "matchesFigmaAdvanceModel": true,
+      "canvasBoundsEqualUnhintedVectorBounds": false
+    }
+  ]
+}

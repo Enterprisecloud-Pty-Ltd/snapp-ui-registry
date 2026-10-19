@@ -1,0 +1,200 @@
+{
+  "observedOn": "2026-10-19",
+  "verifiedAt": "2026-10-19T11:44:50.068Z",
+  "status": "shadowroot-tabs-keyboard-verified-local-candidate-not-published",
+  "figma": {
+    "fileKey": "YUYB5jtCxUwT8OefeLP9f7",
+    "definitions": 55,
+    "duplicateInstancesExcluded": 2,
+    "variables": 154,
+    "originalSvgAssets": 303,
+    "fontFaces": 12,
+    "aptosLicense": "Separate redistribution/webfont rights confirmed by the owner."
+  },
+  "candidate": {
+    "branch": "Petrus-figma-component-library",
+    "baseCommit": "33b236ccd527b598e6db6d86ae1d3069453c916a",
+    "containsUncommittedChanges": true,
+    "registryItems": 112,
+    "generatedJsonFiles": 113,
+    "generatedGraphSha256": "63d06fb13890389b93fcdffc66a557ea14958f913047383b9fe0470501cb7f1a",
+    "fingerprintAlgorithm": "SHA-256 of sorted public/r JSON filenames and original file bytes, each followed by a zero byte."
+  },
+  "registryVerification": {
+    "command": "npm run registry:verify",
+    "passed": true,
+    "includes": [
+      "Deterministic Aptos metric preparation tests (four)",
+      "Source/catalog validation",
+      "55-family coverage",
+      "Canonical Tailwind",
+      "Regeneration and byte-for-byte source integrity",
+      "Fresh complete consumer installation with shadcn 4.12.0",
+      "Installed utility prefix validation",
+      "Strict TypeScript across installed sources",
+      "Production build and exact embedded font bytes",
+      "Post-install generated-file integrity",
+      "534 Tabs keyboard checks against the freshly CLI-installed, prefixed complete consumer"
+    ],
+    "currentStatus": "Full registry:verify passed, including four font tests and 534 keyboard checks against the clean CLI-installed prefixed consumer, strict types, production build and generated integrity."
+  },
+  "browserVerification": {
+    "preview": "Production-built clean whole-library consumer; the final OTP primitive correction was applied with the actual registry CLI before browser checks.",
+    "forms": {
+      "command": "npm run registry:figma:forms",
+      "passed": true,
+      "families": 14,
+      "variants": 89,
+      "checks": 55
+    },
+    "formGeometry": {
+      "command": "npm run registry:figma:form-geometry",
+      "passed": true,
+      "includes": [
+        "Exact insets and control geometry",
+        "Required label spacing",
+        "Select popup and multiline editor sizes",
+        "Shadows",
+        "Filter selection/back/reopen/clear states",
+        "Disabled compound controls",
+        "Native color input pointer, keyboard and callback behavior"
+      ]
+    },
+    "navigation": {
+      "command": "npm run registry:figma:navigation",
+      "passed": true,
+      "families": 21,
+      "variants": 51,
+      "assertions": 179,
+      "openedPopupStates": 6,
+      "errors": 0
+    },
+    "work": {
+      "command": "npm run registry:figma:work",
+      "passed": true,
+      "examples": 50,
+      "actualPlatformFontSamples": 214,
+      "screenshots": 18,
+      "interactions": 17,
+      "errors": 0
+    },
+    "revisionScope": "Baseline isolated registry browser evidence; current consumer-led corrections and production gates are recorded in consumerComparison."
+  },
+  "engineeringHub": {
+    "validationPassed": true,
+    "markdownFiles": 235,
+    "promptIds": 18,
+    "bundledSkills": 8,
+    "powershellScripts": 12,
+    "adoptionRegressionTests": {
+      "passed": 19,
+      "failed": 0
+    },
+    "threeTokenBaselineHashesVerified": true,
+    "workflow": "Complete registry first, runtime converter after, refresh mounting Shell/Cabinet and child, verify all four native hosts.",
+    "validationScope": "Keyboard follow-up workpack validated: 235 Markdown files, 18 prompts, eight bundled skills and 12 PowerShell scripts."
+  },
+  "runtime": {
+    "version": "0.1.50",
+    "contract": 34,
+    "requiredCapabilities": [
+      "dataverse.collection-read-all.v1",
+      "host.font-registration.v1"
+    ],
+    "unitTestsPassed": 282,
+    "browserTestsPassed": 32,
+    "strictTypesAndFormatPassed": true,
+    "packageDryRunPassed": true,
+    "nativeFontProbe": "runtime-host-probe.json",
+    "probeScope": "12 loaded faces, 89 native and standalone examples, zero document stylesheet leaks, host sentinel unchanged and final-owner cleanup. This probe predates final visual-only corrections.",
+    "officialXrmTypesChecked": true
+  },
+  "releaseLimits": [
+    "Changes remain local and uncommitted; the public registry and runtime package have not been published.",
+    "Deployed standalone Shell, WebResourceShell, PCFShell and Cabinet compatibility is Not Verified. Parent host refresh and the Engineering Hub host matrix are required for release.",
+    "Live Dataverse permissions, Power Pages continuation beyond 5,000 rows, CORS/CSP and deployed direct PCF behavior are Not Verified by local fixtures.",
+    "Prepared Aptos1.09 delivery reproduces sampled Figma vector metrics and all four affected HUG widths. Original sources and outlines remain unchanged. Browser rasterization and untested host/browser combinations remain separate limits.",
+    "The Tabs defect is fixed in registry source and the verified showcase; other existing copied/compiled consumers require registry refresh, rebuild and deployed-host validation."
+  ],
+  "consumerComparison": {
+    "repository": "snappcomponents",
+    "evidenceFile": "docs/figma-showcase/verification.json",
+    "families": 55,
+    "specimens": 190,
+    "installedSourceFiles": 424,
+    "corrections": [
+      "Optional popup search and fixed-choice modes with exact original search asset and separate trigger label",
+      "Compound NumberSelect anchors its popup to the full field width",
+      "Highlighted choice text retains the Figma secondary color",
+      "Specimen compositions use the shared EditorToolbar and exact selected/overflow states",
+      "Second-pass reusable corrections: Quick Actions panel joins and nested insets; DatePicker child layout; FormControl gaps; genuine comment selection; Filter Button border compensation.",
+      "Second-pass navigation: natural-size original drop arrow, corrected source tree and Area Switcher compositions, Send appearance, pointer resting and owned keyboard focus in native ShadowRoot mounts.",
+      "ProductivityList identifiers/names use primary text; eight exact source-confirmed color changes, headings/totals retain brand.",
+      "Shared Aptos positioning precision preparation and HugText layout slots resolve Pagination, Tab Item, Expanded Tab and Tabbed Menu source widths and text origins.",
+      "Root-local Tabs keyboard movement and entry, vertical-orientation forwarding, scoped timer cleanup and consumer focus/cancellation preservation."
+    ],
+    "registryVerification": "Full registry:verify passed, including four font tests and 534 keyboard checks against the clean CLI-installed prefixed consumer, strict types, production build and generated integrity.",
+    "verifiedAt": "2026-10-19T11:44:50.068Z",
+    "status": "shadowroot-tabs-keyboard-verified-local-candidate-not-published-or-deployed",
+    "productionEntrySha256": "d213c57b86c3baf431dfb557bf6f19528efe85f3f68ac40eede65ef046e2b80d",
+    "productionStylesheetSha256": "689d2e0b9a8325bd9736d99e7b763a6b442b2727e8220f085193980f30cbcc73",
+    "browserAssertions": {
+      "catalogue": 246,
+      "forms": 235,
+      "formsPointer": 9,
+      "navigation": 298,
+      "native": 22,
+      "nativeNavigation": 23,
+      "nativeTabs": 87
+    },
+    "workTextStyleComparisons": 1926,
+    "workTextStyleDifferences": 8,
+    "workTextStyleUnchangedProperties": 1918,
+    "workTextStyleUnexplainedDifferences": 0,
+    "fontPackage": "Designer-confirmed Aptos1.09;O365, prepared delivery metric profile v1; original sources and outlines retained",
+    "unchangedTextStylePropertiesFromPreviousCandidate": 1926,
+    "newTextStyleDifferences": 0
+  },
+  "secondReview": {
+    "inventory": "second-pass-inventory.json",
+    "forms": "second-pass-forms.json",
+    "navigation": "second-pass-navigation.json",
+    "work": "second-pass-work.json",
+    "typography": "second-pass-typography.json",
+    "families": 55,
+    "specimens": 190,
+    "checklistCoverage": "All 55 unique Figma definitions and 190 specimens accounted for; two duplicate instances excluded.",
+    "fontMetricParity": "Designer-confirmed Aptos 1.09 adopted; original package identity is supplied. Exact saved Figma text widths and shaping remain unverified.",
+    "revisionScope": "Historical Aptos 2.01 review; current font adoption and revalidation are recorded in fontAdoption and consumerComparison."
+  },
+  "fontAdoption": {
+    "audit": "designer-font-adoption.json",
+    "comparison": "designer-font-comparison.json",
+    "status": "passed",
+    "version": "1.09;O365",
+    "compiledFaces": 4,
+    "revisionScope": "Historical original 1.09 adoption; current prepared delivery recorded in textWidthAlignment."
+  },
+  "textWidthAlignment": {
+    "status": "passed",
+    "audit": "text-width-alignment.json",
+    "auditSha256": "0a065d5ed5d1b22362795e0fdda6baf43197cb807545ca5dbcac9a27c9e9fad6",
+    "fontTests": 4,
+    "hugTextChecks": 60,
+    "consumerNavigationAssertions": 298,
+    "affectedWidths": [
+      413,
+      60,
+      132,
+      524
+    ]
+  },
+  "tabsKeyboard": {
+    "status": "passed",
+    "audit": "tabs-keyboard-audit.json",
+    "auditSha256": "77eb1221ca47bca786e72ee8a2746fe25b3bdb1e1a69a7afbc75e35115701907",
+    "canonicalChecks": 534,
+    "cleanInstalledChecks": 534,
+    "productionNativeChecks": 87
+  }
+}

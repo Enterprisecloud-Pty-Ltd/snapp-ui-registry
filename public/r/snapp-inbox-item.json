@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-inbox-item",
+  "title": "Inbox Item",
+  "description": "Shared SNAPP component-library building block: Inbox Item.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/inbox/inbox-item.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface InboxItemProps extends Omit<ComponentProps<\"button\">, \"title\"> {\n\tsender: string;\n\tinitials: string;\n\ttime: string;\n\tcategory: string;\n\tpriority?: string;\n\ttitle: string;\n\tpreview: string;\n\tselected?: boolean;\n\treadState?: \"read\" | \"unread\";\n}\n\nfunction InboxItem({\n\tsender,\n\tinitials,\n\ttime,\n\tcategory,\n\tpriority,\n\ttitle,\n\tpreview,\n\tselected = false,\n\treadState,\n\tclassName,\n\t...props\n}: InboxItemProps) {\n\treturn (\n\t\t<button\n\t\t\ttype=\"button\"\n\t\t\tdata-slot=\"snapp-inbox-item\"\n\t\t\taria-pressed={selected}\n\t\t\tclassName={cn(\n\t\t\t\t\"flex w-74.5 max-w-full flex-col items-start border-b border-snapp-border-primary px-4 py-3 text-left font-snapp-body font-normal focus-visible:outline-2 focus-visible:outline-snapp-border-highlight\",\n\t\t\t\tselected && \"border-snapp-border-brand bg-snapp-surface-secondary\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t>\n\t\t\t<span className=\"flex w-full items-start gap-2\">\n\t\t\t\t<span className=\"flex size-6 shrink-0 items-center justify-center rounded-snapp-full bg-snapp-surface-accent text-snapp-xxs leading-snapp-xxxs text-snapp-grey-0\">\n\t\t\t\t\t{initials}\n\t\t\t\t</span>\n\t\t\t\t<span className=\"flex min-w-0 flex-1 flex-col items-start\">\n\t\t\t\t\t<span className=\"flex w-full items-center gap-2\">\n\t\t\t\t\t\t<span className=\"h-4.5 min-w-0 flex-1 overflow-hidden text-snapp-xs leading-snapp-xxs font-bold whitespace-nowrap text-snapp-text-brand\">\n\t\t\t\t\t\t\t{sender}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span className=\"shrink-0 text-snapp-xxs leading-snapp-xxxs text-snapp-text-secondary\">\n\t\t\t\t\t\t\t{time}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t{readState && (\n\t\t\t\t\t\t\t<span\n\t\t\t\t\t\t\t\taria-label={readState}\n\t\t\t\t\t\t\t\tclassName={cn(\n\t\t\t\t\t\t\t\t\t\"size-1.5 shrink-0 rounded-snapp-full\",\n\t\t\t\t\t\t\t\t\treadState === \"unread\"\n\t\t\t\t\t\t\t\t\t\t? \"bg-snapp-surface-brand\"\n\t\t\t\t\t\t\t\t\t\t: \"bg-snapp-surface-disabled\",\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t)}\n\t\t\t\t\t</span>\n\t\t\t\t\t<span className=\"flex w-full items-center gap-1 text-snapp-xxs leading-snapp-xxxs\">\n\t\t\t\t\t\t<span className=\"text-snapp-text-amber\">{category}</span>\n\t\t\t\t\t\t{priority && <span className=\"text-[#f04438]\">● {priority}</span>}\n\t\t\t\t\t</span>\n\t\t\t\t\t<span className=\"w-full truncate text-snapp-xs leading-snapp-xxs font-bold text-snapp-text-brand\">\n\t\t\t\t\t\t{title}\n\t\t\t\t\t</span>\n\t\t\t\t\t<span className=\"h-3.25 w-full truncate text-snapp-xxs leading-snapp-xxxs text-snapp-text-secondary\">\n\t\t\t\t\t\t{preview}\n\t\t\t\t\t</span>\n\t\t\t\t</span>\n\t\t\t</span>\n\t\t</button>\n\t);\n}\n\nexport { InboxItem };\nexport type { InboxItemProps };\n",
+      "type": "registry:component",
+      "target": "@components/snapp/inbox/inbox-item.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

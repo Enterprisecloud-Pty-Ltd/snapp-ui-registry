@@ -1,0 +1,418 @@
+[
+  {
+    "name": "title/xlarge",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 48,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 48
+    },
+    "letterSpacing": {
+      "unit": "PIXELS",
+      "value": 0
+    }
+  },
+  {
+    "name": "title/large",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 32,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 40
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "title/medium",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 24,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 28
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "title/base",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 18,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 20
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xxxxxlarge",
+    "font": {
+      "family": "Aptos",
+      "style": "SemiBold"
+    },
+    "size": 80,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 88
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xxxxlarge",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 64,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 72
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xxxlarge",
+    "font": {
+      "family": "Aptos",
+      "style": "Light"
+    },
+    "size": 48,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 48
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xxlarge",
+    "font": {
+      "family": "Aptos",
+      "style": "Light"
+    },
+    "size": 24,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 32
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xxlarge Semi Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "SemiBold"
+    },
+    "size": 24,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 32
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xxlarge Regular",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 24,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 32
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xxlarge",
+    "font": {
+      "family": "Aptos",
+      "style": "Light"
+    },
+    "size": 24,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 32
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xxlarge Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "Bold"
+    },
+    "size": 20,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 24
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xlarge Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "Bold"
+    },
+    "size": 20,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 24
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/xlarge",
+    "font": {
+      "family": "Aptos",
+      "style": "Light"
+    },
+    "size": 20,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 24
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/large",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 18,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 24
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/large Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "Bold"
+    },
+    "size": 18,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 24
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/medium",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 16,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 20
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/medium Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "Bold"
+    },
+    "size": 16,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 20
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/base",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 14,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 20
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/base Semi Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "SemiBold"
+    },
+    "size": 14,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 20
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/base Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "Bold"
+    },
+    "size": 14,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 20
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/small",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 12,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 16
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/small Semi Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "SemiBold"
+    },
+    "size": 12,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 16
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/small Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "Bold"
+    },
+    "size": 12,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 16
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/caption",
+    "font": {
+      "family": "Aptos",
+      "style": "Regular"
+    },
+    "size": 11,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 12
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  },
+  {
+    "name": "body/caption Bold",
+    "font": {
+      "family": "Aptos",
+      "style": "Bold"
+    },
+    "size": 11,
+    "lineHeight": {
+      "unit": "PIXELS",
+      "value": 12
+    },
+    "letterSpacing": {
+      "unit": "PERCENT",
+      "value": 0
+    }
+  }
+]

@@ -1,0 +1,606 @@
+<canvas id="0:1" name="Page 1" x="0" y="0" width="0" height="0">
+  <frame id="1:2164" name="TaskListItem" x="-337" y="531" width="340" height="786">
+    <symbol id="1:2165" name="State=High" x="20" y="20" width="300" height="113" />
+    <symbol id="1:2182" name="State=Mid" x="20" y="143" width="300" height="113" />
+    <symbol id="1:2198" name="State=Low" x="20" y="266" width="300" height="113" />
+    <symbol id="1:2214" name="State=Dragged" x="20" y="389" width="300" height="100" />
+    <symbol id="1:2224" name="State=placing" x="20" y="499" width="300" height="113" />
+    <symbol id="1:2234" name="State=Minimal" x="20" y="622" width="300" height="60" />
+    <symbol id="1:2242" name="State=List item" x="20" y="692" width="300" height="44" />
+    <symbol id="1:2248" name="State=Tiny" x="20" y="746" width="300" height="20" />
+  </frame>
+  <frame id="1:2289" name="Day" x="-736" y="531" width="181.7142791748047" height="230.66665649414062">
+    <symbol id="1:2290" name="Version=Dark" x="20" y="20" width="141.7142791748047" height="90.33332824707031" />
+    <symbol id="1:2297" name="Version=Light" x="20" y="120.33332824707031" width="141.7142791748047" height="90.33332824707031" />
+  </frame>
+  <frame id="1:2304" name="Work Item" x="-736" y="821" width="363.66668701171875" height="330">
+    <symbol id="1:2305" name="Property 1=bug" x="20" y="20" width="323.66668701171875" height="90" />
+    <symbol id="1:2332" name="Property 1=task" x="20" y="120" width="323.66668701171875" height="90" />
+    <symbol id="1:2359" name="Property 1=item" x="20" y="220" width="323.66668701171875" height="90" />
+  </frame>
+  <frame id="1:2386" name="Tabbed Header Navigation" x="0" y="-1229" width="1692" height="320">
+    <symbol id="1:2387" name="Tab Selected=1" x="20" y="20" width="1652" height="48" />
+    <symbol id="1:2427" name="Tab Selected=3" x="20" y="78" width="1652" height="48" />
+    <symbol id="1:2447" name="Tab Selected=4" x="20" y="136" width="1652" height="48" />
+    <symbol id="1:2464" name="Tab Selected=5" x="20" y="194" width="1652" height="48" />
+    <symbol id="1:2481" name="Tab Selected=6" x="20" y="252" width="1652" height="48" />
+  </frame>
+  <symbol id="1:2498" name="Tree Menu" x="3127" y="702" width="300" height="1031" />
+  <symbol id="1:2549" name="Row" x="-736" y="1662" width="961" height="28" />
+  <symbol id="1:2567" name="Row Title" x="-736" y="1731" width="985" height="32" />
+  <frame id="1:2572" name="Tree Item" x="-736" y="1820" width="308" height="282">
+    <symbol id="1:2573" name="Type=Default" x="20" y="20" width="268" height="32" />
+    <symbol id="1:2587" name="Type=Selected" x="20" y="62" width="268" height="32" />
+    <symbol id="1:2601" name="Type=Unselectable" x="20" y="104" width="268" height="32" />
+    <symbol id="1:2615" name="Type=Drop Indicator" x="20" y="146" width="268" height="32" />
+    <symbol id="39:4571" name="Type=Add" x="20" y="188" width="268" height="32" />
+    <symbol id="312:2880" name="Type=Notification" x="20" y="230" width="268" height="32" />
+  </frame>
+  <frame id="1:2617" name="Tree Folder" x="-373" y="1820" width="308" height="282">
+    <symbol id="1:2618" name="Type=Default" x="20" y="20" width="268" height="32" />
+    <symbol id="1:2629" name="Type=Selected" x="20" y="62" width="268" height="32" />
+    <symbol id="1:2640" name="Type=Unselectable" x="20" y="104" width="268" height="32" />
+    <symbol id="1:2651" name="Type=Drop Indicator" x="20" y="146" width="268" height="32" />
+    <symbol id="39:4591" name="Type=Add" x="20" y="188" width="268" height="32" />
+    <symbol id="312:2904" name="Type=Notification" x="20" y="230" width="268" height="32" />
+  </frame>
+  <instance id="1:2653" name="Tree Item" x="-736" y="2109" width="268" height="32" />
+  <instance id="1:2654" name="Tree Folder" x="-373" y="2109" width="268" height="32" />
+  <symbol id="1:2655" name="Pagination" x="38" y="814" width="413" height="36" />
+  <symbol id="1:2675" name="Tree" x="-736" y="2206" width="499" height="704" />
+  <frame id="1:2790" name="Tree Builder" x="-105" y="2201" width="1322" height="780">
+    <frame id="1:2791" name="Label" x="0" y="0" width="1322" height="32">
+      <text id="1:2792" name="BUSINESS DOMAIN" x="8" y="8" width="102" height="16" />
+    </frame>
+    <frame id="1:2793" name="Label" x="0" y="0" width="256" height="32" hidden="true">
+      <text id="1:2794" name="Client Name" x="8" y="8.5" width="67" height="16" />
+    </frame>
+    <frame id="1:2795" name="Menu" x="0" y="32" width="1322" height="684">
+      <frame id="1:2796" name="Menu_item" x="0" y="0" width="1322" height="684">
+        <frame id="1:2797" name="Menu Button" x="0" y="0" width="1322" height="32">
+          <instance id="1:2798" name="Tree Folder" x="0" y="0" width="1322" height="32" />
+        </frame>
+        <frame id="1:2799" name="Label" x="0" y="32" width="1322" height="32">
+          <text id="1:2800" name="CAPABILITY" x="34" y="8" width="61" height="16" />
+        </frame>
+        <frame id="1:2801" name="Menu_sub" x="0" y="64" width="1322" height="32">
+          <frame id="1:2802" name="Container" x="16" y="0" width="1306" height="32">
+            <instance id="1:2803" name="Tree Folder" x="8" y="0" width="1298" height="32" />
+          </frame>
+        </frame>
+        <frame id="1:2804" name="Label" x="0" y="96" width="1322" height="32">
+          <text id="1:2805" name="SERVICE OFFERING" x="62" y="8" width="104" height="16" />
+        </frame>
+        <frame id="1:2806" name="Menu_sub" x="0" y="128" width="1322" height="32">
+          <frame id="1:2807" name="Container" x="40" y="0" width="1244" height="32">
+            <instance id="1:2808" name="Tree Folder" x="8" y="0" width="268" height="32" />
+          </frame>
+          <instance id="1:2809" name="More" x="1294" y="6" width="20" height="20" />
+        </frame>
+        <frame id="1:2810" name="Label" x="0" y="160" width="1322" height="32">
+          <text id="1:2811" name="SERVICE CATALOGUE ITEM" x="90" y="8" width="141" height="16" />
+        </frame>
+        <frame id="1:2812" name="Menu_sub" x="0" y="192" width="412" height="140">
+          <frame id="1:2813" name="Container" x="64" y="0" width="284" height="140">
+            <instance id="1:2814" name="Tree Item" x="8" y="0" width="268" height="32" />
+            <instance id="1:2815" name="Tree Item" x="8" y="36" width="268" height="32" />
+            <instance id="1:2816" name="Tree Item" x="8" y="72" width="268" height="32" />
+            <instance id="1:2817" name="Tree Item" x="8" y="108" width="268" height="32" />
+          </frame>
+        </frame>
+        <frame id="1:2818" name="Menu_sub" x="0" y="332" width="1322" height="64">
+          <frame id="1:2819" name="Wrapper" x="70" y="0" width="1252" height="64">
+            <frame id="1:2820" name="Data_sidebar" x="10" y="2" width="1242" height="28">
+              <instance id="1:2821" name="Document" x="8" y="4" width="20" height="20" />
+              <text id="1:2822" name="Request System Access" x="36" y="4" width="1170" height="20" />
+              <instance id="1:2823" name="More" x="1214" y="4" width="20" height="20" />
+            </frame>
+            <frame id="1:2824" name="Data_sidebar" x="10" y="34" width="1242" height="28">
+              <instance id="1:2825" name="Document" x="8" y="4" width="20" height="20" />
+              <text id="1:2826" name="Identity and Access" x="36" y="4" width="1170" height="20" />
+              <instance id="1:2827" name="More" x="1214" y="4" width="20" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:2828" name="Menu_sub" x="0" y="396" width="1322" height="32">
+          <frame id="1:2829" name="Wrapper" x="70" y="0" width="1252" height="32">
+            <frame id="1:2830" name="Data_sidebar" x="10" y="2" width="1242" height="28">
+              <instance id="1:2831" name="Document" x="8" y="4" width="20" height="20" />
+              <text id="1:2832" name="Auto Provision System Access" x="36" y="4" width="1170" height="20" />
+              <instance id="1:2833" name="More" x="1214" y="4" width="20" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:2834" name="Menu_sub" x="0" y="428" width="1322" height="32">
+          <frame id="1:2835" name="Wrapper" x="70" y="0" width="1252" height="32">
+            <frame id="1:2836" name="Data_sidebar" x="10" y="2" width="1242" height="28">
+              <instance id="1:2837" name="Add" x="8" y="6" width="16" height="16" />
+              <text id="1:2838" name="Service Catalogue Item" x="32" y="4" width="1202" height="20" />
+            </frame>
+            <frame id="1:2839" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2840" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2841" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2842" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2843" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2844" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2845" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2846" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2847" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2848" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2849" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2850" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:2851" name="Menu_sub" x="0" y="460" width="364" height="32">
+          <frame id="1:2852" name="Container" x="40" y="0" width="284" height="32">
+            <instance id="1:2853" name="Tree Folder" x="8" y="0" width="268" height="32" />
+          </frame>
+        </frame>
+        <frame id="1:2854" name="Menu_sub" x="0" y="492" width="1322" height="32">
+          <frame id="1:2855" name="Wrapper" x="42" y="0" width="1280" height="32">
+            <frame id="1:2856" name="Data_sidebar" x="10" y="2" width="1270" height="28">
+              <instance id="1:2857" name="Folder Open" x="8" y="4" width="20" height="20" />
+              <text id="1:2858" name="Remove System Access" x="36" y="4" width="1198" height="20" />
+              <instance id="1:2859" name="More" x="1242" y="4" width="20" height="20" />
+            </frame>
+            <frame id="1:2860" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2861" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2862" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2863" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2864" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2865" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2866" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2867" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2868" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2869" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2870" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2871" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:2872" name="Menu_sub" x="0" y="524" width="364" height="32">
+          <frame id="1:2873" name="Container" x="40" y="0" width="284" height="32">
+            <instance id="1:2874" name="Tree Folder" x="8" y="0" width="268" height="32" />
+          </frame>
+        </frame>
+        <frame id="1:2875" name="Menu_sub" x="0" y="556" width="1322" height="32">
+          <frame id="1:2876" name="Wrapper" x="42" y="0" width="1280" height="32">
+            <frame id="1:2877" name="Data_sidebar" x="10" y="2" width="1270" height="28">
+              <instance id="1:2878" name="Add" x="8" y="6" width="16" height="16" />
+              <text id="1:2879" name="Service Offering" x="32" y="4" width="1230" height="20" />
+            </frame>
+            <frame id="1:2880" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2881" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2882" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2883" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2884" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2885" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2886" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2887" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2888" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2889" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2890" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2891" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:2892" name="Menu_sub" x="0" y="588" width="1322" height="32">
+          <frame id="1:2893" name="Wrapper" x="14" y="0" width="1308" height="32">
+            <frame id="1:2894" name="Data_sidebar" x="10" y="2" width="1298" height="28">
+              <instance id="1:2895" name="Grid" x="8" y="4" width="20" height="20" />
+              <text id="1:2896" name="End User Computing" x="36" y="4" width="1226" height="20" />
+              <instance id="1:2897" name="More" x="1270" y="4" width="20" height="20" />
+            </frame>
+            <frame id="1:2898" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2899" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2900" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2901" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2902" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2903" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2904" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2905" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2906" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2907" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2908" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2909" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:2910" name="Menu_sub" x="0" y="620" width="1322" height="32">
+          <frame id="1:2911" name="Wrapper" x="14" y="0" width="1308" height="32">
+            <frame id="1:2912" name="Data_sidebar" x="10" y="2" width="1298" height="28">
+              <instance id="1:2913" name="Grid" x="8" y="4" width="20" height="20" />
+              <text id="1:2914" name="Application Support" x="36" y="4" width="121" height="20" />
+              <frame id="1:2915" name="Frame 143" x="165" y="4" width="1097" height="20">
+                <instance id="1:2916" name="Lock" x="0" y="0" width="20" height="20" />
+              </frame>
+              <instance id="1:2917" name="More" x="1270" y="4" width="20" height="20" />
+            </frame>
+            <frame id="1:2918" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2919" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2920" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2921" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2922" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2923" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2924" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2925" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2926" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2927" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2928" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2929" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:2930" name="Menu_sub" x="0" y="652" width="1322" height="32">
+          <frame id="1:2931" name="Wrapper" x="14" y="0" width="1308" height="32">
+            <frame id="1:2932" name="Data_sidebar" x="10" y="2" width="1298" height="28">
+              <instance id="1:2933" name="Add" x="8" y="6" width="16" height="16" />
+              <text id="1:2934" name="Add Capability" x="32" y="4" width="1258" height="20" />
+            </frame>
+            <frame id="1:2935" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2936" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2937" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2938" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2939" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2940" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2941" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2942" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2943" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:2944" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:2945" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:2946" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="1:2947" name="Menu_item" x="0" y="716" width="1322" height="64">
+      <frame id="1:2948" name="Menu_button" x="0" y="0" width="1322" height="32">
+        <instance id="1:2949" name="Notebook" x="8" y="6" width="20" height="20" />
+        <text id="1:2950" name="Human Resources" x="36" y="6" width="1222" height="20" />
+        <instance id="1:2951" name="Chevron" x="1266" y="6" width="20" height="20" />
+        <instance id="1:2952" name="More" x="1294" y="6" width="20" height="20" />
+      </frame>
+      <frame id="1:2953" name="Menu_sub" x="0" y="32" width="276" height="32" hidden="true">
+        <frame id="1:2954" name="Wrapper" x="14" y="0" width="262" height="32">
+          <frame id="1:2955" name="Data_sidebar" x="10" y="2" width="252" height="28">
+            <instance id="1:2956" name="Person" x="8" y="4" width="20" height="20" />
+            <text id="1:2957" name="Sandra Sewell" x="36" y="4" width="208" height="20" />
+          </frame>
+          <frame id="1:2958" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+            <vector id="1:2959" name="Order" x="8" y="11.5" width="12" height="5" />
+            <text id="1:2960" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+          </frame>
+          <frame id="1:2961" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+            <vector id="1:2962" name="Order" x="8" y="11.5" width="12" height="5" />
+            <text id="1:2963" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+          </frame>
+          <frame id="1:2964" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+            <vector id="1:2965" name="Order" x="8" y="11.5" width="12" height="5" />
+            <text id="1:2966" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+          </frame>
+          <frame id="1:2967" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+            <vector id="1:2968" name="Order" x="8" y="11.5" width="12" height="5" />
+            <text id="1:2969" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="1:2970" name="Menu_sub" x="0" y="32" width="276" height="32" hidden="true">
+        <frame id="1:2971" name="Wrapper" x="14" y="0" width="262" height="32">
+          <frame id="1:2972" name="Data_sidebar" x="10" y="2" width="252" height="28">
+            <instance id="1:2973" name="Person" x="8" y="4" width="20" height="20" />
+            <text id="1:2974" name="Jared Howard" x="36" y="4" width="208" height="20" />
+          </frame>
+          <frame id="1:2975" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+            <vector id="1:2976" name="Order" x="8" y="11.5" width="12" height="5" />
+            <text id="1:2977" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+          </frame>
+          <frame id="1:2978" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+            <vector id="1:2979" name="Order" x="8" y="11.5" width="12" height="5" />
+            <text id="1:2980" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+          </frame>
+          <frame id="1:2981" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+            <vector id="1:2982" name="Order" x="8" y="11.5" width="12" height="5" />
+            <text id="1:2983" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+          </frame>
+          <frame id="1:2984" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+            <vector id="1:2985" name="Order" x="8" y="11.5" width="12" height="5" />
+            <text id="1:2986" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="1:2987" name="Menu_item" x="0" y="32" width="1322" height="32">
+        <frame id="1:2988" name="Menu_button" x="0" y="0" width="1322" height="32">
+          <instance id="1:2989" name="Notebook" x="8" y="6" width="20" height="20" />
+          <text id="1:2990" name="Finance" x="36" y="6" width="49" height="20" />
+          <frame id="1:2991" name="Frame 143" x="93" y="6" width="1165" height="20">
+            <instance id="1:2992" name="Lock" x="0" y="0" width="20" height="20" />
+          </frame>
+          <instance id="1:2993" name="Chevron" x="1266" y="6" width="20" height="20" />
+          <instance id="1:2994" name="More" x="1294" y="6" width="20" height="20" />
+        </frame>
+        <frame id="1:2995" name="Menu_sub" x="0" y="32" width="276" height="32" hidden="true">
+          <frame id="1:2996" name="Wrapper" x="14" y="0" width="262" height="32">
+            <frame id="1:2997" name="Data_sidebar" x="10" y="2" width="252" height="28">
+              <instance id="1:2998" name="Person" x="8" y="4" width="20" height="20" />
+              <text id="1:2999" name="Sandra Sewell" x="36" y="4" width="208" height="20" />
+            </frame>
+            <frame id="1:3000" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:3001" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:3002" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:3003" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:3004" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:3005" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:3006" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:3007" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:3008" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:3009" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:3010" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:3011" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:3012" name="Menu_sub" x="0" y="32" width="276" height="32" hidden="true">
+          <frame id="1:3013" name="Wrapper" x="14" y="0" width="262" height="32">
+            <frame id="1:3014" name="Data_sidebar" x="10" y="2" width="252" height="28">
+              <instance id="1:3015" name="Person" x="8" y="4" width="20" height="20" />
+              <text id="1:3016" name="Jared Howard" x="36" y="4" width="208" height="20" />
+            </frame>
+            <frame id="1:3017" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:3018" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:3019" name="Item Name 4" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:3020" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:3021" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:3022" name="Item Name 5" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:3023" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:3024" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:3025" name="Item Name 6" x="28" y="5.5" width="78" height="20" />
+            </frame>
+            <frame id="1:3026" name="Data_sidebar" x="10" y="98" width="208" height="28" hidden="true">
+              <vector id="1:3027" name="Order" x="8" y="11.5" width="12" height="5" />
+              <text id="1:3028" name="Item Name 7" x="28" y="5.5" width="78" height="20" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <symbol id="1:3029" name="Profile Controls" x="-736" y="-1438" width="1920" height="50" />
+  <frame id="1:3048" name="Button" x="537" y="914" width="486" height="300">
+    <symbol id="1:3049" name="Appearance=Primary, Style=Standard" x="20" y="20" width="116" height="44" />
+    <symbol id="1:3051" name="Appearance=Outline, Style=Standard" x="146" y="20" width="116" height="44" />
+    <symbol id="243:2123" name="Appearance=Primary, Style=Hover" x="20" y="74" width="116" height="44" />
+    <symbol id="243:2125" name="Appearance=Primary, Style=Focus" x="20" y="128" width="116" height="44" />
+    <symbol id="243:2127" name="Appearance=Primary, Style=Pressed" x="20" y="182" width="116" height="44" />
+    <symbol id="243:2129" name="Appearance=Primary, Style=Disabled" x="20" y="236" width="116" height="44" />
+    <symbol id="1:3053" name="Appearance=Secondary, Style=Standard" x="272" y="20" width="116" height="44" />
+    <symbol id="243:2133" name="Appearance=Outline, Style=Hover" x="146" y="74" width="116" height="44" />
+    <symbol id="243:2137" name="Appearance=Outline, Style=Focus" x="146" y="128" width="116" height="44" />
+    <symbol id="243:2149" name="Appearance=Secondary, Style=Hover" x="272" y="74" width="116" height="44" />
+    <symbol id="243:2153" name="Appearance=Secondary, Style=Focus" x="272" y="128" width="116" height="44" />
+    <symbol id="243:2157" name="Appearance=Secondary, Style=Pressed" x="272" y="182" width="116" height="44" />
+    <symbol id="243:2161" name="Appearance=Secondary, Style=Disabled" x="272" y="236" width="116" height="44" />
+    <symbol id="243:2167" name="Appearance=Outline, Style=Pressed" x="146" y="182" width="116" height="44" />
+    <symbol id="243:2171" name="Appearance=Outline, Style=Disabled" x="146" y="236" width="116" height="44" />
+    <symbol id="248:2188" name="Appearance=Text, Style=Standard" x="398" y="20" width="68" height="20" />
+    <symbol id="248:2192" name="Appearance=Text, Style=Hover" x="398" y="74" width="68" height="20" />
+    <symbol id="248:2196" name="Appearance=Text, Style=Focus" x="398" y="128" width="68" height="20" />
+    <symbol id="248:2200" name="Appearance=Text, Style=Pressed" x="398" y="182" width="68" height="20" />
+    <symbol id="248:2204" name="Appearance=Text, Style=Disabled" x="398" y="236" width="68" height="20" />
+  </frame>
+  <frame id="1:3055" name="Work OS Personal Productivity Right Panel" x="2558" y="702" width="440" height="1071">
+    <symbol id="1:3056" name="Style=Open" x="20" y="20" width="338" height="1031" />
+    <symbol id="1:3077" name="Style=Collapsed" x="368" y="20" width="52" height="1031" />
+  </frame>
+  <symbol id="1:3098" name="Left Menu" x="-394" y="-1229" width="268" height="864" />
+  <frame id="13:934" name="Header" x="0" y="-817" width="1692" height="148">
+    <symbol id="1:2536" name="Version=Achievements" x="21" y="21" width="1650" height="48" />
+    <symbol id="13:935" name="Version=Standard" x="21" y="79" width="1650" height="48" />
+  </frame>
+  <symbol id="13:960" name="Achievements" x="0" y="-587" width="338" height="48" />
+  <symbol id="13:1199" name="Dynamics Menu" x="-736" y="-1229" width="201" height="1030" />
+  <frame id="13:1296" name="Fields" x="4623" y="-2257" width="712" height="2517">
+    <symbol id="13:1295" name="Fields=Standard Field" x="21" y="21" width="670" height="65" />
+    <symbol id="13:1297" name="Fields=Required Field" x="21" y="96" width="670" height="65" />
+    <symbol id="255:2210" name="Fields=Is Disabled" x="21" y="171" width="670" height="65" />
+    <symbol id="13:1301" name="Fields=Error Field" x="21" y="246" width="670" height="65" />
+    <symbol id="248:2179" name="Fields=Is Selected" x="21" y="321" width="670" height="65" />
+    <symbol id="13:1305" name="Fields=Look up/Drop Down" x="21" y="396" width="670" height="65" />
+    <symbol id="127:1943" name="Fields=Drop down Open" x="21" y="471" width="670" height="265" />
+    <symbol id="153:2212" name="Fields=Number select" x="21" y="746" width="670" height="229" />
+    <symbol id="13:1312" name="Fields=Drop down with pills" x="21" y="985" width="670" height="113" />
+    <symbol id="13:1355" name="Fields=Text Entry" x="21" y="1108" width="670" height="108" />
+    <symbol id="13:1399" name="Fields=Error" x="21" y="1226" width="670" height="44" />
+    <symbol id="13:1383" name="Fields=Error Multiple" x="21" y="1280" width="670" height="142" />
+    <symbol id="311:2855" name="Fields=Positive Notice" x="21" y="1432" width="670" height="44" />
+    <symbol id="311:2863" name="Fields=Warning" x="21" y="1486" width="670" height="44" />
+    <symbol id="13:1434" name="Fields=Notice" x="21" y="1540" width="670" height="44" />
+    <symbol id="313:2933" name="Fields=General Message" x="21" y="1594" width="670" height="44" />
+    <symbol id="13:1413" name="Fields=Date Picker" x="21" y="1648" width="670" height="69" />
+    <symbol id="19:1588" name="Fields=Upload" x="21" y="1727" width="670" height="65" />
+    <symbol id="23:1804" name="Fields=Colour Picker" x="21" y="1802" width="670" height="65" />
+    <symbol id="13:1463" name="Fields=Large Uploader" x="21" y="1877" width="670" height="143" />
+    <symbol id="13:1482" name="Fields=Switch" x="21" y="2030" width="670" height="24" />
+    <symbol id="158:2394" name="Fields=Checkbox" x="21" y="2064" width="670" height="20" />
+    <symbol id="35:2080" name="Fields=Inline Search" x="21" y="2094" width="670" height="41" />
+    <symbol id="36:4528" name="Fields=Search" x="21" y="2145" width="670" height="69" />
+    <symbol id="96:9862" name="Fields=Comment Box" x="21" y="2224" width="670" height="68" />
+    <symbol id="96:9877" name="Fields=Comment Box Edit" x="21" y="2302" width="670" height="68" />
+    <symbol id="96:9937" name="Fields=Comment Box Buttons" x="21" y="2380" width="670" height="116" />
+  </frame>
+  <frame id="13:1541" name="Switch" x="38" y="897" width="338" height="64">
+    <symbol id="13:1542" name="State=Off" x="20" y="20" width="141" height="24" />
+    <symbol id="13:1548" name="State=On" x="177" y="20" width="141" height="24" />
+  </frame>
+  <frame id="19:1647" name="Modal" x="2558" y="-2257" width="1890" height="1290">
+    <symbol id="19:1601" name="Width=Large" x="21" y="21" width="720" height="1208" />
+    <symbol id="19:1648" name="Width=Medium" x="765" y="21" width="600" height="1208" />
+    <symbol id="19:1698" name="Width=small" x="1389" y="21" width="480" height="1248" />
+  </frame>
+  <frame id="26:1899" name="Pill" x="234" y="531" width="236" height="124">
+    <symbol id="26:1898" name="State=Standard" x="21" y="21" width="191" height="36" />
+    <symbol id="26:1900" name="State=White" x="21" y="67" width="191" height="36" />
+  </frame>
+  <frame id="36:4345" name="Quick Actions" x="5002" y="702" width="666" height="952">
+    <symbol id="36:4344" name="Variant=1 Level" x="21" y="21" width="208" height="170" />
+    <symbol id="36:4388" name="Variant=2 Levels" x="21" y="201" width="416" height="170" />
+    <symbol id="36:4428" name="Variant=3 Levels" x="21" y="381" width="624" height="170" />
+    <symbol id="36:4479" name="Variant=Time" x="21" y="561" width="208" height="126" />
+    <symbol id="36:4512" name="Variant=Action" x="21" y="697" width="208" height="126" />
+    <symbol id="38:4550" name="Variant=No title" x="21" y="833" width="208" height="98" />
+  </frame>
+  <frame id="48:4696" name="Check Item" x="537" y="531" width="436" height="284">
+    <symbol id="48:4695" name="State=Default" x="21" y="21" width="394" height="74" />
+    <symbol id="48:4697" name="State=Selected" x="21" y="105" width="394" height="74" />
+    <symbol id="48:4712" name="State=Completed" x="21" y="189" width="394" height="74" />
+  </frame>
+  <frame id="49:4861" name="Course" x="5" y="1820" width="495" height="120">
+    <symbol id="49:5409" name="State=Complete" x="20" y="20" width="456" height="32" />
+    <symbol id="49:4876" name="State=Incomplete" x="20" y="68" width="456" height="32" />
+  </frame>
+  <frame id="49:4890" name="EmployeeCard" x="1448" y="2565" width="1025.5" height="620">
+    <symbol id="49:4891" name="Optional=Closed" x="20" y="20" width="312.5" height="336" />
+    <symbol id="49:4917" name="Optional=Expanded" x="356.5" y="20" width="312.5" height="580" />
+    <symbol id="49:4950" name="Optional=Minimal" x="693" y="20" width="312.5" height="150" />
+  </frame>
+  <symbol id="49:4981" name="EC_Light" x="1892" y="1976" width="400" height="51.58464050292969" />
+  <symbol id="49:4986" name="EC_Dark" x="1448" y="1976" width="400" height="51.58464431762695" />
+  <frame id="49:4991" name="Picker with Input" x="2603" y="2177" width="530" height="405">
+    <symbol id="49:4992" name="State=Default" x="20" y="20" width="224" height="68" />
+    <symbol id="49:4999" name="State=Open" x="260" y="20" width="250" height="365" />
+  </frame>
+  <frame id="49:5114" name="Select" x="3193" y="2177" width="416" height="276">
+    <symbol id="49:5115" name="State=Default" x="20" y="20" width="180" height="36" />
+    <symbol id="49:5120" name="State=Open" x="216" y="20" width="180" height="236" />
+  </frame>
+  <frame id="49:5143" name="Input Group" x="3193" y="2523" width="384" height="302">
+    <symbol id="49:5144" name="Type=1" x="20" y="20" width="344" height="36" />
+    <symbol id="49:5151" name="Type=2" x="20" y="72" width="344" height="36" />
+    <symbol id="49:5158" name="Type=3" x="20" y="124" width="344" height="106" />
+    <symbol id="49:5175" name="Type=4" x="20" y="246" width="344" height="36" />
+  </frame>
+  <symbol id="49:5180" name="Default" x="2050" y="2362" width="221" height="20" />
+  <symbol id="50:5887" name="Side menu" x="5797" y="702" width="770" height="1280" />
+  <frame id="61:6351" name="Course Status" x="1040" y="531" width="375.6666564941406" height="248">
+    <symbol id="61:6350" name="State=Default" x="21" y="21" width="333.6666564941406" height="44" />
+    <symbol id="61:6368" name="State=Complete" x="21" y="75" width="333.6666564941406" height="44" />
+    <symbol id="61:6375" name="State=Notice" x="21" y="129" width="333.6666564941406" height="44" />
+    <symbol id="61:6382" name="State=Warning" x="21" y="183" width="333.6666564941406" height="44" />
+  </frame>
+  <frame id="69:9406" name="Text Button" x="38" y="1014" width="114" height="182">
+    <symbol id="69:9405" name="Property 1=Default" x="21" y="21" width="74" height="20" />
+    <symbol id="69:9411" name="Property 1=Reject" x="21" y="51" width="74" height="20" />
+    <symbol id="69:9407" name="Property 1=Invert" x="21" y="81" width="74" height="20" />
+    <symbol id="69:9415" name="Property 1=Disable" x="21" y="111" width="74" height="20" />
+    <symbol id="74:9427" name="Property 1=Hover" x="21" y="141" width="74" height="20" />
+  </frame>
+  <symbol id="74:9562" name="Editor Toolbar" x="4601" y="702" width="349" height="54" />
+  <symbol id="74:9647" name="Sidebar" x="6728" y="702" width="537" height="1080" />
+  <frame id="102:10661" name="Filter Button" x="4143" y="702" width="406" height="1716">
+    <symbol id="102:10660" name="State=Filter Button" x="21" y="21" width="79" height="36" />
+    <symbol id="248:2206" name="State=Hover" x="21" y="67" width="79" height="36" />
+    <symbol id="102:10662" name="State=Filter Open" x="21" y="113" width="364" height="332" />
+    <symbol id="102:10739" name="State=Filter Selection" x="21" y="455" width="364" height="224" />
+    <symbol id="102:10810" name="State=Filtered" x="21" y="689" width="98" height="36" />
+    <symbol id="102:10814" name="State=Filter Applied" x="21" y="735" width="364" height="116" />
+    <symbol id="102:10929" name="State=Add Filter Open" x="21" y="861" width="364" height="412" />
+    <symbol id="102:11018" name="State=Add Filter Open 2" x="21" y="1283" width="364" height="412" />
+  </frame>
+  <frame id="112:11237" name="Filter Selection" x="3556" y="702" width="177" height="222">
+    <symbol id="112:11236" name="Version=Default" x="21" y="21" width="135" height="28" />
+    <symbol id="112:11238" name="Version=Unchecked" x="21" y="59" width="135" height="28" />
+    <symbol id="112:11254" name="Version=Checked" x="21" y="97" width="135" height="28" />
+    <symbol id="112:11359" name="Version=No Icon Unselected" x="21" y="135" width="135" height="28" />
+    <symbol id="112:11419" name="Version=No Icon Selected" x="21" y="173" width="135" height="28" />
+  </frame>
+  <frame id="158:2384" name="Check box" x="297" y="1052" width="122" height="92">
+    <symbol id="158:2383" name="State=Default" x="21" y="21" width="80" height="20" />
+    <symbol id="158:2385" name="State=Selected" x="21" y="51" width="80" height="20" />
+  </frame>
+  <frame id="219:2062" name="Table Cell" x="-1677" y="553" width="339" height="124">
+    <symbol id="219:2061" name="Type=Header" x="21" y="21" width="297" height="36" />
+    <symbol id="219:2063" name="Type=Regular" x="21" y="67" width="297" height="36" />
+  </frame>
+  <symbol id="219:2126" name="Table Row" x="-1677" y="714" width="874" height="36" />
+  <frame id="219:2228" name="Table" x="-1684" y="830" width="648" height="268">
+    <instance id="219:2148" name="Table Row" x="0" y="0" width="648" height="36" />
+    <instance id="219:2127" name="Table Row" x="0" y="36" width="648" height="116" />
+    <instance id="219:2229" name="Table Row" x="0" y="152" width="648" height="116" />
+  </frame>
+  <frame id="228:2376" name="Inbox Category" x="7426" y="702" width="340" height="134">
+    <symbol id="226:2360" name="State=Default" x="21" y="21" width="298" height="24" />
+    <symbol id="228:2377" name="State=Selected" x="21" y="55" width="298" height="24" />
+    <symbol id="228:2383" name="State=Disabled" x="21" y="89" width="298" height="24" />
+  </frame>
+  <frame id="230:2426" name="Inbox Item" x="7837" y="702" width="340" height="220">
+    <symbol id="230:2425" name="State=Default" x="21" y="21" width="298" height="84" />
+    <symbol id="230:2427" name="State=Selected" x="21" y="115" width="298" height="84" />
+  </frame>
+  <frame id="236:2502" name="Action Node" x="1920" y="702" width="178" height="448">
+    <symbol id="236:2503" name="Action=Action" x="21" y="21" width="136" height="61" />
+    <symbol id="239:2085" name="Action=Action Selected" x="21" y="92" width="136" height="61" />
+    <symbol id="236:2516" name="Action=Condition" x="21" y="163" width="136" height="61" />
+    <symbol id="239:2097" name="Action=Condition Selected" x="21" y="234" width="136" height="61" />
+    <symbol id="236:2528" name="Action=Trigger" x="21" y="305" width="136" height="56" />
+    <symbol id="239:2109" name="Action=Trigger Selected" x="21" y="371" width="136" height="56" />
+  </frame>
+  <symbol id="267:2185" name="snapp_logo" x="-428" y="-1695" width="196.66000366210938" height="50.400001525878906" />
+  <symbol id="279:2228" name="snapp_symbol" x="-428.0043029785156" y="-1601" width="47.96430206298828" height="50.40428161621094" />
+  <frame id="281:2267" name="Updated Header" x="-2772" y="-1438" width="1690" height="747">
+    <symbol id="279:2191" name="Version=Default" x="21" y="21" width="1562" height="56" />
+    <symbol id="281:2268" name="Version=Open Menu" x="21" y="87" width="1562" height="292" />
+    <symbol id="283:2327" name="Version=Select App" x="21" y="389" width="1562" height="56" />
+  </frame>
+  <frame id="294:2678" name="Card" x="-2279" y="553" width="476" height="344">
+    <symbol id="294:2679" name="Style=Folder" x="21" y="21" width="240" height="166" />
+    <symbol id="294:2689" name="Style=Item" x="21" y="211" width="420" height="112" />
+  </frame>
+  <frame id="300:2763" name="Tab Item" x="-2435" y="-335" width="172" height="170">
+    <symbol id="300:2762" name="Type=Default" x="21" y="21" width="60" height="36" />
+    <symbol id="300:2764" name="Type=Selected" x="21" y="67" width="60" height="36" />
+    <symbol id="307:2840" name="Type=Expanded" x="21" y="113" width="132" height="36" />
+  </frame>
+  <symbol id="300:2784" name="Tabbed Menu" x="-2201" y="-335" width="524" height="52" />
+  <frame id="334:2201" name="Square Top Menu" x="-1867" y="-4521" width="1607" height="946">
+    <symbol id="348:2227" name="Menu Depth=Default" x="21" y="21" width="1562" height="52" />
+    <symbol id="334:2535" name="Menu Depth=Select App" x="21" y="83" width="1562" height="52" />
+    <symbol id="334:2623" name="Menu Depth=Area Switcher" x="21" y="145" width="1562" height="52" />
+    <symbol id="334:2718" name="Menu Depth=User Controls" x="21" y="207" width="1562" height="52" />
+    <symbol id="334:2769" name="Menu Depth=Menu Open 1 level" x="21" y="269" width="1562" height="52" />
+    <symbol id="342:2403" name="Menu Depth=AI Chat" x="21" y="331" width="1562" height="52" />
+  </frame>
+  <frame id="347:2904" name="Tool Menu" x="-126" y="-4521" width="1552" height="466">
+    <symbol id="347:2903" name="Depth=1st Level" x="21" y="21" width="1510" height="52" />
+    <symbol id="347:2905" name="Depth=2nd Level" x="21" y="83" width="1510" height="52" />
+    <symbol id="347:3029" name="Depth=3rd Level" x="21" y="145" width="1510" height="52" />
+    <symbol id="347:3077" name="Depth=4th Level" x="21" y="207" width="1510" height="52" />
+    <symbol id="347:3125" name="Depth=5th Level" x="21" y="269" width="1510" height="52" />
+    <symbol id="347:3173" name="Depth=6th Level" x="21" y="331" width="1510" height="52" />
+    <symbol id="347:3223" name="Depth=7th Level" x="21" y="393" width="1510" height="52" />
+  </frame>
+  <rounded-rectangle id="351:2379" name="Rectangle 8" x="735" y="-3481" width="234" height="234" />
+</canvas>

@@ -3,6 +3,7 @@
   "name": "snapp-use-mobile",
   "title": "Snapp Use Mobile",
   "description": "Shared responsive viewport hook required by adaptive primitives.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/radix-nova/hooks/use-mobile.ts",
