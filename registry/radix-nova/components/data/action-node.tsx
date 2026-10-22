@@ -37,7 +37,7 @@ function ActionNode({
 			className={cn(
 				"relative w-34 font-snapp-body font-normal",
 				trigger ? "h-14" : "h-15.25",
-				className,
+				className
 			)}
 		>
 			<button
@@ -47,13 +47,17 @@ function ActionNode({
 					"absolute inset-x-0 top-0 flex h-14 items-center rounded-lg inset-ring-1 bg-snapp-surface-primary py-3 pr-5 pl-4 text-left focus-visible:outline-2 focus-visible:outline-snapp-border-highlight",
 					selected
 						? "inset-ring-snapp-border-highlight"
-						: "inset-ring-snapp-border-primary",
+						: "inset-ring-snapp-border-primary"
 				)}
 				{...props}
 			>
 				<span className="flex items-center gap-2">
 					<img
-						src={{ action: flash, condition: branch, trigger: flag }[kind]}
+						src={
+							{ action: flash, condition: branch, trigger: flag }[
+								kind
+							]
+						}
 						alt=""
 						width={20}
 						height={20}
@@ -73,11 +77,17 @@ function ActionNode({
 				<div
 					className={cn(
 						"absolute top-12.75 h-2.5",
-						kind === "condition" ? "left-11.25 w-10.5" : "left-8 w-18.5",
+						kind === "condition"
+							? "left-11.25 w-10.5"
+							: "left-8 w-18.5"
 					)}
 				>
 					<img
-						src={kind === "condition" ? conditionMarkers : actionMarkers}
+						src={
+							kind === "condition"
+								? conditionMarkers
+								: actionMarkers
+						}
 						alt=""
 					/>
 					{onPortClick &&

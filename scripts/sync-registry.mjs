@@ -1,18 +1,28 @@
-import { appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
+import {
+	appendFile,
+	mkdir,
+	readFile,
+	readdir,
+	writeFile,
+} from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadFigmaTokens } from "./figma-tokens.mjs";
 import "./build-fonts.mjs";
 import { completeComponentCatalog } from "./complete-component-catalog.mjs";
 
-const registryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const registryRoot = path.resolve(
+	path.dirname(fileURLToPath(import.meta.url)),
+	".."
+);
 const uiDirectory = path.join(registryRoot, "registry", "radix-nova", "ui");
 const themeCssPath = path.join(
 	registryRoot,
 	"registry",
 	"radix-nova",
 	"theme",
-	"snapp-theme.css",
+	"snapp-theme.css"
 );
 
 const packageName = (specifier) => {
@@ -72,24 +82,22 @@ for (const fileName of sourceFiles) {
 }
 
 const componentDescriptions = {
-	button:
-		"The standard Snapp action primitive, including shared modal and horizontal overflow-action treatments.",
+	button: "The standard Snapp action primitive, including shared modal and horizontal overflow-action treatments.",
 	combobox:
 		"The standard searchable Snapp option picker for single-select and autocomplete controls.",
-	select:
-		"The non-searchable Snapp option picker for exceptional fixed-choice controls where search is intentionally not required.",
+	select: "The non-searchable Snapp option picker for exceptional fixed-choice controls where search is intentionally not required.",
 	skeleton:
 		"The required Shadcn loading primitive and accessible loading-group wrapper for layout-shaped Snapp loading states.",
 };
 
 const componentItems = [];
 for (const [itemName, files] of [...groups.entries()].sort(([left], [right]) =>
-	left.localeCompare(right),
+	left.localeCompare(right)
 )) {
 	const contents = await Promise.all(
 		files.map((fileName) =>
-			readFile(path.join(uiDirectory, fileName), "utf8"),
-		),
+			readFile(path.join(uiDirectory, fileName), "utf8")
+		)
 	);
 	const combinedContent = contents.join("\n");
 	const dependencies = externalDependencies(combinedContent);
@@ -142,6 +150,54 @@ const uiFoundationItem = {
 
 const figmaTokens = await loadFigmaTokens(registryRoot);
 const existingThemeVariables = {
+	"color-snapp-control-disabled": "#eaeaeb",
+	"color-snapp-control-disabled-text": "#aaabab",
+	"color-snapp-notice-error": "#ffe2e0",
+	"color-snapp-notice-success": "#f8fff8",
+	"color-snapp-notice-warning": "#fff1de",
+	"color-snapp-notice-info": "#eaf6ff",
+	"color-snapp-inter-border": "#e5e5e5",
+	"color-snapp-inter-text": "#0a0a0a",
+	"color-snapp-inter-muted": "#4a5565",
+	"color-snapp-inter-secondary": "#364153",
+	"color-snapp-inter-caption": "#6a7282",
+	"color-snapp-inter-divider": "#e5e7eb",
+	"color-snapp-inter-canvas": "#f3f4f6",
+	"color-snapp-avatar-red": "#e94435",
+	"color-snapp-progress-blue": "#0073de",
+	"color-snapp-alert-red": "#f04438",
+	"color-snapp-ink-subtle": "rgba(42,44,46,0.05)",
+	"color-snapp-ink-faint": "rgba(42,44,46,0.15)",
+	"color-snapp-ink-border": "rgba(42,44,46,0.34)",
+	"color-snapp-ink-muted": "rgba(42,44,46,0.5)",
+	"color-snapp-ink-strong": "rgba(42,44,46,0.8)",
+	"spacing-snapp-employee-card": "312.5px",
+	"spacing-snapp-employee-content": "270.5px",
+	"spacing-snapp-calendar-day-width": "141.714px",
+	"spacing-snapp-calendar-day-height": "90.333px",
+	"spacing-snapp-task-title": "323.667px",
+	"spacing-snapp-task-details": "333.667px",
+	"spacing-snapp-task-progress": "448.5px",
+	"spacing-snapp-filter-max": "calc(100vw - 2rem)",
+	"radius-snapp-category": "18px",
+	"radius-snapp-course-status": "10px",
+	"font-snapp-arial": "Arial",
+	"leading-snapp-normal": "normal",
+	"tracking-snapp-tight": "-0.2px",
+	"shadow-snapp-inter-control": "0 1px 2px rgb(0 0 0 / 0.1)",
+	"shadow-snapp-inter-popover": "0 1px 3px rgb(0 0 0 / 0.1)",
+	"shadow-snapp-employee-card":
+		"0 1px 3px rgba(0,0,0,0.1),0 1px 2px rgba(0,0,0,0.1)",
+	"shadow-snapp-navigation-panel": "4px 0 20px 5px #0000001a",
+	"shadow-snapp-tool-menu": "0 14px 9px #4c4f521f",
+	"shadow-snapp-achievement": "0 4px 7.5px #20232714",
+	"shadow-snapp-landing-card": "0 4px 9px #4c4f522e",
+	"shadow-snapp-bottom-divider": "inset 0 -1px 0 var(--snapp-border-primary)",
+	"shadow-snapp-top-divider": "inset 0 1px 0 rgba(42,44,46,0.15)",
+	"shadow-snapp-left-divider": "inset 1px 0 0 var(--snapp-border-primary)",
+	"shadow-snapp-focus": "0 0 0 3px rgb(47 69 92 / 8%)",
+	"drop-shadow-snapp-editor": "0 4px 6px #00000040",
+	"drop-shadow-snapp-inbox": "0 4px 7.5px rgba(32,35,39,0.08)",
 	"radius-xs": "0.125rem",
 	"radius-sm": "0.25rem",
 	"radius-md": "0.375rem",
@@ -344,7 +400,7 @@ const interactiveCursorCss = `\t.ec-app :where(
 
 await writeFile(
 	themeCssPath,
-	`@custom-variant dark (&:where(.dark, .dark *));\n@custom-variant data-horizontal (&[data-orientation="horizontal"]);\n@custom-variant data-vertical (&[data-orientation="vertical"]);\n\n@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n\n${interactiveCursorCss}\n}\n`,
+	`@custom-variant dark (&:where(.dark, .dark *));\n@custom-variant data-horizontal (&[data-orientation="horizontal"]);\n@custom-variant data-vertical (&[data-orientation="vertical"]);\n\n@theme {\n${formatCssVariables(existingThemeVariables)}\n}\n\n@theme inline {\n${formatCssVariables(inlineThemeVariables)}\n}\n\n:root,\n.ec-app {\n${formatCssVariables(lightVariables)}\n}\n\n.dark,\n.ec-app.dark,\n.ec-app .dark {\n${formatCssVariables(darkVariables)}\n}\n\n@layer base {\n\t.ec-app,\n\t.ec-app *,\n\t.ec-app *::before,\n\t.ec-app *::after {\n\t\tbox-sizing: border-box;\n\t}\n\n\t.ec-app button,\n\t.ec-app input,\n\t.ec-app select,\n\t.ec-app textarea {\n\t\tfont: inherit;\n\t}\n\n\t.ec-app button {\n\t\tappearance: none;\n\t}\n\n${interactiveCursorCss}\n}\n`
 );
 
 const themeItem = {
@@ -353,10 +409,7 @@ const themeItem = {
 	title: "Snapp Theme",
 	description:
 		"Shared Snapp brand colors, typography, responsive breakpoints, and layout sizing tokens.",
-	dependencies: [
-		"@fontsource/ibm-plex-sans",
-		"@fontsource/judson",
-	],
+	dependencies: ["@fontsource/ibm-plex-sans", "@fontsource/judson"],
 	css: {
 		'@import "./styles/snapp-theme.css"': {},
 		'@import "./styles/snapp-fonts.css"': {},
@@ -373,13 +426,26 @@ const themeItem = {
 			target: "src/styles/snapp-fonts.css",
 		},
 		...figmaTokens.files,
-		...['inter', 'ibm-plex-sans', 'judson'].map(name => ({
-			path: 'registry/radix-nova/fonts/licenses/' + name + '-LICENSE.txt',
-			type: 'registry:file', target: 'src/styles/licenses/' + name + '-LICENSE.txt',
+		...["inter", "ibm-plex-sans", "judson"].map((name) => ({
+			path: "registry/radix-nova/fonts/licenses/" + name + "-LICENSE.txt",
+			type: "registry:file",
+			target: "src/styles/licenses/" + name + "-LICENSE.txt",
 		})),
-		{path: 'registry/radix-nova/fonts/README.md', type: 'registry:file', target: 'src/styles/licenses/README.md'},
-		{path: 'docs/figma-library/font-manifest.json', type: 'registry:file', target: 'src/styles/snapp-font-manifest.json'},
-		{path: 'registry/radix-nova/fonts/aptos/Microsoft Aptos Fonts EULA.rtf', type: 'registry:file', target: 'src/styles/licenses/Microsoft Aptos Fonts EULA.rtf'},
+		{
+			path: "registry/radix-nova/fonts/README.md",
+			type: "registry:file",
+			target: "src/styles/licenses/README.md",
+		},
+		{
+			path: "docs/figma-library/font-manifest.json",
+			type: "registry:file",
+			target: "src/styles/snapp-font-manifest.json",
+		},
+		{
+			path: "registry/radix-nova/fonts/aptos/Microsoft Aptos Fonts EULA.rtf",
+			type: "registry:file",
+			target: "src/styles/licenses/Microsoft Aptos Fonts EULA.rtf",
+		},
 	],
 	cssVars: {
 		theme: {
@@ -457,7 +523,8 @@ const useMobileItem = {
 	name: "snapp-use-mobile",
 	type: "registry:hook",
 	title: "Snapp Use Mobile",
-	description: "Shared responsive viewport hook required by adaptive primitives.",
+	description:
+		"Shared responsive viewport hook required by adaptive primitives.",
 	files: [
 		{
 			path: "registry/radix-nova/hooks/use-mobile.ts",
@@ -473,10 +540,7 @@ const featureLayoutItem = {
 	title: "Snapp Feature Layout",
 	description:
 		"Shared feature shell, page body, and bordered surface primitives for embedded Snapps.",
-	registryDependencies: [
-		"@snapp/snapp-theme",
-		"@snapp/snapp-utils",
-	],
+	registryDependencies: ["@snapp/snapp-theme", "@snapp/snapp-utils"],
 	files: [
 		{
 			path: "registry/radix-nova/components/layout/feature-layout.tsx",
@@ -492,10 +556,7 @@ const systemStatusScreenItem = {
 	title: "Snapp System Status Screen",
 	description:
 		"Figma-aligned shell status screen for operational errors and subscription-required access states.",
-	registryDependencies: [
-		"@snapp/snapp-theme",
-		"@snapp/snapp-utils",
-	],
+	registryDependencies: ["@snapp/snapp-theme", "@snapp/snapp-utils"],
 	files: [
 		{
 			path: "registry/radix-nova/components/system/system-status-screen.tsx",
@@ -512,15 +573,28 @@ const filterControlsItem = {
 	description:
 		"Figma-aligned filter menu surface and removable active-filter pills with portal-safe interaction detection.",
 	dependencies: ["lucide-react"],
-	registryDependencies: [
-		"@snapp/snapp-theme",
-		"@snapp/snapp-utils",
-	],
+	registryDependencies: ["@snapp/snapp-theme", "@snapp/snapp-utils"],
 	files: [
 		{
 			path: "registry/radix-nova/components/filters/filter-controls.tsx",
 			type: "registry:component",
 			target: "@components/snapp/filters/filter-controls.tsx",
+		},
+
+		{
+			path: "registry/radix-nova/components/filters/filter-controls.ts",
+			type: "registry:component",
+			target: "@components/snapp/filters/filter-controls.ts",
+		},
+		{
+			path: "registry/radix-nova/components/filters/filter-controls-view.tsx",
+			type: "registry:component",
+			target: "@components/snapp/filters/filter-controls-view.tsx",
+		},
+		{
+			path: "registry/radix-nova/components/filters/filter-interaction.ts",
+			type: "registry:component",
+			target: "@components/snapp/filters/filter-interaction.ts",
 		},
 	],
 };
@@ -538,8 +612,7 @@ const searchableComboboxItem = {
 	],
 	files: [
 		{
-			path:
-				"registry/radix-nova/components/forms/searchable-combobox.tsx",
+			path: "registry/radix-nova/components/forms/searchable-combobox.tsx",
 			type: "registry:component",
 			target: "@components/snapp/forms/searchable-combobox.tsx",
 		},
@@ -552,10 +625,7 @@ const landingCardItem = {
 	title: "Snapp Landing Card",
 	description:
 		"Figma-aligned landing card for catalogue and knowledge-base entry points.",
-	registryDependencies: [
-		"@snapp/snapp-theme",
-		"@snapp/snapp-utils",
-	],
+	registryDependencies: ["@snapp/snapp-theme", "@snapp/snapp-utils"],
 	files: [
 		{
 			path: "registry/radix-nova/components/catalogue/landing-card.tsx",
@@ -613,10 +683,7 @@ const catalogueHeroItem = {
 	description:
 		"Shared responsive catalogue hero with title, supporting copy, search form, and entry-card region.",
 	dependencies: ["lucide-react"],
-	registryDependencies: [
-		"@snapp/snapp-theme",
-		"@snapp/snapp-utils",
-	],
+	registryDependencies: ["@snapp/snapp-theme", "@snapp/snapp-utils"],
 	files: [
 		{
 			path: "registry/radix-nova/components/catalogue/catalogue-hero.tsx",
@@ -633,10 +700,7 @@ const catalogueResultCardItem = {
 	description:
 		"Shared bordered result card for knowledge articles and Service Catalogue Items.",
 	dependencies: ["lucide-react"],
-	registryDependencies: [
-		"@snapp/snapp-theme",
-		"@snapp/snapp-utils",
-	],
+	registryDependencies: ["@snapp/snapp-theme", "@snapp/snapp-utils"],
 	files: [
 		{
 			path: "registry/radix-nova/components/catalogue/catalogue-result-card.tsx",
@@ -659,8 +723,7 @@ const helpArticleAccordionItem = {
 	],
 	files: [
 		{
-			path:
-				"registry/radix-nova/components/catalogue/help-article-accordion.tsx",
+			path: "registry/radix-nova/components/catalogue/help-article-accordion.tsx",
 			type: "registry:component",
 			target: "@components/snapp/catalogue/help-article-accordion.tsx",
 		},
@@ -700,10 +763,7 @@ const dragFeedbackItem = {
 	title: "Snapp Drag Feedback",
 	description:
 		"Figma-aligned native drag preview, fixed-size insertion indicator, and status drop target for draggable Snapp interfaces.",
-	registryDependencies: [
-		"@snapp/snapp-theme",
-		"@snapp/snapp-utils",
-	],
+	registryDependencies: ["@snapp/snapp-theme", "@snapp/snapp-utils"],
 	files: [
 		{
 			path: "registry/radix-nova/components/drag/drag-feedback.tsx",
@@ -802,8 +862,7 @@ const workItemCard = {
 const registry = {
 	$schema: "https://ui.shadcn.com/schema/registry.json",
 	name: "snapp",
-	homepage:
-		"https://github.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry",
+	homepage: "https://github.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry",
 	items: [
 		themeItem,
 		utilityItem,
@@ -832,13 +891,113 @@ const registry = {
 	],
 };
 
-await appendFile(themeCssPath, '\n@layer base {\n  .ec-app {\n    font-family: var(--snapp-font-family-body);\n    font-synthesis: none;\n    font-size: var(--snapp-font-size-sm);\n    line-height: var(--snapp-font-line-height-xs);\n  }\n}\n');
+await appendFile(
+	themeCssPath,
+	"\n@utility transition-snapp-surface { transition-property: background-color, box-shadow; transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)); transition-duration: var(--tw-duration, var(--default-transition-duration)); }\n@utility transition-snapp-border { transition-property: border-color, box-shadow; transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)); transition-duration: var(--tw-duration, var(--default-transition-duration)); }\n"
+);
+// Keep quoted hex attribute values in CSS: the installer's class transformer
+// removes their quotes from arbitrary variants and creates invalid selectors.
+await appendFile(
+	themeCssPath,
+	`\n@utility snapp-chart-strokes {
+  & .recharts-cartesian-grid line[stroke="#ccc"] {
+    stroke: var(--border);
+    @supports (color: color-mix(in oklab, currentColor, transparent)) {
+      stroke: color-mix(in oklab, var(--border) 50%, transparent);
+    }
+  }
+  & .recharts-dot[stroke="#fff"],
+  & .recharts-sector[stroke="#fff"] {
+    stroke: transparent;
+  }
+  & .recharts-polar-grid [stroke="#ccc"],
+  & .recharts-reference-line [stroke="#ccc"] {
+    stroke: var(--border);
+  }
+}\n`
+);
+await appendFile(
+	themeCssPath,
+	"\n@layer base {\n  .ec-app {\n    font-family: var(--snapp-font-family-body);\n    font-synthesis: none;\n    font-size: var(--snapp-font-size-sm);\n    line-height: var(--snapp-font-line-height-xs);\n  }\n}\n"
+);
+registry.items.push({
+	name: "snapp-delivery-tooling",
+	type: "registry:component",
+	title: "SNAPP registry delivery ownership",
+	files: [
+		{
+			path: "registry/radix-nova/tooling/snapp-registry-delivery.mjs",
+			type: "registry:file",
+			target: "~/scripts/snapp-registry-delivery.mjs",
+		},
+		{
+			path: "registry/radix-nova/tooling/snapp-registry-files.json",
+			type: "registry:file",
+			target: "~/scripts/snapp-registry-files.json",
+		},
+	],
+});
 await completeComponentCatalog(registryRoot, registry, externalDependencies);
+const completeLibrary = registry.items.find(
+	(item) => item.name === "snapp-component-library"
+);
+completeLibrary.registryDependencies.push("@snapp/snapp-delivery-tooling");
+const byName = new Map(registry.items.map((item) => [item.name, item]));
+const visited = new Set();
+function installedFiles(name) {
+	if (visited.has(name)) return [];
+	visited.add(name);
+	const item = byName.get(name);
+	if (!item) throw new Error("Unknown registry dependency " + name);
+	return [
+		...(item.files ?? []).map((file) => file.target),
+		...(item.registryDependencies ?? []).flatMap((dependency) =>
+			installedFiles(dependency.replace(/^@snapp\//, ""))
+		),
+	];
+}
+const registryOwnedFiles = [
+	...new Set(
+		installedFiles("snapp-component-library")
+			.map((target) =>
+				target
+					.replace(/^~\//, "")
+					.replace(/^@ui\//, "src/components/ui/")
+					.replace(/^@components\//, "src/components/")
+					.replace(/^@lib\//, "src/lib/")
+					.replace(/^@hooks\//, "src/hooks/")
+			)
+			.filter((file) => /\.(?:[cm]?[jt]sx?|json|css)$/.test(file))
+	),
+].sort();
+await writeFile(
+	path.join(
+		registryRoot,
+		"registry/radix-nova/tooling/snapp-registry-files.json"
+	),
+	JSON.stringify(
+		{ schemaVersion: 1, files: registryOwnedFiles },
+		null,
+		"\t"
+	) + "\n"
+);
 await writeFile(
 	path.join(registryRoot, "registry.json"),
-	`${JSON.stringify(registry, null, 2)}\n`,
+	`${JSON.stringify(registry, null, 2)}\n`
 );
 
 console.log(
-	`Generated ${componentItems.length} UI items from ${sourceFiles.length} canonical registry files.`,
+	`Generated ${componentItems.length} UI items from ${sourceFiles.length} canonical registry files.`
+);
+
+execFileSync(
+	process.execPath,
+	[
+		path.join(registryRoot, "node_modules/@biomejs/biome/bin/biome"),
+		"format",
+		"--write",
+		"registry/radix-nova",
+		"registry.json",
+	],
+	{ cwd: registryRoot, stdio: "inherit" }
 );

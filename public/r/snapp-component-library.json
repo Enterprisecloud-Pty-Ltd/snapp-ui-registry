@@ -25,12 +25,16 @@
     "@snapp/snapp-figma-form-icons",
     "@snapp/snapp-filter-controls",
     "@snapp/snapp-form-controls",
+    "@snapp/snapp-form-icon",
+    "@snapp/snapp-form-icon-sources",
     "@snapp/snapp-help-article-accordion",
     "@snapp/snapp-inbox-category",
     "@snapp/snapp-inbox-item",
     "@snapp/snapp-landing-card",
     "@snapp/snapp-landing-skeleton",
     "@snapp/snapp-navigation-header",
+    "@snapp/snapp-navigation-icon",
+    "@snapp/snapp-navigation-icon-sources",
     "@snapp/snapp-navigation-icons",
     "@snapp/snapp-navigation-panels",
     "@snapp/snapp-productivity-panel",
@@ -44,12 +48,13 @@
     "@snapp/snapp-tree",
     "@snapp/snapp-ui-foundation",
     "@snapp/snapp-work-item-card",
-    "@snapp/snapp-work-item-core"
+    "@snapp/snapp-work-item-core",
+    "@snapp/snapp-delivery-tooling"
   ],
   "files": [
     {
       "path": "registry/radix-nova/components/foundation/component-library.ts",
-      "content": "export const SNAPP_COMPONENT_LIBRARY = { fileKey: \"YUYB5jtCxUwT8OefeLP9f7\", revision: \"2026-10-19\" } as const;\n",
+      "content": "export const SNAPP_COMPONENT_LIBRARY = {\n\tfileKey: \"YUYB5jtCxUwT8OefeLP9f7\",\n\trevision: \"2026-10-19\",\n} as const;\n",
       "type": "registry:component",
       "target": "@components/snapp/foundation/component-library.ts"
     }

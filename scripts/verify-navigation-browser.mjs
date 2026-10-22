@@ -45,7 +45,9 @@ const evidence = {
 };
 const close = (value, expected, message) => {
 	if (Math.abs(value - expected) > 0.15)
-		evidence.failures.push(`${message}: expected ${expected}, got ${value}`);
+		evidence.failures.push(
+			`${message}: expected ${expected}, got ${value}`
+		);
 	else evidence.assertions.push(message);
 };
 const check = (truth, message) => {
@@ -158,11 +160,11 @@ async function captureState(state) {
 				close(popup[key], expected[key], `${state.id} popup ${key}`);
 		check(
 			Math.abs(popup.x - expected.x) <= 1,
-			`${state.id} popup horizontal anchor within1px`,
+			`${state.id} popup horizontal anchor within1px`
 		);
 		check(
 			popup.padding === expected.padding && popup.radius === "8px",
-			`${state.id} popup padding/radius`,
+			`${state.id} popup padding/radius`
 		);
 		if (state.id === "334:2769") {
 			const link = await fixture
@@ -181,13 +183,13 @@ async function captureState(state) {
 					link.size === "16px" &&
 					link.line === "20px" &&
 					link.weight === "400",
-				"Square feature links exact Aptos16/20 regular",
+				"Square feature links exact Aptos16/20 regular"
 			);
 			check(
 				(await fixture
 					.getByText("Employee Self-service", { exact: true })
 					.count()) === 1,
-				"Square feature group caption retained",
+				"Square feature group caption retained"
 			);
 		}
 	}
@@ -197,9 +199,11 @@ async function captureState(state) {
 			.evaluateAll((buttons) =>
 				buttons.map((button) => {
 					const r = button.getBoundingClientRect();
-					const icon = button.querySelector("img").getBoundingClientRect();
+					const icon = button
+						.querySelector("img")
+						.getBoundingClientRect();
 					const text = button
-						.querySelector("span.max-w-full")
+						.querySelector(":scope > span:last-child")
 						.getBoundingClientRect();
 					return {
 						label: button.textContent,
@@ -210,12 +214,14 @@ async function captureState(state) {
 						y: icon.y - r.y,
 						labelY: text.y - r.y,
 					};
-				}),
+				})
 			);
 		check(
 			areas.length === 4 &&
-				areas.every((area) => area.label === "Area Name" && area.icons === 1),
-			"Area switcher uses only source puzzle icon and Area Name labels",
+				areas.every(
+					(area) => area.label === "Area Name" && area.icons === 1
+				),
+			"Area switcher uses only source puzzle icon and Area Name labels"
 		);
 		check(
 			areas[0].w === 16 &&
@@ -223,7 +229,7 @@ async function captureState(state) {
 				areas[0].x === 32 &&
 				areas[0].y === 20 &&
 				areas[0].labelY === 44,
-			"First area exact16px puzzle slot32/20 and label44",
+			"First area exact16px puzzle slot32/20 and label44"
 		);
 		check(
 			areas
@@ -234,15 +240,15 @@ async function captureState(state) {
 						area.h === 20 &&
 						area.x === 30 &&
 						area.y === 18 &&
-						area.labelY === 46,
+						area.labelY === 46
 				),
-			"Remaining areas exact20px puzzle slot30/18 and label46",
+			"Remaining areas exact20px puzzle slot30/18 and label46"
 		);
 	}
 	await page.mouse.move(0, 0);
 	const screenshot = path.join(
 		output,
-		"state-" + state.id.replace(":", "-") + ".png",
+		"state-" + state.id.replace(":", "-") + ".png"
 	);
 	await fixture.screenshot({ path: screenshot });
 	evidence.screenshots.push(screenshot);
@@ -253,7 +259,7 @@ async function captureState(state) {
 				(await fixture
 					.locator('[data-slot="snapp-app-grid"] button')
 					.count()) === 1,
-				"App launcher search filters results",
+				"App launcher search filters results"
 			);
 		}
 		if (state.id === "342:2403") {
@@ -264,16 +270,18 @@ async function captureState(state) {
 			});
 			check(
 				await send.isEnabled(),
-				"Support empty composer retains source enabled appearance",
+				"Support empty composer retains source enabled appearance"
 			);
 			check(
-				(await send.evaluate((node) => getComputedStyle(node).opacity)) === "1",
-				"Support send button retains source full-opacity brand fill",
+				(await send.evaluate(
+					(node) => getComputedStyle(node).opacity
+				)) === "1",
+				"Support send button retains source full-opacity brand fill"
 			);
 			if (await send.isEnabled()) await send.click();
 			check(
 				(await fixture.getByRole("log").textContent()) === before,
-				"Support empty submit does not dispatch a message",
+				"Support empty submit does not dispatch a message"
 			);
 			await fixture
 				.getByPlaceholder("Type your message...")
@@ -283,9 +291,9 @@ async function captureState(state) {
 				.click();
 			check(
 				(await fixture.getByRole("log").textContent()).includes(
-					"Registry QA message",
+					"Registry QA message"
 				),
-				"Live support sends message through host callback",
+				"Live support sends message through host callback"
 			);
 			const text = await fixture
 				.getByRole("log")
@@ -293,19 +301,24 @@ async function captureState(state) {
 				.first()
 				.evaluate((n) => {
 					const s = getComputedStyle(n);
-					return { font: s.fontFamily, size: s.fontSize, line: s.lineHeight };
+					return {
+						font: s.fontFamily,
+						size: s.fontSize,
+						line: s.lineHeight,
+					};
 				});
 			check(
 				text.font.includes("IBM Plex Sans") &&
 					text.size === "16px" &&
 					text.line === "20px",
-				"Support message IBM Plex Sans16/20",
+				"Support message IBM Plex Sans16/20"
 			);
 		}
 		await fixture.locator('[data-slot="popover-content"]').press("Escape");
 		check(
-			(await fixture.locator('[data-slot="popover-content"]').count()) === 0,
-			`${state.id} popup Escape closes`,
+			(await fixture.locator('[data-slot="popover-content"]').count()) ===
+				0,
+			`${state.id} popup Escape closes`
 		);
 		if (state.id === "283:2327" || state.id === "334:2535") {
 			const trigger = fixture.getByRole("button", {
@@ -317,7 +330,7 @@ async function captureState(state) {
 				.waitFor({ state: "detached" });
 			await page.waitForFunction(
 				(node) => node === node.ownerDocument.activeElement,
-				await trigger.elementHandle(),
+				await trigger.elementHandle()
 			);
 			for (const key of ["Enter", "Space"]) {
 				await trigger.focus();
@@ -326,21 +339,24 @@ async function captureState(state) {
 				await search.waitFor();
 				await page.waitForFunction(
 					() =>
-						document.activeElement?.getAttribute("placeholder") === "Find Apps",
+						document.activeElement?.getAttribute("placeholder") ===
+						"Find Apps"
 				);
 				check(
 					await search.evaluate(
-						(node) => node === node.ownerDocument.activeElement,
+						(node) => node === node.ownerDocument.activeElement
 					),
-					`${state.id} keyboard ${key} opens and focuses search`,
+					`${state.id} keyboard ${key} opens and focuses search`
 				);
 				await search.press("Tab");
 				check(
 					await fixture
 						.locator('[data-slot="snapp-app-grid"] button')
 						.first()
-						.evaluate((node) => node === node.ownerDocument.activeElement),
-					`${state.id} keyboard Tab reaches first application`,
+						.evaluate(
+							(node) => node === node.ownerDocument.activeElement
+						),
+					`${state.id} keyboard Tab reaches first application`
 				);
 				await page.keyboard.press("Escape");
 				await fixture
@@ -348,13 +364,13 @@ async function captureState(state) {
 					.waitFor({ state: "detached" });
 				await page.waitForFunction(
 					(node) => node === node.ownerDocument.activeElement,
-					await trigger.elementHandle(),
+					await trigger.elementHandle()
 				);
 				check(
 					await trigger.evaluate(
-						(node) => node === node.ownerDocument.activeElement,
+						(node) => node === node.ownerDocument.activeElement
 					),
-					`${state.id} Escape restores launcher trigger focus`,
+					`${state.id} Escape restores launcher trigger focus`
 				);
 			}
 			await trigger.click();
@@ -362,8 +378,10 @@ async function captureState(state) {
 			check(
 				await fixture
 					.getByPlaceholder("Find Apps")
-					.evaluate((node) => node !== node.ownerDocument.activeElement),
-				`${state.id} pointer opening leaves search in source resting state`,
+					.evaluate(
+						(node) => node !== node.ownerDocument.activeElement
+					),
+				`${state.id} pointer opening leaves search in source resting state`
 			);
 			await page.keyboard.press("Escape");
 		}
@@ -378,8 +396,10 @@ try {
 			await document.fonts.ready;
 			await Promise.all(
 				[...document.images].map((image) =>
-					image.complete ? Promise.resolve() : image.decode().catch(() => {}),
-				),
+					image.complete
+						? Promise.resolve()
+						: image.decode().catch(() => {})
+				)
 			);
 		});
 		const states = await page
@@ -394,7 +414,7 @@ try {
 						width: rect.width,
 						height: rect.height,
 					};
-				}),
+				})
 			);
 		for (const state of states) await captureState(state);
 		const images = await page.locator("img").evaluateAll((elements) =>
@@ -408,14 +428,16 @@ try {
 					naturalHeight: image.naturalHeight,
 					complete: image.complete,
 				};
-			}),
+			})
 		);
 		check(
 			images.every(
 				(image) =>
-					image.complete && image.naturalWidth > 0 && image.naturalHeight > 0,
+					image.complete &&
+					image.naturalWidth > 0 &&
+					image.naturalHeight > 0
 			),
-			family + " all rendered SVG/image assets load",
+			family + " all rendered SVG/image assets load"
 		);
 		const metrics = await page
 			.locator("[data-figma-node]")
@@ -425,7 +447,7 @@ try {
 						cs = getComputedStyle(target);
 					const samples = [
 						...target.querySelectorAll(
-							'button,input,[data-slot="snapp-tree-badge"],a',
+							'button,input,[data-slot="snapp-tree-badge"],a'
 						),
 					].map((node) => {
 						const rect = node.getBoundingClientRect(),
@@ -460,7 +482,7 @@ try {
 						},
 						samples,
 					};
-				}),
+				})
 			);
 		evidence.families.push({
 			id: family,
@@ -470,14 +492,14 @@ try {
 		});
 		check(
 			metrics.every((metric) => metric.root.font.includes("Aptos")),
-			family + " root typography resolves to bundled Aptos",
+			family + " root typography resolves to bundled Aptos"
 		);
 		const image = path.join(output, family.replace(":", "-") + ".png");
 		await page.locator("[data-figma-family]").screenshot({ path: image });
 		evidence.screenshots.push(image);
 		if (family === "1:2386") {
 			states.forEach((state) =>
-				close(state.height, 48, state.id + " header height"),
+				close(state.height, 48, state.id + " header height")
 			);
 			const selected = page
 				.locator('[data-state="active"][data-slot="tabs-trigger"]')
@@ -495,12 +517,12 @@ try {
 					typography.size === "14px" &&
 					typography.line === "20px" &&
 					typography.weight === "700",
-				"Line tab Aptos14/20 bold700",
+				"Line tab Aptos14/20 bold700"
 			);
 			check(
 				typography.underline === "2px" &&
 					typography.color === "rgb(0, 120, 212)",
-				"Line tab active2px blue underline",
+				"Line tab active2px blue underline"
 			);
 			const next = page
 				.locator('[data-figma-node="1:2387"]')
@@ -508,7 +530,7 @@ try {
 			await next.click();
 			check(
 				(await next.getAttribute("data-state")) === "active",
-				"Line tabs change selection",
+				"Line tabs change selection"
 			);
 		}
 		if (family === "1:2498") {
@@ -521,7 +543,7 @@ try {
 						.boundingBox()
 				).height,
 				28,
-				"Tree menu leaf height28",
+				"Tree menu leaf height28"
 			);
 		}
 		if (family === "1:2549") {
@@ -529,19 +551,21 @@ try {
 			close(
 				(await page.getByRole("progressbar").boundingBox()).width,
 				120,
-				"Row progress width120",
+				"Row progress width120"
 			);
 		}
 		if (family === "1:2567") close(states[0].height, 32, "Row title32high");
 		if (family === "1:2572" || family === "1:2617") {
 			states.forEach((state) =>
-				close(state.height, 32, state.id + " tree visual state32high"),
+				close(state.height, 32, state.id + " tree visual state32high")
 			);
 			const notification = page
 				.locator(
 					'[data-variant="notification"] [data-slot="' +
-						(family === "1:2572" ? "snapp-tree-item" : "snapp-tree-folder") +
-						'"]',
+						(family === "1:2572"
+							? "snapp-tree-item"
+							: "snapp-tree-folder") +
+						'"]'
 				)
 				.first();
 			const badge = notification
@@ -549,11 +573,11 @@ try {
 				.filter({ hasText: /^1$/ })
 				.last();
 			const font = await badge.evaluate(
-				(node) => getComputedStyle(node).fontFamily,
+				(node) => getComputedStyle(node).fontFamily
 			);
 			check(
 				font.includes("IBM Plex Sans"),
-				family + " notification badge exactIBMfont",
+				family + " notification badge exactIBMfont"
 			);
 		}
 		if (family === "1:2655") {
@@ -563,9 +587,11 @@ try {
 				.locator('[data-slot="pagination-link"]')
 				.evaluateAll((links) =>
 					links.flatMap((link) => {
-						const slot = link.querySelector('[data-slot="hug-text"]');
+						const slot = link.querySelector(
+							'[data-slot="hug-text"]'
+						);
 						const content = slot?.querySelector(
-							'[data-slot="hug-text-content"]',
+							'[data-slot="hug-text-content"]'
 						);
 						if (!slot || !content) return [];
 						const pagination = link
@@ -579,8 +605,12 @@ try {
 							{
 								text: content.textContent,
 								slot: slot.getBoundingClientRect().width,
-								x: text.getBoundingClientRect().x - pagination.x,
-								y: content.getBoundingClientRect().y - pagination.y,
+								x:
+									text.getBoundingClientRect().x -
+									pagination.x,
+								y:
+									content.getBoundingClientRect().y -
+									pagination.y,
 								controlX: control.x - pagination.x,
 								controlWidth: control.width,
 								fontFamily: style.fontFamily,
@@ -590,7 +620,7 @@ try {
 								kerning: style.fontKerning,
 							},
 						];
-					}),
+					})
 				);
 			const expectedLabels = [
 				{
@@ -628,24 +658,24 @@ try {
 			];
 			check(
 				labels.length === 4,
-				"Pagination has exactly four single-copy source labels",
+				"Pagination has exactly four single-copy source labels"
 			);
 			expectedLabels.forEach((expected, index) => {
 				const actual = labels[index] ?? {};
 				close(
 					actual.slot ?? 0,
 					expected.slot,
-					`${expected.node} Pagination HUG slot${expected.slot}`,
+					`${expected.node} Pagination HUG slot${expected.slot}`
 				);
 				close(
 					actual.x ?? -1,
 					expected.x,
-					`${expected.node} Pagination source text origin`,
+					`${expected.node} Pagination source text origin`
 				);
 				close(
 					actual.y ?? -1,
 					8,
-					`${expected.node} Pagination source text top8`,
+					`${expected.node} Pagination source text top8`
 				);
 			});
 			check(
@@ -654,14 +684,15 @@ try {
 						(label, index) =>
 							label.text === expectedLabels[index].text &&
 							label.controlX === expectedLabels[index].controlX &&
-							label.controlWidth === expectedLabels[index].controlWidth &&
+							label.controlWidth ===
+								expectedLabels[index].controlWidth &&
 							label.fontFamily.includes("Aptos") &&
 							label.weight === "400" &&
 							label.fontSize === "14px" &&
 							label.lineHeight === "20px" &&
-							label.kerning !== "none",
+							label.kerning !== "none"
 					),
-				"Pagination preserves source control positions and normal Aptos paint",
+				"Pagination preserves source control positions and normal Aptos paint"
 			);
 			evidence.intrinsicTextDifferences = {
 				pagination: {
@@ -684,13 +715,15 @@ try {
 					.locator(":scope > span")
 					.evaluate((node) => getComputedStyle(node).color)) ===
 					"rgb(42, 44, 46)",
-				"Document branch retains source primary text colour",
+				"Document branch retains source primary text colour"
 			);
-			const drop = page.locator('[data-slot="snapp-tree-drop-indicator"]');
+			const drop = page.locator(
+				'[data-slot="snapp-tree-drop-indicator"]'
+			);
 			close(
 				(await drop.locator("img").boundingBox()).width,
 				268,
-				"Tree drop arrow retains natural268px SVG width",
+				"Tree drop arrow retains natural268px SVG width"
 			);
 			close(
 				(
@@ -699,70 +732,84 @@ try {
 						.boundingBox()
 				).width,
 				24,
-				"Tree drop arrow leading window24px",
+				"Tree drop arrow leading window24px"
 			);
 			const hierarchy = await page
 				.locator('[data-figma-node="1:2675"]')
 				.evaluate((root) => {
 					const rr = root.getBoundingClientRect();
-					const rows = [...root.querySelectorAll('[role="treeitem"]')];
+					const rows = [
+						...root.querySelectorAll('[role="treeitem"]'),
+					];
 					return {
 						documents: rows
 							.filter(
-								(row) => row.textContent === "5 Auto Provision System Access",
+								(row) =>
+									row.textContent ===
+									"5 Auto Provision System Access"
 							)
 							.map((row) => {
-								const r = row.querySelector("img").getBoundingClientRect();
+								const r = row
+									.querySelector("img")
+									.getBoundingClientRect();
 								return { x: r.x - rr.x, y: r.y - rr.y };
 							}),
 						group: [...root.querySelectorAll('[role="group"]')]
 							.map((node) => {
 								const r = node.getBoundingClientRect();
-								return { x: r.x - rr.x, y: r.y - rr.y, h: r.height };
+								return {
+									x: r.x - rr.x,
+									y: r.y - rr.y,
+									h: r.height,
+								};
 							})
 							.find((r) => r.x === 88 && r.y === 352),
 						lastFolderIcons: rows
-							.find((row) => row.getBoundingClientRect().y - rr.y === 544)
+							.find(
+								(row) =>
+									row.getBoundingClientRect().y - rr.y === 544
+							)
 							?.querySelectorAll("img").length,
 					};
 				});
 			check(
 				hierarchy.documents.length === 2 &&
 					hierarchy.documents.every((r) => r.x === 104),
-				"Both source nested documents have104px icon-slot indent",
+				"Both source nested documents have104px icon-slot indent"
 			);
 			check(
-				hierarchy.documents[0].y === 358 && hierarchy.documents[1].y === 390,
-				"Nested document source rows352/384 keep centered20px icons",
+				hierarchy.documents[0].y === 358 &&
+					hierarchy.documents[1].y === 390,
+				"Nested document source rows352/384 keep centered20px icons"
 			);
 			check(
 				hierarchy.group?.h === 96,
-				"Nested guideline starts at352 and spans all three rows",
+				"Nested guideline starts at352 and spans all three rows"
 			);
 			check(
 				hierarchy.lastFolderIcons === 1,
-				"Source folder at544 has no fabricated chevron",
+				"Source folder at544 has no fabricated chevron"
 			);
 			const first = page.getByRole("treeitem").first();
 			await first.focus();
 			await first.press("ArrowRight");
 			check(
 				(await first.getAttribute("aria-expanded")) === "true",
-				"Tree ArrowRight preserves expanded branch",
+				"Tree ArrowRight preserves expanded branch"
 			);
 			await first.press("ArrowDown");
 			check(
 				(await page.evaluate(() =>
-					document.activeElement?.getAttribute("role"),
+					document.activeElement?.getAttribute("role")
 				)) === "treeitem",
-				"Tree ArrowDown focuses next item",
+				"Tree ArrowDown focuses next item"
 			);
 			await page.keyboard.press("ArrowLeft");
 			check(
 				(await page.evaluate(() =>
-					document.activeElement?.getAttribute("role"),
+					document.activeElement?.getAttribute("role")
 				)) === "treeitem",
-				"Tree ArrowLeft returns or collapses branch",
+				"Tree ArrowLeft returns or collapses branch"
 			);
 			const empty = page
 				.locator('[role="treeitem"][aria-expanded]')
@@ -774,7 +821,7 @@ try {
 			await empty.press("ArrowRight");
 			check(
 				await empty.evaluate((node) => node === document.activeElement),
-				"Expanded empty folder ArrowRight keeps focus",
+				"Expanded empty folder ArrowRight keeps focus"
 			);
 		}
 		if (family === "1:2790") {
@@ -783,15 +830,16 @@ try {
 					.getByText("Item Name 1", { exact: true })
 					.evaluateAll((nodes) =>
 						nodes.every(
-							(node) => getComputedStyle(node).whiteSpace === "nowrap",
-						),
+							(node) =>
+								getComputedStyle(node).whiteSpace === "nowrap"
+						)
 					),
-				"TreeBuilder fixed-width card labels do not wrap",
+				"TreeBuilder fixed-width card labels do not wrap"
 			);
 			close(
 				states[0].height,
 				780,
-				"TreeBuilder faithful mixed composition780high",
+				"TreeBuilder faithful mixed composition780high"
 			);
 			const fixed = page
 				.getByRole("treeitem")
@@ -800,7 +848,7 @@ try {
 			close(
 				(await fixed.boundingBox()).width,
 				268,
-				"TreeBuilder fixed catalogue card268wide",
+				"TreeBuilder fixed catalogue card268wide"
 			);
 			const compact = page
 				.locator('[data-slot="snapp-tree-item"]')
@@ -809,7 +857,7 @@ try {
 			close(
 				(await compact.boundingBox()).height,
 				28,
-				"TreeBuilder editable row28high",
+				"TreeBuilder editable row28high"
 			);
 			await page
 				.getByRole("button", {
@@ -821,7 +869,7 @@ try {
 				(await page
 					.locator('[data-slot="snapp-tree-builder"]')
 					.getAttribute("data-last-menu")) === "offering",
-				"TreeBuilder independent menu callback",
+				"TreeBuilder independent menu callback"
 			);
 			const root = page.getByRole("treeitem").first();
 			await root.click();
@@ -829,7 +877,7 @@ try {
 				(await page
 					.getByText("SERVICE CATALOGUE ITEM", { exact: true })
 					.count()) === 0,
-				"TreeBuilder root collapses composed descendants",
+				"TreeBuilder root collapses composed descendants"
 			);
 		}
 		if (family === "1:3029") {
@@ -842,16 +890,18 @@ try {
 			const detail = await page
 				.locator('[data-slot="snapp-branded-sidebar"]')
 				.evaluate((root) => ({
-					header: root.firstElementChild.getBoundingClientRect().height,
-					areas:
-						root.lastElementChild.children[1].getBoundingClientRect().height,
+					header: root.firstElementChild.getBoundingClientRect()
+						.height,
+					areas: root.lastElementChild.children[1].getBoundingClientRect()
+						.height,
 					gap: getComputedStyle(root.querySelector("nav ul")).gap,
 					gaps: [...root.querySelectorAll("nav ul")].map(
-						(node) => getComputedStyle(node).gap,
+						(node) => getComputedStyle(node).gap
 					),
 					groupY: [...root.querySelectorAll("nav section")].map(
 						(node) =>
-							node.getBoundingClientRect().y - root.getBoundingClientRect().y,
+							node.getBoundingClientRect().y -
+							root.getBoundingClientRect().y
 					),
 					app: root.firstElementChild
 						.querySelector("button")
@@ -860,55 +910,70 @@ try {
 			close(
 				detail.header,
 				116,
-				"Branded sidebar inside divider keeps116px header",
+				"Branded sidebar inside divider keeps116px header"
 			);
-			close(detail.areas, 96, "Branded sidebar inside divider keeps96px areas");
+			close(
+				detail.areas,
+				96,
+				"Branded sidebar inside divider keeps96px areas"
+			);
 			close(detail.app, 220, "Branded sidebar app selector220wide");
 			check(detail.gap === "8px", "Branded sidebar row gap8");
 			check(
 				detail.gaps.join(",") === "8px,4px,4px",
-				"Branded sidebar mixed source group gaps8/4/4",
+				"Branded sidebar mixed source group gaps8/4/4"
 			);
 			detail.groupY.forEach((value, index) =>
 				close(
 					value,
 					[140, 256, 400][index],
-					"Branded sidebar group " + (index + 1) + " vertical anchor",
-				),
+					"Branded sidebar group " + (index + 1) + " vertical anchor"
+				)
 			);
 		}
 		if (family === "13:934")
 			states.forEach((state) =>
-				close(state.height, 48, state.id + " feature header48high"),
+				close(state.height, 48, state.id + " feature header48high")
 			);
 		if (family === "13:1199") {
 			const middleBar = await page
-				.getByRole("button", { name: "Collapse navigation", exact: true })
+				.getByRole("button", {
+					name: "Collapse navigation",
+					exact: true,
+				})
 				.locator("span")
 				.evaluate(
 					(node) =>
 						parseFloat(getComputedStyle(node).borderTopWidth) +
-						parseFloat(getComputedStyle(node, "::before").top),
+						parseFloat(getComputedStyle(node, "::before").top)
 				);
 			close(
 				middleBar,
 				4,
-				"Dynamics hamburger middle bar exactY4 after border origin",
+				"Dynamics hamburger middle bar exactY4 after border origin"
 			);
 			close(
 				(
 					await page
-						.getByRole("button", { name: "Collapse navigation", exact: true })
+						.getByRole("button", {
+							name: "Collapse navigation",
+							exact: true,
+						})
 						.boundingBox()
 				).height,
 				9,
-				"Dynamics hamburger three bars span9px",
+				"Dynamics hamburger three bars span9px"
 			);
 			close(states[0].width, 201, "Dynamics rail201wide");
 			await page
-				.getByRole("button", { name: "Collapse navigation", exact: true })
+				.getByRole("button", {
+					name: "Collapse navigation",
+					exact: true,
+				})
 				.locator("span")
-				.screenshot({ path: path.join(output, "hamburger-detail.png") });
+				.screenshot({
+					path: path.join(output, "hamburger-detail.png"),
+				});
 		}
 		if (family === "50:5887") {
 			const children = await page
@@ -917,10 +982,14 @@ try {
 					[...root.children].map((n) => {
 						const r = n.getBoundingClientRect();
 						return { width: r.width, height: r.height };
-					}),
+					})
 				);
 			children.forEach((child) =>
-				close(child.height, 1280, "Composite side menu child height1280"),
+				close(
+					child.height,
+					1280,
+					"Composite side menu child height1280"
+				)
 			);
 			close(children[1].width, 284, "Composite panel first width284");
 			close(children[2].width, 284, "Composite panel second width284");
@@ -933,24 +1002,27 @@ try {
 						padding: getComputedStyle(n).padding,
 						radius: getComputedStyle(n).borderRadius,
 						weight: getComputedStyle(n).fontWeight,
-					})),
+					}))
 				);
 			check(
 				styles.every((s) => s.padding === "11px" && s.weight === "400"),
-				"Editor all buttons exact11px padding and400weight",
+				"Editor all buttons exact11px padding and400weight"
 			);
 			check(
 				styles[0].radius === "4px 0px 0px 4px" &&
 					styles[2].radius === "0px 4px 4px 0px",
-				"Editor grouped outside corners4px",
+				"Editor grouped outside corners4px"
 			);
 			close(states[0].height, 54, "Editor toolbar54high");
 			close(states[0].width, 349, "Editor toolbar349wide");
-			const bold = page.getByRole("button", { name: "Bold", exact: true });
+			const bold = page.getByRole("button", {
+				name: "Bold",
+				exact: true,
+			});
 			await bold.click();
 			check(
 				(await bold.getAttribute("aria-pressed")) === "true",
-				"Toolbar toggles Bold",
+				"Toolbar toggles Bold"
 			);
 			const right = page.getByRole("radio", {
 				name: "Align right",
@@ -960,7 +1032,7 @@ try {
 				await right.click();
 				check(
 					(await right.getAttribute("aria-checked")) === "true",
-					"Toolbar exclusive alignment",
+					"Toolbar exclusive alignment"
 				);
 			} else {
 				const alignment = page.getByRole("button", {
@@ -970,7 +1042,7 @@ try {
 				await alignment.click();
 				check(
 					(await alignment.getAttribute("aria-pressed")) === "true",
-					"Toolbar exclusive alignment",
+					"Toolbar exclusive alignment"
 				);
 			}
 		}
@@ -980,14 +1052,16 @@ try {
 			close(
 				(await search.locator("..").boundingBox()).width,
 				505,
-				"Sidebar search505wide",
+				"Sidebar search505wide"
 			);
-			await page.getByRole("button", { name: "Expired", exact: true }).click();
+			await page
+				.getByRole("button", { name: "Expired", exact: true })
+				.click();
 			check(
 				(await page
 					.getByRole("button", { name: "Expired", exact: true })
 					.count()) === 0,
-				"Sidebar filter pills removable",
+				"Sidebar filter pills removable"
 			);
 		}
 		if (family === "281:2267") {
@@ -1001,12 +1075,12 @@ try {
 				(await page
 					.locator('[data-slot="snapp-header-feature-menu"]')
 					.count()) === 0,
-				"Updated feature menu Escape closes",
+				"Updated feature menu Escape closes"
 			);
 		}
 		if (family === "300:2763")
 			states.forEach((state) =>
-				close(state.height, 36, state.id + " tab item36high"),
+				close(state.height, 36, state.id + " tab item36high")
 			);
 		if (family === "300:2763") {
 			const button = await page
@@ -1017,13 +1091,15 @@ try {
 			close(states[2].width, 132, "Expanded Tab Figma width132");
 			const labels = await page
 				.locator(
-					'[data-slot="tabs-trigger"], [data-slot="snapp-expanded-tab"] > button',
+					'[data-slot="tabs-trigger"], [data-slot="snapp-expanded-tab"] > button'
 				)
 				.evaluateAll((controls) =>
 					controls.map((control) => {
-						const slot = control.querySelector('[data-slot="hug-text"]');
+						const slot = control.querySelector(
+							'[data-slot="hug-text"]'
+						);
 						const content = slot?.querySelector(
-							'[data-slot="hug-text-content"]',
+							'[data-slot="hug-text-content"]'
 						);
 						if (!slot || !content) return { missing: true };
 						const rect = control.getBoundingClientRect();
@@ -1041,14 +1117,18 @@ try {
 							fontSize: style.fontSize,
 							lineHeight: style.lineHeight,
 						};
-					}),
+					})
 				);
 			labels.forEach((label, index) => {
-				close(label.slot ?? 0, 28, `Tab label${index} Figma HUG slot28`);
+				close(
+					label.slot ?? 0,
+					28,
+					`Tab label${index} Figma HUG slot28`
+				);
 				close(
 					label.x ?? -1,
 					index === 3 ? 28 : 16,
-					`Tab label${index} unchanged Figma left origin`,
+					`Tab label${index} unchanged Figma left origin`
 				);
 			});
 			check(
@@ -1062,9 +1142,9 @@ try {
 							label.kerning !== "none" &&
 							label.weight === "400" &&
 							label.fontSize === "14px" &&
-							label.lineHeight === "20px",
+							label.lineHeight === "20px"
 					),
-				"All four Tab source labels retain normal paint and exact geometry",
+				"All four Tab source labels retain normal paint and exact geometry"
 			);
 			evidence.intrinsicTextDifferences.tabItem = {
 				figma: 60,
@@ -1079,7 +1159,9 @@ try {
 			};
 		}
 		if (family === "300:2784") {
-			const list = await page.locator('[data-slot="tabs-list"]').boundingBox();
+			const list = await page
+				.locator('[data-slot="tabs-list"]')
+				.boundingBox();
 			close(list.width, 524, "Eight-tab menu Figma width524");
 			const menuLabels = await page
 				.locator('[data-slot="tabs-trigger"]')
@@ -1087,13 +1169,15 @@ try {
 					tabs.map((tab) => {
 						const rect = tab.getBoundingClientRect();
 						const list = tab.parentElement.getBoundingClientRect();
-						const slot = tab.querySelector('[data-slot="hug-text"]');
+						const slot = tab.querySelector(
+							'[data-slot="hug-text"]'
+						);
 						return {
 							width: rect.width,
 							x: rect.x - list.x,
 							slot: slot?.getBoundingClientRect().width,
 						};
-					}),
+					})
 				);
 			check(
 				menuLabels.length === 8 &&
@@ -1101,9 +1185,9 @@ try {
 						(label, index) =>
 							label.width === 60 &&
 							label.x === 8 + index * 64 &&
-							label.slot === 28,
+							label.slot === 28
 					),
-				"All eight Tabbed Menu source slots retain60px controls,4px gaps and28px labels",
+				"All eight Tabbed Menu source slots retain60px controls,4px gaps and28px labels"
 			);
 			evidence.intrinsicTextDifferences.tabbedMenu = {
 				figma: 524,
@@ -1126,22 +1210,25 @@ try {
 					font.line === "20px" &&
 					font.weight === "400" &&
 					font.background === "rgb(47, 69, 92)",
-				"Pill tab Aptos14/20 regular400 withbrandselectedfill",
+				"Pill tab Aptos14/20 regular400 withbrandselectedfill"
 			);
 		}
 		if (family === "334:2201")
 			states.forEach((state) =>
-				close(state.height, 52, state.id + " square header52high"),
+				close(state.height, 52, state.id + " square header52high")
 			);
 		if (family === "347:2904")
 			states.forEach((state) =>
-				close(state.height, 52, state.id + " tool menu52high"),
+				close(state.height, 52, state.id + " tool menu52high")
 			);
 	}
-	check(errors.length === 0, "No browserconsole/page errors across21families");
+	check(
+		errors.length === 0,
+		"No browserconsole/page errors across21families"
+	);
 	await fs.writeFile(
 		path.join(output, "navigation-qa.json"),
-		JSON.stringify(evidence, null, 2),
+		JSON.stringify(evidence, null, 2)
 	);
 	if (evidence.failures.length) process.exitCode = 1;
 	console.log(
@@ -1151,17 +1238,17 @@ try {
 			families: evidence.families.length,
 			variants: evidence.families.reduce(
 				(sum, family) => sum + family.states.length,
-				0,
+				0
 			),
 			assertions: evidence.assertions.length,
 			output,
-		}),
+		})
 	);
 } catch (error) {
 	evidence.failure = error.message;
 	await fs.writeFile(
 		path.join(output, "navigation-qa.json"),
-		JSON.stringify(evidence, null, 2),
+		JSON.stringify(evidence, null, 2)
 	);
 	console.error(error);
 	process.exitCode = 1;

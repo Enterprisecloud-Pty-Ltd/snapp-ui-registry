@@ -2,13 +2,13 @@ import * as React from "react";
 
 function ownedTabs(list: HTMLElement) {
 	return Array.from(
-		list.querySelectorAll<HTMLElement>('[data-slot="tabs-trigger"]'),
+		list.querySelectorAll<HTMLElement>('[data-slot="tabs-trigger"]')
 	).filter(
 		(tab) =>
 			tab.closest('[role="tablist"]') === list &&
 			!tab.hasAttribute("disabled") &&
 			!tab.hasAttribute("data-disabled") &&
-			tab.getAttribute("aria-disabled") !== "true",
+			tab.getAttribute("aria-disabled") !== "true"
 	);
 }
 
@@ -34,13 +34,13 @@ function focusFirst(candidates: HTMLElement[]) {
 function focusTabsOnEntry(list: HTMLElement) {
 	const tabs = ownedTabs(list);
 	const selected = tabs.find(
-		(tab) => tab.getAttribute("aria-selected") === "true",
+		(tab) => tab.getAttribute("aria-selected") === "true"
 	);
 	const current = tabs.find((tab) => tab.tabIndex === 0);
 	focusFirst(
 		Array.from(new Set([selected, current, ...tabs])).filter(
-			(tab): tab is HTMLElement => Boolean(tab),
-		),
+			(tab): tab is HTMLElement => Boolean(tab)
+		)
 	);
 }
 
@@ -51,7 +51,7 @@ function useTabsFocusTimer() {
 			if (pending.current)
 				pending.current.view.clearTimeout(pending.current.id);
 		},
-		[],
+		[]
 	);
 	return pending;
 }
@@ -61,7 +61,7 @@ function handleTabsArrowNavigation(
 	event: React.KeyboardEvent<HTMLElement>,
 	loop: boolean,
 	pending: ReturnType<typeof useTabsFocusTimer>,
-	onShiftTab: () => void,
+	onShiftTab: () => void
 ) {
 	if (event.key === "Tab" && event.shiftKey) {
 		onShiftTab?.();
@@ -111,7 +111,10 @@ function handleTabsArrowNavigation(
 			const index = candidates.indexOf(source);
 			if (index < 0) return;
 			candidates = loop
-				? [...candidates.slice(index + 1), ...candidates.slice(0, index + 1)]
+				? [
+						...candidates.slice(index + 1),
+						...candidates.slice(0, index + 1),
+					]
 				: candidates.slice(index + 1);
 		}
 		focusFirst(candidates);

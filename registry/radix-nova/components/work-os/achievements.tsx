@@ -23,12 +23,18 @@ function Achievements({
 		<div
 			data-slot="snapp-achievements"
 			className={cn(
-				"flex h-12 w-84.5 items-center gap-4 bg-snapp-surface-primary pl-4 font-snapp-body text-snapp-sm leading-snapp-xs text-snapp-text-brand shadow-[inset_1px_0_0_var(--snapp-border-primary)]",
-				className,
+				"flex h-12 w-84.5 items-center gap-4 bg-snapp-surface-primary pl-4 font-snapp-body text-snapp-sm leading-snapp-xs text-snapp-text-brand shadow-snapp-left-divider",
+				className
 			)}
 			{...props}
 		>
-			<img src={trophy} alt="" width={20} height={20} className="shrink-0" />
+			<img
+				src={trophy}
+				alt=""
+				width={20}
+				height={20}
+				className="shrink-0"
+			/>
 			<p className="flex shrink-0 items-center gap-1 whitespace-nowrap">
 				<span>{label}</span>
 				<span>{weekLabel}</span>

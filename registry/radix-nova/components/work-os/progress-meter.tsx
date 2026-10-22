@@ -20,7 +20,7 @@ function ProgressMeter({
 		<div
 			className={cn(
 				"flex h-4 items-center gap-2 font-snapp-body font-normal",
-				className,
+				className
 			)}
 			data-slot="snapp-progress-meter"
 		>
@@ -37,7 +37,7 @@ function ProgressMeter({
 						"h-full rounded-l-3xl",
 						tone === "green" && "bg-snapp-surface-green",
 						tone === "amber" && "bg-snapp-surface-amber",
-						tone === "red" && "bg-snapp-surface-red",
+						tone === "red" && "bg-snapp-surface-red"
 					)}
 					style={{ width: `${percentage}%` }}
 				/>

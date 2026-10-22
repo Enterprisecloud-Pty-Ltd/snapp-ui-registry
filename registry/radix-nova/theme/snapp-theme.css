@@ -3,6 +3,54 @@
 @custom-variant data-vertical (&[data-orientation="vertical"]);
 
 @theme {
+	--color-snapp-control-disabled: #eaeaeb;
+	--color-snapp-control-disabled-text: #aaabab;
+	--color-snapp-notice-error: #ffe2e0;
+	--color-snapp-notice-success: #f8fff8;
+	--color-snapp-notice-warning: #fff1de;
+	--color-snapp-notice-info: #eaf6ff;
+	--color-snapp-inter-border: #e5e5e5;
+	--color-snapp-inter-text: #0a0a0a;
+	--color-snapp-inter-muted: #4a5565;
+	--color-snapp-inter-secondary: #364153;
+	--color-snapp-inter-caption: #6a7282;
+	--color-snapp-inter-divider: #e5e7eb;
+	--color-snapp-inter-canvas: #f3f4f6;
+	--color-snapp-avatar-red: #e94435;
+	--color-snapp-progress-blue: #0073de;
+	--color-snapp-alert-red: #f04438;
+	--color-snapp-ink-subtle: rgba(42, 44, 46, 0.05);
+	--color-snapp-ink-faint: rgba(42, 44, 46, 0.15);
+	--color-snapp-ink-border: rgba(42, 44, 46, 0.34);
+	--color-snapp-ink-muted: rgba(42, 44, 46, 0.5);
+	--color-snapp-ink-strong: rgba(42, 44, 46, 0.8);
+	--spacing-snapp-employee-card: 312.5px;
+	--spacing-snapp-employee-content: 270.5px;
+	--spacing-snapp-calendar-day-width: 141.714px;
+	--spacing-snapp-calendar-day-height: 90.333px;
+	--spacing-snapp-task-title: 323.667px;
+	--spacing-snapp-task-details: 333.667px;
+	--spacing-snapp-task-progress: 448.5px;
+	--spacing-snapp-filter-max: calc(100vw - 2rem);
+	--radius-snapp-category: 18px;
+	--radius-snapp-course-status: 10px;
+	--font-snapp-arial: Arial;
+	--leading-snapp-normal: normal;
+	--tracking-snapp-tight: -0.2px;
+	--shadow-snapp-inter-control: 0 1px 2px rgb(0 0 0 / 0.1);
+	--shadow-snapp-inter-popover: 0 1px 3px rgb(0 0 0 / 0.1);
+	--shadow-snapp-employee-card:
+		0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+	--shadow-snapp-navigation-panel: 4px 0 20px 5px #0000001a;
+	--shadow-snapp-tool-menu: 0 14px 9px #4c4f521f;
+	--shadow-snapp-achievement: 0 4px 7.5px #20232714;
+	--shadow-snapp-landing-card: 0 4px 9px #4c4f522e;
+	--shadow-snapp-bottom-divider: inset 0 -1px 0 var(--snapp-border-primary);
+	--shadow-snapp-top-divider: inset 0 1px 0 rgba(42, 44, 46, 0.15);
+	--shadow-snapp-left-divider: inset 1px 0 0 var(--snapp-border-primary);
+	--shadow-snapp-focus: 0 0 0 3px rgb(47 69 92 / 8%);
+	--drop-shadow-snapp-editor: 0 4px 6px #00000040;
+	--drop-shadow-snapp-inbox: 0 4px 7.5px rgba(32, 35, 39, 0.08);
 	--radius-xs: 0.125rem;
 	--radius-sm: 0.25rem;
 	--radius-md: 0.375rem;
@@ -75,7 +123,9 @@
 	--color-snapp-secondary-baby-blue: var(--snapp-colour-secondary-baby-blue);
 	--color-snapp-secondary-red: var(--snapp-colour-secondary-red);
 	--color-snapp-secondary-dark-red: var(--snapp-colour-secondary-dark-red);
-	--color-snapp-secondary-darker-red: var(--snapp-colour-secondary-darker-red);
+	--color-snapp-secondary-darker-red: var(
+		--snapp-colour-secondary-darker-red
+	);
 	--color-snapp-transparency-grey: var(--snapp-colour-transparency-grey);
 	--spacing-snapp-2: var(--snapp-spacing-2);
 	--spacing-snapp-4: var(--snapp-spacing-4);
@@ -517,45 +567,91 @@
 		appearance: none;
 	}
 
-	.ec-app :where(
-		a[href],
-		button:not(:disabled),
-		input:is([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="file"]):not(:disabled),
-		label[for],
-		select:not(:disabled),
-		summary,
-		[role="button"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="checkbox"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="link"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="menuitem"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="menuitemcheckbox"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="menuitemradio"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="option"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="radio"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="slider"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="switch"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="tab"]:not([aria-disabled="true"]):not([data-disabled]),
-		[role="treeitem"]:not([aria-disabled="true"]):not([data-disabled])
-	) {
+	.ec-app
+		:where(
+			a[href],
+			button:not(:disabled),
+			input:is(
+				[type="checkbox"],
+				[type="radio"],
+				[type="range"],
+				[type="color"],
+				[type="file"]
+			):not(:disabled),
+			label[for],
+			select:not(:disabled),
+			summary,
+			[role="button"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="checkbox"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="link"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="menuitem"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="menuitemcheckbox"]:not([aria-disabled="true"]):not(
+				[data-disabled]
+			),
+			[role="menuitemradio"]:not([aria-disabled="true"]):not(
+				[data-disabled]
+			),
+			[role="option"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="radio"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="slider"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="switch"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="tab"]:not([aria-disabled="true"]):not([data-disabled]),
+			[role="treeitem"]:not([aria-disabled="true"]):not([data-disabled])
+		) {
 		cursor: pointer;
 	}
 
-	.ec-app :where(
-		button:disabled,
-		input:disabled,
-		select:disabled,
-		[aria-disabled="true"],
-		[data-disabled]
-	) {
+	.ec-app
+		:where(
+			button:disabled,
+			input:disabled,
+			select:disabled,
+			[aria-disabled="true"],
+			[data-disabled]
+		) {
 		cursor: not-allowed;
 	}
 }
 
+@utility transition-snapp-surface {
+	transition-property: background-color, box-shadow;
+	transition-timing-function: var(
+		--tw-ease,
+		var(--default-transition-timing-function)
+	);
+	transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+@utility transition-snapp-border {
+	transition-property: border-color, box-shadow;
+	transition-timing-function: var(
+		--tw-ease,
+		var(--default-transition-timing-function)
+	);
+	transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+
+@utility snapp-chart-strokes {
+	& .recharts-cartesian-grid line[stroke="#ccc"] {
+		stroke: var(--border);
+		@supports (color: color-mix(in oklab, currentColor, transparent)) {
+			stroke: color-mix(in oklab, var(--border) 50%, transparent);
+		}
+	}
+	& .recharts-dot[stroke="#fff"],
+	& .recharts-sector[stroke="#fff"] {
+		stroke: transparent;
+	}
+	& .recharts-polar-grid [stroke="#ccc"],
+	& .recharts-reference-line [stroke="#ccc"] {
+		stroke: var(--border);
+	}
+}
+
 @layer base {
-  .ec-app {
-    font-family: var(--snapp-font-family-body);
-    font-synthesis: none;
-    font-size: var(--snapp-font-size-sm);
-    line-height: var(--snapp-font-line-height-xs);
-  }
+	.ec-app {
+		font-family: var(--snapp-font-family-body);
+		font-synthesis: none;
+		font-size: var(--snapp-font-size-sm);
+		line-height: var(--snapp-font-line-height-xs);
+	}
 }

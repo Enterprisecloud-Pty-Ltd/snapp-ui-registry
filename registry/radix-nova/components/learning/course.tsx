@@ -43,7 +43,12 @@ function Course({
 		/>
 	);
 	const moreIcon = (
-		<img src={employee ? employeeMore : more} alt="" width={16} height={16} />
+		<img
+			src={employee ? employeeMore : more}
+			alt=""
+			width={16}
+			height={16}
+		/>
 	);
 	const checkbox = (
 		<span
@@ -51,7 +56,7 @@ function Course({
 				"flex size-4 shrink-0 items-center justify-center rounded-snapp-minimal",
 				completed
 					? "bg-snapp-surface-green px-px"
-					: "border border-snapp-border-primary px-0.5 py-px",
+					: "border border-snapp-border-primary px-0.5 py-px"
 			)}
 		>
 			{completed && (
@@ -70,14 +75,14 @@ function Course({
 			data-state={completed ? "complete" : "incomplete"}
 			className={cn(
 				"flex h-8 w-114 flex-col items-start justify-center gap-2 py-0.5 font-snapp-body text-snapp-sm leading-snapp-xs font-normal",
-				className,
+				className
 			)}
 			{...props}
 		>
 			<div
 				className={cn(
 					"flex h-7 w-full items-center gap-2 p-2",
-					employee && "h-auto w-[448.5px] py-0",
+					employee && "h-auto w-snapp-task-progress py-0"
 				)}
 			>
 				{dragHandleProps ? (
@@ -87,7 +92,7 @@ function Course({
 						{...dragHandleProps}
 						className={cn(
 							"shrink-0 touch-none rounded-sm focus-visible:outline-2 focus-visible:outline-snapp-border-highlight",
-							dragHandleProps.className,
+							dragHandleProps.className
 						)}
 					>
 						{handle}
@@ -96,6 +101,7 @@ function Course({
 					handle
 				)}
 				{onCompletedChange ? (
+					// biome-ignore lint/a11y/useSemanticElements: The supplied Figma checkbox uses button keyboard activation, its exact glyph, and the checkbox role with aria-checked.
 					<button
 						type="button"
 						role="checkbox"
@@ -110,15 +116,21 @@ function Course({
 					checkbox
 				)}
 				<p className="flex min-w-0 flex-1 items-center gap-1 whitespace-nowrap">
-					<span className="shrink-0 text-snapp-text-brand">{title}</span>
+					<span className="shrink-0 text-snapp-text-brand">
+						{title}
+					</span>
 					{code && (
-						<span className="shrink-0 text-snapp-text-secondary">{code}</span>
+						<span className="shrink-0 text-snapp-text-secondary">
+							{code}
+						</span>
 					)}
 				</p>
 				<span
 					className={cn(
 						"shrink-0 whitespace-nowrap",
-						completed ? "text-snapp-text-green" : "text-snapp-text-secondary",
+						completed
+							? "text-snapp-text-green"
+							: "text-snapp-text-secondary"
 					)}
 				>
 					{statusLabel ?? (completed ? "Completed" : "Issued")}

@@ -11,7 +11,13 @@ type IconProps = SVGProps<SVGSVGElement>;
 /** Legacy SVG-shaped API backed by the unmodified Figma asset. */
 function WorkGripIcon(props: IconProps) {
 	return (
-		<svg aria-hidden="true" width={12} height={5} viewBox="0 0 12 5" {...props}>
+		<svg
+			aria-hidden="true"
+			width={12}
+			height={5}
+			viewBox="0 0 12 5"
+			{...props}
+		>
 			<image href={grip} width={12} height={5} />
 		</svg>
 	);

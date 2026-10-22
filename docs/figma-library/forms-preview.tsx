@@ -14,7 +14,7 @@ import { EditorToolbar } from "@/components/snapp/navigation/editor-toolbar"
 
 function Case({ node, variant, children, width }: { node: string; variant: string; children: React.ReactNode; width?: number }) {
   const specimen = React.useRef<HTMLElement>(null)
-  return <section ref={specimen} data-figma-node={node} data-variant={variant} style={{ width, maxWidth: "100%" }} className="flex shrink-0 flex-col items-start gap-3 rounded border border-dashed border-purple-300 bg-[#cecece] p-5"><h3 className="flex items-center gap-3 font-snapp-inter text-xs text-slate-600">{variant}{node === "96:9877" && <Button size="sm" variant="outline" onClick={() => { const textarea = specimen.current?.querySelector("textarea"); textarea?.focus({ preventScroll: true }); textarea?.setSelectionRange(6, 13) }}>Select sample text</Button>}</h3>{children}</section>
+  return <section ref={specimen} data-figma-node={node} data-variant={variant} style={{ width, maxWidth: "100%" }} className="flex shrink-0 flex-col items-start gap-3 rounded border border-dashed border-purple-300 bg-[#cecece] p-5"><h3 style={{ marginBottom: node === "96:9877" ? 48 : undefined }} className="flex items-center gap-3 font-snapp-inter text-xs text-slate-600">{variant}{node === "96:9877" && <Button size="sm" variant="outline" onClick={() => { const textarea = specimen.current?.querySelector("textarea"); textarea?.focus({ preventScroll: true }); textarea?.setSelectionRange(6, 13) }}>Select sample text</Button>}</h3>{children}</section>
 }
 const options = [1, 2, 3, 4].map(value => ({ value: String(value), label: "Selection " + value }))
 const noticeText = "Catalogue Name is required to Add a new Experience View"

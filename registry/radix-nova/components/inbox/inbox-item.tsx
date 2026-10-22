@@ -33,8 +33,9 @@ function InboxItem({
 			aria-pressed={selected}
 			className={cn(
 				"flex w-74.5 max-w-full flex-col items-start border-b border-snapp-border-primary px-4 py-3 text-left font-snapp-body font-normal focus-visible:outline-2 focus-visible:outline-snapp-border-highlight",
-				selected && "border-snapp-border-brand bg-snapp-surface-secondary",
-				className,
+				selected &&
+					"border-snapp-border-brand bg-snapp-surface-secondary",
+				className
 			)}
 			{...props}
 		>
@@ -52,19 +53,26 @@ function InboxItem({
 						</span>
 						{readState && (
 							<span
+								role="img"
 								aria-label={readState}
 								className={cn(
 									"size-1.5 shrink-0 rounded-snapp-full",
 									readState === "unread"
 										? "bg-snapp-surface-brand"
-										: "bg-snapp-surface-disabled",
+										: "bg-snapp-surface-disabled"
 								)}
 							/>
 						)}
 					</span>
 					<span className="flex w-full items-center gap-1 text-snapp-xxs leading-snapp-xxxs">
-						<span className="text-snapp-text-amber">{category}</span>
-						{priority && <span className="text-[#f04438]">● {priority}</span>}
+						<span className="text-snapp-text-amber">
+							{category}
+						</span>
+						{priority && (
+							<span className="text-snapp-alert-red">
+								● {priority}
+							</span>
+						)}
 					</span>
 					<span className="w-full truncate text-snapp-xs leading-snapp-xxs font-bold text-snapp-text-brand">
 						{title}

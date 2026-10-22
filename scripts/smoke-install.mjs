@@ -16,7 +16,10 @@ import { createServer } from "vite";
 import { checkInstalledPrefix } from "./check-install-prefix.mjs";
 
 const execFileAsync = promisify(execFile);
-const registryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const registryRoot = path.resolve(
+	path.dirname(fileURLToPath(import.meta.url)),
+	".."
+);
 const fixtureRoot = await mkdtemp(path.join(tmpdir(), "snapp-registry-smoke-"));
 const sourceRoot = path.join(fixtureRoot, "src");
 const shadcnCli = path.join(
@@ -24,7 +27,7 @@ const shadcnCli = path.join(
 	"node_modules",
 	"shadcn",
 	"dist",
-	"index.js",
+	"index.js"
 );
 let server;
 
@@ -56,6 +59,14 @@ try {
 		version: "0.0.0",
 		type: "module",
 		dependencies: {
+			eslint: "10.4.1",
+			oxlint: "1.88.0",
+			"oxlint-tsgolint": "7.0.2004",
+			"@shadcn/lint": "0.2.3",
+			cn: "0.4.0",
+			"eslint-plugin-react-hooks": "7.1.1",
+			"@tanstack/eslint-plugin-query": "5.104.4",
+			"@biomejs/biome": "2.4.16",
 			"@tailwindcss/vite": "^4.3.1",
 			"@types/react": "^19.2.17",
 			"@types/react-dom": "^19.2.3",
@@ -67,6 +78,18 @@ try {
 			typescript: "^6.0.3",
 			vite: "^8.1.0",
 		},
+	});
+	await writeFile(
+		path.join(fixtureRoot, ".oxlintrc.json"),
+		await readFile(
+			path.join(registryRoot, "scripts/consumer-lint.config.json"),
+			"utf8"
+		)
+	);
+	await writeJson(path.join(fixtureRoot, "biome.json"), {
+		$schema: "./node_modules/@biomejs/biome/configuration_schema.json",
+		files: { maxSize: 4194304 },
+		css: { parser: { tailwindDirectives: true } },
 	});
 	await writeJson(path.join(fixtureRoot, "components.json"), {
 		$schema: "https://ui.shadcn.com/schema.json",
@@ -130,15 +153,15 @@ try {
 			'  resolve: { alias: { "@": path.resolve(__dirname, "./src") } },',
 			"})",
 			"",
-		].join("\n"),
+		].join("\n")
 	);
 	await writeFile(
 		path.join(fixtureRoot, "index.html"),
-		'<div id="root"></div><script type="module" src="/src/main.tsx"></script>\n',
+		'<div id="root"></div><script type="module" src="/src/main.tsx"></script>\n'
 	);
 	await writeFile(
 		path.join(sourceRoot, "index.css"),
-		'@import "tailwindcss" prefix(ec);\n@import "shadcn/tailwind.css";\n',
+		'@import "tailwindcss" prefix(ec);\n@import "shadcn/tailwind.css";\n'
 	);
 	await writeFile(
 		path.join(sourceRoot, "main.tsx"),
@@ -175,17 +198,17 @@ try {
 			'  icon: "bug" as const,',
 			"}",
 			"",
-			'function RegistrySmoke() {',
+			"function RegistrySmoke() {",
 			'  const [activeDialog, setActiveDialog] = useState<"edit" | "delete" | null>(null)',
-			'',
-			'  return (',
-			'    <FeatureShell navigation={<aside>Navigation</aside>} showNavBar={showNavBar}>',
+			"",
+			"  return (",
+			"    <FeatureShell navigation={<aside>Navigation</aside>} showNavBar={showNavBar}>",
 			"      <PageBody>",
 			'        <FeatureBreadcrumb items={[{ id: "home", label: "Home", onSelect: () => undefined }, { id: "current", label: "Current", current: true }]} />',
 			'        <CatalogueHero description="Browse shared content" onSearch={() => undefined} searchLabel="Search catalogue" searchPlaceholder="Search..." title="Catalogue">',
-			'          <LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard>',
+			"          <LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard>",
 			"        </CatalogueHero>",
-			'        <SurfaceCard><LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard></SurfaceCard>',
+			"        <SurfaceCard><LandingCard icon={<span>+</span>}>Knowledge Base</LandingCard></SurfaceCard>",
 			'        <CatalogueResultCard description="Shared result" title={searchMatches && scopedSearchResults.length === 1 ? scopedSearchResults[0].title : "No result"} />',
 			'        <HelpArticleAccordion articles={[{ id: "help", title: "Help", content: <p>Answer</p> }]} heading="Helpful information" />',
 			'        <LandingSkeleton aria-label="Loading knowledge base" itemCount={2} />',
@@ -200,7 +223,7 @@ try {
 			'        <Button size="form" variant="form-primary">Save</Button>',
 			'        <Button size="form" variant="form-secondary">Cancel</Button>',
 			'        <Button size="form" variant="form-destructive">Delete</Button>',
-			'        <Dialog open={activeDialog !== null} onOpenChange={(open) => { if (!open) setActiveDialog(null) }}>',
+			"        <Dialog open={activeDialog !== null} onOpenChange={(open) => { if (!open) setActiveDialog(null) }}>",
 			'          <DialogContent size="form">',
 			'            <DialogHeader size="form"><DialogTitle size="form">{activeDialog === "delete" ? "Delete item" : "Edit item"}</DialogTitle></DialogHeader>',
 			'            <DialogBody size="form"><Input aria-label="Dialog input" variant="form" /></DialogBody>',
@@ -218,7 +241,7 @@ try {
 			"          </DropdownMenuContent>",
 			"        </DropdownMenu>",
 			"        <ContextMenu>",
-			'          <ContextMenuTrigger><div>Right-click for actions</div></ContextMenuTrigger>',
+			"          <ContextMenuTrigger><div>Right-click for actions</div></ContextMenuTrigger>",
 			'          <ContextMenuContent size="quick-actions">',
 			'            <ContextMenuItem onSelect={() => setActiveDialog("edit")} size="quick-actions">Configure</ContextMenuItem>',
 			'            <ContextMenuItem onSelect={() => setActiveDialog("delete")} size="quick-actions">Remove</ContextMenuItem>',
@@ -229,11 +252,11 @@ try {
 			"  )",
 			"}",
 			"",
-			"createRoot(document.getElementById(\"root\")!).render(",
+			'createRoot(document.getElementById("root")!).render(',
 			"  <StrictMode><RegistrySmoke /></StrictMode>,",
 			")",
 			"",
-		].join("\n"),
+		].join("\n")
 	);
 
 	const install = await execFileAsync(
@@ -258,14 +281,14 @@ try {
 			},
 			maxBuffer: 10 * 1024 * 1024,
 			timeout: 180_000,
-		},
+		}
 	);
 	if (install.stdout) {
 		process.stdout.write(install.stdout);
 	}
 
 	const packageJson = JSON.parse(
-		await readFile(path.join(fixtureRoot, "package.json"), "utf8"),
+		await readFile(path.join(fixtureRoot, "package.json"), "utf8")
 	);
 	for (const dependency of [
 		"@fontsource/ibm-plex-sans",
@@ -279,8 +302,23 @@ try {
 		}
 	}
 
+	// Product consumers import the canonical theme rather than retaining the
+	// installer's duplicate cssVars. Those duplicates can mask invalid aliases.
+	await writeFile(
+		path.join(sourceRoot, "index.css"),
+		[
+			'@import "tailwindcss" prefix(ec);',
+			'@import "shadcn/tailwind.css";',
+			'@import "./styles/snapp-theme.css";',
+			'@import "./styles/snapp-fonts.css";',
+			"",
+		].join("\n")
+	);
 	const unprefixedClasses = await checkInstalledPrefix(sourceRoot);
-	if (unprefixedClasses.length) throw new Error(`Installed utility classes lost their Tailwind prefix:\n${unprefixedClasses.join("\n")}`);
+	if (unprefixedClasses.length)
+		throw new Error(
+			`Installed utility classes lost their Tailwind prefix:\n${unprefixedClasses.join("\n")}`
+		);
 	const indexCss = await readFile(path.join(sourceRoot, "index.css"), "utf8");
 	const themeImport = '@import "./styles/snapp-theme.css"';
 	if (!indexCss.includes(themeImport)) {
@@ -290,22 +328,22 @@ try {
 	if (!indexCss.includes(fontImport)) {
 		throw new Error(`Clean install did not add ${fontImport}`);
 	}
-	if (!indexCss.includes("--color-popover: var(--popover);")) {
-		throw new Error(
-			"Clean install did not register the semantic popover colour with Tailwind",
-		);
-	}
 	const installedThemeCss = await readFile(
 		path.join(sourceRoot, "styles", "snapp-theme.css"),
-		"utf8",
+		"utf8"
 	);
+	if (!installedThemeCss.includes("--color-popover: var(--popover);")) {
+		throw new Error(
+			"Clean install did not register the semantic popover colour with Tailwind"
+		);
+	}
 	if (
 		!installedThemeCss.includes(
-			"@custom-variant dark (&:where(.dark, .dark *));",
+			"@custom-variant dark (&:where(.dark, .dark *));"
 		)
 	) {
 		throw new Error(
-			"Clean install did not scope dark utilities to the explicit dark theme",
+			"Clean install did not scope dark utilities to the explicit dark theme"
 		);
 	}
 	for (const orientationVariant of [
@@ -314,30 +352,52 @@ try {
 	]) {
 		if (!installedThemeCss.includes(orientationVariant)) {
 			throw new Error(
-				`Clean install did not define ${orientationVariant}`,
+				`Clean install did not define ${orientationVariant}`
 			);
 		}
 	}
 
 	const fontCss = await readFile(
 		path.join(sourceRoot, "styles", "snapp-fonts.css"),
-		"utf8",
+		"utf8"
 	);
-	const installedFontHashes = new Set([...fontCss.matchAll(/data:font\/(?:ttf|woff2);base64,([A-Za-z0-9+/=]+)/g)].map(match => createHash("sha256").update(Buffer.from(match[1], "base64")).digest("hex")));
-	const installedFontManifest = JSON.parse(await readFile(path.join(registryRoot, "docs/figma-library/font-manifest.json"), "utf8"));
+	const installedFontHashes = new Set(
+		[
+			...fontCss.matchAll(
+				/data:font\/(?:ttf|woff2);base64,([A-Za-z0-9+/=]+)/g
+			),
+		].map((match) =>
+			createHash("sha256")
+				.update(Buffer.from(match[1], "base64"))
+				.digest("hex")
+		)
+	);
+	const installedFontManifest = JSON.parse(
+		await readFile(
+			path.join(registryRoot, "docs/figma-library/font-manifest.json"),
+			"utf8"
+		)
+	);
 	for (const face of installedFontManifest.faces) {
-		if (!installedFontHashes.has(face.sha256)) throw new Error(`Installed font CSS changed the exact bytes for ${face.family} ${face.weight}`);
+		if (!installedFontHashes.has(face.sha256))
+			throw new Error(
+				`Installed font CSS changed the exact bytes for ${face.family} ${face.weight}`
+			);
 	}
-	if (/url\(\s*["']?(?:https?:|\.\.|\/)/i.test(fontCss)) throw new Error("Installed font CSS must be self-contained");
+	if (/url\(\s*["']?(?:https?:|\.\.|\/)/i.test(fontCss))
+		throw new Error("Installed font CSS must be self-contained");
 
-	const utils = await readFile(path.join(sourceRoot, "lib", "utils.ts"), "utf8");
+	const utils = await readFile(
+		path.join(sourceRoot, "lib", "utils.ts"),
+		"utf8"
+	);
 	if (!utils.includes("extendTailwindMerge")) {
 		throw new Error("Clean install did not install the SNAPP-aware utils");
 	}
 
 	const combobox = await readFile(
 		path.join(sourceRoot, "components", "ui", "combobox.tsx"),
-		"utf8",
+		"utf8"
 	);
 	for (const requiredComboboxClass of [
 		"font-snapp-body",
@@ -352,14 +412,14 @@ try {
 	]) {
 		if (!combobox.includes(requiredComboboxClass)) {
 			throw new Error(
-				`Installed Combobox is missing ${requiredComboboxClass}`,
+				`Installed Combobox is missing ${requiredComboboxClass}`
 			);
 		}
 	}
 
 	const skeleton = await readFile(
 		path.join(sourceRoot, "components", "ui", "skeleton.tsx"),
-		"utf8",
+		"utf8"
 	);
 	for (const requiredSkeletonContract of [
 		"SkeletonGroup",
@@ -370,7 +430,7 @@ try {
 	]) {
 		if (!skeleton.includes(requiredSkeletonContract)) {
 			throw new Error(
-				`Installed Skeleton is missing ${requiredSkeletonContract}`,
+				`Installed Skeleton is missing ${requiredSkeletonContract}`
 			);
 		}
 	}
@@ -381,12 +441,14 @@ try {
 			"components",
 			"snapp",
 			"catalogue",
-			"landing-skeleton.tsx",
+			"landing-skeleton.tsx"
 		),
-		"utf8",
+		"utf8"
 	);
 	if (!landingSkeleton.includes("<SkeletonGroup")) {
-		throw new Error("Landing Skeleton must use the accessible SkeletonGroup");
+		throw new Error(
+			"Landing Skeleton must use the accessible SkeletonGroup"
+		);
 	}
 
 	const landingCard = await readFile(
@@ -395,9 +457,9 @@ try {
 			"components",
 			"snapp",
 			"catalogue",
-			"landing-card.tsx",
+			"landing-card.tsx"
 		),
-		"utf8",
+		"utf8"
 	);
 	if (
 		!landingCard.includes("ec:hover:bg-snapp-surface-primary") ||
@@ -407,19 +469,21 @@ try {
 		!landingCard.includes("ec:box-border")
 	) {
 		throw new Error(
-			"Clean prefixed install did not preserve the SNAPP card contract",
+			"Clean prefixed install did not preserve the SNAPP card contract"
 		);
 	}
 
 	const featureParameters = await readFile(
 		path.join(sourceRoot, "lib", "snapp-feature-parameters.ts"),
-		"utf8",
+		"utf8"
 	);
 	if (
 		!featureParameters.includes("resolveShowNavBar") ||
 		!featureParameters.includes("defaultValue = true")
 	) {
-		throw new Error("Clean install did not preserve feature parameter defaults");
+		throw new Error(
+			"Clean install did not preserve feature parameter defaults"
+		);
 	}
 
 	const catalogueCore = await readFile(
@@ -428,9 +492,9 @@ try {
 			"components",
 			"snapp",
 			"catalogue",
-			"catalogue-core.ts",
+			"catalogue-core.ts"
 		),
-		"utf8",
+		"utf8"
 	);
 	for (const requiredExport of [
 		"catalogue-hero",
@@ -450,9 +514,21 @@ try {
 			"components",
 			"snapp",
 			"navigation",
-			"feature-breadcrumb.tsx",
+			"feature-breadcrumb.tsx"
 		),
-		"utf8",
+		"utf8"
+	);
+	if (
+		!featureBreadcrumb.includes('appearance="feature"') ||
+		!featureBreadcrumb.includes('"feature-current"')
+	) {
+		throw new Error(
+			"Feature breadcrumbs must use their shared primitive appearances"
+		);
+	}
+	const breadcrumbPrimitive = await readFile(
+		path.join(sourceRoot, "components/ui/breadcrumb.tsx"),
+		"utf8"
 	);
 	for (const className of [
 		"ec:m-0",
@@ -463,15 +539,15 @@ try {
 		"ec:font-bold",
 		"ec:text-snapp-text-brand",
 	]) {
-		if (!featureBreadcrumb.includes(className)) {
+		if (!breadcrumbPrimitive.includes(className)) {
 			throw new Error(
-				`Feature breadcrumb clean install is missing ${className}`,
+				`Feature breadcrumb clean install is missing ${className}`
 			);
 		}
 	}
 	if (featureBreadcrumb.includes("bg-snapp-surface-transparent")) {
 		throw new Error(
-			"Feature breadcrumb clean install uses the 30% transparent surface token",
+			"Feature breadcrumb clean install uses the 30% transparent surface token"
 		);
 	}
 
@@ -481,38 +557,122 @@ try {
 			"components",
 			"snapp",
 			"catalogue",
-			"help-article-accordion.tsx",
+			"help-article-accordion.tsx"
 		),
-		"utf8",
+		"utf8"
 	);
 	if (
 		!helpAccordion.includes('ec:type="single"') &&
 		!helpAccordion.includes('type="single"')
 	) {
-		throw new Error("Help article accordion did not preserve single expansion");
+		throw new Error(
+			"Help article accordion did not preserve single expansion"
+		);
 	}
 	if (helpAccordion.includes("defaultValue={articles[0]")) {
-		throw new Error("Help article accordion must load collapsed by default");
+		throw new Error(
+			"Help article accordion must load collapsed by default"
+		);
 	}
 	if (
-		!helpAccordion.includes("ec:bg-transparent") ||
-		!helpAccordion.includes("ec:hover:bg-transparent")
+		!helpAccordion.includes('appearance="help-article"') ||
+		!(
+			await readFile(
+				path.join(sourceRoot, "components/ui/accordion.tsx"),
+				"utf8"
+			)
+		).includes("ec:hover:bg-transparent")
 	) {
 		throw new Error(
-			"Help article accordion must keep Figma-aligned transparent rows",
+			"Help article accordion must keep Figma-aligned transparent rows"
 		);
 	}
 
 	await execFileAsync(
 		process.execPath,
-		[path.join(fixtureRoot, "node_modules", "typescript", "bin", "tsc")],
-		{ cwd: fixtureRoot, timeout: 120_000 },
+		[
+			path.join(fixtureRoot, "node_modules/oxlint/bin/oxlint"),
+			"src/components/snapp",
+			"src/runtime",
+			"src/lib",
+			"src/hooks",
+		],
+		{ cwd: fixtureRoot, timeout: 180_000, maxBuffer: 4 * 1024 * 1024 }
+	);
+	await writeFile(
+		path.join(sourceRoot, "registry-api.ts"),
+		[
+			'import { FILTER_INTERACTION_ATTRIBUTE, isFilterInteraction, type AppliedFilter } from "@/components/snapp/filters/filter-controls";',
+			'import { FormIcon, formIconSources, type FormIconName } from "@/components/snapp/forms/figma-form-icons";',
+			'import { NavigationIcon, navigationAssets, type NavigationIconName } from "@/components/snapp/navigation/navigation-icons";',
+			"export const registryPublicApi = { FILTER_INTERACTION_ATTRIBUTE, isFilterInteraction, FormIcon, formIconSources, NavigationIcon, navigationAssets };",
+			"export type RegistryPublicTypes = AppliedFilter | FormIconName | NavigationIconName;",
+		].join("\n")
 	);
 	await execFileAsync(
 		process.execPath,
-		[path.join(fixtureRoot, "node_modules", "vite", "bin", "vite.js"), "build"],
-		{ cwd: fixtureRoot, timeout: 120_000 },
+		["scripts/snapp-registry-delivery.mjs", "--write"],
+		{ cwd: fixtureRoot }
 	);
+	await execFileAsync(
+		process.execPath,
+		["scripts/snapp-registry-delivery.mjs", "--check"],
+		{ cwd: fixtureRoot }
+	);
+	await execFileAsync(
+		process.execPath,
+		[
+			path.join(fixtureRoot, "node_modules/@biomejs/biome/bin/biome"),
+			"format",
+			"--write",
+			"src/main.tsx",
+			"src/index.css",
+			"src/registry-api.ts",
+		],
+		{ cwd: fixtureRoot, timeout: 120_000 }
+	);
+	await execFileAsync(
+		process.execPath,
+		[
+			path.join(fixtureRoot, "node_modules/@biomejs/biome/bin/biome"),
+			"lint",
+			"src/components",
+			"src/lib",
+			"src/runtime",
+			"src/hooks",
+			"scripts",
+		],
+		{ cwd: fixtureRoot, timeout: 120_000 }
+	);
+	await execFileAsync(
+		process.execPath,
+		[
+			path.join(fixtureRoot, "node_modules/@biomejs/biome/bin/biome"),
+			"format",
+			"src",
+			"scripts",
+		],
+		{ cwd: fixtureRoot, timeout: 120_000 }
+	);
+	await execFileAsync(
+		process.execPath,
+		[path.join(fixtureRoot, "node_modules", "typescript", "bin", "tsc")],
+		{ cwd: fixtureRoot, timeout: 120_000 }
+	);
+	const productionBuild = await execFileAsync(
+		process.execPath,
+		[
+			path.join(fixtureRoot, "node_modules", "vite", "bin", "vite.js"),
+			"build",
+		],
+		{ cwd: fixtureRoot, timeout: 120_000 }
+	);
+	if (/Invalid value in attribute selector/.test(productionBuild.stderr)) {
+		throw new Error(
+			"Registry installation produced invalid CSS attribute selectors:\n" +
+				productionBuild.stderr
+		);
+	}
 
 	const distFiles = await readdir(path.join(fixtureRoot, "dist"), {
 		recursive: true,
@@ -522,8 +682,8 @@ try {
 			distFiles
 				.filter((fileName) => fileName.endsWith(".css"))
 				.map((fileName) =>
-					readFile(path.join(fixtureRoot, "dist", fileName), "utf8"),
-				),
+					readFile(path.join(fixtureRoot, "dist", fileName), "utf8")
+				)
 		)
 	).join("\n");
 	const compactCss = bundledCss.replace(/\s+/g, "");
@@ -541,34 +701,86 @@ try {
 		}
 	}
 	const bundledFontFiles = distFiles.filter((fileName) =>
-		/\.(woff2?|ttf)$/i.test(fileName),
+		/\.(woff2?|ttf)$/i.test(fileName)
 	);
-	if (bundledFontFiles.length !== 0) throw new Error('Fonts must remain self-contained data sources, not external emitted files.');
-	const embeddedFontHashes = new Set([...bundledCss.matchAll(/data:font\/(?:ttf|woff2);base64,([A-Za-z0-9+/=]+)/g)].map(match => createHash('sha256').update(Buffer.from(match[1], 'base64')).digest('hex')));
-	const fontManifest = JSON.parse(await readFile(path.join(registryRoot, 'docs/figma-library/font-manifest.json'), 'utf8'));
-	for (const face of fontManifest.faces) if (!embeddedFontHashes.has(face.sha256)) throw new Error('Production CSS did not preserve the exact font bytes: ' + face.family + ' ' + face.weight);
+	if (bundledFontFiles.length !== 0)
+		throw new Error(
+			"Fonts must remain self-contained data sources, not external emitted files."
+		);
+	const embeddedFontHashes = new Set(
+		[
+			...bundledCss.matchAll(
+				/data:font\/(?:ttf|woff2);base64,([A-Za-z0-9+/=]+)/g
+			),
+		].map((match) =>
+			createHash("sha256")
+				.update(Buffer.from(match[1], "base64"))
+				.digest("hex")
+		)
+	);
+	const fontManifest = JSON.parse(
+		await readFile(
+			path.join(registryRoot, "docs/figma-library/font-manifest.json"),
+			"utf8"
+		)
+	);
+	for (const face of fontManifest.faces)
+		if (!embeddedFontHashes.has(face.sha256))
+			throw new Error(
+				"Production CSS did not preserve the exact font bytes: " +
+					face.family +
+					" " +
+					face.weight
+			);
 
 	const keyboard = await execFileAsync(
 		process.execPath,
-		[path.join(registryRoot, "scripts/verify-tabs-keyboard-browser.mjs"), fixtureRoot],
+		[
+			path.join(registryRoot, "scripts/verify-tabs-keyboard-browser.mjs"),
+			fixtureRoot,
+		],
 		{
 			cwd: registryRoot,
 			timeout: 180_000,
 			maxBuffer: 4 * 1024 * 1024,
 			env: {
 				...process.env,
-				SNAPP_TABS_SOURCE: path.join(sourceRoot, "components/ui/tabs.tsx"),
-				SNAPP_TABS_QA_OUTPUT: path.join(registryRoot, "artifacts/figma-qa/installed-tabs-keyboard"),
+				SNAPP_TABS_SOURCE: path.join(
+					sourceRoot,
+					"components/ui/tabs.tsx"
+				),
+				SNAPP_TABS_QA_OUTPUT: path.join(
+					registryRoot,
+					"artifacts/figma-qa/installed-tabs-keyboard"
+				),
 			},
-		},
+		}
 	);
 	console.log(keyboard.stdout.trim());
-	console.log("Clean consumer install, type-check, production build and Tabs keyboard checks passed.");
+	const sidebar = await execFileAsync(
+		process.execPath,
+		[
+			path.join(
+				registryRoot,
+				"scripts/verify-sidebar-isolation-browser.mjs"
+			),
+			fixtureRoot,
+		],
+		{
+			cwd: registryRoot,
+			timeout: 120_000,
+			maxBuffer: 4 * 1024 * 1024,
+		}
+	);
+	console.log(sidebar.stdout.trim());
+	console.log(
+		"Clean consumer install, both lint gates, formatting, type-check, production build, Tabs keyboard and sidebar isolation checks passed."
+	);
 } finally {
 	await server?.close();
 	const expectedPrefix = path.join(tmpdir(), "snapp-registry-smoke-");
-	if (process.env.SNAPP_KEEP_REGISTRY_FIXTURE === '1') {
-		console.log('SNAPP_REGISTRY_FIXTURE=' + fixtureRoot);
+	if (process.env.SNAPP_KEEP_REGISTRY_FIXTURE === "1") {
+		console.log("SNAPP_REGISTRY_FIXTURE=" + fixtureRoot);
 	} else if (fixtureRoot.startsWith(expectedPrefix)) {
 		await rm(fixtureRoot, { recursive: true, force: true });
 	}
