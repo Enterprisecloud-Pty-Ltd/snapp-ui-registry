@@ -35,7 +35,7 @@ function DataCellContent({
 			data-slot="snapp-data-cell-content"
 			className={cn(
 				"flex items-center gap-2 font-snapp-body text-snapp-sm leading-snapp-xs font-normal",
-				className,
+				className
 			)}
 			{...props}
 		>
@@ -55,7 +55,7 @@ function DataCellContent({
 						secondary === undefined || primarySizing === "fill"
 							? "min-w-0 flex-1"
 							: "shrink-0",
-						"text-snapp-text-primary",
+						"text-snapp-text-primary"
 					)}
 				>
 					{children}
@@ -67,7 +67,13 @@ function DataCellContent({
 				</span>
 			)}
 			{showChevron && (
-				<img src={chevron} alt="" width={16} height={16} className="shrink-0" />
+				<img
+					src={chevron}
+					alt=""
+					width={16}
+					height={16}
+					className="shrink-0"
+				/>
 			)}
 		</div>
 	);
@@ -110,14 +116,19 @@ function DataTable<T>({
 			<TableHeader>
 				<TableRow>
 					{columns.map((column) => (
-						<TableHead key={column.id} aria-sort={column.sortDirection}>
+						<TableHead
+							key={column.id}
+							aria-sort={column.sortDirection}
+						>
 							{column.onSort ? (
 								<button
 									type="button"
 									onClick={column.onSort}
 									className="flex w-full items-center gap-2.5 text-left focus-visible:outline-2 focus-visible:outline-snapp-border-highlight"
 								>
-									<span className="min-w-0 flex-1">{column.label}</span>
+									<span className="min-w-0 flex-1">
+										{column.label}
+									</span>
 									<img
 										src={arrowSort}
 										alt=""
@@ -133,19 +144,23 @@ function DataTable<T>({
 					))}
 				</TableRow>
 			</TableHeader>
-			<TableBody className="bg-transparent">
+			<TableBody appearance="catalogue">
 				{rows.map((row) => (
 					<TableRow key={getRowKey(row)}>
 						{columns.map((column) => (
-							<TableCell key={column.id} className="bg-transparent p-0">
-								<div className="bg-snapp-surface-primary p-2">{column.render(row)}</div>
+							<TableCell key={column.id} appearance="catalogue">
+								<div className="bg-snapp-surface-primary p-2">
+									{column.render(row)}
+								</div>
 							</TableCell>
 						))}
 					</TableRow>
 				))}
 				{rows.length === 0 && emptyMessage !== undefined && (
 					<TableRow>
-						<TableCell colSpan={columns.length}>{emptyMessage}</TableCell>
+						<TableCell colSpan={columns.length}>
+							{emptyMessage}
+						</TableCell>
 					</TableRow>
 				)}
 			</TableBody>

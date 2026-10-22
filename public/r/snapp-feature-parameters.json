@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/radix-nova/lib/feature-parameters.ts",
-      "content": "import { z } from \"zod\"\n\nconst booleanParameterSchema = z.enum([\"true\", \"false\"])\n\nfunction resolveBooleanParameter(\n  params: URLSearchParams,\n  name: string,\n  defaultValue = true,\n) {\n  const value = params.get(name)\n  if (value === null) return defaultValue\n\n  const result = booleanParameterSchema.safeParse(value.trim().toLowerCase())\n  return result.success ? result.data === \"true\" : defaultValue\n}\n\nfunction resolveShowNavBar(params: URLSearchParams) {\n  return resolveBooleanParameter(params, \"showNavBar\", true)\n}\n\nexport { resolveBooleanParameter, resolveShowNavBar }\n",
+      "content": "import { z } from \"zod\";\n\nconst booleanParameterSchema = z.enum([\"true\", \"false\"]);\n\nfunction resolveBooleanParameter(\n\tparams: URLSearchParams,\n\tname: string,\n\tdefaultValue = true\n) {\n\tconst value = params.get(name);\n\tif (value === null) return defaultValue;\n\n\tconst result = booleanParameterSchema.safeParse(value.trim().toLowerCase());\n\treturn result.success ? result.data === \"true\" : defaultValue;\n}\n\nfunction resolveShowNavBar(params: URLSearchParams) {\n\treturn resolveBooleanParameter(params, \"showNavBar\", true);\n}\n\nexport { resolveBooleanParameter, resolveShowNavBar };\n",
       "type": "registry:lib",
       "target": "@lib/snapp-feature-parameters.ts"
     }

@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -12,7 +12,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
 				data-slot="table"
 				className={cn(
 					"w-full border-collapse caption-bottom font-snapp-body text-snapp-sm leading-snapp-xs font-normal text-snapp-text-primary",
-					className,
+					className
 				)}
 				{...props}
 			/>
@@ -26,18 +26,26 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
 			data-slot="table-header"
 			className={cn(
 				"bg-snapp-surface-secondary text-snapp-text-brand",
-				className,
+				className
 			)}
 			{...props}
 		/>
 	);
 }
 
-function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
+function TableBody({
+	appearance = "default",
+	className,
+	...props
+}: React.ComponentProps<"tbody"> & { appearance?: "default" | "catalogue" }) {
 	return (
 		<tbody
 			data-slot="table-body"
-			className={cn("bg-snapp-surface-primary", className)}
+			className={cn(
+				"bg-snapp-surface-primary",
+				appearance === "catalogue" && "bg-transparent",
+				className
+			)}
 			{...props}
 		/>
 	);
@@ -49,7 +57,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
 			data-slot="table-footer"
 			className={cn(
 				"border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",
-				className,
+				className
 			)}
 			{...props}
 		/>
@@ -62,7 +70,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
 			data-slot="table-row"
 			className={cn(
 				"data-[state=selected]:bg-snapp-surface-secondary",
-				className,
+				className
 			)}
 			{...props}
 		/>
@@ -75,18 +83,26 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
 			data-slot="table-head"
 			className={cn(
 				"p-2 text-left align-middle font-normal text-snapp-text-brand",
-				className,
+				className
 			)}
 			{...props}
 		/>
 	);
 }
 
-function TableCell({ className, ...props }: React.ComponentProps<"td">) {
+function TableCell({
+	appearance = "default",
+	className,
+	...props
+}: React.ComponentProps<"td"> & { appearance?: "default" | "catalogue" }) {
 	return (
 		<td
 			data-slot="table-cell"
-			className={cn("p-2 align-middle", className)}
+			className={cn(
+				"p-2 align-middle",
+				appearance === "catalogue" && "bg-transparent p-0",
+				className
+			)}
 			{...props}
 		/>
 	);

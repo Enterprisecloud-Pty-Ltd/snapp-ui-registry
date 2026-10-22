@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/radix-nova/ui/spinner.tsx",
-      "content": "import { cn } from \"@/lib/utils\"\nimport { Loader2Icon } from \"lucide-react\"\n\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return (\n    <Loader2Icon data-slot=\"spinner\" role=\"status\" aria-label=\"Loading\" className={cn(\"size-4 animate-spin\", className)} {...props} />\n  )\n}\n\nexport { Spinner }\n",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Loader2Icon } from \"lucide-react\";\n\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n\treturn (\n\t\t<Loader2Icon\n\t\t\tdata-slot=\"spinner\"\n\t\t\trole=\"status\"\n\t\t\taria-label=\"Loading\"\n\t\t\tclassName={cn(\"size-4 animate-spin\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Spinner };\n",
       "type": "registry:ui",
       "target": "@ui/spinner.tsx"
     }

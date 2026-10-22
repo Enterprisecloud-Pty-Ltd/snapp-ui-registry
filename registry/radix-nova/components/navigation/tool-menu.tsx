@@ -31,8 +31,8 @@ function ToolMenu({
 	return (
 		<div
 			className={cn(
-				"flex min-h-13 w-full min-w-0 items-center gap-6 rounded-full bg-snapp-surface-primary p-2 font-sans text-sm leading-5 font-normal shadow-[0_4px_7.5px_#20232714]",
-				className,
+				"flex min-h-13 w-full min-w-0 items-center gap-6 rounded-full bg-snapp-surface-primary p-2 font-sans text-sm leading-5 font-normal shadow-snapp-achievement",
+				className
 			)}
 			data-slot="snapp-tool-menu"
 			{...props}
@@ -41,7 +41,9 @@ function ToolMenu({
 				<FeatureBreadcrumb items={items} />
 			</div>
 			{date != null ? (
-				<span className="shrink-0 px-3 text-snapp-text-secondary">{date}</span>
+				<span className="shrink-0 px-3 text-snapp-text-secondary">
+					{date}
+				</span>
 			) : null}
 			{searchProps === false ? null : (
 				<NavigationSearch

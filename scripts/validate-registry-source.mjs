@@ -4,20 +4,27 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
-const registryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const registryRoot = path.resolve(
+	path.dirname(fileURLToPath(import.meta.url)),
+	".."
+);
 const registry = JSON.parse(
-	await readFile(path.join(registryRoot, "registry.json"), "utf8"),
+	await readFile(path.join(registryRoot, "registry.json"), "utf8")
 );
 const errors = [];
 const itemsByName = new Map();
 const localDependencyName = (dependency) =>
-	dependency.startsWith("@snapp/") ? dependency.slice("@snapp/".length) : null;
+	dependency.startsWith("@snapp/")
+		? dependency.slice("@snapp/".length)
+		: null;
 const forbiddenHostRuntimeMarkers = [
 	"data-snapp-host-context",
 	"getSnappHostContext",
 	"installSnappHostContextBridge",
 	"snapp.host.",
 	"sessionStorage",
+	"localStorage",
+	"document.cookie",
 ];
 
 for (const item of registry.items) {
@@ -32,12 +39,14 @@ for (const item of registry.items) {
 		const localName = localDependencyName(dependency);
 		if (!localName) {
 			errors.push(
-				`${item.name} has unqualified registry dependency ${dependency}`,
+				`${item.name} has unqualified registry dependency ${dependency}`
 			);
 			continue;
 		}
 		if (!itemsByName.has(localName)) {
-			errors.push(`${item.name} references missing registry item ${dependency}`);
+			errors.push(
+				`${item.name} references missing registry item ${dependency}`
+			);
 		}
 		if (localName === "utils") {
 			errors.push(`${item.name} still references the default utils item`);
@@ -64,7 +73,7 @@ for (const item of registry.items) {
 		for (const marker of forbiddenHostRuntimeMarkers) {
 			if (content.includes(marker)) {
 				errors.push(
-					`${item.name} owns host runtime marker ${marker}; inject host state from the consuming app instead`,
+					`${item.name} owns host runtime marker ${marker}; inject host state from the consuming app instead`
 				);
 			}
 		}
@@ -77,23 +86,46 @@ if (!utilityItem) {
 } else {
 	const utilitySource = await readFile(
 		path.join(registryRoot, utilityItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
-	let executable = ts.transpileModule(utilitySource, {compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
-	for (const dependency of ['clsx','tailwind-merge']) executable = executable.replaceAll(`from "${dependency}"`, `from ${JSON.stringify(import.meta.resolve(dependency))}`);
-	const {cn} = await import('data:text/javascript;base64,' + Buffer.from(executable).toString('base64'));
+	let executable = ts.transpileModule(utilitySource, {
+		compilerOptions: {
+			module: ts.ModuleKind.ESNext,
+			target: ts.ScriptTarget.ES2022,
+		},
+	}).outputText;
+	for (const dependency of ["clsx", "tailwind-merge"])
+		executable = executable.replaceAll(
+			`from "${dependency}"`,
+			`from ${JSON.stringify(import.meta.resolve(dependency))}`
+		);
+	const { cn } = await import(
+		"data:text/javascript;base64," +
+			Buffer.from(executable).toString("base64")
+	);
 	const merged = cn(
-		"text-snapp-xs leading-snapp-xxs text-snapp-text-secondary",
+		"text-snapp-xs leading-snapp-xxs text-snapp-text-secondary"
 	);
 	if (
-		merged !==
-		"text-snapp-xs leading-snapp-xxs text-snapp-text-secondary"
+		merged !== "text-snapp-xs leading-snapp-xxs text-snapp-text-secondary"
 	) {
 		errors.push(`snapp-utils typography merge failed: ${merged}`);
 	}
-	for (const prefix of ['', 'ec:']) {
-		if (cn(prefix+'leading-snapp-xxs', prefix+'leading-[normal]') !== prefix+'leading-[normal]') errors.push('SNAPP line-height must yield to a later explicit normal line-height');
-		if (cn(prefix+'leading-5', prefix+'leading-snapp-xs') !== prefix+'leading-snapp-xs') errors.push('SNAPP line-height must replace an earlier scale line-height');
+	for (const prefix of ["", "ec:"]) {
+		if (
+			cn(prefix + "leading-snapp-xxs", prefix + "leading-[normal]") !==
+			prefix + "leading-[normal]"
+		)
+			errors.push(
+				"SNAPP line-height must yield to a later explicit normal line-height"
+			);
+		if (
+			cn(prefix + "leading-5", prefix + "leading-snapp-xs") !==
+			prefix + "leading-snapp-xs"
+		)
+			errors.push(
+				"SNAPP line-height must replace an earlier scale line-height"
+			);
 	}
 }
 
@@ -103,14 +135,14 @@ if (!skeletonItem) {
 } else {
 	if (
 		!(skeletonItem.registryDependencies ?? []).includes(
-			"@snapp/snapp-theme",
+			"@snapp/snapp-theme"
 		)
 	) {
 		errors.push("snapp-skeleton must install the SNAPP theme");
 	}
 	const skeletonSource = await readFile(
 		path.join(registryRoot, skeletonItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
 	for (const contract of [
 		"SkeletonGroup",
@@ -130,10 +162,10 @@ if (!uiFoundationItem) {
 	errors.push("Missing snapp-ui-foundation registry item");
 } else {
 	const foundationDependencies = new Set(
-		uiFoundationItem.registryDependencies ?? [],
+		uiFoundationItem.registryDependencies ?? []
 	);
 	for (const item of registry.items.filter(
-		(candidate) => candidate.type === "registry:ui",
+		(candidate) => candidate.type === "registry:ui"
 	)) {
 		const dependency = `@snapp/${item.name}`;
 		if (!foundationDependencies.has(dependency)) {
@@ -149,10 +181,7 @@ const themeItem = itemsByName.get("snapp-theme");
 if (!themeItem) {
 	errors.push("Missing snapp-theme registry item");
 }
-for (const fontPackage of [
-	"@fontsource/ibm-plex-sans",
-	"@fontsource/judson",
-]) {
+for (const fontPackage of ["@fontsource/ibm-plex-sans", "@fontsource/judson"]) {
 	if (!(themeItem?.dependencies ?? []).includes(fontPackage)) {
 		errors.push(`snapp-theme does not install ${fontPackage}`);
 	}
@@ -167,14 +196,14 @@ if (!themeItem?.css?.[fontImport]) {
 }
 
 const themeFile = themeItem?.files?.find(
-	(file) => file.target === "src/styles/snapp-theme.css",
+	(file) => file.target === "src/styles/snapp-theme.css"
 );
 if (!themeFile) {
 	errors.push("snapp-theme is missing the generated theme source file");
 } else {
 	const themeSource = await readFile(
 		path.join(registryRoot, themeFile.path),
-		"utf8",
+		"utf8"
 	);
 	for (const contract of [
 		'@custom-variant data-horizontal (&[data-orientation="horizontal"]);',
@@ -193,52 +222,106 @@ if (!themeFile) {
 }
 
 const fontFile = themeItem?.files?.find(
-	(file) => file.target === "src/styles/snapp-fonts.css",
+	(file) => file.target === "src/styles/snapp-fonts.css"
 );
 if (!fontFile) {
 	errors.push("snapp-theme is missing the ordered font source file");
 } else {
 	const fontSource = await readFile(
 		path.join(registryRoot, fontFile.path),
-		"utf8",
+		"utf8"
 	);
-	const manifest = JSON.parse(await readFile(path.join(registryRoot, "docs/figma-library/font-manifest.json"), "utf8"));
+	const manifest = JSON.parse(
+		await readFile(
+			path.join(registryRoot, "docs/figma-library/font-manifest.json"),
+			"utf8"
+		)
+	);
 	const embeddedFaces = new Map();
 	for (const match of fontSource.matchAll(/@font-face\s*\{([\s\S]*?)\}/g)) {
 		const body = match[1];
 		const family = body.match(/font-family:\s*["']([^"']+)["']/)?.[1];
 		const weight = Number(body.match(/font-weight:\s*(\d+)/)?.[1]);
 		const style = body.match(/font-style:\s*([^;\s]+)/)?.[1];
-		const source = body.match(/data:font\/(ttf|woff2);base64,([A-Za-z0-9+/=]+)/);
+		const source = body.match(
+			/data:font\/(ttf|woff2);base64,([A-Za-z0-9+/=]+)/
+		);
 		if (!family || !weight || style !== "normal" || !source) {
-			errors.push("snapp-fonts.css contains an incomplete or non-self-contained font face");
+			errors.push(
+				"snapp-fonts.css contains an incomplete or non-self-contained font face"
+			);
 			continue;
 		}
 		const key = `${family}/${weight}/${style}`;
-		if (embeddedFaces.has(key)) errors.push(`snapp-fonts.css contains duplicate face ${key}`);
+		if (embeddedFaces.has(key))
+			errors.push(`snapp-fonts.css contains duplicate face ${key}`);
 		const bytes = Buffer.from(source[2], "base64");
-		embeddedFaces.set(key, { bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex") });
+		embeddedFaces.set(key, {
+			bytes: bytes.length,
+			sha256: createHash("sha256").update(bytes).digest("hex"),
+		});
 	}
-	if (embeddedFaces.size !== manifest.faces.length) errors.push("snapp-fonts.css face count differs from the source font manifest");
+	if (embeddedFaces.size !== manifest.faces.length)
+		errors.push(
+			"snapp-fonts.css face count differs from the source font manifest"
+		);
 	for (const face of manifest.faces) {
 		const key = `${face.family}/${face.weight}/${face.style}`;
 		const embedded = embeddedFaces.get(key);
-		if (!embedded || embedded.bytes !== face.bytes || embedded.sha256 !== face.sha256) errors.push(`snapp-fonts.css does not preserve the exact font bytes for ${key}`);
+		if (
+			!embedded ||
+			embedded.bytes !== face.bytes ||
+			embedded.sha256 !== face.sha256
+		)
+			errors.push(
+				`snapp-fonts.css does not preserve the exact font bytes for ${key}`
+			);
 		const sourcePath = path.resolve(registryRoot, face.source);
 		if (!sourcePath.startsWith(`${registryRoot}${path.sep}`)) {
-			errors.push(`Font manifest source escapes the registry: ${face.source}`);
+			errors.push(
+				`Font manifest source escapes the registry: ${face.source}`
+			);
 			continue;
 		}
 		const bytes = await readFile(sourcePath);
-		if (bytes.length !== face.bytes || createHash("sha256").update(bytes).digest("hex") !== face.sha256) errors.push(`Font manifest source hash mismatch: ${face.source}`);
+		if (
+			bytes.length !== face.bytes ||
+			createHash("sha256").update(bytes).digest("hex") !== face.sha256
+		)
+			errors.push(`Font manifest source hash mismatch: ${face.source}`);
 	}
-	for (const required of ["Aptos/300/normal", "Aptos/400/normal", "Aptos/600/normal", "Aptos/700/normal", "Inter/400/normal", "Inter/500/normal", "IBM Plex Sans/400/normal", "IBM Plex Sans/700/normal"]) {
-		if (!embeddedFaces.has(required)) errors.push(`snapp-fonts.css is missing required face ${required}`);
+	for (const required of [
+		"Aptos/300/normal",
+		"Aptos/400/normal",
+		"Aptos/600/normal",
+		"Aptos/700/normal",
+		"Inter/400/normal",
+		"Inter/500/normal",
+		"IBM Plex Sans/400/normal",
+		"IBM Plex Sans/700/normal",
+	]) {
+		if (!embeddedFaces.has(required))
+			errors.push(`snapp-fonts.css is missing required face ${required}`);
 	}
-	if (/url\(\s*["']?(?:https?:|\.\.|\/)/i.test(fontSource)) errors.push("snapp-fonts.css must not depend on remote or filesystem font URLs");
-	for (const target of ["src/styles/licenses/inter-LICENSE.txt", "src/styles/licenses/ibm-plex-sans-LICENSE.txt", "src/styles/licenses/judson-LICENSE.txt", "src/styles/licenses/Microsoft Aptos Fonts EULA.rtf", "src/styles/licenses/README.md"]) {
-		const license = themeItem.files.find(file => file.target === target);
-		if (!license || !(await readFile(path.join(registryRoot, license.path))).length) errors.push(`snapp-theme must retain the nonempty font license ${target}`);
+	if (/url\(\s*["']?(?:https?:|\.\.|\/)/i.test(fontSource))
+		errors.push(
+			"snapp-fonts.css must not depend on remote or filesystem font URLs"
+		);
+	for (const target of [
+		"src/styles/licenses/inter-LICENSE.txt",
+		"src/styles/licenses/ibm-plex-sans-LICENSE.txt",
+		"src/styles/licenses/judson-LICENSE.txt",
+		"src/styles/licenses/Microsoft Aptos Fonts EULA.rtf",
+		"src/styles/licenses/README.md",
+	]) {
+		const license = themeItem.files.find((file) => file.target === target);
+		if (
+			!license ||
+			!(await readFile(path.join(registryRoot, license.path))).length
+		)
+			errors.push(
+				`snapp-theme must retain the nonempty font license ${target}`
+			);
 	}
 }
 
@@ -261,10 +344,13 @@ for (const requiredItem of [
 
 const filterControlsItem = itemsByName.get("snapp-filter-controls");
 if (filterControlsItem) {
-	const filterControlsSource = await readFile(
-		path.join(registryRoot, filterControlsItem.files[0].path),
-		"utf8",
-	);
+	const filterControlsSource = (
+		await Promise.all(
+			filterControlsItem.files.map((file) =>
+				readFile(path.join(registryRoot, file.path), "utf8")
+			)
+		)
+	).join("\n");
 	for (const contract of [
 		"data-snapp-filter-interaction",
 		"event.composedPath()",
@@ -277,7 +363,14 @@ if (filterControlsItem) {
 		"font-sans text-sm leading-5 font-normal",
 		"h-9",
 	]) {
-		if (!filterControlsSource.includes(contract)) {
+		if (
+			!filterControlsSource
+				.replace(
+					/event\s*\.\s*composedPath\s*\(\s*\)/g,
+					"event.composedPath()"
+				)
+				.includes(contract)
+		) {
 			errors.push(`snapp-filter-controls is missing ${contract}`);
 		}
 	}
@@ -287,7 +380,7 @@ const searchUtilitiesItem = itemsByName.get("snapp-search-utils");
 if (searchUtilitiesItem) {
 	const searchUtilitiesSource = await readFile(
 		path.join(registryRoot, searchUtilitiesItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
 	for (const contract of [
 		"function filterSearchCollection",
@@ -304,7 +397,7 @@ const comboboxItem = itemsByName.get("snapp-combobox");
 if (comboboxItem) {
 	const comboboxSource = await readFile(
 		path.join(registryRoot, comboboxItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
 	for (const contract of [
 		"trailingIcon?: React.ReactNode",
@@ -348,7 +441,7 @@ for (const portalItemName of [
 
 	const portalSource = await readFile(
 		path.join(registryRoot, portalItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
 	for (const contract of [
 		'from "@/runtime/PortalContainer"',
@@ -356,7 +449,9 @@ for (const portalItemName of [
 		"container={portalContainer ?? undefined}",
 	]) {
 		if (!portalSource.includes(contract)) {
-			errors.push(`${portalItemName} is missing portal contract ${contract}`);
+			errors.push(
+				`${portalItemName} is missing portal contract ${contract}`
+			);
 		}
 	}
 }
@@ -365,7 +460,7 @@ const buttonItem = itemsByName.get("snapp-button");
 if (buttonItem) {
 	const buttonSource = await readFile(
 		path.join(registryRoot, buttonItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
 	for (const contract of [
 		'"form-primary"',
@@ -393,39 +488,64 @@ if (buttonItem) {
 		"[&_svg:not([class*='size-'])]:size-4",
 	]) {
 		if (!buttonSource.includes(contract)) {
-			errors.push(`snapp-button overflow actions are missing ${contract}`);
+			errors.push(
+				`snapp-button overflow actions are missing ${contract}`
+			);
 		}
 	}
 }
 
 const helpArticleAccordionItem = itemsByName.get(
-	"snapp-help-article-accordion",
+	"snapp-help-article-accordion"
 );
 if (helpArticleAccordionItem) {
-	const helpArticleAccordionSource = await readFile(
+	const composition = await readFile(
 		path.join(registryRoot, helpArticleAccordionItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
+	if ((composition.match(/appearance="help-article"/g) ?? []).length !== 4) {
+		errors.push(
+			"Help articles must compose all four help-article primitive appearances"
+		);
+	}
+	const helpArticleAccordionSource =
+		composition +
+		(await readFile(
+			path.join(registryRoot, "registry/radix-nova/ui/accordion.tsx"),
+			"utf8"
+		));
 	if (helpArticleAccordionSource.includes("articles[0]")) {
 		errors.push(
-			"snapp-help-article-accordion must not expand the first article by default",
+			"snapp-help-article-accordion must not expand the first article by default"
 		);
 	}
 	for (const className of ["bg-transparent", "hover:bg-transparent"]) {
 		if (!helpArticleAccordionSource.includes(className)) {
-			errors.push(
-				`snapp-help-article-accordion is missing ${className}`,
-			);
+			errors.push(`snapp-help-article-accordion is missing ${className}`);
 		}
 	}
 }
 
 const featureBreadcrumbItem = itemsByName.get("snapp-feature-breadcrumb");
 if (featureBreadcrumbItem) {
-	const featureBreadcrumbSource = await readFile(
+	const composition = await readFile(
 		path.join(registryRoot, featureBreadcrumbItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
+	if (
+		(composition.match(/appearance="feature"/g) ?? []).length !== 2 ||
+		!composition.includes('"feature-current"')
+	) {
+		errors.push(
+			"Feature breadcrumbs must use the shared feature and current-page appearances"
+		);
+	}
+	const featureBreadcrumbSource =
+		composition +
+		(await readFile(
+			path.join(registryRoot, "registry/radix-nova/ui/breadcrumb.tsx"),
+			"utf8"
+		));
 	for (const className of [
 		"m-0",
 		"rounded-full bg-snapp-surface-secondary px-4 py-2",
@@ -438,7 +558,7 @@ if (featureBreadcrumbItem) {
 	}
 	if (featureBreadcrumbSource.includes("bg-snapp-surface-transparent")) {
 		errors.push(
-			"snapp-feature-breadcrumb still uses the 30% transparent surface token",
+			"snapp-feature-breadcrumb still uses the 30% transparent surface token"
 		);
 	}
 }
@@ -449,7 +569,7 @@ if (!landingCardItem) {
 } else {
 	const landingCardSource = await readFile(
 		path.join(registryRoot, landingCardItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
 	for (const className of [
 		"box-border",
@@ -467,10 +587,7 @@ if (!landingCardItem) {
 	}
 }
 
-for (const menuItemName of [
-	"snapp-context-menu",
-	"snapp-dropdown-menu",
-]) {
+for (const menuItemName of ["snapp-context-menu", "snapp-dropdown-menu"]) {
 	const menuItem = itemsByName.get(menuItemName);
 	if (!menuItem) {
 		errors.push(`Missing ${menuItemName} registry item`);
@@ -478,7 +595,7 @@ for (const menuItemName of [
 	}
 	const menuSource = await readFile(
 		path.join(registryRoot, menuItem.files[0].path),
-		"utf8",
+		"utf8"
 	);
 	for (const className of [
 		"w-52 min-w-52",
@@ -498,13 +615,15 @@ for (const menuItemName of [
 		"usePortalContainer",
 	]) {
 		if (!menuSource.includes(className)) {
-			errors.push(`${menuItemName} quick-actions is missing ${className}`);
+			errors.push(
+				`${menuItemName} quick-actions is missing ${className}`
+			);
 		}
 	}
 	for (const legacyClassName of ["rounded-none p-0"]) {
 		if (menuSource.includes(legacyClassName)) {
 			errors.push(
-				`${menuItemName} quick-actions still uses ${legacyClassName}`,
+				`${menuItemName} quick-actions still uses ${legacyClassName}`
 			);
 		}
 	}
@@ -517,5 +636,7 @@ if (errors.length > 0) {
 	}
 	process.exitCode = 1;
 } else {
-	console.log(`Registry source checks passed for ${registry.items.length} items.`);
+	console.log(
+		`Registry source checks passed for ${registry.items.length} items.`
+	);
 }

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-navigation-icon",
+  "title": "Navigation Icon",
+  "description": "Shared SNAPP component-library building block: Navigation Icon.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@snapp/snapp-navigation-icon-sources",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/navigation/navigation-icon.tsx",
+      "content": "import type * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport {\n\tnavigationAssets,\n\ttype NavigationIconName,\n} from \"./navigation-icon-sources\";\n\nfunction NavigationIcon({\n\tname,\n\tclassName,\n\t...props\n}: Omit<React.ComponentProps<\"span\">, \"children\"> & {\n\tname: NavigationIconName;\n}) {\n\treturn (\n\t\t<span\n\t\t\taria-hidden=\"true\"\n\t\t\tclassName={cn(\n\t\t\t\t\"inline-flex shrink-0 items-center justify-center\",\n\t\t\t\tclassName\n\t\t\t)}\n\t\t\tdata-slot=\"snapp-navigation-icon\"\n\t\t\t{...props}\n\t\t>\n\t\t\t<img\n\t\t\t\talt=\"\"\n\t\t\t\tclassName=\"block max-w-none shrink-0\"\n\t\t\t\tdraggable={false}\n\t\t\t\tsrc={navigationAssets[name]}\n\t\t\t/>\n\t\t</span>\n\t);\n}\n\nexport { NavigationIcon };\nexport type { NavigationIconName };\n",
+      "type": "registry:component",
+      "target": "@components/snapp/navigation/navigation-icon.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

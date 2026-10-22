@@ -28,11 +28,11 @@ function CatalogueCard({
 			data-slot="snapp-catalogue-card"
 			data-variant={variant}
 			className={cn(
-				"relative flex flex-col items-start gap-4 rounded-snapp-large text-left font-snapp-body font-normal drop-shadow-[0_4px_7.5px_rgba(32,35,39,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-border-highlight",
+				"relative flex flex-col items-start gap-4 rounded-snapp-large text-left font-snapp-body font-normal drop-shadow-snapp-inbox focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-border-highlight",
 				folder
 					? "h-41.5 w-60 justify-end overflow-hidden"
 					: "w-105 max-w-full bg-snapp-surface-primary p-6",
-				className,
+				className
 			)}
 			{...props}
 		>
@@ -59,13 +59,13 @@ function CatalogueCard({
 					"relative flex w-full flex-col items-start",
 					folder
 						? "h-35 rounded-snapp-large inset-ring-1 inset-ring-snapp-grey-150 bg-snapp-grey-0 p-6.25"
-						: "gap-2",
+						: "gap-2"
 				)}
 			>
 				<span
 					className={cn(
 						"flex w-full flex-col items-start",
-						folder ? "min-h-0 flex-1" : "shrink-0",
+						folder ? "min-h-0 flex-1" : "shrink-0"
 					)}
 				>
 					<span className="flex w-full items-end gap-2">

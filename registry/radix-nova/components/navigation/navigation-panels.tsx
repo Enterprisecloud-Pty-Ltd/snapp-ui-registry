@@ -1,7 +1,6 @@
 "use client";
 
-import type * as React from "react";
-import { cva } from "class-variance-authority";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
@@ -15,21 +14,27 @@ interface NavigationSearchProps
 	iconPosition?: "start" | "end";
 	rounded?: boolean;
 	inputClassName?: string;
+	inputAppearance?: React.ComponentProps<typeof Input>["appearance"];
 }
 
 function NavigationSearch({
+	id,
 	className,
 	inputClassName,
+	inputAppearance = "navigation",
 	iconPosition = "end",
 	rounded = false,
 	...props
 }: NavigationSearchProps) {
+	const generatedId = React.useId();
+	const inputId = id ?? generatedId;
 	return (
 		<label
+			htmlFor={inputId}
 			className={cn(
 				"flex h-10.25 w-full min-w-0 items-center gap-1 rounded-lg bg-snapp-surface-primary px-4 ring-1 ring-snapp-border-primary ring-inset focus-within:ring-2 focus-within:ring-snapp-border-highlight",
 				rounded && "h-auto gap-3 rounded-full py-2",
-				className,
+				className
 			)}
 			data-slot="snapp-navigation-search"
 		>
@@ -37,16 +42,17 @@ function NavigationSearch({
 				<NavigationIcon name="treeMenuSearch" />
 			) : null}
 			<Input
+				id={inputId}
 				aria-label="Search"
-				className={cn(
-					"h-5 min-w-0 flex-1 rounded-none border-0 bg-transparent p-0 font-sans text-sm leading-5 font-normal text-snapp-text-primary shadow-none placeholder:text-snapp-text-secondary focus-visible:ring-0",
-					inputClassName,
-				)}
+				appearance={inputAppearance}
+				className={inputClassName}
 				placeholder="Search"
 				type="search"
 				{...props}
 			/>
-			{iconPosition === "end" ? <NavigationIcon name="treeMenuSearch" /> : null}
+			{iconPosition === "end" ? (
+				<NavigationIcon name="treeMenuSearch" />
+			) : null}
 		</label>
 	);
 }
@@ -60,8 +66,6 @@ interface NavigationPanelProps
 	filters?: React.ReactNode;
 	onCollapse?: () => void;
 }
-
-const treeMenuSearchInput = cva("placeholder:text-snapp-text-soft");
 
 function NavigationPanel({
 	title,
@@ -78,7 +82,7 @@ function NavigationPanel({
 		<aside
 			className={cn(
 				"relative flex h-full min-h-0 w-134.25 max-w-full flex-col gap-3 overflow-hidden after:absolute after:inset-y-0 after:right-0 after:w-px after:bg-snapp-border-primary bg-snapp-surface-primary font-sans text-sm leading-5 font-normal text-snapp-text-brand",
-				className,
+				className
 			)}
 			data-slot="snapp-navigation-panel"
 			{...props}
@@ -98,7 +102,9 @@ function NavigationPanel({
 				) : null}
 			</div>
 			<div className="flex min-h-0 flex-1 flex-col gap-3 overflow-auto px-4">
-				{searchProps === false ? null : <NavigationSearch {...searchProps} />}
+				{searchProps === false ? null : (
+					<NavigationSearch {...searchProps} />
+				)}
 				{filters}
 				{children}
 			</div>
@@ -121,7 +127,7 @@ function TreeMenu({
 		<aside
 			className={cn(
 				"relative flex h-full min-h-0 w-75 max-w-full flex-col gap-3 overflow-hidden after:absolute after:inset-y-0 after:right-0 after:w-px after:bg-snapp-border-primary bg-snapp-surface-primary px-4 py-3 font-sans text-sm leading-5 font-normal text-snapp-text-brand",
-				className,
+				className
 			)}
 			data-slot="snapp-tree-menu"
 			{...props}
@@ -146,14 +152,13 @@ function TreeMenu({
 				<NavigationSearch
 					iconPosition="start"
 					{...searchProps}
-					inputClassName={cn(
-						treeMenuSearchInput(),
-						searchProps?.inputClassName,
-					)}
+					inputAppearance="navigation-tree"
 				/>
 			)}
 			{filters}
-			<div className="min-h-0 w-full flex-1 overflow-auto">{children}</div>
+			<div className="min-h-0 w-full flex-1 overflow-auto">
+				{children}
+			</div>
 		</aside>
 	);
 }
@@ -209,7 +214,7 @@ function BrandedSidebar({
 		<aside
 			className={cn(
 				"flex h-full min-h-0 w-67 max-w-full flex-col gap-6 bg-snapp-surface-brand font-sans text-sm leading-5 font-normal text-snapp-text-invert",
-				className,
+				className
 			)}
 			data-slot="snapp-branded-sidebar"
 			{...props}
@@ -241,16 +246,19 @@ function BrandedSidebar({
 						<ul
 							className={cn(
 								"m-0 flex list-none flex-col gap-1 p-0",
-								group.itemGap === 8 && "gap-2",
+								group.itemGap === 8 && "gap-2"
 							)}
 						>
 							{group.items.map((item) => (
 								<li key={item.id}>
 									<button
-										aria-current={item.active ? "page" : undefined}
+										aria-current={
+											item.active ? "page" : undefined
+										}
 										className={cn(
 											"flex min-h-7 w-full items-center gap-2 rounded-sm px-2 py-1 text-left outline-none hover:bg-snapp-border-subtle focus-visible:ring-2 focus-visible:ring-snapp-border-accent disabled:opacity-50",
-											item.active && "bg-snapp-border-subtle",
+											item.active &&
+												"bg-snapp-border-subtle"
 										)}
 										disabled={item.disabled}
 										onClick={item.onSelect}
@@ -258,7 +266,9 @@ function BrandedSidebar({
 									>
 										{item.icon ??
 											(item.iconName ? (
-												<NavigationIcon name={item.iconName} />
+												<NavigationIcon
+													name={item.iconName}
+												/>
 											) : null)}
 										<span className="min-w-0 flex-1 truncate">
 											{item.label}
@@ -275,7 +285,7 @@ function BrandedSidebar({
 				{onSignOut ? (
 					<div className="flex h-15.5 items-center p-4">
 						<button
-							className="flex h-12 w-full items-center gap-2 rounded-[10px] p-3 text-left outline-none hover:bg-snapp-border-subtle focus-visible:ring-2 focus-visible:ring-snapp-border-accent"
+							className="flex h-12 w-full items-center gap-2 rounded-snapp-course-status p-3 text-left outline-none hover:bg-snapp-border-subtle focus-visible:ring-2 focus-visible:ring-snapp-border-accent"
 							onClick={onSignOut}
 							type="button"
 						>
@@ -347,7 +357,7 @@ function DynamicsMenu({
 							<span
 								className={cn(
 									"h-5 w-1 rounded-lg",
-									item.active && "bg-snapp-surface-accent",
+									item.active && "bg-snapp-surface-accent"
 								)}
 							/>
 						</span>
@@ -362,7 +372,7 @@ function DynamicsMenu({
 							<NavigationIcon
 								className={cn(
 									"transition-transform",
-									item.expanded && "rotate-180",
+									item.expanded && "rotate-180"
 								)}
 								name="dynamicsMenuChevron"
 							/>
@@ -377,7 +387,7 @@ function DynamicsMenu({
 			aria-label="Dynamics navigation"
 			className={cn(
 				"relative flex h-full min-h-0 w-50.25 shrink-0 flex-col gap-6 overflow-y-auto bg-snapp-surface-primary pt-3.5 pr-0.5 ring-1 ring-snapp-border-primary ring-inset after:absolute after:inset-y-0 after:right-0 after:w-px after:bg-snapp-border-primary font-sans text-sm leading-5 text-snapp-text-primary",
-				className,
+				className
 			)}
 			data-slot="snapp-dynamics-menu"
 			{...props}
@@ -399,7 +409,7 @@ function DynamicsMenu({
 			{groups.map((group) => (
 				<section className="flex flex-col gap-2" key={group.id}>
 					{group.label ? (
-						<h2 className="m-0 px-3.5 font-sans text-sm leading-[normal] font-bold">
+						<h2 className="m-0 px-3.5 font-sans text-sm leading-snapp-normal font-bold">
 							{group.label}
 						</h2>
 					) : null}
@@ -415,7 +425,7 @@ function SideMenu({ className, ...props }: React.ComponentProps<"div">) {
 		<div
 			className={cn(
 				"flex h-full min-h-0 min-w-0 items-stretch bg-snapp-surface-primary ring-1 ring-snapp-border-primary ring-inset *:data-[slot=snapp-navigation-panel]:w-71 *:data-[slot=snapp-navigation-panel]:shrink-0 [&>[data-slot=snapp-navigation-panel]+[data-slot=snapp-navigation-panel]]:ml-px",
-				className,
+				className
 			)}
 			data-slot="snapp-side-menu"
 			{...props}

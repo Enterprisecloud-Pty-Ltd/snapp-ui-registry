@@ -1,850 +1,798 @@
 {
-  "profile": {
-    "version": 1,
-    "figmaPrecision": 1024,
-    "unitsPerEm": 2048,
-    "rounding": "half-toward-positive-infinity"
-  },
-  "faces": [
-    {
-      "family": "Aptos",
-      "weight": 300,
-      "style": "normal",
-      "original": {
-        "path": "registry/radix-nova/fonts/aptos/Aptos-Light.ttf",
-        "sha256": "e38fc1bef9b7e971bfdfdba4897abe72ef9bd72182b8ad9d463e11307a802b54",
-        "bytes": 233944
-      },
-      "delivery": {
-        "path": "registry/radix-nova/fonts/aptos/prepared/Aptos-Light.ttf",
-        "sha256": "6de8663653bd7e2a8462e8308bf50ffd79b8c2a12712a615130d33b75569022e",
-        "bytes": 233944
-      },
-      "quantizedFields": {
-        "hmtxAdvances": 572,
-        "gposValues": 960,
-        "anchorX": 225,
-        "anchorY": 171,
-        "legacyKern": 4692
-      },
-      "preservedTables": [
-        {
-          "tag": "GDEF",
-          "sha256": "32467bce47d910824b128aa4567e5785bba8c204b82b85579c442e8581fbcf80"
-        },
-        {
-          "tag": "GSUB",
-          "sha256": "e6aa0ec3b096dee8e3841a40f32c9b557a1cc1f1bba6ed2f5d44e867aeaca14e"
-        },
-        {
-          "tag": "OS/2",
-          "sha256": "9f231db8c9cfa7bf760eca14d911e4a76fd457c00277d4c60ba1e121bec0583b"
-        },
-        {
-          "tag": "STAT",
-          "sha256": "c1ee8f2da07c6f4df17ac7699858512bb48a51d78d260e1332ce13db54470209"
-        },
-        {
-          "tag": "cmap",
-          "sha256": "f1e3361ff5c24843fb021b9ce9143957244a9a94d9f219becd1ac21a6d5bf08d"
-        },
-        {
-          "tag": "cvt ",
-          "sha256": "737e31051aa589abdebee95ff185ae2918b436ae820391763ad02e284193323f"
-        },
-        {
-          "tag": "fpgm",
-          "sha256": "75acdcc28a4eee646b65bd5027d6a8c93efb2604c7cd990ade01bd810e512151"
-        },
-        {
-          "tag": "gasp",
-          "sha256": "1acea18a3ce4369c7f1bb27f8c825831793f6ba0f6ca6607453d240e5d27a732"
-        },
-        {
-          "tag": "glyf",
-          "sha256": "852b242f24a76451c21644020d2e4923d730807cf1c01422e62910fe322c157c"
-        },
-        {
-          "tag": "loca",
-          "sha256": "abc8b46acb4f1c12d839a86d22669c9b687c4509bd7e9ebf37cf70fde8b24c7e"
-        },
-        {
-          "tag": "maxp",
-          "sha256": "52d74c3010ee0f76af4650550a3af6552046d1b835e68cb1a98c037c4e897358"
-        },
-        {
-          "tag": "meta",
-          "sha256": "04b72098958d85bee9a66caec530f16f772e913c60a086ec52349bd74000b35c"
-        },
-        {
-          "tag": "name",
-          "sha256": "84d0ed6d599614621b3da64071cb6f664e054c09216ac3bbe7956e9eee4d1cc0"
-        },
-        {
-          "tag": "post",
-          "sha256": "4fdc83d5e42fe44650fe86f15a645d5cc926d07355ba945e1ede42737607bf83"
-        },
-        {
-          "tag": "prep",
-          "sha256": "2b0f6f6bd7d401535c54b0c2810391c43dd2ba2272e68e87a04327ebf29ef169"
-        }
-      ],
-      "outlineProof": {
-        "glyfUnchanged": true,
-        "locaUnchanged": true,
-        "gsubUnchanged": true,
-        "cmapUnchanged": true,
-        "nameUnchanged": true
-      },
-      "formatCoverage": {
-        "lookupTypes": [
-          2,
-          4,
-          5,
-          6
-        ],
-        "pairFormats": [
-          1,
-          2
-        ],
-        "valueFormats": [
-          0,
-          4
-        ],
-        "anchorFormats": [
-          1
-        ],
-        "anchors": 423,
-        "anchorKinds": {
-          "mark": 9,
-          "base": 394,
-          "ligatureComponent": 7,
-          "mark2": 13
-        },
-        "deviceReferences": 0,
-        "cursiveLookups": 0,
-        "verticalMetricsPresent": false,
-        "legacyKernPairs": 10897,
-        "legacyKernLengthWrapRetained": false
-      },
-      "checksum": {
-        "wholeFont": "0xb1b0afba",
-        "allTablesValid": true,
-        "tables": [
-          {
-            "tag": "GDEF",
-            "valid": true
-          },
-          {
-            "tag": "GPOS",
-            "valid": true
-          },
-          {
-            "tag": "GSUB",
-            "valid": true
-          },
-          {
-            "tag": "OS/2",
-            "valid": true
-          },
-          {
-            "tag": "STAT",
-            "valid": true
-          },
-          {
-            "tag": "cmap",
-            "valid": true
-          },
-          {
-            "tag": "cvt ",
-            "valid": true
-          },
-          {
-            "tag": "fpgm",
-            "valid": true
-          },
-          {
-            "tag": "gasp",
-            "valid": true
-          },
-          {
-            "tag": "glyf",
-            "valid": true
-          },
-          {
-            "tag": "head",
-            "valid": true
-          },
-          {
-            "tag": "hhea",
-            "valid": true
-          },
-          {
-            "tag": "hmtx",
-            "valid": true
-          },
-          {
-            "tag": "kern",
-            "valid": true
-          },
-          {
-            "tag": "loca",
-            "valid": true
-          },
-          {
-            "tag": "maxp",
-            "valid": true
-          },
-          {
-            "tag": "meta",
-            "valid": true
-          },
-          {
-            "tag": "name",
-            "valid": true
-          },
-          {
-            "tag": "post",
-            "valid": true
-          },
-          {
-            "tag": "prep",
-            "valid": true
-          }
-        ]
-      }
-    },
-    {
-      "family": "Aptos",
-      "weight": 400,
-      "style": "normal",
-      "original": {
-        "path": "registry/radix-nova/fonts/aptos/Aptos.ttf",
-        "sha256": "b46c7865bdecc68d7d82075a2d1e93e31cb73146eae6740bc7c090c8d0b2842a",
-        "bytes": 235288
-      },
-      "delivery": {
-        "path": "registry/radix-nova/fonts/aptos/prepared/Aptos.ttf",
-        "sha256": "c312aa2f557c09c69b55127bfd4934fa5a718594f69323adbe4374a869b739fc",
-        "bytes": 235288
-      },
-      "quantizedFields": {
-        "hmtxAdvances": 524,
-        "gposValues": 1192,
-        "anchorX": 235,
-        "anchorY": 151,
-        "legacyKern": 5132
-      },
-      "preservedTables": [
-        {
-          "tag": "GDEF",
-          "sha256": "32467bce47d910824b128aa4567e5785bba8c204b82b85579c442e8581fbcf80"
-        },
-        {
-          "tag": "GSUB",
-          "sha256": "e6aa0ec3b096dee8e3841a40f32c9b557a1cc1f1bba6ed2f5d44e867aeaca14e"
-        },
-        {
-          "tag": "OS/2",
-          "sha256": "15209f63ebf57839fca71b469df7ee45cbda4efebb6c9d8a87fa115ddb49b3eb"
-        },
-        {
-          "tag": "STAT",
-          "sha256": "e6257468317241a6a50f76af8a541ad9f88400ca6d53a477311a9f81970ef657"
-        },
-        {
-          "tag": "cmap",
-          "sha256": "f1e3361ff5c24843fb021b9ce9143957244a9a94d9f219becd1ac21a6d5bf08d"
-        },
-        {
-          "tag": "cvt ",
-          "sha256": "d912883288379c873f467ac1c4baba266ba68852ec362bc3cc488359314cfc18"
-        },
-        {
-          "tag": "fpgm",
-          "sha256": "75acdcc28a4eee646b65bd5027d6a8c93efb2604c7cd990ade01bd810e512151"
-        },
-        {
-          "tag": "gasp",
-          "sha256": "1acea18a3ce4369c7f1bb27f8c825831793f6ba0f6ca6607453d240e5d27a732"
-        },
-        {
-          "tag": "glyf",
-          "sha256": "6d0e680745e3d444da8c7cee67f176aeaad08d07dfec7eb44122af7833a01f54"
-        },
-        {
-          "tag": "hhea",
-          "sha256": "1cd0197a134da6a21c7e77fabd5b8ab3c96b8d2652232ad475100774537e0b04"
-        },
-        {
-          "tag": "loca",
-          "sha256": "c5a464f3e258bc067713d79131f490d733f64866cac4a007340768718da86b3c"
-        },
-        {
-          "tag": "maxp",
-          "sha256": "52d74c3010ee0f76af4650550a3af6552046d1b835e68cb1a98c037c4e897358"
-        },
-        {
-          "tag": "meta",
-          "sha256": "04b72098958d85bee9a66caec530f16f772e913c60a086ec52349bd74000b35c"
-        },
-        {
-          "tag": "name",
-          "sha256": "83f396bad70f4e3077f31b9ac525b4482986c2033399376429e4cb04f8175e8f"
-        },
-        {
-          "tag": "post",
-          "sha256": "4fdc83d5e42fe44650fe86f15a645d5cc926d07355ba945e1ede42737607bf83"
-        },
-        {
-          "tag": "prep",
-          "sha256": "2b0f6f6bd7d401535c54b0c2810391c43dd2ba2272e68e87a04327ebf29ef169"
-        }
-      ],
-      "outlineProof": {
-        "glyfUnchanged": true,
-        "locaUnchanged": true,
-        "gsubUnchanged": true,
-        "cmapUnchanged": true,
-        "nameUnchanged": true
-      },
-      "formatCoverage": {
-        "lookupTypes": [
-          2,
-          4,
-          5,
-          6
-        ],
-        "pairFormats": [
-          1,
-          2
-        ],
-        "valueFormats": [
-          0,
-          4
-        ],
-        "anchorFormats": [
-          1
-        ],
-        "anchors": 465,
-        "anchorKinds": {
-          "mark": 9,
-          "base": 433,
-          "ligatureComponent": 6,
-          "mark2": 17
-        },
-        "deviceReferences": 0,
-        "cursiveLookups": 0,
-        "verticalMetricsPresent": false,
-        "legacyKernPairs": 11108,
-        "legacyKernLengthWrapRetained": true
-      },
-      "checksum": {
-        "wholeFont": "0xb1b0afba",
-        "allTablesValid": true,
-        "tables": [
-          {
-            "tag": "GDEF",
-            "valid": true
-          },
-          {
-            "tag": "GPOS",
-            "valid": true
-          },
-          {
-            "tag": "GSUB",
-            "valid": true
-          },
-          {
-            "tag": "OS/2",
-            "valid": true
-          },
-          {
-            "tag": "STAT",
-            "valid": true
-          },
-          {
-            "tag": "cmap",
-            "valid": true
-          },
-          {
-            "tag": "cvt ",
-            "valid": true
-          },
-          {
-            "tag": "fpgm",
-            "valid": true
-          },
-          {
-            "tag": "gasp",
-            "valid": true
-          },
-          {
-            "tag": "glyf",
-            "valid": true
-          },
-          {
-            "tag": "head",
-            "valid": true
-          },
-          {
-            "tag": "hhea",
-            "valid": true
-          },
-          {
-            "tag": "hmtx",
-            "valid": true
-          },
-          {
-            "tag": "kern",
-            "valid": true
-          },
-          {
-            "tag": "loca",
-            "valid": true
-          },
-          {
-            "tag": "maxp",
-            "valid": true
-          },
-          {
-            "tag": "meta",
-            "valid": true
-          },
-          {
-            "tag": "name",
-            "valid": true
-          },
-          {
-            "tag": "post",
-            "valid": true
-          },
-          {
-            "tag": "prep",
-            "valid": true
-          }
-        ]
-      }
-    },
-    {
-      "family": "Aptos",
-      "weight": 600,
-      "style": "normal",
-      "original": {
-        "path": "registry/radix-nova/fonts/aptos/Aptos-SemiBold.ttf",
-        "sha256": "b69e74cd43331c68cc8a4e82acc70dc5fe183524fe6e28d0da5e209b0ccd9f3d",
-        "bytes": 235476
-      },
-      "delivery": {
-        "path": "registry/radix-nova/fonts/aptos/prepared/Aptos-SemiBold.ttf",
-        "sha256": "b07d18c67370e7bbabc9ed59d7aea4145e279c952a96c4e69a95286639a86d5c",
-        "bytes": 235476
-      },
-      "quantizedFields": {
-        "hmtxAdvances": 574,
-        "gposValues": 1113,
-        "anchorX": 212,
-        "anchorY": 237,
-        "legacyKern": 5206
-      },
-      "preservedTables": [
-        {
-          "tag": "GDEF",
-          "sha256": "32467bce47d910824b128aa4567e5785bba8c204b82b85579c442e8581fbcf80"
-        },
-        {
-          "tag": "GSUB",
-          "sha256": "e6aa0ec3b096dee8e3841a40f32c9b557a1cc1f1bba6ed2f5d44e867aeaca14e"
-        },
-        {
-          "tag": "OS/2",
-          "sha256": "a6eb6b3314bb8af6a5424fc933299a8fb853d5607f4b2233afe86273b6909d0e"
-        },
-        {
-          "tag": "STAT",
-          "sha256": "4c67e6851f3795149cbf7b15cdcf355722ba2e1f5b59519a3c149370243b9f74"
-        },
-        {
-          "tag": "cmap",
-          "sha256": "f1e3361ff5c24843fb021b9ce9143957244a9a94d9f219becd1ac21a6d5bf08d"
-        },
-        {
-          "tag": "cvt ",
-          "sha256": "6be4aff3065126db2ac7b2acbeb213b7064ece570eaac7a8b971480bd878a0ee"
-        },
-        {
-          "tag": "fpgm",
-          "sha256": "75acdcc28a4eee646b65bd5027d6a8c93efb2604c7cd990ade01bd810e512151"
-        },
-        {
-          "tag": "gasp",
-          "sha256": "1acea18a3ce4369c7f1bb27f8c825831793f6ba0f6ca6607453d240e5d27a732"
-        },
-        {
-          "tag": "glyf",
-          "sha256": "e14f88204699c46bdbf29ae8b7f72917074df77380097fb39f16a8f5e7e4a16a"
-        },
-        {
-          "tag": "loca",
-          "sha256": "49003957b652caf159f3d6bfbadfbaffd7b9f1f3fc12d97bbc564b72faa6c77f"
-        },
-        {
-          "tag": "maxp",
-          "sha256": "52d74c3010ee0f76af4650550a3af6552046d1b835e68cb1a98c037c4e897358"
-        },
-        {
-          "tag": "meta",
-          "sha256": "04b72098958d85bee9a66caec530f16f772e913c60a086ec52349bd74000b35c"
-        },
-        {
-          "tag": "name",
-          "sha256": "e84cab47333b923be6f839f6a4ab14132ee58bbf3975628ebb40aeef8c16f8d2"
-        },
-        {
-          "tag": "post",
-          "sha256": "4fdc83d5e42fe44650fe86f15a645d5cc926d07355ba945e1ede42737607bf83"
-        },
-        {
-          "tag": "prep",
-          "sha256": "2b0f6f6bd7d401535c54b0c2810391c43dd2ba2272e68e87a04327ebf29ef169"
-        }
-      ],
-      "outlineProof": {
-        "glyfUnchanged": true,
-        "locaUnchanged": true,
-        "gsubUnchanged": true,
-        "cmapUnchanged": true,
-        "nameUnchanged": true
-      },
-      "formatCoverage": {
-        "lookupTypes": [
-          2,
-          4,
-          5,
-          6
-        ],
-        "pairFormats": [
-          1,
-          2
-        ],
-        "valueFormats": [
-          0,
-          4
-        ],
-        "anchorFormats": [
-          1
-        ],
-        "anchors": 454,
-        "anchorKinds": {
-          "mark": 10,
-          "base": 421,
-          "ligatureComponent": 7,
-          "mark2": 16
-        },
-        "deviceReferences": 0,
-        "cursiveLookups": 0,
-        "verticalMetricsPresent": false,
-        "legacyKernPairs": 11110,
-        "legacyKernLengthWrapRetained": true
-      },
-      "checksum": {
-        "wholeFont": "0xb1b0afba",
-        "allTablesValid": true,
-        "tables": [
-          {
-            "tag": "GDEF",
-            "valid": true
-          },
-          {
-            "tag": "GPOS",
-            "valid": true
-          },
-          {
-            "tag": "GSUB",
-            "valid": true
-          },
-          {
-            "tag": "OS/2",
-            "valid": true
-          },
-          {
-            "tag": "STAT",
-            "valid": true
-          },
-          {
-            "tag": "cmap",
-            "valid": true
-          },
-          {
-            "tag": "cvt ",
-            "valid": true
-          },
-          {
-            "tag": "fpgm",
-            "valid": true
-          },
-          {
-            "tag": "gasp",
-            "valid": true
-          },
-          {
-            "tag": "glyf",
-            "valid": true
-          },
-          {
-            "tag": "head",
-            "valid": true
-          },
-          {
-            "tag": "hhea",
-            "valid": true
-          },
-          {
-            "tag": "hmtx",
-            "valid": true
-          },
-          {
-            "tag": "kern",
-            "valid": true
-          },
-          {
-            "tag": "loca",
-            "valid": true
-          },
-          {
-            "tag": "maxp",
-            "valid": true
-          },
-          {
-            "tag": "meta",
-            "valid": true
-          },
-          {
-            "tag": "name",
-            "valid": true
-          },
-          {
-            "tag": "post",
-            "valid": true
-          },
-          {
-            "tag": "prep",
-            "valid": true
-          }
-        ]
-      }
-    },
-    {
-      "family": "Aptos",
-      "weight": 700,
-      "style": "normal",
-      "original": {
-        "path": "registry/radix-nova/fonts/aptos/Aptos-Bold.ttf",
-        "sha256": "e59d983f8752146b8d02df5cad8f545ce677ef71dbe113afa3b395a9088c7f53",
-        "bytes": 235860
-      },
-      "delivery": {
-        "path": "registry/radix-nova/fonts/aptos/prepared/Aptos-Bold.ttf",
-        "sha256": "7cf7ef8cb53102f354ae97fd5a15e58c758359664f527aa4f3be9a362a85eb7d",
-        "bytes": 235860
-      },
-      "quantizedFields": {
-        "hmtxAdvances": 520,
-        "gposValues": 1214,
-        "anchorX": 249,
-        "anchorY": 147,
-        "legacyKern": 5460
-      },
-      "preservedTables": [
-        {
-          "tag": "GDEF",
-          "sha256": "32467bce47d910824b128aa4567e5785bba8c204b82b85579c442e8581fbcf80"
-        },
-        {
-          "tag": "GSUB",
-          "sha256": "e6aa0ec3b096dee8e3841a40f32c9b557a1cc1f1bba6ed2f5d44e867aeaca14e"
-        },
-        {
-          "tag": "OS/2",
-          "sha256": "e1cc8c9dadda31f7e1cedb9dfb79f70ff7a6575301260005c8c3b0b003ec2bd0"
-        },
-        {
-          "tag": "STAT",
-          "sha256": "42dd9974d8e66070cc50a11d17caaeb705b57964b5987963af82b8d2777aed5b"
-        },
-        {
-          "tag": "cmap",
-          "sha256": "f1e3361ff5c24843fb021b9ce9143957244a9a94d9f219becd1ac21a6d5bf08d"
-        },
-        {
-          "tag": "cvt ",
-          "sha256": "5268effd39966921126d56fb6e25233a22b2bfa512808817946b7c2216c8d338"
-        },
-        {
-          "tag": "fpgm",
-          "sha256": "75acdcc28a4eee646b65bd5027d6a8c93efb2604c7cd990ade01bd810e512151"
-        },
-        {
-          "tag": "gasp",
-          "sha256": "1acea18a3ce4369c7f1bb27f8c825831793f6ba0f6ca6607453d240e5d27a732"
-        },
-        {
-          "tag": "glyf",
-          "sha256": "218690b92ec77611fe9bcca510c2e2598b07f872255f416cd73aa3f549891202"
-        },
-        {
-          "tag": "hhea",
-          "sha256": "b0606afb5bc8b265f1c54f503be23b67176fef2ccafadeaa3f202911a5f1e871"
-        },
-        {
-          "tag": "loca",
-          "sha256": "5e69278e71d1e3d538c38f775ca0a402dfa19e0adad4a0e80801f219602ef921"
-        },
-        {
-          "tag": "maxp",
-          "sha256": "52d74c3010ee0f76af4650550a3af6552046d1b835e68cb1a98c037c4e897358"
-        },
-        {
-          "tag": "meta",
-          "sha256": "04b72098958d85bee9a66caec530f16f772e913c60a086ec52349bd74000b35c"
-        },
-        {
-          "tag": "name",
-          "sha256": "89cfc5d0a7fe36090194f9898f5beda7f8fcabb656d62bcf106570ac50477aa3"
-        },
-        {
-          "tag": "post",
-          "sha256": "4fdc83d5e42fe44650fe86f15a645d5cc926d07355ba945e1ede42737607bf83"
-        },
-        {
-          "tag": "prep",
-          "sha256": "2b0f6f6bd7d401535c54b0c2810391c43dd2ba2272e68e87a04327ebf29ef169"
-        }
-      ],
-      "outlineProof": {
-        "glyfUnchanged": true,
-        "locaUnchanged": true,
-        "gsubUnchanged": true,
-        "cmapUnchanged": true,
-        "nameUnchanged": true
-      },
-      "formatCoverage": {
-        "lookupTypes": [
-          2,
-          4,
-          5,
-          6
-        ],
-        "pairFormats": [
-          1,
-          2
-        ],
-        "valueFormats": [
-          0,
-          4
-        ],
-        "anchorFormats": [
-          1
-        ],
-        "anchors": 449,
-        "anchorKinds": {
-          "mark": 10,
-          "base": 415,
-          "ligatureComponent": 7,
-          "mark2": 17
-        },
-        "deviceReferences": 0,
-        "cursiveLookups": 0,
-        "verticalMetricsPresent": false,
-        "legacyKernPairs": 11117,
-        "legacyKernLengthWrapRetained": true
-      },
-      "checksum": {
-        "wholeFont": "0xb1b0afba",
-        "allTablesValid": true,
-        "tables": [
-          {
-            "tag": "GDEF",
-            "valid": true
-          },
-          {
-            "tag": "GPOS",
-            "valid": true
-          },
-          {
-            "tag": "GSUB",
-            "valid": true
-          },
-          {
-            "tag": "OS/2",
-            "valid": true
-          },
-          {
-            "tag": "STAT",
-            "valid": true
-          },
-          {
-            "tag": "cmap",
-            "valid": true
-          },
-          {
-            "tag": "cvt ",
-            "valid": true
-          },
-          {
-            "tag": "fpgm",
-            "valid": true
-          },
-          {
-            "tag": "gasp",
-            "valid": true
-          },
-          {
-            "tag": "glyf",
-            "valid": true
-          },
-          {
-            "tag": "head",
-            "valid": true
-          },
-          {
-            "tag": "hhea",
-            "valid": true
-          },
-          {
-            "tag": "hmtx",
-            "valid": true
-          },
-          {
-            "tag": "kern",
-            "valid": true
-          },
-          {
-            "tag": "loca",
-            "valid": true
-          },
-          {
-            "tag": "maxp",
-            "valid": true
-          },
-          {
-            "tag": "meta",
-            "valid": true
-          },
-          {
-            "tag": "name",
-            "valid": true
-          },
-          {
-            "tag": "post",
-            "valid": true
-          },
-          {
-            "tag": "prep",
-            "valid": true
-          }
-        ]
-      }
-    }
-  ]
+	"profile": {
+		"version": 1,
+		"figmaPrecision": 1024,
+		"unitsPerEm": 2048,
+		"rounding": "half-toward-positive-infinity"
+	},
+	"faces": [
+		{
+			"family": "Aptos",
+			"weight": 300,
+			"style": "normal",
+			"original": {
+				"path": "registry/radix-nova/fonts/aptos/Aptos-Light.ttf",
+				"sha256": "e38fc1bef9b7e971bfdfdba4897abe72ef9bd72182b8ad9d463e11307a802b54",
+				"bytes": 233944
+			},
+			"delivery": {
+				"path": "registry/radix-nova/fonts/aptos/prepared/Aptos-Light.ttf",
+				"sha256": "6de8663653bd7e2a8462e8308bf50ffd79b8c2a12712a615130d33b75569022e",
+				"bytes": 233944
+			},
+			"quantizedFields": {
+				"hmtxAdvances": 572,
+				"gposValues": 960,
+				"anchorX": 225,
+				"anchorY": 171,
+				"legacyKern": 4692
+			},
+			"preservedTables": [
+				{
+					"tag": "GDEF",
+					"sha256": "32467bce47d910824b128aa4567e5785bba8c204b82b85579c442e8581fbcf80"
+				},
+				{
+					"tag": "GSUB",
+					"sha256": "e6aa0ec3b096dee8e3841a40f32c9b557a1cc1f1bba6ed2f5d44e867aeaca14e"
+				},
+				{
+					"tag": "OS/2",
+					"sha256": "9f231db8c9cfa7bf760eca14d911e4a76fd457c00277d4c60ba1e121bec0583b"
+				},
+				{
+					"tag": "STAT",
+					"sha256": "c1ee8f2da07c6f4df17ac7699858512bb48a51d78d260e1332ce13db54470209"
+				},
+				{
+					"tag": "cmap",
+					"sha256": "f1e3361ff5c24843fb021b9ce9143957244a9a94d9f219becd1ac21a6d5bf08d"
+				},
+				{
+					"tag": "cvt ",
+					"sha256": "737e31051aa589abdebee95ff185ae2918b436ae820391763ad02e284193323f"
+				},
+				{
+					"tag": "fpgm",
+					"sha256": "75acdcc28a4eee646b65bd5027d6a8c93efb2604c7cd990ade01bd810e512151"
+				},
+				{
+					"tag": "gasp",
+					"sha256": "1acea18a3ce4369c7f1bb27f8c825831793f6ba0f6ca6607453d240e5d27a732"
+				},
+				{
+					"tag": "glyf",
+					"sha256": "852b242f24a76451c21644020d2e4923d730807cf1c01422e62910fe322c157c"
+				},
+				{
+					"tag": "loca",
+					"sha256": "abc8b46acb4f1c12d839a86d22669c9b687c4509bd7e9ebf37cf70fde8b24c7e"
+				},
+				{
+					"tag": "maxp",
+					"sha256": "52d74c3010ee0f76af4650550a3af6552046d1b835e68cb1a98c037c4e897358"
+				},
+				{
+					"tag": "meta",
+					"sha256": "04b72098958d85bee9a66caec530f16f772e913c60a086ec52349bd74000b35c"
+				},
+				{
+					"tag": "name",
+					"sha256": "84d0ed6d599614621b3da64071cb6f664e054c09216ac3bbe7956e9eee4d1cc0"
+				},
+				{
+					"tag": "post",
+					"sha256": "4fdc83d5e42fe44650fe86f15a645d5cc926d07355ba945e1ede42737607bf83"
+				},
+				{
+					"tag": "prep",
+					"sha256": "2b0f6f6bd7d401535c54b0c2810391c43dd2ba2272e68e87a04327ebf29ef169"
+				}
+			],
+			"outlineProof": {
+				"glyfUnchanged": true,
+				"locaUnchanged": true,
+				"gsubUnchanged": true,
+				"cmapUnchanged": true,
+				"nameUnchanged": true
+			},
+			"formatCoverage": {
+				"lookupTypes": [2, 4, 5, 6],
+				"pairFormats": [1, 2],
+				"valueFormats": [0, 4],
+				"anchorFormats": [1],
+				"anchors": 423,
+				"anchorKinds": {
+					"mark": 9,
+					"base": 394,
+					"ligatureComponent": 7,
+					"mark2": 13
+				},
+				"deviceReferences": 0,
+				"cursiveLookups": 0,
+				"verticalMetricsPresent": false,
+				"legacyKernPairs": 10897,
+				"legacyKernLengthWrapRetained": false
+			},
+			"checksum": {
+				"wholeFont": "0xb1b0afba",
+				"allTablesValid": true,
+				"tables": [
+					{
+						"tag": "GDEF",
+						"valid": true
+					},
+					{
+						"tag": "GPOS",
+						"valid": true
+					},
+					{
+						"tag": "GSUB",
+						"valid": true
+					},
+					{
+						"tag": "OS/2",
+						"valid": true
+					},
+					{
+						"tag": "STAT",
+						"valid": true
+					},
+					{
+						"tag": "cmap",
+						"valid": true
+					},
+					{
+						"tag": "cvt ",
+						"valid": true
+					},
+					{
+						"tag": "fpgm",
+						"valid": true
+					},
+					{
+						"tag": "gasp",
+						"valid": true
+					},
+					{
+						"tag": "glyf",
+						"valid": true
+					},
+					{
+						"tag": "head",
+						"valid": true
+					},
+					{
+						"tag": "hhea",
+						"valid": true
+					},
+					{
+						"tag": "hmtx",
+						"valid": true
+					},
+					{
+						"tag": "kern",
+						"valid": true
+					},
+					{
+						"tag": "loca",
+						"valid": true
+					},
+					{
+						"tag": "maxp",
+						"valid": true
+					},
+					{
+						"tag": "meta",
+						"valid": true
+					},
+					{
+						"tag": "name",
+						"valid": true
+					},
+					{
+						"tag": "post",
+						"valid": true
+					},
+					{
+						"tag": "prep",
+						"valid": true
+					}
+				]
+			}
+		},
+		{
+			"family": "Aptos",
+			"weight": 400,
+			"style": "normal",
+			"original": {
+				"path": "registry/radix-nova/fonts/aptos/Aptos.ttf",
+				"sha256": "b46c7865bdecc68d7d82075a2d1e93e31cb73146eae6740bc7c090c8d0b2842a",
+				"bytes": 235288
+			},
+			"delivery": {
+				"path": "registry/radix-nova/fonts/aptos/prepared/Aptos.ttf",
+				"sha256": "c312aa2f557c09c69b55127bfd4934fa5a718594f69323adbe4374a869b739fc",
+				"bytes": 235288
+			},
+			"quantizedFields": {
+				"hmtxAdvances": 524,
+				"gposValues": 1192,
+				"anchorX": 235,
+				"anchorY": 151,
+				"legacyKern": 5132
+			},
+			"preservedTables": [
+				{
+					"tag": "GDEF",
+					"sha256": "32467bce47d910824b128aa4567e5785bba8c204b82b85579c442e8581fbcf80"
+				},
+				{
+					"tag": "GSUB",
+					"sha256": "e6aa0ec3b096dee8e3841a40f32c9b557a1cc1f1bba6ed2f5d44e867aeaca14e"
+				},
+				{
+					"tag": "OS/2",
+					"sha256": "15209f63ebf57839fca71b469df7ee45cbda4efebb6c9d8a87fa115ddb49b3eb"
+				},
+				{
+					"tag": "STAT",
+					"sha256": "e6257468317241a6a50f76af8a541ad9f88400ca6d53a477311a9f81970ef657"
+				},
+				{
+					"tag": "cmap",
+					"sha256": "f1e3361ff5c24843fb021b9ce9143957244a9a94d9f219becd1ac21a6d5bf08d"
+				},
+				{
+					"tag": "cvt ",
+					"sha256": "d912883288379c873f467ac1c4baba266ba68852ec362bc3cc488359314cfc18"
+				},
+				{
+					"tag": "fpgm",
+					"sha256": "75acdcc28a4eee646b65bd5027d6a8c93efb2604c7cd990ade01bd810e512151"
+				},
+				{
+					"tag": "gasp",
+					"sha256": "1acea18a3ce4369c7f1bb27f8c825831793f6ba0f6ca6607453d240e5d27a732"
+				},
+				{
+					"tag": "glyf",
+					"sha256": "6d0e680745e3d444da8c7cee67f176aeaad08d07dfec7eb44122af7833a01f54"
+				},
+				{
+					"tag": "hhea",
+					"sha256": "1cd0197a134da6a21c7e77fabd5b8ab3c96b8d2652232ad475100774537e0b04"
+				},
+				{
+					"tag": "loca",
+					"sha256": "c5a464f3e258bc067713d79131f490d733f64866cac4a007340768718da86b3c"
+				},
+				{
+					"tag": "maxp",
+					"sha256": "52d74c3010ee0f76af4650550a3af6552046d1b835e68cb1a98c037c4e897358"
+				},
+				{
+					"tag": "meta",
+					"sha256": "04b72098958d85bee9a66caec530f16f772e913c60a086ec52349bd74000b35c"
+				},
+				{
+					"tag": "name",
+					"sha256": "83f396bad70f4e3077f31b9ac525b4482986c2033399376429e4cb04f8175e8f"
+				},
+				{
+					"tag": "post",
+					"sha256": "4fdc83d5e42fe44650fe86f15a645d5cc926d07355ba945e1ede42737607bf83"
+				},
+				{
+					"tag": "prep",
+					"sha256": "2b0f6f6bd7d401535c54b0c2810391c43dd2ba2272e68e87a04327ebf29ef169"
+				}
+			],
+			"outlineProof": {
+				"glyfUnchanged": true,
+				"locaUnchanged": true,
+				"gsubUnchanged": true,
+				"cmapUnchanged": true,
+				"nameUnchanged": true
+			},
+			"formatCoverage": {
+				"lookupTypes": [2, 4, 5, 6],
+				"pairFormats": [1, 2],
+				"valueFormats": [0, 4],
+				"anchorFormats": [1],
+				"anchors": 465,
+				"anchorKinds": {
+					"mark": 9,
+					"base": 433,
+					"ligatureComponent": 6,
+					"mark2": 17
+				},
+				"deviceReferences": 0,
+				"cursiveLookups": 0,
+				"verticalMetricsPresent": false,
+				"legacyKernPairs": 11108,
+				"legacyKernLengthWrapRetained": true
+			},
+			"checksum": {
+				"wholeFont": "0xb1b0afba",
+				"allTablesValid": true,
+				"tables": [
+					{
+						"tag": "GDEF",
+						"valid": true
+					},
+					{
+						"tag": "GPOS",
+						"valid": true
+					},
+					{
+						"tag": "GSUB",
+						"valid": true
+					},
+					{
+						"tag": "OS/2",
+						"valid": true
+					},
+					{
+						"tag": "STAT",
+						"valid": true
+					},
+					{
+						"tag": "cmap",
+						"valid": true
+					},
+					{
+						"tag": "cvt ",
+						"valid": true
+					},
+					{
+						"tag": "fpgm",
+						"valid": true
+					},
+					{
+						"tag": "gasp",
+						"valid": true
+					},
+					{
+						"tag": "glyf",
+						"valid": true
+					},
+					{
+						"tag": "head",
+						"valid": true
+					},
+					{
+						"tag": "hhea",
+						"valid": true
+					},
+					{
+						"tag": "hmtx",
+						"valid": true
+					},
+					{
+						"tag": "kern",
+						"valid": true
+					},
+					{
+						"tag": "loca",
+						"valid": true
+					},
+					{
+						"tag": "maxp",
+						"valid": true
+					},
+					{
+						"tag": "meta",
+						"valid": true
+					},
+					{
+						"tag": "name",
+						"valid": true
+					},
+					{
+						"tag": "post",
+						"valid": true
+					},
+					{
+						"tag": "prep",
+						"valid": true
+					}
+				]
+			}
+		},
+		{
+			"family": "Aptos",
+			"weight": 600,
+			"style": "normal",
+			"original": {
+				"path": "registry/radix-nova/fonts/aptos/Aptos-SemiBold.ttf",
+				"sha256": "b69e74cd43331c68cc8a4e82acc70dc5fe183524fe6e28d0da5e209b0ccd9f3d",
+				"bytes": 235476
+			},
+			"delivery": {
+				"path": "registry/radix-nova/fonts/aptos/prepared/Aptos-SemiBold.ttf",
+				"sha256": "b07d18c67370e7bbabc9ed59d7aea4145e279c952a96c4e69a95286639a86d5c",
+				"bytes": 235476
+			},
+			"quantizedFields": {
+				"hmtxAdvances": 574,
+				"gposValues": 1113,
+				"anchorX": 212,
+				"anchorY": 237,
+				"legacyKern": 5206
+			},
+			"preservedTables": [
+				{
+					"tag": "GDEF",
+					"sha256": "32467bce47d910824b128aa4567e5785bba8c204b82b85579c442e8581fbcf80"
+				},
+				{
+					"tag": "GSUB",
+					"sha256": "e6aa0ec3b096dee8e3841a40f32c9b557a1cc1f1bba6ed2f5d44e867aeaca14e"
+				},
+				{
+					"tag": "OS/2",
+					"sha256": "a6eb6b3314bb8af6a5424fc933299a8fb853d5607f4b2233afe86273b6909d0e"
+				},
+				{
+					"tag": "STAT",
+					"sha256": "4c67e6851f3795149cbf7b15cdcf355722ba2e1f5b59519a3c149370243b9f74"
+				},
+				{
+					"tag": "cmap",
+					"sha256": "f1e3361ff5c24843fb021b9ce9143957244a9a94d9f219becd1ac21a6d5bf08d"
+				},
+				{
+					"tag": "cvt ",
+					"sha256": "6be4aff3065126db2ac7b2acbeb213b7064ece570eaac7a8b971480bd878a0ee"
+				},
+				{
+					"tag": "fpgm",
+					"sha256": "75acdcc28a4eee646b65bd5027d6a8c93efb2604c7cd990ade01bd810e512151"
+				},
+				{
+					"tag": "gasp",
+					"sha256": "1acea18a3ce4369c7f1bb27f8c825831793f6ba0f6ca6607453d240e5d27a732"
+				},
+				{
+					"tag": "glyf",
+					"sha256": "e14f88204699c46bdbf29ae8b7f72917074df77380097fb39f16a8f5e7e4a16a"
+				},
+				{
+					"tag": "loca",
+					"sha256": "49003957b652caf159f3d6bfbadfbaffd7b9f1f3fc12d97bbc564b72faa6c77f"
+				},
+				{
+					"tag": "maxp",
+					"sha256": "52d74c3010ee0f76af4650550a3af6552046d1b835e68cb1a98c037c4e897358"
+				},
+				{
+					"tag": "meta",
+					"sha256": "04b72098958d85bee9a66caec530f16f772e913c60a086ec52349bd74000b35c"
+				},
+				{
+					"tag": "name",
+					"sha256": "e84cab47333b923be6f839f6a4ab14132ee58bbf3975628ebb40aeef8c16f8d2"
+				},
+				{
+					"tag": "post",
+					"sha256": "4fdc83d5e42fe44650fe86f15a645d5cc926d07355ba945e1ede42737607bf83"
+				},
+				{
+					"tag": "prep",
+					"sha256": "2b0f6f6bd7d401535c54b0c2810391c43dd2ba2272e68e87a04327ebf29ef169"
+				}
+			],
+			"outlineProof": {
+				"glyfUnchanged": true,
+				"locaUnchanged": true,
+				"gsubUnchanged": true,
+				"cmapUnchanged": true,
+				"nameUnchanged": true
+			},
+			"formatCoverage": {
+				"lookupTypes": [2, 4, 5, 6],
+				"pairFormats": [1, 2],
+				"valueFormats": [0, 4],
+				"anchorFormats": [1],
+				"anchors": 454,
+				"anchorKinds": {
+					"mark": 10,
+					"base": 421,
+					"ligatureComponent": 7,
+					"mark2": 16
+				},
+				"deviceReferences": 0,
+				"cursiveLookups": 0,
+				"verticalMetricsPresent": false,
+				"legacyKernPairs": 11110,
+				"legacyKernLengthWrapRetained": true
+			},
+			"checksum": {
+				"wholeFont": "0xb1b0afba",
+				"allTablesValid": true,
+				"tables": [
+					{
+						"tag": "GDEF",
+						"valid": true
+					},
+					{
+						"tag": "GPOS",
+						"valid": true
+					},
+					{
+						"tag": "GSUB",
+						"valid": true
+					},
+					{
+						"tag": "OS/2",
+						"valid": true
+					},
+					{
+						"tag": "STAT",
+						"valid": true
+					},
+					{
+						"tag": "cmap",
+						"valid": true
+					},
+					{
+						"tag": "cvt ",
+						"valid": true
+					},
+					{
+						"tag": "fpgm",
+						"valid": true
+					},
+					{
+						"tag": "gasp",
+						"valid": true
+					},
+					{
+						"tag": "glyf",
+						"valid": true
+					},
+					{
+						"tag": "head",
+						"valid": true
+					},
+					{
+						"tag": "hhea",
+						"valid": true
+					},
+					{
+						"tag": "hmtx",
+						"valid": true
+					},
+					{
+						"tag": "kern",
+						"valid": true
+					},
+					{
+						"tag": "loca",
+						"valid": true
+					},
+					{
+						"tag": "maxp",
+						"valid": true
+					},
+					{
+						"tag": "meta",
+						"valid": true
+					},
+					{
+						"tag": "name",
+						"valid": true
+					},
+					{
+						"tag": "post",
+						"valid": true
+					},
+					{
+						"tag": "prep",
+						"valid": true
+					}
+				]
+			}
+		},
+		{
+			"family": "Aptos",
+			"weight": 700,
+			"style": "normal",
+			"original": {
+				"path": "registry/radix-nova/fonts/aptos/Aptos-Bold.ttf",
+				"sha256": "e59d983f8752146b8d02df5cad8f545ce677ef71dbe113afa3b395a9088c7f53",
+				"bytes": 235860
+			},
+			"delivery": {
+				"path": "registry/radix-nova/fonts/aptos/prepared/Aptos-Bold.ttf",
+				"sha256": "7cf7ef8cb53102f354ae97fd5a15e58c758359664f527aa4f3be9a362a85eb7d",
+				"bytes": 235860
+			},
+			"quantizedFields": {
+				"hmtxAdvances": 520,
+				"gposValues": 1214,
+				"anchorX": 249,
+				"anchorY": 147,
+				"legacyKern": 5460
+			},
+			"preservedTables": [
+				{
+					"tag": "GDEF",
+					"sha256": "32467bce47d910824b128aa4567e5785bba8c204b82b85579c442e8581fbcf80"
+				},
+				{
+					"tag": "GSUB",
+					"sha256": "e6aa0ec3b096dee8e3841a40f32c9b557a1cc1f1bba6ed2f5d44e867aeaca14e"
+				},
+				{
+					"tag": "OS/2",
+					"sha256": "e1cc8c9dadda31f7e1cedb9dfb79f70ff7a6575301260005c8c3b0b003ec2bd0"
+				},
+				{
+					"tag": "STAT",
+					"sha256": "42dd9974d8e66070cc50a11d17caaeb705b57964b5987963af82b8d2777aed5b"
+				},
+				{
+					"tag": "cmap",
+					"sha256": "f1e3361ff5c24843fb021b9ce9143957244a9a94d9f219becd1ac21a6d5bf08d"
+				},
+				{
+					"tag": "cvt ",
+					"sha256": "5268effd39966921126d56fb6e25233a22b2bfa512808817946b7c2216c8d338"
+				},
+				{
+					"tag": "fpgm",
+					"sha256": "75acdcc28a4eee646b65bd5027d6a8c93efb2604c7cd990ade01bd810e512151"
+				},
+				{
+					"tag": "gasp",
+					"sha256": "1acea18a3ce4369c7f1bb27f8c825831793f6ba0f6ca6607453d240e5d27a732"
+				},
+				{
+					"tag": "glyf",
+					"sha256": "218690b92ec77611fe9bcca510c2e2598b07f872255f416cd73aa3f549891202"
+				},
+				{
+					"tag": "hhea",
+					"sha256": "b0606afb5bc8b265f1c54f503be23b67176fef2ccafadeaa3f202911a5f1e871"
+				},
+				{
+					"tag": "loca",
+					"sha256": "5e69278e71d1e3d538c38f775ca0a402dfa19e0adad4a0e80801f219602ef921"
+				},
+				{
+					"tag": "maxp",
+					"sha256": "52d74c3010ee0f76af4650550a3af6552046d1b835e68cb1a98c037c4e897358"
+				},
+				{
+					"tag": "meta",
+					"sha256": "04b72098958d85bee9a66caec530f16f772e913c60a086ec52349bd74000b35c"
+				},
+				{
+					"tag": "name",
+					"sha256": "89cfc5d0a7fe36090194f9898f5beda7f8fcabb656d62bcf106570ac50477aa3"
+				},
+				{
+					"tag": "post",
+					"sha256": "4fdc83d5e42fe44650fe86f15a645d5cc926d07355ba945e1ede42737607bf83"
+				},
+				{
+					"tag": "prep",
+					"sha256": "2b0f6f6bd7d401535c54b0c2810391c43dd2ba2272e68e87a04327ebf29ef169"
+				}
+			],
+			"outlineProof": {
+				"glyfUnchanged": true,
+				"locaUnchanged": true,
+				"gsubUnchanged": true,
+				"cmapUnchanged": true,
+				"nameUnchanged": true
+			},
+			"formatCoverage": {
+				"lookupTypes": [2, 4, 5, 6],
+				"pairFormats": [1, 2],
+				"valueFormats": [0, 4],
+				"anchorFormats": [1],
+				"anchors": 449,
+				"anchorKinds": {
+					"mark": 10,
+					"base": 415,
+					"ligatureComponent": 7,
+					"mark2": 17
+				},
+				"deviceReferences": 0,
+				"cursiveLookups": 0,
+				"verticalMetricsPresent": false,
+				"legacyKernPairs": 11117,
+				"legacyKernLengthWrapRetained": true
+			},
+			"checksum": {
+				"wholeFont": "0xb1b0afba",
+				"allTablesValid": true,
+				"tables": [
+					{
+						"tag": "GDEF",
+						"valid": true
+					},
+					{
+						"tag": "GPOS",
+						"valid": true
+					},
+					{
+						"tag": "GSUB",
+						"valid": true
+					},
+					{
+						"tag": "OS/2",
+						"valid": true
+					},
+					{
+						"tag": "STAT",
+						"valid": true
+					},
+					{
+						"tag": "cmap",
+						"valid": true
+					},
+					{
+						"tag": "cvt ",
+						"valid": true
+					},
+					{
+						"tag": "fpgm",
+						"valid": true
+					},
+					{
+						"tag": "gasp",
+						"valid": true
+					},
+					{
+						"tag": "glyf",
+						"valid": true
+					},
+					{
+						"tag": "head",
+						"valid": true
+					},
+					{
+						"tag": "hhea",
+						"valid": true
+					},
+					{
+						"tag": "hmtx",
+						"valid": true
+					},
+					{
+						"tag": "kern",
+						"valid": true
+					},
+					{
+						"tag": "loca",
+						"valid": true
+					},
+					{
+						"tag": "maxp",
+						"valid": true
+					},
+					{
+						"tag": "meta",
+						"valid": true
+					},
+					{
+						"tag": "name",
+						"valid": true
+					},
+					{
+						"tag": "post",
+						"valid": true
+					},
+					{
+						"tag": "prep",
+						"valid": true
+					}
+				]
+			}
+		}
+	]
 }

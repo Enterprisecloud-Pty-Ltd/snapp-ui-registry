@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snapp-form-icon",
+  "title": "Form Icon",
+  "description": "Shared SNAPP component-library building block: Form Icon.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@snapp/snapp-form-icon-sources",
+    "@snapp/snapp-theme",
+    "@snapp/snapp-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/radix-nova/components/forms/form-icon.tsx",
+      "content": "import type * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { formIconSources, type FormIconName } from \"./form-icon-sources\";\n\nfunction FormIcon({\n\tname,\n\tclassName,\n\t...props\n}: Omit<React.ComponentProps<\"img\">, \"src\" | \"alt\"> & { name: FormIconName }) {\n\treturn (\n\t\t<img\n\t\t\talt=\"\"\n\t\t\taria-hidden=\"true\"\n\t\t\tsrc={formIconSources[name]}\n\t\t\tclassName={cn(\"block max-w-none shrink-0\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { FormIcon };\nexport type { FormIconName };\n",
+      "type": "registry:component",
+      "target": "@components/snapp/forms/form-icon.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

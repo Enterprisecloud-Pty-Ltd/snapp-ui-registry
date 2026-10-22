@@ -52,20 +52,20 @@ function EmployeeCard({
 			data-slot="snapp-employee-card"
 			data-state={state}
 			className={cn(
-				"flex w-[312.5px] flex-col items-start gap-4 rounded-lg inset-ring-1 inset-ring-[#e5e7eb] bg-white p-4.25 font-snapp-body font-normal shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_2px_rgba(0,0,0,0.1)]",
-				className,
+				"flex w-snapp-employee-card flex-col items-start gap-4 rounded-lg inset-ring-1 inset-ring-snapp-inter-divider bg-white p-4.25 font-snapp-body font-normal shadow-snapp-employee-card",
+				className
 			)}
 			{...props}
 		>
-			<div className="flex w-[270.5px] max-w-full items-start gap-3">
-				<span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#e94435] font-[Inter,sans-serif] text-base leading-6 text-white">
+			<div className="flex w-snapp-employee-content max-w-full items-start gap-3">
+				<span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-snapp-avatar-red font-snapp-inter text-base leading-6 text-white">
 					{initials}
 				</span>
 				<div className="min-w-0 flex-1">
-					<h3 className="text-snapp-lg leading-snapp-sm font-bold text-[#0a0a0a]">
+					<h3 className="text-snapp-lg leading-snapp-sm font-bold text-snapp-inter-text">
 						{name}
 					</h3>
-					<p className="text-snapp-sm leading-snapp-xs text-[#4a5565]">
+					<p className="text-snapp-sm leading-snapp-xs text-snapp-inter-muted">
 						{roleName}
 					</p>
 				</div>
@@ -75,7 +75,9 @@ function EmployeeCard({
 					aria-expanded={state !== "minimal"}
 					disabled={!onStateChange}
 					onClick={() =>
-						onStateChange?.(state === "minimal" ? "closed" : "minimal")
+						onStateChange?.(
+							state === "minimal" ? "closed" : "minimal"
+						)
 					}
 					className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-snapp-border-highlight"
 				>
@@ -89,8 +91,8 @@ function EmployeeCard({
 			</div>
 			<div className="flex h-9 w-full flex-col gap-2">
 				<p className="flex h-5 items-center justify-between text-snapp-sm leading-snapp-xs">
-					<span className="text-[#364153]">Progress</span>
-					<span className="text-[#0a0a0a]">
+					<span className="text-snapp-inter-secondary">Progress</span>
+					<span className="text-snapp-inter-text">
 						{completed}/{total}
 					</span>
 				</p>
@@ -100,26 +102,31 @@ function EmployeeCard({
 					aria-valuenow={progress}
 					aria-valuemin={0}
 					aria-valuemax={100}
-					className="h-2 w-full overflow-hidden rounded-full bg-[#e5e7eb]"
+					className="h-2 w-full overflow-hidden rounded-full bg-snapp-inter-divider"
 				>
 					<div
-						className="h-full bg-[#0073de]"
+						className="h-full bg-snapp-progress-blue"
 						style={{ width: `${progress}%` }}
 					/>
 				</div>
 			</div>
 			{state !== "minimal" && (
 				<>
-					<div className="flex w-[270.5px] max-w-full flex-col items-start gap-3">
+					<div className="flex w-snapp-employee-content max-w-full flex-col items-start gap-3">
 						<p
 							className={cn(
-								"flex items-center gap-2 text-snapp-sm leading-snapp-xs text-[#364153]",
-								state === "expanded" && "h-4",
+								"flex items-center gap-2 text-snapp-sm leading-snapp-xs text-snapp-inter-secondary",
+								state === "expanded" && "h-4"
 							)}
 						>
 							{certificationsLabel}
 							{state === "expanded" && (
-								<img src={sectionUp} alt="" width={16} height={16} />
+								<img
+									src={sectionUp}
+									alt=""
+									width={16}
+									height={16}
+								/>
 							)}
 						</p>
 						<div className="flex w-full flex-col items-start gap-2.5">
@@ -132,17 +139,23 @@ function EmployeeCard({
 							aria-expanded={state === "expanded"}
 							disabled={!onStateChange}
 							onClick={() =>
-								onStateChange?.(state === "expanded" ? "closed" : "expanded")
+								onStateChange?.(
+									state === "expanded" ? "closed" : "expanded"
+								)
 							}
 							className={cn(
-								"flex h-4 items-center gap-2 text-snapp-sm leading-snapp-xs text-[#364153] focus-visible:outline-2 focus-visible:outline-snapp-border-highlight",
+								"flex h-4 items-center gap-2 text-snapp-sm leading-snapp-xs text-snapp-inter-secondary focus-visible:outline-2 focus-visible:outline-snapp-border-highlight",
 								state === "closed" &&
-									"ml-auto text-snapp-xs leading-snapp-xxs text-[#6a7282]",
+									"ml-auto text-snapp-xs leading-snapp-xxs text-snapp-inter-caption"
 							)}
 						>
 							{optionalLabel} {optionalCompleted}/{optionalTotal}
 							<img
-								src={state === "expanded" ? sectionUp : sectionDown}
+								src={
+									state === "expanded"
+										? sectionUp
+										: sectionDown
+								}
 								alt=""
 								width={16}
 								height={16}
