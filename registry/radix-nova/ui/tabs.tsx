@@ -30,7 +30,7 @@ function Tabs({
 			data-orientation={orientation}
 			className={cn(
 				"group/tabs flex gap-2 data-horizontal:flex-col",
-				className,
+				className
 			)}
 			{...props}
 		/>
@@ -49,10 +49,11 @@ const tabsListVariants = cva(
 		defaultVariants: {
 			variant: "default",
 		},
-	},
+	}
 );
 
 function TabsList({
+	appearance = "default",
 	className,
 	variant = "default",
 	loop = true,
@@ -61,7 +62,9 @@ function TabsList({
 	onBlur,
 	...props
 }: React.ComponentProps<typeof TabsPrimitive.List> &
-	VariantProps<typeof tabsListVariants>) {
+	VariantProps<typeof tabsListVariants> & {
+		appearance?: "default" | "header";
+	}) {
 	const clickFocus = React.useRef(false);
 	const tabbingBackOut = React.useRef(false);
 	const pending = useTabsFocusTimer();
@@ -73,7 +76,7 @@ function TabsList({
 				tabbingBackOut.current = true;
 			},
 		}),
-		[loop, pending],
+		[loop, pending]
 	);
 	return (
 		<TabsKeyboardContext.Provider value={keyboard}>
@@ -81,7 +84,11 @@ function TabsList({
 				loop={loop}
 				data-slot="tabs-list"
 				data-variant={variant}
-				className={cn(tabsListVariants({ variant }), className)}
+				className={cn(
+					tabsListVariants({ variant }),
+					appearance === "header" && "border-0",
+					className
+				)}
 				{...props}
 				onMouseDown={(event) => {
 					onMouseDown?.(event);
@@ -112,11 +119,14 @@ function TabsList({
 }
 
 function TabsTrigger({
+	appearance = "default",
 	className,
 	children,
 	onKeyDown,
 	...props
-}: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
+}: React.ComponentProps<typeof TabsPrimitive.Trigger> & {
+	appearance?: "default" | "header" | "header-emphasis";
+}) {
 	const keyboard = React.useContext(TabsKeyboardContext);
 	return (
 		<TabsPrimitive.Trigger
@@ -126,7 +136,10 @@ function TabsTrigger({
 				"group-data-[variant=default]/tabs-list:data-[state=active]:bg-snapp-surface-brand group-data-[variant=default]/tabs-list:data-[state=active]:text-snapp-text-invert",
 				"group-data-[variant=line]/tabs-list:h-full group-data-[variant=line]/tabs-list:rounded-none group-data-[variant=line]/tabs-list:px-0 group-data-[variant=line]/tabs-list:py-0 group-data-[variant=line]/tabs-list:text-snapp-text-soft group-data-[variant=line]/tabs-list:hover:bg-transparent group-data-[variant=line]/tabs-list:data-[state=active]:font-bold group-data-[variant=line]/tabs-list:data-[state=active]:text-snapp-text-brand",
 				"after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-snapp-border-highlight after:opacity-0 group-data-[variant=line]/tabs-list:data-[state=active]:after:opacity-100 group-data-vertical/tabs:after:inset-y-0 group-data-vertical/tabs:after:right-0 group-data-vertical/tabs:after:left-auto group-data-vertical/tabs:after:h-auto group-data-vertical/tabs:after:w-0.5",
-				className,
+				appearance === "header" && "gap-2",
+				appearance === "header-emphasis" &&
+					"gap-2 group-data-[variant=line]/tabs-list:text-snapp-text-brand",
+				className
 			)}
 			{...props}
 			onKeyDown={(event) => {
@@ -136,7 +149,7 @@ function TabsTrigger({
 						event,
 						keyboard.loop,
 						keyboard.pending,
-						keyboard.onShiftTab,
+						keyboard.onShiftTab
 					);
 				}
 			}}

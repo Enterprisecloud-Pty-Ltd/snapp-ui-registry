@@ -25,7 +25,7 @@ function CourseStatus({
 			data-slot="snapp-course-status"
 			data-state={state}
 			className={cn(
-				"flex w-[333.667px] max-w-full flex-col items-start gap-2 rounded-lg inset-ring-1 p-3 font-snapp-body text-snapp-sm leading-snapp-xs font-normal",
+				"flex w-snapp-task-details max-w-full flex-col items-start gap-2 rounded-lg inset-ring-1 p-3 font-snapp-body text-snapp-sm leading-snapp-xs font-normal",
 				state === "default" &&
 					"inset-ring-snapp-border-primary bg-snapp-surface-primary text-snapp-text-secondary",
 				state === "complete" &&
@@ -34,14 +34,20 @@ function CourseStatus({
 					"inset-ring-snapp-border-amber bg-snapp-surface-amber-soft text-snapp-text-amber",
 				state === "warning" &&
 					"inset-ring-snapp-border-red bg-snapp-surface-red-soft text-snapp-text-red",
-				className,
+				className
 			)}
 			{...props}
 		>
 			<div className="flex w-full items-center gap-2">
 				<span className="sr-only">{state}</span>
 				{icon ? (
-					<img src={icon} alt="" width={16} height={16} className="shrink-0" />
+					<img
+						src={icon}
+						alt=""
+						width={16}
+						height={16}
+						className="shrink-0"
+					/>
 				) : (
 					<span
 						aria-hidden="true"

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/radix-nova/hooks/use-mobile.ts",
-      "content": "import * as React from \"react\"\n\nconst MOBILE_BREAKPOINT = 768\n\nexport function useIsMobile() {\n  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)\n\n  React.useEffect(() => {\n    const mediaQuery = window.matchMedia(\n      `(max-width: ${MOBILE_BREAKPOINT - 1}px)`\n    )\n    const update = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)\n\n    mediaQuery.addEventListener(\"change\", update)\n    update()\n    return () => mediaQuery.removeEventListener(\"change\", update)\n  }, [])\n\n  return Boolean(isMobile)\n}\n",
+      "content": "import * as React from \"react\";\n\nconst MOBILE_BREAKPOINT = 768;\n\nexport function useIsMobile() {\n\tconst [isMobile, setIsMobile] = React.useState<boolean | undefined>(\n\t\tundefined\n\t);\n\n\tReact.useEffect(() => {\n\t\tconst mediaQuery = window.matchMedia(\n\t\t\t`(max-width: ${MOBILE_BREAKPOINT - 1}px)`\n\t\t);\n\t\tconst update = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);\n\n\t\tmediaQuery.addEventListener(\"change\", update);\n\t\tupdate();\n\t\treturn () => mediaQuery.removeEventListener(\"change\", update);\n\t}, []);\n\n\treturn Boolean(isMobile);\n}\n",
       "type": "registry:hook",
       "target": "@hooks/use-mobile.ts"
     }

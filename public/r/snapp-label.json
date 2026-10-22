@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/radix-nova/ui/label.tsx",
-      "content": "import * as React from \"react\"\nimport { Label as LabelPrimitive } from \"radix-ui\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"flex items-center gap-2 font-sans text-sm leading-5 font-normal text-snapp-text-brand select-none group-data-[disabled=true]:pointer-events-none peer-disabled:cursor-not-allowed\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "content": "import type * as React from \"react\";\nimport { Label as LabelPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Label({\n\tappearance = \"default\",\n\tclassName,\n\t...props\n}: React.ComponentProps<typeof LabelPrimitive.Root> & {\n\tappearance?: \"default\" | \"form-field\" | \"inter\";\n}) {\n\treturn (\n\t\t<LabelPrimitive.Root\n\t\t\tdata-slot=\"label\"\n\t\t\tclassName={cn(\n\t\t\t\t\"flex items-center gap-2 font-sans text-sm leading-5 font-normal text-snapp-text-brand select-none group-data-[disabled=true]:pointer-events-none peer-disabled:cursor-not-allowed\",\n\t\t\t\tappearance === \"form-field\" && \"gap-0\",\n\t\t\t\tappearance === \"inter\" &&\n\t\t\t\t\t\"font-snapp-inter font-medium text-snapp-inter-text\",\n\t\t\t\tclassName\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Label };\n",
       "type": "registry:ui",
       "target": "@ui/label.tsx"
     }

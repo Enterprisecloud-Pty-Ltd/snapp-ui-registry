@@ -71,7 +71,7 @@
   "files": [
     {
       "path": "registry/radix-nova/components/foundation/ui-foundation.ts",
-      "content": "/**\n * Marker installed by `snapp-ui-foundation`.\n *\n * The registry item carries every canonical Shadcn UI primitive as registry\n * dependencies; feature code should continue importing the individual\n * primitives it uses.\n */\nexport const snappUiFoundation = true as const\n",
+      "content": "/**\n * Marker installed by `snapp-ui-foundation`.\n *\n * The registry item carries every canonical Shadcn UI primitive as registry\n * dependencies; feature code should continue importing the individual\n * primitives it uses.\n */\nexport const snappUiFoundation = true as const;\n",
       "type": "registry:component",
       "target": "@components/snapp/foundation/ui-foundation.ts"
     }

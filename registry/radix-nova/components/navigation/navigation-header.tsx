@@ -38,7 +38,7 @@ function AchievementSummary({
 		<div
 			className={cn(
 				"relative flex h-12 w-84.5 shrink-0 items-center gap-4 bg-snapp-surface-primary pl-4 font-sans text-sm leading-5 font-normal whitespace-nowrap text-snapp-text-brand before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-snapp-border-primary",
-				className,
+				className
 			)}
 			data-slot="snapp-achievement-summary"
 			{...props}
@@ -57,10 +57,8 @@ function AchievementSummary({
 	);
 }
 
-interface FeatureHeaderProps extends Omit<
-	React.ComponentProps<"header">,
-	"title"
-> {
+interface FeatureHeaderProps
+	extends Omit<React.ComponentProps<"header">, "title"> {
 	title: React.ReactNode;
 	icon?: React.ReactNode;
 	achievements?: AchievementSummaryProps;
@@ -84,7 +82,7 @@ function FeatureHeader({
 			className={cn(
 				"relative flex h-12 min-w-0 items-center bg-snapp-surface-primary pl-4 font-sans text-sm leading-5 font-normal text-snapp-text-brand after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-snapp-border-primary",
 				!achievements && "pr-4",
-				className,
+				className
 			)}
 			data-slot="snapp-feature-header"
 			{...props}
@@ -129,10 +127,8 @@ interface HeaderTab {
 	mutedWhenInactive?: boolean;
 }
 
-interface TabbedHeaderNavigationProps extends Omit<
-	React.ComponentProps<"header">,
-	"onChange"
-> {
+interface TabbedHeaderNavigationProps
+	extends Omit<React.ComponentProps<"header">, "onChange"> {
 	tabs: HeaderTab[];
 	value: string;
 	onValueChange: (value: string) => void;
@@ -151,7 +147,7 @@ function TabbedHeaderNavigation({
 		<header
 			className={cn(
 				"relative flex h-12 min-w-0 items-start bg-snapp-surface-primary pl-4 after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-snapp-border-primary",
-				className,
+				className
 			)}
 			data-slot="snapp-tabbed-header-navigation"
 			{...props}
@@ -163,17 +159,18 @@ function TabbedHeaderNavigation({
 			>
 				<TabsList
 					aria-label="Sections"
-					className="h-full justify-start border-0"
+					appearance="header"
+					className="h-full justify-start"
 					variant="line"
 				>
 					{tabs.map((tab) => (
 						<React.Fragment key={tab.value}>
 							<TabsTrigger
-								className={cn(
-									"gap-2",
-									tab.mutedWhenInactive === false &&
-										"group-data-[variant=line]/tabs-list:text-snapp-text-brand",
-								)}
+								appearance={
+									tab.mutedWhenInactive === false
+										? "header-emphasis"
+										: "header"
+								}
 								disabled={tab.disabled}
 								value={tab.value}
 							>
@@ -211,17 +208,18 @@ function ExpandedTab({
 	...props
 }: ExpandedTabProps) {
 	return (
+		// biome-ignore lint/a11y/useSemanticElements: This reusable visual/control group is not a form fieldset; retain its ARIA group semantics and public div contract.
 		<div
 			className={cn(
 				"inline-flex h-9 w-fit items-center overflow-hidden rounded-full bg-snapp-surface-secondary font-sans text-sm leading-5 font-normal text-snapp-text-brand",
-				className,
+				className
 			)}
 			data-slot="snapp-expanded-tab"
 			role="group"
 			{...props}
 		>
 			<button
-				className="relative z-10 h-full rounded-full bg-snapp-surface-brand px-4 py-2 text-snapp-text-invert shadow-[4px_0_20px_5px_#0000001a] outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-snapp-border-highlight"
+				className="relative z-10 h-full rounded-full bg-snapp-surface-brand px-4 py-2 text-snapp-text-invert shadow-snapp-navigation-panel outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-snapp-border-highlight"
 				onClick={onSelect}
 				type="button"
 			>
@@ -276,7 +274,9 @@ function NavigationAppGrid({
 		(app) =>
 			!query ||
 			(typeof app.label === "string" &&
-				app.label.toLocaleLowerCase().includes(query.toLocaleLowerCase())),
+				app.label
+					.toLocaleLowerCase()
+					.includes(query.toLocaleLowerCase()))
 	);
 	return (
 		<div className="flex flex-col gap-4" data-slot="snapp-app-grid">
@@ -291,24 +291,28 @@ function NavigationAppGrid({
 			<div
 				className={cn(
 					"flex flex-wrap items-center gap-2",
-					search && "w-108 max-w-full",
+					search && "w-108 max-w-full"
 				)}
 			>
 				{filtered.map((app) => (
 					<button
 						className={cn(
 							"relative flex size-20 flex-col items-center justify-center gap-2 rounded-sm font-sans text-xs leading-4 font-normal text-snapp-text-brand outline-none hover:bg-snapp-surface-secondary focus-visible:ring-2 focus-visible:ring-snapp-border-highlight",
-							app.selected && "bg-snapp-surface-secondary",
+							app.selected && "bg-snapp-surface-secondary"
 						)}
 						key={app.id}
 						onClick={app.onSelect}
 						type="button"
 					>
 						{app.icon ??
-							(app.iconName ? <NavigationIcon name={app.iconName} /> : null)}
+							(app.iconName ? (
+								<NavigationIcon name={app.iconName} />
+							) : null)}
 						<span className="max-w-full truncate">{app.label}</span>
 						{app.badge ? (
-							<span className="absolute bottom-2 left-2">{app.badge}</span>
+							<span className="absolute bottom-2 left-2">
+								{app.badge}
+							</span>
 						) : null}
 					</button>
 				))}
@@ -318,10 +322,8 @@ function NavigationAppGrid({
 }
 
 type NavigationHeaderMenu = "apps" | "area" | "user" | "chat" | string;
-interface NavigationHeaderProps extends Omit<
-	React.ComponentProps<"header">,
-	"onChange"
-> {
+interface NavigationHeaderProps
+	extends Omit<React.ComponentProps<"header">, "onChange"> {
 	variant?: "updated" | "square";
 	items: HeaderNavigationItem[];
 	onHome?: () => void;
@@ -335,19 +337,11 @@ interface NavigationHeaderProps extends Omit<
 	onOpenMenuChange?: (menu: NavigationHeaderMenu | null) => void;
 }
 
-const headerPopover = cva(
-	"w-auto max-w-[calc(100vw-2rem)] gap-0 rounded-lg border-0 bg-snapp-surface-primary p-2 text-snapp-text-brand shadow-[0_4px_9px_#4c4f522e] ring-0",
-);
 const headerNavigationItem = cva(
-	"shrink-0 whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-snapp-border-highlight",
+	"shrink-0 whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-snapp-border-highlight"
 );
 const squareNavigationItem = cva("rounded-full px-4 py-2");
 const activeNavigationItem = cva("font-bold");
-const globalSearchInput = cva(
-	"h-auto font-snapp-ibm text-base leading-[normal]",
-);
-const chatPopover = cva("w-92.5 p-0");
-const userPopover = cva("p-4");
 
 function NavigationHeader({
 	variant = "square",
@@ -374,7 +368,7 @@ function NavigationHeader({
 			if (openMenu === undefined) setOpen(value);
 			onOpenMenuChange?.(value);
 		},
-		[openMenu, onOpenMenuChange],
+		[openMenu, onOpenMenuChange]
 	);
 	React.useEffect(() => {
 		if (
@@ -386,16 +380,18 @@ function NavigationHeader({
 		const ownerDocument = headerRef.current?.ownerDocument;
 		if (!ownerDocument) return;
 		const dismiss = (event: PointerEvent) => {
-			if (!event.composedPath().includes(headerRef.current as HTMLElement))
+			if (
+				!event.composedPath().includes(headerRef.current as HTMLElement)
+			)
 				change(null);
 		};
-		const escape = (event: KeyboardEvent) => {
+		const handleEscapeKey = (event: KeyboardEvent) => {
 			if (event.key === "Escape") {
 				event.preventDefault();
 				change(null);
 				[
 					...(headerRef.current?.querySelectorAll<HTMLButtonElement>(
-						"[data-header-menu]",
+						"[data-header-menu]"
 					) ?? []),
 				]
 					.find((button) => button.dataset.headerMenu === active)
@@ -403,17 +399,19 @@ function NavigationHeader({
 			}
 		};
 		ownerDocument.addEventListener("pointerdown", dismiss);
-		ownerDocument.addEventListener("keydown", escape);
+		ownerDocument.addEventListener("keydown", handleEscapeKey);
 		return () => {
 			ownerDocument.removeEventListener("pointerdown", dismiss);
-			ownerDocument.removeEventListener("keydown", escape);
+			ownerDocument.removeEventListener("keydown", handleEscapeKey);
 		};
 	}, [active, change, items, updated]);
 	const renderNavigationItem = (item: HeaderNavigationItem) => {
 		const itemClass = cn(
 			headerNavigationItem(),
 			!updated && squareNavigationItem(),
-			!updated && (item.active || active === item.id) && activeNavigationItem(),
+			!updated &&
+				(item.active || active === item.id) &&
+				activeNavigationItem()
 		);
 		if (!item.groups?.length)
 			return (
@@ -453,13 +451,15 @@ function NavigationHeader({
 				<PopoverContent
 					align="start"
 					alignOffset={-8}
-					className={cn(headerPopover(), "p-6")}
+					appearance="header-navigation"
 					sideOffset={16}
 				>
 					<div className="flex gap-16">
 						{item.groups.map((group) => (
 							<div className="flex flex-col gap-6" key={group.id}>
-								{group.label ? <span>{group.label}</span> : null}
+								{group.label ? (
+									<span>{group.label}</span>
+								) : null}
 								<div className="flex flex-col gap-3 text-base leading-5">
 									{group.items.map((link) => (
 										<button
@@ -487,7 +487,9 @@ function NavigationHeader({
 		label: string,
 		iconName: NavigationIconName,
 		content: React.ReactNode,
-		contentClass?: string,
+		appearance: React.ComponentProps<
+			typeof PopoverContent
+		>["appearance"] = "header-action"
 	) => (
 		<Popover
 			key={id}
@@ -500,7 +502,7 @@ function NavigationHeader({
 					className={cn(
 						"inline-flex shrink-0 items-center justify-center rounded-full outline-none hover:bg-snapp-grey-100 focus-visible:ring-2 focus-visible:ring-snapp-border-highlight",
 						updated ? "size-8 rounded-sm" : "size-9",
-						active === id && "bg-snapp-grey-100",
+						active === id && "bg-snapp-grey-100"
 					)}
 					onKeyDown={(event) => {
 						if (event.key === "Enter" || event.key === " ")
@@ -516,7 +518,7 @@ function NavigationHeader({
 			</PopoverTrigger>
 			<PopoverContent
 				align="end"
-				className={cn(headerPopover(), contentClass)}
+				appearance={appearance}
 				onOpenAutoFocus={(event) => {
 					event.preventDefault();
 					if (
@@ -525,14 +527,14 @@ function NavigationHeader({
 					) {
 						const first = [
 							...event.target.querySelectorAll<HTMLElement>(
-								'input:not(:disabled):not([type="hidden"]),button:not(:disabled),a[href],select:not(:disabled),textarea:not(:disabled),[tabindex]',
+								'input:not(:disabled):not([type="hidden"]),button:not(:disabled),a[href],select:not(:disabled),textarea:not(:disabled),[tabindex]'
 							),
 						].find(
 							(node) =>
 								node.tabIndex >= 0 &&
 								node.getAttribute("aria-disabled") !== "true" &&
 								node.getClientRects().length > 0 &&
-								getComputedStyle(node).visibility !== "hidden",
+								getComputedStyle(node).visibility !== "hidden"
 						);
 						// Focusing the owned node also works inside a ShadowRoot.
 						first?.focus({ preventScroll: true });
@@ -551,8 +553,8 @@ function NavigationHeader({
 				"relative z-10 w-full min-w-0 bg-snapp-surface-primary font-sans text-sm leading-5 font-normal text-snapp-text-brand",
 				updated
 					? "after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-snapp-border-primary"
-					: "shadow-[0_4px_7.5px_#20232714]",
-				className,
+					: "shadow-snapp-achievement",
+				className
 			)}
 			data-slot="snapp-navigation-header"
 			data-variant={variant}
@@ -563,26 +565,28 @@ function NavigationHeader({
 				aria-label="Primary navigation"
 				className={cn(
 					"flex min-w-0 items-center px-6",
-					updated ? "h-14 gap-6" : "h-13 gap-1 py-2",
+					updated ? "h-14 gap-6" : "h-13 gap-1 py-2"
 				)}
 			>
 				<button
 					aria-label="Home"
 					className={cn(
 						"inline-flex shrink-0 items-center justify-center rounded-full outline-none hover:bg-snapp-surface-secondary focus-visible:ring-2 focus-visible:ring-snapp-border-highlight",
-						updated ? "size-8 rounded-sm" : "size-9",
+						updated ? "size-8 rounded-sm" : "size-9"
 					)}
 					onClick={onHome}
 					type="button"
 				>
 					<NavigationIcon
-						name={updated ? "updatedHeaderHome" : "squareTopMenuHome"}
+						name={
+							updated ? "updatedHeaderHome" : "squareTopMenuHome"
+						}
 					/>
 				</button>
 				<div
 					className={cn(
 						"flex min-w-0 items-center",
-						updated ? "flex-1 gap-10" : "gap-1",
+						updated ? "flex-1 gap-10" : "gap-1"
 					)}
 				>
 					{items.map(renderNavigationItem)}
@@ -592,17 +596,14 @@ function NavigationHeader({
 						placeholder="Global Search Element"
 						{...searchProps}
 						className={cn("w-100 shrink-0", searchProps?.className)}
-						inputClassName={cn(
-							globalSearchInput(),
-							searchProps?.inputClassName,
-						)}
+						inputAppearance="navigation-global"
 						rounded
 					/>
 				) : null}
 				<div
 					className={cn(
 						"flex items-center justify-end",
-						updated ? "gap-6" : "min-w-0 flex-1 gap-3",
+						updated ? "gap-6" : "min-w-max flex-1 gap-3"
 					)}
 				>
 					{!updated && chat
@@ -611,7 +612,7 @@ function NavigationHeader({
 								"Open live support",
 								"squareTopMenuChat",
 								chat,
-								chatPopover(),
+								"header-chat"
 							)
 						: null}
 					{!updated && areas.length
@@ -619,7 +620,10 @@ function NavigationHeader({
 								"area",
 								"Switch area",
 								"squareTopMenuArrowAutofit",
-								<NavigationAppGrid apps={areas} search={false} />,
+								<NavigationAppGrid
+									apps={areas}
+									search={false}
+								/>
 							)
 						: null}
 					{apps.length
@@ -627,7 +631,7 @@ function NavigationHeader({
 								"apps",
 								"Choose application",
 								"updatedHeaderGridDots",
-								<NavigationAppGrid apps={apps} />,
+								<NavigationAppGrid apps={apps} />
 							)
 						: null}
 					{!updated && userControls
@@ -638,28 +642,31 @@ function NavigationHeader({
 								<div className="flex w-25 flex-col items-end gap-2 font-sans text-xs leading-4">
 									{userControls}
 								</div>,
-								userPopover(),
+								"header-user"
 							)
 						: null}
 				</div>
 			</nav>
 			{updated && items.find((item) => item.id === active)?.groups ? (
 				<div
-					className="flex gap-12 pt-6 pr-6 pb-12 pl-20 shadow-[0_14px_9px_#4c4f521f]"
+					className="flex gap-12 pt-6 pr-6 pb-12 pl-20 shadow-snapp-tool-menu"
 					data-slot="snapp-header-feature-menu"
 				>
 					{items
 						.find((item) => item.id === active)
 						?.groups?.map((group, index) => (
 							<div
-								className={cn("flex flex-col gap-6", index === 0 && "mr-4")}
+								className={cn(
+									"flex flex-col gap-6",
+									index === 0 && "mr-4"
+								)}
 								key={group.id}
 							>
 								<span>{group.label}</span>
 								<div
 									className={cn(
 										"flex flex-col gap-2 font-bold",
-										group.prominent && "text-xl leading-6",
+										group.prominent && "text-xl leading-6"
 									)}
 								>
 									{group.items.map((link) => (
@@ -694,14 +701,12 @@ interface ProfileControlsProps extends React.ComponentProps<"header"> {
 			| "filter"
 			| "settings"
 			| "help"
-			| "profile",
+			| "profile"
 	) => void;
 }
 
-interface LiveSupportPanelProps extends Omit<
-	React.ComponentProps<"section">,
-	"title" | "onSubmit"
-> {
+interface LiveSupportPanelProps
+	extends Omit<React.ComponentProps<"section">, "title" | "onSubmit"> {
 	title?: React.ReactNode;
 	onSendMessage: (message: string) => void;
 	onClose?: () => void;
@@ -727,7 +732,7 @@ function LiveSupportPanel({
 			aria-label={typeof title === "string" ? title : "Live support"}
 			className={cn(
 				"flex h-125 w-92.5 max-w-full flex-col overflow-hidden rounded-lg bg-snapp-surface-primary font-sans text-sm leading-5 text-snapp-text-primary",
-				className,
+				className
 			)}
 			data-slot="snapp-live-support"
 			{...props}
@@ -840,7 +845,7 @@ function SupportMessage({ className, ...props }: React.ComponentProps<"div">) {
 		<div
 			className={cn(
 				"w-fit rounded-lg bg-snapp-surface-primary px-4 py-3 font-snapp-ibm text-base leading-5 font-normal text-snapp-text-primary ring-1 ring-snapp-border-primary ring-inset",
-				className,
+				className
 			)}
 			data-slot="snapp-support-message"
 			{...props}
@@ -857,7 +862,7 @@ function ProfileControls({
 		<header
 			className={cn(
 				"flex h-12.5 w-full items-center justify-between bg-snapp-surface-brand font-sans text-snapp-text-invert",
-				className,
+				className
 			)}
 			data-slot="snapp-profile-controls"
 			{...props}
@@ -869,9 +874,25 @@ function ProfileControls({
 					onClick={() => onAction?.("apps")}
 					type="button"
 				>
-					<span aria-hidden="true" className="grid size-4 grid-cols-3 gap-0.5">
-						{Array.from({ length: 9 }, (_, index) => (
-							<span className="bg-snapp-icon-invert" key={index} />
+					<span
+						aria-hidden="true"
+						className="grid size-4 grid-cols-3 gap-0.5"
+					>
+						{[
+							"profile-dot-r1-c1",
+							"profile-dot-r1-c2",
+							"profile-dot-r1-c3",
+							"profile-dot-r2-c1",
+							"profile-dot-r2-c2",
+							"profile-dot-r2-c3",
+							"profile-dot-r3-c1",
+							"profile-dot-r3-c2",
+							"profile-dot-r3-c3",
+						].map((position) => (
+							<span
+								className="bg-snapp-icon-invert"
+								key={position}
+							/>
 						))}
 					</span>
 				</button>
@@ -889,7 +910,8 @@ function ProfileControls({
 								aria-label={
 									action === "recent"
 										? "Recent activity"
-										: action.charAt(0).toUpperCase() + action.slice(1)
+										: action.charAt(0).toUpperCase() +
+											action.slice(1)
 								}
 								className="relative inline-flex items-center justify-center rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-snapp-border-invert"
 								key={action}
@@ -913,14 +935,17 @@ function ProfileControls({
 										index < 2
 											? {
 													position: "absolute",
-													left: index === 0 ? -0.531 : -0.75,
+													left:
+														index === 0
+															? -0.531
+															: -0.75,
 													top: -0.75,
 												}
 											: undefined
 									}
 								/>
 							</button>
-						),
+						)
 					)}
 				</div>
 				<span
@@ -937,7 +962,7 @@ function ProfileControls({
 				</button>
 				<button
 					aria-label="Help"
-					className="font-[Arial] text-xl leading-[normal] tracking-[-0.2px] outline-none focus-visible:ring-2 focus-visible:ring-snapp-border-invert"
+					className="font-snapp-arial text-xl leading-snapp-normal tracking-snapp-tight outline-none focus-visible:ring-2 focus-visible:ring-snapp-border-invert"
 					onClick={() => onAction?.("help")}
 					type="button"
 				>

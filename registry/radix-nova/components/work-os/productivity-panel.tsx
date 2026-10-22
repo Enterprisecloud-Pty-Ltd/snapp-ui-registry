@@ -85,7 +85,13 @@ function ProductivityPanel({
 	const heading = (icon: string, label: string, time: string) => (
 		<div className="flex w-full flex-col gap-2">
 			<div className="flex h-8 items-center gap-2">
-				<img src={icon} alt="" width={20} height={20} className="shrink-0" />
+				<img
+					src={icon}
+					alt=""
+					width={20}
+					height={20}
+					className="shrink-0"
+				/>
 				<span className="min-w-0 flex-1">{label}</span>
 				<span className="shrink-0">{time}</span>
 			</div>
@@ -105,14 +111,14 @@ function ProductivityPanel({
 			className={cn(
 				"flex min-h-257.75 w-84.5 flex-col bg-snapp-surface-secondary font-snapp-body text-snapp-sm leading-snapp-xs font-normal text-snapp-text-brand",
 				collapsed && "w-13",
-				className,
+				className
 			)}
 			{...props}
 		>
 			<section
 				className={cn(
 					"flex flex-col items-start gap-4 px-4 py-3",
-					!collapsed && "w-full shadow-[inset_0_-1px_0_var(--snapp-border-primary)]",
+					!collapsed && "w-full shadow-snapp-bottom-divider"
 				)}
 			>
 				{collapsed ? (

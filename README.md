@@ -14,6 +14,10 @@ npm run registry:verify
 npm run registry:serve
 ```
 
+The verification command includes canonical-source ESLint and Biome gates,
+formatter ownership tests, and strict design-system lint against the installed
+complete library. See [shared-source quality](docs/shared-source-quality.md).
+
 All included Snapp `components.json` files register the local namespace:
 
 ```powershell
@@ -26,7 +30,15 @@ family, exact asset and the theme:
 
 ```powershell
 npx shadcn@4.12.0 add @snapp/snapp-component-library --overwrite
+node scripts/snapp-registry-delivery.mjs --write
+node scripts/snapp-registry-delivery.mjs --check
 ```
+
+Configure the consumer's Biome formatter before running the delivery script.
+It assigns only the manifest's exact generated files to registry formatting;
+application formatting and lint remain enabled. Rerun the script after an
+intentional complete-library refresh. Other formatter configurations require
+an explicit equivalent ownership rule rather than a guessed rewrite.
 
 Run the shared webresource converter again after this overwrite when the
 consumer is hosted by Dynamics or compiled by a sibling PCF. The converter

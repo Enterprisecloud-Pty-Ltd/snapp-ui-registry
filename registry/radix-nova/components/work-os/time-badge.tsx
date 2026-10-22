@@ -14,11 +14,17 @@ function TimeBadge({ time, tone = "green", className }: TimeBadgeProps) {
 			className={cn(
 				"flex w-21.5 items-center gap-1 rounded-snapp-rounded inset-ring-1 inset-ring-snapp-border-primary p-1 font-snapp-body text-snapp-xs leading-snapp-xxs font-normal text-snapp-text-secondary",
 				tone === "red" && "text-snapp-text-red",
-				className,
+				className
 			)}
 			data-slot="snapp-time-badge"
 		>
-			<img src={clock} alt="" width={16} height={16} className="shrink-0" />
+			<img
+				src={clock}
+				alt=""
+				width={16}
+				height={16}
+				className="shrink-0"
+			/>
 			<span className="whitespace-nowrap">{time}</span>
 		</div>
 	);

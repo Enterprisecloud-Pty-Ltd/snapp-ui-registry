@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "registry/radix-nova/ui/separator.tsx",
-      "content": "import * as React from \"react\"\nimport { Separator as SeparatorPrimitive } from \"radix-ui\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Separator({\n  className,\n  orientation = \"horizontal\",\n  decorative = true,\n  ...props\n}: React.ComponentProps<typeof SeparatorPrimitive.Root>) {\n  return (\n    <SeparatorPrimitive.Root\n      data-slot=\"separator\"\n      decorative={decorative}\n      orientation={orientation}\n      className={cn(\n        \"shrink-0 bg-border data-horizontal:h-px data-horizontal:w-full data-vertical:w-px data-vertical:self-stretch\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Separator }\n",
+      "content": "import type * as React from \"react\";\nimport { Separator as SeparatorPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Separator({\n\tclassName,\n\torientation = \"horizontal\",\n\tdecorative = true,\n\t...props\n}: React.ComponentProps<typeof SeparatorPrimitive.Root>) {\n\treturn (\n\t\t<SeparatorPrimitive.Root\n\t\t\tdata-slot=\"separator\"\n\t\t\tdecorative={decorative}\n\t\t\torientation={orientation}\n\t\t\tclassName={cn(\n\t\t\t\t\"shrink-0 bg-border data-horizontal:h-px data-horizontal:w-full data-vertical:w-px data-vertical:self-stretch\",\n\t\t\t\tclassName\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Separator };\n",
       "type": "registry:ui",
       "target": "@ui/separator.tsx"
     }

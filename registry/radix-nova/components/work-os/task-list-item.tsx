@@ -62,14 +62,14 @@ function TaskListItem({
 				"relative flex w-75 max-w-full flex-col items-start justify-center inset-ring-1 font-snapp-body font-normal",
 				high
 					? "gap-2 rounded-snapp-rounded inset-ring-snapp-border-primary bg-snapp-surface-primary p-3"
-					: "rounded-md inset-ring-[rgba(42,44,46,0.15)] bg-white p-3",
+					: "rounded-md inset-ring-snapp-ink-faint bg-white p-3",
 				full && !high && "gap-2",
-				dragged && "inset-ring-[rgba(42,44,46,0.34)] bg-[rgba(42,44,46,0.05)]",
+				dragged && "inset-ring-snapp-ink-border bg-snapp-ink-subtle",
 				state === "placing" &&
-					"h-28.25 gap-2 border-2 border-dashed border-[rgba(42,44,46,0.34)] inset-ring-0 bg-[rgba(42,44,46,0.05)]",
+					"h-28.25 gap-2 border-2 border-dashed border-snapp-ink-border inset-ring-0 bg-snapp-ink-subtle",
 				state === "list" && "px-3 py-1.5",
 				tiny && "rounded-3xl py-0.5 pr-1 pl-2",
-				className,
+				className
 			)}
 			{...props}
 		>
@@ -78,17 +78,24 @@ function TaskListItem({
 					className={cn(
 						"flex w-full",
 						tiny ? "items-center gap-1" : "flex-col items-start",
-						["high", "mid", "low"].includes(state) && "gap-0.5",
+						["high", "mid", "low"].includes(state) && "gap-0.5"
 					)}
 				>
 					{!tiny && (
-						<div className={cn("flex w-full items-center", compact && "gap-1")}>
+						<div
+							className={cn(
+								"flex w-full items-center",
+								compact && "gap-1"
+							)}
+						>
 							<p
 								className={cn(
 									"min-w-0 flex-1 text-snapp-sm leading-snapp-xs text-snapp-text-brand",
-									compact && "flex-none font-bold text-snapp-text-primary",
-									state === "list" && "text-snapp-xxs leading-snapp-xxxs",
-									dragged && "text-[rgba(42,44,46,0.15)]",
+									compact &&
+										"flex-none font-bold text-snapp-text-primary",
+									state === "list" &&
+										"text-snapp-xxs leading-snapp-xxxs",
+									dragged && "text-snapp-ink-faint"
 								)}
 							>
 								{recordId}
@@ -96,8 +103,9 @@ function TaskListItem({
 							{compact && (
 								<p
 									className={cn(
-										"min-w-0 flex-1 text-snapp-sm leading-snapp-xs text-[rgba(42,44,46,0.8)]",
-										state === "list" && "text-snapp-xs leading-snapp-xxs",
+										"min-w-0 flex-1 text-snapp-sm leading-snapp-xs text-snapp-ink-strong",
+										state === "list" &&
+											"text-snapp-xs leading-snapp-xxs"
 									)}
 								>
 									{clientName}
@@ -126,7 +134,7 @@ function TaskListItem({
 							{dragged && (
 								<span
 									aria-hidden="true"
-									className="size-2.5 shrink-0 rounded-3xl bg-[rgba(42,44,46,0.15)]"
+									className="size-2.5 shrink-0 rounded-3xl bg-snapp-ink-faint"
 								/>
 							)}
 							{state === "minimal" && (
@@ -150,9 +158,9 @@ function TaskListItem({
 							"w-full text-snapp-xs text-snapp-text-secondary",
 							!dragged && "leading-snapp-xxs",
 							tiny && "min-w-0 flex-1 text-snapp-text-primary",
-							secondary || compact ? "text-[rgba(42,44,46,0.5)]" : "",
+							secondary || compact ? "text-snapp-ink-muted" : "",
 							dragged &&
-								"text-snapp-xxs leading-[normal] text-[rgba(42,44,46,0.15)]",
+								"text-snapp-xxs leading-snapp-normal text-snapp-ink-faint"
 						)}
 					>
 						{tiny ? `${recordId} ${title}` : title}
@@ -163,7 +171,7 @@ function TaskListItem({
 								"w-full text-snapp-xs text-snapp-text-primary",
 								!dragged && "leading-snapp-xxs",
 								dragged &&
-									"text-snapp-xxs leading-[normal] text-[rgba(42,44,46,0.15)]",
+									"text-snapp-xxs leading-snapp-normal text-snapp-ink-faint"
 							)}
 						>
 							{clientName}
@@ -185,9 +193,11 @@ function TaskListItem({
 					className={cn(
 						"flex w-full items-center gap-3 border-t pt-2 text-snapp-xs text-snapp-text-primary",
 						!dragged && "leading-snapp-xxs",
-						high ? "border-snapp-border-primary" : "border-[#f3f4f6]",
+						high
+							? "border-snapp-border-primary"
+							: "border-snapp-inter-canvas",
 						dragged &&
-							"border-[rgba(42,44,46,0.15)] text-snapp-xxs leading-[normal] text-[rgba(42,44,46,0.15)]",
+							"border-snapp-ink-faint text-snapp-xxs leading-snapp-normal text-snapp-ink-faint"
 					)}
 				>
 					<p className="min-w-0 flex-1">{time}</p>
@@ -235,7 +245,9 @@ function TaskListItem({
 								className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-snapp-border-highlight"
 							>
 								<img
-									src={secondary ? secondaryMenuIcon : menuIcon}
+									src={
+										secondary ? secondaryMenuIcon : menuIcon
+									}
 									alt=""
 									width={16}
 									height={16}

@@ -34,17 +34,19 @@ function FeatureBreadcrumb({
 	if (items.length === 0) return null;
 	return (
 		<Breadcrumb
-			className={cn("w-fit font-sans text-sm leading-5 font-normal", className)}
+			appearance="feature"
+			className={cn("w-fit", className)}
 			data-slot="snapp-feature-breadcrumb"
 			{...props}
 		>
-			<BreadcrumbList className="m-0 flex-nowrap gap-2 rounded-full bg-snapp-surface-secondary px-4 py-2 text-snapp-text-secondary">
+			<BreadcrumbList appearance="feature">
 				{icon ? (
 					<BreadcrumbItem aria-hidden="true">{icon}</BreadcrumbItem>
 				) : null}
 				{items.map((item, index) => {
 					const current = item.current ?? index === items.length - 1;
-					const collapsed = collapseAncestors && index < items.length - 3;
+					const collapsed =
+						collapseAncestors && index < items.length - 3;
 					const label = collapsed ? (
 						<>
 							<span aria-hidden="true">...</span>
@@ -56,24 +58,27 @@ function FeatureBreadcrumb({
 					return (
 						<Fragment key={item.id}>
 							<BreadcrumbSeparator
-								className={cn(
-									"font-normal",
-									current && "text-snapp-text-brand",
-								)}
+								appearance={
+									current ? "feature-current" : "feature"
+								}
 							>
 								/
 							</BreadcrumbSeparator>
 							<BreadcrumbItem className="min-w-0">
 								{item.onSelect ? (
 									<button
-										aria-current={current ? "page" : undefined}
+										aria-current={
+											current ? "page" : undefined
+										}
 										className={cn(
 											"max-w-64 truncate rounded-sm bg-transparent text-left outline-none hover:underline focus-visible:ring-2 focus-visible:ring-snapp-border-highlight",
-											current && "font-bold text-snapp-text-brand",
+											current &&
+												"font-bold text-snapp-text-brand"
 										)}
 										onClick={item.onSelect}
 										title={
-											collapsed && typeof item.label === "string"
+											collapsed &&
+											typeof item.label === "string"
 												? item.label
 												: undefined
 										}
@@ -83,11 +88,14 @@ function FeatureBreadcrumb({
 									</button>
 								) : (
 									<BreadcrumbPage
-										aria-current={current ? "page" : undefined}
-										className={cn(
-											"max-w-64 truncate text-snapp-text-secondary",
-											current && "font-bold text-snapp-text-brand",
-										)}
+										aria-current={
+											current ? "page" : undefined
+										}
+										appearance={
+											current
+												? "feature-current"
+												: "feature"
+										}
 									>
 										{label}
 									</BreadcrumbPage>

@@ -23,7 +23,7 @@ function HugText({
 		if (
 			view.CSS.supports(
 				"inline-size",
-				"calc-size(max-content, round(up, size, 1px))",
+				"calc-size(max-content, round(up, size, 1px))"
 			)
 		)
 			return;
@@ -31,11 +31,15 @@ function HugText({
 		const updateSize = (size: number) => {
 			if (!Number.isFinite(size)) return;
 			const rounded = Math.ceil(size);
-			setInlineSize((previous) => (previous === rounded ? previous : rounded));
+			setInlineSize((previous) =>
+				previous === rounded ? previous : rounded
+			);
 		};
 		// Computed inline size, unlike a client rect, is unaffected by host transforms.
 		const measure = () =>
-			updateSize(Number.parseFloat(view.getComputedStyle(content).inlineSize));
+			updateSize(
+				Number.parseFloat(view.getComputedStyle(content).inlineSize)
+			);
 		measure();
 		if (!view.ResizeObserver) return;
 
@@ -43,7 +47,9 @@ function HugText({
 		const observer = new view.ResizeObserver(([entry]) => {
 			if (!entry) return;
 			const boxes = entry.contentBoxSize as
-				readonly ResizeObserverSize[] | ResizeObserverSize | undefined;
+				| readonly ResizeObserverSize[]
+				| ResizeObserverSize
+				| undefined;
 			const box = boxes && ("inlineSize" in boxes ? boxes : boxes[0]);
 			if (box) updateSize(box.inlineSize);
 			else measure();
@@ -57,7 +63,7 @@ function HugText({
 			data-slot="hug-text"
 			className={cn(
 				"inline-flex shrink-0 inline-[calc-size(max-content,round(up,size,1px))]",
-				className,
+				className
 			)}
 			style={inlineSize === undefined ? style : { ...style, inlineSize }}
 			{...props}
@@ -88,17 +94,23 @@ function wrapHugText(children: React.ReactNode): React.ReactNode {
 		React.Children.forEach(nodes, (child, index) => {
 			if (typeof child === "string" || typeof child === "number") {
 				text += child;
-			} else if (React.isValidElement(child) && child.type === React.Fragment) {
+			} else if (
+				React.isValidElement(child) &&
+				child.type === React.Fragment
+			) {
 				append(
 					(child.props as { children?: React.ReactNode }).children,
-					`${scope}:${child.key ?? index}`,
+					`${scope}:${child.key ?? index}`
 				);
 			} else if (child != null && typeof child !== "boolean") {
 				flush();
 				result.push(
-					<React.Fragment key={`node:${scope}:${index}`}>
+					<React.Fragment
+						// biome-ignore lint/suspicious/noArrayIndexKey: Unkeyed mixed text and fragments need stable output slots during text coalescing.
+						key={`node:${scope}:${index}`}
+					>
 						{child}
-					</React.Fragment>,
+					</React.Fragment>
 				);
 			}
 		});

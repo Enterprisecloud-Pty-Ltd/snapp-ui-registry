@@ -21,16 +21,18 @@ function CalendarDay({
 			data-slot="snapp-calendar-day"
 			data-version={version}
 			className={cn(
-				"flex min-h-[90.333px] w-[141.714px] flex-col items-start gap-1.5 px-3 pt-3.25 pb-3 font-snapp-body shadow-[inset_0_1px_0_rgba(42,44,46,0.15)]",
-				version === "light" ? "bg-white" : "bg-[rgba(42,44,46,0.05)]",
-				className,
+				"flex min-h-snapp-calendar-day-height w-snapp-calendar-day-width flex-col items-start gap-1.5 px-3 pt-3.25 pb-3 font-snapp-body shadow-snapp-top-divider",
+				version === "light" ? "bg-white" : "bg-snapp-ink-subtle",
+				className
 			)}
 			{...props}
 		>
-			<div className="flex w-full items-start gap-4 text-snapp-xxs leading-snapp-xxxs font-bold text-[rgba(42,44,46,0.5)]">
+			<div className="flex w-full items-start gap-4 text-snapp-xxs leading-snapp-xxxs font-bold text-snapp-ink-muted">
 				<span>{day}</span>
 				{totalTime !== undefined && (
-					<span className="min-w-0 flex-1 text-right">{totalTime}</span>
+					<span className="min-w-0 flex-1 text-right">
+						{totalTime}
+					</span>
 				)}
 			</div>
 			{children}

@@ -28,7 +28,7 @@ function CheckItem({
 				"flex size-4 shrink-0 items-center justify-center rounded-snapp-minimal",
 				completed
 					? "bg-snapp-surface-green"
-					: "border border-snapp-border-primary p-px",
+					: "border border-snapp-border-primary p-px"
 			)}
 		>
 			{completed && <img src={checkmark} alt="" width={12} height={12} />}
@@ -43,12 +43,13 @@ function CheckItem({
 				state === "selected"
 					? "inset-ring-snapp-border-highlight"
 					: "inset-ring-snapp-border-primary",
-				className,
+				className
 			)}
 			{...props}
 		>
 			<div className="flex items-center gap-2">
 				{onCompletedChange ? (
+					// biome-ignore lint/a11y/useSemanticElements: The supplied Figma checkbox uses button keyboard activation, its exact glyph, and the checkbox role with aria-checked.
 					<button
 						type="button"
 						role="checkbox"
@@ -64,14 +65,20 @@ function CheckItem({
 				)}
 				<p className="flex h-4.5 items-center gap-1 text-snapp-sm leading-snapp-xs">
 					<span className="text-snapp-text-brand">{title}</span>
-					{code && <span className="text-snapp-text-secondary">{code}</span>}
+					{code && (
+						<span className="text-snapp-text-secondary">
+							{code}
+						</span>
+					)}
 				</p>
 			</div>
 			<div className="flex w-full items-center gap-2 text-snapp-xs leading-snapp-xxs">
 				<p
 					className={cn(
 						"min-w-0 flex-1",
-						completed ? "text-snapp-text-green" : "text-snapp-text-secondary",
+						completed
+							? "text-snapp-text-green"
+							: "text-snapp-text-secondary"
 					)}
 				>
 					{statusLabel ?? (completed ? "Completed" : "Issued")}

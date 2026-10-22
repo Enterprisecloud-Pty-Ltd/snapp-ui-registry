@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/radix-nova/ui/direction.tsx",
-      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Direction } from \"radix-ui\"\n\nfunction DirectionProvider({\n  dir,\n  direction,\n  children,\n}: React.ComponentProps<typeof Direction.DirectionProvider> & {\n  direction?: React.ComponentProps<typeof Direction.DirectionProvider>[\"dir\"]\n}) {\n  return (\n    <Direction.DirectionProvider dir={direction ?? dir}>\n      {children}\n    </Direction.DirectionProvider>\n  )\n}\n\nconst useDirection = Direction.useDirection\n\nexport { DirectionProvider, useDirection }\n",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { Direction } from \"radix-ui\";\n\nfunction DirectionProvider({\n\tdir,\n\tdirection,\n\tchildren,\n}: React.ComponentProps<typeof Direction.DirectionProvider> & {\n\tdirection?: React.ComponentProps<typeof Direction.DirectionProvider>[\"dir\"];\n}) {\n\treturn (\n\t\t<Direction.DirectionProvider dir={direction ?? dir}>\n\t\t\t{children}\n\t\t</Direction.DirectionProvider>\n\t);\n}\n\nconst useDirection = Direction.useDirection;\n\nexport { DirectionProvider, useDirection };\n",
       "type": "registry:ui",
       "target": "@ui/direction.tsx"
     }

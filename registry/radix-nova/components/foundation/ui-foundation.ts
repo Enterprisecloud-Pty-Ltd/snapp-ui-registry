@@ -5,4 +5,4 @@
  * dependencies; feature code should continue importing the individual
  * primitives it uses.
  */
-export const snappUiFoundation = true as const
+export const snappUiFoundation = true as const;

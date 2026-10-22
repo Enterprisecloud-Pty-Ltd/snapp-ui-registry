@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -8,12 +8,11 @@ import { NavigationIcon } from "@/components/snapp/navigation/navigation-icons";
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
 	return (
 		<nav
-			role="navigation"
 			aria-label="pagination"
 			data-slot="pagination"
 			className={cn(
 				"flex w-fit font-sans text-sm leading-5 font-normal text-snapp-text-brand",
-				className,
+				className
 			)}
 			{...props}
 		/>
@@ -27,7 +26,10 @@ function PaginationContent({
 	return (
 		<ul
 			data-slot="pagination-content"
-			className={cn("m-0 flex list-none items-center gap-1 p-0", className)}
+			className={cn(
+				"m-0 flex list-none items-center gap-1 p-0",
+				className
+			)}
 			{...props}
 		/>
 	);
@@ -56,7 +58,7 @@ function PaginationLink({
 			size={size}
 			className={cn(
 				"h-9 min-w-9 gap-1 rounded-lg border-0 bg-transparent p-2 font-sans text-sm leading-5 font-normal text-snapp-text-brand shadow-none hover:bg-snapp-surface-secondary data-[active=true]:bg-snapp-surface-primary data-[active=true]:ring-1 data-[active=true]:ring-snapp-border-brand data-[active=true]:ring-inset",
-				className,
+				className
 			)}
 		>
 			<a
@@ -117,7 +119,7 @@ function PaginationEllipsis({
 			data-slot="pagination-ellipsis"
 			className={cn(
 				"flex size-9 items-center justify-center rounded-lg p-2.5",
-				className,
+				className
 			)}
 			{...props}
 		>
