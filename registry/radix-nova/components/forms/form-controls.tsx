@@ -666,7 +666,7 @@ function NumberSelect({
 				disabled={props.disabled}
 				value={number}
 				style={{
-					width: `calc(${Math.max(1, String(number).length)}ch + 2rem)`,
+					width: `calc(${Math.max(1, String(number).length)}ch + 32px)`,
 				}}
 				appearance="number-select"
 				onChange={(event) =>

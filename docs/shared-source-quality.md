@@ -64,6 +64,16 @@ An installed browser test verifies two providers, controlled callbacks,
 shortcut cancellation and unchanged cookies. Registry source validation rejects
 browser-storage access, which belongs to its host/runtime owners.
 
+Popups opened inside a dialog (comboboxes, selects, menus, nested modals)
+portal into the dialog content. Outside it they inherit the modal's
+`pointer-events: none` and its focus trap pulls focus back out of them.
+`DialogContent` is centred with margins, not a translate, so it is not the
+containing block of those fixed popups: its scrolling does not clip them and a
+nested modal still covers the viewport. An installed browser test opens
+30-option popups from small, tall and form dialogs and checks that every option
+can be clicked, the popup search keeps focus, nothing is clipped and a nested
+alert dialog covers the viewport.
+
 ## Consumer formatting
 
 The full bundle installs `scripts/snapp-registry-files.json` and

@@ -208,7 +208,8 @@ if (!themeFile) {
 	for (const contract of [
 		'@custom-variant data-horizontal (&[data-orientation="horizontal"]);',
 		'@custom-variant data-vertical (&[data-orientation="vertical"]);',
-		"--radius-snapp-action-menu: 0.375rem;",
+		"--radius-snapp-action-menu: 6px;",
+		"--spacing: 4px;",
 		"--radius: var(--snapp-radius-standard);",
 		"--background: var(--snapp-surface);",
 		"--border: var(--snapp-border-primary);",

@@ -117,7 +117,11 @@ neutral selected/hover treatment.
 
 Keep `@snapp/snapp-select` only for an explicitly non-searchable fixed-choice
 interaction. Do not use native `select` elements or app-specific dropdown
-implementations when the registry Combobox meets the requirement.
+implementations when the registry Combobox meets the requirement. A form-field
+Select pairs `SelectTrigger variant="form"` with `SelectContent variant="form"`,
+which renders the library dropdown panel (Figma `127:1943`: 8px inset and gap,
+28px rows, `snapp-border-primary`, selected `snapp-surface-secondary`) instead
+of the Inter select panel.
 
 `ComboboxInput` accepts a `trailingIcon` for Figma variants that use a passive
 search or lookup affordance instead of the default chevron. The icon slot keeps
@@ -347,6 +351,11 @@ published registry URL in each `components.json` when the registry is hosted.
 https://raw.githubusercontent.com/Enterprisecloud-Pty-Ltd/snapp-ui-registry/refs/heads/main/public/r/registry.json
 ```
 
+Lint consumers with the versions the clean-install smoke test verifies:
+`@shadcn/lint` 0.2.3, `cn` 0.4.0 and `oxlint` 1.88.0 (see
+`scripts/smoke-install.mjs`). Older `@shadcn/lint` releases classify the
+theme's `text-snapp-*` and `shadow-snapp-*` utilities as undeclared colours.
+
 The catalog and every generated item JSON file must be committed together.
 Before publishing changes, run:
 
@@ -387,6 +396,12 @@ retain a fixture with `SNAPP_KEEP_REGISTRY_FIXTURE=1`, then run
 `node scripts/figma-preview.mjs <fixture-root>` and inspect its three groups.
 
 ## Rollout safety
+
+Theme sizes are px, not rem: Figma spacing, radius, font-size and line-height
+tokens, the hand-authored theme sizes and Tailwind's spacing, text and
+container scales. Dynamics pages set a 14px root font size, so rem would render
+a Snapp at 87.5% of the design. Breakpoints stay in rem because media queries
+resolve against the initial font size, not the root.
 
 Registry source is never copied from an individual consuming application.
 `npm run registry:build` removes only previously generated JSON under
