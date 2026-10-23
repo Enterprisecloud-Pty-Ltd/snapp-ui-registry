@@ -1,12 +1,16 @@
 "use client";
 
 import type * as React from "react";
+import { useState } from "react";
 import { Dialog as DialogPrimitive } from "radix-ui";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { FormIcon } from "@/components/snapp/forms/figma-form-icons";
-import { usePortalContainer } from "@/runtime/PortalContainer";
+import {
+	PortalContainerContext,
+	usePortalContainer,
+} from "@/runtime/PortalContainer";
 
 type DialogSize = "default" | "sm" | "md" | "lg" | "form";
 type DialogSectionSize = "default" | "form";
@@ -70,19 +74,31 @@ function DialogContent({
 	showCloseButton?: boolean;
 	size?: DialogSize;
 }) {
+	// Popups opened inside the dialog portal into it: outside it they inherit
+	// the modal's pointer-events: none and its focus trap pulls focus back.
+	// The content is centred with margins, not a translate: a transform would
+	// make it the containing block of those fixed popups, so its scrolling
+	// would clip them and nested modals would only cover the dialog.
+	const portalContainer = usePortalContainer();
+	const [content, setContent] = useState<HTMLDivElement | null>(null);
 	return (
 		<DialogPortal>
 			<DialogOverlay className={overlayClassName} />
 			<DialogPrimitive.Content
 				data-slot="dialog-content"
 				data-size={size}
+				ref={setContent}
 				className={cn(
-					"group/dialog-content fixed top-1/2 left-1/2 z-50 flex max-h-[calc(100dvh-32px)] w-[calc(100%-32px)] min-w-0 max-w-180 -translate-x-1/2 -translate-y-1/2 flex-col gap-6 overflow-x-hidden overflow-y-auto rounded-lg bg-snapp-surface-primary p-6 font-sans text-sm leading-5 text-snapp-text-primary shadow-2xl outline-none data-[size=sm]:max-w-120 data-[size=md]:max-w-150 data-[size=form]:overflow-hidden data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+					"group/dialog-content fixed inset-0 z-50 m-auto flex h-fit max-h-[calc(100dvh-32px)] w-[calc(100%-32px)] min-w-0 max-w-180 flex-col gap-6 overflow-x-hidden overflow-y-auto rounded-lg bg-snapp-surface-primary p-6 font-sans text-sm leading-5 text-snapp-text-primary shadow-2xl outline-none data-[size=sm]:max-w-120 data-[size=md]:max-w-150 data-[size=form]:overflow-hidden data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
 					className
 				)}
 				{...props}
 			>
-				{children}
+				<PortalContainerContext.Provider
+					value={content ?? portalContainer}
+				>
+					{children}
+				</PortalContainerContext.Provider>
 				{showCloseButton && (
 					<DialogPrimitive.Close data-slot="dialog-close" asChild>
 						<Button
