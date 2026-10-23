@@ -58,12 +58,14 @@ const primitiveAliasName = (token) => {
 	return customPropertyName(targetName.split("/"));
 };
 
+// Figma numbers are pixel sizes. Keep them in px: Dynamics pages set a 14px root,
+// so rem would render every Snapp mounted there at 87.5% of the design.
 const formatNumber = (value) => {
 	if (value === 0) {
 		return "0";
 	}
 
-	return `${Number((value / 16).toFixed(6))}rem`;
+	return `${Number(value.toFixed(6))}px`;
 };
 
 const formatColor = (value) => {

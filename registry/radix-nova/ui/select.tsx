@@ -1,12 +1,19 @@
 "use client";
 
-import type * as React from "react";
+import * as React from "react";
 import { Select as SelectPrimitive } from "radix-ui";
 
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { usePortalContainer } from "@/runtime/PortalContainer";
 import { FormIcon } from "@/components/snapp/forms/figma-form-icons";
+
+// "form" is the library dropdown opened from a form field (Figma
+// YUYB5jtCxUwT8OefeLP9f7, node 127:1943); "default" is the Inter select. Items
+// read it from the content so each row uses one complete class set.
+type SelectContentVariant = "default" | "form";
+const SelectContentVariantContext =
+	React.createContext<SelectContentVariant>("default");
 
 function Select({
 	...props
@@ -75,16 +82,23 @@ function SelectContent({
 	children,
 	position = "popper",
 	align = "start",
+	variant = "default",
 	...props
-}: React.ComponentProps<typeof SelectPrimitive.Content>) {
+}: React.ComponentProps<typeof SelectPrimitive.Content> & {
+	variant?: SelectContentVariant;
+}) {
 	const portalContainer = usePortalContainer();
 	return (
 		<SelectPrimitive.Portal container={portalContainer ?? undefined}>
 			<SelectPrimitive.Content
 				data-slot="select-content"
+				data-variant={variant}
 				data-align-trigger={position === "item-aligned"}
 				className={cn(
-					"relative z-50 max-h-(--radix-select-content-available-height) min-w-36 origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border border-snapp-inter-border bg-white p-0.75 font-snapp-inter text-sm leading-5 font-normal text-snapp-inter-text shadow-md outline-none",
+					"relative z-50 max-h-(--radix-select-content-available-height) min-w-36 origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto outline-none",
+					variant === "form"
+						? "rounded-lg border border-snapp-border-primary bg-snapp-surface-primary p-2 font-sans text-sm leading-5 font-normal text-snapp-text-secondary shadow-snapp-flyout"
+						: "rounded-md border border-snapp-inter-border bg-white p-0.75 font-snapp-inter text-sm leading-5 font-normal text-snapp-inter-text shadow-md",
 					position === "popper" &&
 						"min-w-(--radix-select-trigger-width) data-[side=bottom]:translate-y-1 data-[side=top]:-translate-y-1",
 					className
@@ -98,10 +112,12 @@ function SelectContent({
 					data-position={position}
 					className={cn(
 						"data-[position=popper]:w-full",
-						position === "popper" && ""
+						variant === "form" && "flex flex-col gap-2"
 					)}
 				>
-					{children}
+					<SelectContentVariantContext.Provider value={variant}>
+						{children}
+					</SelectContentVariantContext.Provider>
 				</SelectPrimitive.Viewport>
 				<SelectScrollDownButton />
 			</SelectPrimitive.Content>
@@ -130,18 +146,30 @@ function SelectItem({
 	children,
 	...props
 }: React.ComponentProps<typeof SelectPrimitive.Item>) {
+	const variant = React.useContext(SelectContentVariantContext);
 	return (
 		<SelectPrimitive.Item
 			data-slot="select-item"
 			className={cn(
-				"relative flex w-full cursor-default items-center gap-2 rounded py-1.5 pr-8 pl-2 text-sm leading-5 font-normal outline-hidden select-none focus:bg-[#f5f5f5] focus:text-[#171717] data-[state=checked]:bg-[#f5f5f5] data-[state=checked]:text-[#171717] data-disabled:pointer-events-none data-disabled:opacity-50 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
+				variant === "form"
+					? "relative flex h-7 w-full cursor-pointer items-center gap-2 rounded px-2 pr-8 font-sans text-sm leading-5 font-normal text-snapp-text-secondary outline-hidden select-none focus:bg-snapp-surface-secondary data-[state=checked]:bg-snapp-surface-secondary data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:opacity-50 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2"
+					: "relative flex w-full cursor-default items-center gap-2 rounded py-1.5 pr-8 pl-2 text-sm leading-5 font-normal outline-hidden select-none focus:bg-[#f5f5f5] focus:text-[#171717] data-[state=checked]:bg-[#f5f5f5] data-[state=checked]:text-[#171717] data-disabled:pointer-events-none data-disabled:opacity-50 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
 				className
 			)}
 			{...props}
 		>
-			<span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center">
+			<span
+				className={cn(
+					"pointer-events-none absolute right-2 flex items-center justify-center",
+					variant === "form" ? "h-4 w-5" : "size-4"
+				)}
+			>
 				<SelectPrimitive.ItemIndicator>
-					<FormIcon name="selectCheck" />
+					<FormIcon
+						name={
+							variant === "form" ? "selection20" : "selectCheck"
+						}
+					/>
 				</SelectPrimitive.ItemIndicator>
 			</span>
 			<SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
