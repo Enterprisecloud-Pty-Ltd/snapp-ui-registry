@@ -773,8 +773,21 @@ try {
 		}
 	);
 	console.log(sidebar.stdout.trim());
+	const dialogPopups = await execFileAsync(
+		process.execPath,
+		[
+			path.join(registryRoot, "scripts/verify-dialog-popups-browser.mjs"),
+			fixtureRoot,
+		],
+		{
+			cwd: registryRoot,
+			timeout: 120_000,
+			maxBuffer: 4 * 1024 * 1024,
+		}
+	);
+	console.log(dialogPopups.stdout.trim());
 	console.log(
-		"Clean consumer install, both lint gates, formatting, type-check, production build, Tabs keyboard and sidebar isolation checks passed."
+		"Clean consumer install, both lint gates, formatting, type-check, production build, Tabs keyboard, sidebar isolation and dialog popup checks passed."
 	);
 } finally {
 	await server?.close();
