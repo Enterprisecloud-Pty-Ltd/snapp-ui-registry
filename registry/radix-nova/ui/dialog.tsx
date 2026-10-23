@@ -89,7 +89,7 @@ function DialogContent({
 				data-size={size}
 				ref={setContent}
 				className={cn(
-					"group/dialog-content fixed inset-0 z-50 m-auto flex h-fit max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] min-w-0 max-w-180 flex-col gap-6 overflow-x-hidden overflow-y-auto rounded-lg bg-snapp-surface-primary p-6 font-sans text-sm leading-5 text-snapp-text-primary shadow-2xl outline-none data-[size=sm]:max-w-120 data-[size=md]:max-w-150 data-[size=form]:overflow-hidden data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+					"group/dialog-content fixed inset-0 z-50 m-auto flex h-fit max-h-[calc(100dvh-32px)] w-[calc(100%-32px)] min-w-0 max-w-180 flex-col gap-6 overflow-x-hidden overflow-y-auto rounded-lg bg-snapp-surface-primary p-6 font-sans text-sm leading-5 text-snapp-text-primary shadow-2xl outline-none data-[size=sm]:max-w-120 data-[size=md]:max-w-150 data-[size=form]:overflow-hidden data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
 					className
 				)}
 				{...props}
