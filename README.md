@@ -73,6 +73,37 @@ The shared webresource converter owns host-root registration, entity/record
 context, API-mode selection, and legacy storage fallbacks. Keeping this boundary
 prevents one inline PCF control from leaking its table or record into another.
 
+`runtime/PortalContainer.ts` owns the generic portal context within each Snapp.
+Its Shell provider supplies the default container; `DialogContent` supplies the
+nearest nested container for its descendants. Popup components keep their
+registry imports and consume that nearest provider. Converter 0.1.51 retains
+`EcPortalContainerContext` and `useEcPortalContainer` as aliases of this same
+context and hook; it must not create another context or rename registry hooks.
+Separately mounted Snapps each own their providers and portal placement.
+Dialog content composes its internal container ref with a supplied object or
+callback ref, including React ref cleanup, so forwarding a ref cannot disable
+the nested portal provider.
+When a Base UI Combobox is open inside a Radix dialog, the first Escape dismisses
+that popup; the dialog's capture-phase handler leaves dismissal to the popup.
+The following Escape may dismiss the dialog and restore its trigger focus.
+
+After an intentional registry overwrite, run the verified runtime converter,
+then rebuild the consumer. Existing converted projects can adopt just the
+portal migration with `--portals-only`; this does not install a newer dialog or
+refresh the rest of the runtime. Follow the Hub's
+`runbooks/ui-registry-rollout.md` for source selection, migration and host checks.
+
+The clean-consumer smoke gate tests dialog popups without runtime conversion.
+For an already converted consumer, additionally run:
+
+```powershell
+node scripts/verify-dialog-popups-browser.mjs <consumer-root> --converted
+```
+
+This checks the installed registry UI with that consumer's real Ec aliases and
+modal adapter in light DOM, a hosted ShadowRoot and nested Cabinet roots. It
+does not certify a deployed Dynamics control or live authorization.
+
 Dataverse entity-set/logical-name resolution and its environment-scoped memory
 cache also belong to the converter-owned runtime. Registry components may
 receive resolved records or loading/error state through props and providers,
