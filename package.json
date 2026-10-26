@@ -28,7 +28,8 @@
 		"format:check": "biome format registry/radix-nova scripts/complete-component-catalog.mjs scripts/sync-registry.mjs scripts/smoke-install.mjs scripts/test-registry-delivery.mjs scripts/validate-registry-source.mjs scripts/verify-form-geometry-browser.mjs scripts/verify-navigation-browser.mjs scripts/consumer-lint.config.json registry.json package.json biome.json eslint.config.js scripts/verify-sidebar-isolation-browser.mjs scripts/verify-dialog-popups-browser.mjs",
 		"registry:delivery:test": "node --test scripts/test-registry-delivery.mjs",
 		"lint:eslint": "eslint registry/radix-nova",
-		"lint:biome": "biome lint registry/radix-nova"
+		"lint:biome": "biome lint registry/radix-nova",
+		"registry:portal:test": "node scripts/verify-dialog-popups-browser.mjs"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.16",

@@ -1,7 +1,7 @@
 "use client";
 
 import type * as React from "react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Dialog as DialogPrimitive } from "radix-ui";
 
 import { cn } from "@/lib/utils";
@@ -65,6 +65,8 @@ function DialogOverlay({
 function DialogContent({
 	className,
 	children,
+	ref,
+	onEscapeKeyDown,
 	overlayClassName,
 	showCloseButton = true,
 	size = "default",
@@ -81,13 +83,42 @@ function DialogContent({
 	// would clip them and nested modals would only cover the dialog.
 	const portalContainer = usePortalContainer();
 	const [content, setContent] = useState<HTMLDivElement | null>(null);
+	const setContentRef = useCallback(
+		(node: HTMLDivElement | null) => {
+			setContent(node);
+			if (typeof ref === "function") {
+				const cleanup = ref(node);
+				if (typeof cleanup === "function") {
+					return () => {
+						setContent(null);
+						cleanup();
+					};
+				}
+			} else if (ref) {
+				ref.current = node;
+			}
+		},
+		[ref]
+	);
 	return (
 		<DialogPortal>
 			<DialogOverlay className={overlayClassName} />
 			<DialogPrimitive.Content
 				data-slot="dialog-content"
 				data-size={size}
-				ref={setContent}
+				ref={setContentRef}
+				onEscapeKeyDown={(event) => {
+					onEscapeKeyDown?.(event);
+					// Base UI dismisses its Combobox during bubbling; Radix handles
+					// Escape during capture. Let the popup consume the first Escape.
+					if (
+						content?.querySelector(
+							'[data-slot="combobox-content"][data-open]'
+						)
+					) {
+						event.preventDefault();
+					}
+				}}
 				className={cn(
 					"group/dialog-content fixed inset-0 z-50 m-auto flex h-fit max-h-[calc(100dvh-32px)] w-[calc(100%-32px)] min-w-0 max-w-180 flex-col gap-6 overflow-x-hidden overflow-y-auto rounded-lg bg-snapp-surface-primary p-6 font-sans text-sm leading-5 text-snapp-text-primary shadow-2xl outline-none data-[size=sm]:max-w-120 data-[size=md]:max-w-150 data-[size=form]:overflow-hidden data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
 					className
