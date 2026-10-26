@@ -457,6 +457,28 @@ for (const portalItemName of [
 	}
 }
 
+const dialogPortalSource = await readFile(
+	path.join(registryRoot, "registry/radix-nova/ui/dialog.tsx"),
+	"utf8"
+);
+for (const contract of [
+	"PortalContainerContext,",
+	"<PortalContainerContext.Provider",
+	"value={content ?? portalContainer}",
+	"ref={setContentRef}",
+]) {
+	if (!dialogPortalSource.includes(contract)) {
+		errors.push(
+			`snapp-dialog is missing nested portal contract ${contract}`
+		);
+	}
+}
+if (dialogPortalSource.includes("EcAppShell.context")) {
+	errors.push(
+		"Registry dialogs must keep the generic portal context import."
+	);
+}
+
 const buttonItem = itemsByName.get("snapp-button");
 if (buttonItem) {
 	const buttonSource = await readFile(
