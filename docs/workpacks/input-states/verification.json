@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-27",
+  "branch": "Petrus-input-states",
+  "baseCommit": "0c58baab00be73e4358dbac4d93882dacfd43e23",
+  "registryVerify": "PASS",
+  "keyboardChecks": 534,
+  "sidebarChecks": 8,
+  "dialogCases": 4,
+  "publicationAtVerification": {
+    "state": "authorized; pending PR publication",
+    "changeTarget": "dev",
+    "publishedNamespaceBranch": "main",
+    "publicItemVerification": "pending main promotion"
+  },
+  "hashBasis": "working-tree file bytes at verification time",
+  "prePublicationHashRecheck": "PASS; all six source/artifact hashes match",
+  "prePublicationRegistryIntegrity": "PASS; 118 generated registry JSON files",
+  "deployedHostGate": "Not Verified",
+  "sourceAndArtifacts": {
+    "registry/radix-nova/ui/input.tsx": "4ece9622fe91f40e8b0c8a66c4e6022a0d42bc3cf373030643ddb171a18f51f1",
+    "registry/radix-nova/ui/input-group.tsx": "85d63b304d984c4d4e47c4a014312e36a4a18b5d5d72eeaceabd63d4c9a8c2c7",
+    "registry/radix-nova/ui/button.tsx": "195975ccc98a6a2a35fff6d61aa8321de08df44657a3ab20818fa08a073907f0",
+    "public/r/snapp-input.json": "bd3a7bbaf60f5f882fd10110e930c5fe740dc63c5d5dec37a20b784a97dbe497",
+    "public/r/snapp-input-group.json": "1b3a5f1180811044568d4f3ef25b27cde083f6d9dc31670b53fc03ebc59a8fd5",
+    "public/r/snapp-button.json": "9f3d55bcb36111b2bf5bb024412b4a3002fb69320d98cb2d6b17b886d1fccfa1"
+  }
+}
