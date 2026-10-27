@@ -17,7 +17,7 @@ const text = cva(
 );
 
 const buttonVariants = cva(
-	"group/button inline-flex shrink-0 cursor-pointer items-center justify-center rounded-lg border-0 bg-clip-padding font-sans text-sm leading-5 font-normal whitespace-nowrap outline-none select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-transparent disabled:pointer-events-none disabled:cursor-not-allowed aria-invalid:inset-ring aria-invalid:inset-ring-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+	"group/button inline-flex shrink-0 cursor-pointer items-center justify-center rounded-lg border-0 bg-clip-padding font-sans text-sm leading-5 font-normal whitespace-nowrap outline-none select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-transparent disabled:cursor-not-allowed aria-invalid:inset-ring aria-invalid:inset-ring-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 	{
 		variants: {
 			variant: {
@@ -74,6 +74,9 @@ function Button({
 			type={type ?? (asChild ? undefined : "button")}
 			className={cn(
 				buttonVariants({ variant, size: resolvedSize }),
+				// Native disabled buttons block activation while retaining cursor hit-testing.
+				// Keep the existing pointer-event policy for slotted controls.
+				asChild && "disabled:pointer-events-none",
 				className
 			)}
 			{...props}
